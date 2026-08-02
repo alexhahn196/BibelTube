@@ -1,0 +1,45 @@
+{
+ "methode": "Higgsfield video_analysis (Szene-fuer-Szene, nur Prefix des Videos, transkribiert Audio + beschreibt Bild; charakterisiert KEINE Stimmfarbe). Watch-Tool (NexLev) am 24h-Limit 15/15.",
+ "C_kEmciGJpkR0": {
+  "laenge_analysiert": "0:00-2:38",
+  "bild": "Malerischer Hirte+Lamm-Stil wie Gewinner, 8-Szenen-Rotation, statisch, warm. Handwerklich GUT.",
+  "audio_belege": [
+   "Psalm 3 maschinell paraphrasiert: 'Strike all of my opponents on the mandible. Punish the wicked by shattering their teeth.'",
+   "'It is needless to move all of your belongings from today to tomorrow.'",
+   "CTA verstuemmelt: 'please specify the source of your listening tonight'"
+  ],
+  "fazit": "Bild kopiert Gewinner erfolgreich; Skript ist MT/KI-Paraphrase statt echter Uebersetzung -> unheimlich/unfreiwillig komisch."
+ },
+ "F_oHsh-paMGeU": {
+  "laenge_analysiert": "0:00-4:29",
+  "bild": "Statische Huette-am-See-Szene mit Text-Overlay; KEINE Jesus/Lamm-Bildwelt; Text-Einblendungen erscheinen/verschwinden.",
+  "audio_belege": [
+   "Erste ~3 min reine Atem-/Beruhigungs-Meditation ohne Schriftbezug",
+   "Musikbett: 'soft piano and synth pads' + Feuerknistern"
+  ],
+  "fazit": "Titel von B kopiert, Produkt ist generische Schlafmeditation; Bibel kommt spaet."
+ },
+ "G_jx5Z_eHZa00": {
+  "laenge_analysiert": "0:00-21:11",
+  "bild": "Stock-Natur (Wasserfall, Nachtstrand, Kerze) statt gemalter Szenen; wechselt Szenen alle ~15s-5min.",
+  "audio_belege": [
+   "0-5min gesprochenes Gebet",
+   "5:45-9:00 REINE MUSIK (3+ min Luecke)",
+   "ab 9:00 KJV-Rezitation: 'He that dwelleth in the secret place...'",
+   "20:08 Aaronitischer Segen, danach Musik"
+  ],
+  "fazit": "Gebets-/Segen-Kanal mit langen Musikluecken (36 WPM), KJV; anderes Genre als durchgehende Bibellesung."
+ },
+ "gewinner": "A Ln4_CtkZsRs (4.1h) und B 8m6NqWG9p2o (3.4h) FAILED ('Something went wrong') - vermutlich Laengenlimit. Stimmfarbe der Gewinner heute nicht messbar; nachholen wenn NexLev-Watch-Quota zurueck (~morgen frueh).",
+ "B_2Sh-wNaOCrY_NACHTRAG": {
+  "laenge_analysiert": "0:00-2:30 (Video 1,1h; B #3 aus der Anlauf-Phase, 304 Views)",
+  "bild": "EIN statisches Gemaelde ueber die volle Stichprobe: schlafender Jesus (dunkelrotes Gewand) + Lamm an der Brust + Steinkreis-Lagerfeuer + Olivenbaum + Meer im Sonnenuntergang. Einzige Bewegung: Feuerflackern, langsam sinkende Sonne. KEIN Szenenwechsel.",
+  "audio_belege": [
+   "0:00-1:00 persoenliche Rahmung: 'Before you rest tonight, take a moment to set aside the worries...'",
+   "~0:45 sanfter CTA: 'if you enjoy these nightly Bible readings, consider subscribing so you can return whenever you need a peaceful place'",
+   "ab 1:00 woertlicher NIV-Text: Psalm 4 'Answer me when I call to you, my righteous God' -> echte Uebersetzung, kein MT-Kauderwelsch",
+   "Psalm-Reihenfolge kuratiert (Psalm 4 -> 91: Schlaf-/Schutz-Psalmen zuerst)"
+  ],
+  "fazit": "Gewinner-Produktion bestaetigt: Ein-Szenen-Loop, NIV, warme Rahmung, CTA als Einladung statt Bettelei. Produktionsstandard der Flop-Phase = Standard der Hits -> stuetzt These, dass B's Breakout an Laenge/Timing hing, nicht an Produktionsaenderung. Stimmfarbe weiterhin nicht beschreibbar (Tool transkribiert nur)."
+ }
+}

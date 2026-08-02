@@ -1,0 +1,23 @@
+{
+ "gewinner_muster": {
+  "A_HushLittleLamb": "Malerisch, warm. Schlafender/betender Jesus, oft mit Lamm, Lagerfeuer, Nacht. Text SPARSAM: 3 von 8 ohne jeden Text, sonst kurze Serifen-Zeile ('Time To Sleep.', 'Sleep Deep', 'Peaceful Sleep.'). Die zwei besten Videos (245K, 233K) haben KEINEN bzw. minimalen Text.",
+  "B_RestInGrace": "EXTREM konsistente Serie: identisches Motiv in allen 13 Thumbs (schlafender Jesus in weiss-rotem Gewand + Lamm + Lagerfeuer + blaue Nacht), grosse weisse Serifen-VERSALIEN oben: TIME TO REST / YOU NEED REST / SLEEP DEEP / JUST SLEEP. Wiedererkennbar wie ein Markenlogo.",
+  "wichtig": "B-Thumbs sind bei 166.000 UND bei 140 Views praktisch identisch -> Thumbnail erklaert die Streuung INNERHALB des Kanals nicht. Es traegt die Kanalidentitaet, nicht den einzelnen Hit."
+ },
+ "verlierer_befunde": {
+  "C": "Sieht aus wie ein Gewinner (gleiche malerische Welt, kompetent). Trotzdem tot -> Thumbnail allein rettet nicht.",
+  "D": "Anderes Genre: gluehender Jesus mit offener Hand, gelb/rote VERSALIEN-Drohungen ('YOU WILL LOSE EVERYTHING IF YOU IGNORE... I AM VERY SERIOUS!', 'DON'T CLICK AWAY'). Dringlichkeits-Clickbait statt Ruhe.",
+  "E": "New-Age-Aesthetik: Kristalle, Glitzer, violett-tuerkise Feen-Optik, Engel. Passt zu 432Hz-Vergangenheit, nicht zur Bibel-Schlaf-Nische.",
+  "F": "Kopiert B-Textzeilen woertlich ('Just Sleep', 'Sleep Deep', 'Time To Sleep.') aber: matschig-braune dunkle Bilder, gesichtsloser Schlaefer statt Jesus+Lamm, billige Leucht-Outline am Text.",
+  "G": "Kein einheitlicher Stil: fotorealistischer Jesus-Kopf, gemalte Szenen, Schlafzimmer-Fotos, wechselnde Typo. 'HEAL ME AS I SLEEP' Riesen-Versalien. Gemischtwarenladen.",
+  "H": "Altlasten sichtbar: 'THE FIRST EMPIRE', 'ATLANTIS', Pestdoktor-Bild zwischen Jesus-Thumbs. Dazu Bettel-Text ('I AM BEGGING YOUR 2 MINUTES DON'T SKIP').",
+  "I": "Sauber und konsistent (Gospel of JOHN / GOD'S LOVE / FAITH & HOPE, weisser Glow-Serif, Kanalname als Watermark) - Scheitern liegt NICHT am Thumbnail; nach 4 Videos aufgegeben.",
+  "J": "Ordentliche Langform-Thumbs (goldene Serifen 'TEACHINGS OF JESUS FOR SLEEP') - Kanal waechst aber ueber Shorts."
+ },
+ "systematik": [
+  "Gewinner: EINE Bildwelt pro Kanal, malerisch, warmes Licht gegen Nachtblau, Jesus+Lamm-Motiv, ruhige Typo (Serifen), wenig oder kein Text.",
+  "Verlierer-Mehrheit: entweder falsches Genre (D Dringlichkeit, E New-Age, H Mythologie-Reste) oder inkonsistent (G, H).",
+  "ABER: 3 Verlierer (C, F, I) haben ordentliche bis gute Thumbs -> Thumbnail ist notwendig fuer Identitaet, NICHT hinreichend fuer Erfolg.",
+  "Was ein Verlierer-Thumb konkret falsch macht: Drohung/Dringlichkeit statt Einladung (D,H), grelle Sättigung statt Nachtpalette (D,E), Motiv ohne Bezug zur Nische (E,H), matschige dunkle Ausfuehrung ohne Blickfang-Lichtquelle (F), Stil-Zickzack von Video zu Video (G,H)."
+ ]
+}

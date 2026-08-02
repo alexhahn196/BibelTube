@@ -1,0 +1,21 @@
+{
+ "praezision": "Upload-Daten aus 'x months ago' sind monatsgebuckelt (alle als YYYY-MM-02); Tage nur bei juengeren Videos exakt. Reihenfolge innerhalb des Kanals ist verlaesslich (Playlist-Reihenfolge).",
+ "A_start": "Alle 3 Juni-Videos sofort 47K-245K. KEIN Anlauf. Bestes Video ist #3. Titel-Stil (Zustand des Hoerers + 'Tonight') ab Video 1. Kanal-Account existierte seit 2025-11 (7 Monate vor Upload 1).",
+ "B_start": "KLARER ANLAUF: #1-6 (Juni-Anfang Juli, 1.1-2.8h) alle unter 2.500 Views. Breakout bei #7 (166K) - zeitgleich springt das Format dauerhaft auf 3.2-3.6h. Danach Hits #10 (96K), #11 (35K), #12 (32K). Account von 2017 (9 Jahre alt, umgewidmet) - hat den Anlauf NICHT verhindert.",
+ "verlierer_start": {
+  "C": "Ab Video 1 woertliche A-Titel-Mashups ('You're tired, I know… Rest to the Gospel of John'), 64 Uploads in 9 Wochen, nie ueber 113 Views.",
+  "F": "Kanal 06.05 angelegt, erster Upload erst 21.07, dann TAEGLICH ~1.0h-Videos. Video #3 kopiert A-Titel MIT TIPPFEHLER: 'I Know You're Tried... Jesus Watches Over you Tonight' (A #4: 'I Know You're Tired...', 233K).",
+  "I": "4 Videos in 12 Tagen, Views STIEGEN (26/106/78/149), letzter Upload 31.07 - aufgegeben waehrend der Trend positiv war.",
+  "D": "Start direkt im fremden Genre (GOD SAYS Kurzvideos 6-36 Views).",
+  "H": "Erste Uploads Mai = reine History (Troja, WWII, Mittelalter, British Crown). Pivot zu Gott ~Juni ueber Bruecken-Video 'Did Jesus Actually Exist'. Altlasten online.",
+  "J": "Start 19.07 mit Musik-Video, dann Langform (18-60 Views) + 22 Shorts (857K). Shorts-Reichweite uebertraegt sich NICHT: 2.210 Subs, Langform trotzdem 171 Views GESAMT."
+ },
+ "confounder": {
+  "first_mover": "A hat den Titel-/Bild-Stil zuerst etabliert (Juni). B folgte im selben Monat MIT EIGENER Variante und gewann; C und F kopierten woertlich und starben. First-Mover-Vorteil ist real, aber B beweist: ein Nachzuegler mit eigener Handschrift im selben Monat konnte noch gewinnen. NICHT kopierbar: der Zeitvorsprung selbst.",
+  "kanalalter": "Trennt nicht: A-Account 6 Monate alt (gewonnen), B-Account 9 JAHRE (gewonnen, aber erst nach 6 Flops), G seit Januar (verloren), E frisch (verloren).",
+  "algorithmus_lotterie": "B #7 (166K) vs. B #8 (1.3K): gleicher Kanal, gleiches Format, gleiche Woche, Faktor 128. Innerhalb-Kanal-Streuung bleibt gross -> Einzelvideo-Erfolg ist NICHT deterministisch planbar. Deckt sich mit Lauf 1 (SleepCodex 276x).",
+  "externer_traffic": "NICHT MESSBAR mit verfuegbaren Tools (keine Community-Posts/Social-Daten abrufbar). A hat buymeacoffee-Link ('ministry'). Offen.",
+  "stimme": "Gewinner-Stimmcharakter heute nicht messbar (Tool-Limit). Der wichtigste ungemessene Kandidat fuer C's Scheitern neben Skript/Flooding.",
+  "abweichungen_nutzerangaben": "D: nur 33 von angegebenen 49 Uploads auffindbar (geloescht?). C Ø 256 und G Ø 557 stimmen nur inkl. Shorts; Langform-Ø ist 39 bzw. 62. I: 359 statt 199 Views (gewachsen seit Snapshot)."
+ }
+}

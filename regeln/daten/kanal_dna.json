@@ -1,0 +1,130 @@
+{
+ "A_HushLittleLamb": {
+  "videos": 8,
+  "shorts": 0,
+  "shorts_pct": 0,
+  "dauer_mean_h": 4.21,
+  "dauer_sd_h": 0.67,
+  "cluster": {
+   "schlaf_ruhe": 8,
+   "bibel_lesung": 1
+  }
+ },
+ "B_RestInGrace": {
+  "videos": 13,
+  "shorts": 0,
+  "shorts_pct": 0,
+  "dauer_mean_h": 2.64,
+  "dauer_sd_h": 0.96,
+  "cluster": {
+   "schlaf_ruhe": 13,
+   "bibel_lesung": 8
+  }
+ },
+ "C_TheBibleSacred": {
+  "videos": 35,
+  "shorts": 29,
+  "shorts_pct": 45,
+  "dauer_mean_h": 1.72,
+  "dauer_sd_h": 0.56,
+  "cluster": {
+   "schlaf_ruhe": 52,
+   "bibel_lesung": 26,
+   "gottes_botschaft": 4,
+   "lehre_erklaerung": 5,
+   "heilung_gebet": 2
+  }
+ },
+ "D_GodMessageToday": {
+  "videos": 19,
+  "shorts": 14,
+  "shorts_pct": 42,
+  "dauer_mean_h": 0.71,
+  "dauer_sd_h": 0.57,
+  "cluster": {
+   "schlaf_ruhe": 7,
+   "bibel_lesung": 5,
+   "gottes_botschaft": 19,
+   "heilung_gebet": 4
+  }
+ },
+ "E_QuietMind": {
+  "videos": 19,
+  "shorts": 0,
+  "shorts_pct": 0,
+  "dauer_mean_h": 3.55,
+  "dauer_sd_h": 0.01,
+  "cluster": {
+   "schlaf_ruhe": 15,
+   "bibel_lesung": 2,
+   "gottes_botschaft": 4,
+   "heilung_gebet": 14,
+   "meditation_ambient": 3
+  }
+ },
+ "F_GodsPeacefulSleep": {
+  "videos": 10,
+  "shorts": 0,
+  "shorts_pct": 0,
+  "dauer_mean_h": 1.03,
+  "dauer_sd_h": 0.02,
+  "cluster": {
+   "schlaf_ruhe": 8,
+   "bibel_lesung": 2,
+   "heilung_gebet": 1,
+   "meditation_ambient": 1
+  }
+ },
+ "G_TheSilentShepherd": {
+  "videos": 13,
+  "shorts": 59,
+  "shorts_pct": 82,
+  "dauer_mean_h": 1.35,
+  "dauer_sd_h": 1.08,
+  "cluster": {
+   "schlaf_ruhe": 17,
+   "bibel_lesung": 17,
+   "gottes_botschaft": 4,
+   "heilung_gebet": 17
+  }
+ },
+ "H_TimeForGod": {
+  "videos": 24,
+  "shorts": 17,
+  "shorts_pct": 41,
+  "dauer_mean_h": 2.04,
+  "dauer_sd_h": 0.8,
+  "cluster": {
+   "schlaf_ruhe": 14,
+   "bibel_lesung": 1,
+   "gottes_botschaft": 5,
+   "lehre_erklaerung": 10,
+   "heilung_gebet": 11
+  }
+ },
+ "I_DeepRestBible": {
+  "videos": 4,
+  "shorts": 0,
+  "shorts_pct": 0,
+  "dauer_mean_h": 1.24,
+  "dauer_sd_h": 0.47,
+  "cluster": {
+   "schlaf_ruhe": 4,
+   "bibel_lesung": 4
+  }
+ },
+ "J_JesusLovesYou": {
+  "videos": 5,
+  "shorts": 22,
+  "shorts_pct": 81,
+  "dauer_mean_h": 1.56,
+  "dauer_sd_h": 1.46,
+  "cluster": {
+   "schlaf_ruhe": 9,
+   "gottes_botschaft": 1,
+   "lehre_erklaerung": 2,
+   "heilung_gebet": 1,
+   "meditation_ambient": 1
+  }
+ }
+}

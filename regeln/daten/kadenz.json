@@ -1,0 +1,92 @@
+{
+ "A_HushLittleLamb": {
+  "lang": 8,
+  "shorts": 0,
+  "erster_upload": "2026-06-02",
+  "wochen": 8.7,
+  "uploads_pro_woche": 0.9,
+  "bester_ist_video_nr": 3,
+  "gesamt": 8
+ },
+ "B_RestInGrace": {
+  "lang": 13,
+  "shorts": 0,
+  "erster_upload": "2026-06-02",
+  "wochen": 8.7,
+  "uploads_pro_woche": 1.5,
+  "bester_ist_video_nr": 7,
+  "gesamt": 13
+ },
+ "C_TheBibleSacred": {
+  "lang": 35,
+  "shorts": 29,
+  "erster_upload": "2026-06-02",
+  "wochen": 8.7,
+  "uploads_pro_woche": 7.3,
+  "bester_ist_video_nr": 10,
+  "gesamt": 64
+ },
+ "D_GodMessageToday": {
+  "lang": 19,
+  "shorts": 14,
+  "erster_upload": "2026-07-02",
+  "wochen": 4.4,
+  "uploads_pro_woche": 7.5,
+  "bester_ist_video_nr": 7,
+  "gesamt": 33
+ },
+ "E_QuietMind": {
+  "lang": 19,
+  "shorts": 0,
+  "erster_upload": "2026-07-02",
+  "wochen": 4.4,
+  "uploads_pro_woche": 4.3,
+  "bester_ist_video_nr": 8,
+  "gesamt": 19
+ },
+ "F_GodsPeacefulSleep": {
+  "lang": 10,
+  "shorts": 0,
+  "erster_upload": "2026-07-21",
+  "wochen": 1.7,
+  "uploads_pro_woche": 5.8,
+  "bester_ist_video_nr": 1,
+  "gesamt": 10
+ },
+ "G_TheSilentShepherd": {
+  "lang": 13,
+  "shorts": 59,
+  "erster_upload": "2026-05-02",
+  "wochen": 13.1,
+  "uploads_pro_woche": 5.5,
+  "bester_ist_video_nr": 6,
+  "gesamt": 72
+ },
+ "H_TimeForGod": {
+  "lang": 24,
+  "shorts": 17,
+  "erster_upload": "2026-05-02",
+  "wochen": 13.1,
+  "uploads_pro_woche": 3.1,
+  "bester_ist_video_nr": 15,
+  "gesamt": 41
+ },
+ "I_DeepRestBible": {
+  "lang": 4,
+  "shorts": 0,
+  "erster_upload": "2026-07-19",
+  "wochen": 2.0,
+  "uploads_pro_woche": 2.0,
+  "bester_ist_video_nr": 4,
+  "gesamt": 4
+ },
+ "J_JesusLovesYou": {
+  "lang": 5,
+  "shorts": 22,
+  "erster_upload": "2026-07-19",
+  "wochen": 2.0,
+  "uploads_pro_woche": 13.5,
+  "bester_ist_video_nr": 2,
+  "gesamt": 27
+ }
+}
