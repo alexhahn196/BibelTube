@@ -1,0 +1,44 @@
+==> Kanal: UCBnoLXdJ9tIR-8vjSdgiYAw
+    [TOP] Ln4_CtkZsRs
+    [MEDIAN] Sym1B02N8DA
+    [FLOP] NJSq3WYyrCY
+==> Kanal: UC1AOmfQ2hsB0G0QBw5iCaUQ
+    [TOP] c7zCK8BPv4E
+    [MEDIAN] FG8LTL1IKe0
+    [FLOP] VwOnxdSFc3M
+==> Kanal: UC_oYrNMZ081r-ZgxY-883_w
+    [TOP] rbZHUqXDHHc
+    [MEDIAN] ZXgtJSgIvto
+    [FLOP] pHDW7-nSTic
+==> Kanal: UCo6ArZxfwPQ4uSCFiqfDK9A
+    [TOP] 2VblWeklFA8
+    [MEDIAN] P-skZ4uglyI
+    [FLOP] RGkbn94Ks-4
+==> Kanal: UCMbWbGbTG23WSa5M6VJgctw
+    [TOP] jpjR5lSEjww
+    [MEDIAN] FJbu291cR8w
+    [FLOP] eqSO5hlFo7M
+==> Kanal: UCiKc3XR_CAwWx1rtLFQnlvQ
+    [TOP] 93EiQczY-YU
+    [MEDIAN] RAW8bqGgRhM
+    [FLOP] J9zUKXz7NCQ
+==> Kanal: UCP7dYl63OzMZXZiWlOCcv1g
+    [TOP] nHn4UxGedts
+    [MEDIAN] UE1L1WE9CQc
+    [FLOP] dgKEUBy1Czs
+==> Kanal: UCiolk5zOhJjJta3iS6HJDCw
+    [TOP] 8m6NqWG9p2o
+    [MEDIAN] Bdj77Dfh_AU
+    [FLOP] JYGUW6LpDio
+
+==============================================
+./teardown_batch.sh: line 155: column: command not found
+==============================================
+Matrix:  teardown_batch_20260802_090410/matrix.csv
+Frames:  teardown_batch_20260802_090410/frames/  (nur TOP-Videos)
+
+Naechster Schritt in Claude Code:
+  1. Welche Werte sind bei ALLEN TOP-Videos gleich und bei den
+     FLOPs anders?  -> das sind die echten Stellschrauben.
+  2. Welche Werte sind ueberall gleich?  -> irrelevant, ignorieren.
+  3. Frames ansehen: Bildaufbau, Farbpalette, Typografie.

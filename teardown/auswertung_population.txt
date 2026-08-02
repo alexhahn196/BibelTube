@@ -1,0 +1,112 @@
+Grundgesamtheit: 454 Videos ueber 8 Kanaele
+
+== H1: Laengere Videos = mehr Views? ==
+Spearman rho(Dauer, Views) global = +0.092  -> praktisch kein Zusammenhang
+   Grace Beyond Prayer    n= 54  rho=+0.39
+   Hush Little Lamb       n=  8  rho=-0.33
+   Night Psalms           n= 75  rho=+0.43
+   Rest In Faith          n=120  rho=-0.01
+   Rest in Grace          n= 13  rho=+0.72
+   Rest in Jesus          n= 16  rho=+0.47
+   SleepCodex             n=131  rho=-0.02
+   The Sleep Bible        n= 37  rho=-0.07
+   Fazit: 4 Kanaele positiv, 4 Kanaele null/negativ -> Dauer ist KEIN Hebel.
+
+== H2: Gibt es eine Untergrenze? (<1.5h vs >=1.5h, Median-Views) ==
+   Grace Beyond Prayer    kurz n= 11     5,000   lang n= 43    32,000    6.40x
+   Hush Little Lamb       nicht testbar (kurz=0, lang=8)
+   Night Psalms           kurz n=  8     2,250   lang n= 67    11,000    4.89x
+   Rest In Faith          kurz n= 11    43,000   lang n=109    23,000    0.53x
+   Rest in Grace          kurz n=  3       302   lang n= 10     2,150    7.12x
+   Rest in Jesus          nicht testbar (kurz=2, lang=14)
+   SleepCodex             nicht testbar (kurz=1, lang=130)
+   The Sleep Bible        nicht testbar (kurz=0, lang=37)
+
+== H3: Themen-Effekt, normiert auf den KANAL-Median ==
+   (nur Kanaele mit >=4 Videos je Stichwort)
+   'enoch':
+      Night Psalms           n=  4   33.22x Kanal-Median
+      SleepCodex             n= 40    2.33x Kanal-Median
+   'banned':
+      SleepCodex             n= 40    2.02x Kanal-Median
+   'nephilim':
+      SleepCodex             n=  9    1.09x Kanal-Median
+   'angel':
+      Night Psalms           n=  8    6.90x Kanal-Median
+      SleepCodex             n= 25    1.38x Kanal-Median
+   'gospel':
+      Rest In Faith          n= 20    3.33x Kanal-Median
+      The Sleep Bible        n=  6    2.84x Kanal-Median
+   'john':
+      Rest In Faith          n=  5    3.04x Kanal-Median
+   'isaiah':
+      Night Psalms           n=  4    9.37x Kanal-Median
+      Rest In Faith          n=  4    1.50x Kanal-Median
+   'psalm':
+      Rest in Grace          n=  7    1.38x Kanal-Median
+      Rest In Faith          n= 12    0.26x Kanal-Median
+      Grace Beyond Prayer    n= 10    0.76x Kanal-Median
+   'jesus':
+      Night Psalms           n= 11    0.62x Kanal-Median
+      Rest in Grace          n=  6    0.65x Kanal-Median
+      Rest In Faith          n= 12    3.33x Kanal-Median
+      SleepCodex             n=  8    0.66x Kanal-Median
+      Grace Beyond Prayer    n=  5    2.27x Kanal-Median
+      Hush Little Lamb       n=  5    0.31x Kanal-Median
+      The Sleep Bible        n=  8    0.35x Kanal-Median
+   'prayer':
+      Grace Beyond Prayer    n= 53    0.90x Kanal-Median
+   'protection':
+      Grace Beyond Prayer    n= 17    1.10x Kanal-Median
+   '4k':
+      SleepCodex             n= 16    1.20x Kanal-Median
+   'complete':
+      Night Psalms           n=  9    0.62x Kanal-Median
+      Rest In Faith          n=  7    2.46x Kanal-Median
+      SleepCodex             n=  4    0.55x Kanal-Median
+   'full':
+      Rest in Jesus          n= 14    1.00x Kanal-Median
+      Rest In Faith          n= 26    1.15x Kanal-Median
+      SleepCodex             n= 10    0.81x Kanal-Median
+
+== H4: Die drei groessten Treffer je Kanal ==
+
+   Grace Beyond Prayer (Kanal-Median 25,500):
+      1,000,000  (  39.2x)   1.9h  God’s Word for You Tonight: “I Am Here—You’re Not Alone” | Pow
+        996,000  (  39.1x)   2.0h  Psalm 23 Night Prayer for Healing, Family Protection & Peace B
+        661,000  (  25.9x)   2.1h  God Will Quiet Your Restless Mind — Peace & Healing Before Sle
+
+   Hush Little Lamb (Kanal-Median 115,500):
+        244,000  (   2.1x)   4.1h  If You're Anxious, Rest to the Gospel of John Tonight
+        232,000  (   2.0x)   5.0h  I Know You're Tired... Jesus Watches Over You Tonight
+        201,000  (   1.7x)   3.6h  You're Tired, I Know... Rest Under God's Word Tonight.
+
+   Night Psalms (Kanal-Median 8,700):
+        551,000  (  63.3x)   2.3h  Fall Asleep to the Book of Enoch COMPLETE | An Ancient Text No
+        413,000  (  47.5x)   2.0h  Fall Asleep to Jesus's Sermon on the Mount | The Most Powerful
+        401,000  (  46.1x)   2.1h  Fall Asleep to the Book of Enoch Explained | Angels, Giants & 
+
+   Rest In Faith (Kanal-Median 24,000):
+        773,000  (  32.2x)   4.0h  Fall Asleep to Isaiah Like Never Before | Peaceful Bible Readi
+        645,000  (  26.9x)   9.0h  Fall Asleep to the Story of Jesus | The Complete 4 Gospels for
+        536,000  (  22.3x)   2.5h  Fall Asleep Instantly to the Book of Daniel | Meditative Bible
+
+   Rest in Grace (Kanal-Median 1,300):
+        165,000  ( 126.9x)   3.4h  No More Thinking Tonight… Rest With Jesus
+         96,000  (  73.8x)   3.6h  Stop Thinking For A Moment, Sleep To These Psalms Tonight
+         35,000  (  26.9x)   3.5h  Fall Asleep Without Stress… Jesus Is With You
+
+   Rest in Jesus (Kanal-Median 46,500):
+        178,000  (   3.8x)   9.0h  Fall Asleep to the Story of Jesus, 4 Gospels with piano and ra
+        149,000  (   3.2x)   2.1h  The Book of John (Full Book) - Bible Reading with Piano and Ra
+         93,000  (   2.0x)   1.8h  The Book of Proverbs (Full Book) - Bible Reading with Piano an
+
+   SleepCodex (Kanal-Median 3,200):
+        883,000  ( 275.9x)   3.0h  Fall Asleep to Book of Enoch Banned from The Bible: The Fall o
+        380,000  ( 118.8x)   3.0h  Fall Asleep to Book of Enoch and 15 Books BANNED from the Bibl
+        232,000  (  72.5x)   2.8h  Fall Asleep To Book of Enoch Banned from The Bible. SHOULD Chr
+
+   The Sleep Bible (Kanal-Median 184,000):
+      1,900,000  (  10.3x)   6.7h  Fall Asleep to Gospel of John Like Never Before | Holy Bible A
+      1,100,000  (   6.0x)   5.8h  Fall Asleep to 23 Bible Stories with Deeper Meanings (that wil
+      1,000,000  (   5.4x)   5.8h  Fall Asleep to Ephesians, Galatians, Colossians & Philippians 

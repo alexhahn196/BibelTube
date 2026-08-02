@@ -1,0 +1,82 @@
+== matrix_voll.csv geschrieben (24 Zeilen) ==
+
+rolle   video_id          views dauer_h       aufl  fps  tags  caps spr_bis% spr_anteil% maxPause start_s
+TOP     Ln4_CtkZsRs      244260   4.12  1920x1080   30  NEIN  NEIN    100.0       99.8      1.6     3.1
+MEDIAN  Sym1B02N8DA      184571   3.56  1916x1080   25  NEIN  NEIN    100.0       99.2      2.6     2.0
+FLOP    NJSq3WYyrCY       12537   4.21  1920x1080   24  NEIN  NEIN     99.8       99.0      2.0     2.4
+TOP     c7zCK8BPv4E     1025839   1.89  3840x2160   30    JA  NEIN     99.9       99.9      0.5     0.1
+MEDIAN  FG8LTL1IKe0       28078   1.39  2560x1438   30    JA  NEIN     99.6       99.6      0.3     0.0
+FLOP    VwOnxdSFc3M        1465   1.41         NA   NA    JA  NEIN     99.6       99.6      0.0     0.1
+TOP     rbZHUqXDHHc     1971734   6.67         NA   NA    JA  NEIN    100.0      100.0      1.6     1.8
+MEDIAN  ZXgtJSgIvto      184350   10.0         NA   NA    JA  NEIN     99.9       97.3      2.0     0.2
+FLOP    pHDW7-nSTic       26594   3.62         NA   NA    JA  NEIN    100.0       99.9      1.3     1.5
+TOP     2VblWeklFA8      178745   8.99         NA   NA    JA  NEIN    100.0       97.9      8.5     0.6
+MEDIAN  P-skZ4uglyI       49000   1.16         NA   NA    NA    NA    100.0       99.7      1.1     3.4
+FLOP    RGkbn94Ks-4        7100   1.24         NA   NA    NA    NA    100.0       99.9      1.2     3.5
+TOP     jpjR5lSEjww      773770   3.98         NA   NA    JA  NEIN    100.0       99.3      2.2     3.4
+MEDIAN  FJbu291cR8w       25000   3.86         NA   NA    NA    NA    100.0       99.9      0.8     6.8
+FLOP    eqSO5hlFo7M        2100   1.01         NA   NA    NA    NA    100.0       99.1      2.9     7.8
+TOP     93EiQczY-YU      883669   3.02         NA   NA    JA  NEIN     99.9       98.9     15.1     0.3
+MEDIAN  RAW8bqGgRhM        3200    3.0         NA   NA    NA    NA     98.6       98.5      5.8     0.2
+FLOP    J9zUKXz7NCQ         524   2.05         NA   NA    NA    NA     99.9       99.4     16.7     0.6
+TOP     nHn4UxGedts      551916   2.35         NA   NA  NEIN  NEIN    100.0      100.0      1.6     0.1
+MEDIAN  UE1L1WE9CQc        8700   1.92         NA   NA    NA    NA    100.0      100.0      0.8     0.1
+FLOP    dgKEUBy1Czs         707   1.31         NA   NA    NA    NA    100.0      100.0      0.6     0.2
+TOP     8m6NqWG9p2o      165774   3.44         NA   NA  NEIN  NEIN    100.0       99.9      1.1     2.4
+MEDIAN  Bdj77Dfh_AU        1300   3.19         NA   NA    NA    NA    100.0      100.0      0.8     1.4
+FLOP    JYGUW6LpDio         140   1.36         NA   NA    NA    NA     99.8       99.8      0.2     0.0
+
+== TOP vs MEDIAN vs FLOP: Median je Kennzahl ==
+kennzahl                  TOP       MEDIAN         FLOP
+Laufzeit h               3.71         3.09         1.39
+Views              662,843.00    26,539.00     1,782.50
+Like-Rate %              1.89         1.98         3.36
+Sprache bis %          100.00       100.00        99.95
+Sprechanteil %          99.85        99.65        99.70
+max Pause s              1.60         0.95         1.25
+
+== Laufzeit TOP vs FLOP je Kanal ==
+UC1AOmfQ2hsB0G0QBw5iCaUQ  TOP= 1.89h  FLOP= 1.41h  -> TOP laenger
+UCBnoLXdJ9tIR-8vjSdgiYAw  TOP= 4.12h  FLOP= 4.21h  -> FLOP laenger
+UCMbWbGbTG23WSa5M6VJgctw  TOP= 3.98h  FLOP= 1.01h  -> TOP laenger
+UCP7dYl63OzMZXZiWlOCcv1g  TOP= 2.35h  FLOP= 1.31h  -> TOP laenger
+UC_oYrNMZ081r-ZgxY-883_w  TOP= 6.67h  FLOP= 3.62h  -> TOP laenger
+UCiKc3XR_CAwWx1rtLFQnlvQ  TOP= 3.02h  FLOP= 2.05h  -> TOP laenger
+UCiolk5zOhJjJta3iS6HJDCw  TOP= 3.44h  FLOP= 1.36h  -> TOP laenger
+UCo6ArZxfwPQ4uSCFiqfDK9A  TOP= 8.99h  FLOP= 1.24h  -> TOP laenger
+
+== Tags / Untertitel je Kanal (belegte Videos) ==
+UC1AOmfQ2hsB0G0QBw5iCaUQ
+   tags: TOP=JA, MEDIAN=JA, FLOP=JA
+   caps: TOP=NEIN, MEDIAN=NEIN, FLOP=NEIN
+UCBnoLXdJ9tIR-8vjSdgiYAw
+   tags: TOP=NEIN, MEDIAN=NEIN, FLOP=NEIN
+   caps: TOP=NEIN, MEDIAN=NEIN, FLOP=NEIN
+UCMbWbGbTG23WSa5M6VJgctw
+   tags: TOP=JA
+   caps: TOP=NEIN
+UCP7dYl63OzMZXZiWlOCcv1g
+   tags: TOP=NEIN
+   caps: TOP=NEIN
+UC_oYrNMZ081r-ZgxY-883_w
+   tags: TOP=JA, MEDIAN=JA, FLOP=JA
+   caps: TOP=NEIN, MEDIAN=NEIN, FLOP=NEIN
+UCiKc3XR_CAwWx1rtLFQnlvQ
+   tags: TOP=JA
+   caps: TOP=NEIN
+UCiolk5zOhJjJta3iS6HJDCw
+   tags: TOP=NEIN
+   caps: TOP=NEIN
+UCo6ArZxfwPQ4uSCFiqfDK9A
+   tags: TOP=JA
+   caps: TOP=NEIN
+
+== Kanal-Streuung (aus Listing, alle Videos >300s) ==
+UC1AOmfQ2hsB0G0QBw5iCaUQ  n= 54  min=    1,400  median=    25,500  max=1,000,000  faktor=  714.3x  dauer_median=1.86h
+UCBnoLXdJ9tIR-8vjSdgiYAw  n=  8  min=   12,000  median=   115,500  max=  244,000  faktor=   20.3x  dauer_median=4.16h
+UCMbWbGbTG23WSa5M6VJgctw  n=120  min=    2,100  median=    24,000  max=  773,000  faktor=  368.1x  dauer_median=2.49h
+UCP7dYl63OzMZXZiWlOCcv1g  n= 75  min=      707  median=     8,700  max=  551,000  faktor=  779.3x  dauer_median=2.06h
+UC_oYrNMZ081r-ZgxY-883_w  n= 37  min=   26,000  median=   184,000  max=1,900,000  faktor=   73.1x  dauer_median=6.02h
+UCiKc3XR_CAwWx1rtLFQnlvQ  n=131  min=      524  median=     3,200  max=  883,000  faktor= 1685.1x  dauer_median=3.01h
+UCiolk5zOhJjJta3iS6HJDCw  n= 13  min=      140  median=     1,300  max=  165,000  faktor= 1178.6x  dauer_median=3.19h
+UCo6ArZxfwPQ4uSCFiqfDK9A  n= 16  min=    7,100  median=    46,500  max=  178,000  faktor=   25.1x  dauer_median=2.28h

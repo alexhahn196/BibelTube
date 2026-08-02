@@ -1,0 +1,43 @@
+# Kanalliste fuer teardown_batch.sh
+# Aufruf: ./teardown_batch.sh kanaele.txt
+#
+# Auswahl nach Kontrast-Design: Spitzenreiter, solides Mittelfeld
+# und Kanaele mit extremer Streuung (dort ist der Lerneffekt am groessten).
+# Pro Kanal werden automatisch Top-, Median- und Flop-Video vermessen.
+
+# ---- SPITZENREITER: Blaupause -------------------------------------
+# Hush Little Lamb - 12 Wochen alt, Median 113K, KEIN Flop bisher.
+# Delta-Wellen unter der Lesung, 4h-Format.
+https://www.youtube.com/channel/UCBnoLXdJ9tIR-8vjSdgiYAw
+
+# Grace Beyond Prayer - 112K Ø-Views bei 1 Upload/Monat.
+# Bestes Aufwand-Ertrag-Verhaeltnis der Nische.
+https://www.youtube.com/channel/UC1AOmfQ2hsB0G0QBw5iCaUQ
+
+# The Sleep Bible - 238K Ø-Views, hoechster Schnitt ueberhaupt.
+# Laufzeiten bis 10h, App-Upsell im Geschaeftsmodell.
+https://www.youtube.com/channel/UC_oYrNMZ081r-ZgxY-883_w
+
+# ---- ZWEITE AUDIO-SIGNATUR: Piano + Regen -------------------------
+# Rest in Jesus - Median 45.654 bei nur 16 Videos, sehr konsistent.
+# Anderes Klangbett als Hush Little Lamb -> direkter Vergleich.
+https://www.youtube.com/channel/UCo6ArZxfwPQ4uSCFiqfDK9A
+
+# ---- HOHER DURCHSATZ: laeuft trotz Masse -------------------------
+# Rest In Faith - 1,08 Mio. Views/Monat, 124 Videos.
+# Zeigt, ob Qualitaet bei Volumen haltbar ist.
+https://www.youtube.com/channel/UCMbWbGbTG23WSa5M6VJgctw
+
+# ---- EXTREME STREUUNG: der wertvollste Datenpunkt -----------------
+# SleepCodex - Median 2.885, aber ein Video mit 882K (Faktor 300!).
+# Gleiche Produktion, voellig anderes Ergebnis -> reines Signal.
+https://www.youtube.com/channel/UCiKc3XR_CAwWx1rtLFQnlvQ
+
+# Night Psalms - Median 9.543, Top 551K (Book of Enoch).
+# Zweiter Beleg fuer denselben Effekt.
+https://www.youtube.com/channel/UCP7dYl63OzMZXZiWlOCcv1g
+
+# ---- NEUSTARTER: laeuft aktuell an ------------------------------
+# Rest in Grace - 8 Wochen alt, 286K Views/Monat.
+# Frischester Vergleichspunkt fuer deinen eigenen Start.
+https://www.youtube.com/channel/UCiolk5zOhJjJta3iS6HJDCw

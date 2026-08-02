@@ -1,0 +1,12 @@
+{
+  "_kommentar": "Felder, die yt-dlp wegen YouTube-Ratelimit (429/Bot-Check) auf dieser Maschine nicht mehr liefern konnte. Quelle: NexLev youtube_video_details (unabhaengiger Zugriffsweg, nicht ueber die IP dieses Containers). 'tags' = Anzahl keywords, 'captions' = hasCaption (echte Untertitelspur).",
+  "VwOnxdSFc3M": {"dauer_s": 5075,  "views": 1465,    "likes": 55,    "tags_n": 25, "captions": "NEIN", "kategorie": "People & Blogs"},
+  "rbZHUqXDHHc": {"dauer_s": 24013, "views": 1971734, "likes": 49632, "tags_n": 30, "captions": "NEIN", "kategorie": "People & Blogs"},
+  "ZXgtJSgIvto": {"dauer_s": 36000, "views": 184350,  "likes": 3655,  "tags_n": 28, "captions": "NEIN", "kategorie": "People & Blogs"},
+  "pHDW7-nSTic": {"dauer_s": 13018, "views": 26594,   "likes": 789,   "tags_n": 25, "captions": "NEIN", "kategorie": "People & Blogs"},
+  "2VblWeklFA8": {"dauer_s": 32373, "views": 178745,  "likes": 3100,  "tags_n": 31, "captions": "NEIN", "kategorie": "People & Blogs"},
+  "jpjR5lSEjww": {"dauer_s": 14320, "views": 773770,  "likes": 8815,  "tags_n": 26, "captions": "NEIN", "kategorie": "Education"},
+  "93EiQczY-YU": {"dauer_s": 10885, "views": 883669,  "likes": 10688, "tags_n": 14, "captions": "NEIN", "kategorie": "People & Blogs"},
+  "nHn4UxGedts": {"dauer_s": 8457,  "views": 551916,  "likes": 11332, "tags_n": 0,  "captions": "NEIN", "kategorie": "People & Blogs"},
+  "8m6NqWG9p2o": {"dauer_s": 12392, "views": 165774,  "likes": 3409,  "tags_n": 0,  "captions": "NEIN", "kategorie": "Education"}
+}
