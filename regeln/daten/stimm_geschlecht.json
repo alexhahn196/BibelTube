@@ -1,0 +1,149 @@
+{
+ "stand": "2026-08-03",
+ "frage": "Gibt es weibliche Stimmen in der christlichen Einschlaf-Nische und wie performen sie?",
+ "A1_zielkanal": {
+  "kanal": "Fall Asleep with God's Word (UC_h_WOBtTCdBU5UnNCEvEWg)",
+  "gegruendet": "2026-07-09",
+  "erster_upload": "2026-07-13",
+  "alter": "3 Wochen",
+  "videos": 5,
+  "abos": 3,
+  "views_gesamt": 490,
+  "views_je_video": [
+   404,
+   117,
+   32,
+   11,
+   7
+  ],
+  "median": 32,
+  "laengen": [
+   "2:35:20",
+   "3:23:49",
+   "23:05",
+   "29:24",
+   "1:50:40"
+  ],
+  "ueber_3h": 1,
+  "format": "Berean Standard Bible, Huette + Regen, teils ohne Musik",
+  "STIMME": "Hauptvideo (404 Views, Gospel of John): MAENNLICH, menschlich, hohe Konfidenz. Nur 1 Video (7 Views, 'Soft Female Voice' im Titel): WEIBLICH, menschlich, hohe Konfidenz.",
+  "fazit": "Praemisse falsch - das ist KEIN Frauenstimmen-Kanal, sondern ein gemischter. Als Test zusaetzlich unbrauchbar: 3 Wochen alt, 4 von 5 Videos unter 3h, 3 Videos am selben Tag."
+ },
+ "A2_weitere_frauenstimmen_kanaele": {
+  "SOAKSTREAM": {
+   "id": "UCUyMjXGpwWxISzMAZ7mZ73g",
+   "abos": 918000,
+   "videos": 548,
+   "views_gesamt": 164330349,
+   "seit": "2019-11-22",
+   "schnitt_je_video": 299873,
+   "top_videos": [
+    1464812,
+    544164,
+    396027,
+    337117,
+    283400,
+    201255
+   ],
+   "beleg": "'FEMALE VOICE' explizit im Videotitel",
+   "format": "Healing Scriptures/Soaking, Verse mit Musik - anderes Sub-Format"
+  },
+  "Calming_Truth": {
+   "top_video": 684939,
+   "beleg": "'Female Voice' im Titel",
+   "laenge": "9:59:56"
+  },
+  "Loisa_ASMR": {
+   "top_videos": [
+    149610,
+    75702,
+    54381
+   ],
+   "format": "gefluesterte Bibel-ASMR",
+   "aktiv": "letzte Videos 1-8 Monate alt"
+  },
+  "Melody_Joy_Williams": {
+   "top_video": 397964
+  },
+  "Alicia_Pineda": {
+   "top_video": 11346
+  },
+  "Daily_Bread_ASMR": {
+   "top_video": 1078233,
+   "geschlecht": "UNGEPRUEFT - Watch-Tool Timeout"
+  },
+  "fazit": "Frauenstimmen existieren in der Nische und reichen bis 1,46 Mio. Views je Video. NICHT ungetestet, NICHT gescheitert."
+ },
+ "A3_vergleich": {
+  "maennlich_per_audio_verifiziert": {
+   "n": 7,
+   "faelle": {
+    "A_HushLittleLamb_245K": "synthetisch",
+    "A_HushLittleLamb_201K": "synthetisch",
+    "B_RestInGrace_166K": "synthetisch",
+    "C_TheBibleSacred_113": "synthetisch",
+    "F_GodsPeacefulSleep_23": "synthetisch",
+    "G_TheSilentShepherd_156": "menschlich",
+    "DivineRest_1888269": "menschlich",
+    "FallAsleepGodsWord_404": "menschlich"
+   }
+  },
+  "weiblich_per_audio_verifiziert": {
+   "n": 1,
+   "faelle": {
+    "FallAsleepGodsWord_7": "menschlich"
+   }
+  },
+  "weiblich_per_titel_kanalbeschreibung": {
+   "n": 4,
+   "max_views": 1464812
+  },
+  "kernaussage": "In der EXAKTEN Formel-Nische (gemalte Nachtszene + durchgehende Bibellesung, Neustarter 2026) sind 8 von 8 per Audio geprueften Stimmen maennlich. Frauenstimmen sind dort nicht gescheitert - sie kommen schlicht nicht vor. In benachbarten christlichen Sub-Formaten (Soaking, ASMR) sind sie sehr erfolgreich."
+ },
+ "A4_gegentest_weltliche_sleep_nische": {
+  "methode": "Suche 'sleep story bedtime story for grown ups long', nach Views sortiert, n=20",
+  "maennlich": {
+   "DanJones": [
+    2348594,
+    35396
+   ],
+   "GetSleepy_ThomasJones": [
+    1189671,
+    465802,
+    460474,
+    141548,
+    39821,
+    28326,
+    5943
+   ],
+   "JasonStephenson": [
+    398550
+   ],
+   "StephenDalton": [
+    322591,
+    104667,
+    62722,
+    55803
+   ]
+  },
+  "weiblich": {
+   "MichellesSanctuary": [
+    764335,
+    42580,
+    1385
+   ]
+  },
+  "unklar": {
+   "VictorianSleepStories": [
+    118573
+   ],
+   "SoothingPod": [
+    299116,
+    67812
+   ]
+  },
+  "ergebnis": "Maennerstimmen sind auch in der weltlichen Sleep-Story-Nische deutlich ueberrepraesentiert - nach Kanalzahl UND nach Views. Frauenstimmen dominieren dort NICHT.",
+  "schlussfolgerung": "Der Gegentest faellt NEGATIV aus: Die Maennerstimmen-Haeufung ist KEINE Konvention allein der christlichen Nische. Ausnahme: das ASMR-/Fluester-Subgenre, dort fuehren weibliche Kanaele."
+ },
+ "EMPFEHLUNG": "Keine Umstellung auf weibliche Stimme empfohlen - aber ausdruecklich NICHT, weil sie nicht funktioniert. Begruendung: (a) in der exakten Zielformel 8/8 maennlich, (b) der weltliche Gegentest zeigt dieselbe Maennerhaeufung, also kein Hinweis auf eine gegen die Publikumspraeferenz laufende Konvention, (c) eine Stimmumstellung waere eine zusaetzliche Variable in einem Setup, dessen Trefferquote ohnehin nur bei 10/21 liegt. Weiblich bleibt dokumentierte Testoption mit Pruefkriterium."
+}

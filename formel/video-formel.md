@@ -205,6 +205,43 @@ Wörter vor dem Rendern gegenhören, bei Bedarf per Lexikon/SSML korrigieren.
 > Wortenden, gelegentlich mechanische Kadenz und sehr repetitive Phrasenmelodie — bei 245.000
 > Views. Falsche Betonung ist das Problem, nicht synthetische Prosodie.
 
+### Männlich oder weiblich? *(geprüft 2026-08-03)*
+
+**Empfehlung: männlich bleiben — aber ausdrücklich NICHT, weil weibliche Stimmen nicht
+funktionieren.** Sie funktionieren nachweislich.
+
+**Was belegt ist:**
+- In der **exakten Zielformel** (gemalte Nachtszene + durchgehende Bibellesung) sind
+  **8 von 8** per Audio geprüften Stimmen männlich — inklusive Divine Rest (menschlich,
+  männlich, **1.888.269 Views** im formatgleichen „Gospel of John mit Regen").
+- Frauenstimmen sind in der christlichen Einschlaf-Nische **sehr erfolgreich, nur in anderen
+  Sub-Formaten**: SOAKSTREAM (**918.000 Abos, 548 Videos, 164,3 Mio. Views**, Ø ~300.000 je
+  Video) bewirbt „FEMALE VOICE" explizit im Titel; Spitzenvideo **1.464.812**. Dazu
+  Calming Truth (684.939), Melody Joy Williams (397.964), Loisa ASMR (149.610).
+  Das ist **größer als jeder Männerstimmen-Kanal in unserem Datensatz.**
+- **Der Gegentest fällt negativ aus:** In der weltlichen Sleep-Story-Nische (n=20 Top-Videos)
+  dominieren ebenfalls Männerstimmen — Dan Jones 2.348.594, Get Sleepy/Thomas Jones 1.189.671,
+  Jason Stephenson 398.550, Stephen Dalton 322.591 gegen Michelle's Sanctuary (weiblich)
+  764.335. Die Männerhäufung ist also **keine Eigenheit der christlichen Nische** und liefert
+  keinen Hinweis auf eine Konvention, die gegen die Publikumspräferenz läuft.
+  Einzige Ausnahme: das **ASMR-/Flüster-Subgenre**, dort führen weibliche Kanäle.
+
+**Die drei Gründe für „männlich" sind damit:** (a) 8/8 in der Zielformel, (b) kein Hinweis aus
+dem Gegentest auf ungenutztes Potenzial, (c) eine Stimmumstellung wäre eine zusätzliche
+Variable in einem Setup, dessen Trefferquote ohnehin nur bei 10/21 liegt.
+
+**Weiblich ist damit nicht widerlegt, sondern in dieser Formel schlicht ungetestet.**
+*Prüfkriterium:* Ab Video 10 zwei bis drei Videos mit identischem Bild, Titelmuster und Länge,
+nur die Stimme weiblich. Wenn deren Median-Views nach 30 Tagen nicht unter 70 % der
+Männerstimmen-Videos liegen, ist die Stimme auch hier kein Faktor — dann entscheidet die
+Verfügbarkeit der besseren TTS-Stimme, nicht das Geschlecht.
+
+> **Randnotiz zur Recherche:** Der als „einziger Kanal mit weiblicher Stimme" gemeldete
+> Kanal *Fall Asleep with God's Word* ist keiner. Sein Hauptvideo (404 Views) ist **männlich**
+> gesprochen; nur ein einziges Video (7 Views) nutzt eine Frauenstimme. Er ist ohnehin kein
+> Testfall: 3 Wochen alt, 5 Videos, 3 Abos, 490 Views gesamt, 4 von 5 Videos unter der
+> 3-Stunden-Schwelle, 3 davon am selben Tag hochgeladen.
+
 ---
 
 ## 6. RHYTHMUS
