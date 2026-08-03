@@ -1,0 +1,44 @@
+{
+ "v2a": {
+  "name": "Dramatic Whisper Male",
+  "id": "b879fcec88c542b78d2eb4462e4d4c59",
+  "speed": 0.64,
+  "dauer_stimme_s": 312.9,
+  "dauer_datei_s": 322.9,
+  "wpm": 136.5,
+  "stimme_ueber_bett_db": 12.1,
+  "peak_dbfs": -0.3,
+  "naehte": [
+   161.28,
+   306.29
+  ]
+ },
+ "v2b": {
+  "name": "Henry (British Narrator)",
+  "id": "55f0cafef00f4e16808bcd75c4b41a6f",
+  "speed": 0.75,
+  "dauer_stimme_s": 306.3,
+  "dauer_datei_s": 316.3,
+  "wpm": 139.5,
+  "stimme_ueber_bett_db": 12.0,
+  "peak_dbfs": -0.3,
+  "naehte": [
+   154.05,
+   301.66
+  ]
+ },
+ "v2c": {
+  "name": "Calm Meditation Voice",
+  "id": "14c13e72d4644b0dbd2f147df20f6d80",
+  "speed": 0.92,
+  "dauer_stimme_s": 303.5,
+  "dauer_datei_s": 313.5,
+  "wpm": 140.7,
+  "stimme_ueber_bett_db": 12.0,
+  "peak_dbfs": -2.6,
+  "naehte": [
+   155.12,
+   299.19
+  ]
+ }
+}

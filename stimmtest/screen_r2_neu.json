@@ -1,0 +1,58 @@
+[
+ {
+  "name": "Gentle Young Male (poetry)",
+  "id": "bc769f00758d499db31af23afa9e1c83",
+  "wpm": 181.5,
+  "f0": 78.7,
+  "var": 2.35,
+  "hf": -11.3
+ },
+ {
+  "name": "Warm Bedtime Storyteller",
+  "id": "9e9b0e48ff9d42a996e8391bd6029962",
+  "wpm": 202.2,
+  "f0": 94.7,
+  "var": 1.53,
+  "hf": -21.5
+ },
+ {
+  "name": "SLEEP NOW2",
+  "id": "8a86eed172f94ab7ae029a8424ed5787",
+  "wpm": 181.5,
+  "f0": 106.9,
+  "var": 2.67,
+  "hf": -21.2
+ },
+ {
+  "name": "Soothing Melodies",
+  "id": "810d395f981f4d82bffc856d3e027e61",
+  "wpm": 185.4,
+  "f0": 125.6,
+  "var": 2.69,
+  "hf": -12.3
+ },
+ {
+  "name": "History Voice",
+  "id": "fbac16744ffa49a9a51c29b1bf19242a",
+  "wpm": 189.9,
+  "f0": 110.6,
+  "var": 3.97,
+  "hf": -14.6
+ },
+ {
+  "name": "Sleep",
+  "id": "6613cd1fe427483e8602dd3891dafb3c",
+  "wpm": 187.5,
+  "f0": 105.6,
+  "var": 2.53,
+  "hf": -16.6
+ },
+ {
+  "name": "asmr man2",
+  "id": "d47f9aab15db47dfb91aeeb6ee3e3004",
+  "wpm": 183.1,
+  "f0": 80.5,
+  "var": 2.08,
+  "hf": -9.0
+ }
+]

@@ -6,3 +6,9 @@ stimmtest/aufloesung.txt
 stimmtest/*.wav
 stimmtest/voice_katalog_roh.json
 stimmtest/voice_kandidaten.json
+stimmtest/probe2/
+stimmtest/probe3/
+stimmtest/out_v2/
+stimmtest/hoertest_v2/
+stimmtest/aufloesung_v2.txt
+stimmtest/musik/

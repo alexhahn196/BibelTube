@@ -1,0 +1,35 @@
+{
+ "01": {
+  "wpm": 145.9,
+  "f0_med": 80.1,
+  "f0_iqr": 12.6,
+  "tonvariation_halbtoene": 2.88,
+  "satzpause_med": 0.43,
+  "verspause_med": 0.88,
+  "verspausen_pro_min": 7.2,
+  "dynamik_db": 15.3,
+  "hf_zu_grundton_db": -11.6
+ },
+ "02": {
+  "wpm": 167.4,
+  "f0_med": 86.3,
+  "f0_iqr": 8.0,
+  "tonvariation_halbtoene": 1.73,
+  "satzpause_med": 0.31,
+  "verspause_med": 0.91,
+  "verspausen_pro_min": 4.5,
+  "dynamik_db": 11.9,
+  "hf_zu_grundton_db": -19.9
+ },
+ "03": {
+  "wpm": 149.3,
+  "f0_med": 100.3,
+  "f0_iqr": 20.8,
+  "tonvariation_halbtoene": 2.57,
+  "satzpause_med": 0.37,
+  "verspause_med": 0.76,
+  "verspausen_pro_min": 2.4,
+  "dynamik_db": 18.2,
+  "hf_zu_grundton_db": -13.8
+ }
+}

@@ -1,0 +1,98 @@
+[
+ {
+  "name": "Dramatic Whisper Male",
+  "id": "b879fcec88c542b78d2eb4462e4d4c59",
+  "wpm": 200.3,
+  "f0": 75.1,
+  "var": 2.33,
+  "hf": -3.1
+ },
+ {
+  "name": "Whisper",
+  "id": "bc619a486db44bdebc4c4d8b3b1e8257",
+  "wpm": 158.7,
+  "f0": 160.1,
+  "var": 3.76,
+  "hf": -3.6
+ },
+ {
+  "name": "Henry (British Narrator)",
+  "id": "55f0cafef00f4e16808bcd75c4b41a6f",
+  "wpm": 190.7,
+  "f0": 81.0,
+  "var": 3.2,
+  "hf": -7.6
+ },
+ {
+  "name": "Soft Soothing Whisper",
+  "id": "a810c199030f40bd835a6ab5715567b0",
+  "wpm": 131.6,
+  "f0": 132.3,
+  "var": 2.93,
+  "hf": -7.6
+ },
+ {
+  "name": "Jameson",
+  "id": "0368426537974d01abf6bf14a80f5cd9",
+  "wpm": 188.7,
+  "f0": 79.6,
+  "var": 2.43,
+  "hf": -8.8
+ },
+ {
+  "name": "Demo",
+  "id": "bcb64d09e3f94f3f9a5e3989b36724f2",
+  "wpm": 217.5,
+  "f0": 87.8,
+  "var": 3.13,
+  "hf": -11.7
+ },
+ {
+  "name": "Nalin Meditation Voice",
+  "id": "d103cab63e204982924fbe58ad3c7473",
+  "wpm": 163.0,
+  "f0": 109.4,
+  "var": 2.76,
+  "hf": -13.2
+ },
+ {
+  "name": "Calm Meditation Voice",
+  "id": "14c13e72d4644b0dbd2f147df20f6d80",
+  "wpm": 153.1,
+  "f0": 81.9,
+  "var": 2.42,
+  "hf": -14.2
+ },
+ {
+  "name": "Calm History for Sleep",
+  "id": "ec97c6ec8b994c62a4e02bb0c80b8303",
+  "wpm": 201.6,
+  "f0": 100.9,
+  "var": 3.68,
+  "hf": -21.8
+ },
+ {
+  "name": "SLEEP NOW",
+  "id": "745dbe6bddf84ba6baec8c4654af3275",
+  "wpm": 169.2,
+  "f0": 105.6,
+  "var": 2.8,
+  "hf": -22.2
+ },
+ {
+  "name": "Calm Sleep Narrator",
+  "id": "22dfd973f6054822b0c03dcdc51fdf14",
+  "wpm": 191.2,
+  "f0": 95.2,
+  "var": 2.31,
+  "hf": -22.4
+ },
+ {
+  "name": "liam-chill philVf -Calm ",
+  "id": "47b9d8e1e11f4e02b5a3ecfe92045ebd",
+  "wpm": 194.2,
+  "f0": 105.6,
+  "var": 2.14,
+  "hf": -23.5
+ }
+]
