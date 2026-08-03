@@ -62,7 +62,12 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
 
 ### M4 — Titel adressiert den Gefühlszustand des Hörers
 - [ ] Titel nennt Zustand („You're Tired", „If You're Anxious", „No More Thinking") + Zusage + „Tonight"?
-- **Beleg:** A 8/8 und B 13/13 Titel folgen diesem Muster. Verlierer-Mehrheit nicht:
+- **Ausgezählt 2026-08-02:** Zustands-Anker in **9 von 10 Treffern** (>30K). Ein konkreter
+  Eigenname (Buch/Kapitel) dagegen nur in **1 von 21** Gewinner-Titeln — bei B in 0 von 13.
+  Das steht im Gegensatz zu Lauf 1, wo alle Treffer über 20× einen Eigennamen trugen; dort
+  ging es um etablierte Kanäle mit Such-Traffic. **Für einen Neustarter trägt der Zustand,
+  nicht der Eigenname.**
+- **Beleg:** A 8/8 und B 13/13 Titel folgen dem Zustand-plus-Zusage-Muster. Verlierer-Mehrheit nicht:
   D („GOD SAYS: …" Drohkulisse), E (Frequenz-Titel „963Hz"), H (History-Titel), G gemischt.
 - **Grenze der Regel:** C/F kopieren das Muster wörtlich und scheitern — der Titel muss zur
   eigenen Serie gehören, nicht von fremden Kanälen geklaut sein (siehe V3).
@@ -82,8 +87,13 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   Schriftbezug. D droht (*„Before you scroll away, God wants you to hear this"*). 4/8 Verlierer
   klar generisch/maschinell; bei A+B kein einziger solcher Befund in 4 geprüften Transkripten.
 
-### M6 — Erst das Video tragfähig machen, dann hochladen: Laufzeit ≥ 2,5 h
-- [ ] Video ist mindestens 2,5 h lang (Zielband 3–4 h)?
+### M6 — Erst das Video tragfähig machen, dann hochladen: Laufzeit ≥ 3,0 h
+> **Nachgeschärft 2026-08-02** (Details: `formel/video-formel.md` P2). Schwelle von 2,5 h auf
+> 3,0 h angehoben, und die Regel ist ein **Tor, kein Motor**: B #8 hat 3,2 h, dieselbe Serie,
+> denselben Thumbnail-Text wie der 166K-Treffer #7 — und 1.300 Views. Innerhalb der Klasse
+> ≥3 h liegt die Spanne bei Faktor 297. Länge qualifiziert das Video, sie erklärt den Treffer
+> nicht.
+- [ ] Video ist mindestens 3,0 h lang (Zielband 3,2–4,0 h)?
 - **Beleg:** Alle 11 Videos beider Gewinner mit >30K Views sind ≥3,2 h. B's Breakout fällt
   exakt mit dem Formatwechsel zusammen: Videos #1–6 (31.05.–21.06., 1,1–2,8 h) blieben alle
   <2.600 Views; #7 am 25.06. springt auf 3,4 h und 166K, danach durchgehend 3,2–3,6 h mit
