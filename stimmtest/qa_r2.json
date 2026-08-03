@@ -1,0 +1,77 @@
+{
+ "r2_konv": {
+  "name": "Calm Conversational Narrator",
+  "id": "e20aab7ac410488daa28a89a4e693509",
+  "speed": 0.74,
+  "dauer_min": 4.69,
+  "wpm": 152.5,
+  "naht_zeiten_s": [
+   134.88
+  ],
+  "naht_pegel_db": [
+   4.46
+  ],
+  "abstand_stimme_bett_db": 12.0,
+  "peak_mix_dbfs": -2.7
+ },
+ "r2_prof": {
+  "name": "Calm Professional Narrator",
+  "id": "56446c2a40c141589c9143940ec88c17",
+  "speed": 0.62,
+  "dauer_min": 4.61,
+  "wpm": 155.0,
+  "naht_zeiten_s": [
+   136.72
+  ],
+  "naht_pegel_db": [
+   2.86
+  ],
+  "abstand_stimme_bett_db": 12.0,
+  "peak_mix_dbfs": -2.6
+ },
+ "r2_nath": {
+  "name": "Nathan English Man (US)",
+  "id": "bbb58d698b5f46719fd04688dfac7359",
+  "speed": 0.77,
+  "dauer_min": 4.88,
+  "wpm": 146.6,
+  "naht_zeiten_s": [
+   139.75
+  ],
+  "naht_pegel_db": [
+   5.53
+  ],
+  "abstand_stimme_bett_db": 12.0,
+  "peak_mix_dbfs": -0.8
+ },
+ "r2_jame": {
+  "name": "Jameson",
+  "id": "0368426537974d01abf6bf14a80f5cd9",
+  "speed": 0.75,
+  "dauer_min": 4.79,
+  "wpm": 149.3,
+  "naht_zeiten_s": [
+   142.63
+  ],
+  "naht_pegel_db": [
+   8.55
+  ],
+  "abstand_stimme_bett_db": 12.0,
+  "peak_mix_dbfs": -0.3
+ },
+ "r2_lows": {
+  "name": "Low and Soft Male",
+  "id": "d610c23e0b6c48e79b9a6382a818f33d",
+  "speed": 0.66,
+  "dauer_min": 4.89,
+  "wpm": 146.2,
+  "naht_zeiten_s": [
+   141.41
+  ],
+  "naht_pegel_db": [
+   5.03
+  ],
+  "abstand_stimme_bett_db": 12.0,
+  "peak_mix_dbfs": -4.0
+ }
+}

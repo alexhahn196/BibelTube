@@ -1,0 +1,32 @@
+[
+ {
+  "key": "r2_konv",
+  "name": "Calm Conversational Narrator",
+  "id": "e20aab7ac410488daa28a89a4e693509",
+  "speed": 0.74
+ },
+ {
+  "key": "r2_prof",
+  "name": "Calm Professional Narrator",
+  "id": "56446c2a40c141589c9143940ec88c17",
+  "speed": 0.62
+ },
+ {
+  "key": "r2_nath",
+  "name": "Nathan English Man (US)",
+  "id": "bbb58d698b5f46719fd04688dfac7359",
+  "speed": 0.77
+ },
+ {
+  "key": "r2_jame",
+  "name": "Jameson",
+  "id": "0368426537974d01abf6bf14a80f5cd9",
+  "speed": 0.75
+ },
+ {
+  "key": "r2_lows",
+  "name": "Low and Soft Male",
+  "id": "d610c23e0b6c48e79b9a6382a818f33d",
+  "speed": 0.66
+ }
+]

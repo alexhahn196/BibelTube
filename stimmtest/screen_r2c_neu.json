@@ -1,0 +1,101 @@
+[
+ {
+  "name": "Calm Meditation Voice",
+  "id": "430c7abfc80d45e194d1901d6731dfad",
+  "wpm": 121.3,
+  "f0": 100.3,
+  "var": 2.76,
+  "hf": -17.5,
+  "tasks": 40
+ },
+ {
+  "name": "Calm Reflective Voice",
+  "id": "c306b7f765be42a1a22e8e9aea8a0594",
+  "wpm": 194.2,
+  "f0": 122.4,
+  "var": 4.94,
+  "hf": -17.2,
+  "tasks": 1446
+ },
+ {
+  "name": "Gentle Voice of Christ ",
+  "id": "20374da20e184c48a45dc6ae5731729e",
+  "wpm": 199.2,
+  "f0": 72.2,
+  "var": 1.81,
+  "hf": -17.1,
+  "tasks": 313
+ },
+ {
+  "name": "Calm and Gentle Voice",
+  "id": "7213baebcf1b4b1a8c0ec010c8847f9c",
+  "wpm": 186.3,
+  "f0": 88.8,
+  "var": 2.71,
+  "hf": -13.5,
+  "tasks": 82
+ },
+ {
+  "name": "Gentle Reflective Voice",
+  "id": "0c07dfcd2b584decaf60576a3e3719b6",
+  "wpm": 183.8,
+  "f0": 92.5,
+  "var": 4.8,
+  "hf": -12.0,
+  "tasks": 44
+ },
+ {
+  "name": "Gentle Wisdom Voice",
+  "id": "61ce690cb33842a6af01a6a78e6da06d",
+  "wpm": 202.5,
+  "f0": 105.0,
+  "var": 3.22,
+  "hf": -15.8,
+  "tasks": 42
+ },
+ {
+  "name": "Calm Bedtime Narrator",
+  "id": "439f0ae114414a179bbae0a16e5abe0b",
+  "wpm": 236.0,
+  "f0": 133.1,
+  "var": 2.19,
+  "hf": 6.1,
+  "tasks": 16
+ },
+ {
+  "name": "Gentle Bedtime Storyteller",
+  "id": "75f9adc6acf746aeb2cf7f8af5b4d1cf",
+  "wpm": 211.2,
+  "f0": 99.7,
+  "var": 2.45,
+  "hf": -24.1,
+  "tasks": 6
+ },
+ {
+  "name": "Calm Meditation Guide",
+  "id": "b63fa720ff0d412aae96de832098c0e4",
+  "wpm": 142.9,
+  "f0": 89.9,
+  "var": 2.67,
+  "hf": -19.0,
+  "tasks": 2
+ },
+ {
+  "name": "w2w",
+  "id": "4746f1b456494387993af9041d0516c4",
+  "wpm": 176.5,
+  "f0": 107.5,
+  "var": 3.02,
+  "hf": -21.3,
+  "tasks": 40667
+ },
+ {
+  "name": "Calm Professional Narrator",
+  "id": "56446c2a40c141589c9143940ec88c17",
+  "wpm": 234.1,
+  "f0": 100.3,
+  "var": 4.21,
+  "hf": -17.4,
+  "tasks": 388
+ }
+]

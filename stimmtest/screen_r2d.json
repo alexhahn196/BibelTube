@@ -1,0 +1,66 @@
+[
+ {
+  "name": "Calm Meditation Voice",
+  "id": "430c7abfc80d45e194d1901d6731dfad",
+  "wpm": 121.3,
+  "f0": 100.3,
+  "var": 2.76,
+  "hf": -17.5,
+  "tasks": 40,
+  "rhotik": "0/5"
+ },
+ {
+  "name": "Narrator",
+  "id": "bf2d71a2beb7466caaf8a5aa71f23d40",
+  "wpm": 170.9,
+  "f0": 109.4,
+  "var": 4.8,
+  "hf": -14.2,
+  "rhotik": "0/5"
+ },
+ {
+  "name": "Low and Soft Male",
+  "id": "d610c23e0b6c48e79b9a6382a818f33d",
+  "wpm": 220.4,
+  "f0": 98.6,
+  "var": 2.61,
+  "hf": -15.9,
+  "rhotik": "4/5"
+ },
+ {
+  "name": "Calm Conversational Narrator",
+  "id": "e20aab7ac410488daa28a89a4e693509",
+  "wpm": 197.1,
+  "f0": 108.7,
+  "var": 4.45,
+  "hf": -11.5,
+  "rhotik": "5/5"
+ },
+ {
+  "name": "Calm Deep Voice1",
+  "id": "cf4cf1ef2e704655b42b712ca51a69d1",
+  "wpm": 196.3,
+  "f0": 97.4,
+  "var": 2.88,
+  "hf": -16.8,
+  "rhotik": "0/5"
+ },
+ {
+  "name": "Nathan: English Man (US) - Audiobook",
+  "id": "bbb58d698b5f46719fd04688dfac7359",
+  "wpm": 179.9,
+  "f0": 90.4,
+  "var": 3.27,
+  "hf": -12.6,
+  "rhotik": "5/5"
+ },
+ {
+  "name": "Gentle Senior Male",
+  "id": "b379a24b6ed04f4daed9d6f4e49c49b7",
+  "wpm": 205.9,
+  "f0": 109.4,
+  "var": 2.77,
+  "hf": -15.4,
+  "rhotik": "5/5"
+ }
+]
