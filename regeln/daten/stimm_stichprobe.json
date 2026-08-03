@@ -41,5 +41,74 @@
    "Psalm-Reihenfolge kuratiert (Psalm 4 -> 91: Schlaf-/Schutz-Psalmen zuerst)"
   ],
   "fazit": "Gewinner-Produktion bestaetigt: Ein-Szenen-Loop, NIV, warme Rahmung, CTA als Einladung statt Bettelei. Produktionsstandard der Flop-Phase = Standard der Hits -> stuetzt These, dass B's Breakout an Laenge/Timing hing, nicht an Produktionsaenderung. Stimmfarbe weiterhin nicht beschreibbar (Tool transkribiert nur)."
+ },
+ "STIMMTEST_2026-08-03": {
+  "methode": "NexLev watch_youtube_video_and_ask, je 80s Audio-Stichprobe aus der Videomitte (50 % der Laufzeit). 6 Videos: 3 Gewinner, 3 Verlierer.",
+  "GEWINNER": {
+   "A_Ln4_CtkZsRs_245K": {
+    "stimme": "tiefer, resonanter Maennerstimme, ruhig-autoritativ",
+    "tempo": "langsam, meditativ, lange Pausen zwischen Versen",
+    "waerme": "sehr warm und intim, stark behaucht, close-mic",
+    "artefakte": "zu kurze Pause zwischen 'answered'/'if'; 'and' mit abgeschnittenem Ende; sehr repetitive Kadenz mit fast identischem Pitch-Abfall am Phrasenende",
+    "musikbett": "tieffrequente ambiente Drones + weiche ethereale Synth-Pads; Stimme klar obenauf",
+    "urteil": "SYNTHETISCH, hohe Konfidenz (Behauchung ist statischer Filter ohne natuerliche Atemphysik)"
+   },
+   "A_vtQu8dMzoX4_201K": {
+    "stimme": "tief, resonant, maennlich",
+    "tempo": "langsam, meditativ, keine Hast",
+    "waerme": "extrem warm und intim, sehr behaucht",
+    "artefakte": "'portion and my cup' zu nahtlos ohne Mikrovariation der Luftfuehrung; 'decay' leicht abgeschnitten",
+    "musikbett": "knisterndes Lagerfeuer + sehr weiches tieffrequentes Ambient-Pad; Stimme klar obenauf",
+    "urteil": "SYNTHETISCH, hohe Konfidenz (keine Mundgeraeusche, keine organische Timbre-Variation ueber lange Dauer)"
+   },
+   "B_8m6NqWG9p2o_166K": {
+    "stimme": "tief, resonant, maennlich",
+    "tempo": "langsam, meditativ, bewusste Pausen",
+    "waerme": "extrem warm und intim, fast Buehnenfluestern",
+    "artefakte": "'Sovereign Lord' leicht mechanische Kadenz; unnatuerlich abrupte Pause vor 'from birth'; 'sign' ohne satzschliessende Intonation",
+    "musikbett": "weiches etheriales Ambient-Synth-Pad + knisterndes Feuer; Stimme klar obenauf",
+    "urteil": "SYNTHETISCH, hohe Konfidenz ('hallmarks of high-end AI narration tools like ElevenLabs')"
+   }
+  },
+  "VERLIERER": {
+   "C_kEmciGJpkR0_113": {
+    "stimme": "tief, resonant, maennlich",
+    "tempo": "sehr langsam, meditativ",
+    "waerme": "warm, intim, behaucht",
+    "artefakte": "WORTBETONUNGSFEHLER: 'solace' als so-LACE (33:42), 'supervise' als super-VISE (33:47); roboterhafte Prosodie bei 'retiring for the evening'",
+    "musikbett": "weiches Ambient-Pad + Grillen; Stimme klar obenauf",
+    "urteil": "SYNTHETISCH, hohe Konfidenz — Betonungsfehler als Entscheidungsmerkmal"
+   },
+   "F_oHsh-paMGeU_23": {
+    "stimme": "tief, resonant, maennlich",
+    "tempo": "sehr langsam, meditativ",
+    "waerme": "extrem warm und intim, behaucht",
+    "artefakte": "'Peter' leicht abgehackt/mechanisch; 'gratitude' mit unnatuerlich repetitivem Tonfall",
+    "musikbett": "sanfte Ambient-Klaviermelodie + Grillen + Feuerknistern; Stimme klar obenauf",
+    "urteil": "SYNTHETISCH, hohe Konfidenz"
+   },
+   "G_jx5Z_eHZa00_156": {
+    "stimme": "tief, resonant, maennlich",
+    "tempo": "sehr langsam, kontemplativ",
+    "waerme": "warm, intim, behaucht, close-mic",
+    "artefakte": "KEINE. Prosodie natuerlich, Wortbetonung korrekt (z.B. 'trusteth'), Pausen kuenstlerisch gesetzt",
+    "musikbett": "weiche Ambient-Synth-Pads; Stimme klar obenauf; LANGE reine Musikstrecke 26:34-27:26 (52 s ohne Stimme)",
+    "urteil": "MENSCHLICH, hohe Konfidenz (natuerliche Atemkontrolle, subtile emotionale Nuancen)"
+   }
+  },
+  "FAZIT": [
+   "H5 WIDERLEGT: Die Stimme trennt Gewinner und Verlierer NICHT.",
+   "Alle 3 Gewinner nutzen synthetische Stimmen (hohe Konfidenz) — KI-Stimme traegt nachweislich bis 245.000 Views.",
+   "Die Verlierer C und F nutzen praktisch dasselbe Stimmprofil wie die Gewinner: tiefer, warmer, behauchter Maennerstimme, langsam, Ambient-Pad, Stimme klar obenauf.",
+   "Der EINZIGE menschlich gesprochene Kanal im Test (G) ist ein Verlierer (156 Views) — menschliche Stimme ist kein Vorteil.",
+   "Einziger stimmseitiger Qualitaetsmangel mit Trennschaerfe: C's Wortbetonungsfehler (so-LACE, super-VISE). Das ist Aussprache-QA an unkontrolliertem Maschinen-Output — dieselbe Wurzel wie C's MT-paraphrasierte Bibel, kein Stimmmodell-Problem.",
+   "G bestaetigt zusaetzlich den Formatverstoss: 52 s reine Musik ohne Stimme (Regel: Sprachanteil 97-100 %)."
+  ],
+  "KLANGBETT_ERSTMALS_GEMESSEN": {
+   "gewinner": "3/3 Ambient-Synth-Pad; 2/3 zusaetzlich knisterndes Lagerfeuer; Stimme in 3/3 klar ueber dem Bett",
+   "verlierer": "ebenfalls Ambient-Pad (3/3); Grillen bei C und F (0/3 Gewinner); Klavier nur bei F",
+   "einordnung": "Ambient-Pad ist Tischeinsatz, kein Unterscheider. Feuer bei Gewinnern, Grillen bei Verlierern — n zu klein fuer eine Regel. Weder 'Delta-Wellen' noch 'Klavier+Regen' aus dem Briefing hoerbar bestaetigt."
+  },
+  "WPM_KORREKTUR": "Die Audioanalyse schaetzte 80-90 WPM. Gegenprobe am Transkript: keine Rolling-Overlap-Duplikate (Faktor 1,00), 39.478 Woerter / 14.831 s = 160 WPM. Die perzeptuelle Schaetzung ist ungenau; die gemessenen 120-160 WPM und das TTS-Budget von ~46.500 Zeichen/Stunde bleiben gueltig."
  }
 }

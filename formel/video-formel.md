@@ -175,6 +175,38 @@ gerendert; Kanal-Wasserzeichen klein in einer Ecke.
 
 ---
 
+## 5b. STIMME UND KLANGBETT *(gemessen 2026-08-03, 6 Audio-Stichproben à 80 s)*
+
+**KI-Stimme ist belegt tragfähig.** Alle drei Gewinner-Videos sind **synthetisch** gesprochen
+(hohe Konfidenz) — bis 245.000 Views. Der einzige menschlich gesprochene Kanal im Test (G) ist
+ein Verlierer mit 156 Views. Du brauchst keinen menschlichen Sprecher, und er wäre kein Vorteil.
+
+**Zielprofil (bei allen drei Gewinnern identisch):**
+- tiefe, resonante **Männerstimme**
+- langsam und meditativ, bewusste Pausen zwischen den Versen
+- **stark behaucht, close-mic**, warm und intim — fast Bühnenflüstern
+- gemessenes Gesamttempo **120–160 WPM** über die volle Laufzeit
+
+**Klangbett — erstmals gemessen, ersetzt die bisherige Angabe „ungemessen":**
+- **Ambient-Synth-Pad: 3/3 Gewinner — aber auch 3/3 Verlierer.** Tischeinsatz, kein Unterscheider.
+- **Knisterndes Lagerfeuer: 2/3 Gewinner** (passt zum Lagerfeuer-Motiv im Bild), 1/3 Verlierer.
+- **Grillen: 0/3 Gewinner, 2/3 Verlierer.** n zu klein für eine Regel, aber im Zweifel weglassen.
+- **Stimme in 6/6 Fällen klar über dem Bett** — Musik verschluckt sie nie. Das ist die einzige
+  harte Abmisch-Regel, die die Daten hergeben.
+- Weder „Delta-Wellen" noch „Klavier+Regen" aus dem Ursprungsbriefing waren hörbar zu bestätigen.
+  Klavier trat nur bei Verlierer F auf.
+
+**PFLICHT — Aussprache-QA vor dem Rendern.** Der einzige stimmseitige Mangel mit Trennschärfe:
+Verlierer C betont „solace" als *so-LACE* und „supervise" als *super-VISE*. Gleiche Wurzel wie
+C's maschinenparaphrasierte Bibel — ungeprüfter Maschinen-Output. Eigennamen und seltenere
+Wörter vor dem Rendern gegenhören, bei Bedarf per Lexikon/SSML korrigieren.
+
+> Leichte TTS-Artefakte sind **kein** Ausschlusskriterium: Auch die Gewinner zeigen abgeschnittene
+> Wortenden, gelegentlich mechanische Kadenz und sehr repetitive Phrasenmelodie — bei 245.000
+> Views. Falsche Betonung ist das Problem, nicht synthetische Prosodie.
+
+---
+
 ## 6. RHYTHMUS
 
 **Upload-Abstand 4–7 Tage** (B: 10 von 10 Abständen). **Maximal 2 Videos pro Woche**
@@ -223,11 +255,9 @@ Checkliste nicht mit ungeprüften Annahmen verwässert.
 
 ## 9. OFFEN — wo die Daten schweigen
 
-- **Klangbett.** Vollständig ungemessen; der Audio-Download war blockiert. Delta-Wellen gegen
-  Klavier+Regen hat **null** Beleg — deshalb hier und nicht als Regel. Die Konsistenz-Hälfte
-  („einmal wählen, nicht wechseln") ist aus dem allgemeinen Serienprinzip plausibel, aber für
-  Audio ebenfalls ungeprüft. Aus Beschreibungen ablesbar: Rest in Jesus nennt „piano and rain".
-- **Stimmfarbe der Gewinner** (H5). Tool-Quota; Test läuft morgen automatisch.
+- ~~Klangbett~~ und ~~Stimmfarbe~~ — **beides am 2026-08-03 gemessen, siehe §5b.** Offen bleibt
+  nur, ob das Lagerfeuer-Geräusch wirklich wirkt (2/3 Gewinner, 1/3 Verlierer — n zu klein) und
+  ob das Weglassen von Grillen etwas ändert.
 - **Was #7 von #8 unterscheidet.** In keiner messbaren Variable erfassbar. Ohne Impressions und
   CTR aus fremden Analytics nicht auflösbar.
 - **Ob WEBBE so gut trägt wie NIV.** Prüfkriterium: dieselbe Psalmenauswahl einmal in beiden

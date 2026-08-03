@@ -194,11 +194,20 @@ einzige Bewegung Feuerflackern, 2:30 ohne Schnitt) zeigen EINE Szene; der tote C
 rotiert 8 Szenen, G schneidet Stock-Footage. *Prüfkriterium: ab Video 10 einmal
 Szenen-Rotation testen; Retention-Kurven vergleichen.*
 
-**H5 — Die Stimme ist der verdeckte Unterschied zwischen C und den Gewinnern.**
-C hat Gewinner-Optik und stirbt; Skript ist belegt schlecht (V4), aber die Stimmqualität
-konnte heute nicht verglichen werden (Tool-Limit, siehe Abschnitt 5). *Prüfkriterium:
-morgen Watch-Quote nutzen und A/B/C-Stimmen direkt anhören; eigene Stimme vor Kanalstart
-gegen A benchmarken.*
+**~~H5 — Die Stimme ist der verdeckte Unterschied zwischen C und den Gewinnern.~~
+WIDERLEGT am 2026-08-03** (6 Audio-Stichproben à 80 s, Details in
+`regeln/daten/stimm_stichprobe.json`).
+
+Die Stimme trennt nicht. Verlierer C nutzt praktisch dasselbe Profil wie die Gewinner:
+tiefe, resonante, stark behauchte Männerstimme, langsam-meditativ, close-mic, Ambient-Pad,
+Stimme klar über dem Bett. Alle drei Gewinner sind **synthetisch** (hohe Konfidenz) — KI-Stimme
+trägt nachweislich bis 245.000 Views. Der einzige im Test **menschlich** gesprochene Kanal (G)
+ist ein Verlierer mit 156 Views.
+
+Übrig bleibt ein enger, anderer Befund: C hat als einziger **Wortbetonungsfehler**
+(„solace" als so-LACE, „supervise" als super-VISE). Das ist Aussprache-QA an ungeprüftem
+Maschinen-Output — dieselbe Wurzel wie C's MT-paraphrasierte Bibel (V4), kein Stimmmodell-Problem.
+Als Regel gehört es zu V4, nicht in eine eigene Stimm-Hypothese.
 
 **H6 — Wenige CTAs (0–2) sind Teil des Gewinner-Musters.**
 Gewinner: 0–2 CTAs pro Video. Tote: C 4, D 7, H 3. Überlappt mit Genre-Problemen —
@@ -209,13 +218,14 @@ Kommentarrate nach 20 Videos unter Benchmark liegt.*
 
 ## 5. OFFENE FRAGEN (wo die Daten schweigen)
 
-1. **Stimmcharakter der Gewinner** (Tiefe, Wärme, TTS-Artefakte, Abmischung): Das
-   multimodale Ansehen-Tool war heute am 24h-Limit (15/15 aus Lauf 1 verbraucht). Der
-   Ersatzweg (Higgsfield-Szenenanalyse) transkribiert Audio, beschreibt aber keine
-   Stimmfarbe; die beiden Gewinner-Hits (3,4 h/4,1 h) überschritten dessen Längenlimit,
-   ein kürzeres B-Video (#3, 1,1 h) lief durch und bestätigte Struktur, NIV-Text und
-   Ein-Szenen-Bild — nicht aber die Klangfarbe. Erledigt für C/F/G (Struktur + Musikbett),
-   Stimmfarbe für A/B weiter offen. **Nachholbar ab morgen (Quota-Reset).**
+1. ~~**Stimmcharakter der Gewinner**~~ — **erledigt am 2026-08-03.** 6 Audio-Stichproben
+   (3 Gewinner, 3 Verlierer) je 80 s aus der Videomitte. Ergebnis unter H5 und in
+   `regeln/daten/stimm_stichprobe.json`. Kurz: alle Gewinner synthetisch, Profil deckungsgleich
+   mit den Verlierern C und F, der einzige menschliche Sprecher (G) ist ein Verlierer.
+   Ebenfalls dabei erstmals gemessen: **Musikbett** — Ambient-Synth-Pad bei 3/3 Gewinnern
+   (und 3/3 Verlierern, also Tischeinsatz), knisterndes Lagerfeuer bei 2/3 Gewinnern,
+   Grillen nur bei Verlierern. Weder „Delta-Wellen" noch „Klavier+Regen" aus dem Briefing
+   hörbar bestätigt.
 2. **Externe Traffic-Quellen** (Community-Posts, Social, Embeds): mit den verfügbaren
    Tools nicht abrufbar. A's „ministry"-Framing + Spendenlink deutet auf Community-Pflege,
    beweist aber keinen Traffic.
