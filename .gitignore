@@ -1,0 +1,8 @@
+stimmtest/chunks/
+stimmtest/out/
+stimmtest/probe/
+stimmtest/hoertest/
+stimmtest/aufloesung.txt
+stimmtest/*.wav
+stimmtest/voice_katalog_roh.json
+stimmtest/voice_kandidaten.json

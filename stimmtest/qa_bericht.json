@@ -1,0 +1,455 @@
+{
+ "zeichen_je_stimme": 22084,
+ "zeichen_gesamt": 66252,
+ "stimmen": {
+  "milo": {
+   "name": "MILO SOOTHING VOICE",
+   "id": "cb6381fb822345bd89c207fb49551d24",
+   "speed": 0.88,
+   "dauer_s": 1741.9,
+   "dauer_min": 29.0,
+   "wpm": 145.9,
+   "uebergaenge": [
+    {
+     "zeit_s": 139.91,
+     "zeit_hms": "00:02:19.91",
+     "pegelsprung_db": -2.93,
+     "samplesprung": 3e-05,
+     "pause_ms": 190.3
+    },
+    {
+     "zeit_s": 284.18,
+     "zeit_hms": "00:04:44.18",
+     "pegelsprung_db": -0.4,
+     "samplesprung": 0.00012,
+     "pause_ms": 176.9
+    },
+    {
+     "zeit_s": 421.34,
+     "zeit_hms": "00:07:01.34",
+     "pegelsprung_db": 1.98,
+     "samplesprung": 0.0,
+     "pause_ms": 243.8
+    },
+    {
+     "zeit_s": 561.32,
+     "zeit_hms": "00:09:21.32",
+     "pegelsprung_db": -0.71,
+     "samplesprung": 3e-05,
+     "pause_ms": 262.7
+    },
+    {
+     "zeit_s": 696.67,
+     "zeit_hms": "00:11:36.67",
+     "pegelsprung_db": 6.23,
+     "samplesprung": 3e-05,
+     "pause_ms": 202.8
+    },
+    {
+     "zeit_s": 832.3,
+     "zeit_hms": "00:13:52.30",
+     "pegelsprung_db": 2.67,
+     "samplesprung": 0.0,
+     "pause_ms": 265.7
+    },
+    {
+     "zeit_s": 974.0,
+     "zeit_hms": "00:16:14.00",
+     "pegelsprung_db": 4.21,
+     "samplesprung": 0.0,
+     "pause_ms": 224.0
+    },
+    {
+     "zeit_s": 1114.35,
+     "zeit_hms": "00:18:34.35",
+     "pegelsprung_db": 3.38,
+     "samplesprung": 0.00018,
+     "pause_ms": 236.7
+    },
+    {
+     "zeit_s": 1252.83,
+     "zeit_hms": "00:20:52.83",
+     "pegelsprung_db": 5.8,
+     "samplesprung": 3e-05,
+     "pause_ms": 217.1
+    },
+    {
+     "zeit_s": 1390.59,
+     "zeit_hms": "00:23:10.59",
+     "pegelsprung_db": 1.57,
+     "samplesprung": 0.0,
+     "pause_ms": 270.0
+    },
+    {
+     "zeit_s": 1528.64,
+     "zeit_hms": "00:25:28.64",
+     "pegelsprung_db": -1.58,
+     "samplesprung": 3e-05,
+     "pause_ms": 233.8
+    },
+    {
+     "zeit_s": 1666.72,
+     "zeit_hms": "00:27:46.72",
+     "pegelsprung_db": 2.35,
+     "samplesprung": 0.0,
+     "pause_ms": 224.1
+    }
+   ],
+   "auffaellig": [
+    {
+     "zeit_s": 696.67,
+     "zeit_hms": "00:11:36.67",
+     "pegelsprung_db": 6.23,
+     "samplesprung": 3e-05,
+     "pause_ms": 202.8
+    }
+   ],
+   "eigennamen": [
+    {
+     "name": "Bethany",
+     "im_text": 1,
+     "erkannt": 1,
+     "zeitstempel": [
+      "03:12.02"
+     ]
+    },
+    {
+     "name": "Cephas",
+     "im_text": 1,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Nathanael",
+     "im_text": 5,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Isaiah",
+     "im_text": 1,
+     "erkannt": 1,
+     "zeitstempel": [
+      "02:40.22"
+     ]
+    },
+    {
+     "name": "Capernaum",
+     "im_text": 2,
+     "erkannt": 1,
+     "zeitstempel": [
+      "21:16.20"
+     ]
+    },
+    {
+     "name": "Nicodemus",
+     "im_text": 3,
+     "erkannt": 3,
+     "zeitstempel": [
+      "10:00.56",
+      "10:26.32",
+      "11:09.20"
+     ]
+    }
+   ],
+   "asr_woerter": 3240
+  },
+  "medit": {
+   "name": "meditation",
+   "id": "8d797adca9af48ca9e8a1c7284db1d6c",
+   "speed": 1.0,
+   "dauer_s": 1519.0,
+   "dauer_min": 25.3,
+   "wpm": 167.4,
+   "uebergaenge": [
+    {
+     "zeit_s": 126.44,
+     "zeit_hms": "00:02:06.44",
+     "pegelsprung_db": -6.96,
+     "samplesprung": 0.00095,
+     "pause_ms": 157.0
+    },
+    {
+     "zeit_s": 245.18,
+     "zeit_hms": "00:04:05.18",
+     "pegelsprung_db": 3.15,
+     "samplesprung": 0.00168,
+     "pause_ms": 176.6
+    },
+    {
+     "zeit_s": 371.63,
+     "zeit_hms": "00:06:11.63",
+     "pegelsprung_db": -1.2,
+     "samplesprung": 0.01334,
+     "pause_ms": 152.1
+    },
+    {
+     "zeit_s": 502.0,
+     "zeit_hms": "00:08:22.00",
+     "pegelsprung_db": -0.81,
+     "samplesprung": 0.00034,
+     "pause_ms": 133.7
+    },
+    {
+     "zeit_s": 622.71,
+     "zeit_hms": "00:10:22.71",
+     "pegelsprung_db": 2.26,
+     "samplesprung": 0.00122,
+     "pause_ms": 158.5
+    },
+    {
+     "zeit_s": 738.72,
+     "zeit_hms": "00:12:18.72",
+     "pegelsprung_db": 4.32,
+     "samplesprung": 0.00116,
+     "pause_ms": 130.4
+    },
+    {
+     "zeit_s": 863.47,
+     "zeit_hms": "00:14:23.47",
+     "pegelsprung_db": 2.51,
+     "samplesprung": 0.00085,
+     "pause_ms": 131.8
+    },
+    {
+     "zeit_s": 977.93,
+     "zeit_hms": "00:16:17.93",
+     "pegelsprung_db": 2.08,
+     "samplesprung": 0.00122,
+     "pause_ms": 179.8
+    },
+    {
+     "zeit_s": 1096.04,
+     "zeit_hms": "00:18:16.04",
+     "pegelsprung_db": 2.77,
+     "samplesprung": 0.00037,
+     "pause_ms": 120.9
+    },
+    {
+     "zeit_s": 1208.2,
+     "zeit_hms": "00:20:08.20",
+     "pegelsprung_db": 0.75,
+     "samplesprung": 0.00137,
+     "pause_ms": 131.7
+    },
+    {
+     "zeit_s": 1322.33,
+     "zeit_hms": "00:22:02.33",
+     "pegelsprung_db": 5.33,
+     "samplesprung": 0.00424,
+     "pause_ms": 127.4
+    },
+    {
+     "zeit_s": 1449.58,
+     "zeit_hms": "00:24:09.58",
+     "pegelsprung_db": 4.71,
+     "samplesprung": 0.00378,
+     "pause_ms": 159.5
+    }
+   ],
+   "auffaellig": [
+    {
+     "zeit_s": 126.44,
+     "zeit_hms": "00:02:06.44",
+     "pegelsprung_db": -6.96,
+     "samplesprung": 0.00095,
+     "pause_ms": 157.0
+    }
+   ],
+   "eigennamen": [
+    {
+     "name": "Bethany",
+     "im_text": 1,
+     "erkannt": 1,
+     "zeitstempel": [
+      "02:50.14"
+     ]
+    },
+    {
+     "name": "Cephas",
+     "im_text": 1,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Nathanael",
+     "im_text": 5,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Isaiah",
+     "im_text": 1,
+     "erkannt": 1,
+     "zeitstempel": [
+      "02:24.48"
+     ]
+    },
+    {
+     "name": "Capernaum",
+     "im_text": 2,
+     "erkannt": 2,
+     "zeitstempel": [
+      "07:16.56",
+      "18:35.26"
+     ]
+    },
+    {
+     "name": "Nicodemus",
+     "im_text": 3,
+     "erkannt": 3,
+     "zeitstempel": [
+      "08:58.78",
+      "09:21.44",
+      "09:58.78"
+     ]
+    }
+   ],
+   "asr_woerter": 4051
+  },
+  "calm": {
+   "name": "Calm",
+   "id": "d012487fa0824e5eb235f983d21eccac",
+   "speed": 1.0,
+   "dauer_s": 1702.8,
+   "dauer_min": 28.4,
+   "wpm": 149.3,
+   "uebergaenge": [
+    {
+     "zeit_s": 140.19,
+     "zeit_hms": "00:02:20.19",
+     "pegelsprung_db": -0.79,
+     "samplesprung": 0.00327,
+     "pause_ms": 129.8
+    },
+    {
+     "zeit_s": 280.89,
+     "zeit_hms": "00:04:40.89",
+     "pegelsprung_db": 1.9,
+     "samplesprung": 0.0007,
+     "pause_ms": 144.7
+    },
+    {
+     "zeit_s": 421.58,
+     "zeit_hms": "00:07:01.58",
+     "pegelsprung_db": 1.62,
+     "samplesprung": 0.00015,
+     "pause_ms": 127.5
+    },
+    {
+     "zeit_s": 556.83,
+     "zeit_hms": "00:09:16.83",
+     "pegelsprung_db": -1.72,
+     "samplesprung": 0.00638,
+     "pause_ms": 122.7
+    },
+    {
+     "zeit_s": 688.45,
+     "zeit_hms": "00:11:28.45",
+     "pegelsprung_db": 1.53,
+     "samplesprung": 0.00241,
+     "pause_ms": 158.3
+    },
+    {
+     "zeit_s": 818.39,
+     "zeit_hms": "00:13:38.39",
+     "pegelsprung_db": 5.31,
+     "samplesprung": 0.00043,
+     "pause_ms": 136.4
+    },
+    {
+     "zeit_s": 959.84,
+     "zeit_hms": "00:15:59.84",
+     "pegelsprung_db": -0.93,
+     "samplesprung": 0.00037,
+     "pause_ms": 161.4
+    },
+    {
+     "zeit_s": 1094.84,
+     "zeit_hms": "00:18:14.84",
+     "pegelsprung_db": 4.88,
+     "samplesprung": 0.00363,
+     "pause_ms": 116.5
+    },
+    {
+     "zeit_s": 1229.71,
+     "zeit_hms": "00:20:29.71",
+     "pegelsprung_db": 4.59,
+     "samplesprung": 0.00284,
+     "pause_ms": 118.2
+    },
+    {
+     "zeit_s": 1363.83,
+     "zeit_hms": "00:22:43.83",
+     "pegelsprung_db": 4.26,
+     "samplesprung": 0.00745,
+     "pause_ms": 113.4
+    },
+    {
+     "zeit_s": 1491.32,
+     "zeit_hms": "00:24:51.32",
+     "pegelsprung_db": 2.57,
+     "samplesprung": 0.00131,
+     "pause_ms": 88.2
+    },
+    {
+     "zeit_s": 1625.67,
+     "zeit_hms": "00:27:05.67",
+     "pegelsprung_db": 4.14,
+     "samplesprung": 0.00183,
+     "pause_ms": 170.8
+    }
+   ],
+   "auffaellig": [],
+   "eigennamen": [
+    {
+     "name": "Bethany",
+     "im_text": 1,
+     "erkannt": 1,
+     "zeitstempel": [
+      "03:11.18"
+     ]
+    },
+    {
+     "name": "Cephas",
+     "im_text": 1,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Nathanael",
+     "im_text": 5,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Isaiah",
+     "im_text": 1,
+     "erkannt": 0,
+     "zeitstempel": []
+    },
+    {
+     "name": "Capernaum",
+     "im_text": 2,
+     "erkannt": 3,
+     "zeitstempel": [
+      "08:09.64",
+      "08:11.36",
+      "08:11.58",
+      "20:51.24"
+     ]
+    },
+    {
+     "name": "Nicodemus",
+     "im_text": 3,
+     "erkannt": 2,
+     "zeitstempel": [
+      "09:55.58",
+      "11:00.32"
+     ]
+    }
+   ],
+   "asr_woerter": 3855
+  }
+ }
+}

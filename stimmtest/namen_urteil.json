@@ -1,0 +1,56 @@
+[
+ {
+  "name": "Bethany",
+  "erkannt": {
+   "milo": "bethany",
+   "medit": "bethany",
+   "calm": "bethany"
+  },
+  "urteil": "OK (alle gleich, korrektes Lautbild)"
+ },
+ {
+  "name": "Cephas",
+  "erkannt": {
+   "milo": "sephas",
+   "medit": "NICHT AUFFINDBAR",
+   "calm": "NICHT AUFFINDBAR"
+  },
+  "urteil": "PRUEFEN: abweichend nur bei medit, calm"
+ },
+ {
+  "name": "Nathanael",
+  "erkannt": {
+   "milo": "nathaniel",
+   "medit": "nathaniel",
+   "calm": "nathaniel"
+  },
+  "urteil": "OK (alle gleich, korrektes Lautbild)"
+ },
+ {
+  "name": "Isaiah",
+  "erkannt": {
+   "milo": "isaiah",
+   "medit": "isaiah",
+   "calm": "NICHT AUFFINDBAR"
+  },
+  "urteil": "PRUEFEN: abweichend nur bei calm"
+ },
+ {
+  "name": "Capernaum",
+  "erkannt": {
+   "milo": "capernaum",
+   "medit": "capernaum",
+   "calm": "capernaum"
+  },
+  "urteil": "OK (alle gleich, korrektes Lautbild)"
+ },
+ {
+  "name": "Nicodemus",
+  "erkannt": {
+   "milo": "nicodemus",
+   "medit": "nicodemus",
+   "calm": "nicodemus"
+  },
+  "urteil": "OK (alle gleich, korrektes Lautbild)"
+ }
+]
