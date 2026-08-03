@@ -1,315 +1,322 @@
-# Video-Formel — Arbeitsdokument
+# Video-Formel v2.1 — Arbeitsdokument
 
-> **Stand: 2026-08-02.** Datengrundlage: `regeln/daten/` (21 Gewinner-Videos aus 2 Kanälen,
-> 129 Verlierer-Videos aus 8 Kanälen, 19 Voll-Metadatensätze, 4 Gewinner-Transkripte,
-> 90 Thumbnails) plus `teardown/produktions-spec.md` (454 Videos, 8 etablierte Kanäle)
-> und `regeln/erfolgsregeln.md`.
+> **Stand: 2026-08-02.** v2.1 = deine v2, Element für Element gegen die Rohdaten geprüft.
+> Datengrundlage: `regeln/daten/` (21 Gewinner-Videos aus 2 Kanälen, 129 Verlierer-Videos aus
+> 8 Kanälen, 19 Voll-Metadatensätze, 4 Gewinner-Transkripte, 90 Thumbnails) plus
+> `teardown/produktions-spec.md` (454 Videos, 8 etablierte Kanäle) und `regeln/erfolgsregeln.md`.
 >
-> **Wichtig zur Nutzung:** Abschnitt A ist eine **Qualifikations-Checkliste**, kein
-> Hit-Prädiktor. Die Daten zeigen ausdrücklich, dass sie den Unterschied zwischen
-> Treffer und Flop *innerhalb* eines Kanals **nicht** erklärt (Beleg unten, P2).
-> Sie sorgt dafür, dass jedes Video überhaupt ins Rennen kommt.
->
-> **Deine Formel selbst ist in der Aufgabe nicht angekommen** (nur der Platzhalter
-> `[hier meine Formel von oben einfügen]`). Element-für-Element-Abgleich steht noch aus —
-> dieses Dokument ist aus den Rohdaten heraus gebaut, nicht gegen deine Fassung geprüft.
+> **Status: Qualifikations-Checkliste, kein Hit-Rezept.** Beleg: B #7 und #8 unterscheiden sich
+> in keiner messbaren Variable und um Faktor 128 in den Views. Erfüllung verhindert Scheitern,
+> garantiert keinen Treffer. Planungsgröße: 10 von 21 Gewinner-Videos über 30.000 Views —
+> jeder zweite bis dritte.
 
----
+## Prüfprotokoll v2 → v2.1
 
-## Prüfergebnisse deiner drei Fragen
-
-### P1 — Tragen die Gewinner-Titel wirklich beide Anker? **Nein, das ist hineingelesen.**
-
-Ausgezählt über alle 21 Gewinner-Titel, zwei Definitionen getrennt:
-
-| | Zustands-Anker | Enger Eigenname (konkretes Buch/Kapitel) |
+| # | Element | Verdikt |
 |---|---|---|
-| A Hush Little Lamb (n=8) | 6/8 | **1/8** |
-| B Rest in Grace (n=13) | 11/13 | **0/13** |
-| Nur Treffer >30K (n=10) | **9/10** | **1/10** |
+| 1 | Zustands-Anker als Pflicht | **bleibt** — 9/10 Treffer |
+| 2 | „Tonight" im Pflichtmuster | **schärfen** — nur 6/10 Treffer |
+| 3 | Deine drei Titel-Beispiele | **schärfen** — alle drei aus meiner *ungeprüft*-Liste |
+| 4 | „Gospel of John = zweitbestes Video" | **Faktenfehler** — es ist A's **bestes** (245K) |
+| 5 | Verbot: Zustand in 8 Videos wiederholen | **RAUS — widerlegt**, der Wiederholer war der 166K-Durchbruch |
+| 6 | Verbot: „Psalm" als Anker | **schärfen** — 2 von B's 4 Treffern tragen Psalms |
+| 7 | Länge ≥3,0 h, Tor statt Motor | **bleibt** unverändert |
+| 8 | „3,0–3,5 h Kostenoptimum" | **schärfen** — Treffer-Median liegt bei 3,6 h |
+| 9 | Eingangsgebet 400 Wörter als PFLICHT | **umetikettieren** — Policy-Absicherung, kein Reichweiten-Beleg |
+| 10 | World English Bible | **schärfen** — Gewinner nutzen NIV; klassische WEB sagt „Yahweh" |
+| 11 | „Kanal C: 256 Ø-Views bei 64 Videos" | **Faktenfehler** — gemessen: Ø 39 bei 35 Langform-Videos |
+| 12 | Klangbett-Signatur als Regel | **umetikettieren** — vollständig ungemessen, gehört nach §9 |
+| 13 | „Echte Tags gesetzt" | **Widerspruch** — kein Gewinner tut das |
+| 14 | Kapitelmarken als Pflicht | **schärfen** — A's drei größte Treffer haben null |
+| 15 | „Bildkonzept unbekannt" | **Faktenfehler** — bestdokumentierter Teil des Datensatzes |
+| 16 | Thumbnail-Serie | **fehlt komplett** — war MUSS-Regel M3 |
 
-Der einzige Titel mit engem Eigennamen ist A's *„If You're Anxious, Rest to the **Gospel of
-John** Tonight"* (245K). Alle anderen 20 nennen höchstens „Jesus", „God" oder „Psalms" —
-Gattungsbegriffe, keine Eigennamen. B nennt in 13 Titeln **kein einziges Mal** ein konkretes
-Buch.
+---
 
-**Der Zustands-Anker ist dagegen hart belegt: 9 von 10 Treffern.** Die einzige Ausnahme
-(*„Come Little Lamb, Find Rest With Jesus"*, 47K) ist A's schwächster Treffer.
+## 1. TITEL
 
-**Das widerspricht Lauf 1 direkt** — dort trugen *alle* Treffer über 20× einen Eigennamen
-(Gospel of John, Isaiah, Daniel, Book of Enoch, Sermon on the Mount). Auflösung: Das waren
-**etablierte Kanäle** (n=8, 454 Videos) mit gewachsenem Such-Traffic. A und B sind
-**Neustarter**, die über Browse/Vorschlag laufen. Für einen neuen Kanal ist der Zustands-Anker
-belegt, der Eigenname nicht.
+**PFLICHT — Zustands-Anker in Du-Ansprache.** 9 von 10 Treffern (>30K). Einzige Ausnahme ist
+A's schwächster Treffer („Come Little Lamb", 47K).
 
-### P2 — Hat sich bei B #7 nur die Länge geändert? **Ja — und genau das entwertet die Regel als Hit-Erklärung.**
+**Muster:** `[Gefühlszustand] + [Zusage mit Jesus/Gott]`, „Tonight" **optional**.
+> *Korrektur zu v2:* „Tonight" steht in **6 von 10** Treffern, nicht in allen. A's 184K-Video
+> heißt schlicht **„Lord, I Feel Tired"** — kein „Tonight", keine Handlung, nur der Zustand.
+> B's Treffer #11 (35K) und #12 (32K) haben ebenfalls kein „Tonight". Nimm es als häufiges
+> Element, nicht als Pflichtbestandteil.
 
-Alles, was sich bei #7 (166.000 Views) gegenüber #6 (2.500) messbar änderte:
+**Verwende zuerst die 13 belegten Anker** (Abschnitt 10). Deine drei v2-Beispiele
+(*„If Your Mind Won't Stop Tonight…"*, *„When Tomorrow Feels Too Heavy…"*, *„I Know Today Took
+Everything…"*) stammen alle aus meiner **ungeprüft**-Liste — nie von einem Gewinner verwendet.
+Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Rennen.
 
-| Variable | #6 | #7 | geändert? |
+**TESTREIHE (ungeprüft, ~jedes 4. Video): Eigenname ergänzen.**
+> *Faktenkorrektur:* *„If You're Anxious, Rest to the **Gospel of John** Tonight"* ist mit
+> 245.000 Views A's **bestes** Video, nicht das zweitbeste. Das stärkt die Testreihe leicht —
+> ändert aber nichts daran, dass n=1 ist und 20 von 21 Gewinner-Titeln ohne Eigennamen auskommen.
+
+**VERBOTEN — belegt:**
+- Titel von Konkurrenten wörtlich übernehmen. Kanal F kopierte A's 233K-Titel inklusive
+  Tippfehler („I Know You're **Tried**…") → 18 Views.
+
+**~~VERBOTEN: Gefühlszustand innerhalb von 8 Videos wiederholen~~ — GESTRICHEN, widerlegt.**
+> Die Daten sagen das Gegenteil. B #4 *„No More Thinking Tonight… Jesus Is With You"* (660 Views)
+> und B #7 *„No More Thinking Tonight… Rest With Jesus"* (**166.000**) tragen denselben Anker,
+> drei Videos auseinander — **die Wiederholung war der Durchbruch.** Bei A wiederholt sich
+> „You're Tired, I Know" in #1 (201K) und #7 (12K), „I Know You're Tired" in #4 (233K).
+> Ein bewährter Anker ist wiederverwendbar; die Streuung liegt woanders.
+
+**„Psalm" als Anker — entschärft.**
+> Der Wert 0,26–1,38× stammt aus **Lauf 1** (etablierte Kanäle). Bei B tragen **2 von 4 Treffern
+> Psalms im Titel**: #10 „Stop Thinking For A Moment, Sleep To These Psalms Tonight" (96K) und
+> #12 „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" (32K). Ein Psalms-Verbot
+> hätte B's zweitgrößten Treffer verhindert. Die tatsächliche Regel ist bereits als PFLICHT
+> abgedeckt: **nie ohne Zustands-Anker.** B #3 „Sleep To THESE Psalms And See What God Does"
+> (304 Views) ist genau der Fall ohne Zustand.
+
+---
+
+## 2. LÄNGE
+
+**Harte Untergrenze 3,0 h.** Kein Video unter 3 h je über 2.500 Views (n=6); alle 10 Treffer
+≥3,2 h. Natürliches Experiment: fast identischer Titel bei 1,2 h = 660 Views, bei 3,4 h = 166.000.
+
+**Tor, kein Motor.** ≥3 h garantiert nichts — Spanne innerhalb der Klasse: Faktor 297.
+
+> *Schärfung zu v2:* Die Treffer liegen bei **3,4–5,0 h, Median 3,6 h**. Nur 3 von 10 sind
+> ≤3,5 h. Dein Band 3,0–3,5 h ist als **Kostenentscheidung** vertretbar, liegt aber an der
+> Unterkante dessen, wo die Treffer tatsächlich sitzen. Ein Zielband von **3,4–3,8 h** trifft
+> die Datenlage besser, bei ~46.500 Zeichen TTS je Stunde also rund 160.000–177.000 Zeichen.
+> Eine Obergrenze ist weiterhin nicht belegt (A trifft auch bei 5,0 h).
+
+---
+
+## 3. AUFBAU
+
+**PFLICHT — Sprache beginnt in Sekunde 0–3.** Kein Musikintro, kein Logo, kein Vorspann.
+(n=24 aus Lauf 1: 0,0–3,4 s; Gewinner 0,1–3,1 s.)
+
+**PFLICHT — Sprachanteil 97–100 % der Lauftzeit**, längste Pause <20 s. (n=24.)
+
+**NICHT belegt: festes Schema Hook→CTA→Gebet→Lesung.** Frei gestaltbar. A's zweitgrößtes
+Video (233.704 Views) startet nach 2,1 s kalt mit „John chapter 15" — ohne Rahmung, ohne CTA.
+
+**CTA: maximal 2 pro Video.** (Gewinner 0–2; tote Kanäle 4–7.)
+
+**Eigenes Eingangsgebet, ~400 selbst geschriebene Wörter — umetikettiert.**
+> Das ist eine **Geschäfts-/Policy-Entscheidung, kein Reichweiten-Element.** Kein Datenbeleg
+> dafür, dass eigener Text Views bringt — im Gegenteil: A's 233K-Video enthält **null** eigene
+> Rahmungsworte, und die Rahmungen der übrigen Gewinner sind mit 53–243 Wörtern deutlich kürzer
+> als 400. Als Absicherung der Monetarisierung gegen „inauthentic content"-Kriterien ist es
+> nachvollziehbar und kostet fast nichts — aber es gehört unter Geschäftsentscheidungen (§8),
+> nicht unter datenbelegte Pflicht. **Ich kann die aktuelle YPP-Richtlinienlage aus diesem
+> Datensatz nicht verifizieren**; wenn das die Begründung trägt, lass sie uns separat gegen die
+> Originalrichtlinie prüfen statt gegen Kanaldaten.
+
+---
+
+## 4. TEXT
+
+**Wörtlich gelesen, niemals maschinell paraphrasiert.** Todesursache bei Kanal C:
+*„Strike all of my opponents on the mandible."*
+> *Faktenkorrektur:* C hat gemessen **Ø 39 Views bei 35 Langform-Videos**. Die Zahlen „256 Ø bei
+> 64 Videos" stammen aus deinem Ursprungsbriefing und enthalten 29 Shorts. Der Befund wird
+> dadurch eher stärker, nicht schwächer.
+
+**Übersetzung — wichtige Schärfung gegenüber v2.**
+
+Die Gewinner lesen **NIV**, über vier Videos eindeutig belegt an übersetzungsspezifischen
+Formulierungen:
+
+| Stelle | Gewinner-Wortlaut | NIV | WEB (klassisch) |
 |---|---|---|---|
-| Länge | 1,9 h | **3,4 h** | **JA** |
-| Titelmuster | Zustand + Psalms | Zustand + Jesus | nein (beides Serie) |
-| Thumbnail-Stil | B-Serie | B-Serie | nein |
-| Kapitelmarken | 50 | 93 | skaliert mit Länge |
-| Upload-Abstand | 4 Tage | 4 Tage | nein |
+| Joh 15,1 | „my Father is the **gardener**" | gardener | farmer |
+| Ps 91,1 | „**Whoever dwells in the shelter**" | ebenso | „secret place" |
+| Ps 23,1 | „**I lack nothing**" | ebenso | „I shall lack nothing" |
 
-**Aber die Gegenprobe kippt die kausale Lesart.** Video #8, sechs Tage später:
-3,2 h, 91 Kapitel, dieselbe Serie, **derselbe Thumbnail-Text „TIME TO REST" wie #7** —
-und **1.300 Views**. Faktor 128 bei praktisch identischen Messwerten.
+Deine Wahl **World English Bible ist juristisch der sichere Weg** (gemeinfrei; NIV ist
+urheberrechtlich geschützt, und 3 h Volltext-Audio kommerziell ist kein Zitat mehr). Das ist
+ein guter Grund, bewusst von den Gewinnern abzuweichen.
 
-Über alle 7 B-Videos ≥3,0 h: Spanne **559 bis 166.000 Views = Faktor 297.**
+**Aber: nimm die British Edition (WEBBE), nicht die klassische WEB.** Die klassische WEB
+übersetzt den Gottesnamen im Alten Testament durchgehend als **„Yahweh"** — aus
+*„The LORD is my shepherd"* wird *„Yahweh is my shepherd"*. Über 3 Stunden Psalmen ist das ein
+deutlich anderes Register als alles, was die Gewinner und die Nische sonst tun. Die **World
+English Bible British Edition** ist textgleich, verwendet aber „LORD"/„GOD". ([Quelle](https://ebible.org/details.php?id=eng-web), [Übersicht](https://worldenglish.bible/))
 
-**Was die Länge trotzdem ist: ein Tor, kein Motor.**
-- Von 6 B-Videos unter 3,0 h hat **keines** je 2.500 Views überschritten.
-- Alle 10 Treffer beider Kanäle (>30K) liegen bei **≥3,2 h**.
-- Natürliches Experiment: #4 *„No More Thinking Tonight… Jesus Is With You"* (1,2 h → **660**)
-  gegen #7 *„No More Thinking Tonight… Rest With Jesus"* (3,4 h → **166.000**). Nahezu
-  identischer Titel, derselbe Kanal, 12 Tage Abstand.
-
-**Verdikt:** Die Regel ist haltbar — aber als **Mindestlänge (≥3,0 h, nicht 2,5 h)**, nicht als
-Erfolgsursache. `regeln/erfolgsregeln.md` M6 ist entsprechend zu schärfen: Schwelle auf 3,0 h
-anheben, Formulierung „Breakout fällt mit Formatwechsel zusammen" entschärfen.
-
-### P3 — Stimmt der Zeitaufbau über mehrere Gewinner-Videos? **Nein, nur bei einem von vier.**
-
-Gemessen an Caption-Zeitstempeln:
-
-| Video | Rahmung bis | erster CTA | Aufbau |
-|---|---|---|---|
-| A 245K | 107 s (243 Wörter) | 26 s | Hook → CTA → Lesung |
-| A **233K** | **2 s (0 Wörter)** | **keiner** | **startet kalt mit „John chapter 15"** |
-| B 166K | 32 s (53 Wörter) | keiner | kurze Rahmung → Lesung |
-| B 96K | 59 s (117 Wörter) | 33 s | Hook → CTA → Lesung |
-
-Das zweiterfolgreichste Video im ganzen Datensatz (**233.704 Views**) hat **keine Rahmung,
-keinen Hook, keinen CTA** — es beginnt nach 2,1 Sekunden direkt mit Schrifttext.
-
-Ein Gebetsblock als fester Bestandteil ist ebenfalls nicht belegt: Wo überhaupt ein Gebet
-auftaucht, liegt es bei 15 min, 66 min oder 158 min — ohne erkennbares Muster.
-
-**Verdikt:** Ein fester Zeitaufbau Hook→CTA→Gebet→Lesung ist **nicht belegt**. Belegt ist nur:
-Sprechbeginn in den ersten 0–3 s, danach überwiegend Schrifttext. Rahmung 0–110 s ist
-Spielraum, kein Pflichtteil.
-
-### Der Befund, der alles rahmt
-
-**#7 und #8 unterscheiden sich in keiner messbaren Produktionsvariable — und um Faktor 128
-in den Views.** Gleiche Serie, gleicher Thumbnail-Text, gleiche Länge, gleiche Kapitelzahl,
-gleiches Titelmuster, gleiche Beschreibungsstruktur, 6 Tage Abstand.
-
-Deckt sich mit Lauf 1 (SleepCodex: 276× Streuung innerhalb desselben Kanals bei konstanter
-Produktion). **Kein Element dieser Formel — und vermutlich keines deiner Formel — sagt den
-Einzeltreffer vorher.** Was die Formel leistet: das Video für den Treffer *qualifizieren*.
-
-Trefferquote als Planungsgröße: **A 6/8, B 4/13, zusammen 10 von 21 (48 %)** der Videos, die
-alle Tore passieren, kommen über 30.000 Views. Rechne mit etwa **jedem zweiten bis dritten
-Upload**, nicht mit jedem.
+**Ungeprüft bleibt**, ob WEBBEs formellerer Ton („thee/thou" hat sie nicht, aber sie liegt
+näher an der ASV als am NIV) bei diesem Publikum gleich gut trägt. Prüfkriterium in §9.
 
 ---
 
-## A) Checkliste vor jedem Upload
+## 5. BILD *(in deiner v2 komplett ausgefallen — das ist die größte Lücke)*
 
-Jeder Punkt ist datenbelegt; Fallzahl in Klammern. Alle Tore müssen offen sein — dann ist
-das Video qualifiziert, mehr garantiert die Datenlage nicht.
+Das Bildkonzept steht **nicht** unter „offen": Es ist der bestdokumentierte Teil des ganzen
+Datensatzes (11 multimodale Stichproben aus Lauf 1, 4 Szenenanalysen aus Lauf 2, 90 Thumbnails).
+Nur der `frames/`-Ordner blieb wegen 403 leer — die Frage selbst ist beantwortet.
 
-**Format**
-- [ ] Laufzeit **≥ 3,0 h** (Zielband 3,2–4,0 h) — 0 von 6 kürzeren B-Videos je über 2.500 Views; alle 10 Treffer ≥3,2 h
-- [ ] **1080p**, 24–30 fps (Lauf 1, n=5 belegt; 4K ohne Nachweis)
-- [ ] Erzählstimme läuft bis **100 %** der Laufzeit durch, längste Pause <20 s (n=24, Lauf 1)
-- [ ] Sprechbeginn in den **ersten 0–3 s** (n=24)
-- [ ] Sprechtempo **120–160 WPM** (n=21)
+**PFLICHT — Ein Standmotiv mit sanfter Bewegung, kein Szenenschnitt.**
+11 von 11 Stichproben zeigen Bewegung, aber immer ruhige: Feuerflackern, driftende Wolken,
+funkelnde Sterne, langsamer Zoom. Der tote Kanal C rotiert 8 Szenen, G schneidet Stock-Footage.
 
-**Bild**
-- [ ] **Ein** Standmotiv mit sanfter Bewegung (Feuer, Wolken, langsamer Zoom) — kein Szenenschnitt (n=3 Gewinner-Stichproben; der tote C rotiert 8 Szenen)
-- [ ] Palette: tiefes Nachtblau + **eine warme Lichtquelle** im Bild (n=11 Stichproben)
-- [ ] Thumbnail gehört sichtbar zur **eigenen Serie** — gleiches Motiv, gleiche Typo wie die letzten Uploads (B: 13/13 identisches Motiv)
+**PFLICHT — Palette: tiefes Nachtblau/Schwarz + genau eine warme Lichtquelle im Bild**
+(Lagerfeuer, erleuchtetes Fenster, Mond). Hoher Kontrast, dunkles Gesamtbild.
 
-**Text**
-- [ ] Titel trägt einen **Zustands-Anker** (9/10 Treffer)
-- [ ] Titel ist **nicht** von einem anderen Kanal kopiert (F kopierte A-Titel inkl. Tippfehler → 18 Views)
-- [ ] Bibeltext ist eine **echte Übersetzung** (NIV o. ä.), keine KI-Paraphrase — laut vorgelesen gegengeprüft (C's Todesursache: *„Strike all of my opponents on the mandible"*)
-- [ ] Maximal **2 CTAs** im ganzen Video (Gewinner 0–2; tote Kanäle 4–7)
+**PFLICHT — Thumbnail gehört sichtbar zur eigenen Serie.** B verwendet in **13 von 13**
+Thumbnails dasselbe Motiv (schlafender Jesus in weiß-rotem Gewand, Lamm, Lagerfeuer, blaue
+Nacht) mit großen weißen Serifen-Versalien. Wiedererkennbar wie ein Logo.
+> Wichtige Einschränkung: B's Thumbnails sind bei 166.000 und bei 140 Views praktisch identisch.
+> Die Serie trägt die **Kanalidentität**, sie erklärt den Einzeltreffer nicht.
 
-**Kanal**
-- [ ] Dieser Upload ist der **erste oder zweite diese Woche** (Gewinner 1,3–1,5/Wo; alle 8 Verlierer 2,0–13,5)
-- [ ] Abstand zum letzten Upload **≥ 4 Tage** (B: 10 von 10 Abständen liegen bei 4–7 Tagen)
-- [ ] **Kein Short** auf diesem Kanal (Gewinner 0; J: 857K Shorts-Views → 171 Langform-Views)
-- [ ] Kanalbeschreibung/Keywords ohne Altlasten (E trägt bis heute „Tibetan Singing Bowls" → 40 Subs)
+**PFLICHT — 1920×1080, 24–30 fps.** 4K nicht nachweisbar besser; „4k" im Titel bringt 1,20×.
 
-**Bewusst NICHT auf der Liste** (siehe Abschnitt D und `erfolgsregeln.md` §3): Tags,
-Kapitelmarken, Untertitelspur, 4K, KJV-vs-NIV, Kanalalter.
+**Belegtes Motiv-Set:** schlafende Figur mit Lamm am Feuer, Mond und Sterne, Wasserspiegelung,
+aufgeschlagenes Buch, einsame Hütte. Untertitel weiß, zentriert, unteres Drittel, ins Bild
+gerendert; Kanal-Wasserzeichen klein in einer Ecke.
 
 ---
 
-## B) Titel-Baukasten
+## 6. RHYTHMUS
 
-**Bauform der Treffer:** `[Zustands-Anker] + [Zusage] + [Tonight]`
-Beispiele aus den Daten: *„No More Thinking Tonight… Rest With Jesus"* (166K) ·
-*„I Know You're Tired… Jesus Watches Over You Tonight"* (233K) ·
-*„Stop Thinking For A Moment, Sleep To These Psalms Tonight"* (96K)
+**Upload-Abstand 4–7 Tage** (B: 10 von 10 Abständen). **Maximal 2 Videos pro Woche**
+(Gewinner 1,3–1,5/Wo; alle 8 Verlierer 2,0–13,5). **Null Shorts** (J: 856.688 Shorts-Views →
+171 Langform-Views bei 2.210 Subs).
 
-### 20 Zustands-Anker
-
-**Belegt — wörtlich aus Gewinner-Titeln (13):**
-1. `You're Tired, I Know…` (201K)
-2. `I Know You're Tired…` (233K)
-3. `If You're Anxious,` (245K)
-4. `Lord, I Feel Tired` (184K)
-5. `No More Thinking Tonight…` (166K)
-6. `Stop Thinking For A Moment,` (96K)
-7. `Fall Asleep Without Stress…` (35K)
-8. `Don't Go to Sleep Worried…` (32K)
-9. `You Need Rest…` (36K)
-10. `If You're Overwhelmed,` (1,3K)
-11. `Rest Your Eyes…` (915)
-12. `God Knows You're Tired…` (140)
-13. `You Deserve Some Rest…` (559)
-
-**Ungeprüft — von mir aus dem Muster abgeleitet, ohne Datenbeleg (7):**
-14. `If Your Mind Won't Slow Down,`
-15. `When Sleep Won't Come…`
-16. `You've Carried Enough Today…`
-17. `If Tonight Feels Heavy,`
-18. `Too Tired to Pray? …`
-19. `When Tomorrow Feels Too Big…`
-20. `If You're Lying Awake Again…`
-
-> Anker 10–13 stammen aus **Flop**-Videos desselben Kanals — sie sind belegt als *verwendet*,
-> nicht als *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster (P2).
-
-### 15 Eigennamen
-
-**Wichtige Einschränkung:** Für A und B sind Eigennamen **nicht** belegt (1 von 21 Titeln, P1).
-Die folgende Liste stammt aus **Lauf 1** (etablierte Kanäle, kanal-normiert) und ist für einen
-**Neustarter ungeprüft**. Faktoren = Median-Views gegen den Kanal-Median.
-
-| Eigenname | Beleg | Fallzahl |
-|---|---|---|
-| Gospel of John | 3,0–3,3× · A's einziger Eigennamen-Titel = 245K | n=14 |
-| Gospels (gesammelt) | 2,8–3,3× | n=31 |
-| Isaiah | Top-Video Rest In Faith 773K | n=10 |
-| Book of Enoch | 2,3× (SleepCodex n=40), 33× (Night Psalms n=4) | n=46 |
-| Angels / Watchers | 1,4–6,9× | n=36 |
-| Daniel | 536K bei Rest In Faith | n=11 |
-| Sermon on the Mount | 413K bei Night Psalms | n=1 |
-| Proverbs | 93K bei Rest in Jesus | n=1 |
-| Revelation | 1,5× global | n=12 |
-| Ephesians / Galatians / Colossians | 1,0 Mio. bei The Sleep Bible | n=1 |
-| Genesis | 0,43× global — **schwach** | n=13 |
-| Psalms | 0,26–1,38× — **kein Effekt nachweisbar** | n=32 |
-| Matthew / Luke / Mark | nur als „Gospels" belegt, einzeln nicht | — |
-| Jeremiah | 1,17× global | n=4 |
-| Lamentations / Job | **keine Daten** | 0 |
-
-**Praktische Lesart:** Für die ersten ~10 Videos den Zustands-Anker führen lassen (das ist die
-belegte Neustarter-Mechanik). Eigennamen als *Testreihe* dazunehmen, nicht als Grundregel —
-Prüfkriterium in Abschnitt D.
+**Ergänzung aus den Daten:** Kanalbeschreibung und Kanal-Keywords müssen ausschließlich die
+Nische beschreiben. E wirbt bis heute für „Tibetan Singing Bowls" (40 Subs), H trägt
+Mythologie-Keywords und Atlantis-Videos im Katalog (Median 52 Views).
 
 ---
 
-## C) Textbausteine
+## 7. METADATEN
 
-### Hook (0–60 s)
+**SRT-Untertitelspur hochladen.** 0 von 19 Gewinner-Videos hat eine — echte, unbesetzte Lücke.
+Wirkung ungeprüft, Kosten nahe null (fällt aus dem TTS-Skript ohnehin ab).
 
-**Belegt:** Rahmung ist **optional** — A's 233K-Video hat keine. Wenn du eine nimmst, dann
-warm, zweite Person, unter 110 s.
+**Beschreibung: Wert zuerst, Spendenlink danach.** Konsistent mit A (Kanalbeschreibung nennt
+erst den Nutzen, dann buymeacoffee) — n=1, schwacher Beleg.
 
-*Wörtlich aus Gewinner-Videos:*
-> „Hey child of God, you're safe here. If you're tired, anxious, or need some peace, this
-> space was made for you. In a moment, we'll begin calmly reading the word of God from the
-> Gospel of John to help you rest and find comfort." — A, 245K
+**Kapitelmarken — optional, nicht Pflicht.**
+> A's drei größte Treffer (245K/233K/201K) haben **null** Kapitelmarken. B setzt sie durchgehend
+> (40–93 Stück). Beide Muster gewinnen. Nimm sie für die Nutzbarkeit, nicht für die Reichweite.
 
-> „If you're still awake tonight, I'm really glad you're here. Set every worry aside tonight
-> and allow God's word to quiet your mind as you fall asleep. As you listen to these psalms,
-> don't worry about tomorrow. Right now, simply rest in God's presence and receive the peace
-> that only he can give." — B, 96K
+**„Echte Tags gesetzt" — steht im Widerspruch zum Gewinner-Verhalten.**
+> A: 0 Tags auf **allen 8** Videos. B: die drei gemessenen Treffer (166K/96K/35K) haben **0 Tags**,
+> die beiden ≥3h-Flops haben 6 und 22. Bei n=5 ist das keine belastbare Negativregel — aber
+> „echte Tags" als Pflicht zu führen, behauptet einen Nutzen, den kein Gewinner belegt. Setz sie,
+> weil sie nichts kosten; erwarte nichts davon.
 
-> „Welcome back. Tonight, allow God's word to quiet your mind and lead you into the most
-> peaceful sleep. Leave today's worries behind. And let God's word be the last thing on your
-> mind before you drift off to sleep. Now, get comfortable, close your eyes, and rest in
-> God's presence." — B, 166K
+**KI-Kennzeichnung aktivieren** — Compliance-Entscheidung, kein Datenbeleg in beide Richtungen.
+Gehört zu §8.
 
-*Bauteile, die in allen dreien vorkommen:* Begrüßung → Zustand benennen → Erlaubnis zum
-Loslassen → Ankündigung des Textes → Körperanweisung („get comfortable, close your eyes").
+---
 
-**Nicht tun** (Belege aus toten Kanälen): Dringlichkeit (*„Before you scroll away…"*, D, Ø 16
-Views), reine Atemmeditation ohne Schriftbezug über Minuten (F, Ø 9 Views).
+## 8. Geschäfts- und Compliance-Entscheidungen (bewusst außerhalb der Daten)
 
-### CTA (maximal 2, in den ersten 60 s oder gar nicht)
+Diese Punkte sind legitim, aber **nicht** aus Kanaldaten begründet. Getrennt halten, damit die
+Checkliste nicht mit ungeprüften Annahmen verwässert.
 
-> „I'd love for you to comment below where you're listening from and leave a prayer, too, so
-> that we can all lift each other up." — A, 245K
+- Eigenes Eingangsgebet (~400 Wörter, je Video anders) als Absicherung der Monetarisierung
+- KI-Kennzeichnung
+- World English Bible statt NIV aus Urheberrechtsgründen → **WEBBE wählen** (§4)
 
-> „If these nightly verses have become part of your bedtime routine, I'd love for you to
-> subscribe and become part of this community." — B, 96K
+---
 
-> „If you enjoy these nightly Bible readings, consider subscribing so you can return whenever
-> you need a peaceful place to rest in God's word." — B #3
+## 9. OFFEN — wo die Daten schweigen
 
-**Nicht tun:** *„type amen in the comments"*, *„Share this message with someone who…"* (D, 7
-CTAs, Ø 16 Views). Kein CTA nach der Rahmung — ab da nur noch Schrift.
+- **Klangbett.** Vollständig ungemessen; der Audio-Download war blockiert. Delta-Wellen gegen
+  Klavier+Regen hat **null** Beleg — deshalb hier und nicht als Regel. Die Konsistenz-Hälfte
+  („einmal wählen, nicht wechseln") ist aus dem allgemeinen Serienprinzip plausibel, aber für
+  Audio ebenfalls ungeprüft. Aus Beschreibungen ablesbar: Rest in Jesus nennt „piano and rain".
+- **Stimmfarbe der Gewinner** (H5). Tool-Quota; Test läuft morgen automatisch.
+- **Was #7 von #8 unterscheidet.** In keiner messbaren Variable erfassbar. Ohne Impressions und
+  CTR aus fremden Analytics nicht auflösbar.
+- **Ob WEBBE so gut trägt wie NIV.** Prüfkriterium: dieselbe Psalmenauswahl einmal in beiden
+  Fassungen als 2-Minuten-Probe sprechen lassen, gegen Muttersprachler-Ohr prüfen.
+- **Ob Eigennamen einem Neustarter helfen.** n=1. Prüfkriterium: ab Video 10 je 5 Videos
+  mit/ohne, Median-Views vergleichen.
+- **Optimale Kadenz innerhalb 4–7 Tagen.** Belegt ist nur die Obergrenze.
 
-### Beschreibung
+---
 
-Struktur aus den Gewinner-Beschreibungen (n=19, 1.160–3.581 Zeichen):
+## 10. Titel-Baukasten
 
+**Belegt — wörtlich aus Gewinner-Titeln (13). Diese zuerst verwenden.**
+
+| Anker | Beleg |
+|---|---|
+| `If You're Anxious,` | 245K |
+| `I Know You're Tired…` | 233K |
+| `You're Tired, I Know…` | 201K |
+| `Lord, I Feel Tired` | 184K |
+| `No More Thinking Tonight…` | 166K |
+| `Stop Thinking For A Moment,` | 96K |
+| `You Need Rest…` | 36K |
+| `Fall Asleep Without Stress…` | 35K |
+| `Don't Go to Sleep Worried…` | 32K |
+| `If You're Overwhelmed,` | 1,3K |
+| `Rest Your Eyes…` | 915 |
+| `You Deserve Some Rest…` | 559 |
+| `God Knows You're Tired…` | 140 |
+
+Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
+*wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
+
+**Ungeprüft — abgeleitet, ohne Beleg (7):** `If Your Mind Won't Slow Down,` ·
+`When Sleep Won't Come…` · `You've Carried Enough Today…` · `If Tonight Feels Heavy,` ·
+`Too Tired to Pray? …` · `When Tomorrow Feels Too Big…` · `If You're Lying Awake Again…`
+
+**Eigennamen für die Testreihe** (aus Lauf 1, etablierte Kanäle, kanal-normiert — für einen
+Neustarter ungeprüft): Gospel of John 3,0–3,3× (n=14) · Gospels 2,8–3,3× (n=31) ·
+Isaiah (773K-Video, n=10) · Book of Enoch 2,3× (n=46) · Angels 1,4–6,9× (n=36) ·
+Daniel (536K, n=11) · Sermon on the Mount (413K, n=1) · Proverbs (93K, n=1) ·
+Revelation 1,5× (n=12) · Ephesians/Galatians/Colossians (1,0 Mio., n=1) ·
+Jeremiah 1,17× (n=4) · Genesis 0,43× — schwach (n=13) · Psalms 0,26–1,38× — kein Effekt (n=32) ·
+Matthew/Luke/Mark einzeln nicht belegt · Lamentations/Job keine Daten.
+
+---
+
+## 11. Textbausteine
+
+**Hook (0–60 s, optional).** A's 233K-Video hat keinen. Wenn du einen nimmst: warm, zweite
+Person, unter 110 s. Bauteile aus allen drei Gewinner-Hooks: Begrüßung → Zustand benennen →
+Erlaubnis zum Loslassen → Ankündigung des Textes → Körperanweisung.
+
+> „Hey child of God, you're safe here. If you're tired, anxious, or need some peace, this space
+> was made for you. In a moment, we'll begin calmly reading the word of God from the Gospel of
+> John to help you rest and find comfort." — A, 245K
+
+> „If you're still awake tonight, I'm really glad you're here. Set every worry aside tonight and
+> allow God's word to quiet your mind as you fall asleep." — B, 96K
+
+> „Welcome back. Tonight, allow God's word to quiet your mind and lead you into the most peaceful
+> sleep. Now, get comfortable, close your eyes, and rest in God's presence." — B, 166K
+
+**Nicht tun:** Dringlichkeit (*„Before you scroll away…"* — D, Ø 16 Views), minutenlange
+Atemmeditation ohne Schriftbezug (F, Ø 9 Views).
+
+**CTA (max. 2, in den ersten 60 s oder gar nicht).**
+
+> „I'd love for you to comment below where you're listening from and leave a prayer, too, so that
+> we can all lift each other up." — A, 245K
+
+> „If these nightly verses have become part of your bedtime routine, I'd love for you to subscribe
+> and become part of this community." — B, 96K
+
+**Nicht tun:** *„type amen in the comments"*, *„Share this message with someone who…"*
+(D: 7 CTAs, Ø 16 Views).
+
+**Beschreibung.**
 ```
 [Titel wörtlich wiederholen]
-
 [2–4 Sätze: Zustand ansprechen, was das Video tut, was der Hörer bekommt]
-
-[optional: „Focused on:" Liste mit 4–6 Stichpunkten]
-
-Chapters:
-0:00:29 - Intro
-0:00:32 - Psalm 9
-…
-
+[optional „Focused on:" mit 4–6 Stichpunkten]
+Chapters: 0:00:29 - Intro / 0:00:32 - Psalm 9 / …
 [2–3 Sätze Segenswunsch + Abo-Einladung]
-
-#sleepwithpsalms #restwithjesus #bibleversesforsleep #christiansleep …
+[Spendenlink NACH dem Wert]
+#sleepwithpsalms #restwithjesus #bibleversesforsleep #christiansleep
 ```
 
-**Kapitelmarken:** B setzt sie durchgehend (40–93 Stück, Psalm für Psalm). A's drei größte
-Treffer haben **null**. Beide Muster gewinnen — nimm sie für die Nutzbarkeit, nicht für die
-Reichweite.
-
 ---
 
-## D) Ungeprüft — ohne Datenbeleg
-
-Alles hier ist plausibel, aber **nicht** aus den Daten belegt. Nicht als Regel behandeln.
-
-| Annahme | Warum ungeprüft | Prüfkriterium |
-|---|---|---|
-| **Eigennamen im Titel helfen einem Neustarter** | Bei A/B 1 von 21; Beleg stammt aus etablierten Kanälen | Ab Video 10: je 5 Videos mit/ohne Eigenname, Median-Views vergleichen |
-| **Zustands-Anker 14–20** (meine Ableitungen) | Nie verwendet worden | Erst nach den 13 belegten einsetzen, einzeln testen |
-| **0 Tags helfen** | B's 3 gemessene Treffer haben 0 Tags, die 2 Flops ≥3h haben 6 und 22 — aber n=5, und frühe Flops hatten auch 0 | Ab Video 10 abwechselnd 0/20 Tags |
-| **Warme Rahmung schlägt Kaltstart** | A's 233K-Video widerlegt es einzeln | 5 Videos mit/ohne Rahmung, Retention der ersten 60 s vergleichen |
-| **Kuratierte Psalm-Reihenfolge** (23/91/121 zuerst) | Nur #10 (96K) macht das; #7 (166K) geht numerisch vor | Ab Video 10 abwechseln |
-| **Untertitelspur bringt Reichweite** | 0 von 19 Gewinnern hat eine — unbesetzt, aber deshalb auch unbewiesen | Ab Video 1 mitliefern, Traffic-Quelle „Suche" in Analytics beobachten |
-| **Textwiederholung 2–3× spart Kosten ohne Schaden** | Bei The Sleep Bible belegt (1,9 Mio. mit 3 Durchläufen), bei A/B ungeprüft | Ein Video mit 2 Durchläufen, Retention vergleichen |
-| **Musikbett-Art (Delta/Piano/Regen)** | Vollständig ungemessen — Audio-Download blockiert | Nur über eigene Analytics |
-| **Stimmcharakter der Gewinner** | Tool-Quota; für morgen geplant | Steht aus |
-
----
-
-## Was die Daten nicht hergeben
-
-1. **Warum #7 traf und #8 nicht.** Kein messbarer Unterschied. Ohne Impressions und CTR aus
-   YouTube Analytics nicht auflösbar — für fremde Kanäle nicht zugänglich.
-2. **Ob die Formel für einen dritten Kanal funktioniert.** n=2 Gewinner. B beweist, dass ein
-   Nachzügler mit eigener Handschrift gewinnen kann; das ist ein Fall, kein Gesetz.
-3. **Die Wirkrichtung bei Länge.** Belegt ist nur: kein Treffer unter 3 h (n=6). Ob 3 h
-   *ursächlich* wirken oder ob längere Videos aus anderen Gründen besser gemacht wurden,
-   ist mit Beobachtungsdaten nicht zu trennen.
-4. **A's Sofort-Erfolg.** Video #1 traf mit 201K ohne Anlauf. First-Mover, externer Push oder
-   Zufall — nicht entscheidbar. A's Zeitvorsprung ist ohnehin nicht kopierbar.
-5. **Optimale Kadenz innerhalb des Sicherheitsbandes.** Belegt ist nur die Obergrenze
-   (Verlierer ab 2,0/Woche). Ob 1×/Woche besser ist als 2×, sagen die Daten nicht.
-
----
-
-*Änderungen an diesem Dokument gehören zusammen mit dem Beleg hier hinein. Regeln, die die
-eigenen Kanaldaten ab Video 10 widerlegen, werden gestrichen — nicht verteidigt.*
+*Änderungen gehören zusammen mit dem Beleg hier hinein. Regeln, die die eigenen Kanaldaten ab
+Video 10 widerlegen, werden gestrichen — nicht verteidigt.*
