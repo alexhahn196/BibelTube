@@ -1,0 +1,86 @@
+[
+ {
+  "datei": "stimmtest/probe/cb6381fb822345bd89c207fb49551d24.mp3",
+  "tokens": 5,
+  "quote": "5/5",
+  "anteil_rhotisch": 1.0,
+  "f3_median": 1582.8,
+  "f3_p25": 1548.6,
+  "f3_p75": 1616.7,
+  "quote_nur_r2_woerter": "5/5",
+  "je_wort": {
+   "darkness": "2/2",
+   "word": "3/3"
+  },
+  "urteil": "rhotisch (amerikanisch/neutral)",
+  "treffer": [
+   {
+    "wort": "word",
+    "s": 0.96,
+    "f3_min": 1479.5
+   },
+   {
+    "wort": "word",
+    "s": 2.16,
+    "f3_min": 1548.6
+   },
+   {
+    "wort": "word",
+    "s": 3.94,
+    "f3_min": 1582.8
+   },
+   {
+    "wort": "darkness",
+    "s": 19.52,
+    "f3_min": 1618.4
+   },
+   {
+    "wort": "darkness",
+    "s": 20.76,
+    "f3_min": 1616.7
+   }
+  ]
+ },
+ {
+  "datei": "stimmtest/probe/8d797adca9af48ca9e8a1c7284db1d6c.mp3",
+  "tokens": 5,
+  "quote": "5/5",
+  "anteil_rhotisch": 1.0,
+  "f3_median": 1848.7,
+  "f3_p25": 1741.3,
+  "f3_p75": 1885.0,
+  "quote_nur_r2_woerter": "5/5",
+  "je_wort": {
+   "darkness": "2/2",
+   "word": "3/3"
+  },
+  "urteil": "rhotisch (amerikanisch/neutral)",
+  "treffer": [
+   {
+    "wort": "word",
+    "s": 1.16,
+    "f3_min": 1888.8
+   },
+   {
+    "wort": "word",
+    "s": 2.66,
+    "f3_min": 1848.7
+   },
+   {
+    "wort": "word",
+    "s": 4.88,
+    "f3_min": 1885.0
+   },
+   {
+    "wort": "darkness",
+    "s": 22.26,
+    "f3_min": 1543.6
+   },
+   {
+    "wort": "darkness",
+    "s": 23.52,
+    "f3_min": 1741.3
+   }
+  ]
+ }
+]

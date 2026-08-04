@@ -17,3 +17,9 @@ stimmtest/aufloesung2.txt
 stimmtest/probe_speed/
 stimmtest/probe4/
 stimmtest/out_r2/
+produktion/arbeit/
+produktion/korpus/text/
+produktion/video-*/*.mp4
+produktion/video-*/*.wav
+__pycache__/
+*.pyc

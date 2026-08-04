@@ -1,0 +1,7 @@
+Datei                               Tokens   rhotisch  F3-Median  Urteil
+_milo.wav                               17      17/17     1575.2  rhotisch (amerikanisch/neutral)
+                                   je Wort: {'darkness': '3/3', 'lord': '2/2', 'word': '10/10', 'words': '2/2'}
+_calm.wav                               17       2/17     2274.1  nicht-rhotisch (britisch gefaerbt)
+                                   je Wort: {'darkness': '0/3', 'lord': '1/2', 'word': '1/10', 'words': '0/2'}
+
+geschrieben: produktion/pipeline/qa/rhotik_lang.json

@@ -1,0 +1,86 @@
+[
+ {
+  "datei": "stimmtest/probe/d012487fa0824e5eb235f983d21eccac.mp3",
+  "tokens": 5,
+  "quote": "0/5",
+  "anteil_rhotisch": 0.0,
+  "f3_median": 2268.4,
+  "f3_p25": 2180.8,
+  "f3_p75": 2287.8,
+  "quote_nur_r2_woerter": "0/5",
+  "je_wort": {
+   "darkness": "0/2",
+   "word": "0/3"
+  },
+  "urteil": "nicht-rhotisch (britisch gefaerbt)",
+  "treffer": [
+   {
+    "wort": "word",
+    "s": 1.36,
+    "f3_min": 2124.0
+   },
+   {
+    "wort": "word",
+    "s": 2.76,
+    "f3_min": 2268.4
+   },
+   {
+    "wort": "word",
+    "s": 5.04,
+    "f3_min": 2287.8
+   },
+   {
+    "wort": "darkness",
+    "s": 22.2,
+    "f3_min": 2180.8
+   },
+   {
+    "wort": "darkness",
+    "s": 23.38,
+    "f3_min": 2308.4
+   }
+  ]
+ },
+ {
+  "datei": "stimmtest/probe/0368426537974d01abf6bf14a80f5cd9.mp3",
+  "tokens": 5,
+  "quote": "5/5",
+  "anteil_rhotisch": 1.0,
+  "f3_median": 1634.7,
+  "f3_p25": 1630.6,
+  "f3_p75": 1707.2,
+  "quote_nur_r2_woerter": "5/5",
+  "je_wort": {
+   "darkness": "2/2",
+   "word": "3/3"
+  },
+  "urteil": "rhotisch (amerikanisch/neutral)",
+  "treffer": [
+   {
+    "wort": "word",
+    "s": 1.06,
+    "f3_min": 1630.6
+   },
+   {
+    "wort": "word",
+    "s": 1.94,
+    "f3_min": 1713.5
+   },
+   {
+    "wort": "word",
+    "s": 3.58,
+    "f3_min": 1707.2
+   },
+   {
+    "wort": "darkness",
+    "s": 17.48,
+    "f3_min": 1624.0
+   },
+   {
+    "wort": "darkness",
+    "s": 18.52,
+    "f3_min": 1634.7
+   }
+  ]
+ }
+]

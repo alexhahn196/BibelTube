@@ -186,7 +186,7 @@ you'll find the next one.
 
 Support the channel: [Spendenlink]
 
-#biblesleep #psalmsforsleep #christiansleep #bibleversesforsleep #scripturefor sleep
+#biblesleep #psalmsforsleep #christiansleep #bibleversesforsleep #scriptureforsleep
 ```
 
 **Tags:** `bible for sleep`, `psalms for sleep`, `christian sleep meditation`,

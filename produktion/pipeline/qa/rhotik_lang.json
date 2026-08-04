@@ -1,0 +1,210 @@
+[
+ {
+  "datei": "stimmtest/out/_milo.wav",
+  "tokens": 17,
+  "quote": "17/17",
+  "anteil_rhotisch": 1.0,
+  "f3_median": 1575.2,
+  "f3_p25": 1546.5,
+  "f3_p75": 1633.6,
+  "quote_nur_r2_woerter": "15/15",
+  "je_wort": {
+   "darkness": "3/3",
+   "lord": "2/2",
+   "word": "10/10",
+   "words": "2/2"
+  },
+  "urteil": "rhotisch (amerikanisch/neutral)",
+  "treffer": [
+   {
+    "wort": "word",
+    "s": 1.22,
+    "f3_min": 1546.7
+   },
+   {
+    "wort": "word",
+    "s": 2.48,
+    "f3_min": 1422.6
+   },
+   {
+    "wort": "word",
+    "s": 4.74,
+    "f3_min": 1454.5
+   },
+   {
+    "wort": "darkness",
+    "s": 21.62,
+    "f3_min": 1633.6
+   },
+   {
+    "wort": "darkness",
+    "s": 23.02,
+    "f3_min": 1566.3
+   },
+   {
+    "wort": "word",
+    "s": 75.76,
+    "f3_min": 1546.5
+   },
+   {
+    "wort": "lord",
+    "s": 159.06,
+    "f3_min": 1860.1
+   },
+   {
+    "wort": "word",
+    "s": 573.06,
+    "f3_min": 1462.0
+   },
+   {
+    "wort": "darkness",
+    "s": 754.92,
+    "f3_min": 1667.3
+   },
+   {
+    "wort": "words",
+    "s": 877.68,
+    "f3_min": 1680.2
+   },
+   {
+    "wort": "lord",
+    "s": 898.3,
+    "f3_min": 1625.3
+   },
+   {
+    "wort": "word",
+    "s": 1210.8,
+    "f3_min": 1690.0
+   },
+   {
+    "wort": "word",
+    "s": 1226.58,
+    "f3_min": 1485.4
+   },
+   {
+    "wort": "word",
+    "s": 1308.6,
+    "f3_min": 1564.4
+   },
+   {
+    "wort": "word",
+    "s": 1557.36,
+    "f3_min": 1575.2
+   },
+   {
+    "wort": "word",
+    "s": 1678.6,
+    "f3_min": 1622.1
+   },
+   {
+    "wort": "words",
+    "s": 1741.02,
+    "f3_min": 1579.7
+   }
+  ]
+ },
+ {
+  "datei": "stimmtest/out/_calm.wav",
+  "tokens": 17,
+  "quote": "2/17",
+  "anteil_rhotisch": 0.118,
+  "f3_median": 2274.1,
+  "f3_p25": 2225.3,
+  "f3_p75": 2321.7,
+  "quote_nur_r2_woerter": "1/15",
+  "je_wort": {
+   "darkness": "0/3",
+   "lord": "1/2",
+   "word": "1/10",
+   "words": "0/2"
+  },
+  "urteil": "nicht-rhotisch (britisch gefaerbt)",
+  "treffer": [
+   {
+    "wort": "word",
+    "s": 1.26,
+    "f3_min": 2350.2
+   },
+   {
+    "wort": "word",
+    "s": 2.58,
+    "f3_min": 2321.7
+   },
+   {
+    "wort": "word",
+    "s": 4.9,
+    "f3_min": 2349.4
+   },
+   {
+    "wort": "darkness",
+    "s": 21.88,
+    "f3_min": 2112.6
+   },
+   {
+    "wort": "darkness",
+    "s": 23.28,
+    "f3_min": 2225.3
+   },
+   {
+    "wort": "word",
+    "s": 75.78,
+    "f3_min": 1854.1
+   },
+   {
+    "wort": "lord",
+    "s": 159.46,
+    "f3_min": 2300.6
+   },
+   {
+    "wort": "word",
+    "s": 568.48,
+    "f3_min": 2234.5
+   },
+   {
+    "wort": "darkness",
+    "s": 743.92,
+    "f3_min": 2249.4
+   },
+   {
+    "wort": "words",
+    "s": 866.72,
+    "f3_min": 2341.9
+   },
+   {
+    "wort": "lord",
+    "s": 887.28,
+    "f3_min": 1968.9
+   },
+   {
+    "wort": "word",
+    "s": 1188.62,
+    "f3_min": 2274.1
+   },
+   {
+    "wort": "word",
+    "s": 1204.44,
+    "f3_min": 2206.7
+   },
+   {
+    "wort": "word",
+    "s": 1283.58,
+    "f3_min": 2325.3
+   },
+   {
+    "wort": "word",
+    "s": 1519.62,
+    "f3_min": 2307.7
+   },
+   {
+    "wort": "word",
+    "s": 1637.6,
+    "f3_min": 2269.7
+   },
+   {
+    "wort": "words",
+    "s": 1701.9,
+    "f3_min": 2306.5
+   }
+  ]
+ }
+]
