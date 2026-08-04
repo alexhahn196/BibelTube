@@ -67,11 +67,18 @@ Genesis 43–50 (5.992 W).
 
 **Thumbnail-Serie (Pflicht, Formel §5 / Checkliste).** Ein einziges Motiv über alle
 Videos, nur in Details variiert — B nutzt in 13 von 13 Thumbnails dasselbe Bild.
-Grundmotiv für diesen Kanal:
+Grundmotiv für diesen Kanal *(entschieden 2026-08-04 nach
+`formel/thumbnail-motive.md`, Richtung 2 — die frühere „schlafende Gestalt" ist
+ersetzt: eine anonyme Figur kommt in 90 Feld-Thumbnails null Mal als Hauptmotiv
+vor, alle 10 Treffer zeigen erkennbar Jesus; die sitzende Bauform trägt 4/10
+Treffer plus den stärksten kanal-normierten Einzelwert und ist mit 11/90 im
+Feld deutlich seltener kopiert als die liegende mit 22/90)*:
 
-> Schlafende Gestalt in weiß-rotem Gewand auf einer Decke, ein Lamm an sie geschmiegt,
-> rechts ein Lagerfeuer im Steinkreis, darüber tiefblauer Sternenhimmel mit Mond.
-> Gemalter Stil, warmes Licht nur vom Feuer, hoher Kontrast, dunkles Gesamtbild.
+> **Erkennbare sitzende Jesus-Figur** (schlichtes Gewand, Bart), allein in weiter
+> dunkler Nachtlandschaft, Augen geschlossen oder gesenkt, im Profil oder halb
+> abgewandt — **kein Blickkontakt**. Genau **eine** warme Lichtquelle im Bild,
+> darüber tiefblauer Sternenhimmel. Gemalter Stil, hoher Kontrast, dunkles
+> Gesamtbild. Kein Innenraum, kein Lamm als Pflichtelement.
 
 Harte Werte je Thumbnail: **max. 4 Wörter**, Versalien, **Versalhöhe ≥ 11,5 % der
 Bildhöhe** (≥ 125 px bei 1080p), **Kontrast ≥ 10:1**, Text im oberen Drittel,
@@ -161,8 +168,9 @@ SRT-Untertitelspur hochladen (0 von 19 Gewinner-Videos hat eine, echte Lücke).
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, Sternenhimmel besonders weit und klar, Mond hoch links,
-Lagerfeuer klein und ruhig. Decke in tiefem Rot.
+**Motiv:** Grundmotiv — sitzende Jesus-Figur auf einem Felsen, Sternenhimmel
+besonders weit und klar, Mond hoch links, Lagerfeuer klein und ruhig.
+Gewand-Akzent in tiefem Rot.
 **Text:** `SO TIRED TONIGHT` (3 Wörter)
 
 ### Beschreibung
@@ -252,8 +260,8 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, aufgeschlagenes Buch neben der schlafenden Gestalt, Feuer
-etwas größer und wärmer, Himmel mit dichterem Sternenfeld.
+**Motiv:** Grundmotiv, aufgeschlagenes Buch neben der sitzenden Figur (belegt
+in A's 245K), Feuer etwas größer und wärmer, Himmel mit dichterem Sternenfeld.
 **Text:** `QUIET YOUR MIND` (3 Wörter)
 
 ### Beschreibung
@@ -358,9 +366,8 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der schlafenden Gestalt;
-Lamm deutlich sichtbar an der Schulter, Feuer im Vordergrund rechts, Mond klein
-und hoch.
+**Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
+Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
 **Text:** `GOSPEL OF JOHN` (3 Wörter)
 
 ### Beschreibung
@@ -547,7 +554,7 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv am Wasser — stilles Ufer hinter der schlafenden Gestalt,
+**Motiv:** Grundmotiv am Wasser — sitzende Figur am stillen Ufer,
 Mondspiegelung auf der Oberfläche, Feuer rechts.
 **Text:** `YOU'RE TIRED` (2 Wörter)
 
@@ -647,7 +654,7 @@ Support the channel: [Spendenlink]
 ### Thumbnail
 
 **Motiv:** Grundmotiv, Feuer klein, weiter Horizont mit ferner Hügelkette,
-sehr großer Sternenhimmel, Decke stärker in Rot betont.
+sehr großer Sternenhimmel, Gewand stärker in Rot betont.
 **Text:** `ISAIAH TONIGHT` (2 Wörter)
 
 ### Beschreibung
@@ -732,7 +739,7 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, Feuer als hellster Punkt deutlich rechts, schlafende Gestalt
+**Motiv:** Grundmotiv, Feuer als hellster Punkt deutlich rechts, sitzende Figur
 in der linken Bildhälfte, dichter Sternenhimmel, kein Mond.
 **Text:** `REST WITHOUT STRESS` (3 Wörter)
 
@@ -827,7 +834,7 @@ Rest well tonight. Subscribing helps you find the next one.
 ### Thumbnail
 
 **Motiv:** Grundmotiv, sehr weiter Himmel mit Milchstraßenband, Landschaft kaum
-erkennbar dunkel, Feuer und Gestalt klein im unteren Drittel.
+erkennbar dunkel, Feuer und sitzende Figur klein im unteren Drittel.
 **Text:** `IN THE BEGINNING` (3 Wörter)
 
 ### Beschreibung

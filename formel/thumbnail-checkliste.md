@@ -113,7 +113,10 @@ schnell geht.
 - [ ] Text sitzt im oberen Drittel, Figur und Lichtquelle darunter (B-Serie: 13/13)
 
 **Motiv (Serienbindung — nicht verhandelbar)**
-- [ ] Gleiches Motiv wie die letzten Uploads: schlafende Figur, Lamm, Lagerfeuer, Nachthimmel
+- [ ] Gleiches Motiv wie die letzten Uploads: **sitzende Jesus-Figur, allein in
+      dunkler Nachtlandschaft, kein Blickkontakt** *(Serienentscheidung
+      2026-08-04, `thumbnail-motive.md` Richtung 2 — ersetzt die frühere
+      „schlafende Figur, Lamm, Lagerfeuer")*
 - [ ] Tiefes Nachtblau als Grundton, genau **eine** warme Lichtquelle
 - [ ] Keine Grelltöne, kein Tageslicht, keine gesättigten Neonfarben
 
