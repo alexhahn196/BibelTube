@@ -1,0 +1,20 @@
+{
+ "datei": "thumbnail-b.png",
+ "text": "REST TONIGHT",
+ "woerter": 2,
+ "schrift": "FreeSerifBold.ttf",
+ "fontgroesse_px": 184,
+ "versalhoehe_px": 125,
+ "versalhoehe_pct": 11.57,
+ "textbreite_px": 1392,
+ "rand_je_seite_px": 264,
+ "kontrast_direkt_mittel": 16.7,
+ "kontrast_direkt_p95": 13.9,
+ "kontrast_roh_mittel": 14.6,
+ "kontrast_roh_p95": 11.0,
+ "groesse_kb": 2389.1,
+ "cap_ok": true,
+ "kontrast_ok": true,
+ "woerter_ok": true,
+ "bestanden": true
+}
