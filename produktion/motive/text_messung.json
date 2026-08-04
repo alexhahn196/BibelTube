@@ -1,17 +1,11 @@
 {
  "text": "SO TIRED TONIGHT",
  "font": "FreeSerif Bold",
- "fontgroesse_px": 184,
  "versalhoehe_px": 125,
  "versalhoehe_pct": 11.57,
- "soll": "≥125 px / ≥11,5 %",
- "textbreite_px": 1787,
- "rand_je_seite_px": 66,
- "kontrast_rohhintergrund_mittel": 15.8,
- "kontrast_rohhintergrund_p95": 13.7,
- "sternpixel_unter_glyphen": 90,
- "kontrast_direkter_hintergrund_mittel": 17.4,
- "kontrast_direkter_hintergrund_p95": 15.5,
- "kontrast_direkter_hintergrund_max_lum": 2.0,
- "soll_kontrast": "≥10:1"
+ "kontrast_direkter_hintergrund_mittel": 16.8,
+ "kontrast_direkter_hintergrund_p95": 14.0,
+ "kontrast_rohhintergrund_mittel": 14.8,
+ "soll": "Versalhöhe ≥125 px / ≥11,5 % · Kontrast ≥10:1",
+ "basis": "neues V3 (große Lichtquelle), 2026-08-04"
 }

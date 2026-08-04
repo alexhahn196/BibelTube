@@ -1,0 +1,17 @@
+{
+ "determinismus_max_diff": 0,
+ "wrap_schritt_mad": 0.0094,
+ "normaler_schritt_mad_median": 0.0085,
+ "normaler_schritt_mad_max": 0.0195,
+ "wrap_unauffaellig": true,
+ "dekodiert_glatt_mad_median": 0.0254,
+ "dekodiert_keyframe_mad_median": 1.3126,
+ "dekodiert_keyframe_mad_max": 1.5045,
+ "naht1_schritt_mad": 1.5316,
+ "naht2_schritt_mad": 1.5316,
+ "naehte_unauffaellig": true,
+ "dauer_s": 60.0,
+ "groesse_mb": 1.76,
+ "bitrate_kbps": 234.1,
+ "hochgerechnet_3_5h_gb": 0.37
+}
