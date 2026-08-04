@@ -154,6 +154,14 @@ Das Bildkonzept steht **nicht** unter „offen": Es ist der bestdokumentierte Te
 Datensatzes (11 multimodale Stichproben aus Lauf 1, 4 Szenenanalysen aus Lauf 2, 90 Thumbnails).
 Nur der `frames/`-Ordner blieb wegen 403 leer — die Frage selbst ist beantwortet.
 
+> **Motiv-Auswertung aller 90 Thumbnails (2026-08-04): [`thumbnail-motive.md`](thumbnail-motive.md).**
+> Kernergebnis: Das Motiv ist als Erfolgshebel **widerlegt** (C und F tragen das
+> Gewinnermotiv bei ≤113 Views); alle 10 Treffer teilen aber eine Bildwelt —
+> gemalter Jesus ruht in dunkler Nachtszene, **0/10 mit Blickkontakt** — und
+> mehrere Bauformen kommen ausschließlich bei Verlierern vor. Dort auch die
+> zwei belegten Motivrichtungen samt Generierungs-Prompts und die
+> Serienkonsistenz-Prüfung (Konsistenz ist Nischen-Standard, kein Differenzierer).
+
 **PFLICHT — Ein Standmotiv mit sanfter Bewegung, kein Szenenschnitt.**
 11 von 11 Stichproben zeigen Bewegung, aber immer ruhige: Feuerflackern, driftende Wolken,
 funkelnde Sterne, langsamer Zoom. Der tote Kanal C rotiert 8 Szenen, G schneidet Stock-Footage.

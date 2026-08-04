@@ -23,7 +23,10 @@ Du hast gesagt, bei Widersprüchen gewinnen die Dokumente. Drei Stellen:
 2. **„Echte YouTube-Tags"** — Formel §7: A hat **0 Tags auf allen 8 Videos**, B's drei
    gemessene Treffer ebenfalls 0. Ich liefere Tags, weil sie nichts kosten; erwarte
    nichts davon.
-3. **`formel/thumbnail-motive.md` existiert nicht.** Die Motivvorgaben unten stammen aus
+3. ~~**`formel/thumbnail-motive.md` existiert nicht.**~~ *Seit 2026-08-04 existiert
+   die Datei (Auswertung aller 90 Thumbnails). Die Motivvorgaben unten bleiben
+   gültig; die neue Auswertung schärft nur: die Treffer zeigen erkennbar Jesus
+   selbst, eine anonyme Gestalt ist unbelegt.* Ursprünglicher Stand: stammen aus
    Formel §5 (belegtes Motiv-Set) und `thumbnail-checkliste.md`.
 
 Kein Widerspruch: dein Längenband 3,4–3,8 h deckt sich mit Formel §2, und
