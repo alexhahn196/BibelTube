@@ -1,10 +1,12 @@
 # Videos 01–08 — Textebene
 
-> **Stand: 2026-08-03.** Verbindlich sind `formel/video-formel.md` (v2.1),
+> **Stand: 2026-08-04.** Verbindlich sind `formel/video-formel.md` (v2.1),
 > `regeln/erfolgsregeln.md` und `formel/thumbnail-checkliste.md`.
 > Wortzahlen sind **gemessen**, nicht geschätzt: `produktion/wortzahlen.py` hat alle
 > 518 in Frage kommenden WEBBE-Kapitel abgerufen und gezählt
 > (`produktion/korpus/kapitel.json`, `produktion/korpus/plan.json`).
+> Alle acht Titel sind gegen die 21 bekannten Gewinner-Titel geprüft
+> (`produktion/titel_pruefung.py`, Ergebnis am Dateiende).
 > Noch kein Rendering, keine Stimme.
 
 ## Wo deine Vorgaben von den Dokumenten abweichen
@@ -287,22 +289,29 @@ Support the channel: [Spendenlink]
 
 # Video 03
 
-**Titel:** `If You're Anxious, Let the Gospel of John Quiet Your Mind`
+**Titel:** `If You're Overwhelmed, Let the Gospel of John Quiet Your Mind`
 **Eigennamen-Test:** **JA** — „Gospel of John" (Testreihe 1 von 2)
-**Anker:** „If You're Anxious," (belegt, A 245K)
+**Anker:** „If You're Overwhelmed," (belegt, B 1,3K)
 
 > **Abgrenzung zum Konkurrenten:** A's 245K-Video heißt „If You're Anxious, Rest to the
-> Gospel of John Tonight". Anker und Eigenname sind dieselben — das ist erlaubt und
-> genau der Testfall. Die zweite Titelhälfte ist bewusst anders und „Tonight"
-> weggelassen, damit kein wörtliches Zitat entsteht (Formel §1: Kanal F kopierte
-> wörtlich → 18 Views).
+> Gospel of John Tonight". Ursprünglich stand hier derselbe Anker *und* derselbe
+> Eigenname — zu nah am Original. Kanal F ist mit 18 Views genau daran gestorben
+> (Formel §1). Der Eigenname bleibt, weil er der Testfall ist; der Anker ist getauscht
+> gegen „If You're Overwhelmed," — ebenfalls aus den 13 belegten, kommt in **keinem**
+> der 8 A-Titel vor. Die Testfrage (zieht ein Eigenname bei einem neuen Kanal?) bleibt
+> damit unverändert.
+>
+> Der Anker ist mit **1,3K Views** (B) deutlich schwächer belegt als „If You're
+> Anxious," mit 245K. Das ist der Preis der Abgrenzung und keine Aussage über die
+> Zugkraft: B's Videos streuen von 1,3K bis 166K ohne messbaren Unterschied in den
+> Titeln (Formel §1, offene Frage 3).
 
 **Textkorpus:** Johannes + Hebräer + 1. Johannes + Kolosser
 **Gemessen:** 30.009 Wörter → **3,57 h** → ca. 156.300 Zeichen TTS
 
 ### Eingangsgebet (195 Wörter)
 
-> Jesus, I'm anxious tonight, and I can't argue myself out of it.
+> Jesus, I'm overwhelmed tonight, and I can't argue myself out of it.
 >
 > It isn't one large thing. It's a dozen small ones standing close together, and from
 > where I'm lying they look like a wall.
@@ -329,7 +338,7 @@ Support the channel: [Spendenlink]
 ### Hook
 
 **(a) mit kurzer Begrüßung**
-> „If you're anxious tonight, you're in a good place to be. Nothing here asks anything
+> „If you're overwhelmed tonight, you're in a good place to be. Nothing here asks anything
 > of you. In a moment I'll begin reading the Gospel of John from the beginning, slowly,
 > all the way through. Let it be the last voice you hear. Get comfortable and close
 > your eyes."
@@ -340,7 +349,7 @@ Support the channel: [Spendenlink]
 
 ### CTA (2)
 
-1. „If something has you anxious tonight, leave it in the comments — you'll be prayed
+1. „If something has you overwhelmed tonight, leave it in the comments — you'll be prayed
    for here, and you won't be the only one."
 2. „Subscribe if you'd like this to be part of your nights."
 
@@ -354,16 +363,16 @@ und hoch.
 ### Beschreibung
 
 ```
-If You're Anxious, Let the Gospel of John Quiet Your Mind
+If You're Overwhelmed, Let the Gospel of John Quiet Your Mind
 
-For the nights when worry keeps you awake. The complete Gospel of John, followed by
+For the nights when it's all too much at once. The complete Gospel of John, followed by
 Hebrews, 1 John and Colossians — read slowly, without interruption, for anyone who
 needs a steadier voice than their own thoughts.
 
 You don't have to follow along. Let it play and let your eyes close.
 
 Focused on:
-• Anxiety that shows up at night
+• Being overwhelmed at the end of the day
 • The words of Jesus, read slowly
 • Being kept, not fixed
 • Peaceful sleep in God's presence
@@ -478,10 +487,16 @@ Support the channel: [Spendenlink]
 
 # Video 05
 
-**Titel:** `You're Tired, I Know… Sleep to the Story of Jesus Tonight`
+**Titel:** `You're Tired, I Know… Sleep to the Whole Story, Read Slowly`
 **Eigennamen-Test:** nein
 **Anker:** „You're Tired, I Know…" (belegt, A 201K)
 **Hook-Test:** Variante **(b), kalter Start** — Beginn der Gegenüberstellung
+
+> **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Sleep to the Story of Jesus
+> Tonight". Damit lag der Titel bei 71,4 % gemeinsamer inhaltstragender Wörter mit
+> A's „You're Tired, I Know... Jesus Watches Over You Tonight" (233K) —
+> geteilt: *know, tired, you, jesus, tonight*. Über der 50-%-Grenze. „Jesus" und
+> „Tonight" sind gestrichen, der belegte Anker bleibt. Jetzt 50,0 %.
 
 **Textkorpus:** Lukas + Prediger
 **Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS
@@ -536,7 +551,7 @@ Mondspiegelung auf der Oberfläche, Feuer rechts.
 ### Beschreibung
 
 ```
-You're Tired, I Know… Sleep to the Story of Jesus Tonight
+You're Tired, I Know… Sleep to the Whole Story, Read Slowly
 
 For the stretch of days that doesn't seem to end. The complete Gospel of Luke,
 followed by Ecclesiastes — read slowly, without interruption, from beginning to end.
@@ -568,10 +583,16 @@ Support the channel: [Spendenlink]
 
 # Video 06
 
-**Titel:** `Don't Go to Sleep Worried… Isaiah's Comfort for a Restless Heart`
+**Titel:** `Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes`
 **Eigennamen-Test:** **JA** — „Isaiah" (Testreihe 2 von 2)
 **Anker:** „Don't Go to Sleep Worried…" (belegt, B 32K)
 **Hook-Test:** Variante **(a)**
+
+> **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Isaiah's Comfort for a Restless
+> Heart". Damit lag der Titel bei 62,5 % gemeinsamer inhaltstragender Wörter mit
+> B's „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" (32K) —
+> geteilt: *go, heart, not, sleep, worried*. „Heart" ist ersetzt, der belegte Anker
+> bleibt. Jetzt 44,4 %.
 
 **Textkorpus:** Jesaja 1–25 + Jesaja 40–66 + Daniel 4–6
 **Gemessen:** 30.693 Wörter → **3,65 h** → ca. 159.900 Zeichen TTS
@@ -629,7 +650,7 @@ sehr großer Sternenhimmel, Decke stärker in Rot betont.
 ### Beschreibung
 
 ```
-Don't Go to Sleep Worried… Isaiah's Comfort for a Restless Heart
+Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes
 
 For the nights when you're carrying something you can't do anything about yet. Isaiah
 chapters 1–25 and 40–66, with Daniel 4–6 — read slowly, without interruption.
@@ -837,6 +858,44 @@ Support the channel: [Spendenlink]
 `old testament for sleep`, `bible reading for sleep`, `sleep with god's word`,
 `creation story`, `bedtime bible`, `peaceful bible reading`,
 `world english bible`, `christian bedtime`, `rest in god`
+
+---
+
+## Titelprüfung gegen die Gewinner-Titel
+
+Kriterium: **kein Titel teilt mehr als die Hälfte seiner inhaltstragenden Wörter mit
+einem einzelnen Konkurrenztitel.** Geprüft mit `produktion/titel_pruefung.py` gegen
+**21** bekannte Gewinner-Titel (8 von A, 13 von B — die vollständige Liste in
+`produktion/gewinner_titel.json`, also mehr als die 17 aus dem Auftrag).
+
+Methodik: Funktionswörter raus, einfaches Stemming (`psalms`→`psalm`, `tired`→`tir`),
+Pronomen der zweiten Person werden **bewusst mitgezählt** — die Du-Ansprache ist in
+dieser Nische inhaltlich, nicht grammatisch. Alle drei Entscheidungen gehen in die
+strenge Richtung: sie machen die gemessene Ähnlichkeit größer, nicht kleiner.
+
+| Video | Ähnlichkeit | Geteilt mit | Gemeinsame Wörter |
+|---|---|---|---|
+| 01 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, psalm, tired, you |
+| 02 | 44,4 % | B „Stop Thinking For A Moment, Sleep To These Psalms Tonight" | moment, stop, think, tonight |
+| 03 | 44,4 % | A „If You're Anxious, Rest to the Gospel of John Tonight" | gospel, if, john, you |
+| 04 | 44,4 % | B „No More Thinking Tonight… Jesus Is With You" | jesus, no, think, tonight |
+| 05 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, sleep, tired, you |
+| 06 | 44,4 % | B „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" | go, not, sleep, worried |
+| 07 | 50,0 % | B „Fall Asleep Without Stress… Jesus Is With You" | asleep, fall, stress, without |
+| 08 | 50,0 % | A „You Need Rest... Jesus Watches Over You Tonight" | need, rest, you |
+
+**Verstöße: 0.** Vier Titel liegen exakt auf der Grenze (50,0 %) — das ist kein Zufall,
+sondern die Bauweise: Der belegte Anker *ist* die erste Titelhälfte, und er kommt aus
+den Gewinner-Titeln. Wer den Anker behält, teilt zwangsläufig dessen Wörter. Die Grenze
+zwingt damit genau das, was sie soll: **die zweite Hälfte muss vollständig eigen sein.**
+
+Drei Titel mussten dafür geändert werden (03, 05, 06 — Begründung jeweils im Block).
+Nachprüfbar mit `python3 produktion/titel_pruefung.py`; Rückgabewert 0 = bestanden.
+
+**Grenze der Prüfung:** Sie misst Wortüberschneidung, nicht Bedeutung. „Quiet Your
+Mind" und „Calm Your Heart" zählen als völlig verschieden, obwohl sie dasselbe sagen.
+Gegen semantische Nähe schützt das Kriterium nicht — dafür gibt es aus den Daten kein
+Maß.
 
 ---
 
