@@ -9,6 +9,10 @@
 > **Validierung:** Ab Video 10 des eigenen Kanals werden diese Regeln gegen die eigenen
 > Kanaldaten geprüft (Hypothesen-Prüfkriterien in Abschnitt 4). Regeln, die die eigenen
 > Daten widerlegen, werden hier gestrichen — nicht verteidigt.
+> **Erste Auswertung schon nach Video 4:**
+> [`produktion/workflow-gates.md`](../produktion/workflow-gates.md), Gate 2 — CTR,
+> Absprungstelle und Traffic-Quellen. Kernregel dort: *eigene Daten schlagen Fremddaten.*
+> Gate 1 im selben Dokument hält die harten Prüfungen vor jedem Renderlauf fest.
 
 **Die Kanäle:**
 | | Kanal | Start (1. Upload) | Langform | Shorts | Ø Views (Langform) | Status |

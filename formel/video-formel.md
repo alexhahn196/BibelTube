@@ -5,6 +5,11 @@
 > 8 Kanälen, 19 Voll-Metadatensätze, 4 Gewinner-Transkripte, 90 Thumbnails) plus
 > `teardown/produktions-spec.md` (454 Videos, 8 etablierte Kanäle) und `regeln/erfolgsregeln.md`.
 >
+> **Vor jedem Rendern:** [`produktion/workflow-gates.md`](../produktion/workflow-gates.md)
+> fasst die harten Prüfungen dieses Dokuments als Gate 1 zusammen — Kernregel dort:
+> *kein Rendering, bevor Titel und Thumbnail stehen.* Gate 2 ersetzt nach Video 4
+> Fremdbefunde durch eigene CTR- und Retention-Daten.
+>
 > **Status: Qualifikations-Checkliste, kein Hit-Rezept.** Beleg: B #7 und #8 unterscheiden sich
 > in keiner messbaren Variable und um Faktor 128 in den Views. Erfüllung verhindert Scheitern,
 > garantiert keinen Treffer. Planungsgröße: 10 von 21 Gewinner-Videos über 30.000 Views —

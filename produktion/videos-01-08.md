@@ -320,6 +320,13 @@ Support the channel: [Spendenlink]
 **Textkorpus:** Johannes + Hebräer + 1. Johannes + Kolosser
 **Gemessen:** 30.009 Wörter → **3,57 h** → ca. 156.300 Zeichen TTS
 
+> **Korpus geprüft und unverändert (2026-08-04).** Zwischenzeitlich stand eine
+> Erweiterung um 1. Petrus + Jakobus im Raum (aus einem Lauf, in dem Johannes
+> Video 01 werden sollte). Sie entfällt: Video 01 liest 1. Petrus und Jakobus
+> bereits — die beiden Videos hätten sich überschnitten. Der geplante Korpus
+> liegt mit 3,43 h bei 145,9 WPM ohnehin im Zielband und braucht keine
+> Ergänzung.
+
 ### Eingangsgebet (195 Wörter)
 
 > Jesus, I'm overwhelmed tonight, and I can't argue myself out of it.
