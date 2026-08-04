@@ -86,6 +86,16 @@ ausblende_s        = 3.0
 breite             = 1920
 hoehe              = 1080
 fps                = 24
+# Quelle der Videospur:
+#   ki_clips  = echte Bild-zu-Video-Clips (Seedance, start=end=Standbild),
+#               4 Clips à 12 s als 48-s-Zyklus, Montage per Bitstrom-Kopie.
+#               Der Atem-Zoom entfällt hier: Formel §5 verlangt "Standmotiv
+#               mit sanfter Bewegung" - die liefern die Clips selbst, und
+#               ein Zoom obendrauf würde den kopierfähigen Bitstrom in einen
+#               vollständigen Re-Encode verwandeln (LCM-Zyklus 1200 s).
+#   standbild = bisheriger Weg: Standbild + Atem-Zoom (300-s-Zyklus)
+videoquelle        = ki_clips
+ki_clip_ordner     = produktion/motive/loops/ki
 # Formel §5: "Standmotiv mit sanfter Bewegung" ist PFLICHT (11/11 Stichproben).
 # Ein völlig statisches Bild wäre ein Dokumentverstoß.
 zoom               = ja

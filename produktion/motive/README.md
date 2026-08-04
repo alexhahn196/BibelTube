@@ -109,3 +109,43 @@ ganzzahliges Vielfaches von 60, der gemeinsame Zyklus schließt also exakt
 (5 Loop-Durchläufe je Zoom-Atemzug). Nach der Motiv-Entscheidung wird der
 gewählte Loop statt des Standbilds als Quelle des 300-s-Zyklus gerendert;
 Montage per Bitstrom-Kopie bleibt unverändert.
+
+## Echte KI-Clips (`loops/ki/`, 2026-08-04)
+
+Bild-zu-Video über Higgsfield, Modell **Seedance 1.5 Pro** (einziges Modell,
+dessen 4 Clips ins Guthaben passten — FLUX 3 hätte 180 Credits **je** Clip
+gekostet). Loop-Trick: `motiv-V3.png` als `start_image` **und** `end_image`,
+dadurch enden alle Clips wieder auf dem Ausgangsbild und sind beliebig
+aneinanderreihbar. 4 Clips à 12 s = 48-s-Zyklus.
+
+| Messung (alle 4 Clips) | Wert |
+|---|---|
+| Auflösung / fps / Dauer | 1920×1080 · 24 fps · 12,04 s |
+| Kameradrift (Phasenkorrelation Randzonen) | ≤ 0,05 px — praktisch null |
+| erster vs. letzter Frame | mittl. \|Δ\| 2,78–2,91 (nicht pixelidentisch — der Generator trifft das Zielbild nur näherungsweise) |
+| Übergangsschritt Clip→Clip (alle 16 Paare) | 2,83–3,14 |
+| normaler Frameschritt im Clip | 1,40–1,53 |
+| Artefakte | keine verformten Objekte, kein Stilbruch, Figur ruhig; **Rauch deutlich kräftiger als „thin wisps"** — Geschmacksfrage, im 3-min-Test beurteilen |
+
+Ein Schnitt zwischen Clips ist also ≈2× ein normaler Frameschritt — beide
+Grenzframes nähern dasselbe ruhige Ausgangsbild an. `kette-3min.mp4` zeigt
+16 Übergänge in Produktionsqualität.
+
+**Bitraten-Vorfall, gemeldet:** Die Clips kommen mit ~10,3 Mbit/s. Per
+Bitstrom-Kopie geloopt wären das **16,6 GB** für 3,58 h (Lauf nach 15 GB
+abgebrochen). Lösung in `schritt5_video.py`: der 48-s-Zyklus wird **einmal**
+neu kodiert (CRF 28 → 1,31 Mbit/s), danach loopt die Montage wieder per
+Kopie. Gesamtvideo damit ≈ 2,1 GB Bildspur + 0,31 GB Ton ≈ **2,4 GB**
+(vorher 0,67 GB mit Standbild-Zoom; CRF 26 wäre mit ≈ 3,3 GB gesamt die
+höherwertige Option — `video_crf` in `config.md`).
+
+**Atem-Zoom: entfällt bei `videoquelle = ki_clips`.** Er stört visuell nicht,
+aber er ist doppelt verzichtbar: Die PFLICHT aus Formel §5 („Standmotiv mit
+sanfter Bewegung") erfüllen die Clips selbst, und ein Zoom obendrauf würde
+die kopierfähige Montage in einen vollständigen Re-Encode von 3,5 h
+verwandeln (zusätzlich LCM-Zyklus 1200 s). Umschaltbar bleibt beides über
+`videoquelle` in `config.md`.
+
+**Gültigkeit:** Diese 4 Clips gehören zum aktuellen `motiv-V3.png`. Fällt die
+Handytest-Entscheidung auf eine andere Variante, braucht sie eigene Clips
+(erneut 144 Credits bei Seedance 1.5).

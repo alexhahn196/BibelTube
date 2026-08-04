@@ -117,7 +117,40 @@ def main():
         raise SystemExit(f"Mischung fehlt: {mix} — erst Schritt 3 laufen lassen.")
 
     zyklus = arbeit(a.video, "zyklus.mp4")
-    if (os.path.exists(zyklus) and not a.neu_zyklus
+    if cfg.get("videoquelle", "standbild") == "ki_clips":
+        # Echte Bild-zu-Video-Clips als Zyklus, per Bitstrom-Kopie gefuegt.
+        # Kein Zoom obendrauf: die Clips bewegen sich selbst (Formel §5
+        # ist damit erfuellt), und ein Zoom wuerde den kompletten
+        # Re-Encode der Montage erzwingen.
+        from gemeinsam import pfad as _pfad
+        import glob as _glob
+        clips = sorted(_glob.glob(os.path.join(_pfad(cfg["ki_clip_ordner"]),
+                                               "clip-*.mp4")))
+        if not clips:
+            raise SystemExit(f"videoquelle=ki_clips, aber keine clip-*.mp4 in "
+                             f"{cfg['ki_clip_ordner']}")
+        lst = arbeit(a.video, "zyklus_liste.txt")
+        open(lst, "w").write("".join(f"file '{c}'\n" for c in clips))
+        # EINMAL neu kodieren, nicht kopieren: die Generator-Clips kommen
+        # mit ~10 Mbit/s - per Bitstrom-Kopie geloopt waeren das ~16,6 GB
+        # fuer 3,5 h (gemessen, Lauf abgebrochen). Ein Encode des kurzen
+        # Zyklus drueckt das auf ~1,3-1,8 Mbit/s; die Montage loopt danach
+        # wieder kostenlos per Kopie.
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat",
+                        "-safe", "0", "-i", lst,
+                        "-c:v", "libx264", "-preset",
+                        str(cfg.get("video_preset", "slow")),
+                        "-crf", str(int(cfg["video_crf"])),
+                        "-pix_fmt", "yuv420p",
+                        "-x264-params", "keyint=240:min-keyint=240:scenecut=0",
+                        "-an", zyklus], check=True)
+        T = int(round(dauer_s(zyklus)))
+        print(f"  KI-Clip-Zyklus: {len(clips)} Clips → {T} s, einmal neu "
+              f"kodiert (CRF {cfg['video_crf']}, "
+              f"{os.path.getsize(zyklus)/1e6:.1f} MB → "
+              f"{os.path.getsize(zyklus)*8/T/1e6:.2f} Mbit/s), kein Zoom",
+              flush=True)
+    elif (os.path.exists(zyklus) and not a.neu_zyklus
             and os.path.getmtime(zyklus) > os.path.getmtime(bild)):
         T = int(round(dauer_s(zyklus)))
         print(f"  Zoom-Zyklus übernommen ({T} s, "

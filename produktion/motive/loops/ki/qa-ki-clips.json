@@ -1,0 +1,150 @@
+[
+ {
+  "datei": "clip-1.mp4",
+  "breite": 1920,
+  "hoehe": 1080,
+  "fps": 24.0,
+  "frames": 289,
+  "dauer_s": 12.042,
+  "groesse_mb": 17.98,
+  "erster_vs_letzter_mad": 2.781,
+  "erster_vs_letzter_max": 88,
+  "pixelidentisch": false,
+  "drift_zonen_px": {
+   "oben": [
+    -0.038,
+    0.018
+   ],
+   "unten": [
+    -0.041,
+    -0.02
+   ],
+   "links": [
+    -0.023,
+    0.025
+   ],
+   "rechts": [
+    -0.029,
+    -0.034
+   ]
+  },
+  "drift_median_px": [
+   -0.034,
+   -0.001
+  ],
+  "drift_unauffaellig": true,
+  "start_vs_standbild_mad": 7.251,
+  "ende_vs_standbild_mad": 7.401
+ },
+ {
+  "datei": "clip-2.mp4",
+  "breite": 1920,
+  "hoehe": 1080,
+  "fps": 24.0,
+  "frames": 289,
+  "dauer_s": 12.042,
+  "groesse_mb": 15.47,
+  "erster_vs_letzter_mad": 2.833,
+  "erster_vs_letzter_max": 93,
+  "pixelidentisch": false,
+  "drift_zonen_px": {
+   "oben": [
+    0.029,
+    0.028
+   ],
+   "unten": [
+    -0.034,
+    0.016
+   ],
+   "links": [
+    -0.019,
+    0.015
+   ],
+   "rechts": [
+    -0.017,
+    0.0
+   ]
+  },
+  "drift_median_px": [
+   -0.018,
+   0.015
+  ],
+  "drift_unauffaellig": true,
+  "start_vs_standbild_mad": 7.245,
+  "ende_vs_standbild_mad": 7.557
+ },
+ {
+  "datei": "clip-3.mp4",
+  "breite": 1920,
+  "hoehe": 1080,
+  "fps": 24.0,
+  "frames": 289,
+  "dauer_s": 12.042,
+  "groesse_mb": 17.15,
+  "erster_vs_letzter_mad": 2.877,
+  "erster_vs_letzter_max": 85,
+  "pixelidentisch": false,
+  "drift_zonen_px": {
+   "oben": [
+    -0.025,
+    -0.012
+   ],
+   "unten": [
+    -0.048,
+    0.037
+   ],
+   "links": [
+    -0.039,
+    0.025
+   ],
+   "rechts": [
+    -0.015,
+    -0.043
+   ]
+  },
+  "drift_median_px": [
+   -0.032,
+   0.007
+  ],
+  "drift_unauffaellig": true,
+  "start_vs_standbild_mad": 7.251,
+  "ende_vs_standbild_mad": 7.454
+ },
+ {
+  "datei": "clip-4.mp4",
+  "breite": 1920,
+  "hoehe": 1080,
+  "fps": 24.0,
+  "frames": 289,
+  "dauer_s": 12.042,
+  "groesse_mb": 16.99,
+  "erster_vs_letzter_mad": 2.911,
+  "erster_vs_letzter_max": 99,
+  "pixelidentisch": false,
+  "drift_zonen_px": {
+   "oben": [
+    -0.0,
+    -0.0
+   ],
+   "unten": [
+    -0.0,
+    0.006
+   ],
+   "links": [
+    -0.028,
+    -0.018
+   ],
+   "rechts": [
+    -0.03,
+    0.003
+   ]
+  },
+  "drift_median_px": [
+   -0.014,
+   0.002
+  ],
+  "drift_unauffaellig": true,
+  "start_vs_standbild_mad": 7.217,
+  "ende_vs_standbild_mad": 7.432
+ }
+]
