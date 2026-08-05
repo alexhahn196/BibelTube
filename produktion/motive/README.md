@@ -21,6 +21,7 @@
 | `text_messung.json` | Messwerte der Textvariante |
 | `kanal-avatar.png` (+`_kreistest.png`) | Kanal-Profilbild, 1024×1024: vereinfachte Silhouette der Serienfigur an verglimmender Glut — quadratisch, Figur mittig mit Randreserve für den Kreisbeschnitt; Kreistest in 800/176/88/48 px |
 | `kanal-avatar-b.png` (+`_kreistest.png`) | Profilbild-Variante B: enger Kopf-Schulter-Anschnitt der Serienfigur, dunkelrote Kapuze, Feuerlicht von rechts unten — bei 88/48 px deutlich besser lesbar als Variante A; helle Masse ragt zu 20 % über den Kreis (nur Kapuze/Schulter, Gesicht bleibt zentral) |
+| `kanal-banner-entwurf.png` (+`_zonen.png`) | Banner-Panorama, **als Banner so nicht verwendbar**: Figur+Feuer liegen zu 99 % unter dem Desktop-Streifen und zu 100 % außerhalb des Mobil-Safe-Bereichs (nur leerer Himmel sichtbar); Zonen-Overlay zeigt die Beschnitte. Neufassung braucht Figur+Feuer im Mittelband |
 
 Alle vier erfüllen die nicht verhandelbaren Vorgaben: gemalter Stil, Nacht,
 dunkles Blau dominant, genau **eine** warme Lichtquelle, Figur sitzend im
