@@ -19,6 +19,7 @@
 | `motiv-V?_160x90.png` | Feed-Größe für die Handy-Entscheidung |
 | `motiv-V3_text.png` (+160×90) | Textvariante mit der Zeile von Video 01 |
 | `text_messung.json` | Messwerte der Textvariante |
+| `kanal-avatar.png` (+`_kreistest.png`) | Kanal-Profilbild, 1024×1024: vereinfachte Silhouette der Serienfigur an verglimmender Glut — quadratisch, Figur mittig mit Randreserve für den Kreisbeschnitt; Kreistest in 800/176/88/48 px |
 
 Alle vier erfüllen die nicht verhandelbaren Vorgaben: gemalter Stil, Nacht,
 dunkles Blau dominant, genau **eine** warme Lichtquelle, Figur sitzend im
