@@ -1,0 +1,30 @@
+{
+  "quelle": "v04_D.png",
+  "quelle_groesse": [
+    2752,
+    1536
+  ],
+  "balken_oben_px": 0,
+  "balken_unten_px": 0,
+  "balken_oben_pct": 0.0,
+  "balken_unten_pct": 0.0,
+  "nutzband": [
+    2752,
+    1536
+  ],
+  "breitenschnitt_je_seite_px": 10,
+  "breitenverlust_je_seite_pct": 0.4,
+  "skalierfaktor": 0.703,
+  "ergebnis": [
+    1920,
+    1080
+  ],
+  "restbalken_oben_px": 0,
+  "restbalken_unten_px": 0,
+  "zonen": {
+    "oberes_sechstel_p95": 27.1,
+    "unteres_achtel_p95": 40.9,
+    "oberes_drittel_hell_pct": 0.7,
+    "gesamt_mittel": 29.2
+  }
+}
