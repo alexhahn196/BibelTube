@@ -12,6 +12,11 @@ Für Video 02–08 identisch, nur mit anderem Parameter. Jeder Schritt ist auch
 einzeln aufrufbar (`--nur 3`, `--ab 5`) und setzt wieder auf: bereits erzeugte
 Chunks werden nicht neu generiert.
 
+**`--bild` ist Pflicht, sobald ein geprüftes Standbild existiert.** Ohne das
+Argument erzeugt Schritt 4 ein einfaches Ersatzbild und überschreibt damit das
+vorhandene `PLATZHALTER_standbild.png` — der nackte Aufruf `render.py V3`
+zerstört also stillschweigend ein bereits abgenommenes Motiv.
+
 | Schritt | Datei | Was er tut |
 |---|---|---|
 | 1 | `schritt1_text.py` | Korpus (WEBBE) holen, Hook + CTA + Gebet voranstellen, Versalien für die TTS entschärfen |

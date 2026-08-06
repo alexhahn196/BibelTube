@@ -56,7 +56,9 @@ bibel_api          = https://bible-api.com
 versalien_normalisieren = ja
 
 # --- Chunking ---
-chunk_max_zeichen  = 1800
+# Psalm 136 = 23 Semikolon-Verse = 1827 Zeichen; kein Fish-Audio-Limit,
+# Pipeline-eigene Wahl.
+chunk_max_zeichen  = 1900
 chunk_nur_satzende = ja
 # Die TTS normalisiert jeden Chunk einzeln -> Pegeldrift an den Nähten.
 chunk_pegel_angleichen = ja

@@ -1,0 +1,133 @@
+{
+ "grenze": 1900,
+ "videos": [
+  {
+   "video": "V1",
+   "saetze": 2851,
+   "laengster_satz_zeichen": 630,
+   "zweitlaengster": 537,
+   "top5": [
+    630,
+    537,
+    412,
+    407,
+    391
+   ],
+   "herkunft": "1 peter 1",
+   "anfang": "If you call on him as Father, who without respect of persons judges according to",
+   "passt": true
+  },
+  {
+   "video": "V2",
+   "saetze": 2670,
+   "laengster_satz_zeichen": 1827,
+   "zweitlaengster": 537,
+   "top5": [
+    1827,
+    537,
+    469,
+    389,
+    385
+   ],
+   "herkunft": "psalms 136",
+   "anfang": "Give thanks to the Lord of lords, for his loving kindness endures forever; to hi",
+   "passt": true
+  },
+  {
+   "video": "V3",
+   "saetze": 1762,
+   "laengster_satz_zeichen": 725,
+   "zweitlaengster": 643,
+   "top5": [
+    725,
+    643,
+    483,
+    465,
+    439
+   ],
+   "herkunft": "colossians 1",
+   "anfang": "For this cause, we also, since the day we heard this, don’t cease praying and ma",
+   "passt": true
+  },
+  {
+   "video": "V4",
+   "saetze": 1693,
+   "laengster_satz_zeichen": 897,
+   "zweitlaengster": 848,
+   "top5": [
+    897,
+    848,
+    783,
+    588,
+    583
+   ],
+   "herkunft": "ephesians 1",
+   "anfang": "For this cause I also, having heard of the faith in the Lord Jesus which is amon",
+   "passt": true
+  },
+  {
+   "video": "V5",
+   "saetze": 1738,
+   "laengster_satz_zeichen": 1505,
+   "zweitlaengster": 954,
+   "top5": [
+    1505,
+    954,
+    688,
+    664,
+    451
+   ],
+   "herkunft": "luke 3",
+   "anfang": "Jesus himself, when he began to teach, was about thirty years old, being the son",
+   "passt": true
+  },
+  {
+   "video": "V6",
+   "saetze": 2008,
+   "laengster_satz_zeichen": 764,
+   "zweitlaengster": 479,
+   "top5": [
+    764,
+    479,
+    457,
+    454,
+    436
+   ],
+   "herkunft": "isaiah 44",
+   "anfang": "The Lord, your Redeemer, and he who formed you from the womb says: “I am the Lor",
+   "passt": true
+  },
+  {
+   "video": "V7",
+   "saetze": 1686,
+   "laengster_satz_zeichen": 696,
+   "zweitlaengster": 655,
+   "top5": [
+    696,
+    655,
+    644,
+    551,
+    541
+   ],
+   "herkunft": "romans 1",
+   "anfang": "Paul, a servant of Jesus Christ, called to be an apostle, set apart for the Good",
+   "passt": true
+  },
+  {
+   "video": "V8",
+   "saetze": 1977,
+   "laengster_satz_zeichen": 347,
+   "zweitlaengster": 342,
+   "top5": [
+    347,
+    342,
+    341,
+    331,
+    319
+   ],
+   "herkunft": "genesis 22",
+   "anfang": "The Lord’s angel called to Abraham a second time out of the sky, and said, “‘I h",
+   "passt": true
+  }
+ ]
+}
