@@ -1,0 +1,30 @@
+{
+  "quelle": "v02_cand_a3c4.png",
+  "quelle_groesse": [
+    2752,
+    1536
+  ],
+  "balken_oben_px": 184,
+  "balken_unten_px": 182,
+  "balken_oben_pct": 12.0,
+  "balken_unten_pct": 11.8,
+  "nutzband": [
+    2752,
+    1170
+  ],
+  "breitenschnitt_je_seite_px": 336,
+  "breitenverlust_je_seite_pct": 12.2,
+  "skalierfaktor": 0.923,
+  "ergebnis": [
+    1920,
+    1080
+  ],
+  "restbalken_oben_px": 0,
+  "restbalken_unten_px": 0,
+  "zonen": {
+    "oberes_sechstel_p95": 23.7,
+    "unteres_achtel_p95": 152.3,
+    "oberes_drittel_hell_pct": 1.32,
+    "gesamt_mittel": 30.2
+  }
+}
