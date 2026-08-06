@@ -373,9 +373,25 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
-Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
+**Motiv:** Grundmotiv am Wasser — sitzende Figur am stillen Ufer,
+Mondspiegelung auf der Oberfläche, Feuer rechts.
 **Text:** `GOSPEL OF JOHN` (3 Wörter)
+
+> **2026-08-06, Planungsentscheidung — Motivtausch 03 ↔ 05, und 04 neu.**
+> Video 03 bekommt das Wassermotiv, das bisher für Video 05 vorgesehen war;
+> Video 05 übernimmt im Gegenzug die bisherige 03-Variante (naher Blickwinkel,
+> Kopf gesenkt, Hände im Schoß). Video 04 tauscht „weiter Bildausschnitt,
+> Hügelsilhouette" gegen die **einsame Hütte** aus dem belegten Motivset.
+>
+> Begründung nach `formel/thumbnail-motive.md` Aufgabe 3: Konsistenz der
+> **Bildwelt** ist Pflicht, das **Feinmotiv** darf variieren. Gewinner A hält
+> sein Feinmotiv nur **4 von 8** Videos durch, seine Bildwelt dagegen 8/8;
+> B ebenso — Feinmotiv 10/13, Bildwelt 13/13. Der konsistenteste Kanal der
+> Stichprobe (F, 10/10) ist zugleich der toteste. Feinmotiv-Variation kostet
+> also nichts und verschafft den Videos untereinander Abgrenzung.
+>
+> Titel, Korpora, Hooks, CTAs, Beschreibungen und Tags bleiben unverändert.
+> Die Thumbnail-Texte bleiben bei ihren Videos.
 
 ### Beschreibung
 
@@ -464,9 +480,16 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, weiter Bildausschnitt, Hügelsilhouette hinter dem Feuer,
-sehr dunkler Himmel, Mond als schmale Sichel.
+**Motiv:** Grundmotiv mit **einsamer Hütte** — ferne Hütte mit einem warm
+erleuchteten Fenster als der **einen** warmen Lichtquelle, **kein Lagerfeuer in
+diesem Bild**, Figur sitzt im Vordergrund, sehr dunkler Himmel, Mond als
+schmale Sichel.
 **Text:** `NO MORE THINKING` (3 Wörter)
+
+> **2026-08-06:** ersetzt „weiter Bildausschnitt, Hügelsilhouette hinter dem
+> Feuer". Hütte und erleuchtetes Fenster stehen beide in Formel §5 im belegten
+> Motivset, das Fenster ausdrücklich als zulässige warme Lichtquelle neben
+> Lagerfeuer und Mond. Begründung des Tauschs: siehe Video 03.
 
 ### Beschreibung
 
@@ -561,9 +584,12 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv am Wasser — sitzende Figur am stillen Ufer,
-Mondspiegelung auf der Oberfläche, Feuer rechts.
+**Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
+Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
 **Text:** `YOU'RE TIRED` (2 Wörter)
+
+> **2026-08-06:** getauscht mit Video 03, das jetzt das Wassermotiv trägt.
+> Begründung: siehe Video 03.
 
 ### Beschreibung
 
