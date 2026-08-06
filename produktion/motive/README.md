@@ -205,9 +205,15 @@ Handytest-Entscheidung auf eine andere Variante, braucht sie eigene Clips
 
 ## KI-Clips Video 02 (`loops/ki-v02/`, 2026-08-06)
 
-Gleiches Verfahren wie oben, gleiche Kosten (4 × 36 = **144 Credits**), Quelle
-ist `motiv-video-02.png` als `start_image` **und** `end_image`. Zwei
-Prompt-Änderungen gegenüber V01, beide aus dem V01-Befund:
+Gleiches Verfahren wie oben, Quelle ist `motiv-video-02.png` als `start_image`
+**und** `end_image`.
+
+**Der Preis hat sich halbiert:** Seedance 1.5 Pro kostet jetzt **18 Credits je
+Clip** statt 36 — die vier Clips haben **72 Credits** gekostet, nicht die für
+V01 vermerkten 144 (belegt im Transaktionsprotokoll, 4 × −18 am 2026-08-06).
+Für die Planung der Videos 03–08 gilt der neue Wert.
+
+Drei Prompt-Änderungen gegenüber V01, alle aus dem V01-Befund:
 
 - **Buch ausdrücklich still** („the open book lies completely still — its pages
   do not turn, do not flutter"). Blätternde Seiten wären in einem
