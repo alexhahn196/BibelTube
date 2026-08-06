@@ -1,0 +1,243 @@
+{
+ "clips": [
+  {
+   "datei": "clip-1.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.06,
+   "erster_vs_letzter_mad": 2.474,
+   "erster_vs_letzter_max": 81,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.07,
+     0.01
+    ],
+    "unten": [
+     -0.06,
+     -0.025
+    ],
+    "links": [
+     -0.049,
+     -0.023
+    ],
+    "rechts": [
+     -0.095,
+     -0.044
+    ]
+   },
+   "drift_median_px": [
+    -0.065,
+    -0.024
+   ],
+   "drift_unauffaellig": true,
+   "start_vs_standbild_mad": 5.246,
+   "ende_vs_standbild_mad": 5.399,
+   "frameschritt_median": 1.705,
+   "frameschritt_max": 2.148
+  },
+  {
+   "datei": "clip-2.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.27,
+   "erster_vs_letzter_mad": 2.451,
+   "erster_vs_letzter_max": 74,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.022,
+     -0.027
+    ],
+    "unten": [
+     -0.005,
+     -0.012
+    ],
+    "links": [
+     -0.004,
+     -0.08
+    ],
+    "rechts": [
+     -0.021,
+     -0.013
+    ]
+   },
+   "drift_median_px": [
+    -0.013,
+    -0.02
+   ],
+   "drift_unauffaellig": true,
+   "start_vs_standbild_mad": 5.304,
+   "ende_vs_standbild_mad": 5.493,
+   "frameschritt_median": 1.443,
+   "frameschritt_max": 1.806
+  },
+  {
+   "datei": "clip-3.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.38,
+   "erster_vs_letzter_mad": 2.485,
+   "erster_vs_letzter_max": 92,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.06,
+     0.017
+    ],
+    "unten": [
+     -0.064,
+     -0.011
+    ],
+    "links": [
+     0.003,
+     -0.004
+    ],
+    "rechts": [
+     -0.048,
+     0.008
+    ]
+   },
+   "drift_median_px": [
+    -0.054,
+    0.002
+   ],
+   "drift_unauffaellig": true,
+   "start_vs_standbild_mad": 5.293,
+   "ende_vs_standbild_mad": 5.451,
+   "frameschritt_median": 1.423,
+   "frameschritt_max": 2.001
+  },
+  {
+   "datei": "clip-4.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 15.32,
+   "erster_vs_letzter_mad": 2.432,
+   "erster_vs_letzter_max": 107,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.048,
+     0.038
+    ],
+    "unten": [
+     -0.029,
+     -0.021
+    ],
+    "links": [
+     -0.079,
+     0.023
+    ],
+    "rechts": [
+     0.001,
+     -0.044
+    ]
+   },
+   "drift_median_px": [
+    -0.038,
+    0.001
+   ],
+   "drift_unauffaellig": true,
+   "start_vs_standbild_mad": 5.309,
+   "ende_vs_standbild_mad": 5.406,
+   "frameschritt_median": 1.415,
+   "frameschritt_max": 2.16
+  }
+ ],
+ "uebergaenge": [
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.474
+  },
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.566
+  },
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.502
+  },
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.504
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.695
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.451
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.592
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.575
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.581
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.517
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.485
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.508
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.52
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.47
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.48
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.432
+  }
+ ],
+ "uebergang_zu_frameschritt": 1.75
+}

@@ -124,11 +124,16 @@ def main():
         # Re-Encode der Montage erzwingen.
         from gemeinsam import pfad as _pfad
         import glob as _glob
-        clips = sorted(_glob.glob(os.path.join(_pfad(cfg["ki_clip_ordner"]),
+        # Jedes Video hat eigene Clips: sie gehoeren zu seinem Standbild und
+        # sind mit keinem anderen Motiv verwendbar. Ein Eintrag
+        # ki_clip_ordner_V2 schlaegt deshalb den allgemeinen Wert.
+        schluessel = f"ki_clip_ordner_{a.video}"
+        ordner_clips = cfg.get(schluessel, cfg["ki_clip_ordner"])
+        clips = sorted(_glob.glob(os.path.join(_pfad(ordner_clips),
                                                "clip-*.mp4")))
         if not clips:
             raise SystemExit(f"videoquelle=ki_clips, aber keine clip-*.mp4 in "
-                             f"{cfg['ki_clip_ordner']}")
+                             f"{ordner_clips}")
         lst = arbeit(a.video, "zyklus_liste.txt")
         open(lst, "w").write("".join(f"file '{c}'\n" for c in clips))
         # EINMAL neu kodieren, nicht kopieren: die Generator-Clips kommen

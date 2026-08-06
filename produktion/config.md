@@ -95,7 +95,12 @@ fps                = 24
 #               vollständigen Re-Encode verwandeln (LCM-Zyklus 1200 s).
 #   standbild = bisheriger Weg: Standbild + Atem-Zoom (300-s-Zyklus)
 videoquelle        = ki_clips
+# Die Clips gehoeren zum Standbild ihres Videos und sind mit keinem anderen
+# Motiv verwendbar. Deshalb je Video ein eigener Ordner; ki_clip_ordner_V<n>
+# schlaegt den allgemeinen Wert.
 ki_clip_ordner     = produktion/motive/loops/ki
+ki_clip_ordner_V1  = produktion/motive/loops/ki
+ki_clip_ordner_V2  = produktion/motive/loops/ki-v02
 # Formel §5: "Standmotiv mit sanfter Bewegung" ist PFLICHT (11/11 Stichproben).
 # Ein völlig statisches Bild wäre ein Dokumentverstoß.
 zoom               = ja

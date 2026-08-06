@@ -202,3 +202,43 @@ verwandeln (zusätzlich LCM-Zyklus 1200 s). Umschaltbar bleibt beides über
 **Gültigkeit:** Diese 4 Clips gehören zum aktuellen `motiv-V3.png`. Fällt die
 Handytest-Entscheidung auf eine andere Variante, braucht sie eigene Clips
 (erneut 144 Credits bei Seedance 1.5).
+
+## KI-Clips Video 02 (`loops/ki-v02/`, 2026-08-06)
+
+Gleiches Verfahren wie oben, gleiche Kosten (4 × 36 = **144 Credits**), Quelle
+ist `motiv-video-02.png` als `start_image` **und** `end_image`. Zwei
+Prompt-Änderungen gegenüber V01, beide aus dem V01-Befund:
+
+- **Buch ausdrücklich still** („the open book lies completely still — its pages
+  do not turn, do not flutter"). Blätternde Seiten wären in einem
+  Einschlafvideo ein Blickfang und hätten den Loop gebrochen.
+- **Rauch schwächer** („very faint thin wisps, barely visible") — bei V01 war
+  er „deutlich kräftiger als bestellt" und als Geschmacksfrage vermerkt.
+- Kein Baum mehr im Prompt: dieses Motiv hat keinen.
+
+| Messung | Video 01 | **Video 02** |
+|---|---|---|
+| Auflösung / fps / Dauer | 1920×1080 · 24 fps · 12,04 s | identisch |
+| Kameradrift (Median Randzonen) | ≤ 0,05 px | ≤ 0,065 px |
+| erster vs. letzter Frame (mittl. \|Δ\|) | 2,78–2,91 | **2,43–2,49** |
+| Übergangsschritt Clip→Clip (16 Paare) | 2,83–3,14 | **2,43–2,70** (Median 2,51) |
+| normaler Frameschritt im Clip | 1,40–1,53 | 1,42–1,71 |
+| Naht / normaler Schritt | ≈ 2,0 | **1,75** |
+| Bitrate der Kette (CRF 28) | 1,31 Mbit/s | 1,27 Mbit/s |
+
+Die Nähte sind also **relativ kleiner** als bei Video 01: der Sprung an einem
+Schnitt ist nur noch das 1,75-fache eines normalen Frameschritts. Schlimmstes
+Paar `clip-2 → clip-1` mit 2,695.
+
+Nahtsichtung an `kette-3min.mp4` (16 Übergänge, Produktionsqualität, 192,7 s):
+Figur, Buch, Fels und Hügellinie stehen über den Schnitt hinweg exakt still;
+sichtbar wechselt allein die Flammenform — die ändert sich innerhalb eines
+Clips ohnehin von Frame zu Frame. Gemessen an den beiden geprüften Nähten
+3,27 (Clip 1→2) und 3,46 (Clip 4→1, der Loop-Rücksprung).
+
+Hochgerechnet auf die 3,52 h Laufzeit: **≈ 2,0 GB Bildspur**, mit Ton ≈ 2,3 GB.
+
+**Zuordnung:** Diese Clips gehören zu `motiv-video-02.png` und zu keinem
+anderen Motiv. Die Pipeline liest den Ordner deshalb je Video aus
+`ki_clip_ordner_V2` in `config.md`; der allgemeine `ki_clip_ordner` bleibt
+für V01 stehen.

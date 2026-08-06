@@ -115,6 +115,38 @@ def pruefe(p, referenz=None):
     return b, f0, fN
 
 
+def frameschritt(p, n=12):
+    """Normaler Frame-zu-Frame-Sprung im Clip (Median ueber n Stichproben).
+
+    Referenzwert fuer die Uebergaenge: ein Schnitt zwischen zwei Clips darf
+    nicht deutlich groesser sein als die Bewegung innerhalb eines Clips.
+    """
+    dauer = ffprobe_info(p)["dauer_s"]
+    zeiten = np.linspace(dauer * 0.1, dauer * 0.9, n)
+    schritte = []
+    for t in zeiten:
+        a, b = frames_holen(p, [t, t + 1 / 24])
+        schritte.append(float(np.abs(b - a).mean()))
+    return round(float(np.median(schritte)), 3), round(float(np.max(schritte)), 3)
+
+
+def uebergaenge(enden, anfaenge, namen):
+    """Sprung an jeder moeglichen Clip-Naht: letzter Frame A -> erster Frame B.
+
+    Bei 4 Clips sind das 16 Paare, weil die Montage die Clips in beliebiger
+    Reihenfolge aneinanderhaengt und der Loop auch von Clip 4 auf Clip 1
+    zurueckspringt.
+    """
+    aus = []
+    for i, a in enumerate(enden):
+        for j, b in enumerate(anfaenge):
+            aus.append({
+                "von": namen[i], "nach": namen[j],
+                "mad": round(float(np.abs(b - a).mean()), 3),
+            })
+    return aus
+
+
 def main():
     dateien = sys.argv[1:]
     ref_pfad = None
@@ -125,9 +157,14 @@ def main():
         referenz = np.asarray(Image.open(ref_pfad).convert("RGB"), np.float32)
 
     alle = []
+    enden, anfaenge, namen = [], [], []
     for p in dateien:
-        b, _, _ = pruefe(p, referenz)
+        b, f0, fN = pruefe(p, referenz)
+        b["frameschritt_median"], b["frameschritt_max"] = frameschritt(p)
         alle.append(b)
+        enden.append(fN)
+        anfaenge.append(f0)
+        namen.append(b["datei"])
         print(f"\n{b['datei']}")
         print(f"  {b['breite']}x{b['hoehe']} @ {b['fps']} fps · {b['dauer_s']} s · "
               f"{b['groesse_mb']} MB")
@@ -140,8 +177,27 @@ def main():
         print(f"  Kameradrift (Median Randzonen) {b['drift_median_px']} px → "
               f"{'unauffällig' if b['drift_unauffaellig'] else 'DRIFT'}")
         print(f"    je Zone: {b['drift_zonen_px']}")
+        print(f"  normaler Frameschritt     Median {b['frameschritt_median']}, "
+              f"Max {b['frameschritt_max']}")
+
+    ergebnis = {"clips": alle}
+    if len(dateien) > 1:
+        paare = uebergaenge(enden, anfaenge, namen)
+        werte = [p["mad"] for p in paare]
+        schritte = [b["frameschritt_median"] for b in alle]
+        ergebnis["uebergaenge"] = paare
+        faktor = float(np.median(werte)) / float(np.median(schritte))
+        ergebnis["uebergang_zu_frameschritt"] = round(faktor, 2)
+        schlimmster = max(paare, key=lambda p: p["mad"])
+        print(f"\nUebergaenge ({len(paare)} Paare)")
+        print(f"  Sprung an der Naht        {min(werte):.3f} bis {max(werte):.3f} "
+              f"(Median {float(np.median(werte)):.3f})")
+        print(f"  schlimmstes Paar          {schlimmster['von']} -> "
+              f"{schlimmster['nach']} mit {schlimmster['mad']}")
+        print(f"  Naht / normaler Schritt   Faktor {faktor:.2f}")
+
     ziel = os.path.join(os.path.dirname(dateien[0]), "qa-ki-clips.json")
-    json.dump(alle, open(ziel, "w"), ensure_ascii=False, indent=1)
+    json.dump(ergebnis, open(ziel, "w"), ensure_ascii=False, indent=1)
     print(f"\ngeschrieben: {ziel}")
 
 
