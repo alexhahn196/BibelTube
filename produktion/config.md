@@ -68,7 +68,10 @@ tts_parallel       = 12
 pegel_stimme_dbfs  = -19.0
 pegel_bett_dbfs    = -31.0
 abstand_soll_db    = 12.0
-peak_max_dbfs      = -0.3
+# Video 02 landete mit -0,13 dBFS ueber der eigenen Vorgabe von -0,3: die
+# Normalisierung skaliert nur nach unten, und der gemessene Spitzenwert lag
+# schon darunter. -1,0 gibt Reserve, ohne hoerbar leiser zu sein.
+peak_max_dbfs      = -1.0
 ducking            = nein
 
 # --- Klangbett (Runde 2, dauerhaft) ---
@@ -103,6 +106,7 @@ videoquelle        = ki_clips
 ki_clip_ordner     = produktion/motive/loops/ki
 ki_clip_ordner_V1  = produktion/motive/loops/ki
 ki_clip_ordner_V2  = produktion/motive/loops/ki-v02
+ki_clip_ordner_V3  = produktion/motive/loops/ki-v03
 # Formel §5: "Standmotiv mit sanfter Bewegung" ist PFLICHT (11/11 Stichproben).
 # Ein völlig statisches Bild wäre ein Dokumentverstoß.
 zoom               = ja
