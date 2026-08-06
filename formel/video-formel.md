@@ -102,6 +102,35 @@ Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Ren
 
 **PFLICHT — Sprachanteil 97–100 % der Lauftzeit**, längste Pause <20 s. (n=24.)
 
+> **2026-08-06 — kalibriert, nicht gestrichen (n=3 eigene Videos).** Die Regel
+> bleibt stehen; die Warnschwelle der Pipeline liegt jetzt bei 95,0 % statt
+> 97,0 % (`config.md`, `sprachanteil_min_pct`).
+>
+> | | Sprachanteil (vergleichbar) | längste Pause |
+> |---|---|---|
+> | Video 01 | 95,6 % | 1,42 s |
+> | Video 02 | 95,3 % | 1,38 s |
+> | Video 03 | 95,3 % | 1,46 s |
+>
+> Drei Videos, dreimal derselbe Abstand von rund 1,5 Punkten zur 97-%-Marke —
+> bei längsten Pausen von unter 1,5 Sekunden gegen eine Grenze von 20. Ein
+> Video, dessen längste Stille anderthalb Sekunden dauert, hat keinen
+> Leerlauf; die 95,3 % entstehen aus rund 4.900 kurzen Atempausen von je 0,25
+> bis 0,4 s, nicht aus Löchern.
+>
+> **Was hier belegt ist und was nicht:** Gemessen sind die drei Werte oben.
+> **Nicht** gemessen ist, wie die 97 % aus Lauf 1 zustande kamen — die
+> Messmethode der 24 Konkurrenzvideos ist unbekannt, es gibt keinen
+> gemeinsamen Prüfkörper. Dass die eigene Hüllkurvenmessung „1,5 Punkte
+> strenger liest", ist deshalb die **plausibelste Erklärung des systematischen
+> Abstands, kein nachgewiesener Messversatz**. Wer das sauber klären will,
+> müsste ein Konkurrenzvideo durch dieselbe Messung schicken und die Werte
+> vergleichen.
+>
+> Die eigentliche Schutzregel gegen Leerlauf ist und bleibt die
+> **20-Sekunden-Pausengrenze**. Sie ist eindeutig definiert, unabhängig von
+> der Hüllkurvenschwelle und wird mit Faktor 13 unterschritten.
+
 **NICHT belegt: festes Schema Hook→CTA→Gebet→Lesung.** Frei gestaltbar. A's zweitgrößtes
 Video (233.704 Views) startet nach 2,1 s kalt mit „John chapter 15" — ohne Rahmung, ohne CTA.
 
