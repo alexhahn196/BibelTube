@@ -51,16 +51,47 @@ Schrift): Mittel 15,8:1, p95 13,7:1 — 90 einzelne Sternpixel unter den Glyphen
 würden nackt durchfallen; der Schein im fertigen Bild löst das (ungünstigster
 Pixel dort 2,0:1 → nur noch abgedunkelte Sterne unter deckend weißer Schrift).
 
-## Befund am Rand: Die Textzeile kollidierte fast mit der Versalhöhen-Regel
+## Textbreiten aller acht Zeilen — erledigt (Stand 2026-08-07)
 
-`SO TIRED TONIGHT` (16 Zeichen) ist bei 125-px-Versalien in **keiner**
-installierten Serifen fetter Schnitt unter 1.884 px breit — DejaVu bräuchte
-2.082 px. Nur FreeSerif Bold passt, mit 66 px Rand je Seite, **exakt an der
-Untergrenze**. Praktische Folge für die Serie: Bei 1920 px Breite trägt eine
-Zeile etwa **13–14 Zeichen bequem** (B's Feldbeispiele: alle ≤ 13). Von den
-acht geplanten Textzeilen liegen fünf darüber (`REST WITHOUT STRESS` mit 19
-Zeichen am weitesten). Vor dem Rendern der weiteren Thumbnails entscheiden:
-Wörter kürzen (Weg der Checkliste) oder schmalere Serife zulassen.
+Bei 1920 px Bildbreite und 40 px Rand je Seite stehen **1840 px** zur
+Verfügung. Die Versalhöhe von 125 px ist nicht verhandelbar (Checkliste,
+≥ 11,5 % der Bildhöhe), und die Checkliste schreibt bei Überlänge
+ausdrücklich vor: **Wörter kürzen, nicht die Schrift verkleinern.** Alle Werte
+in FreeSerif Bold @ 184 px, der schmalsten der drei installierten Serifen.
+
+| | Zeile | Zeichen | Breite | Rand je Seite | |
+|---|---|---|---|---|---|
+| V01 | `SO TIRED TONIGHT` | 16 | 1787 px | 66 px | knapp |
+| V02 | `QUIET YOUR MIND` | 15 | 1726 px | 97 px | |
+| V03 | `GOSPEL OF JOHN` | 14 | 1609 px | 155 px | |
+| V04 | `THINK NO MORE` | 13 | 1548 px | 186 px | gekürzt |
+| V05 | `YOU'RE TIRED` | 12 | 1328 px | 296 px | |
+| V06 | `ISAIAH TONIGHT` | 14 | 1565 px | 177 px | |
+| V07 | `NO MORE STRESS` | 14 | 1624 px | 148 px | gekürzt |
+| V08 | `IN THE BEGINNING` | 16 | 1750 px | 85 px | knapp |
+
+**Alle acht liegen unter 1840 px — kein weiterer Textfall ist offen.**
+
+Quellen: V01–V04 aus den Messdateien der gebauten Thumbnails
+(`produktion/video-0?/thumbnail*_messung.json`), nicht neu gemessen.
+V05–V08 mit der Methode aus `thumbnail.py` gerechnet (gleiche Fontkette,
+gleiche 125 px Versalhöhe) — bisher ohne Bild, weil diese Videos erst nach
+Gate 2 starten.
+
+Zwei Zeilen mussten weichen, beide dokumentiert in `videos-01-08.md`:
+`NO MORE THINKING` (1896 px, 56 px zu breit) → `THINK NO MORE`, und
+`REST WITHOUT STRESS` (2163 px, 323 px zu breit) → `NO MORE STRESS`.
+
+Die praktische Faustregel bleibt: **13–14 Zeichen sitzen bequem**, 16 gehen
+nur mit schmalen Glyphen. `SO TIRED TONIGHT` und `NO MORE THINKING` haben
+beide 16 Zeichen und unterscheiden sich um 109 px — `M`, `N`, `K` und `W`
+sind breit, `S`, `T`, `I` schmal. Zeichen zählen reicht also nicht, es muss
+gemessen werden. Zum Vergleich: dieselbe V01-Zeile bräuchte in DejaVu Serif
+Bold 1967 px und passte dort nicht.
+
+> Die frühere Warnung an dieser Stelle („fünf der acht Zeilen liegen über der
+> bequemen Breite, vor dem Rendern entscheiden") ist mit den beiden Kürzungen
+> aufgelöst und wurde durch die Tabelle oben ersetzt.
 
 ## Wie es weitergeht
 

@@ -790,7 +790,25 @@ Support the channel: [Spendenlink]
 
 **Motiv:** Grundmotiv, Feuer als hellster Punkt deutlich rechts, sitzende Figur
 in der linken Bildhälfte, dichter Sternenhimmel, kein Mond.
-**Text:** `REST WITHOUT STRESS` (3 Wörter)
+**Text:** `NO MORE STRESS` (3 Wörter)
+
+> **2026-08-07 — Textzeile gekürzt, weil sie nicht ins Bild passt.**
+> `REST WITHOUT STRESS` braucht bei der vorgeschriebenen Versalhöhe von 125 px
+> **2163 px**; verfügbar sind bei 1920 px Bildbreite und 40 px Rand je Seite
+> nur **1840 px** — 323 px zu breit. Die Checkliste lässt hier nur einen Weg:
+> „Wörter kürzen — nicht die Schrift verkleinern."
+>
+> `NO MORE STRESS` misst **1624 px** (Rand 148 px je Seite), bleibt bei 3
+> Wörtern und hält das Ankerwort des Titels („Fall Asleep Without **Stress**…",
+> B 35K). Gemessene Alternativen: `NO STRESS TONIGHT` mit 1923 px ist selbst
+> noch 83 px zu breit; `LET GO TONIGHT` würde mit 1606 px passen, verliert
+> aber das Ankerwort und fällt deshalb aus.
+>
+> Das „NO MORE"-Echo zur Zeile von Video 04 (`THINK NO MORE`) ist **gewollt**:
+> Wiederholung innerhalb der eigenen Serie ist Merkmal, nicht Fehler — B trägt
+> „Sleep To These Psalms" in 6 von 13 Titeln.
+>
+> Der **Titel bleibt unverändert**; gekürzt ist allein die Zeile im Bild.
 
 ### Beschreibung
 
