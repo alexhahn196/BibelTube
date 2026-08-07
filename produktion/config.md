@@ -107,6 +107,13 @@ ki_clip_ordner     = produktion/motive/loops/ki
 ki_clip_ordner_V1  = produktion/motive/loops/ki
 ki_clip_ordner_V2  = produktion/motive/loops/ki-v02
 ki_clip_ordner_V3  = produktion/motive/loops/ki-v03
+ki_clip_ordner_V4  = produktion/motive/loops/ki-v04
+
+# Kapitelmarken sind je Video entschieden, nicht global: videos-01-08.md
+# empfiehlt ja bei 01/02/06/08 und nein bei 03/04/05/07 (Formel §7 fuehrt sie
+# als optional - A's drei groesste Treffer haben null). Schritt 6 erzeugt sie
+# immer; nur die hier genannten Videos bekommen sie ins Upload-Paket.
+kapitelmarken_videos = V1,V2,V6,V8
 # Formel §5: "Standmotiv mit sanfter Bewegung" ist PFLICHT (11/11 Stichproben).
 # Ein völlig statisches Bild wäre ein Dokumentverstoß.
 zoom               = ja

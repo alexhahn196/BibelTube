@@ -32,6 +32,38 @@ def lade(video, name):
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
 
 
+def beschreibung_bauen(roh, kap_block):
+    """Beschreibung fuer den Upload fertigstellen.
+
+    Zwei Dinge, die vorher von Hand nachgezogen werden mussten:
+
+    1. **Spendenlink raus.** Die Vorlagen in `videos-01-08.md` tragen die Zeile
+       „Support the channel: [Spendenlink]" als Platzhalter fuer einen Link,
+       den es nicht gibt. Ein Platzhalter in der veroeffentlichten
+       Beschreibung ist schlimmer als keine Zeile.
+    2. **Hashtags bleiben die letzte Zeile.** Der Kapitelblock gehoert davor,
+       nicht dahinter - so sieht das V01-Paket aus, und YouTube zeigt die
+       ersten drei Hashtags ueber dem Titel nur, wenn sie am Ende stehen.
+    """
+    zeilen = [z for z in roh.rstrip().split("\n")
+              if not z.strip().lower().startswith("support the channel")]
+    # nachlaufende Leerzeilen entfernen, die der entfernte Link hinterlaesst
+    while zeilen and not zeilen[-1].strip():
+        zeilen.pop()
+
+    hashtags = []
+    if zeilen and zeilen[-1].lstrip().startswith("#"):
+        hashtags = [zeilen.pop()]
+        while zeilen and not zeilen[-1].strip():
+            zeilen.pop()
+
+    if kap_block:
+        zeilen += ["", "Kapitel:", kap_block]
+    if hashtags:
+        zeilen += [""] + hashtags
+    return "\n".join(zeilen)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
@@ -52,10 +84,17 @@ def main():
     dateien = {n: os.path.exists(os.path.join(ord_, n)) for n in (
         f"video-{nr:02d}.mp4", f"video-{nr:02d}.srt", "PLATZHALTER_standbild.png")}
 
+    # Kapitelmarken sind eine Entscheidung je Video, keine Eigenschaft der
+    # Pipeline: videos-01-08.md empfiehlt ja bei 01/02/06/08, nein bei
+    # 03/04/05/07 (Formel §7 fuehrt sie als optional). Schritt 6 erzeugt sie
+    # immer; hier entscheidet sich, ob sie ins Paket kommen.
+    erlaubt = [s.strip() for s in
+               str(cfg.get("kapitelmarken_videos", "")).split(",") if s.strip()]
+    if erlaubt and a.video not in erlaubt:
+        marken = []
+
     kap_block = "\n".join(f"{mmss(m['zeit_s'])} {m['titel']}" for m in marken)
-    beschreibung = v["beschreibung"]
-    if marken:
-        beschreibung = beschreibung.rstrip() + "\n\nKapitel:\n" + kap_block
+    beschreibung = beschreibung_bauen(v["beschreibung"], kap_block if marken else "")
 
     z = []
     z.append(f"# Upload — Video {nr:02d}\n")
@@ -75,8 +114,7 @@ def main():
     z.append('      Bildhöhe, Kontrast ≥ 10:1, höchstens 4 Wörter')
     z.append('      (`formel/thumbnail-checkliste.md`).')
     z.append("- [ ] Untertiteldatei hochladen (Sprache: Englisch).")
-    z.append("- [ ] Sichtbarkeit/Zeitplan nach `produktion/videos-01-08.md` (5 Tage Abstand).")
-    z.append("- [ ] Spendenlink in der Beschreibung ersetzen.\n")
+    z.append("- [ ] Sichtbarkeit/Zeitplan nach `produktion/videos-01-08.md` (5 Tage Abstand).\n")
 
     z.append("## Titel\n")
     z.append(f"```\n{v['titel']}\n```\n")

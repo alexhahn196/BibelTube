@@ -484,7 +484,23 @@ Support the channel: [Spendenlink]
 erleuchteten Fenster als der **einen** warmen Lichtquelle, **kein Lagerfeuer in
 diesem Bild**, Figur sitzt im Vordergrund, sehr dunkler Himmel, Mond als
 schmale Sichel.
-**Text:** `NO MORE THINKING` (3 Wörter)
+**Text:** `THINK NO MORE` (3 Wörter)
+
+> **2026-08-07 — Textzeile gekürzt, weil sie nicht ins Bild passt.**
+> `NO MORE THINKING` braucht bei der vorgeschriebenen Versalhöhe von 125 px
+> **1896 px** Breite; verfügbar sind bei 1920 px Bildbreite und 40 px Rand je
+> Seite nur **1840 px** — 56 px zu breit, und zwar in FreeSerif Bold, der
+> schmalsten installierten Serife. Die Checkliste lässt hier nur einen Weg:
+> „Wörter kürzen — nicht die Schrift verkleinern."
+>
+> `THINK NO MORE` hält den Anker („No More Thinking Tonight…", B 166K), ist
+> mit 13 Zeichen und **1548 px** komfortabel (Rand 186 px je Seite) und bleibt
+> im Imperativ wie die Gewinner-Texte. **`STOP THINKING` wurde verworfen**: es
+> ist wörtlich der Titelanker von Video 02 („Stop Thinking For A Moment") —
+> zwei Videos der Serie mit derselben Thumbnail-Aussage wäre vermeidbare
+> Verwechslung.
+>
+> Der **Titel bleibt unverändert**; gekürzt ist allein die Zeile im Bild.
 
 > **2026-08-06:** ersetzt „weiter Bildausschnitt, Hügelsilhouette hinter dem
 > Feuer". Hütte und erleuchtetes Fenster stehen beide in Formel §5 im belegten
