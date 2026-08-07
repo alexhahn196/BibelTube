@@ -242,6 +242,112 @@ gegen die Riesen der schwerere Kampf als bei History.
   gescheiterte junge Kanäle derselben Nischen sagt dieser Bericht nichts
   (Überlebenden-Verzerrung der Discovery).
 
+## Skizze: Faktenprüfung als Pipeline-Schritt (Ergänzung 2026-08-07)
+
+> Konzept und Zahlen, kein Code. Analogie: `qa_namen.py` prüft bei Kanal 1
+> die Aussprache aller Eigennamen nach der TTS; hier prüft ein Schritt
+> `faktencheck.py` die Belegbarkeit aller Tatsachenbehauptungen **vor** der
+> TTS — und blockiert den Render wie heute ein zu breiter Thumbnail-Text.
+
+### Wie der Schritt arbeiten würde
+
+1. **Zerlegen.** Nach Schritt 1 (Text) wird das Skript in Sätze zerlegt und
+   jeder Satz einer von drei Klassen zugeordnet: *harte Behauptung* (enthält
+   Zahl, Datum, Messwert), *weiche Behauptung* (Tatsachenaussage ohne Zahl),
+   *Erzählung* (Anrede, Szene, Frage — nicht prüfpflichtig). Die Klassifik
+   ist mit einer Heuristik machbar (unten gemessen), sauberer per
+   LLM-Durchgang.
+2. **Quellenpflicht.** Das Skriptformat bekommt neben `skript.json` eine
+   `quellen.json`: jede harte Behauptung trägt eine Quellen-ID (URL + Zitat +
+   Abrufdatum). Ink Explainer macht genau das öffentlich vor — „all sources
+   always cited" steht in der Kanalbeschreibung, die Quellen stehen in jeder
+   Videobeschreibung. Das ist in der Nische also nicht Kür, sondern der
+   Standard des besten jungen Kanals.
+3. **Maschinenprüfung.** Für Behauptungen der Form *Entität + Zahl* („Qesem
+   Cave, Feuernutzung vor 400.000 Jahren") ruft der Schritt Wikipedia/Wikidata
+   ab und prüft, ob die Zahl im Toleranzband der Quelle liegt. Ergebnis je
+   Behauptung: `belegt` / `abweichend` / `nicht auffindbar`.
+4. **Blockierregel.** Harte Behauptung **ohne Quelle** oder mit Prüfergebnis
+   `abweichend` → Rückgabewert 1, Render startet nicht — dieselbe Mechanik,
+   mit der `thumbnail.py` heute einen zu breiten Text stoppt. `nicht
+   auffindbar` blockiert nicht, sondern landet auf der Mensch-Checkliste in
+   `upload.md`, neben „KI-Kennzeichnung setzen".
+
+### Erreichbare Quellen — aus dem Container gemessen [gemessen 2026-08-07]
+
+| Quelle | Status | Verwendbarkeit |
+|---|---|---|
+| Wikipedia REST-API (`en.wikipedia.org/api/rest_v1`) | **200** | Kernquelle für Entität+Zahl-Prüfung |
+| Wikidata (`Special:EntityData/*.json`) | **200** | strukturierte Daten (Jahreszahlen, Orte) |
+| archive.org (Suche/API) | **200** | Primärtexte, alte Bücher |
+| Crossref (`api.crossref.org`) | **200** | Paper-Metadaten: existiert die zitierte Studie? |
+| bible-api.com | **200** | (bereits in der Pipeline von Kanal 1) |
+| Semantic Scholar API | **429** | erreichbar, aber ratenlimitiert — bräuchte API-Schlüssel |
+| Google Scholar | 200 | erreichbar, aber Scraping bricht deren Nutzungsbedingungen — **nicht verwenden** |
+| Britannica | **403** | blockiert |
+
+Die Maschinenprüfung ist also machbar: Wikipedia + Wikidata + Crossref
+decken die Formen ab, die ein History-Explainer-Skript braucht. Crossref
+prüft dabei nur, **dass** eine zitierte Studie existiert — nicht, was in ihr
+steht; Volltexte sind meist hinter Bezahlschranken → Mensch.
+
+### Wie viele Behauptungen ein Skript enthält [gemessen]
+
+Gezählt am Transkript des stärksten Ink-Explainer-Videos („What Did Ancient
+Humans Do When It Rained All Week?", 1,1 Mio. Views, **2.413 Wörter**,
+200 Sätze), Heuristik wie oben beschrieben:
+
+| Klasse | Anzahl | Beispiel |
+|---|---|---|
+| harte Behauptungen (Zahl/Datum) | **22** | „controlled fire use going back at least 400,000 years at a site called Qesem Cave in Israel" |
+| weiche Behauptungen | **20** | „Archaeologists have found layers of flood sediment inside occupied caves" |
+| Erzählung/Anrede/Frage | 158 | „Imagine you haven't eaten in 2 days." |
+
+Die Heuristik hat dabei sichtbar 2–4 falsche Treffer (das „2 days" im
+Einstieg ist Szene, keine Behauptung) — realistisch **~18–20 harte plus ~20
+weiche Behauptungen je 2.400 Wörter**, also grob **1 prüfpflichtige Aussage
+je 60 Wörter**. Auf das geplante 1.500-Wort-Skript skaliert:
+**~25 Behauptungen je Video** (davon ~12 harte).
+
+### Maschine gegen Mensch [geschätzt]
+
+- **Maschinell belegbar: etwa die Hälfte.** Alle Behauptungen mit benannter
+  Entität und Zahl (Qesem Cave, Ötzi 5.300 Jahre, „25-mal schnellerer
+  Wärmeverlust") sind Wikipedia/Wikidata-prüfbar. Am gezählten Skript: ~10–12
+  der ~25.
+- **Mensch nötig: die andere Hälfte.** Weiche Behauptungen („Höhlen liegen
+  oft an Flussläufen"), zusammenfassende Formulierungen („the archaeological
+  record is very clear on this") und alles, wo die Maschine `nicht
+  auffindbar` meldet. Hier prüft ein Mensch gegen die hinterlegte Quelle —
+  oder beschafft erst eine.
+- **Nicht delegierbar:** die Entscheidung, ob eine Zuspitzung noch von der
+  Quelle gedeckt ist. Das ist Redaktionsurteil, keine Abfrage.
+
+### Zeitaufwand je Video [geschätzt]
+
+| Posten | Ansatz | Zeit |
+|---|---|---|
+| Maschinenlauf sichten (10–12 Bestätigungen stichprobenartig gegenlesen) | 1–2 min je Stichprobe, ~5 Stichproben | ~10 min |
+| ~13 Mensch-Behauptungen gegen Quelle prüfen | 3–5 min je Behauptung | 40–65 min |
+| Quellen nachbeschaffen für 2–3 Behauptungen ohne Beleg | 5–10 min je | 15–30 min |
+| **Summe je Video** | | **≈ 1–1,75 h** |
+
+Zum Vergleich: Der Renderlauf von Kanal 1 braucht ~25 min Rechenzeit. Die
+Faktenprüfung wäre damit der **teuerste Einzelschritt der Pipeline** — und
+zugleich der Unterschied zwischen dem Ink-Explainer-Modell („all sources
+cited") und der KI-Doku-Massenware, gegen die YouTube zunehmend vorgeht.
+Wer die 1–1,75 h nicht einplant, sollte die Nische nicht anfassen; bei
+2 Videos/Woche sind das **2–3,5 h Redaktionsarbeit wöchentlich** als fester
+Block neben der Maschine.
+
+### Was der Schritt bewusst nicht leistet
+
+Er beweist nicht, dass eine Aussage *wahr* ist — er erzwingt, dass sie
+*belegt* ist und die Belege zur Veröffentlichung vorliegen (Videobeschreibung
+wie bei Ink Explainer). Falsche Quellen, veraltete Forschung und
+Fehlinterpretationen fängt nur das Redaktionsurteil. Die Blockierregel senkt
+das Risiko, sie beseitigt es nicht.
+
 ## Nächste Schritte
 
 1. Entscheidung History-Explainer ja/nein; bei ja: Teardown der 12
