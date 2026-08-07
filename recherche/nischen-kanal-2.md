@@ -348,6 +348,72 @@ wie bei Ink Explainer). Falsche Quellen, veraltete Forschung und
 Fehlinterpretationen fängt nur das Redaktionsurteil. Die Blockierregel senkt
 das Risiko, sie beseitigt es nicht.
 
+## Umgang mit unsicheren Fakten: Treffer gegen schwache Videos (Ergänzung 2026-08-07)
+
+> Gezählt an sechs Transkripten — je Kanal das stärkste gegen ein schwaches
+> Video. Zwei Zählungen: **epistemische Marker** (echte
+> Unsicherheits-Kennzeichnung: „we don't know", „the most common theory",
+> „historians believe", „probably/apparently") und die **Glatt-Quote** —
+> der Anteil der Sätze mit Zahl oder Datum, die *ohne jede* Absicherung
+> daherkommen. Alles [gemessen], Heuristik per Wortliste; ASR-Transkripte
+> enthalten Hörfehler.
+
+### Die Zahlen
+
+| Kanal | Video | Wörter | epist. Marker je 1.000 W | Glatt-Quote der Zahlsätze | Quellen |
+|---|---|---|---|---|---|
+| Ink Explainer | **TOP** „Rained All Week" (1,1 Mio.) | 2.413 | **3,7** | 57 % (13/23) | **16 akademische Quellen mit DOI in der Beschreibung** |
+| Ink Explainer | schwach „Got Sick" (25k) | 1.415 | 2,1 | 83 % (10/12) | 5 Quellen-Marker im Sprechtext („We know this because ancient Egyptian medical texts from 1500 BCE…") |
+| Historically | **TOP** „History of Rome" (6,1 Mio.) | 6.600 | **2,4** | 88 % (46/52) | **keine** — Beschreibung enthält nur Giveaway, Mitglieder-Werbung, Timestamps, Musiklizenz |
+| Historically | schwach „Dumbest Heist" (790k) | 2.100 | 0,5 | 86 % (12/14) | keine |
+| quack doc | **TOP** „Deadly Disease Teil 1" (1,7 Mio.) | 5.606 | **0,7** | 69 % (29/42) | **keine** — nur Disclaimer: „based on the research and opinions of the creator" |
+| quack doc | schwach „Teil 2" (81k) | 5.513 | 0,2 | 70 % (21/30) | keine |
+
+Das quack-doc-Paar ist das sauberste Kontrollpaar der Messung: **dieselbe
+Serie, dasselbe Format, Teil 1 mit 1,7 Mio. gegen Teil 2 mit 81k.**
+
+### Drei Befunde
+
+**1. Die drei Kanäle fahren drei verschiedene Ehrlichkeits-Modelle.**
+Ink Explainer markiert Unsicherheit fünfmal so oft wie quack doc und legt als
+einziger Quellen offen — vollständige akademische Zitate mit DOI-Links
+(Journal of Archaeological Science, PNAS, Science), dazu ein eigener Block,
+der die erwähnten Forscher und Fundstätten erklärt. Historically behauptet
+glatt durch (88 % der Zahlsätze ungesichert) und zitiert nichts — trägt das
+aber als Comedy-Format („Condensed **Dramatized** History"), das erkennbar
+zuspitzt. quack doc behauptet fast alles glatt, nennt keine Quellen und
+schiebt einen Disclaimer davor. Alle drei verdienen fünfstellig — **YouTube
+erzwingt keines der Modelle.**
+
+**2. Innerhalb jedes Kanals ist das Treffer-Video das vorsichtigere.** Ink
+3,7 gegen 2,1 · Historically 2,4 gegen 0,5 · quack doc 0,7 gegen 0,2 — die
+Richtung ist dreimal dieselbe, auch im Serien-Kontrollpaar. Absicherung
+(„we're not entirely sure how reliably humans could start fire") kostet
+erkennbar keine Reichweite. **Vorsicht bei der Deutung:** n = 6, ein Paar je
+Kanal, Thema und Alter der Videos sind nicht kontrolliert — das ist eine
+konsistente Korrelation, kein Kausalbeweis. Die sichere Lesart ist die
+Negation: *Die These „glattes Behaupten gewinnt, Absichern kostet Klicks"
+wird von diesen Daten nicht gestützt — eher das Gegenteil.*
+
+**3. Quellenarbeit ist Inks Alleinstellungsmerkmal, nicht der
+Nischenstandard.** Von den drei Kanälen zitiert genau einer — und es ist
+der jüngste mit der niedrigsten Kadenz und ~9.560 $/Monat nach vier Monaten.
+Historically kompensiert mit Marke und Humor, quack doc mit Volumen und
+Themenhärte (dessen Katalog — Dashcam-Tode, Serienmörder, Kriegsverbrechen —
+fiele übrigens großteils unter unsere eigenen Ausschlüsse und taugt nur
+bedingt als Vorbild). Für einen neuen Kanal ohne Marke ist Inks Weg der
+einzige der drei, der kopierbar ist.
+
+### Konsequenz für die eigene Pipeline
+
+Der Befund verzahnt sich direkt mit der Faktenprüfungs-Skizze oben: Die
+Blockierregel kann um eine zweite, weichere Regel ergänzt werden — **eine
+harte Behauptung gilt auch dann als gedeckt, wenn sie im Skript ausdrücklich
+als unsicher markiert ist** („the most common theory is…"). Das ist maschinell
+prüfbar (dieselbe Wortliste wie diese Messung), entspricht dem Stil der
+Treffer-Videos und senkt den menschlichen Prüfaufwand: Was ehrlich als offen
+gekennzeichnet ist, braucht keinen Beleg — nur was als Fakt auftritt.
+
 ## Nächste Schritte
 
 1. Entscheidung History-Explainer ja/nein; bei ja: Teardown der 12
