@@ -182,6 +182,14 @@ def main():
     ziel = os.path.join(ord_, "upload.md")
     open(ziel, "w", encoding="utf-8").write("\n".join(z) + "\n")
 
+    # Titel, Beschreibung und Tags zusaetzlich als nackte Textdateien: beim
+    # Upload werden sie einzeln in die YouTube-Felder kopiert, und aus einer
+    # Markdown-Datei mit Codebloecken herauszuschneiden ist fehleranfaellig.
+    for name, inhalt in (("titel.txt", v["titel"]),
+                         ("beschreibung.txt", beschreibung),
+                         ("tags.txt", ", ".join(v["tags"]))):
+        open(os.path.join(ord_, name), "w", encoding="utf-8").write(inhalt + "\n")
+
     print(f"\nPAKET {a.video}   {ord_}")
     for n, da in dateien.items():
         gr = (f"{os.path.getsize(os.path.join(ord_, n))/1e6:.1f} MB" if da else "FEHLT")
