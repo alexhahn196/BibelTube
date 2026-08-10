@@ -25,11 +25,54 @@
 | `kanal-banner.png` (+`_zonen.png`, `_mobilansicht.png`, `-quelle.png`) | **Finales Kanalbanner, 2560×1440, 3,1 MB** (Limit 6 MB). Neufassung mit zentrierter Figur auf dem Horizont, symmetrische Hügel; vertikal umkomponiert (Versatz −222 px, Bodenfüllung unten), damit Figur+Feuer im Beschnitt liegen: 82 % der warmen Masse im Desktop-Streifen UND im Mobil-Safe (Figur war mit 34 % Bildhöhe größer als bestellt — der Block ist 70 px höher als der 423-px-Streifen, Haarspitze/Feuerbasis ragen minimal hinaus). Mobilansicht als eigene Vorschau |
 | `motiv-video-02.png` (+`_160x90.png`, `_messung.json`) | **Standbild Video 02**, 1920×1080: Grundmotiv mit aufgeschlagenem Buch neben der Figur, größeres Feuer, dichteres Sternenfeld (Vorgabe aus `videos-01-08.md`, Thumbnail-Block Video 02). Aus einem 2k-Wurf mit eingebrannten Balken beschnitten — siehe „Standbild Video 02" |
 | `kanal-banner-entwurf.png` (+`_zonen.png`) | Banner-Panorama, **als Banner so nicht verwendbar**: Figur+Feuer liegen zu 99 % unter dem Desktop-Streifen und zu 100 % außerhalb des Mobil-Safe-Bereichs (nur leerer Himmel sichtbar); Zonen-Overlay zeigt die Beschnitte. Neufassung braucht Figur+Feuer im Mittelband |
+| ⚠️ `../kanal/banner.jpg` (+`banner_safearea.jpg`) | **Zweiter Bannerentwurf, liegt außerhalb dieses Ordners** — reines Textbanner „THE NIGHTLY WORD", ohne Figur. Siehe „Zwei Bannerentwürfe" unten: **die Entscheidung zwischen beiden ist offen.** |
 
 Alle vier erfüllen die nicht verhandelbaren Vorgaben: gemalter Stil, Nacht,
 dunkles Blau dominant, genau **eine** warme Lichtquelle, Figur sitzend im
 Profil/halb abgewandt, kein Blickkontakt, kein Innenraum, kein Text (außer der
 ausgewiesenen Textvariante).
+
+## Zwei Bannerentwürfe — Entscheidung OFFEN bis Gate 2
+
+Es liegen **zwei fertige Kanalbanner** im Repo, beide 2560×1440, beide je für
+sich geprüft, und sie widersprechen sich in der Grundentscheidung: **mit Figur
+oder ohne.** Der Grund für das Nebeneinander ist historisch — der zweite Entwurf
+entstand am 05.08.2026 auf einem Nebenbranch
+(`claude/video-01-subtitle-placement-wsogb8`) und wurde erst am 10.08.2026 in den
+Hauptbranch gemergt. Bis dahin kannte ihn keine Sitzung, die auf dem
+Hauptbranch arbeitete.
+
+| | Entwurf 1 — Figur | Entwurf 2 — Text |
+|---|---|---|
+| Datei | `kanal-banner.png` (dieser Ordner) | `../kanal/banner.jpg` |
+| Nebendateien | `_zonen.png`, `_mobilansicht.png`, `-quelle.png` | `../kanal/banner_safearea.jpg` |
+| Format | PNG, 3,06 MB | JPEG, 1,43 MB |
+| Motiv | zentrierte Figur auf dem Horizont, symmetrische Hügel | **reiner Schriftzug, keine Figur** |
+| Erzeugt mit | Higgsfield (nano-banana-Linie) | `gpt_image_2`, 16:9, 4k, quality high |
+| Commit | `3dc06b5`, 05.08. **10:24** | `2626796`, 05.08. **11:16** |
+| Bestandene Prüfung | Zonen-Test: 82 % der warmen Masse im Desktop-Streifen **und** im Mobil-Safe; Figur ragt minimal über den 423-px-Streifen | Fünf Prüfungen: Schriftzug vollständig in der Safe Area 1546×423 (152/138 px seitlich, 176/183 px oben/unten) · „THE NIGHTLY WORD" buchstabengetreu, 14 Glyphencluster, kein Fremdtext · keine Figur/Person/Tier · Kontrast 17,5:1 · genau eine warme Lichtquelle |
+
+**Der Widerspruch:** Entwurf 2 ist 52 Minuten jünger und schließt eine Figur
+ausdrücklich aus — Entwurf 1 setzt sie ins Zentrum. Entwurf 1 ist der oben in
+der Dateitabelle als „Finales Kanalbanner" geführte; Entwurf 2 war bis zum
+Merge nirgends dokumentiert, und nichts im Repo verweist auf seinen Pfad.
+
+**Regelung bis Gate 2:**
+
+- **Beide Entwürfe bleiben erhalten. Nichts wird gelöscht.**
+- Die Entscheidung fällt **nicht** nach Bildwirkung, sondern an **Gate 2**
+  (`produktion/workflow-gates.md`, Feedback-Schleife nach Video 4): Dort liegen
+  erstmals eigene Impressionen und CTR vor. Ein Banner wirkt auf die
+  Kanalseiten-Conversion, nicht auf die Video-CTR — deshalb ist vor eigenen
+  Zahlen keine belastbare Entscheidung möglich, und Gate 2 gilt ohnehin die
+  Kernregel „eigene Daten schlagen Fremddaten".
+- Solange keine Entscheidung gefallen ist, gilt für den tatsächlichen Upload
+  **Entwurf 1** — nicht weil er besser ist, sondern weil er der dokumentierte
+  Stand ist. Wer Entwurf 2 hochlädt, hält das hier fest.
+- Die Formel gibt keinen Ausschlag: `formel/video-formel.md` regelt Thumbnails
+  und Standmotive, **nicht** das Kanalbanner. Für Banner existiert keine aus den
+  10 Fremdkanälen abgeleitete Vorgabe — auch das ein Grund, es an eigenen Zahlen
+  zu entscheiden.
 
 ## Textvariante — gemessene Werte
 
