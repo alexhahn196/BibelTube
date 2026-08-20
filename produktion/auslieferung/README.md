@@ -1,19 +1,40 @@
-# Auslieferung — was gesichert wird und wo es liegt
+# Auslieferung — welcher Weg wofür
 
-**Gesichert wird die Tonspur. Die Bytes liegen als Release-Asset, die
-Prüfsummen im Repo.**
+**Drei Wege, drei Zwecke. Sie werden regelmäßig verwechselt — deshalb hier
+zuerst die Entscheidungstabelle.**
 
-`stimme.wav` ist das einzige Zwischenergebnis der Pipeline, das Geld kostet
-(Fish-Audio-TTS, rund 160.000 Zeichen je Video) und sich nicht aus dem Repo
-neu erzeugen lässt. Text, Standbild, Bildkette, Klangbett und SRT liegen
-alle hier. Aus `stimme.wav` sind Schritt 3 (Mischung) und Schritt 5
-(Montage) jederzeit kostenlos wiederholbar — **das MP4 ist reproduzierbar,
-die TTS-Ausgabe nicht.**
+| Was | Wohin | Wozu | Lebensdauer |
+|---|---|---|---|
+| **Tonspur** `stimme.flac` | **Release-Asset** (`v04`, `v05`, …) | die einzige *Sicherung*. Sie hat Geld gekostet und ist nicht reproduzierbar. | dauerhaft |
+| **Fertiges MP4** | **GoFile** | *Transport* zur eigenen Maschine für den YouTube-Upload | vergänglich, siehe unten |
+| irgendetwas davon | **Repo, zerlegt** | **Notfall.** Nur wenn beide Wege oben ausfallen. | dauerhaft — und unumkehrbar |
 
-GoFile-Links verfallen; die Links zu den Videos 01–03 waren bereits tot.
-Ein Hoster-Link ist keine Sicherung.
+## Standard: das fertige MP4 geht zu GoFile
 
-## Warum Release-Assets und nicht das Repo
+So lief es bei Video 01–03, und so läuft es weiter. Der Container hat
+Netzzugang; ein Upload braucht keinen Schlüssel und kein Konto:
+
+```bash
+SRV=$(curl -s https://api.gofile.io/servers \
+      | python3 -c "import json,sys; print(json.load(sys.stdin)['data']['servers'][0]['name'])")
+curl -F "file=@produktion/video-04/video-04.mp4" \
+     "https://${SRV}.gofile.io/contents/uploadfile"
+```
+
+Die Antwort enthält `downloadPage` — das ist der Link. Datei herunterladen,
+zu YouTube hochladen, fertig.
+
+> **GoFile ist Transport, keine Sicherung.** Genau diese Verwechslung hat den
+> Vorfall vom 2026-08-20 ausgelöst: die Links zu Video 01–03 waren verfallen,
+> und weil sonst nichts gesichert war, wären alle drei Videos nur durch eine
+> neue, kostenpflichtige Vertonung wiederherstellbar gewesen. Ein Gast-Upload
+> ohne Konto wird nach einiger Zeit ohne Zugriff gelöscht.
+>
+> **Deshalb gilt beides gleichzeitig:** MP4 zu GoFile, damit man es in die
+> Hand bekommt — **und** Tonspur ins Release, damit die teure Arbeit
+> überlebt. Der Link darf ablaufen. Die Tonspur nicht.
+
+## Warum die Sicherung ins Release gehört und nicht ins Repo
 
 Der frühere Plan — fertige Dateien in Teile unter 100 MiB zerlegen und ins
 Repo pushen — trägt die Serie nicht zu Ende:
@@ -132,6 +153,16 @@ gh auth login          # einmalig
 
 Ohne `gh` brechen die Skripte mit einer klaren Meldung ab, bevor sie etwas
 anfassen. Die Wandlung nach FLAC und alle Prüfungen laufen auch ohne.
+
+## Ausgeliefert
+
+| Video | MP4 zu GoFile | Link | Kontrolle |
+|---|---|---|---|
+| video-04 | 2026-08-20 | `https://gofile.io/d/IUFqrfej` | md5 `28e52149…`, 1.825.899.455 B — von GoFile unabhängig gemeldet und deckungsgleich mit dem lokalen Wert |
+
+Der Link ist **vergänglich** und steht hier nur als Beleg der Auslieferung,
+nicht als Sicherung. Wenn er irgendwann nicht mehr geht, ist das erwartet —
+dann kommt das MP4 aus der Tonspur zurück, nicht aus diesem Link.
 
 ## Stand
 

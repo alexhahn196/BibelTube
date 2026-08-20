@@ -59,10 +59,18 @@ produktion/auslieferung/tonspur_zurueck.sh V4
 python3 produktion/pipeline/render.py V4 --nur 3 5
 ```
 
-Das fertige MP4 geht denselben Weg (`asset_sichern.sh V4 …`) und darf nach
-dem YouTube-Upload aus dem Release gelöscht werden — die Tonspur bleibt.
-Voraussetzung ist die GitHub-CLI (`gh auth login`); ohne sie brechen die
-Skripte mit klarer Meldung ab, bevor sie etwas anfassen.
+**Das fertige MP4 geht zu GoFile, nicht ins Repo** — so wie bei Video 01–03.
+Ein Upload aus dem Container braucht weder Schlüssel noch Konto; der Befehl
+steht in `produktion/auslieferung/README.md`. Der Link ist **Transport, keine
+Sicherung**: er läuft ab, und genau das hat den Vorfall vom 2026-08-20
+ausgelöst. Deshalb gilt immer beides — MP4 zu GoFile, damit man es in die
+Hand bekommt, und Tonspur ins Release, damit die bezahlte Arbeit überlebt.
+
+**Das Repo ist der Notfallweg**, nicht der Standard: nur wenn GoFile und
+Release beide ausfallen, wird zerlegt und eingecheckt (`zerlegen.sh` /
+`zusammensetzen.sh`). Das kostet dauerhaft Historie und ist nicht umkehrbar.
+Video 04 liegt aus diesem Grund einmalig zerlegt im Repo — als Ausnahme
+dokumentiert, nicht als Vorbild.
 
 **Warum nicht ins Repo:** Acht Tonspuren wären 4,1–5,5 GB, dazu die heute
 schon belegten 0,66 GB — gegen GitHubs harte Grenze von 5,0 GB. Das bricht
