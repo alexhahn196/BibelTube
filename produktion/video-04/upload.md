@@ -68,16 +68,16 @@ gospel of matthew, bible for sleep, christian sleep meditation, scripture for sl
 
 | Größe | Wert | Vorgabe |
 |---|---|---|
-| Laufzeit | 3:34:48 (3.58 h) | ≥3.0 h, Ziel 3.4–3.8 h |
-| Dateigröße | 1825.1 MB | — |
+| Laufzeit | 3:34:56 (3.58 h) | ≥3.0 h, Ziel 3.4–3.8 h |
+| Dateigröße | 1825.9 MB | — |
 | Bild | 1920x1080 @ 24 fps | 1920×1080, 24–30 fps (§5) |
 | Ton-Versatz | 0.0 s | 0 |
-| Tempo | 146.6 WPM | 120–160 WPM (§5b) |
-| Sprachanteil (Lücken <1 s zugerechnet) | 95.6 % | ≥95.0 % (§3) |
+| Tempo | 146.5 WPM | 120–160 WPM (§5b) |
+| Sprachanteil (Lücken <1 s zugerechnet) | 95.8 % | ≥95.0 % (§3) |
 | längste Pause | 1.44 s | <20.0 s (§3) |
 | Abstand Stimme zu Bett | 12.0 dB | 12.0 dB (§5b) |
-| Peak | -1.18 dBFS | <-1.0 dBFS |
-| Untertitelkacheln | 2705 | — |
+| Peak | -1.09 dBFS | <-1.0 dBFS |
+| Untertitelkacheln | 2706 | — |
 | erste Kachel | 1.5 s | Sprache in Sekunde 0–3.0 (§3) |
 | CTA | 2 | höchstens 2 (§3) |
 | TTS-Zeichen | 166.005 | — |
