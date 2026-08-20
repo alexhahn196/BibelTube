@@ -15,7 +15,7 @@ den Werten des fertigen Laufs.
 | 1.2 | Titelähnlichkeit | < 50 % | **37,5 %** | ✓ |
 | 1.3 | Titelanker | einer der 13 belegten | `No More Thinking Tonight…` (166K) | ✓ |
 | 1.4 | Thumbnail: Wörter | ≤ 4 | 3 — `THINK NO MORE` | ✓ |
-| 1.5 | Thumbnail: Versalhöhe | ≥ 11,5 % | **11,57 %** (125 px) | ✓ |
+| 1.5 | Thumbnail: Versalhöhe | ≥ 11,5 % | **11,94 %** (129 px) | ✓ |
 | 1.6 | Thumbnail: Kontrast | ≥ 10 : 1 | 17,5–18,5 | ✓ |
 | 1.7 | Thumbnail: Serienmotiv | gleich wie letzte Uploads | Sichtprüfung offen | **von Hand** |
 | 1.8 | 160×90-Kontrolle | in einer Sekunde erfassbar | Sichtprüfung offen | **von Hand** |
@@ -27,9 +27,13 @@ den Werten des fertigen Laufs.
 **10 von 12 maschinell bestanden, 0 Verstöße.** 1.7 und 1.8 sind
 Sichtprüfungen und bleiben offen — sie gehören ans Handy, nicht in ein Skript.
 
-**1.5 hat keine Reserve.** 11,57 % gegen 11,50 % sind 0,07 Punkte, das sind
-knapp 0,8 px. Wer am Thumbnail noch etwas verschiebt, muss `thumbnail.py`
-erneut laufen lassen.
+**1.5 nachgebessert (2026-08-20).** Der erste Lauf lag mit 11,57 % gegen
+11,50 % nur 0,07 Punkte über der Grenze — knapp 0,8 px, weil `thumbnail.py`
+auf `ceil(1080 × 11,5 %)` = 125 px zielte, also exakt auf das Minimum. Das
+Skript trennt jetzt Zielgröße und Grenze: `CAP_ZIEL_PCT` = 11,9 % (Median der
+B-Serie) ergibt 129 px, `CAP_MIN_PCT` = 11,5 % bleibt die Prüfgrenze.
+Neu gemessen: **129 px = 11,94 %**, Breite 1599 px, Rand 160 px je Seite,
+Kontrast unverändert. Thumbnail neu gesetzt aus `motiv-video-04.png`.
 
 ## Aussprache-QA: zwei Beanstandungen, beide widerlegt
 

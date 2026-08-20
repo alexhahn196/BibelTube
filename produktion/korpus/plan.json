@@ -1,4 +1,5 @@
 {
+ "_hinweis": "zeichen_tts ist die Summe der Kapitelzeichen aus kapitel.json — der reine Korpus. Bis 2026-08-20 stand hier stattdessen woerter x 5,210, eine Faustformel, die alle acht Werte um 0,05 bis 1,9 Prozent zu niedrig auswies. Fuer die TTS-Abrechnung ist dieser Wert nur die Untergrenze: abgerechnet wird, was tatsaechlich an die API geht, also die Summe der Chunk-Texte aus schritt2_tts.py. Dazwischen liegen Hook, beide CTA, das Eingangsgebet, die Kapitelansagen und die Trennzeichen an den Chunkgrenzen. Bei V4 gemessen: 165.130 Korpus, 166.005 Skript (schritt1_text.py), 167.396 tatsaechlich gesendet.",
  "V1": {
   "name": "Psalmen 1-89 + 1 Petrus + Jakobus",
   "refs": [
@@ -104,7 +105,7 @@
   ],
   "woerter": 29670,
   "stunden": 3.53,
-  "zeichen_tts": 154581
+  "zeichen_tts": 156762
  },
  "V2": {
   "name": "Psalmen 90-150 + Sprueche",
@@ -204,7 +205,7 @@
   ],
   "woerter": 30260,
   "stunden": 3.6,
-  "zeichen_tts": 157655
+  "zeichen_tts": 160463
  },
  "V3": {
   "name": "Johannes + Hebraeer + 1 Johannes + Kolosser",
@@ -255,7 +256,7 @@
   ],
   "woerter": 30009,
   "stunden": 3.57,
-  "zeichen_tts": 156347
+  "zeichen_tts": 157142
  },
  "V4": {
   "name": "Matthaeus + Epheser + Philipper + Daniel 1-3",
@@ -304,7 +305,7 @@
   ],
   "woerter": 31112,
   "stunden": 3.7,
-  "zeichen_tts": 162094
+  "zeichen_tts": 165130
  },
  "V5": {
   "name": "Lukas + Prediger",
@@ -348,7 +349,7 @@
   ],
   "woerter": 29880,
   "stunden": 3.56,
-  "zeichen_tts": 155675
+  "zeichen_tts": 155755
  },
  "V6": {
   "name": "Jesaja 1-25 + Jesaja 40-66 + Daniel 4-6",
@@ -411,7 +412,7 @@
   ],
   "woerter": 30693,
   "stunden": 3.65,
-  "zeichen_tts": 159911
+  "zeichen_tts": 161522
  },
  "V7": {
   "name": "Markus + Roemer + Offenbarung 1-11",
@@ -462,7 +463,7 @@
   ],
   "woerter": 29123,
   "stunden": 3.47,
-  "zeichen_tts": 151731
+  "zeichen_tts": 153932
  },
  "V8": {
   "name": "Genesis 1-42",
@@ -512,6 +513,6 @@
   ],
   "woerter": 29835,
   "stunden": 3.55,
-  "zeichen_tts": 155440
+  "zeichen_tts": 155778
  }
 }

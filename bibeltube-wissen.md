@@ -1371,6 +1371,22 @@ schmale Sichel.
 >
 > Der **Titel bleibt unverändert**; gekürzt ist allein die Zeile im Bild.
 
+> **2026-08-20 — Versalhöhe von 125 px auf 129 px angehoben.**
+> 125 px waren `ceil(1080 × 11,5 %)`, also exakt das Minimum: gemessen
+> 11,57 % gegen eine Grenze von 11,50 %, das sind 0,07 Punkte oder knapp
+> 0,8 px. Jede Verschiebung am Motiv oder ein anderer Font hätte 1.5 ohne
+> Vorwarnung gekippt. `thumbnail.py` setzt jetzt auf **`CAP_ZIEL_PCT` =
+> 11,9 %** — der Median der B-Serie (9,9–12,1 %, n=13) — und trennt damit
+> die Zielgröße von der Grenze; `CAP_MIN_PCT` = 11,5 % bleibt der Wert, an
+> dem geprüft wird.
+>
+> Gemessen: **129 px = 11,94 %**, Breite 1599 px, Rand 160 px je Seite,
+> Kontrast unverändert 18,5:1 (Mittel) und 17,7:1 (p95). Die Kürzung von
+> oben bleibt richtig: `NO MORE THINKING` bräuchte bei 129 px rund 1956 px
+> und wäre noch deutlicher zu breit als bei 125 px.
+>
+> Gilt ab sofort auch für die Thumbnails von V05–V08.
+
 > **2026-08-06:** ersetzt „weiter Bildausschnitt, Hügelsilhouette hinter dem
 > Feuer". Hütte und erleuchtetes Fenster stehen beide in Formel §5 im belegten
 > Motivset, das Fenster ausdrücklich als zulässige warme Lichtquelle neben

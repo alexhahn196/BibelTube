@@ -5,7 +5,8 @@ thumbnail.py - legt die Textzeile auf ein Serienmotiv und misst nach.
 Harte Werte aus formel/thumbnail-checkliste.md:
   - hoechstens 4 Woerter
   - Versalien, fett
-  - Versalhoehe >= 11,5 % der Bildhoehe (>= 125 px bei 1080p)
+  - Versalhoehe >= 11,5 % der Bildhoehe (>= 125 px bei 1080p);
+    gesetzt wird auf 11,9 % (129 px), damit Reserve bleibt
   - Kontrast Text zu direktem Hintergrund >= 10:1
   - Text im oberen Drittel, weiss, zentriert
   - Export als JPEG/PNG, >= 150 KB (Gewinner-Median 237 KB)
@@ -33,6 +34,12 @@ SCHRIFTEN = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
 ]
 CAP_MIN_PCT = 11.5
+# Gesetzt wird NICHT auf das Minimum, sondern darueber. Bei 11,5 % ergibt
+# ceil(1080 * 0,115) = 125 px und damit 11,57 % — 0,07 Punkte oder knapp
+# 0,8 px Reserve. Jede Verschiebung am Motiv oder ein anderer Font kippt
+# die Pruefung dann ohne Vorwarnung. 11,9 % ist der Median der B-Serie und
+# ergibt 129 px. CAP_MIN_PCT bleibt die Grenze, an der geprueft wird.
+CAP_ZIEL_PCT = 11.9
 KONTRAST_MIN = 10.0
 MAX_WOERTER = 4
 
@@ -74,7 +81,7 @@ def bauen(bild, text, aus, oben_pct=8.5, rand_min=40):
         raise SystemExit(f"{woerter} Woerter — die Checkliste erlaubt hoechstens "
                          f"{MAX_WOERTER}.")
 
-    cap_ziel = int(np.ceil(H * CAP_MIN_PCT / 100))
+    cap_ziel = int(np.ceil(H * CAP_ZIEL_PCT / 100))
     d = ImageDraw.Draw(im)
     gewaehlt = None
     for p in SCHRIFTEN:
