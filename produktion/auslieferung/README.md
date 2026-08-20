@@ -81,6 +81,27 @@ je nach Schreiber unterschiedliche Zusatzfelder (ffmpeg schreibt ein
 werden deshalb die Audiodaten ohne Kopf — das ist der Grund, warum
 `pcm_md5` im Manifest steht und nicht nur `sha256`.
 
+## Ausnahme: Video 04 liegt zerlegt im Repo
+
+`video-04/` enthält das fertige MP4 in **20 Teilen à 90 MiB**, dazu
+`manifest.txt` und `pruefsummen.sha256`. Zurück kommt es mit:
+
+```bash
+produktion/auslieferung/zusammensetzen.sh video-04 /pfad/video-04.mp4
+```
+
+Das ist eine **einmalige Ausnahme auf ausdrückliche Entscheidung**, kein
+Vorbild. Sie kostet 1,83 GB dauerhaft in der Historie — Git gibt den Platz
+auch nach `git rm` nicht wieder frei. Das Repo wächst damit von 0,66 GB auf
+rund 2,5 GB gegen eine harte Grenze von 5,0 GB.
+
+Für V05–V08 bleibt es beim Weg oben: **Tonspur als Release-Asset, MP4 gar
+nicht ins Repo.** Ein zweites Video dieser Größe im Repo, und der Deckel ist
+in Reichweite.
+
+`zerlegen.sh` und `zusammensetzen.sh` sind für diesen Fall wieder da. Sie
+sind der Ausnahmeweg, nicht der Standard.
+
 ## MP4 und andere Dateien
 
 ```bash
@@ -119,7 +140,7 @@ anfassen. Die Wandlung nach FLAC und alle Prüfungen laufen auch ohne.
 | video-01 | online | **nein** | — |
 | video-02 | online | **nein** | — |
 | video-03 | online | **nein** | — |
-| video-04 | nein | **nein** | — |
+| video-04 | nein | **nein** (als Teile beim Nutzer) | — · MP4 zerlegt im Repo |
 
 Für 01–03 ist nichts zu tun; ihre Tonspuren sind unwiederbringlich weg,
 das ist akzeptiert. Video 04 ist noch nicht vertont — `FISH_KEY` fehlt.

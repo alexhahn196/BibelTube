@@ -26,6 +26,11 @@ produktion/video-*/*.mp4
 produktion/auslieferung/*.mp4
 produktion/auslieferung/*.flac
 produktion/auslieferung/*.wav
+# Ausnahme Video 04: die *.part-Teile gehoeren ins Repo, die daraus
+# zusammengesetzte Datei nicht — sonst liegt sie doppelt.
+produktion/auslieferung/*/*.mp4
+produktion/auslieferung/*/*.flac
+produktion/auslieferung/*/*.wav
 produktion/video-*/*.wav
 __pycache__/
 *.pyc

@@ -1,0 +1,6 @@
+datei       video-04.mp4
+groesse     1825899455
+md5         28e52149a860a90233ce172817131cea
+sha256      d2ebd4b23344e2604b5592a3a91e43c5b1852aa27d785540a197fdd8866303c1
+teile       20
+teilgroesse 90M
