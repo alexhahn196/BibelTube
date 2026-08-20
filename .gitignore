@@ -20,9 +20,12 @@ stimmtest/out_r2/
 produktion/arbeit/
 produktion/korpus/text/
 produktion/video-*/*.mp4
-# Zusammengesetzte Auslieferung: die *.part-Teile gehoeren ins Repo,
-# die daraus gefuegte MP4 nicht — sie waere 1,8 GB in einem Blob.
+# Auslieferung: eingecheckt werden nur die *.part-Teile, manifest.txt
+# und pruefsummen.sha256. Die daraus gefuegte Mediendatei nicht — sie
+# waere ein einzelner Blob von 0,6 bis 1,8 GB.
 produktion/auslieferung/*/*.mp4
+produktion/auslieferung/*/*.flac
+produktion/auslieferung/*/*.wav
 produktion/video-*/*.wav
 __pycache__/
 *.pyc

@@ -27,40 +27,49 @@ je Video.
 | `produktion/pipeline/` | Siebenschritt-Pipeline: Text → TTS → Bett → Bild → Video → SRT → Paket |
 | `produktion/videos-01-08.md`, `produktion/video-0*/` | Die geplanten und produzierten Videos |
 | `stimmtest/` | Blindtests zur Kanalstimme (MILO SOOTHING VOICE) |
-| `produktion/auslieferung/` | **Fertige MP4s, in Teilen <100 MiB** — `zusammensetzen.sh` stellt sie wieder her |
+| `produktion/auslieferung/` | **Gesicherte Tonspuren** als FLAC in Teilen <100 MiB — `tonspur_zurueck.sh` holt sie zurück |
 
-## Fertige Videos: ins Repo, nicht zu einem Filehoster
+## Sicherung: die Tonspur ins Repo, nicht das Video
 
 **GoFile-Links verfallen.** Die Videos 01–03 lagen dort und sind darüber
 nicht mehr erreichbar. Ein Hoster-Link ist keine Sicherung.
 
-Fertige MP4s gehören ab sofort **in Teilen ins Repo**, nach
-`produktion/auslieferung/`:
+Gesichert wird ab sofort **die Tonspur, nicht das fertige MP4.**
+`stimme.wav` ist das einzige Zwischenergebnis der Pipeline, das Geld kostet
+(TTS, rund 160.000 Zeichen je Video) und sich nicht aus dem Repo neu
+erzeugen lässt — Text, Standbild, Bildkette, Klangbett und SRT liegen alle
+hier. Aus der Tonspur sind Mischung und Montage jederzeit kostenlos
+wiederholbar: **das MP4 ist reproduzierbar, die TTS-Ausgabe nicht.**
+
+Standard nach jeder Vertonung, verbindlich ab Video 04:
 
 ```bash
-produktion/auslieferung/zerlegen.sh produktion/video-04/video-04.mp4
-git add produktion/auslieferung/video-04 && git commit && git push
+produktion/auslieferung/tonspur_sichern.sh V4          # -> FLAC, geprüft, in Teilen
+git add produktion/auslieferung/stimme-video-04 && git commit && git push
 ```
 
-Zurück kommt die Datei mit Prüfsummenkontrolle über
-`produktion/auslieferung/zusammensetzen.sh video-04`. Geschnitten wird nach
-**Bytes** (`split -b 90M`), nicht nach fester Teilezahl: bei 20 Teilen wäre
-Video 02 mit 115 MiB je Teil über GitHubs harter 100-MiB-Grenze gelandet.
+Zurück, ohne einen Cent TTS:
 
-Zwei Einschränkungen, beide in `produktion/auslieferung/README.md` belegt:
+```bash
+produktion/auslieferung/tonspur_zurueck.sh V4
+python3 produktion/pipeline/render.py V4 --nur 3 5
+```
 
-- **Das Repo trägt das nicht dauerhaft.** Die vier fertigen Videos sind
-  zusammen 6,83 GB, die acht geplanten 13,67 GB — GitHubs harte Grenze
-  liegt bei 5 GB. Das Verfahren trägt zwei bis drei Videos; danach braucht
-  es Git LFS, Release-Assets oder Objektspeicher. Bis dahin: nur das noch
-  nicht hochgeladene Video ablegen und den Ordner nach dem YouTube-Upload
-  wieder entfernen.
-- **Die Tonspur ist wichtiger als das Video.** `produktion/arbeit/` steht in
-  der `.gitignore`, also wurde nie eine `stimme.wav` eingecheckt. Damit ist
-  keines der vier fertigen Videos ohne **neue, kostenpflichtige** TTS
-  wiederherstellbar, obwohl Text, Standbild, Bildkette und SRT alle im Repo
-  liegen. Die Tonspur ist das einzige teure Zwischenergebnis der Pipeline —
-  sie gehört gesichert, bevor das nächste Video gerendert wird.
+Beide Wege prüfen die Audiodaten gegen eine im `manifest.txt` hinterlegte
+PCM-Prüfsumme; FLAC ist verlustfrei, und das Skript weist es nach, statt es
+zu behaupten. Geschnitten wird nach **Bytes** (`split -b 90M`), nicht nach
+fester Teilezahl: bei 20 Teilen wäre Video 02 mit 115 MiB je Teil über
+GitHubs harter 100-MiB-Grenze gelandet.
+
+**Fertige MP4s gehören nicht ins Repo.** Git gibt Platz nie wieder frei —
+was einmal gepusht wurde, bleibt in der Historie, auch nach `git rm`. Ein
+MP4 „kurz zum Hochladen reinlegen" kostet seine vollen 1,8 GB dauerhaft von
+einem 5-GB-Deckel, an dem die acht Tonspuren mit 4,1–5,5 GB ohnehin schon
+knapp sind. Wer die Datei zum Upload braucht, nimmt ein
+**GitHub-Release-Asset**: 2 GB je Datei, zählt nicht gegen die Repo-Größe,
+und Löschen gibt den Platz wirklich frei.
+
+Details, Zahlen und der Stand je Video: `produktion/auslieferung/README.md`.
 
 ## Was an Kanal 2 ging
 
