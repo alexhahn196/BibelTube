@@ -20,6 +20,9 @@ stimmtest/out_r2/
 produktion/arbeit/
 produktion/korpus/text/
 produktion/video-*/*.mp4
+# Zusammengesetzte Auslieferung: die *.part-Teile gehoeren ins Repo,
+# die daraus gefuegte MP4 nicht — sie waere 1,8 GB in einem Blob.
+produktion/auslieferung/*/*.mp4
 produktion/video-*/*.wav
 __pycache__/
 *.pyc
