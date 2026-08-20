@@ -429,9 +429,18 @@ Support the channel: [Spendenlink]
 
 # Video 04
 
-**Titel:** `No More Thinking Tonight… Let the Words of Jesus Settle Your Heart`
+**Titel:** `No More Thinking Tonight… Let Tomorrow Wait Until Morning`
 **Eigennamen-Test:** nein
 **Anker:** „No More Thinking Tonight…" (belegt, B 166K — derselbe Anker war B's Durchbruch)
+
+> **2026-08-20 — Titelhälfte hinter dem Anker getauscht.**
+> Vorher: `No More Thinking Tonight… Let the Words of Jesus Settle Your Heart`
+> Der Anker bleibt — er ist belegt und war B's Durchbruch. Getauscht ist nur
+> die zweite Hälfte, um „Jesus" als viertes geteiltes Wort loszuwerden.
+> titel_pruefung.py: 44,4 % → 37,5 %. Der Kanal B heißt seit dem Abzug vom
+> 2026-08-02 **Selah** (@SelahGospel, Kanal-ID unverändert
+> UCiolk5zOhJjJta3iS6HJDCw); „No More Thinking Tonight… Rest With Jesus"
+> steht dort inzwischen bei 196K.
 
 **Textkorpus:** Matthäus + Epheser + Philipper + Daniel 1–3
 **Gemessen:** 31.112 Wörter → **3,70 h** → ca. 162.100 Zeichen TTS
@@ -510,7 +519,7 @@ schmale Sichel.
 ### Beschreibung
 
 ```
-No More Thinking Tonight… Let the Words of Jesus Settle Your Heart
+No More Thinking Tonight… Let Tomorrow Wait Until Morning
 
 For the nights when your mind keeps deciding things that can wait until morning. The
 complete Gospel of Matthew, with Ephesians, Philippians and the opening of Daniel —
@@ -955,13 +964,13 @@ strenge Richtung: sie machen die gemessene Ähnlichkeit größer, nicht kleiner.
 | 01 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, psalm, tired, you |
 | 02 | 44,4 % | B „Stop Thinking For A Moment, Sleep To These Psalms Tonight" | moment, stop, think, tonight |
 | 03 | 44,4 % | A „If You're Anxious, Rest to the Gospel of John Tonight" | gospel, if, john, you |
-| 04 | 44,4 % | B „No More Thinking Tonight… Jesus Is With You" | jesus, no, think, tonight |
+| 04 | 37,5 % | B „No More Thinking Tonight… Jesus Is With You" | no, think, tonight |
 | 05 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, sleep, tired, you |
 | 06 | 44,4 % | B „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" | go, not, sleep, worried |
 | 07 | 50,0 % | B „Fall Asleep Without Stress… Jesus Is With You" | asleep, fall, stress, without |
 | 08 | 50,0 % | A „You Need Rest... Jesus Watches Over You Tonight" | need, rest, you |
 
-**Verstöße: 0.** Vier Titel liegen exakt auf der Grenze (50,0 %) — das ist kein Zufall,
+**Verstöße: 0.** Vier Titel liegen exakt auf der Grenze (50,0 %) — 01, 05, 07 und 08 — das ist kein Zufall,
 sondern die Bauweise: Der belegte Anker *ist* die erste Titelhälfte, und er kommt aus
 den Gewinner-Titeln. Wer den Anker behält, teilt zwangsläufig dessen Wörter. Die Grenze
 zwingt damit genau das, was sie soll: **die zweite Hälfte muss vollständig eigen sein.**

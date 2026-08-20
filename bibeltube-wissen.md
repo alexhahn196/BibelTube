@@ -1233,9 +1233,25 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
-Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
+**Motiv:** Grundmotiv am Wasser — sitzende Figur am stillen Ufer,
+Mondspiegelung auf der Oberfläche, Feuer rechts.
 **Text:** `GOSPEL OF JOHN` (3 Wörter)
+
+> **2026-08-06, Planungsentscheidung — Motivtausch 03 ↔ 05, und 04 neu.**
+> Video 03 bekommt das Wassermotiv, das bisher für Video 05 vorgesehen war;
+> Video 05 übernimmt im Gegenzug die bisherige 03-Variante (naher Blickwinkel,
+> Kopf gesenkt, Hände im Schoß). Video 04 tauscht „weiter Bildausschnitt,
+> Hügelsilhouette" gegen die **einsame Hütte** aus dem belegten Motivset.
+>
+> Begründung nach `formel/thumbnail-motive.md` Aufgabe 3: Konsistenz der
+> **Bildwelt** ist Pflicht, das **Feinmotiv** darf variieren. Gewinner A hält
+> sein Feinmotiv nur **4 von 8** Videos durch, seine Bildwelt dagegen 8/8;
+> B ebenso — Feinmotiv 10/13, Bildwelt 13/13. Der konsistenteste Kanal der
+> Stichprobe (F, 10/10) ist zugleich der toteste. Feinmotiv-Variation kostet
+> also nichts und verschafft den Videos untereinander Abgrenzung.
+>
+> Titel, Korpora, Hooks, CTAs, Beschreibungen und Tags bleiben unverändert.
+> Die Thumbnail-Texte bleiben bei ihren Videos.
 
 ### Beschreibung
 
@@ -1273,9 +1289,18 @@ Support the channel: [Spendenlink]
 
 # Video 04
 
-**Titel:** `No More Thinking Tonight… Let the Words of Jesus Settle Your Heart`
+**Titel:** `No More Thinking Tonight… Let Tomorrow Wait Until Morning`
 **Eigennamen-Test:** nein
 **Anker:** „No More Thinking Tonight…" (belegt, B 166K — derselbe Anker war B's Durchbruch)
+
+> **2026-08-20 — Titelhälfte hinter dem Anker getauscht.**
+> Vorher: `No More Thinking Tonight… Let the Words of Jesus Settle Your Heart`
+> Der Anker bleibt — er ist belegt und war B's Durchbruch. Getauscht ist nur
+> die zweite Hälfte, um „Jesus" als viertes geteiltes Wort loszuwerden.
+> titel_pruefung.py: 44,4 % → 37,5 %. Der Kanal B heißt seit dem Abzug vom
+> 2026-08-02 **Selah** (@SelahGospel, Kanal-ID unverändert
+> UCiolk5zOhJjJta3iS6HJDCw); „No More Thinking Tonight… Rest With Jesus"
+> steht dort inzwischen bei 196K.
 
 **Textkorpus:** Matthäus + Epheser + Philipper + Daniel 1–3
 **Gemessen:** 31.112 Wörter → **3,70 h** → ca. 162.100 Zeichen TTS
@@ -1324,14 +1349,37 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, weiter Bildausschnitt, Hügelsilhouette hinter dem Feuer,
-sehr dunkler Himmel, Mond als schmale Sichel.
-**Text:** `NO MORE THINKING` (3 Wörter)
+**Motiv:** Grundmotiv mit **einsamer Hütte** — ferne Hütte mit einem warm
+erleuchteten Fenster als der **einen** warmen Lichtquelle, **kein Lagerfeuer in
+diesem Bild**, Figur sitzt im Vordergrund, sehr dunkler Himmel, Mond als
+schmale Sichel.
+**Text:** `THINK NO MORE` (3 Wörter)
+
+> **2026-08-07 — Textzeile gekürzt, weil sie nicht ins Bild passt.**
+> `NO MORE THINKING` braucht bei der vorgeschriebenen Versalhöhe von 125 px
+> **1896 px** Breite; verfügbar sind bei 1920 px Bildbreite und 40 px Rand je
+> Seite nur **1840 px** — 56 px zu breit, und zwar in FreeSerif Bold, der
+> schmalsten installierten Serife. Die Checkliste lässt hier nur einen Weg:
+> „Wörter kürzen — nicht die Schrift verkleinern."
+>
+> `THINK NO MORE` hält den Anker („No More Thinking Tonight…", B 166K), ist
+> mit 13 Zeichen und **1548 px** komfortabel (Rand 186 px je Seite) und bleibt
+> im Imperativ wie die Gewinner-Texte. **`STOP THINKING` wurde verworfen**: es
+> ist wörtlich der Titelanker von Video 02 („Stop Thinking For A Moment") —
+> zwei Videos der Serie mit derselben Thumbnail-Aussage wäre vermeidbare
+> Verwechslung.
+>
+> Der **Titel bleibt unverändert**; gekürzt ist allein die Zeile im Bild.
+
+> **2026-08-06:** ersetzt „weiter Bildausschnitt, Hügelsilhouette hinter dem
+> Feuer". Hütte und erleuchtetes Fenster stehen beide in Formel §5 im belegten
+> Motivset, das Fenster ausdrücklich als zulässige warme Lichtquelle neben
+> Lagerfeuer und Mond. Begründung des Tauschs: siehe Video 03.
 
 ### Beschreibung
 
 ```
-No More Thinking Tonight… Let the Words of Jesus Settle Your Heart
+No More Thinking Tonight… Let Tomorrow Wait Until Morning
 
 For the nights when your mind keeps deciding things that can wait until morning. The
 complete Gospel of Matthew, with Ephesians, Philippians and the opening of Daniel —
@@ -1421,9 +1469,12 @@ Support the channel: [Spendenlink]
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv am Wasser — sitzende Figur am stillen Ufer,
-Mondspiegelung auf der Oberfläche, Feuer rechts.
+**Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
+Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
 **Text:** `YOU'RE TIRED` (2 Wörter)
+
+> **2026-08-06:** getauscht mit Video 03, das jetzt das Wassermotiv trägt.
+> Begründung: siehe Video 03.
 
 ### Beschreibung
 
@@ -1608,7 +1659,25 @@ Support the channel: [Spendenlink]
 
 **Motiv:** Grundmotiv, Feuer als hellster Punkt deutlich rechts, sitzende Figur
 in der linken Bildhälfte, dichter Sternenhimmel, kein Mond.
-**Text:** `REST WITHOUT STRESS` (3 Wörter)
+**Text:** `NO MORE STRESS` (3 Wörter)
+
+> **2026-08-07 — Textzeile gekürzt, weil sie nicht ins Bild passt.**
+> `REST WITHOUT STRESS` braucht bei der vorgeschriebenen Versalhöhe von 125 px
+> **2163 px**; verfügbar sind bei 1920 px Bildbreite und 40 px Rand je Seite
+> nur **1840 px** — 323 px zu breit. Die Checkliste lässt hier nur einen Weg:
+> „Wörter kürzen — nicht die Schrift verkleinern."
+>
+> `NO MORE STRESS` misst **1624 px** (Rand 148 px je Seite), bleibt bei 3
+> Wörtern und hält das Ankerwort des Titels („Fall Asleep Without **Stress**…",
+> B 35K). Gemessene Alternativen: `NO STRESS TONIGHT` mit 1923 px ist selbst
+> noch 83 px zu breit; `LET GO TONIGHT` würde mit 1606 px passen, verliert
+> aber das Ankerwort und fällt deshalb aus.
+>
+> Das „NO MORE"-Echo zur Zeile von Video 04 (`THINK NO MORE`) ist **gewollt**:
+> Wiederholung innerhalb der eigenen Serie ist Merkmal, nicht Fehler — B trägt
+> „Sleep To These Psalms" in 6 von 13 Titeln.
+>
+> Der **Titel bleibt unverändert**; gekürzt ist allein die Zeile im Bild.
 
 ### Beschreibung
 
@@ -1755,13 +1824,13 @@ strenge Richtung: sie machen die gemessene Ähnlichkeit größer, nicht kleiner.
 | 01 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, psalm, tired, you |
 | 02 | 44,4 % | B „Stop Thinking For A Moment, Sleep To These Psalms Tonight" | moment, stop, think, tonight |
 | 03 | 44,4 % | A „If You're Anxious, Rest to the Gospel of John Tonight" | gospel, if, john, you |
-| 04 | 44,4 % | B „No More Thinking Tonight… Jesus Is With You" | jesus, no, think, tonight |
+| 04 | 37,5 % | B „No More Thinking Tonight… Jesus Is With You" | no, think, tonight |
 | 05 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, sleep, tired, you |
 | 06 | 44,4 % | B „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" | go, not, sleep, worried |
 | 07 | 50,0 % | B „Fall Asleep Without Stress… Jesus Is With You" | asleep, fall, stress, without |
 | 08 | 50,0 % | A „You Need Rest... Jesus Watches Over You Tonight" | need, rest, you |
 
-**Verstöße: 0.** Vier Titel liegen exakt auf der Grenze (50,0 %) — das ist kein Zufall,
+**Verstöße: 0.** Vier Titel liegen exakt auf der Grenze (50,0 %) — 01, 05, 07 und 08 — das ist kein Zufall,
 sondern die Bauweise: Der belegte Anker *ist* die erste Titelhälfte, und er kommt aus
 den Gewinner-Titeln. Wer den Anker behält, teilt zwangsläufig dessen Wörter. Die Grenze
 zwingt damit genau das, was sie soll: **die zweite Hälfte muss vollständig eigen sein.**

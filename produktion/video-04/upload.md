@@ -22,13 +22,13 @@
 ## Titel
 
 ```
-No More Thinking Tonight… Let the Words of Jesus Settle Your Heart
+No More Thinking Tonight… Let Tomorrow Wait Until Morning
 ```
 
 ## Beschreibung
 
 ```
-No More Thinking Tonight… Let the Words of Jesus Settle Your Heart
+No More Thinking Tonight… Let Tomorrow Wait Until Morning
 
 For the nights when your mind keeps deciding things that can wait until morning. The
 complete Gospel of Matthew, with Ephesians, Philippians and the opening of Daniel —
