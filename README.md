@@ -27,25 +27,29 @@ je Video.
 | `produktion/pipeline/` | Siebenschritt-Pipeline: Text → TTS → Bett → Bild → Video → SRT → Paket |
 | `produktion/videos-01-08.md`, `produktion/video-0*/` | Die geplanten und produzierten Videos |
 | `stimmtest/` | Blindtests zur Kanalstimme (MILO SOOTHING VOICE) |
-| `produktion/auslieferung/` | **Gesicherte Tonspuren** als FLAC in Teilen <100 MiB — `tonspur_zurueck.sh` holt sie zurück |
+| `produktion/auslieferung/` | **Sicherung der Tonspuren** als Release-Asset — Skripte und Prüfsummen-Manifeste |
 
-## Sicherung: die Tonspur ins Repo, nicht das Video
+## Sicherung: Tonspur als Release-Asset
 
 **GoFile-Links verfallen.** Die Videos 01–03 lagen dort und sind darüber
 nicht mehr erreichbar. Ein Hoster-Link ist keine Sicherung.
 
-Gesichert wird ab sofort **die Tonspur, nicht das fertige MP4.**
-`stimme.wav` ist das einzige Zwischenergebnis der Pipeline, das Geld kostet
-(TTS, rund 160.000 Zeichen je Video) und sich nicht aus dem Repo neu
-erzeugen lässt — Text, Standbild, Bildkette, Klangbett und SRT liegen alle
-hier. Aus der Tonspur sind Mischung und Montage jederzeit kostenlos
-wiederholbar: **das MP4 ist reproduzierbar, die TTS-Ausgabe nicht.**
+Gesichert wird **die Tonspur, nicht das fertige MP4.** `stimme.wav` ist das
+einzige Zwischenergebnis der Pipeline, das Geld kostet (TTS, rund 160.000
+Zeichen je Video) und sich nicht aus dem Repo neu erzeugen lässt — Text,
+Standbild, Bildkette, Klangbett und SRT liegen alle hier. Aus der Tonspur
+sind Mischung und Montage jederzeit kostenlos wiederholbar: **das MP4 ist
+reproduzierbar, die TTS-Ausgabe nicht.**
+
+**Die Bytes liegen als Release-Asset, die Prüfsummen im Repo.** Ein Release
+je Video, Tag `v04`, `v05`, … Ins Repo kommt nur `video-NN.manifest`,
+wenige hundert Byte mit Größe, `sha256` und `pcm_md5` jedes Assets.
 
 Standard nach jeder Vertonung, verbindlich ab Video 04:
 
 ```bash
-produktion/auslieferung/tonspur_sichern.sh V4          # -> FLAC, geprüft, in Teilen
-git add produktion/auslieferung/stimme-video-04 && git commit && git push
+produktion/auslieferung/tonspur_sichern.sh V4        # FLAC, geprüft, ins Release v04
+git add produktion/auslieferung/video-04.manifest && git commit && git push
 ```
 
 Zurück, ohne einen Cent TTS:
@@ -55,19 +59,18 @@ produktion/auslieferung/tonspur_zurueck.sh V4
 python3 produktion/pipeline/render.py V4 --nur 3 5
 ```
 
-Beide Wege prüfen die Audiodaten gegen eine im `manifest.txt` hinterlegte
-PCM-Prüfsumme; FLAC ist verlustfrei, und das Skript weist es nach, statt es
-zu behaupten. Geschnitten wird nach **Bytes** (`split -b 90M`), nicht nach
-fester Teilezahl: bei 20 Teilen wäre Video 02 mit 115 MiB je Teil über
-GitHubs harter 100-MiB-Grenze gelandet.
+Das fertige MP4 geht denselben Weg (`asset_sichern.sh V4 …`) und darf nach
+dem YouTube-Upload aus dem Release gelöscht werden — die Tonspur bleibt.
+Voraussetzung ist die GitHub-CLI (`gh auth login`); ohne sie brechen die
+Skripte mit klarer Meldung ab, bevor sie etwas anfassen.
 
-**Fertige MP4s gehören nicht ins Repo.** Git gibt Platz nie wieder frei —
-was einmal gepusht wurde, bleibt in der Historie, auch nach `git rm`. Ein
-MP4 „kurz zum Hochladen reinlegen" kostet seine vollen 1,8 GB dauerhaft von
-einem 5-GB-Deckel, an dem die acht Tonspuren mit 4,1–5,5 GB ohnehin schon
-knapp sind. Wer die Datei zum Upload braucht, nimmt ein
-**GitHub-Release-Asset**: 2 GB je Datei, zählt nicht gegen die Repo-Größe,
-und Löschen gibt den Platz wirklich frei.
+**Warum nicht ins Repo:** Acht Tonspuren wären 4,1–5,5 GB, dazu die heute
+schon belegten 0,66 GB — gegen GitHubs harte Grenze von 5,0 GB. Das bricht
+im ungünstigen Fall bei Video 7, mitten im Block. Und Git gibt Platz nie
+wieder frei: was einmal gepusht wurde, bleibt in der Historie, auch nach
+`git rm`. Ein Release-Asset erlaubt 2 GB je Datei, zählt nicht gegen die
+Repo-Größe, und Löschen wirkt wirklich — eine Zerlegung in Teile unter
+100 MiB entfällt damit vollständig.
 
 Details, Zahlen und der Stand je Video: `produktion/auslieferung/README.md`.
 

@@ -20,12 +20,12 @@ stimmtest/out_r2/
 produktion/arbeit/
 produktion/korpus/text/
 produktion/video-*/*.mp4
-# Auslieferung: eingecheckt werden nur die *.part-Teile, manifest.txt
-# und pruefsummen.sha256. Die daraus gefuegte Mediendatei nicht — sie
-# waere ein einzelner Blob von 0,6 bis 1,8 GB.
-produktion/auslieferung/*/*.mp4
-produktion/auslieferung/*/*.flac
-produktion/auslieferung/*/*.wav
+# Auslieferung: eingecheckt werden nur die Skripte und die kleinen
+# *.manifest-Dateien mit den Pruefsummen. Die Mediendateien selbst liegen
+# als Release-Asset und haben im Repo nichts verloren.
+produktion/auslieferung/*.mp4
+produktion/auslieferung/*.flac
+produktion/auslieferung/*.wav
 produktion/video-*/*.wav
 __pycache__/
 *.pyc
