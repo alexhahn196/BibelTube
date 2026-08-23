@@ -19,7 +19,7 @@ je Video.
 
 | Ort | Inhalt |
 |---|---|
-| `bibeltube-wissen.md` | Einstieg — die vier Arbeitsdokumente aneinandergehängt |
+| `bibeltube-wissen.md` | Einstieg — die vier Arbeitsdokumente aneinandergehängt. **Erzeugt**, nicht gepflegt: `produktion/wissen_zusammenstellen.py` |
 | `regeln/erfolgsregeln.md` | Erfolgsmuster aus 10 Kanälen (2 Gewinner, 8 Verlierer) — plus **M8**, die erste Regel aus eigenen Kanaldaten (Gate 2, 2026-08-23) |
 | `formel/video-formel.md` | Die Videoformel (v2.2) · `formel/thumbnail-*.md` Thumbnail-Regeln |
 | `regeln/daten/gate2_eigene_kanaldaten.json` | Eigene YouTube-Analytics, 25.07.–22.08.2026 — die einzige Nicht-Fremddatenquelle im Repo |

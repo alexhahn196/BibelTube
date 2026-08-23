@@ -1,27 +1,21 @@
 # BibelTube — Wissensstand
 
 Die vier Arbeitsdokumente, ungekürzt aneinandergehängt.
-Zusammengestellt am 23.08.2026, nach der Auswertung von Gate 2.
+**Erzeugt am 23.08.2026 von `produktion/wissen_zusammenstellen.py`** — nicht von Hand
+pflegen, sondern neu bauen.
 
 1. `regeln/erfolgsregeln.md`
 2. `formel/video-formel.md`
 3. `formel/thumbnail-checkliste.md`
 4. `produktion/videos-01-08.md`
 
-> **Dies ist eine Momentaufnahme, keine Quelle.** Verbindlich sind immer die vier
-> Originaldateien. Die vorige Zusammenstellung stammte vom 04.08.2026 und enthielt
-> Änderungen vom 06.08. bereits nicht mehr — wer hier liest, prüft das Datum oben
-> gegen `git log` der Originale.
+> **Momentaufnahme, keine Quelle.** Verbindlich sind immer die vier Originaldateien.
+> Wer hier liest und etwas ändern will, ändert das Original und lässt diese Datei
+> danach neu erzeugen.
 >
 > Der Text ist wörtlich übernommen. Einzige Abweichung: **relative Links sind auf die
 > Repo-Wurzel umgeschrieben**, damit sie aus dieser Datei heraus funktionieren; in den
 > Originalen stehen sie relativ zum jeweiligen Ordner.
->
-> **Neu in dieser Fassung (2026-08-23, Gate 2, eigene Kanaldaten):** Regel **M8**
-> (Textkorpus muss Erzählstoff sein) · Formel **v2.2** mit Eigenname als Pflicht in
-> jedem Titel · Traffic-Quellen-Befund (Vorschlagsband statt Startseite) ·
-> Anfangsabfall als Beobachtung · Thumbnails vorläufig **nicht** der Engpass ·
-> Kadenz bleibt bei 5 Tagen.
 
 ---
 
@@ -201,6 +195,13 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   der YouTube ausliefert. V3 hat mit 1,82 % den zweitschlechtesten CTR des Kanals und
   bekam trotzdem 3.130 der 5.535 Impressionen (Beleg unter Abschnitt 5, Frage 3).
   Der Korpus wirkt nicht über den Klick, sondern über das, was nach dem Klick passiert.
+- **Nachtrag 2026-08-23 — M8 hat dabei die Titel-Erklärung überholt.** V3 war zunächst
+  als Beleg für den Eigennamen im Titel geführt. Dieselbe CTR-Zahl schlägt aber gegen
+  den Titel aus: ein Titel, der zieht, müsste sich **zuerst** im CTR zeigen, und V3's
+  CTR ist der zweitschlechteste des Kanals. Die Impressionen folgen damit sparsamer
+  erklärt der **Retention** als dem Titel — also M8. Ausgeführt in
+  [`formel/video-formel.md`](formel/video-formel.md) §1, „die sparsamere Erklärung".
+  Der Eigenname bleibt Pflicht, aber als billige Konvention ohne belegten Mechanismus.
 - **Grenze der Regel — was hier NICHT belegt ist:** n=4, und Retentionskurven liegen nur
   für V2 und V3 vor. **V4 ist Erzählstoff (Matthäus) und kommt trotzdem nur auf 14,6 min
   Ø Sehdauer.** V4 ist allerdings das jüngste Video im Messfenster; der Alterseffekt ist
@@ -488,6 +489,45 @@ Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Ren
 > *Faktenkorrektur aus v2.1, weiterhin gültig:* *„If You're Anxious, Rest to the
 > **Gospel of John** Tonight"* ist mit 245.000 Views A's **bestes** Video, nicht das
 > zweitbeste.
+
+> ### Einschränkung, nachgetragen am 2026-08-23: die sparsamere Erklärung
+>
+> *(eigene Kanaldaten Gate 2 — diese Einschränkung schwächt die Regel darüber
+> bewusst ab, statt sie zu verteidigen.)*
+>
+> Die 3.130 Impressionen von V3 sind oben als Argument **für** den Eigennamen
+> geführt. Sie können aber genauso gut die **Folge der besseren Retention** sein
+> statt die Folge des Titels. YouTube liefert nach Wiedergabezeit aus — und V3 trägt
+> 80 % der Kanal-Wiedergabezeit (M8).
+>
+> **Was die Zahlen ausschließen und was nicht.** Drei Erklärungen stehen im Raum:
+>
+> | | Kette | Status |
+> |---|---|---|
+> | A | Eigenname → attraktiverer Titel → **höhere Klickrate** → mehr Impressionen | **widerlegt** |
+> | B | Eigenname → bessere kontextliche Zuordnung → mehr Impressionen | möglich, **unbelegt** |
+> | C | Erzählstoff → mehr Wiedergabezeit → mehr Impressionen | möglich, **belegt** (M8) |
+>
+> **A fällt, und zwar an einer einzigen Zahl:** V3 hat mit **1,82 %** den
+> *zweitschlechtesten* CTR des Kanals. Ein Titel, der zieht, müsste sich **zuerst
+> im CTR zeigen** — dort und nirgends sonst wirkt ein Titel unmittelbar. Er tut es
+> nicht. Damit ist die naheliegendste Lesart des Befunds erledigt.
+>
+> **B und C trennen die eigenen Daten nicht.** Beide sagen dasselbe voraus, was man
+> sieht: viele Impressionen bei unauffälligem CTR. Aber sie sind nicht gleich gut
+> gestützt — **C beruft sich auf einen Mechanismus, der hier gemessen ist**
+> (Retention, Faktor 6, M8), **B auf einen zusätzlichen, der es nicht ist.** Nach
+> dem sparsameren Prinzip gewinnt C.
+>
+> **Was daraus folgt:**
+> - **Der Eigenname bleibt Pflicht** — er kostet nichts, er ist plausibel, und er
+>   wegzulassen würde eine Variable ändern, ohne dass etwas dafür spräche.
+> - **Er ist aber kein belegter Hebel, sondern eine billige Konvention.** Wer diese
+>   Regel liest, soll nicht glauben, hier sei ein Wirkmechanismus nachgewiesen.
+> - **Der belegte Hebel dieses Kanals ist M8, nicht der Titel.** Wenn Arbeitszeit
+>   zwischen Titelfeilen und Korpuswahl verteilt wird, gehört sie in den Korpus.
+> - Getrennt würden B und C erst durch ein Video mit Erzählstoff **ohne** Eigennamen
+>   im Titel. Das steht hinter dem Korpuswechsel an — eine Variable pro Runde.
 
 **VERBOTEN — belegt:**
 - Titel von Konkurrenten wörtlich übernehmen. Kanal F kopierte A's 233K-Titel inklusive
@@ -826,11 +866,17 @@ Checkliste nicht mit ungeprüften Annahmen verwässert.
   CTR aus fremden Analytics nicht auflösbar.
 - **Ob WEBBE so gut trägt wie NIV.** Prüfkriterium: dieselbe Psalmenauswahl einmal in beiden
   Fassungen als 2-Minuten-Probe sprechen lassen, gegen Muttersprachler-Ohr prüfen.
-- ~~**Ob Eigennamen einem Neustarter helfen.**~~ — **beantwortet am 2026-08-23**
-  *(eigene Kanaldaten Gate 2)*. Ja — aber über die kontextliche Zuordnung im
-  **Vorschlagsband**, nicht über Suchintention (0 Suchaufrufe in 28 Tagen). Seitdem
-  Pflicht in jedem Titel, ausgeführt in §1. Offen bleibt allein die Trennung von
-  Eigenname und Erzählstoff: V3 trug beides.
+- **Ob Eigennamen einem Neustarter helfen** — **am 2026-08-23 nur teilweise geklärt**
+  *(eigene Kanaldaten Gate 2)*. Sicher ist: **nicht über die Suche** (0 Suchaufrufe in
+  28 Tagen) und **nicht über die Klickrate** (V3 hat den zweitschlechtesten CTR des
+  Kanals). Beides ist ausgeschlossen. Ob der Eigenname über die kontextliche Zuordnung
+  im Vorschlagsband wirkt oder ob V3's Impressionen schlicht der besseren Retention
+  folgen, **trennen die eigenen Daten nicht** — V3 trug Eigenname und Erzählstoff
+  zugleich, und die Retention ist die gemessene der beiden Größen. Ausgeführt in §1
+  unter „die sparsamere Erklärung". Der Eigenname ist trotzdem Pflicht, aber als
+  billige Konvention, nicht als belegter Hebel.
+  *Prüfkriterium:* ein Video mit Erzählstoff-Korpus **ohne** Eigennamen im Titel —
+  frühestens nach V08, wenn der Korpuswechsel ausgewertet ist.
 - **Optimale Kadenz innerhalb 4–7 Tagen.** Belegt ist nur die Obergrenze. Die Frage,
   ob häufiger besser wäre, ist am 2026-08-23 **gestellt und vertagt** worden, nicht
   beantwortet — siehe §6 und M1.
@@ -1173,8 +1219,10 @@ Zwei neue Regeln greifen ab V05 direkt in diesen Plan ein:
   sein — Evangelien, Apostelgeschichte, Genesis-Erzählungen. Spruchsammlungen
   (Psalmen, Sprüche, Prediger) und **prophetische Rede** nur als Beigabe.
 - **Formel §1**: **Eigenname im Titel ist Pflicht — in jedem Video**, nicht mehr
-  „~jedes 4.". Er wirkt über die kontextliche Zuordnung im Vorschlagsband
-  (0 Suchaufrufe in 28 Tagen), nicht über die Suche.
+  „~jedes 4.". Ausgeschlossen ist, dass er über die Suche wirkt (0 Suchaufrufe in
+  28 Tagen) oder über die Klickrate (V3 hat den zweitschlechtesten CTR des Kanals).
+  Ob er überhaupt wirkt, ist offen — **die Pflicht ist eine billige Konvention, kein
+  belegter Hebel** (§1, „die sparsamere Erklärung"). Der belegte Hebel ist M8.
 
 ### Die vier geplanten Videos gegen die neuen Regeln
 
@@ -1210,12 +1258,11 @@ schließt diese Lücke fast genau — dann wäre allerdings V08 neu zu schneiden
 
 ### Zwei Folgefragen, die dieser Plan noch offen trägt
 
-1. **Der Hook-Test ab Video 05 kollidiert mit der Versuchsdisziplin.** Unten steht:
-   „ab 05 wechseln sich (a) und (b) ab". Die Kadenz-Entscheidung an Gate 2 (M1) hält
-   dagegen fest, dass V05–V08 den **Korpuswechsel als einzige geänderte Variable**
-   testen sollen. Beides zugleich geht nicht. Naheliegend: Hook-Test verschieben,
-   V05–V08 durchgehend mit Variante (a) — dieselbe Begründung, mit der auch die Kadenz
-   und die gekürzte Rahmung (Formel §9) vertagt wurden. **Nicht entschieden.**
+1. ~~**Der Hook-Test ab Video 05 kollidiert mit der Versuchsdisziplin.**~~
+   **Entschieden am 2026-08-23: Hook-Test auf V09+ verschoben, V05–V08 laufen alle mit
+   Variante (a).** Begründung im Upload-Plan oben — eine Variable pro Runde, und (a)
+   ist die Variante, unter der V3 gelaufen ist. Damit bleibt der Korpuswechsel nach M8
+   die einzige geänderte Größe zwischen V01–V04 und V05–V08.
 2. **Die Kapitelmarken-Empfehlung hängt an den alten Korpora.** „Ja bei 01, 02, 06, 08"
    war mit 89/61 Psalmen und 52 Jesaja-Kapiteln begründet. Fällt der Jesaja-Korpus weg,
    fällt die Begründung für V06 mit — und `kapitelmarken_videos` in
@@ -1268,12 +1315,28 @@ Startdatum ist ein Vorschlag — verschiebe den Block, das Muster bleibt.
 | 07 | Mi 09.09.2026 | 5 Tage |
 | 08 | Mo 14.09.2026 | 5 Tage |
 
-**Hook-Test ab Video 05 — seit 2026-08-23 strittig, siehe Folgefrage 1 oben.**
-Videos 01–04 laufen mit Variante (a), kurze Begrüßung.
-Ab 05 wechseln sich (a) und (b) ab — 05 und 07 kalt, 06 und 08 mit Begrüßung.
-So steht nach acht Videos je ein Paar gegeneinander. Beide Varianten sind unten
-ausformuliert, die Zuordnung ist eine Planungsentscheidung, kein Datenbefund:
-Formel §3 hält fest, dass ein fester Aufbau **nicht belegt** ist.
+**Hook-Test — am 2026-08-23 auf V09+ verschoben. V05 bis V08 laufen ALLE mit
+Variante (a), kurze Begrüßung.**
+
+> ~~Ab 05 wechseln sich (a) und (b) ab — 05 und 07 kalt, 06 und 08 mit Begrüßung.~~
+>
+> **Begründung: eine Variable pro Runde.** V05–V08 testen den Korpuswechsel nach
+> **M8** — Erzählstoff statt Spruchsammlung. Liefe daneben ein Hook-Test, wären zwei
+> Variablen gleichzeitig in Bewegung und keiner der beiden Befunde ließe sich dem
+> einen oder anderen zuordnen. Dieselbe Begründung hat an Gate 2 schon die
+> Kadenzfrage (M1) und die gekürzte Rahmung (Formel §9) vertagt; sie gilt hier
+> genauso.
+>
+> **Warum (a) und nicht (b):** V01–V04 liefen alle mit (a) — darunter V3, das
+> einzige Video des Kanals, das bisher funktioniert (14,4 % Endretention, 80 % der
+> Kanal-Wiedergabezeit). (a) beizubehalten hält V05–V08 mit V01–V04 vergleichbar.
+> (b) wäre die Abweichung, und Abweichungen kosten in dieser Runde die Aussage.
+>
+> Beide Varianten bleiben bei jedem Video ausformuliert stehen — der Test wird
+> nachgeholt, nicht gestrichen. Formel §3 hält weiterhin fest, dass ein festes
+> Aufbauschema **nicht belegt** ist.
+>
+> *Entschieden vom Kanalinhaber am 2026-08-23, nach der Gate-2-Auswertung.*
 
 **Nicht verplant und für Video 09+ frei:** Apostelgeschichte (23.143 W),
 Jesaja 26–39 (7.984 W), Daniel 7–12 (5.182 W), Offenbarung 12–22 (5.949 W),
@@ -1770,7 +1833,8 @@ vor dem Bau angepasst werden; „Gospel of Luke" ist der Name des eigenen Korpus
 Thumbnail-Text, Beschreibung und Tags ziehen mit.
 **Korpusart nach M8:** erfüllt — Lukas 81,7 %, Prediger als Beigabe.
 **Anker:** „You're Tired, I Know…" (belegt, A 201K)
-**Hook-Test:** Variante **(b), kalter Start** — Beginn der Gegenüberstellung
+**Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
+Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
 > **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Sleep to the Story of Jesus
 > Tonight". Damit lag der Titel bei 71,4 % gemeinsamer inhaltstragender Wörter mit
@@ -1808,12 +1872,12 @@ Thumbnail-Text, Beschreibung und Tags ziehen mit.
 
 ### Hook
 
-**(a) mit kurzer Begrüßung** *(nicht für dieses Video geplant, aber ausformuliert)*
+**(a) mit kurzer Begrüßung** ← **für Video 05 verwenden** *(seit 2026-08-23)*
 > „You're tired — I know. This isn't something you have to listen to, it's just
 > something to fall asleep in. The whole Gospel of Luke, read slowly, and then
 > Ecclesiastes. Close your eyes."
 
-**(b) kalter Start** ← **für Video 05 verwenden**
+**(b) kalter Start** *(ausformuliert, für den Hook-Test ab V09 aufgehoben)*
 > „Luke, chapter one. Since many have undertaken to set in order a narrative concerning
 > those matters which have been fulfilled among us…"
 
@@ -1873,7 +1937,8 @@ seit 2026-08-23 ausgewertet und zur Pflicht geworden (Formel §1).
 Hauptkorpus. **Dieses Video ist so nicht baubar**, der Korpus muss neu geschnitten
 werden. Siehe „Was Gate 2 an diesem Plan ändert" am Dokumentanfang.
 **Anker:** „Don't Go to Sleep Worried…" (belegt, B 32K)
-**Hook-Test:** Variante **(a)**
+**Hook:** Variante **(a), kurze Begrüßung** *(unverändert; Hook-Test seit
+2026-08-23 auf V09+ verschoben)*
 
 > **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Isaiah's Comfort for a Restless
 > Heart". Damit lag der Titel bei 62,5 % gemeinsamer inhaltstragender Wörter mit
@@ -1975,7 +2040,8 @@ Support the channel: [Spendenlink]
 (Brief) und Offenbarung 18,6 % (Apokalyptik). Braucht eine Entscheidung, bevor gebaut
 wird.
 **Anker:** „Fall Asleep Without Stress…" (belegt, B 35K)
-**Hook-Test:** Variante **(b), kalter Start**
+**Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
+Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
 **Textkorpus:** Markus + Römer + Offenbarung 1–11
 **Gemessen:** 29.123 Wörter → **3,47 h** → ca. 151.700 Zeichen TTS
@@ -2005,11 +2071,11 @@ wird.
 
 ### Hook
 
-**(a) mit kurzer Begrüßung** *(nicht für dieses Video geplant)*
+**(a) mit kurzer Begrüßung** ← **für Video 07 verwenden** *(seit 2026-08-23)*
 > „Fall asleep without stress tonight. Nothing is asked of you here. The Gospel of
 > Mark, then Romans — read slowly, all the way through. Close your eyes."
 
-**(b) kalter Start** ← **für Video 07 verwenden**
+**(b) kalter Start** *(ausformuliert, für den Hook-Test ab V09 aufgehoben)*
 > „Mark, chapter one. The beginning of the Good News of Jesus Christ, the Son of God…"
 
 ### CTA (2)
@@ -2080,7 +2146,8 @@ Rest well tonight. Subscribing helps you find the next one.
 ist der Name des eigenen Korpus.
 **Korpusart nach M8:** erfüllt — Genesis-Erzählungen, in M8 ausdrücklich genannt.
 **Anker:** „You Need Rest…" (belegt, A 36K)
-**Hook-Test:** Variante **(a)**
+**Hook:** Variante **(a), kurze Begrüßung** *(unverändert; Hook-Test seit
+2026-08-23 auf V09+ verschoben)*
 
 **Textkorpus:** Genesis 1–42
 **Gemessen:** 29.835 Wörter → **3,55 h** → ca. 155.400 Zeichen TTS
@@ -2211,10 +2278,15 @@ Maß.
 
 ## Was hier offen bleibt
 
-- **Ob die Eigennamen-Titel (03, 06) besser laufen** — das ist die Testreihe, n=1 in
-  den Ausgangsdaten. Auswertung frühestens nach Video 10, Prüfkriterium in Formel §9.
-- **Ob Hook (a) oder (b) trägt** — nicht belegt (Formel §3). Die Zuordnung ab Video 05
-  ist ein Testaufbau, kein Befund. Aussagekräftig wird er erst mit mehr als je zwei Fällen.
+- ~~**Ob die Eigennamen-Titel (03, 06) besser laufen**~~ — **an Gate 2 beantwortet
+  (2026-08-23).** Eigennamen sind seitdem in jedem Titel Pflicht (Formel §1); die
+  Testreihe existiert nicht mehr. Offen bleibt nur, ob der Eigenname oder der
+  Erzählstoff wirkt — V3 trug beides, und V05–V08 tragen ebenfalls beides.
+- **Ob Hook (a) oder (b) trägt** — nicht belegt (Formel §3), und **seit 2026-08-23
+  auch nicht in dieser Runde zu klären**: V05–V08 laufen alle mit (a), damit der
+  Korpuswechsel nach M8 die einzige geänderte Variable bleibt. Der Test ist auf V09+
+  verschoben, beide Varianten stehen bei jedem Video ausformuliert bereit.
+  Aussagekräftig wird er ohnehin erst mit mehr als je zwei Fällen.
 - **Ob die Gebete überhaupt etwas bewirken** — weder für Reichweite noch für YPP aus
   diesen Daten belegbar. Sie kosten wenig und stehen als Absicherung drin.
 - **Welche Motivvariante innerhalb der Serie wirkt** — B's Thumbnails sind bei 166.000

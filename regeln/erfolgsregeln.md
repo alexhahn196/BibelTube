@@ -170,6 +170,13 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   der YouTube ausliefert. V3 hat mit 1,82 % den zweitschlechtesten CTR des Kanals und
   bekam trotzdem 3.130 der 5.535 Impressionen (Beleg unter Abschnitt 5, Frage 3).
   Der Korpus wirkt nicht über den Klick, sondern über das, was nach dem Klick passiert.
+- **Nachtrag 2026-08-23 — M8 hat dabei die Titel-Erklärung überholt.** V3 war zunächst
+  als Beleg für den Eigennamen im Titel geführt. Dieselbe CTR-Zahl schlägt aber gegen
+  den Titel aus: ein Titel, der zieht, müsste sich **zuerst** im CTR zeigen, und V3's
+  CTR ist der zweitschlechteste des Kanals. Die Impressionen folgen damit sparsamer
+  erklärt der **Retention** als dem Titel — also M8. Ausgeführt in
+  [`formel/video-formel.md`](../formel/video-formel.md) §1, „die sparsamere Erklärung".
+  Der Eigenname bleibt Pflicht, aber als billige Konvention ohne belegten Mechanismus.
 - **Grenze der Regel — was hier NICHT belegt ist:** n=4, und Retentionskurven liegen nur
   für V2 und V3 vor. **V4 ist Erzählstoff (Matthäus) und kommt trotzdem nur auf 14,6 min
   Ø Sehdauer.** V4 ist allerdings das jüngste Video im Messfenster; der Alterseffekt ist

@@ -41,7 +41,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet** | `schritt3_bett.py` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
 | 1.13 | **Korpusart** | Hauptkorpus ist durchlaufender Erzählstoff; Spruchsammlung und prophetische Rede höchstens als Beigabe | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | von Hand gegen M8, Korpusliste in `produktion/korpus/plan.json` |
-| 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1 (eigene Kanaldaten Gate 2: V3 hält 3.130 von 5.535 Impressionen bei dem zweitschlechtesten CTR) | von Hand gegen §1 |
+| 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
 
 **1.1 und 1.11 sind Sonderfälle:** Die Korpuslänge lässt sich erst nach dem
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
@@ -108,7 +108,7 @@ werden konnte:
 
 | # | Geplant | Ergebnis |
 |---|---|---|
-| 1 | CTR-Vergleich der 4 Titel, ggf. eigene Spalte in §10 | **Keine eigene Spalte.** 5.535 Impressionen tragen keine CTR-Aussage. Stattdessen der stärkere Befund: V3 hat den zweitschlechtesten CTR (1,82 %) **und** 3.130 der 5.535 Impressionen — YouTube liefert nach Wiedergabezeit aus. Daraus wurde §1: **Eigenname jetzt Pflicht in jedem Titel**, wirksam über das Vorschlagsband, nicht über die Suche (0 Suchaufrufe). |
+| 1 | CTR-Vergleich der 4 Titel, ggf. eigene Spalte in §10 | **Keine eigene Spalte.** 5.535 Impressionen tragen keine CTR-Aussage. Der belastbare Teil ist ein Ausschluss: V3 hat den zweitschlechtesten CTR (1,82 %) **und** 3.130 der 5.535 Impressionen — ein Titel, der zieht, müsste sich zuerst im CTR zeigen, also zieht dieser nicht. Suche scheidet ebenfalls aus (0 Suchaufrufe). Der **Eigenname ist trotzdem Pflicht** in jedem Titel (§1), aber als billige Konvention; der Wirkmechanismus bleibt ungeklärt. |
 | 2 | Thumbnail A gegen B | **Nicht durchführbar** — im Zeitraum lief je Video genau eine Variante. Bleibt offen. Neu ist die *Engpass*-Antwort: Thumbnails sind bei diesem Kanalstand **nicht** der Engpass (`formel/thumbnail-checkliste.md`, vorläufiges NEIN). |
 | 3 | Absprungstelle in den ersten 60 s, Hook (a) gegen (b) | **Nicht auflösbar.** YouTubes Messpunkte sind 2-Minuten-Blöcke; der Abfall (V3 100 %→40 %, V2 100 %→29 % zwischen Minute 2 und 4) trifft Hook und Eingangsgebet gemeinsam. Als **Beobachtung** in Formel §9 aufgenommen, **nicht** als Regel. |
 | 4 | Laufzeit — bricht die Kurve früh ab, ist §2 zu lang | **§2 bleibt unverändert.** Die Kurve bricht nicht wegen der Länge ab: V3 hält bei derselben Laufzeit 14,4 % Endretention, V2 nur 2,4 %. Nicht die 3,5 Stunden sind das Problem, sondern **womit sie gefüllt sind.** |
@@ -117,6 +117,10 @@ werden konnte:
 schlägt Spruchsammlung um Faktor 6 in der Endretention, und V3 allein trägt 80 % der
 Kanal-Wiedergabezeit. Daraus wurde **M8** in `regeln/erfolgsregeln.md` — die erste
 Regel des Repos aus eigenen Daten — und Gate-1-Prüfung 1.13.
+**M8 ist damit der einzige an eigenen Daten belegte Hebel dieser Auswertung.** Alles
+andere, was Gate 2 hergegeben hat, sind Ausschlüsse (nicht die Suche, nicht die
+Klickrate, nicht die Laufzeit) oder Konventionen (Eigenname). Wer nach der Auswertung
+eine Sache anders macht, macht den Korpus anders.
 
 **Zusätzlich entschieden:** Die **Kadenz bleibt bei 5 Tagen** (M1), obwohl eine
 Fremdkohorte für häufigeres Hochladen spricht. Grund: V05–V08 sollen den

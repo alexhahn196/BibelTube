@@ -1,0 +1,115 @@
+{
+ "erzeugt_am": "2026-08-23",
+ "quelle": "produktion/klang/bett_pad_feuer.flac",
+ "quelle_dauer_s": 56.0,
+ "quelle_rms_mono_dbfs": -31.2,
+ "quelle_naht": {
+  "nahtsprung": 0.001282,
+  "groesster_sprung_innerhalb": 0.099762,
+  "faktor_innen_zu_naht": 77.8,
+  "nahtsprung_perzentil": 55.6,
+  "nulldurchgang_samples": 7,
+  "nulldurchgang_ms": 0.159
+ },
+ "stereo_ist_versetztes_mono": true,
+ "trennung": {
+  "verfahren": "HPSS (Fitzgerald 2010), Medianfilter 31, STFT 4096/3072, dreifach gekachelt und mittlere Kachel entnommen",
+  "pad_dbfs": -26.7,
+  "feuer_dbfs": -39.96,
+  "feuer_unter_pad_db": 13.26,
+  "rekonstruktionsfehler_dbfs": -104.05,
+  "pad_naht": {
+   "nahtsprung": 0.000487,
+   "groesster_sprung_innerhalb": 0.015458,
+   "faktor_innen_zu_naht": 31.7,
+   "nahtsprung_perzentil": 40.9,
+   "nulldurchgang_samples": 24,
+   "nulldurchgang_ms": 0.544
+  },
+  "feuer_naht": {
+   "nahtsprung": 0.000788,
+   "groesster_sprung_innerhalb": 0.097076,
+   "faktor_innen_zu_naht": 123.2,
+   "nahtsprung_perzentil": 67.4,
+   "nulldurchgang_samples": 6,
+   "nulldurchgang_ms": 0.136
+  }
+ },
+ "probe_dauer_s": 60.0,
+ "naht_bei_s": 30.0,
+ "kreuzblende_s": 0.75,
+ "proben": {
+  "probe_a_feuer_kreuzblende": {
+   "beschreibung": "Feuer unveraendert, Loop-Naht zusaetzlich kreuzgeblendet (0,75 s)",
+   "kreuzblende": true,
+   "schleifenlaenge_s": 55.25,
+   "pegelangleich_db": 0.05,
+   "rms_mono_dbfs": -31.2,
+   "peak_dbfs": -8.16,
+   "naht_in_der_probe": {
+    "nahtsprung": 0.001547,
+    "groesster_sprung_innerhalb": 0.099713,
+    "faktor_innen_zu_naht": 64.4,
+    "nahtsprung_perzentil": 64.8,
+    "nulldurchgang_samples": 85,
+    "nulldurchgang_ms": 1.927
+   },
+   "naht_ohne_kreuzblende": {
+    "nahtsprung": 0.001275,
+    "groesster_sprung_innerhalb": 0.099713,
+    "faktor_innen_zu_naht": 78.2,
+    "nahtsprung_perzentil": 55.7,
+    "nulldurchgang_samples": 7,
+    "nulldurchgang_ms": 0.159
+   }
+  },
+  "probe_b_feuer_leiser_tiefpass": {
+   "beschreibung": "Feuer -6 dB und Tiefpass 1.1 kHz, Naht hart wie in der Produktion",
+   "kreuzblende": false,
+   "schleifenlaenge_s": 56.0,
+   "pegelangleich_db": 0.74,
+   "rms_mono_dbfs": -31.2,
+   "peak_dbfs": -12.98,
+   "naht_in_der_probe": {
+    "nahtsprung": 0.000981,
+    "groesster_sprung_innerhalb": 0.018144,
+    "faktor_innen_zu_naht": 18.5,
+    "nahtsprung_perzentil": 62.1,
+    "nulldurchgang_samples": 14,
+    "nulldurchgang_ms": 0.317
+   },
+   "naht_ohne_kreuzblende": {
+    "nahtsprung": 0.000981,
+    "groesster_sprung_innerhalb": 0.018144,
+    "faktor_innen_zu_naht": 18.5,
+    "nahtsprung_perzentil": 62.1,
+    "nulldurchgang_samples": 14,
+    "nulldurchgang_ms": 0.317
+   }
+  },
+  "probe_c_ohne_feuer": {
+   "beschreibung": "nur Pad, Feuerschicht entfernt, Naht hart wie in der Produktion",
+   "kreuzblende": false,
+   "schleifenlaenge_s": 56.0,
+   "pegelangleich_db": 1.2,
+   "rms_mono_dbfs": -31.2,
+   "peak_dbfs": -12.97,
+   "naht_in_der_probe": {
+    "nahtsprung": 0.000487,
+    "groesster_sprung_innerhalb": 0.015458,
+    "faktor_innen_zu_naht": 31.7,
+    "nahtsprung_perzentil": 41.0,
+    "nulldurchgang_samples": 24,
+    "nulldurchgang_ms": 0.544
+   },
+   "naht_ohne_kreuzblende": {
+    "nahtsprung": 0.000487,
+    "groesster_sprung_innerhalb": 0.015458,
+    "faktor_innen_zu_naht": 31.7,
+    "nahtsprung_perzentil": 41.0,
+    "nulldurchgang_samples": 24,
+    "nulldurchgang_ms": 0.544
+   }
+  }
+ }
+}

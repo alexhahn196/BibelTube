@@ -99,6 +99,45 @@ Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Ren
 > **Gospel of John** Tonight"* ist mit 245.000 Views A's **bestes** Video, nicht das
 > zweitbeste.
 
+> ### Einschränkung, nachgetragen am 2026-08-23: die sparsamere Erklärung
+>
+> *(eigene Kanaldaten Gate 2 — diese Einschränkung schwächt die Regel darüber
+> bewusst ab, statt sie zu verteidigen.)*
+>
+> Die 3.130 Impressionen von V3 sind oben als Argument **für** den Eigennamen
+> geführt. Sie können aber genauso gut die **Folge der besseren Retention** sein
+> statt die Folge des Titels. YouTube liefert nach Wiedergabezeit aus — und V3 trägt
+> 80 % der Kanal-Wiedergabezeit (M8).
+>
+> **Was die Zahlen ausschließen und was nicht.** Drei Erklärungen stehen im Raum:
+>
+> | | Kette | Status |
+> |---|---|---|
+> | A | Eigenname → attraktiverer Titel → **höhere Klickrate** → mehr Impressionen | **widerlegt** |
+> | B | Eigenname → bessere kontextliche Zuordnung → mehr Impressionen | möglich, **unbelegt** |
+> | C | Erzählstoff → mehr Wiedergabezeit → mehr Impressionen | möglich, **belegt** (M8) |
+>
+> **A fällt, und zwar an einer einzigen Zahl:** V3 hat mit **1,82 %** den
+> *zweitschlechtesten* CTR des Kanals. Ein Titel, der zieht, müsste sich **zuerst
+> im CTR zeigen** — dort und nirgends sonst wirkt ein Titel unmittelbar. Er tut es
+> nicht. Damit ist die naheliegendste Lesart des Befunds erledigt.
+>
+> **B und C trennen die eigenen Daten nicht.** Beide sagen dasselbe voraus, was man
+> sieht: viele Impressionen bei unauffälligem CTR. Aber sie sind nicht gleich gut
+> gestützt — **C beruft sich auf einen Mechanismus, der hier gemessen ist**
+> (Retention, Faktor 6, M8), **B auf einen zusätzlichen, der es nicht ist.** Nach
+> dem sparsameren Prinzip gewinnt C.
+>
+> **Was daraus folgt:**
+> - **Der Eigenname bleibt Pflicht** — er kostet nichts, er ist plausibel, und er
+>   wegzulassen würde eine Variable ändern, ohne dass etwas dafür spräche.
+> - **Er ist aber kein belegter Hebel, sondern eine billige Konvention.** Wer diese
+>   Regel liest, soll nicht glauben, hier sei ein Wirkmechanismus nachgewiesen.
+> - **Der belegte Hebel dieses Kanals ist M8, nicht der Titel.** Wenn Arbeitszeit
+>   zwischen Titelfeilen und Korpuswahl verteilt wird, gehört sie in den Korpus.
+> - Getrennt würden B und C erst durch ein Video mit Erzählstoff **ohne** Eigennamen
+>   im Titel. Das steht hinter dem Korpuswechsel an — eine Variable pro Runde.
+
 **VERBOTEN — belegt:**
 - Titel von Konkurrenten wörtlich übernehmen. Kanal F kopierte A's 233K-Titel inklusive
   Tippfehler („I Know You're **Tried**…") → 18 Views.
@@ -436,11 +475,17 @@ Checkliste nicht mit ungeprüften Annahmen verwässert.
   CTR aus fremden Analytics nicht auflösbar.
 - **Ob WEBBE so gut trägt wie NIV.** Prüfkriterium: dieselbe Psalmenauswahl einmal in beiden
   Fassungen als 2-Minuten-Probe sprechen lassen, gegen Muttersprachler-Ohr prüfen.
-- ~~**Ob Eigennamen einem Neustarter helfen.**~~ — **beantwortet am 2026-08-23**
-  *(eigene Kanaldaten Gate 2)*. Ja — aber über die kontextliche Zuordnung im
-  **Vorschlagsband**, nicht über Suchintention (0 Suchaufrufe in 28 Tagen). Seitdem
-  Pflicht in jedem Titel, ausgeführt in §1. Offen bleibt allein die Trennung von
-  Eigenname und Erzählstoff: V3 trug beides.
+- **Ob Eigennamen einem Neustarter helfen** — **am 2026-08-23 nur teilweise geklärt**
+  *(eigene Kanaldaten Gate 2)*. Sicher ist: **nicht über die Suche** (0 Suchaufrufe in
+  28 Tagen) und **nicht über die Klickrate** (V3 hat den zweitschlechtesten CTR des
+  Kanals). Beides ist ausgeschlossen. Ob der Eigenname über die kontextliche Zuordnung
+  im Vorschlagsband wirkt oder ob V3's Impressionen schlicht der besseren Retention
+  folgen, **trennen die eigenen Daten nicht** — V3 trug Eigenname und Erzählstoff
+  zugleich, und die Retention ist die gemessene der beiden Größen. Ausgeführt in §1
+  unter „die sparsamere Erklärung". Der Eigenname ist trotzdem Pflicht, aber als
+  billige Konvention, nicht als belegter Hebel.
+  *Prüfkriterium:* ein Video mit Erzählstoff-Korpus **ohne** Eigennamen im Titel —
+  frühestens nach V08, wenn der Korpuswechsel ausgewertet ist.
 - **Optimale Kadenz innerhalb 4–7 Tagen.** Belegt ist nur die Obergrenze. Die Frage,
   ob häufiger besser wäre, ist am 2026-08-23 **gestellt und vertagt** worden, nicht
   beantwortet — siehe §6 und M1.
