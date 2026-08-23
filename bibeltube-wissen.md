@@ -1237,10 +1237,60 @@ Zwei neue Regeln greifen ab V05 direkt in diesen Plan ein:
 bleibt, wie er ist; nur die Titelzeile — und mit ihr Thumbnail-Text, Beschreibung und
 Tags — muss den Evangeliennamen tragen. Das ist die einzige Änderung, die V05 blockiert.
 
-**V06 muss umgeplant werden**, V07 braucht eine Entscheidung. Beides ist mit dieser
-Dokumentationsrunde **nicht** entschieden worden: eine neue Korpuszusammenstellung
-verlangt neue Wortzahlen, neue Titel, neue Gebete und neue Thumbnail-Texte, und das ist
-eine Planungsrunde für sich.
+**V06 muss umgeplant werden**, V07 braucht eine Entscheidung. Je zwei durchgerechnete
+Varianten stehen unten; entschieden ist noch nichts.
+
+### Korpusvarianten V06 und V07 — zur Entscheidung, noch nicht übernommen
+
+*Gerechnet am 2026-08-23 mit `produktion/korpus_pruefung.py` gegen die gemessenen
+Wortzahlen in `produktion/korpus/kapitel.json` (723 Kapitel, keine Lücken). Alle vier
+bestehen Gate-1-Prüfung 1.1 und 1.13 und überschneiden sich mit keinem anderen Video.*
+
+| | Korpus | Wörter | Erzählanteil | Laufzeit @140 | Kapitel |
+|---|---|---|---|---|---|
+| **V06-A** | Apostelgeschichte + Rut + Ester | **30.987** | **100,0 %** | 3,69 h | 42 |
+| **V06-B** | Apostelgeschichte + Rut + Jona + Daniel 4–6 | **29.971** | 99,3 % | 3,57 h | 39 |
+| **V07-A** | Markus + Exodus 1–20 + Jona | **30.007** | 99,3 % | 3,57 h | 40 |
+| **V07-B** | Markus + 1. Samuel 1–20 | **30.294** | **100,0 %** | 3,61 h | 36 |
+
+Die fehlenden 0,7 % bei B und V07-A sind **Jona 2** — ein Gebet in Psalmenform,
+5 Minuten lang. Bei V06-B kommt nichts weiter dazu: Daniel 4–6 ist Erzählung
+(Nebukadnezars Wahnsinn, das Menetekel, die Löwengrube), erst Daniel 7–12 sind Visionen.
+
+**Was die beiden V06-Varianten unterscheidet: Ester 9.** Das Kapitel schildert im
+Wortlaut, wie 75.000 Menschen getötet und Hamans zehn Söhne gehängt werden — nachgelesen
+im WEBBE-Text, nicht behauptet. In einem Video, das Ruhe verkauft, ist das die härteste
+Passage, die dieser Kanal je gesendet hätte. **V06-A nimmt sie in Kauf** (dafür drei
+vollständige Bücher ohne einen einzigen Schnitt), **V06-B vermeidet Ester ganz** (dafür
+vier Bausteine statt drei).
+*Dritter Weg, ebenfalls durchgerechnet:* **Apostelgeschichte + Rut + Ester 1–8** —
+29.940 W, 100,0 %, 3,56 h. Ester endet bei 8,17, die Rettung ist vollzogen, die
+Vergeltung fällt weg. Kostet einen Schnitt im Buchinneren und 1.047 Wörter (7,5 min).
+
+**Was die beiden V07-Varianten unterscheidet: wo geschnitten wird.**
+**V07-A** schneidet Exodus nach Kapitel 20 — das ist keine Kürzung, sondern eine
+**Gattungsgrenze**: ab 21 folgen Bundesbuch, Stiftshüttenplan und dessen Ausführung,
+also genau das Material, das M8 ausschließt. **V07-B** schneidet 1. Samuel nach
+Kapitel 20 mitten im Buch (Abschied von David und Jonatan), dafür kommt es mit zwei
+Bausteinen aus.
+
+**Kompatibilität — eine Kombination geht nicht:**
+
+| | V07-A (Exodus + Jona) | V07-B (1. Samuel) |
+|---|---|---|
+| **V06-A** (Rut + Ester) | ✅ | ✅ |
+| **V06-B** (Rut + Jona + Daniel) | ❌ Jona doppelt | ✅ |
+
+**Ein struktureller Befund, der für jede V07-Variante gilt:** Markus hat 14.261 Wörter.
+Damit der Korpus die Untergrenze von 29.000 erreicht, muss der Rest mindestens 14.739
+beitragen — **mehr als Markus selbst.** Markus liegt in jeder gültigen V07-Variante
+zwischen **45,3 % und 49,2 %** des Korpus und kann die Hälfte rechnerisch nie tragen.
+Der Titel nennt also unvermeidlich den kleineren Teil. Das ist kein Fehler der Auswahl,
+sondern eine Folge davon, dass Markus das kürzeste Evangelium ist; die Beschreibung muss
+den zweiten Block deshalb ausdrücklich benennen.
+
+Was danach noch fehlt, sobald entschieden ist: neue Titel mit Eigenname, neue
+Eingangsgebete, neue Thumbnail-Zeilen, und `produktion/korpus/plan.json` nachziehen.
 
 **Noch nicht verplantes Material, gemessen** (`produktion/korpus/kapitel.json`):
 
