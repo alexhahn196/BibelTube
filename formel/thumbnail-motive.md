@@ -268,5 +268,13 @@ aber der einzige Fotoreal-Kanal im Feld ist zugleich der toteste).
 - Ob die Motivwahl **überhaupt** CTR bewegt: aus Views nicht ableitbar —
   Impressionen/CTR hat nur YouTube Studio. Die offene Frage aus
   `erfolgsregeln.md` (was B #7 von B #8 trennt) bleibt offen.
+  > **Teilbefund 2026-08-23** *(eigene Kanaldaten Gate 2)*: Die Motivfrage bleibt offen —
+  > die **Engpassfrage** nicht. Das eigene Video mit dem zweitschlechtesten CTR (1,82 %)
+  > bekam 3.130 von 5.535 Impressionen, weil es 80 % der Kanal-Wiedergabezeit trägt.
+  > Ausliefern nach Wiedergabezeit schlägt Klickrate; das Thumbnail ist bei diesem
+  > Kanalstand **nicht** der Engpass. Ausgeführt in
+  > [`thumbnail-checkliste.md`](thumbnail-checkliste.md), Abschnitt „Was diese Analyse
+  > nicht beantwortet". Für Motivvergleiche fehlen weiterhin A/B-Daten: im Zeitraum lief
+  > je Video nur eine Variante.
 - Tageszeit-Signal (Nacht 10/10 Treffer, Tag 0/18): konfundiert — fast alle
   Tag-Thumbs sind Frontal-Stil von D/H.

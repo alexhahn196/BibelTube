@@ -6,9 +6,13 @@ einmalig nach Video 4. Sie fassen zusammen, was ohnehin in
 Begründung, damit kein Lauf startet, dessen Ergebnis danach ohnehin
 verworfen werden müsste.
 
-Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) ·
+Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) ·
 [`regeln/erfolgsregeln.md`](../regeln/erfolgsregeln.md) ·
 [`formel/thumbnail-checkliste.md`](../formel/thumbnail-checkliste.md)
+
+> **Stand 2026-08-23: Gate 2 ist gelaufen.** Die Ergebnisse stehen unten und sind in
+> die drei bindenden Quellen eingearbeitet. **Gate 1 hat dadurch zwei neue Prüfungen
+> bekommen (1.13 Korpusart, 1.14 Eigenname im Titel)** — beide gelten ab V05.
 
 ---
 
@@ -36,11 +40,17 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) ·
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
 | 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet** | `schritt3_bett.py` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
+| 1.13 | **Korpusart** | Hauptkorpus ist durchlaufender Erzählstoff; Spruchsammlung und prophetische Rede höchstens als Beigabe | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | von Hand gegen M8, Korpusliste in `produktion/korpus/plan.json` |
+| 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1 (eigene Kanaldaten Gate 2: V3 hält 3.130 von 5.535 Impressionen bei dem zweitschlechtesten CTR) | von Hand gegen §1 |
 
 **1.1 und 1.11 sind Sonderfälle:** Die Korpuslänge lässt sich erst nach dem
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
 (Schritt 3). Beide liegen aber **vor** dem teuren Teil — TTS und Montage —
 und beide brechen die Pipeline hart ab, wenn sie reißen.
+
+**1.13 und 1.14 kommen vor allem anderen** — sie entscheiden über Korpus und Titel,
+also über das, was Schritt 1 überhaupt baut. Sie sind seit 2026-08-23 die einzigen
+Gate-1-Prüfungen aus **eigenen** Kanaldaten; alle übrigen stammen aus Fremdkanälen.
 
 **Wenn eine Prüfung reißt:** anhalten und entscheiden, nicht umgehen. Die
 einzige Prüfung mit Ermessensspielraum ist 1.3 (SOLL, nicht MUSS) — ein
@@ -70,7 +80,7 @@ Abo-Startverteilung verzerrt.
 | **Impressionen und Klickrate (CTR)** | Reichweite | Die Größe, die dem ganzen Fremddatensatz fehlt. Erst hier lässt sich Titel und Thumbnail überhaupt bewerten. |
 | **Absprungstelle** (Zuschauerbindung) | Interaktion | Wo die Kurve zuerst kippt: in den ersten 30 s (Hook/Stimme) oder im Verlauf (Länge/Monotonie)? |
 | **Durchschnittliche Wiedergabedauer** | Interaktion | Bei 3,5 h Laufzeit ist die absolute Minutenzahl aussagekräftiger als der Prozentwert. |
-| **Traffic-Quellen** | Reichweite | Vorgeschlagene Videos vs. Suche vs. Startseite — entscheidet, ob Titel-Keywords oder Thumbnail wichtiger sind. |
+| **Traffic-Quellen** | Reichweite | Vorgeschlagene Videos vs. Suche vs. Startseite — entscheidet, ob Titel-Keywords oder Thumbnail wichtiger sind. **Vorsicht beim API-Label `SUBSCRIBER`: es bedeutet Startseite und Abo-Feed, NICHT Aufrufe durch Abonnenten.** |
 | **Zuschauer nach Uhrzeit** | Publikum | Für den Upload-Zeitpunkt; im Fremddatensatz nicht ermittelbar. |
 
 ### Was daraus entschieden wird
@@ -87,6 +97,36 @@ Abo-Startverteilung verzerrt.
 4. **Laufzeit** — bricht die Kurve regelmäßig weit vor Ende ab, ist das
    Zielband 3,4–3,8 h für diesen Kanal zu lang, und §2 wird korrigiert.
 
+### Durchgeführt am 2026-08-23 — was herauskam
+
+**Datengrundlage:** *The Nightly Word* (`UCai4rcN45WKqNvPdSJGADPg`), 25.07.–22.08.2026,
+4 Videos, 151 Aufrufe, 69,4 Wiedergabestunden, 2 Abonnenten, 5.535 Impressionen,
+CTR 2,71 %. Rohwerte: [`regeln/daten/gate2_eigene_kanaldaten.json`](../regeln/daten/gate2_eigene_kanaldaten.json).
+
+Die vier geplanten Entscheidungen, der Reihe nach — und was tatsächlich entschieden
+werden konnte:
+
+| # | Geplant | Ergebnis |
+|---|---|---|
+| 1 | CTR-Vergleich der 4 Titel, ggf. eigene Spalte in §10 | **Keine eigene Spalte.** 5.535 Impressionen tragen keine CTR-Aussage. Stattdessen der stärkere Befund: V3 hat den zweitschlechtesten CTR (1,82 %) **und** 3.130 der 5.535 Impressionen — YouTube liefert nach Wiedergabezeit aus. Daraus wurde §1: **Eigenname jetzt Pflicht in jedem Titel**, wirksam über das Vorschlagsband, nicht über die Suche (0 Suchaufrufe). |
+| 2 | Thumbnail A gegen B | **Nicht durchführbar** — im Zeitraum lief je Video genau eine Variante. Bleibt offen. Neu ist die *Engpass*-Antwort: Thumbnails sind bei diesem Kanalstand **nicht** der Engpass (`formel/thumbnail-checkliste.md`, vorläufiges NEIN). |
+| 3 | Absprungstelle in den ersten 60 s, Hook (a) gegen (b) | **Nicht auflösbar.** YouTubes Messpunkte sind 2-Minuten-Blöcke; der Abfall (V3 100 %→40 %, V2 100 %→29 % zwischen Minute 2 und 4) trifft Hook und Eingangsgebet gemeinsam. Als **Beobachtung** in Formel §9 aufgenommen, **nicht** als Regel. |
+| 4 | Laufzeit — bricht die Kurve früh ab, ist §2 zu lang | **§2 bleibt unverändert.** Die Kurve bricht nicht wegen der Länge ab: V3 hält bei derselben Laufzeit 14,4 % Endretention, V2 nur 2,4 %. Nicht die 3,5 Stunden sind das Problem, sondern **womit sie gefüllt sind.** |
+
+**Der eigentliche Befund stand nicht auf der Liste:** die **Korpusart**. Erzählstoff
+schlägt Spruchsammlung um Faktor 6 in der Endretention, und V3 allein trägt 80 % der
+Kanal-Wiedergabezeit. Daraus wurde **M8** in `regeln/erfolgsregeln.md` — die erste
+Regel des Repos aus eigenen Daten — und Gate-1-Prüfung 1.13.
+
+**Zusätzlich entschieden:** Die **Kadenz bleibt bei 5 Tagen** (M1), obwohl eine
+Fremdkohorte für häufigeres Hochladen spricht. Grund: V05–V08 sollen den
+Korpuswechsel als einzige geänderte Variable testen.
+
+**Nicht entschieden, obwohl an Gate 2 gebunden:** die Wahl zwischen den beiden
+Kanalbannern (`produktion/motive/README.md`). Gate 2 liefert Video-Impressionen,
+aber keine Kanalseiten-Conversion — und 2 Abonnenten sind keine Grundlage. Bleibt
+offen.
+
 ### Was danach passiert
 
 - Jede Korrektur wird **in die Dokumente geschrieben**, mit eigener Fallzahl
@@ -94,3 +134,11 @@ Abo-Startverteilung verzerrt.
 - Erst danach werden Videos 5–8 gerendert. Vier Videos sind die kleinste
   Menge, aus der sich überhaupt ein Vergleich ziehen lässt — und n=4 bleibt
   eine schwache Grundlage. Was nicht deutlich ist, bleibt unverändert.
+
+**Nächster Messpunkt (festgelegt 2026-08-23):** nach V08, unter denselben
+Auslösebedingungen wie Gate 2 (jüngstes Video veröffentlicht, ältestes ≥ 14 Tage alt).
+Gemessen wird dann gegen das **Prüfkriterium von M8** — Endretention der vier
+Erzählstoff-Videos gegen die 2,4 % von V02. Liegt sie nicht deutlich darüber, wird M8
+gestrichen. Erst danach kommen die drei vertagten Fragen an die Reihe, einzeln und in
+dieser Reihenfolge: **Kadenz** (M1) · **gekürzte Rahmung** (Formel §9) · **Hook-Variante
+(a) gegen (b)** (`videos-01-08.md`). Eine Variable pro Runde.

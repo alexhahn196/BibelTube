@@ -1,6 +1,6 @@
 # Erfolgsregeln: Warum 2 Kanäle gewinnen und 8 Klone verlieren
 
-> **Lebendes Dokument.** Stand: 2026-08-02.
+> **Lebendes Dokument.** Stand: 2026-08-23 (Fremddaten-Teil: 2026-08-02).
 > Datengrundlage: 10 Kanäle (2 Gewinner, 8 dokumentierte Verlierer), 150 Langform-Videos
 > + 141 Shorts aus den Kanal-Listings, 12 vollständige Transkripte, 90 Thumbnails,
 > 4 multimodale Video-Stichproben, About-Seiten aller 10 Kanäle, Voll-Metadaten
@@ -13,6 +13,15 @@
 > [`produktion/workflow-gates.md`](../produktion/workflow-gates.md), Gate 2 — CTR,
 > Absprungstelle und Traffic-Quellen. Kernregel dort: *eigene Daten schlagen Fremddaten.*
 > Gate 1 im selben Dokument hält die harten Prüfungen vor jedem Renderlauf fest.
+>
+> **2026-08-23 — Gate 2 ausgewertet. Ab hier stehen eigene Zahlen im Dokument.**
+> Kanal *The Nightly Word* (`UCai4rcN45WKqNvPdSJGADPg`), 25.07.–22.08.2026:
+> 4 Videos, 151 Aufrufe, 69,4 Wiedergabestunden, 2 Abonnenten, 5.535 Impressionen,
+> CTR 2,71 %. Rohwerte: `regeln/daten/gate2_eigene_kanaldaten.json`.
+> Alles, was aus diesen Zahlen folgt, trägt die Marke **„eigene Kanaldaten Gate 2"**
+> und ein Datum — Fremdbefunde bleiben ohne diese Marke, damit beide unterscheidbar
+> bleiben. Neu daraus: **M8** (die erste Regel dieses Dokuments überhaupt aus eigenen
+> Daten), die Kadenz-Entscheidung unter M1 und die Teilantwort auf offene Frage 3.
 
 **Die Kanäle:**
 | | Kanal | Start (1. Upload) | Langform | Shorts | Ø Views (Langform) | Status |
@@ -46,6 +55,18 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   n=10, sauberster Trenner im ganzen Datensatz: die Verteilungen überlappen nicht.
 - **Ehrliche Randnotiz:** A lädt seit 21.06. nichts mehr hoch, und A's letzte zwei Videos
   fielen auf ~12,6K (vorher 36K–245K). Auch der Musterkanal ist kein Perpetuum mobile.
+- **Entscheidung 2026-08-23 — Kadenz bleibt bei 5 Tagen** *(eigene Kanaldaten Gate 2)*.
+  Die Frage wurde gestellt, weil eine **Fremdkohorte klar dagegen spricht**: in 74
+  Wissenschafts-Schlafkanälen unter 2 Jahren war die Kadenz der stärkste Treiber —
+  Median **311 $/Monat** bei 0–1,5 Uploads/Woche gegen **1.770 $** bei 6+.
+  **Dagegen steht M1 selbst:** beide Gewinner liegen bei 1,3–1,4/Woche, alle 8 Verlierer
+  bei 2,0–13,5, und die Verteilungen überlappen nicht. Ein Dreitagesrhythmus wäre
+  2,33/Woche — mitten im Verliererband. Die Fremdkohorte misst außerdem **Monatsumsatz,
+  nicht Reichweite je Video** (mehr Videos ergeben mehr Umsatz auch ohne besseres Video)
+  und stammt aus einer anderen Nische.
+  **Entschieden: bei 5 Tagen (1,4/Woche) bleiben** — auch aus Versuchsdisziplin:
+  V05–V08 sollen den Korpuswechsel nach M8 als **einzige** geänderte Variable testen.
+  Die Kadenzfrage wird danach aufgemacht, nicht gleichzeitig.
 
 ### M2 — Null Shorts auf dem Kanal
 - [ ] Kein einziger Short geplant/hochgeladen?
@@ -116,6 +137,48 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   Trojanisches-Pferd- und WWII-Videos stehen neben Jesus-Content online — Median 52 Views.
   Beide Gewinner: Beschreibung deckungsgleich mit Inhalt (2/2 vs. 2/8 Verlierer mit Altlasten,
   Rest der Verlierer scheitert an anderem).
+
+### M8 — Der Textkorpus muss durchlaufender Erzählstoff sein
+
+> **Die erste Regel dieses Dokuments aus EIGENEN Kanaldaten** — 2026-08-23, Gate 2,
+> Quelle *eigene Kanaldaten Gate 2*. M1–M7 stammen aus 10 fremden Kanälen und kennen
+> weder Impressionen noch Retention. M8 ist aus beidem gebaut.
+
+- [ ] Hauptkorpus ist **durchlaufender Erzählstoff** — Evangelien, Apostelgeschichte,
+      Genesis-Erzählungen?
+- [ ] **Spruchsammlungen** (Psalmen, Sprüche, Prediger) und **prophetische Rede** nur als
+      Beigabe, nie als Hauptkorpus?
+- **Beleg (eigene Kanaldaten Gate 2, n=4 Videos, 2 Retentionskurven):**
+  Endretention nach 3,5 Stunden — **V3 Johannes (Erzählung) 14,4 %** gegen
+  **V2 Psalmen 90–150 + Sprüche 2,4 %**. **Faktor 6.**
+
+  | | V3 Johannes (Erzählung) | V2 Psalmen + Sprüche |
+  |---|---|---|
+  | Endretention nach 3,5 h | **14,4 %** | 2,4 % |
+  | `relativeRetentionPerformance` Anfang | 0,33 | 0,29 |
+  | · Mitte | **0,46** | **0,04** |
+  | · Ende | 0,40 | 0,42 |
+  | Ø Sehdauer | **36,5 min** | 13,8 min |
+
+  YouTubes `relativeRetentionPerformance` misst gegen ähnlich lange Videos: V2 liegt
+  über weite Strecken **im untersten Zwanzigstel** aller vergleichbaren Videos, V3
+  durchgehend im Mittelfeld und in der Mitte am stärksten — genau dort, wo eine
+  Spruchsammlung auseinanderfällt und eine Erzählung trägt.
+  Ø Sehdauer aller vier: V3 36,5 min · V1 17,2 min · V4 14,6 min · V2 13,8 min.
+  **V3 allein trägt 55,4 der 69,4 Wiedergabestunden des Kanals — 80 %.**
+- **Warum das schwerer wiegt als eine View-Zahl:** Wiedergabezeit ist die Größe, nach
+  der YouTube ausliefert. V3 hat mit 1,82 % den zweitschlechtesten CTR des Kanals und
+  bekam trotzdem 3.130 der 5.535 Impressionen (Beleg unter Abschnitt 5, Frage 3).
+  Der Korpus wirkt nicht über den Klick, sondern über das, was nach dem Klick passiert.
+- **Grenze der Regel — was hier NICHT belegt ist:** n=4, und Retentionskurven liegen nur
+  für V2 und V3 vor. **V4 ist Erzählstoff (Matthäus) und kommt trotzdem nur auf 14,6 min
+  Ø Sehdauer.** V4 ist allerdings das jüngste Video im Messfenster; der Alterseffekt ist
+  nicht abgetrennt. Die Regel steht damit auf **einem Paar** — V3 gegen V2. V1 und V4
+  stützen sie nicht unabhängig.
+- *Prüfkriterium:* V05–V08 laufen mit Erzählstoff als Hauptkorpus, bei sonst
+  unveränderten Parametern (Kadenz, Stimme, Bildwelt, Länge — siehe Entscheidung unter
+  M1). Liegt die Endretention dieser vier nicht deutlich über den 2,4 % von V2, war V3
+  ein Einzelfall und **M8 wird hier gestrichen, nicht verteidigt.**
 
 ---
 
@@ -236,6 +299,14 @@ Kommentarrate nach 20 Videos unter Benchmark liegt.*
 3. **Impressions/CTR:** Ohne YouTube-Analytics-Zugriff auf fremde Kanäle bleibt unbeweisbar,
    ob C an der Klickrate (Thumbnail/Titel im Feed) oder an der Retention (Stimme/Skript)
    stirbt. Die eigenen Kanaldaten werden diese Lücke ab Video 1 schließen.
+   > **Teilantwort 2026-08-23 (eigene Kanaldaten Gate 2).** Für *fremde* Kanäle bleibt die
+   > Frage offen — für den eigenen zeigt sie in Richtung Retention. V3 hat mit **1,82 %**
+   > den zweitschlechtesten CTR des Kanals und bekam trotzdem **3.130 von 5.535
+   > Impressionen**, 91 von 151 Aufrufen und 1 von 2 Abonnenten. Ausliefern nach
+   > Wiedergabezeit schlägt hier Klickrate. Der Kanal-CTR von 2,71 % ist bei 5.535
+   > Impressionen ohnehin keine belastbare Größe. Ausgeführt in
+   > [`formel/thumbnail-checkliste.md`](../formel/thumbnail-checkliste.md),
+   > Abschnitt „Was diese Analyse nicht beantwortet".
 4. **D's fehlende Videos:** Briefing nennt 49 Uploads, auffindbar sind 33 — vermutlich
    gelöscht. Ob D löscht, was floppt, ist nicht feststellbar.
 5. **Warum A ohne Anlauf traf und B 6 Videos brauchte:** A war mit Video #1 am 08.05.
@@ -266,6 +337,13 @@ konservativ mit 2,5 h angesetzt, als H1 zu validieren.
 **Neu und nur hier:** Kadenz-Regel (M1), Shorts-Verbot (M2), Kopier-Verbot (V3),
 MT-Paraphrase-Verbot (V4), Durchhalte-Regel (V7).
 **Kein Widerspruch gefunden.**
+
+**Aus keinem der beiden Läufe, sondern aus eigenen Daten (2026-08-23):** die
+Korpus-Regel **M8**. Weder Lauf 1 noch Lauf 2 konnten sie finden — beide sehen nur
+Views, und M8 hängt an Retention und Wiedergabezeit. Ein Widerspruch zu Lauf 1
+entsteht nicht, aber eine Einschränkung: die dort belegten Anker-Werte für
+`Psalms` (0,26–1,38×, n=32) sind View-Werte etablierter Kanäle und sagen nichts
+darüber, wie lange jemand zuhört.
 
 ---
 

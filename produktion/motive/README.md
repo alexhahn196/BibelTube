@@ -74,6 +74,22 @@ Merge nirgends dokumentiert, und nichts im Repo verweist auf seinen Pfad.
   10 Fremdkanälen abgeleitete Vorgabe — auch das ein Grund, es an eigenen Zahlen
   zu entscheiden.
 
+**Nachtrag 2026-08-23 — Gate 2 ist gelaufen und entscheidet es NICHT.**
+*(eigene Kanaldaten Gate 2)*
+
+Die erwarteten Zahlen liegen vor, aber es sind die falschen für diese Frage. Gate 2
+liefert **Video**-Impressionen und Video-CTR; ein Banner wirkt auf die
+**Kanalseiten**-Conversion, und die steht in dieser Auswertung nicht. Was an
+Kanalseiten-Signal da ist, trägt nichts: **2 Abonnenten** im ganzen Zeitraum, und
+die 36 Aufrufe aus „Startseite/Abo-Feed" sind kein Kanalseitenbesuch (das API-Label
+`SUBSCRIBER` bedeutet Startseite und Abo-Feed, nicht Abonnenten-Aufrufe).
+
+**Also unverändert:** beide Entwürfe bleiben, für den Upload gilt weiter **Entwurf 1**.
+Neues Kriterium statt eines neuen Termins: Die Frage wird erst entscheidbar, wenn
+Kanalseitenaufrufe und Abo-Conversion in dreistelliger Größenordnung vorliegen. Bis
+dahin ist jede Entscheidung hier Geschmack, nicht Datenlage — und Geschmack rechtfertigt
+keinen Wechsel weg vom dokumentierten Stand.
+
 ## Textvariante — gemessene Werte
 
 Auf **V3** gelegt, nicht auf V1: Bei V1 steht der Mond in der Textzone, und die

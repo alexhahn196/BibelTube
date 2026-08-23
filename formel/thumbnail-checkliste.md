@@ -1,12 +1,19 @@
 # Thumbnail-Checkliste
 
-> **Stand: 2026-08-03.** Grundlage: 90 Thumbnails (21 Gewinner, 69 Verlierer aus 8 Kanälen),
+> **Stand: 2026-08-23** (Messteil unverändert seit 2026-08-03).
+> Grundlage: 90 Thumbnails (21 Gewinner, 69 Verlierer aus 8 Kanälen),
 > maschinell vermessen plus visueller Test auf 160×90 px (Feed-Größe am Handy).
 > Rohdaten: `regeln/daten/thumb_messung.json`, `thumb_textmessung.json`,
 > `feedtest_GEWINNER.png`, `feedtest_VERLIERER.png`, `zoom_B_figur.png`.
 >
 > Alle Vorgaben liegen **innerhalb** der belegten Muster (Serienmotiv, Nachtfarbwelt, warme
 > Lichtquelle). Nichts hier bricht ein Muster.
+>
+> **2026-08-23 — Gate 2 ausgewertet** *(eigene Kanaldaten Gate 2)*. An den Zielwerten
+> ändert sich **nichts**: sie sind weiter belegt und weiter unwiderlegt. Geändert hat sich
+> die offene Frage am Dokumentende — *ob Thumbnails überhaupt der Engpass sind*, ist mit
+> eigenen Daten **vorläufig mit NEIN beantwortet.** Praktische Folge: hier nicht mehr
+> investieren, als die Checkliste unten verlangt.
 
 ---
 
@@ -143,5 +150,31 @@ schnell geht.
 - **Ob 4 Wörter besser sind als 0.** A's zwei größte Videos (245K, 184K) haben **gar keinen
   Text**, B's Serie hat durchgehend 2–4 Wörter. Beide Muster gewinnen. Die Obergrenze von 4 ist
   belegt, eine Untergrenze nicht.
-- **Klickrate.** Ohne Impressions und CTR aus fremden Analytics bleibt offen, ob Thumbnails
-  überhaupt der Engpass sind. Deine eigenen Analytics schließen das ab Video 1.
+- ~~**Klickrate.** Ohne Impressions und CTR aus fremden Analytics bleibt offen, ob Thumbnails
+  überhaupt der Engpass sind.~~ — **vorläufig beantwortet am 2026-08-23, mit NEIN**
+  *(eigene Kanaldaten Gate 2, `regeln/daten/gate2_eigene_kanaldaten.json`)*.
+
+  Der Kanal *The Nightly Word* lieferte in 28 Tagen **5.535 Impressionen bei 2,71 % CTR**.
+  Entscheidend ist die Verteilung darin:
+
+  | | Impressionen | CTR | Wiedergabestunden |
+  |---|---|---|---|
+  | **V3** (Johannes, Erzählstoff) | **3.130 von 5.535** | **1,82 %** — zweitschlechtester des Kanals | **55,4 von 69,4** |
+  | V1, V2, V4 zusammen | 2.405 | im Schnitt höher | 14,0 |
+
+  **Das Video mit dem schlechtesten CTR bekam die meisten Impressionen.** YouTube liefert
+  nach **Wiedergabezeit** aus, nicht nach Klickrate — und V3 trägt 80 % der
+  Kanal-Wiedergabezeit. Der Engpass dieses Kanals sitzt hinter dem Klick, nicht davor:
+  im Textkorpus (→ **M8** in `regeln/erfolgsregeln.md`), nicht im Thumbnail.
+
+  **Warum „vorläufig":** 5.535 Impressionen sind **keine belastbare Grundlage für eine
+  CTR-Aussage** — bei dieser Größenordnung bewegen einzelne Aufrufe den Wert. Und die vier
+  Thumbnails wurden **nicht gegeneinander getestet**: im Zeitraum lief je Video genau eine
+  Variante, jede an einem anderen Korpus und einem anderen Titel. Ein Thumbnail-Effekt ist
+  damit nicht ausgeschlossen, sondern **unerkennbar** — er läge in diesen Zahlen unter dem
+  Korpuseffekt.
+
+  **Was daraus für die Arbeit folgt:** Die Checkliste oben abarbeiten, weil sie billig ist
+  und ihre Werte belegt sind — aber **keine zusätzliche Zeit** in Motivvarianten,
+  Feinschliff oder A/B-Runden stecken, solange der Korpuswechsel nach M8 läuft. Neu
+  aufmachen, sobald ein Video mit Erzählstoff-Korpus trotzdem wenige Impressionen bekommt.
