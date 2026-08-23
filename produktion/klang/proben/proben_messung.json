@@ -1,138 +1,247 @@
 {
  "erzeugt_am": "2026-08-23",
- "mixhochrechnung": {
-  "pegel_bett_dbfs": -31.0,
-  "pegel_stimme_dbfs": -19.0,
-  "kanal_lauter_als_mono_downmix_db": 5.2,
-  "abstand_mono_db": 12.0,
-  "abstand_je_kanal_db": 6.8,
-  "hinweis": "qa_mix.json misst den Mono-Downmix. Je Kanal - also am Kopfhoerer - liegt das Bett um den Kammfilterbetrag lauter."
- },
  "quelle": "produktion/klang/bett_pad_feuer.flac",
- "quelle_dauer_s": 56.0,
- "quelle_rms_mono_dbfs": -31.2,
- "quelle_naht": {
-  "nahtsprung": 0.001282,
-  "groesster_sprung_innerhalb": 0.099762,
-  "faktor_innen_zu_naht": 77.8,
-  "nahtsprung_perzentil": 55.6,
-  "nulldurchgang_samples": 7,
-  "nulldurchgang_ms": 0.159
+ "stereoaufbau": {
+  "ist_versetztes_mono": true,
+  "versatz_samples": 240,
+  "versatz_ms": 5.442,
+  "erste_kerbe_hz": 91.9,
+  "kerbabstand_hz": 183.8,
+  "stimme_betroffen": false,
+  "hinweis": "schritt3_bett.py addiert die Stimme identisch in beide Kanaele (Zeilen 102/103) - sie wird nicht kammgefiltert. Nur das Bett."
  },
- "stereo_ist_versetztes_mono": true,
+ "publikum": {
+  "mobil_pct": 68,
+  "tv_pct": 12,
+  "tablet_pct": 11,
+  "desktop_pct": 7,
+  "hinweis": "80 % hoeren ueber Handy- oder TV-Lautsprecher, also mono oder nahezu mono - der Mono-Fall ist der Regelfall."
+ },
  "trennung": {
-  "verfahren": "HPSS (Fitzgerald 2010), Medianfilter 31, STFT 4096/3072, dreifach gekachelt und mittlere Kachel entnommen",
   "pad_dbfs": -26.7,
   "feuer_dbfs": -39.96,
-  "feuer_unter_pad_db": 13.26,
-  "rekonstruktionsfehler_dbfs": -104.05,
-  "pad_naht": {
-   "nahtsprung": 0.000487,
-   "groesster_sprung_innerhalb": 0.015458,
-   "faktor_innen_zu_naht": 31.7,
-   "nahtsprung_perzentil": 40.9,
-   "nulldurchgang_samples": 24,
-   "nulldurchgang_ms": 0.544
-  },
-  "feuer_naht": {
-   "nahtsprung": 0.000788,
-   "groesster_sprung_innerhalb": 0.097076,
-   "faktor_innen_zu_naht": 123.2,
-   "nahtsprung_perzentil": 67.4,
-   "nulldurchgang_samples": 6,
-   "nulldurchgang_ms": 0.136
-  }
+  "rekonstruktionsfehler_dbfs": -104.05
  },
- "probe_dauer_s": 60.0,
- "naht_bei_s": 30.0,
- "kreuzblende_s": 0.75,
  "proben": {
   "probe_a_feuer_kreuzblende": {
-   "beschreibung": "Feuer unveraendert, Loop-Naht zusaetzlich kreuzgeblendet (0,75 s)",
-   "kreuzblende": true,
-   "schleifenlaenge_s": 55.25,
-   "pegelangleich_db": 0.05,
+   "beschreibung": "Feuer unveraendert, Naht kreuzgeblendet, Stereo versetzt (Ist-Zustand)",
+   "rms_kanal_dbfs": -26.0,
    "rms_mono_dbfs": -31.2,
+   "mono_verlust_db": 5.19,
    "peak_dbfs": -8.16,
-   "naht_in_der_probe": {
+   "akkordbalance_mono_db": {
+    "Grundton A1": 0.0,
+    "Quinte E2": -16.18,
+    "Oktave A2": -11.78,
+    "Duodezime E3": -7.99,
+    "Doppeloktave A3": -13.49
+   },
+   "kammkerben_mono_db": {
+    "92 Hz": -65.6,
+    "276 Hz": -66.4,
+    "459 Hz": -61.7,
+    "643 Hz": -63.0
+   },
+   "naht": {
     "nahtsprung": 0.001547,
-    "groesster_sprung_innerhalb": 0.099713,
-    "faktor_innen_zu_naht": 64.4,
     "nahtsprung_perzentil": 64.8,
-    "nulldurchgang_samples": 85,
     "nulldurchgang_ms": 1.927
    },
-   "naht_ohne_kreuzblende": {
-    "nahtsprung": 0.001275,
-    "groesster_sprung_innerhalb": 0.099713,
-    "faktor_innen_zu_naht": 78.2,
-    "nahtsprung_perzentil": 55.7,
-    "nulldurchgang_samples": 7,
-    "nulldurchgang_ms": 0.159
+   "im_fertigen_mix": {
+    "bett_je_kanal_dbfs": -25.81,
+    "bett_mono_dbfs": -31.0,
+    "abstand_je_kanal_db": 6.81,
+    "abstand_mono_db": 12.0
    },
    "feuer_im_fertigen_mix": {
     "rms_dbfs": -39.8,
     "spitze_dbfs": -10.9,
-    "perzentil_99_9_dbfs": -20.5,
     "ueber_stimmen_rms_je_schleife": 281,
     "ueber_stimmen_rms_je_video": 63225,
     "spitze_gegen_stimmen_rms_db": 8.1
    }
   },
   "probe_b_feuer_leiser_tiefpass": {
-   "beschreibung": "Feuer -6 dB und Tiefpass 1.1 kHz, Naht hart wie in der Produktion",
-   "kreuzblende": false,
-   "schleifenlaenge_s": 56.0,
-   "pegelangleich_db": 0.74,
+   "beschreibung": "Feuer -6 dB + Tiefpass 1.1 kHz, Stereo versetzt",
+   "rms_kanal_dbfs": -25.77,
    "rms_mono_dbfs": -31.2,
-   "peak_dbfs": -12.98,
-   "naht_in_der_probe": {
+   "mono_verlust_db": 5.43,
+   "peak_dbfs": -12.97,
+   "akkordbalance_mono_db": {
+    "Grundton A1": 0.0,
+    "Quinte E2": -16.31,
+    "Oktave A2": -12.02,
+    "Duodezime E3": -8.69,
+    "Doppeloktave A3": -14.49
+   },
+   "kammkerben_mono_db": {
+    "92 Hz": -64.7,
+    "276 Hz": -60.1,
+    "459 Hz": -59.6,
+    "643 Hz": -62.4
+   },
+   "naht": {
     "nahtsprung": 0.000981,
-    "groesster_sprung_innerhalb": 0.018144,
-    "faktor_innen_zu_naht": 18.5,
     "nahtsprung_perzentil": 62.1,
-    "nulldurchgang_samples": 14,
     "nulldurchgang_ms": 0.317
    },
-   "naht_ohne_kreuzblende": {
-    "nahtsprung": 0.000981,
-    "groesster_sprung_innerhalb": 0.018144,
-    "faktor_innen_zu_naht": 18.5,
-    "nahtsprung_perzentil": 62.1,
-    "nulldurchgang_samples": 14,
-    "nulldurchgang_ms": 0.317
+   "im_fertigen_mix": {
+    "bett_je_kanal_dbfs": -25.57,
+    "bett_mono_dbfs": -31.0,
+    "abstand_je_kanal_db": 6.57,
+    "abstand_mono_db": 12.0
    },
    "feuer_im_fertigen_mix": {
     "rms_dbfs": -46.9,
     "spitze_dbfs": -23.9,
-    "perzentil_99_9_dbfs": -31.7,
     "ueber_stimmen_rms_je_schleife": 0,
     "ueber_stimmen_rms_je_video": 0,
     "spitze_gegen_stimmen_rms_db": -4.9
    }
   },
   "probe_c_ohne_feuer": {
-   "beschreibung": "nur Pad, Feuerschicht entfernt, Naht hart wie in der Produktion",
-   "kreuzblende": false,
-   "schleifenlaenge_s": 56.0,
-   "pegelangleich_db": 1.2,
+   "beschreibung": "nur Pad, Stereo versetzt",
+   "rms_kanal_dbfs": -25.6,
    "rms_mono_dbfs": -31.2,
+   "mono_verlust_db": 5.6,
    "peak_dbfs": -12.97,
-   "naht_in_der_probe": {
+   "akkordbalance_mono_db": {
+    "Grundton A1": 0.0,
+    "Quinte E2": -16.42,
+    "Oktave A2": -12.19,
+    "Duodezime E3": -9.37,
+    "Doppeloktave A3": -15.67
+   },
+   "kammkerben_mono_db": {
+    "92 Hz": -63.8,
+    "276 Hz": -61.3,
+    "459 Hz": -59.5,
+    "643 Hz": -61.3
+   },
+   "naht": {
     "nahtsprung": 0.000487,
-    "groesster_sprung_innerhalb": 0.015458,
-    "faktor_innen_zu_naht": 31.7,
     "nahtsprung_perzentil": 41.0,
-    "nulldurchgang_samples": 24,
     "nulldurchgang_ms": 0.544
    },
-   "naht_ohne_kreuzblende": {
-    "nahtsprung": 0.000487,
-    "groesster_sprung_innerhalb": 0.015458,
-    "faktor_innen_zu_naht": 31.7,
-    "nahtsprung_perzentil": 41.0,
-    "nulldurchgang_samples": 24,
-    "nulldurchgang_ms": 0.544
+   "im_fertigen_mix": {
+    "bett_je_kanal_dbfs": -25.4,
+    "bett_mono_dbfs": -31.0,
+    "abstand_je_kanal_db": 6.4,
+    "abstand_mono_db": 12.0
+   }
+  },
+  "probe_d_echt_mono_feuer": {
+   "beschreibung": "Feuer unveraendert, ECHT MONO (L = R, kein Versatz)",
+   "rms_kanal_dbfs": -31.2,
+   "rms_mono_dbfs": -31.2,
+   "mono_verlust_db": 0.0,
+   "peak_dbfs": -13.33,
+   "akkordbalance_mono_db": {
+    "Grundton A1": 0.0,
+    "Quinte E2": -4.86,
+    "Oktave A2": -6.12,
+    "Duodezime E3": -12.19,
+    "Doppeloktave A3": -16.28
+   },
+   "kammkerben_mono_db": {
+    "92 Hz": 0.0,
+    "276 Hz": 0.0,
+    "459 Hz": 0.0,
+    "643 Hz": 0.0
+   },
+   "naht": {
+    "nahtsprung": 0.001275,
+    "nahtsprung_perzentil": 55.7,
+    "nulldurchgang_ms": 0.159
+   },
+   "im_fertigen_mix": {
+    "bett_je_kanal_dbfs": -31.0,
+    "bett_mono_dbfs": -31.0,
+    "abstand_je_kanal_db": 12.0,
+    "abstand_mono_db": 12.0
+   },
+   "feuer_im_fertigen_mix": {
+    "rms_dbfs": -39.8,
+    "spitze_dbfs": -10.9,
+    "ueber_stimmen_rms_je_schleife": 281,
+    "ueber_stimmen_rms_je_video": 63225,
+    "spitze_gegen_stimmen_rms_db": 8.1
+   }
+  },
+  "probe_e_echt_mono_feuer_leiser": {
+   "beschreibung": "Feuer -6 dB + Tiefpass 1.1 kHz, ECHT MONO",
+   "rms_kanal_dbfs": -31.2,
+   "rms_mono_dbfs": -31.2,
+   "mono_verlust_db": 0.0,
+   "peak_dbfs": -18.4,
+   "akkordbalance_mono_db": {
+    "Grundton A1": 0.0,
+    "Quinte E2": -4.96,
+    "Oktave A2": -6.29,
+    "Duodezime E3": -12.82,
+    "Doppeloktave A3": -17.3
+   },
+   "kammkerben_mono_db": {
+    "92 Hz": 0.0,
+    "276 Hz": 0.0,
+    "459 Hz": 0.0,
+    "643 Hz": 0.0
+   },
+   "naht": {
+    "nahtsprung": 0.000981,
+    "nahtsprung_perzentil": 62.1,
+    "nulldurchgang_ms": 0.317
+   },
+   "im_fertigen_mix": {
+    "bett_je_kanal_dbfs": -31.0,
+    "bett_mono_dbfs": -31.0,
+    "abstand_je_kanal_db": 12.0,
+    "abstand_mono_db": 12.0
+   },
+   "feuer_im_fertigen_mix": {
+    "rms_dbfs": -46.9,
+    "spitze_dbfs": -23.9,
+    "ueber_stimmen_rms_je_schleife": 0,
+    "ueber_stimmen_rms_je_video": 0,
+    "spitze_gegen_stimmen_rms_db": -4.9
+   }
+  },
+  "probe_f_pad_mono_feuer_breit": {
+   "beschreibung": "Pad echt mono, nur die Feuerschicht versetzt (-6 dB + Tiefpass)",
+   "rms_kanal_dbfs": -31.03,
+   "rms_mono_dbfs": -31.2,
+   "mono_verlust_db": 0.17,
+   "peak_dbfs": -18.24,
+   "akkordbalance_mono_db": {
+    "Grundton A1": 0.0,
+    "Quinte E2": -5.08,
+    "Oktave A2": -6.46,
+    "Duodezime E3": -12.85,
+    "Doppeloktave A3": -17.64
+   },
+   "kammkerben_mono_db": {
+    "92 Hz": -0.6,
+    "276 Hz": -3.5,
+    "459 Hz": -3.0,
+    "643 Hz": -3.7
+   },
+   "naht": {
+    "nahtsprung": 0.000981,
+    "nahtsprung_perzentil": 62.1,
+    "nulldurchgang_ms": 0.317
+   },
+   "im_fertigen_mix": {
+    "bett_je_kanal_dbfs": -30.83,
+    "bett_mono_dbfs": -31.0,
+    "abstand_je_kanal_db": 11.83,
+    "abstand_mono_db": 12.0
+   },
+   "feuer_im_fertigen_mix": {
+    "rms_dbfs": -46.9,
+    "spitze_dbfs": -23.9,
+    "ueber_stimmen_rms_je_schleife": 0,
+    "ueber_stimmen_rms_je_video": 0,
+    "spitze_gegen_stimmen_rms_db": -4.9
    }
   }
  }

@@ -352,7 +352,15 @@ Kommentarrate nach 20 Videos unter Benchmark liegt.*
    Uploads nicht.
 7. **Gewinner-Metadaten:** Vollerhebung liegt vor für 19 von 21 Videos (2 B-Videos fehlen,
    Datensammlung brach am Tool-Session-Limit ab; Ergebnisse in Abschnitt 3 eingearbeitet).
-8. **A's Pause:** A lädt seit 21.06. nicht mehr hoch, letzte zwei Videos fielen auf ~12,6K.
+8. **Wie viel der Fernseher trägt** — *2026-08-23 erstmals gemessen, aber n=1 Kanal und
+   n=4 Videos.* Beim eigenen Kanal liefert der Fernseher **12 % der Aufrufe und 30 % der
+   Wiedergabezeit** (70,4 min gegen 23,0 min am Handy). Ob das ein Merkmal der Nische ist
+   — 3,5-Stunden-Material läuft am TV eher durch als am Handy — oder eine Eigenheit dieser
+   vier Videos, ist aus einem Kanal nicht entscheidbar. Der Fremddatensatz kennt keine
+   Gerätedaten, also gibt es nichts zum Vergleichen.
+   *Prüfkriterium:* wenn V05–V08 denselben TV-Anteil zeigen, ist es ein Nischenmerkmal
+   und gehört in die Produktionsentscheidungen (Bildqualität auf großen Schirmen).
+9. **A's Pause:** A lädt seit 21.06. nicht mehr hoch, letzte zwei Videos fielen auf ~12,6K.
    Ob Sommerpause, Burnout oder Strategiewechsel — unbekannt. Beobachten: Wenn A zurückkommt
    und wieder trifft, spricht das für Katalog-Langzeitwirkung statt Upload-Momentum.
 
@@ -739,6 +747,51 @@ ein Verlierer mit 156 Views. Du brauchst keinen menschlichen Sprecher, und er w�
 - **Grillen: 0/3 Gewinner, 2/3 Verlierer.** n zu klein für eine Regel, aber im Zweifel weglassen.
 - **Stimme in 6/6 Fällen klar über dem Bett** — Musik verschluckt sie nie. Das ist die einzige
   harte Abmisch-Regel, die die Daten hergeben.
+
+> ### 2026-08-23 — der Stereoaufbau des Betts ist ein Fehler, kein Merkmal
+>
+> *(eigene Kanaldaten Gate 2. Rohwerte in `regeln/daten/gate2_eigene_kanaldaten.json`,
+> Messung reproduzierbar mit `produktion/klang/klang_proben.py`.)*
+>
+> **Das Publikum hört mono.** 68 % der Aufrufe kommen vom Handy, 12 % vom Fernseher —
+> zusammen 80 %, und beide geben über Handy-, Bluetooth- oder TV-Lautsprecher aus. Der
+> Mono-Summenfall ist der **Regelfall**, nicht der Sonderfall.
+>
+> **Das Bett ist kein echtes Stereo.** `bett_pad_feuer.flac` trägt in R dasselbe Signal
+> wie in L, nur um **240 Samples = 5,442 ms** versetzt (`np.roll(sig, 240)` in
+> `stimmtest/musikbett.py`). Wer das zu Mono summiert, bekommt einen Kammfilter:
+> erste Auslöschung bei **91,9 Hz**, dann alle **183,8 Hz**. Gemessen gegen die Theorie
+> |cos(π f T)| — Übereinstimmung auf 0,1 dB.
+>
+> **Der Schaden ist nicht der Pegel, sondern der Akkord.** Das Pad besteht aus Grundton,
+> Quinte, Oktave, Duodezime und Doppeloktave (55 · 82,5 · 110 · 165 · 220 Hz). Die erste
+> Kammkerbe sitzt bei 91,9 Hz — zwischen Quinte und Oktave. Pegel relativ zum Grundton:
+>
+> | | Quinte E2 | Oktave A2 | Duodezime E3 | Doppeloktave A3 | max. Abw. |
+> |---|---|---|---|---|---|
+> | **Bauplan** | −5,26 | −5,26 | −11,88 | −16,75 | — |
+> | **Mono-Summe, wie es jetzt ist** | **−16,18** | −11,78 | −7,99 | −13,49 | **10,9 dB** |
+> | **Mono-Summe, Bett echt mono** | −4,86 | −6,12 | −12,19 | −16,28 | 0,9 dB |
+>
+> Die Quinte, die den Charakter des Betts trägt, liegt am Handylautsprecher **10,9 dB
+> unter dem Bauplan**; gleichzeitig rückt die Duodezime 3,9 dB nach oben. Das ist kein
+> Lautstärkeproblem — **das ist ein anderer Akkord als der, der im Hörtest ausgewählt
+> wurde.** Mit echt monoem Bett stimmt er auf 0,9 dB.
+>
+> **Die Stimme ist nicht betroffen.** `schritt3_bett.py` addiert sie identisch in beide
+> Kanäle (Zeilen 102/103), ohne Versatz. Gemessen: 0,00 dB Verlust in der Mono-Summe.
+> Genau deshalb fällt der Fehler nicht auf — die Stimme klingt richtig, das Bett darunter
+> nicht.
+>
+> **Nebenfolge für die 12-dB-Regel.** Die Pipeline normiert das Bett am Mono-Downmix auf
+> −31 dBFS. Weil dieser Downmix 5,2 dB leiser ist als ein einzelner Kanal, steht das Bett
+> **je Kanal bei −25,8 dBFS**: `qa_mix.json` meldet 12,0 dB Abstand, am Kopfhörer sind es
+> **6,8 dB**. Mit echt monoem Bett sind es in beiden Fällen 12,0 dB — die Umstellung
+> repariert also auch diese Inkonsistenz.
+>
+> **Was hier NICHT gemessen ist:** der fertige Mix. `produktion/arbeit/` ist gitignored
+> und in dieser Sitzung leer; alle Aussagen zum Mix sind aus dem Bett und aus dem Code
+> von `schritt3_bett.py` hergeleitet, nicht am fertigen Video nachgemessen.
 - Weder „Delta-Wellen" noch „Klavier+Regen" aus dem Ursprungsbriefing waren hörbar zu bestätigen.
   Klavier trat nur bei Verlierer F auf.
 

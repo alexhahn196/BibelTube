@@ -327,7 +327,15 @@ Kommentarrate nach 20 Videos unter Benchmark liegt.*
    Uploads nicht.
 7. **Gewinner-Metadaten:** Vollerhebung liegt vor für 19 von 21 Videos (2 B-Videos fehlen,
    Datensammlung brach am Tool-Session-Limit ab; Ergebnisse in Abschnitt 3 eingearbeitet).
-8. **A's Pause:** A lädt seit 21.06. nicht mehr hoch, letzte zwei Videos fielen auf ~12,6K.
+8. **Wie viel der Fernseher trägt** — *2026-08-23 erstmals gemessen, aber n=1 Kanal und
+   n=4 Videos.* Beim eigenen Kanal liefert der Fernseher **12 % der Aufrufe und 30 % der
+   Wiedergabezeit** (70,4 min gegen 23,0 min am Handy). Ob das ein Merkmal der Nische ist
+   — 3,5-Stunden-Material läuft am TV eher durch als am Handy — oder eine Eigenheit dieser
+   vier Videos, ist aus einem Kanal nicht entscheidbar. Der Fremddatensatz kennt keine
+   Gerätedaten, also gibt es nichts zum Vergleichen.
+   *Prüfkriterium:* wenn V05–V08 denselben TV-Anteil zeigen, ist es ein Nischenmerkmal
+   und gehört in die Produktionsentscheidungen (Bildqualität auf großen Schirmen).
+9. **A's Pause:** A lädt seit 21.06. nicht mehr hoch, letzte zwei Videos fielen auf ~12,6K.
    Ob Sommerpause, Burnout oder Strategiewechsel — unbekannt. Beobachten: Wenn A zurückkommt
    und wieder trifft, spricht das für Katalog-Langzeitwirkung statt Upload-Momentum.
 

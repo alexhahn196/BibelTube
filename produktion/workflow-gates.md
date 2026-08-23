@@ -38,7 +38,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.8 | **160×90-Kontrolle** | Text in einer Sekunde erfassbar, Lichtquelle erkennbar | Checkliste | Sichtprüfung am Handy |
 | 1.9 | **Sprechbeginn** | Sekunde 0–3, kein Musikintro | Formel §3 PFLICHT (n=24; Gewinner 0,1–3,1 s) | `vorlauf_s` in `config.md`, nachgemessen in `schritt6_srt.py` (erste Kachel) |
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
-| 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet** | `schritt3_bett.py` |
+| 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen — **in Mono UND je Kanal** | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet**. Der Zusatz „je Kanal" ist neu (2026-08-23): `qa_mix.json` misst nur den Mono-Downmix und meldete 12 dB, wo am Kopfhörer 6,8 dB standen. | `schritt3_bett.py` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
 | 1.13 | **Korpusart** | Erzählanteil ≥ 80 %, und der größte Block ist selbst Erzählung | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | `produktion/korpus_pruefung.py` |
 | 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
@@ -104,6 +104,7 @@ Abo-Startverteilung verzerrt.
 | **Durchschnittliche Wiedergabedauer** | Interaktion | Bei 3,5 h Laufzeit ist die absolute Minutenzahl aussagekräftiger als der Prozentwert. |
 | **Traffic-Quellen** | Reichweite | Vorgeschlagene Videos vs. Suche vs. Startseite — entscheidet, ob Titel-Keywords oder Thumbnail wichtiger sind. **Vorsicht beim API-Label `SUBSCRIBER`: es bedeutet Startseite und Abo-Feed, NICHT Aufrufe durch Abonnenten.** |
 | **Zuschauer nach Uhrzeit** | Publikum | Für den Upload-Zeitpunkt; im Fremddatensatz nicht ermittelbar. |
+| **Gerätetyp** | Publikum | Entscheidet, ob stereo oder mono abgehört wird — und wie lange. Im Fremddatensatz nicht ermittelbar. **2026-08-23 nachgetragen, weil er beim ersten Durchgang gefehlt hat und den größten Einzelbefund enthielt.** |
 
 ### Was daraus entschieden wird
 
@@ -152,6 +153,36 @@ Korpuswechsel als einzige geänderte Variable testen.
 Kanalbannern (`produktion/motive/README.md`). Gate 2 liefert Video-Impressionen,
 aber keine Kanalseiten-Conversion — und 2 Abonnenten sind keine Grundlage. Bleibt
 offen.
+
+### Nachtrag 2026-08-23 — der Gerätetyp fehlte, und er trug den größten Befund
+
+Die Leseliste oben kannte den Gerätetyp nicht. Nachgereicht:
+
+| Gerät | Anteil Aufrufe | Ø Sehdauer | Anteil Wiedergabezeit |
+|---|---|---|---|
+| Handy | 68 % | 23,0 min | 56,7 % |
+| **Fernseher** | **12 %** | **70,4 min** | **30,6 %** |
+| Tablet | 11 % | — | zusammen 12,7 % |
+| Desktop | 7 % | — | |
+
+*Kreuzprobe: 12 % von 151 Aufrufen sind 18,1 Aufrufe × 70,4 min = 1.276 min von
+4.164 min Kanal-Wiedergabezeit = 30,6 %. Die Restzeit verteilt sich auf Tablet und
+Desktop mit im Mittel 17,4 min je Aufruf.*
+
+**Zwei Dinge folgen daraus:**
+
+1. **Ein TV-Zuschauer ist gut drei Handy-Zuschauer wert.** 70,4 gegen 23,0 Minuten.
+   Wiedergabezeit ist die Größe, nach der YouTube ausliefert (siehe Ergebnis 1 oben) —
+   damit ist der kleinste Gerätekanal der zweitwichtigste.
+2. **Das Publikum hört mono.** Handy und Fernseher zusammen sind 80 % der Aufrufe, und
+   beide geben über Handy-, Bluetooth- oder TV-Lautsprecher aus. Der Mono-Summenfall ist
+   der Regelfall. Das hat einen konkreten Fehler im Klangbett aufgedeckt — ausgeführt in
+   `formel/video-formel.md` §5b: der 240-Sample-Versatz der Stereobreite erzeugt in Mono
+   einen Kammfilter, der die Quinte des Pads um 10,9 dB unter den Bauplan drückt.
+
+**Diese Zeile ist der eigentliche Ertrag des Nachtrags:** Gate 2 hat beim ersten
+Durchgang vier Kennzahlen gelesen und den Gerätetyp nicht. Die Leseliste oben ist
+entsprechend ergänzt, damit das beim nächsten Messpunkt nicht wieder passiert.
 
 ### Was danach passiert
 

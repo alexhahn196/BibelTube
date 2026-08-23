@@ -1,114 +1,184 @@
 {
-  "quelle": "eigene Kanaldaten Gate 2",
-  "erhoben_am": "2026-08-23",
-  "kanal": {
-    "name": "The Nightly Word",
-    "id": "UCai4rcN45WKqNvPdSJGADPg"
+ "quelle": "eigene Kanaldaten Gate 2",
+ "erhoben_am": "2026-08-23",
+ "kanal": {
+  "name": "The Nightly Word",
+  "id": "UCai4rcN45WKqNvPdSJGADPg"
+ },
+ "zeitraum": {
+  "von": "2026-07-25",
+  "bis": "2026-08-22",
+  "tage": 28
+ },
+ "kanal_gesamt": {
+  "videos": 4,
+  "aufrufe": 151,
+  "wiedergabestunden": 69.4,
+  "abonnenten": 2,
+  "impressionen": 5535,
+  "ctr_pct": 2.71
+ },
+ "videos": {
+  "V1": {
+   "korpus": "Psalmen 1-89 + 1. Petrus + Jakobus",
+   "korpusart": "Spruchsammlung",
+   "eigenname_im_titel": false,
+   "sehdauer_min": 17.2,
+   "endretention_pct": null,
+   "hinweis": "keine Retentionskurve in der Auswertung"
   },
-  "zeitraum": {
-    "von": "2026-07-25",
-    "bis": "2026-08-22",
-    "tage": 28
+  "V2": {
+   "korpus": "Psalmen 90-150 + Sprueche",
+   "korpusart": "Spruchsammlung",
+   "eigenname_im_titel": false,
+   "sehdauer_min": 13.8,
+   "endretention_pct": 2.4,
+   "relative_retention_performance": {
+    "anfang": 0.29,
+    "mitte": 0.04,
+    "ende": 0.42
+   },
+   "retention_anfang": {
+    "minute_2_pct": 100,
+    "minute_4_pct": 29
+   }
   },
-  "kanal_gesamt": {
-    "videos": 4,
-    "aufrufe": 151,
-    "wiedergabestunden": 69.4,
-    "abonnenten": 2,
-    "impressionen": 5535,
-    "ctr_pct": 2.71
+  "V3": {
+   "korpus": "Johannes + Hebraeer + 1. Johannes + Kolosser",
+   "korpusart": "Erzaehlstoff",
+   "eigenname_im_titel": true,
+   "eigenname": "Gospel of John",
+   "sehdauer_min": 36.5,
+   "endretention_pct": 14.4,
+   "relative_retention_performance": {
+    "anfang": 0.33,
+    "mitte": 0.46,
+    "ende": 0.4
+   },
+   "retention_anfang": {
+    "minute_2_pct": 100,
+    "minute_4_pct": 40
+   },
+   "impressionen": 3130,
+   "aufrufe": 91,
+   "ctr_pct": 1.82,
+   "wiedergabestunden": 55.4,
+   "abonnenten": 1
   },
-  "videos": {
-    "V1": {
-      "korpus": "Psalmen 1-89 + 1. Petrus + Jakobus",
-      "korpusart": "Spruchsammlung",
-      "eigenname_im_titel": false,
-      "sehdauer_min": 17.2,
-      "endretention_pct": null,
-      "hinweis": "keine Retentionskurve in der Auswertung"
-    },
-    "V2": {
-      "korpus": "Psalmen 90-150 + Sprueche",
-      "korpusart": "Spruchsammlung",
-      "eigenname_im_titel": false,
-      "sehdauer_min": 13.8,
-      "endretention_pct": 2.4,
-      "relative_retention_performance": {
-        "anfang": 0.29,
-        "mitte": 0.04,
-        "ende": 0.42
-      },
-      "retention_anfang": {
-        "minute_2_pct": 100,
-        "minute_4_pct": 29
-      }
-    },
-    "V3": {
-      "korpus": "Johannes + Hebraeer + 1. Johannes + Kolosser",
-      "korpusart": "Erzaehlstoff",
-      "eigenname_im_titel": true,
-      "eigenname": "Gospel of John",
-      "sehdauer_min": 36.5,
-      "endretention_pct": 14.4,
-      "relative_retention_performance": {
-        "anfang": 0.33,
-        "mitte": 0.46,
-        "ende": 0.40
-      },
-      "retention_anfang": {
-        "minute_2_pct": 100,
-        "minute_4_pct": 40
-      },
-      "impressionen": 3130,
-      "aufrufe": 91,
-      "ctr_pct": 1.82,
-      "wiedergabestunden": 55.4,
-      "abonnenten": 1
-    },
-    "V4": {
-      "korpus": "Matthaeus + Epheser + Philipper + Daniel 1-3",
-      "korpusart": "Erzaehlstoff",
-      "eigenname_im_titel": false,
-      "sehdauer_min": 14.6,
-      "endretention_pct": null,
-      "hinweis": "juengstes Video, kuerzeste Laufzeit im Messfenster; keine Retentionskurve"
-    }
+  "V4": {
+   "korpus": "Matthaeus + Epheser + Philipper + Daniel 1-3",
+   "korpusart": "Erzaehlstoff",
+   "eigenname_im_titel": false,
+   "sehdauer_min": 14.6,
+   "endretention_pct": null,
+   "hinweis": "juengstes Video, kuerzeste Laufzeit im Messfenster; keine Retentionskurve"
+  }
+ },
+ "endretention_nach_3h30": {
+  "V3_erzaehlstoff_pct": 14.4,
+  "V2_spruchsammlung_pct": 2.4,
+  "faktor": 6.0
+ },
+ "traffic_quellen_kanal": {
+  "hinweis": "Kanalweit. Summe 146 von 151 Aufrufen zugeordnet.",
+  "vorgeschlagene_videos": {
+   "aufrufe": 102,
+   "sehdauer_min": 29.7
   },
-  "endretention_nach_3h30": {
-    "V3_erzaehlstoff_pct": 14.4,
-    "V2_spruchsammlung_pct": 2.4,
-    "faktor": 6.0
+  "startseite_und_abofeed": {
+   "aufrufe": 36,
+   "sehdauer_min": 10.2,
+   "api_label": "SUBSCRIBER",
+   "warnung": "Das API-Label SUBSCRIBER bedeutet Startseite/Abo-Feed, NICHT Aufrufe durch Abonnenten. Der Kanal hat 2 Abonnenten insgesamt."
   },
-  "traffic_quellen_kanal": {
-    "hinweis": "Kanalweit. Summe 146 von 151 Aufrufen zugeordnet.",
-    "vorgeschlagene_videos": { "aufrufe": 102, "sehdauer_min": 29.7 },
-    "startseite_und_abofeed": {
-      "aufrufe": 36,
-      "sehdauer_min": 10.2,
-      "api_label": "SUBSCRIBER",
-      "warnung": "Das API-Label SUBSCRIBER bedeutet Startseite/Abo-Feed, NICHT Aufrufe durch Abonnenten. Der Kanal hat 2 Abonnenten insgesamt."
-    },
-    "direkt_oder_extern": { "aufrufe": 6, "sehdauer_min": 89.8 },
-    "sonstige_youtube_seiten": { "aufrufe": 2, "sehdauer_min": 104.0 },
-    "youtube_suche": { "aufrufe": 0, "sehdauer_min": null }
+  "direkt_oder_extern": {
+   "aufrufe": 6,
+   "sehdauer_min": 89.8
   },
-  "kreuzprobe": {
-    "wiedergabezeit_aus_traffic_quellen_min": 4143.4,
-    "wiedergabezeit_kanal_min": 4164.0,
-    "kommentar": "Die gewichtete Summe der Traffic-Quellen deckt sich mit der Kanal-Wiedergabezeit; die Einzelwerte sind untereinander konsistent."
+  "sonstige_youtube_seiten": {
+   "aufrufe": 2,
+   "sehdauer_min": 104.0
   },
-  "fremdkohorte_kadenz": {
-    "quelle": "Fremddaten, 74 Wissenschafts-Schlafkanaele unter 2 Jahren",
-    "median_umsatz_usd_pro_monat": {
-      "uploads_0_bis_1_5_pro_woche": 311,
-      "uploads_6_plus_pro_woche": 1770
-    },
-    "entscheidung": "nicht uebernommen - siehe M1 in regeln/erfolgsregeln.md"
+  "youtube_suche": {
+   "aufrufe": 0,
+   "sehdauer_min": null
+  }
+ },
+ "kreuzprobe": {
+  "wiedergabezeit_aus_traffic_quellen_min": 4143.4,
+  "wiedergabezeit_kanal_min": 4164.0,
+  "kommentar": "Die gewichtete Summe der Traffic-Quellen deckt sich mit der Kanal-Wiedergabezeit; die Einzelwerte sind untereinander konsistent."
+ },
+ "fremdkohorte_kadenz": {
+  "quelle": "Fremddaten, 74 Wissenschafts-Schlafkanaele unter 2 Jahren",
+  "median_umsatz_usd_pro_monat": {
+   "uploads_0_bis_1_5_pro_woche": 311,
+   "uploads_6_plus_pro_woche": 1770
   },
-  "was_diese_daten_nicht_hergeben": [
-    "CTR: 5.535 Impressionen sind zu wenig fuer eine belastbare Klickraten-Aussage.",
-    "Retentionskurven liegen nur fuer V2 und V3 vor (n=2).",
-    "V4 ist das juengste Video; seine niedrige Sehdauer ist nicht vom Alterseffekt getrennt.",
-    "Keine Thumbnail-A/B-Daten - im Zeitraum lief je Video nur eine Variante."
-  ]
+  "entscheidung": "nicht uebernommen - siehe M1 in regeln/erfolgsregeln.md"
+ },
+ "was_diese_daten_nicht_hergeben": [
+  "CTR: 5.535 Impressionen sind zu wenig fuer eine belastbare Klickraten-Aussage.",
+  "Retentionskurven liegen nur fuer V2 und V3 vor (n=2).",
+  "V4 ist das juengste Video; seine niedrige Sehdauer ist nicht vom Alterseffekt getrennt.",
+  "Keine Thumbnail-A/B-Daten - im Zeitraum lief je Video nur eine Variante.",
+  "Der fertige Mix von V04 liegt in diesem Container nicht vor (produktion/arbeit/ ist gitignored). Die Aussagen zum Mix sind aus dem Bett und dem Code von schritt3_bett.py hergeleitet, nicht am fertigen Video gemessen."
+ ],
+ "geraete": {
+  "hinweis": "Nachgetragen 2026-08-23. Anteil an den AUFRUFEN, dazu die Sehdauer je Geraet.",
+  "mobil": {
+   "aufrufe_pct": 68,
+   "sehdauer_min": 23.0
+  },
+  "tv": {
+   "aufrufe_pct": 12,
+   "sehdauer_min": 70.4
+  },
+  "tablet": {
+   "aufrufe_pct": 11,
+   "sehdauer_min": null
+  },
+  "desktop": {
+   "aufrufe_pct": 7,
+   "sehdauer_min": null
+  },
+  "befund_tv": "TV liefert 12 % der Aufrufe, aber rund 30 % der Wiedergabezeit: 12 % von 151 Aufrufen sind 18,1 Aufrufe, mal 70,4 min ergibt 1.276 min von 4.164 min = 30,6 %.",
+  "befund_mono": "Mobil und TV zusammen 80 % der Aufrufe. Beide geben ueberwiegend ueber Handy-, Bluetooth- oder TV-Lautsprecher aus, also mono oder nahezu mono. Der Mono-Summenfall ist damit der Regelfall, nicht der Sonderfall."
+ },
+ "klangbett_stereoaufbau": {
+  "gemessen_am": "2026-08-23",
+  "befund": "produktion/klang/bett_pad_feuer.flac ist kein echtes Stereo, sondern L mit R = L um 240 Samples versetzt (5,442 ms). In der Mono-Summe ergibt das einen Kammfilter mit Kerben bei 91,9 Hz und dann alle 183,8 Hz.",
+  "kerben_gemessen_db": {
+   "92 Hz": -50.5,
+   "276 Hz": -43.1,
+   "459 Hz": -42.7,
+   "643 Hz": -50.3
+  },
+  "theorie_stimmt": "Messung und |cos(pi f T)| stimmen auf 0,1 dB ueberein.",
+  "akkord_in_mono": {
+   "hinweis": "Pegel der Pad-Teiltoene relativ zum Grundton A1, Soll aus stimmtest/musikbett.py",
+   "soll_db": {
+    "Quinte E2": -5.26,
+    "Oktave A2": -5.26,
+    "Duodezime E3": -11.88,
+    "Doppeloktave A3": -16.75
+   },
+   "ist_versetzt_db": {
+    "Quinte E2": -16.18,
+    "Oktave A2": -11.78,
+    "Duodezime E3": -7.99,
+    "Doppeloktave A3": -13.49
+   },
+   "ist_echt_mono_db": {
+    "Quinte E2": -4.86,
+    "Oktave A2": -6.12,
+    "Duodezime E3": -12.19,
+    "Doppeloktave A3": -16.28
+   },
+   "folgerung": "Die Quinte liegt in der Mono-Summe 10,9 dB unter dem Bauplan. Wer das Bett ueber einen Handylautsprecher hoert, hoert einen anderen Akkord als den, der im Hoertest ausgewaehlt wurde. Echt mono trifft den Bauplan auf 0,9 dB."
+  },
+  "stimme_betroffen": false,
+  "stimme_hinweis": "schritt3_bett.py addiert die Stimme identisch in beide Kanaele (Zeilen 102/103). Sie wird nicht kammgefiltert - nur das Bett.",
+  "pegelfolge": "Weil die Pipeline das Bett am Mono-Downmix auf -31 dBFS normiert, steht es je Kanal bei -25,8 dBFS. Der in qa_mix.json gemeldete Abstand von 12 dB gilt nur fuer Mono; am Kopfhoerer sind es 6,8 dB. Mit echt monoem Bett sind es in beiden Faellen 12 dB."
+ }
 }
