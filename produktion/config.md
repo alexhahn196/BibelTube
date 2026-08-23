@@ -142,6 +142,15 @@ zoom_faktor        = 1.04
 zoom_zyklus_s      = 300
 video_crf          = 28
 video_preset       = medium
+# Pixelformat der Videospur. yuv420p = 8 Bit, yuv420p10le = 10 Bit.
+# Gemessener Banding-Befund 2026-08-23 (produktion/motive/bandingtest/):
+# bei CRF 28 verliert der Nachthimmel in 8 Bit sieben der 48 Luma-Stufen im
+# dunklen Bereich, die groesste einfarbige Flaeche waechst gegenueber dem
+# Quellbild um Faktor 90. In 10 Bit bleiben alle 48 Stufen, der Faktor faellt
+# auf 15, und die Datei wird KLEINER (4,92 statt 6,62 MB je 300-s-Zyklus).
+# NICHT umgestellt: yuv420p10le ist H.264 High 10, und ob YouTubes Ingest das
+# annimmt, ist ungeprueft. Umstellung ist eine Zeile - erst nach einem Test.
+video_pixelformat  = yuv420p
 audio_bitrate      = 192k
 
 # --- Laufzeit (Formel §2) ---

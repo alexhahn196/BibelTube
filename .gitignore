@@ -24,3 +24,5 @@ produktion/video-*/*.wav
 __pycache__/
 *.pyc
 produktion/motive/loops/render.log
+# Banding-Testdateien: 63 MB, reproduzierbar mit banding_test.py --encode
+produktion/motive/bandingtest/*.mp4
