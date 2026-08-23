@@ -1,5 +1,13 @@
 {
  "erzeugt_am": "2026-08-23",
+ "mixhochrechnung": {
+  "pegel_bett_dbfs": -31.0,
+  "pegel_stimme_dbfs": -19.0,
+  "kanal_lauter_als_mono_downmix_db": 5.2,
+  "abstand_mono_db": 12.0,
+  "abstand_je_kanal_db": 6.8,
+  "hinweis": "qa_mix.json misst den Mono-Downmix. Je Kanal - also am Kopfhoerer - liegt das Bett um den Kammfilterbetrag lauter."
+ },
  "quelle": "produktion/klang/bett_pad_feuer.flac",
  "quelle_dauer_s": 56.0,
  "quelle_rms_mono_dbfs": -31.2,
@@ -61,6 +69,14 @@
     "nahtsprung_perzentil": 55.7,
     "nulldurchgang_samples": 7,
     "nulldurchgang_ms": 0.159
+   },
+   "feuer_im_fertigen_mix": {
+    "rms_dbfs": -39.8,
+    "spitze_dbfs": -10.9,
+    "perzentil_99_9_dbfs": -20.5,
+    "ueber_stimmen_rms_je_schleife": 281,
+    "ueber_stimmen_rms_je_video": 63225,
+    "spitze_gegen_stimmen_rms_db": 8.1
    }
   },
   "probe_b_feuer_leiser_tiefpass": {
@@ -85,6 +101,14 @@
     "nahtsprung_perzentil": 62.1,
     "nulldurchgang_samples": 14,
     "nulldurchgang_ms": 0.317
+   },
+   "feuer_im_fertigen_mix": {
+    "rms_dbfs": -46.9,
+    "spitze_dbfs": -23.9,
+    "perzentil_99_9_dbfs": -31.7,
+    "ueber_stimmen_rms_je_schleife": 0,
+    "ueber_stimmen_rms_je_video": 0,
+    "spitze_gegen_stimmen_rms_db": -4.9
    }
   },
   "probe_c_ohne_feuer": {

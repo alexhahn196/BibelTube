@@ -31,7 +31,7 @@ import os
 import numpy as np
 import soundfile as sf
 from scipy.ndimage import median_filter
-from scipy.signal import butter, istft, sosfiltfilt, stft
+from scipy.signal import butter, hilbert, istft, sosfiltfilt, stft
 
 SR = 44100
 BETT = "produktion/klang/bett_pad_feuer.flac"
@@ -43,6 +43,10 @@ STEREO_VERSATZ = 240          # wie in stimmtest/musikbett.py
 NPERSEG, NOVERLAP, MEDIAN = 4096, 3072, 31
 FEUER_DB = -6.0               # Variante B
 FEUER_TIEFPASS_HZ = 1100.0    # Variante B
+# aus produktion/config.md, fuer die Hochrechnung auf den fertigen Mix
+PEGEL_BETT_DBFS = -31.0
+PEGEL_STIMME_DBFS = -19.0
+LAUFZEIT_H = 3.5
 
 
 def rms_db(x):
@@ -135,6 +139,29 @@ def stereo(mono):
     return np.stack([mono, np.roll(mono, STEREO_VERSATZ)], axis=1)
 
 
+def mixpegel(feuerspur, g, schleife_s):
+    """Was aus der Feuerschicht im fertigen Mix wird - je Kanal.
+
+    schritt3_bett.py normiert das Bett auf PEGEL_BETT_DBFS, gemessen am
+    Mono-Downmix (L+R)/2, und addiert die Stimme identisch in beide Kanaele.
+    Ein Kopfhoerer hoert aber die Kanaele einzeln. Deshalb hier je Kanal.
+    """
+    huelle = np.abs(hilbert(feuerspur)) * g
+    schwelle = 10 ** (PEGEL_STIMME_DBFS / 20)
+    ueber = huelle > schwelle
+    ereignisse = int(np.sum(np.diff(ueber.astype(int)) == 1))
+    def db(v):
+        return round(float(20 * np.log10(v + 1e-12)), 1)
+    return {
+        "rms_dbfs": round(rms_db(feuerspur * g), 1),
+        "spitze_dbfs": db(huelle.max()),
+        "perzentil_99_9_dbfs": db(np.percentile(huelle, 99.9)),
+        "ueber_stimmen_rms_je_schleife": ereignisse,
+        "ueber_stimmen_rms_je_video": int(ereignisse * round(LAUFZEIT_H * 3600 / schleife_s)),
+        "spitze_gegen_stimmen_rms_db": round(db(huelle.max()) - PEGEL_STIMME_DBFS, 1),
+    }
+
+
 def main():
     os.makedirs(ZIEL, exist_ok=True)
     y, sr = sf.read(BETT, dtype="float64", always_2d=True)
@@ -153,6 +180,20 @@ def main():
           f"({rms_db(pad)-rms_db(feuer):.1f} dB darunter) | "
           f"Rekonstruktionsfehler {rekon:.2f} dBFS\n")
 
+    # --- Was daraus im fertigen Mix wird -----------------------------
+    g_mix = 10 ** ((PEGEL_BETT_DBFS - ziel_rms) / 20)
+    kanal_gegen_mono = rms_db(L) - ziel_rms
+    print("Hochrechnung auf den fertigen Mix (config.md: Bett -31, Stimme -19 dBFS):")
+    print(f"  Das Bett wird am Mono-Downmix (L+R)/2 normiert. Der 240-Sample-Versatz")
+    print(f"  der Stereobreite macht diesen Downmix {kanal_gegen_mono:.2f} dB leiser als")
+    print(f"  ein einzelner Kanal. Die Stimme wird identisch in beide Kanaele addiert,")
+    print(f"  verliert im Downmix also nichts.")
+    print(f"    Abstand Stimme/Bett im Mono-Downmix : "
+          f"{PEGEL_STIMME_DBFS - PEGEL_BETT_DBFS:+.2f} dB  <- das meldet qa_mix.json")
+    print(f"    Abstand Stimme/Bett je Kanal        : "
+          f"{PEGEL_STIMME_DBFS - (PEGEL_BETT_DBFS + kanal_gegen_mono):+.2f} dB  "
+          f"<- das hoert ein Kopfhoerer\n")
+
     feuer_leise = 10 ** (FEUER_DB / 20) * tiefpass_geloopt(feuer, FEUER_TIEFPASS_HZ)
 
     varianten = [
@@ -167,6 +208,16 @@ def main():
 
     bericht = {
         "erzeugt_am": "2026-08-23",
+        "mixhochrechnung": {
+            "pegel_bett_dbfs": PEGEL_BETT_DBFS,
+            "pegel_stimme_dbfs": PEGEL_STIMME_DBFS,
+            "kanal_lauter_als_mono_downmix_db": round(rms_db(L) - ziel_rms, 2),
+            "abstand_mono_db": PEGEL_STIMME_DBFS - PEGEL_BETT_DBFS,
+            "abstand_je_kanal_db": round(
+                PEGEL_STIMME_DBFS - (PEGEL_BETT_DBFS + rms_db(L) - ziel_rms), 2),
+            "hinweis": "qa_mix.json misst den Mono-Downmix. Je Kanal - also am "
+                       "Kopfhoerer - liegt das Bett um den Kammfilterbetrag lauter.",
+        },
         "quelle": BETT,
         "quelle_dauer_s": round(len(L) / SR, 3),
         "quelle_rms_mono_dbfs": round(ziel_rms, 2),
@@ -209,6 +260,11 @@ def main():
             "naht_in_der_probe": naht_kennzahlen(sig, naht),
             "naht_ohne_kreuzblende": naht_kennzahlen(roh, naht_roh),
         }
+        if kb or "ohne_feuer" not in name:
+            spur = {"probe_a_feuer_kreuzblende": feuer,
+                    "probe_b_feuer_leiser_tiefpass": feuer_leise}.get(name)
+            if spur is not None:
+                p["feuer_im_fertigen_mix"] = mixpegel(spur, g_mix, len(L) / SR)
         bericht["proben"][name] = p
         print(f"{name}.flac  ({len(sig)/SR:.0f} s)")
         print(f"   {beschreibung}")
@@ -221,6 +277,14 @@ def main():
         print(f"   dieselbe Variante hart: Sprung {n0['nahtsprung']:.6f}  = "
               f"{n0['nahtsprung_perzentil']:.1f}. Perzentil, "
               f"Nulldurchgang {n0['nulldurchgang_ms']} ms")
+        fm = p.get("feuer_im_fertigen_mix")
+        if fm:
+            print(f"   Feuer im fertigen Mix (je Kanal): RMS {fm['rms_dbfs']} dBFS, "
+                  f"lauteste Spitze {fm['spitze_dbfs']} dBFS "
+                  f"({fm['spitze_gegen_stimmen_rms_db']:+.1f} dB gegen den Stimmen-RMS)")
+            print(f"   Transienten ueber dem Stimmen-RMS: "
+                  f"{fm['ueber_stimmen_rms_je_schleife']} je Schleife = "
+                  f"{fm['ueber_stimmen_rms_je_video']:,} je Video")
         print()
 
     json.dump(bericht, open(f"{ZIEL}/proben_messung.json", "w"), indent=1, ensure_ascii=False)

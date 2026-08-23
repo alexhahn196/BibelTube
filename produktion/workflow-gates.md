@@ -40,7 +40,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
 | 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet** | `schritt3_bett.py` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
-| 1.13 | **Korpusart** | Hauptkorpus ist durchlaufender Erzählstoff; Spruchsammlung und prophetische Rede höchstens als Beigabe | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | von Hand gegen M8, Korpusliste in `produktion/korpus/plan.json` |
+| 1.13 | **Korpusart** | Erzählanteil ≥ 80 %, und der größte Block ist selbst Erzählung | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | `produktion/korpus_pruefung.py` |
 | 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
 
 **1.1 und 1.11 sind Sonderfälle:** Die Korpuslänge lässt sich erst nach dem
@@ -51,6 +51,19 @@ und beide brechen die Pipeline hart ab, wenn sie reißen.
 **1.13 und 1.14 kommen vor allem anderen** — sie entscheiden über Korpus und Titel,
 also über das, was Schritt 1 überhaupt baut. Sie sind seit 2026-08-23 die einzigen
 Gate-1-Prüfungen aus **eigenen** Kanaldaten; alle übrigen stammen aus Fremdkanälen.
+
+**Die 80-%-Schwelle in 1.13 ist gesetzt, nicht gemessen.** M8 trennt Erzählstoff von
+Spruchsammlung, sagt aber nichts über die Grenze dazwischen — die eigenen Daten kennen
+nur 81,7 % (V05, erfüllt) und 10,2 % (V06 alt, verletzt), dazwischen liegt nichts.
+80 % ist die Zahl, die V05 gerade noch durchlässt; sie ist eine Arbeitsgrenze und wird
+korrigiert, sobald ein Video dazwischen liegt. `korpus_pruefung.py` meldet immer den
+tatsächlichen Prozentsatz mit, damit die Grenze nachvollziehbar bleibt.
+
+**Die Gattungszuordnung steht im Skript, nicht im Kopf.** `korpus_pruefung.py` führt
+kapitelweise, welches Material als Erzählung zählt — Jona 2 (Gebet), 2. Samuel 22
+(Danklied), Josua 13–21 (Gebietslisten), Exodus 21–23/25–31/35–40 (Recht und
+Stiftshütte), Daniel 7–12 (Visionen) zählen ausdrücklich nicht. Wer die Zuordnung für
+falsch hält, ändert sie dort und sieht sofort, was das an den Prozentsätzen bewegt.
 
 **Wenn eine Prüfung reißt:** anhalten und entscheiden, nicht umgehen. Die
 einzige Prüfung mit Ermessensspielraum ist 1.3 (SOLL, nicht MUSS) — ein
