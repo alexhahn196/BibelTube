@@ -29,7 +29,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | # | Prüfung | Grenze | Woher | Womit |
 |---|---|---|---|---|
 | 1.1 | **Korpuslänge** | ≥ 3,0 h; Ziel 3,4–3,8 h | Formel §2: kein Video unter 3 h je über 2.500 Views (n=6), alle 10 Treffer ≥ 3,2 h | `schritt1_text.py` meldet die erwartete Laufzeit |
-| 1.2 | **Titelähnlichkeit** | < 50 % gemeinsame inhaltstragende Wörter mit **jedem** Gewinnertitel | Formel §1: Kanal F kopierte wörtlich → 18 Views | `produktion/titel_pruefung.py` |
+| 1.2 | **Titelähnlichkeit** | < 50 % gemeinsame inhaltstragende Wörter mit **jedem** Gewinnertitel — **und nicht näher an einem Kopisten-Titel als am nächsten Gewinner** | Formel §1: Kanal F kopierte wörtlich → 18 Views; Kanal C baute Mashups → 17 Views | `produktion/titel_pruefung.py` (Bestand), `produktion/titel_kandidaten.py` (neue Titel, misst zusätzlich gegen Kopisten und den eigenen Katalog) |
 | 1.3 | **Titelanker** | einer der 13 belegten Anker | Formel §10 („diese zuerst verwenden"); die 7 abgeleiteten sind ausdrücklich ungeprüft | von Hand gegen §10 |
 | 1.4 | **Thumbnail: Wörter** | höchstens 4 | Checkliste | `thumbnail.py` |
 | 1.5 | **Thumbnail: Versalhöhe** | ≥ 11,5 % der Bildhöhe (≥ 125 px bei 1080p) | Checkliste | `thumbnail.py` |
@@ -47,6 +47,15 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
 (Schritt 3). Beide liegen aber **vor** dem teuren Teil — TTS und Montage —
 und beide brechen die Pipeline hart ab, wenn sie reißen.
+
+**Die zweite Hälfte von 1.2 ist neu (2026-08-23) und stammt aus einem konkreten
+Beinahe-Fehler.** Bei der Titelsuche für V05 lag der zunächst empfohlene Kandidat mit
+33,3 % gegen den nächsten Gewinnertitel sauber unter der Grenze — aber mit **44,4 %
+gegen C's totes Mashup** *„You're tired, I know… Rest to the Gospel of John"* (17 Views).
+Er war der Kopie also ähnlicher als dem Original. Das ist genau die Bauform, vor der V3
+warnt, und die Prüfung gegen die Gewinner allein sieht sie nicht: *„Zustand, ich weiß…"*
+plus *„das Evangelium nach X"* **ist** C's Bauform. Wer nur gegen Gewinner misst,
+kann den Kopisten nachbauen, ohne dass eine Zahl anschlägt.
 
 **1.13 und 1.14 kommen vor allem anderen** — sie entscheiden über Korpus und Titel,
 also über das, was Schritt 1 überhaupt baut. Sie sind seit 2026-08-23 die einzigen
