@@ -31,7 +31,7 @@
 
 | # | Element | Verdikt |
 |---|---|---|
-| 1 | Zustands-Anker als Pflicht | **bleibt** — 9/10 Treffer |
+| 1 | Zustands-Anker als Pflicht | **bleibt** — 9/10 Treffer (Anredeform 2026-08-23 nachkorrigiert: Du-Ansprache ist 7/9, nicht 9/9) |
 | 2 | „Tonight" im Pflichtmuster | **schärfen** — nur 6/10 Treffer |
 | 3 | Deine drei Titel-Beispiele | **schärfen** — alle drei aus meiner *ungeprüft*-Liste |
 | 4 | „Gospel of John = zweitbestes Video" | **Faktenfehler** — es ist A's **bestes** (245K) |
@@ -52,8 +52,26 @@
 
 ## 1. TITEL
 
-**PFLICHT — Zustands-Anker in Du-Ansprache.** 9 von 10 Treffern (>30K). Einzige Ausnahme ist
-A's schwächster Treffer („Come Little Lamb", 47K).
+**PFLICHT — Zustands-Anker.** 9 von 10 Treffern (>30K). Einzige Ausnahme ist
+A's schwächster Treffer („Come Little Lamb", 47K) — der einzige Titel ohne Zustand.
+
+> **Faktenkorrektur 2026-08-23: „in Du-Ansprache" ist zu scharf formuliert gewesen.**
+> Bis heute stand hier „Zustands-Anker **in Du-Ansprache**, 9 von 10 Treffern". Die
+> 9 von 10 stimmen — sie gelten aber dem **Zustand**, nicht der Anredeform. Die 9
+> Zustands-Titel gegen §10 durchgezählt:
+>
+> | Ansprache | Anzahl | Titel |
+> |---|---|---|
+> | zweite Person | 4 | `If You're Anxious,` 245K · `I Know You're Tired…` 233K · `You're Tired, I Know…` 201K · `You Need Rest…` 36K |
+> | Imperativ (Du mitgemeint) | 3 | `Stop Thinking For A Moment,` 96K · `Fall Asleep Without Stress…` 35K · `Don't Go to Sleep Worried…` 32K |
+> | **erste Person** | **1** | **`Lord, I Feel Tired` 184K** |
+> | kein Pronomen | 1 | `No More Thinking Tonight…` 166K |
+>
+> **Du-Ansprache ist also 7 von 9, nicht 9 von 9.** A's 184K-Treffer spricht nicht den
+> Hörer an, sondern legt ihm die eigenen Worte in den Mund — und das ist der
+> viertstärkste Titel im ganzen Datensatz. Ein Titel in erster Person ist damit
+> **belegt, nicht verboten.** Was Pflicht bleibt, ist der **Zustand**; die Anredeform
+> ist häufig, aber nicht durchgehend.
 
 **Muster:** `[Gefühlszustand] + [Zusage mit Jesus/Gott]`, „Tonight" **optional**.
 > *Korrektur zu v2:* „Tonight" steht in **6 von 10** Treffern, nicht in allen. A's 184K-Video
