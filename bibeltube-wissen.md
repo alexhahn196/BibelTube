@@ -308,6 +308,35 @@ ist ein Verlierer mit 156 Views.
 Maschinen-Output — dieselbe Wurzel wie C's MT-paraphrasierte Bibel (V4), kein Stimmmodell-Problem.
 Als Regel gehört es zu V4, nicht in eine eigene Stimm-Hypothese.
 
+> ### 2026-08-23 — V01 bis V04 verletzen die einzige harte Abmisch-Regel
+>
+> Dieselbe Stimm-Stichprobe vom 2026-08-03 hat **einen** Befund geliefert, der als
+> Abmisch-Regel taugt: *Stimme in 6/6 Fällen klar über dem Bett — Musik verschluckt sie
+> nie.* Das ist die einzige, die die Gewinnerdaten überhaupt hergeben; die Zahl 12 dB
+> ist daraus abgeleitet, nicht gemessen.
+>
+> **Die eigenen Videos halten sie nur in Mono ein.** Gemessen am 2026-08-23:
+>
+> | | Bett | Stimme | Abstand |
+> |---|---|---|---|
+> | Mono-Summe (Handy, TV — 80 % des Publikums) | −31,0 dBFS | −19,0 dBFS | **12,0 dB** ✓ |
+> | je Kanal (Kopfhörer, Tablet, Desktop) | −25,8 dBFS | −19,0 dBFS | **6,8 dB** ✗ |
+>
+> Ursache ist der Stereoaufbau des Klangbetts, nicht die Pegelwahl: `bett_pad_feuer.flac`
+> trug R als L um 240 Samples versetzt, verlor dadurch beim Mono-Downmix 5,2 dB — und die
+> Pipeline normierte auf genau diesen Downmix. Die Stimme wird identisch in beide Kanäle
+> addiert und verliert nichts. Ausgeführt in
+> [`formel/video-formel.md`](formel/video-formel.md) §5b.
+>
+> **Warum es niemandem auffiel:** Gate 1, Prüfung 1.11 hat den Mono-Wert gemessen und
+> 12,0 dB gemeldet. Der Wert war richtig — er war nur nicht der einzige. Seit 2026-08-23
+> prüft 1.11 beide Fälle, und das alte Bett fällt damit durch.
+>
+> **Nicht reparierbar:** V01–V04 sind mit diesem Bett gerendert und veröffentlicht. Ab
+> V05 gilt das korrigierte Bett (`bett_mono_feuer_leise.flac`, echt mono). Ob der Fehler
+> etwas gekostet hat, ist aus diesen Daten nicht zu sehen — mit 6,8 dB steht die Stimme
+> immer noch über dem Bett, nur weniger deutlich als beabsichtigt.
+
 **H6 — Wenige CTAs (0–2) sind Teil des Gewinner-Musters.**
 Gewinner: 0–2 CTAs pro Video. Tote: C 4, D 7, H 3. Überlappt mit Genre-Problemen —
 nicht isolierbar. *Prüfkriterium: eigene Videos konstant ≤2 CTAs; nur ändern, wenn

@@ -65,6 +65,10 @@ chunk_pegel_angleichen = ja
 tts_parallel       = 12
 
 # --- Pegel (Formel §5b: Stimme in 6/6 Fällen klar über dem Bett) ---
+# Der Abstand wird seit 2026-08-23 in BEIDEN Wiedergabefällen geprüft:
+# Mono-Summe und je Kanal, beide >= abstand_soll_db. Vorher wurde nur die
+# Mono-Summe gemessen, und weil das alte Bett dort 5,2 dB verlor, meldete
+# qa_mix.json 12,0 dB, wo am Kopfhörer 6,8 dB standen (V01-V04).
 pegel_stimme_dbfs  = -19.0
 pegel_bett_dbfs    = -31.0
 abstand_soll_db    = 12.0
@@ -74,12 +78,26 @@ abstand_soll_db    = 12.0
 peak_max_dbfs      = -1.0
 ducking            = nein
 
-# --- Klangbett (Runde 2, dauerhaft) ---
-# Bitidentische FLAC-Kopie des in Runde 2 gehörten Betts. Bewusst als
-# ARTEFAKT abgelegt und nicht als Rezept: stimmtest/musikbett.py zieht die
-# Pad-Schicht aus einem UNGESEEDETEN np.random.randn - ein erneuter Lauf
-# ergäbe ein anderes Bett. Diese Datei nicht neu erzeugen.
-bett_datei         = produktion/klang/bett_pad_feuer.flac
+# --- Klangbett (Runde 2; Stereoaufbau korrigiert 2026-08-23) ---
+# Das Pad bleibt ein ARTEFAKT und kein Rezept: stimmtest/musikbett.py zieht
+# die Luftschicht aus einem UNGESEEDETEN np.random.randn, ein erneuter Lauf
+# ergäbe ein anderes Bett. Nicht neu erzeugen.
+#
+# 2026-08-23: bett_pad_feuer.flac trug R = L um 240 Samples versetzt (5,442 ms).
+# In der Mono-Summe - was 80 % des Publikums hört, 68 % Handy und 12 % TV -
+# ergab das einen Kammfilter mit der ersten Kerbe bei 91,9 Hz. Der drückte die
+# Quinte des Pads (82,5 Hz) 10,9 dB unter den Bauplan: ein anderer Akkord als
+# der im Hörtest ausgewählte. Details in formel/video-formel.md §5b.
+#
+# Das neue Bett ist ECHT MONO (L = R, kein Versatz) und trägt die Feuerschicht
+# 6 dB leiser mit Tiefpass bei 1,1 kHz (Variante e, entschieden vom
+# Kanalinhaber). Es ist AUS dem alten Artefakt herausgetrennt, nicht neu
+# erzeugt - das Pad ist dasselbe. Erzeugt mit
+#   python3 produktion/klang/klang_proben.py --produktionsbett
+# V01-V04 sind mit dem alten Bett gerendert; es bleibt deshalb liegen.
+bett_datei         = produktion/klang/bett_mono_feuer_leise.flac
+# nur zur Nachvollziehbarkeit von V01-V04, wird von der Pipeline nicht gelesen:
+bett_datei_alt     = produktion/klang/bett_pad_feuer.flac
 # Formel §3: Sprache beginnt in Sekunde 0-3 (n=24). Deshalb 1,5 s statt der
 # 4 s aus stimmtest/musik-prompt.md — siehe Konflikt-Notiz in der README.
 vorlauf_s          = 1.5

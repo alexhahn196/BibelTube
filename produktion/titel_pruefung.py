@@ -38,7 +38,11 @@ def inhalt(titel):
     t = titel.lower().replace("’", "'")
     t = re.sub(r"[^a-z' ]", " ", t)
     t = t.replace("you're", "you are").replace("don't", "do not")
-    t = t.replace("god's", "god").replace("isaiah's", "isaiah")
+    # Genitiv-s allgemein abtrennen, damit "Luke's" und "Luke" derselbe
+    # Inhaltstraeger sind. Vorher standen hier nur die beiden Einzelfaelle
+    # "god's" und "isaiah's"; die Verallgemeinerung aendert an keinem der
+    # acht dokumentierten Werte etwas (nachgerechnet 2026-08-23).
+    t = re.sub(r"(\w)'s\b", r"\1", t)
     woerter = [w.strip("'") for w in t.split()]
     return {stamm(w) for w in woerter if w and w not in STOPP and len(w) > 1}
 

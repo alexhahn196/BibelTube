@@ -30,6 +30,7 @@ beiden Faellen vermessen.
 
 Aufruf: python3 produktion/klang/klang_proben.py
 """
+import argparse
 import json
 import os
 
@@ -173,7 +174,38 @@ def mixpegel(feuerspur, g, schleife_s):
                 float(20 * np.log10(huelle.max() + 1e-12)) - PEGEL_STIMME_DBFS, 1)}
 
 
+def produktionsbett(pad, feuer_leise, ziel_mono_rms):
+    """Schreibt das neue Kanalbett nach Variante (e): echt mono, Feuer leiser.
+
+    Das Pad ist bitgleich das Pad des alten Betts - es wird nicht neu erzeugt,
+    sondern aus dem Artefakt herausgetrennt. Geaendert sind genau zwei Dinge:
+    der Stereoversatz faellt weg, und die Feuerschicht liegt 6 dB tiefer mit
+    Tiefpass bei 1,1 kHz.
+    """
+    mono = pad + feuer_leise
+    g = 10 ** (ziel_mono_rms / 20) / 10 ** (rms_db(mono) / 20)
+    st = np.stack([mono * g, mono * g], axis=1)
+    ziel = "produktion/klang/bett_mono_feuer_leise.flac"
+    sf.write(ziel, st, SR, subtype="PCM_16")
+    print(f"\n{ziel}")
+    print(f"  {len(mono)/SR:.1f} s, {SR} Hz, L = R (kein Versatz)")
+    print(f"  RMS je Kanal {rms_db(st[:,0]):.2f} dBFS = RMS der Mono-Summe "
+          f"{rms_db(st.mean(axis=1)):.2f} dBFS")
+    print(f"  Peak {20*np.log10(np.abs(st).max()):.2f} dBFS")
+    n = naht_kennzahlen(np.concatenate([mono, mono]), len(mono))
+    print(f"  Loop-Naht: Sprung {n['nahtsprung']:.6f} = {n['nahtsprung_perzentil']:.1f}. "
+          f"Perzentil, Nulldurchgang {n['nulldurchgang_ms']} ms")
+    bal = akkordbalance(st)
+    print("  Akkord in der Mono-Summe (Soll: -5,26 / -5,26 / -11,88 / -16,75):")
+    print("    " + " · ".join(f"{k.split()[0]} {v:+.2f}" for k, v in bal.items() if k != "Grundton A1"))
+    return ziel
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--produktionsbett", action="store_true",
+                    help="statt der Proben das neue Kanalbett schreiben (Variante e)")
+    args = ap.parse_args()
     os.makedirs(ZIEL, exist_ok=True)
     y, sr = sf.read(BETT, dtype="float64", always_2d=True)
     if sr != SR:
@@ -194,6 +226,10 @@ def main():
     print(f"  Pad {rms_db(pad):.2f} | Feuer {rms_db(feuer):.2f} dBFS | "
           f"Rekonstruktionsfehler {rms_db(L-(pad+feuer)):.2f} dBFS\n")
     feuer_leise = 10 ** (FEUER_DB / 20) * tiefpass_geloopt(feuer, FEUER_TIEFPASS_HZ)
+
+    if args.produktionsbett:
+        produktionsbett(pad, feuer_leise, ziel_mono_rms)
+        return
 
     def versetzt(mono):
         return np.stack([mono, np.roll(mono, STEREO_VERSATZ)], axis=1)

@@ -38,7 +38,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.8 | **160×90-Kontrolle** | Text in einer Sekunde erfassbar, Lichtquelle erkennbar | Checkliste | Sichtprüfung am Handy |
 | 1.9 | **Sprechbeginn** | Sekunde 0–3, kein Musikintro | Formel §3 PFLICHT (n=24; Gewinner 0,1–3,1 s) | `vorlauf_s` in `config.md`, nachgemessen in `schritt6_srt.py` (erste Kachel) |
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
-| 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen — **in Mono UND je Kanal** | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet**. Der Zusatz „je Kanal" ist neu (2026-08-23): `qa_mix.json` misst nur den Mono-Downmix und meldete 12 dB, wo am Kopfhörer 6,8 dB standen. | `schritt3_bett.py` |
+| 1.11 | **Pegelabstand** | Stimme ≥ 12 dB über dem Bett, über Sprachabschnitte gemessen — **in der Mono-Summe UND je Kanal, beide Werte** | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet**. Zwei Werte statt einem seit 2026-08-23: `qa_mix.json` maß nur den Mono-Downmix und meldete 12,0 dB, wo am Kopfhörer 6,8 dB standen (V01–V04). | `schritt3_bett.py`, meldet `abstand_eingehalten_mono` und `abstand_eingehalten_je_kanal` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
 | 1.13 | **Korpusart** | Erzählanteil ≥ 80 %, und der größte Block ist selbst Erzählung | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | `produktion/korpus_pruefung.py` |
 | 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
@@ -47,6 +47,28 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
 (Schritt 3). Beide liegen aber **vor** dem teuren Teil — TTS und Montage —
 und beide brechen die Pipeline hart ab, wenn sie reißen.
+
+### Audit 2026-08-23: welche Prüfung deckt nur einen Wiedergabefall ab?
+
+Anlass war 1.11 — die Prüfung maß den Mono-Downmix und meldete 12,0 dB, wo am
+Kopfhörer 6,8 dB standen. Die Frage dahinter gilt für jede Prüfung: **wir messen den
+Master, der Zuschauer bekommt etwas Umgerechnetes.** Alle Prüfungen daraufhin
+durchgegangen:
+
+| # | misst | was beim Zuschauer ankommt | Befund |
+|---|---|---|---|
+| **1.11** | Mono-Downmix des Betts | Mono (80 %) **und** je Kanal (20 %) | **Echte Lücke. Behoben** — prüft jetzt beide, beide ≥ 12 dB. |
+| 1.5 | Versalhöhe in % der Bildhöhe | jede Anzeigegröße | Keine Lücke: ein Prozentwert skaliert mit. |
+| 1.6 | Kontrast im 1920×1080-Master | Feed-Größe 160×90 | **Geprüft, keine Lücke.** Gemessen an allen fünf gebauten Thumbnails: 0,9–3,2 % Kontrastverlust beim Verkleinern. Der Grund ist 1.5 — bei 11,5 % Versalhöhe sind die Striche auch bei 160×90 mehrere Pixel breit. |
+| Peak (`peak_max_dbfs`) | je Kanal, über beide | Mono-Summe kann nicht lauter sein | Keine Lücke: (L+R)/2 ≤ max(\|L\|,\|R\|), je Kanal ist der konservative Fall. |
+| 1.1, 1.2, 1.3, 1.4, 1.7, 1.9, 1.10, 1.12, 1.13, 1.14 | Text, Titel, Wortzahl, Motiv | unverändert | Kein Wiedergabefall im Spiel. |
+
+**Eine strukturelle Lücke bleibt und ist nicht geschlossen:** Gate 1 prüft das
+**Thumbnail** und die **Tonspur**, aber nichts an der **encodierten Videospur**. Ob der
+Nachthimmel nach `libx264 -crf 28` auf einem großen Schirm Streifen zeigt, misst keine
+Prüfung — das ist dieselbe Fehlerklasse wie 1.11, nur an anderer Stelle: geprüft wird
+die Quelle, ausgeliefert wird das Encodat. Der Banding-Test dazu läuft; ob daraus eine
+Prüfung 1.15 wird, ist noch nicht entschieden.
 
 **Die zweite Hälfte von 1.2 ist neu (2026-08-23) und stammt aus einem konkreten
 Beinahe-Fehler.** Bei der Titelsuche für V05 lag der zunächst empfohlene Kandidat mit
