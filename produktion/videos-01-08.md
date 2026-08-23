@@ -693,10 +693,17 @@ Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
 **Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
 Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
-**Text:** `YOU'RE TIRED` (2 Wörter)
+**Text:** `GOSPEL OF LUKE` (3 Wörter)
 
 > **2026-08-06:** getauscht mit Video 03, das jetzt das Wassermotiv trägt.
 > Begründung: siehe Video 03.
+>
+> **2026-08-23:** Zeile von ~~`YOU'RE TIRED`~~ auf `GOSPEL OF LUKE` geändert —
+> Entscheidung des Kanalinhabers, damit Titel und Thumbnail denselben Eigennamen
+> führen (Formel §1). Nachgemessen mit der Methode aus `thumbnail.py`, FreeSerif
+> Bold @ 184 px, Versalhöhe 125 px: **1607 px** breit, 156 px Rand je Seite —
+> 2 px schmaler als `GOSPEL OF JOHN` bei Video 03 (1609 px). Die Serie bleibt in
+> der Zeilenbreite deckungsgleich. Tabelle in `produktion/motive/README.md`.
 
 ### Beschreibung
 

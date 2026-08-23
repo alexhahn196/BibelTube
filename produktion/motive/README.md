@@ -124,18 +124,36 @@ in FreeSerif Bold @ 184 px, der schmalsten der drei installierten Serifen.
 | V02 | `QUIET YOUR MIND` | 15 | 1726 px | 97 px | |
 | V03 | `GOSPEL OF JOHN` | 14 | 1609 px | 155 px | |
 | V04 | `THINK NO MORE` | 13 | 1548 px | 186 px | gekürzt |
-| V05 | `YOU'RE TIRED` | 12 | 1328 px | 296 px | |
-| V06 | `ISAIAH TONIGHT` | 14 | 1565 px | 177 px | |
-| V07 | `NO MORE STRESS` | 14 | 1624 px | 148 px | gekürzt |
+| V05 | ~~`YOU'RE TIRED`~~ → **`GOSPEL OF LUKE`** | 14 | **1607 px** | 156 px | geändert 2026-08-23 |
+| V06 | ~~`ISAIAH TONIGHT`~~ | 14 | 1565 px | 177 px | **hinfällig, Korpus wird neu geschnitten** |
+| V07 | ~~`NO MORE STRESS`~~ | 14 | 1624 px | 148 px | **hinfällig, Korpus wird neu geschnitten** |
 | V08 | `IN THE BEGINNING` | 16 | 1750 px | 85 px | knapp |
 
-**Alle acht liegen unter 1840 px — kein weiterer Textfall ist offen.**
+**Alle liegen unter 1840 px — kein Textfall ist offen.**
+
+> **Nachtrag 2026-08-23** *(eigene Kanaldaten Gate 2)*. Drei Zeilen sind
+> überholt:
+> - **V05** trägt jetzt `GOSPEL OF LUKE` — Entscheidung des Kanalinhabers, damit
+>   Titel und Thumbnail denselben Eigennamen führen. Mit **1607 px** liegt die
+>   Zeile 2 px unter `GOSPEL OF JOHN` (V03, 1609 px); die Serie bleibt in der
+>   Zeilenbreite deckungsgleich. Neu gemessen mit derselben Fontkette
+>   (FreeSerif Bold @ 184 px, Versalhöhe 125 px).
+> - **V06 und V07** hängen an Korpora, die M8 verletzen bzw. grenzwertig sind
+>   (`videos-01-08.md`). Ihre Thumbnail-Zeilen werden erst festgelegt, wenn die
+>   Korpusentscheidung gefallen ist.
+>
+> **Offen und bewusst nicht entschieden:** ob der Eigenname aus Formel §1 auch
+> im **Thumbnail** Pflicht ist oder nur im Titel. §1 regelt den Titel. V03 und
+> jetzt V05 führen ihn in beiden; V08 (`IN THE BEGINNING`) spielt auf Genesis an,
+> ohne das Buch zu nennen. Solange der Wirkmechanismus des Eigennamens ungeklärt
+> ist (§1, „die sparsamere Erklärung"), ist das keine dringende Frage — aber es
+> ist eine.
 
 Quellen: V01–V04 aus den Messdateien der gebauten Thumbnails
 (`produktion/video-0?/thumbnail*_messung.json`), nicht neu gemessen.
 V05–V08 mit der Methode aus `thumbnail.py` gerechnet (gleiche Fontkette,
 gleiche 125 px Versalhöhe) — bisher ohne Bild, weil diese Videos erst nach
-Gate 2 starten.
+Gate 2 starten. `GOSPEL OF LUKE` am 2026-08-23 auf demselben Weg nachgemessen.
 
 Zwei Zeilen mussten weichen, beide dokumentiert in `videos-01-08.md`:
 `NO MORE THINKING` (1896 px, 56 px zu breit) → `THINK NO MORE`, und
