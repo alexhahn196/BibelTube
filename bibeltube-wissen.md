@@ -1262,50 +1262,91 @@ Varianten stehen unten; entschieden ist noch nichts.
 
 *Gerechnet am 2026-08-23 mit `produktion/korpus_pruefung.py` gegen die gemessenen
 Wortzahlen in `produktion/korpus/kapitel.json` (723 Kapitel, keine Lücken). Alle vier
-bestehen Gate-1-Prüfung 1.1 und 1.13 und überschneiden sich mit keinem anderen Video.*
+bestehen Gate-1-Prüfung 1.1 und 1.13 und überschneiden sich mit keinem anderen Video.
+**Die Reihenfolge in der Spalte „Korpus" ist Teil des Vorschlags, nicht Zufall** —
+Begründung unten.*
 
-| | Korpus | Wörter | Erzählanteil | Laufzeit @140 | Kapitel |
+| | Korpus, in Lesereihenfolge | Wörter | Erzählanteil | Laufzeit @140 | endet auf |
 |---|---|---|---|---|---|
-| **V06-A** | Apostelgeschichte + Rut + Ester | **30.987** | **100,0 %** | 3,69 h | 42 |
-| **V06-B** | Apostelgeschichte + Rut + Jona + Daniel 4–6 | **29.971** | 99,3 % | 3,57 h | 39 |
-| **V07-A** | Markus + Exodus 1–20 + Jona | **30.007** | 99,3 % | 3,57 h | 40 |
-| **V07-B** | Markus + 1. Samuel 1–20 | **30.294** | **100,0 %** | 3,61 h | 36 |
+| **V06-A** | Apostelgeschichte → Ester → Rut | **30.987** | **100,0 %** | 3,69 h | Rut 4,22 (Genealogie auf David) |
+| **V06-B** | Apostelgeschichte → Ester 1–8 → Rut | **29.940** | **100,0 %** | 3,56 h | Rut 4,22 |
+| **V07-A** | Markus → 1. Könige 3–16 → Jona | **29.564** | 99,3 % | 3,52 h | Jona 4,11 (offene Frage) |
+| **V07-B** | Markus → 1. Könige 3–19 | **30.880** | **100,0 %** | 3,68 h | 1. Kön 19,21 (Elisa folgt Elija) |
 
-Die fehlenden 0,7 % bei B und V07-A sind **Jona 2** — ein Gebet in Psalmenform,
-5 Minuten lang. Bei V06-B kommt nichts weiter dazu: Daniel 4–6 ist Erzählung
-(Nebukadnezars Wahnsinn, das Menetekel, die Löwengrube), erst Daniel 7–12 sind Visionen.
+**Alle vier Kombinationen sind kollisionsfrei.** V06 belegt Ester und Rut, V07-A
+zusätzlich Jona, V07-B gar kein Kurzbuch — es gibt keine Kopplung zu beachten.
 
-**Was die beiden V06-Varianten unterscheidet: Ester 9.** Das Kapitel schildert im
-Wortlaut, wie 75.000 Menschen getötet und Hamans zehn Söhne gehängt werden — nachgelesen
-im WEBBE-Text, nicht behauptet. In einem Video, das Ruhe verkauft, ist das die härteste
-Passage, die dieser Kanal je gesendet hätte. **V06-A nimmt sie in Kauf** (dafür drei
-vollständige Bücher ohne einen einzigen Schnitt), **V06-B vermeidet Ester ganz** (dafür
-vier Bausteine statt drei).
-*Dritter Weg, ebenfalls durchgerechnet:* **Apostelgeschichte + Rut + Ester 1–8** —
-29.940 W, 100,0 %, 3,56 h. Ester endet bei 8,17, die Rettung ist vollzogen, die
-Vergeltung fällt weg. Kostet einen Schnitt im Buchinneren und 1.047 Wörter (7,5 min).
+#### Warum die Reihenfolge in der Tabelle steht
 
-**Was die beiden V07-Varianten unterscheidet: wo geschnitten wird.**
-**V07-A** schneidet Exodus nach Kapitel 20 — das ist keine Kürzung, sondern eine
-**Gattungsgrenze**: ab 21 folgen Bundesbuch, Stiftshüttenplan und dessen Ausführung,
-also genau das Material, das M8 ausschließt. **V07-B** schneidet 1. Samuel nach
-Kapitel 20 mitten im Buch (Abschied von David und Jonatan), dafür kommt es mit zwei
-Bausteinen aus.
+Der **Schlussblock ist die teuerste Position im Video**. Er läuft, wenn der Hörer
+entweder schläft oder im leichtesten Schlaf liegt, und er ist das Letzte, was von
+3,5 Stunden hängenbleibt. Dieselben drei Bücher in anderer Reihenfolge sind deshalb
+nicht dieselbe Entscheidung. Konkret, alles im WEBBE-Text nachgelesen:
 
-**Kompatibilität — eine Kombination geht nicht:**
+- **Ester am Schluss** hieße, das Video auf 9,5–16 enden zu lassen — 500 Erschlagene in
+  Susa, Hamans zehn Söhne gehängt, insgesamt 75.000 Tote. Mit **Rut am Schluss** endet
+  es auf *„and Obed became the father of Jesse, and Jesse became the father of David"*.
+- **Daniel 4–6 am Schluss** wäre 6,24: die Ankläger *„them, their children, and their
+  wives; and the lions mauled them, and broke all their bones in pieces"*. Deshalb steht
+  Daniel in keiner der beiden V06-Varianten mehr.
+- **1. Könige am Schluss** wäre 16,34 (Hiel verliert beim Bau Jerichos seinen ältesten
+  und seinen jüngsten Sohn) — in V07-A fängt Jona das ab, in V07-B verschiebt der
+  Schnitt bei 19 das Ende auf Elisas Berufung.
 
-| | V07-A (Exodus + Jona) | V07-B (1. Samuel) |
-|---|---|---|
-| **V06-A** (Rut + Ester) | ✅ | ✅ |
-| **V06-B** (Rut + Jona + Daniel) | ❌ Jona doppelt | ✅ |
+#### Was die beiden V06-Varianten unterscheidet: Ester 9
 
-**Ein struktureller Befund, der für jede V07-Variante gilt:** Markus hat 14.261 Wörter.
-Damit der Korpus die Untergrenze von 29.000 erreicht, muss der Rest mindestens 14.739
-beitragen — **mehr als Markus selbst.** Markus liegt in jeder gültigen V07-Variante
-zwischen **45,3 % und 49,2 %** des Korpus und kann die Hälfte rechnerisch nie tragen.
-Der Titel nennt also unvermeidlich den kleineren Teil. Das ist kein Fehler der Auswahl,
-sondern eine Folge davon, dass Markus das kürzeste Evangelium ist; die Beschreibung muss
-den zweiten Block deshalb ausdrücklich benennen.
+Beide sind identisch bis auf die letzten zwei Kapitel Esters. **A** liest Ester
+vollständig — drei ganze Bücher, kein einziger Schnitt, kanonisch die sauberste
+Variante. **B** endet Ester bei 8,17: *„the Jews had gladness, joy, a feast and a
+holiday"*. Die Rettung ist vollzogen, die Vergeltung fällt weg. Kosten: ein Schnitt im
+Buchinneren und 1.047 Wörter (7,5 min).
+
+#### Was die beiden V07-Varianten unterscheidet: ob ein Kurzbuch mitkommt
+
+**A** braucht Jona, um ins Band zu kommen, und gewinnt dadurch den besten Schluss im
+ganzen Feld — Jona 4,11 ist eine offene Frage Gottes über eine Stadt und ihr Vieh, kein
+Gericht. **B** kommt mit zwei Bausteinen aus und lässt alle Kurzbücher frei; der
+Schnitt bei 1. Könige 19 ist ein echter Erzählabschluss (Elijas Nachfolge geregelt,
+vor dem Ahab-Kriegszyklus in 20–22).
+
+Beide beginnen 1. Könige bei **3,1** und nicht bei 1,1. Das ist Absicht: Kapitel 1–2
+sind Abischag und die Säuberung an Adonija, Joab und Schimi. Der Einstieg bei 3,5 —
+*„In Gibeon, the LORD appeared to Solomon in a dream by night"* — ist für einen Kanal
+namens *The Nightly Word* die passendste Übergangsstelle, die das Material hergibt.
+In V07-B kommt 19,11–12 dazu, die Stimme, die weder im Sturm noch im Erdbeben noch im
+Feuer ist.
+
+**Was in beiden V07-Varianten drinbleibt und nicht wegzuschneiden ist:** 18,40, Elija
+lässt die 450 Baalspropheten am Bach Kischon töten. Es liegt in der Videomitte, nicht
+am Schluss — aber es ist da.
+
+#### Was hier verworfen wurde und warum
+
+Ein erster Vorschlag lautete **V07 = Markus + Exodus 1–20 + Jona** bzw.
+**Markus + 1. Samuel 1–20**. Beide sind arithmetisch einwandfrei und beide sind an der
+Tonprüfung gescheitert — auch das im Text nachgelesen:
+
+- **Exodus 1–20** trägt 1,22 (*„You shall cast every son who is born into the river"*),
+  4,24–26 (*„the LORD met Moses and wanted to kill him"* — der Blutbräutigam), die
+  Plagen 7–10 und den Tod der Erstgeburt. Das ist die angsterzeugendste zusammenhängende
+  Strecke im ganzen verfügbaren Material, und sie läge vollständig im Schlaffenster.
+- **1. Samuel 1–20** trägt 15,3: *„kill both man and woman, infant and nursing baby"* —
+  ein Ausrottungsbefehl im Gottesmund, bei rund 3 Stunden Laufzeit mit warmer
+  Flüsterstimme gelesen. 1. Samuel 1–22 wäre schlimmer: es endet auf 22,18–19, dem
+  Priestermord von Nob einschließlich *„children and nursing babies"*.
+
+Das ist **kein Regelbruch** — M5 und V5 regeln die *Rahmung*, nicht den Bibeltext, und
+der Text wird nach V4 wörtlich gelesen, nicht geglättet. Es ist eine Nischenfrage: der
+Kanal verkauft Ruhe.
+
+#### Ein struktureller Befund, der für jede V07-Variante gilt
+
+Markus hat 14.261 Wörter. Damit der Korpus die Untergrenze von 29.000 erreicht, muss der
+Rest mindestens 14.739 beitragen — **mehr als Markus selbst.** Markus liegt in jeder
+gültigen V07-Variante zwischen **45,3 % und 49,2 %** des Korpus und kann die Hälfte
+rechnerisch nie tragen. Der Titel nennt also unvermeidlich den kleineren Teil. Das ist
+kein Fehler der Auswahl, sondern eine Folge davon, dass Markus das kürzeste Evangelium
+ist; die Beschreibung muss den zweiten Block deshalb ausdrücklich benennen.
 
 Was danach noch fehlt, sobald entschieden ist: neue Titel mit Eigenname, neue
 Eingangsgebete, neue Thumbnail-Zeilen, und `produktion/korpus/plan.json` nachziehen.
