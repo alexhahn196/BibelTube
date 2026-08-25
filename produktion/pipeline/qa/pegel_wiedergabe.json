@@ -1,0 +1,22 @@
+{
+ "bett_datei": "produktion/klang/bett_pad_feuer.flac",
+ "bett_dauer_s": 56.0,
+ "bett_samplerate": 44100,
+ "bett_kanaele": 2,
+ "bett_korrelation_LR": -0.39579,
+ "bett_rms_roh_mono_dbfs": -31.198,
+ "bett_rms_roh_kanal_dbfs": -26.0,
+ "downmix_verlust_db": 5.198,
+ "gain_bett_db": 0.198,
+ "stimme_dbfs": -19.0,
+ "stimme_quelle": "config.md: pegel_stimme_dbfs (Sollwert)",
+ "bett_mono_dbfs": -31.0,
+ "bett_stereo_kanal_dbfs": -25.802,
+ "abstand_mono_db": 12.0,
+ "abstand_stereo_db": 6.8,
+ "soll_abstand_db": 12.0,
+ "toleranz_db": 1.0,
+ "mono_eingehalten": true,
+ "stereo_eingehalten": false,
+ "bestanden": false
+}
