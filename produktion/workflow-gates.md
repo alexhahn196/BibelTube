@@ -172,6 +172,15 @@ Jede Kennzahl in einem Dokument bekommt die Datei dazu, aus der sie stammt.
 Eine Zahl ohne Dateiangabe ist ab hier eine Absicht — egal, wie sicher sie
 klingt und wie oft sie schon zitiert wurde.
 
+### Was die erste Anwendung der Regel ergeben hat
+
+Der Befund wurde sofort auf das ganze Repository angewandt:
+[`messdatei-audit-2026-08-25.md`](messdatei-audit-2026-08-25.md). 218 Zahlenwerte
+geprüft, 150 bestätigt, 59 in der Gegenprüfung gefallen. 37 der bestätigten sind
+als bindende Vorgabe weitergegeben. Die drei schwersten — Zahlen ohne jede
+Messdatei, die trotzdem als Grenze gelten — sind die Thumbnail-Wortgrenze
+(`formel/thumbnail-checkliste.md`), Gate 1.4 und der Gate-2-Auslöser.
+
 ### Bekannte Lücke: die Renderwerte sind nicht eingecheckt
 
 `produktion/arbeit/` steht in `.gitignore`. Alle QA-Dateien eines
