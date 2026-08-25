@@ -124,12 +124,17 @@ in FreeSerif Bold @ 184 px, der schmalsten der drei installierten Serifen.
 | V02 | `QUIET YOUR MIND` | 15 | 1726 px | 97 px | |
 | V03 | `GOSPEL OF JOHN` | 14 | 1609 px | 155 px | |
 | V04 | `THINK NO MORE` | 13 | 1548 px | 186 px | gekürzt |
-| V05 | ~~`YOU'RE TIRED`~~ → **`GOSPEL OF LUKE`** | 14 | **1607 px** | 156 px | geändert 2026-08-23 |
-| V06 | ~~`ISAIAH TONIGHT`~~ | 14 | 1565 px | 177 px | **hinfällig, Korpus wird neu geschnitten** |
-| V07 | ~~`NO MORE STRESS`~~ | 14 | 1624 px | 148 px | **hinfällig, Korpus wird neu geschnitten** |
-| V08 | `IN THE BEGINNING` | 16 | 1750 px | 85 px | knapp |
+| V05 | **`GOSPEL OF LUKE`** | 14 | **1659 px** | 130 px | gebaut 2026-08-25, 129 px |
+| V06 | ~~`ISAIAH TONIGHT`~~ | 14 | 1616 px | 152 px | **hinfällig, Korpus wird neu geschnitten** |
+| V07 | ~~`NO MORE STRESS`~~ | 14 | 1677 px | 121 px | **hinfällig, Korpus wird neu geschnitten** |
+| V08 | `IN THE BEGINNING` | 16 | 1807 px | 56 px | knapp |
 
 **Alle liegen unter 1840 px — kein Textfall ist offen.**
+
+> **Die Werte für V05–V08 sind seit 2026-08-25 bei 129 px Versalhöhe gerechnet**
+> (vorher 125). Grund: `thumbnail.py` trennt jetzt Prüfgrenze (11,5 %) und Zielwert
+> (11,9 %, B-Median) — siehe `formel/thumbnail-checkliste.md`. V01–V04 in der Tabelle
+> darüber stehen weiter bei 125 px, sie sind so veröffentlicht.
 
 > **Nachtrag 2026-08-23** *(eigene Kanaldaten Gate 2)*. Drei Zeilen sind
 > überholt:

@@ -1151,7 +1151,7 @@ Erfolg und dem geringsten Streuungsrisiko:
 
 | Größe | Zielwert | Belegte Spanne | Fallzahl |
 |---|---|---|---|
-| **Versalhöhe** | **≥ 11,5 % der Bildhöhe** (≈ 83 px bei 720p, ≈125 px bei 1080p) | 9,9–12,1 %, Median 11,9 % | 13 |
+| **Versalhöhe** | **≥ 11,5 % der Bildhöhe** (≈ 83 px bei 720p, ≈125 px bei 1080p) — **gesetzt wird auf 11,9 %**, siehe unten | 9,9–12,1 %, Median 11,9 % | 13 |
 | **Kontrast Text/Hintergrund** | **≥ 10:1** | 10,1–17,5:1, Median 15,4:1 | 13 |
 | **Wortzahl** | **maximal 4 Wörter** | Gewinner 0–4 | 21 |
 
@@ -1162,6 +1162,27 @@ und Verlierer sauber trennt.
 Der Kontrastwert 10:1 ist bewusst hoch angesetzt: WCAG verlangt 4,5:1, die Gewinner-Serie
 liefert aber durchgehend das Doppelte bis Dreifache. Du hast keinen Grund, unter ihren
 schlechtesten Wert (10,1) zu gehen.
+
+> ### Grenze und Zielwert sind nicht dasselbe (2026-08-25)
+>
+> Die **11,5 %** oben sind die **Prüfgrenze** — darunter fällt ein Thumbnail durch.
+> Der **Median der B-Serie liegt bei 11,9 %** (n=13), und das ist das Vorbild.
+>
+> Bis heute hat `thumbnail.py` beides vermischt und direkt auf der Grenze gesetzt:
+> `ceil(1080 × 11,5 %)` = **125 px = 11,57 %**. Das sind **0,8 Pixel** Reserve. Jede
+> spätere Änderung an Schrift, Auflösung oder Rundung hätte die eigene Prüfung
+> gekippt, ohne dass jemand etwas falsch gemacht hätte — eine Prüfung, die ihr
+> eigenes Ergebnis gerade so besteht, prüft nichts.
+>
+> Seit 2026-08-25 sind es zwei Konstanten: `CAP_MIN_PCT = 11.5` (Grenze, aus dieser
+> Checkliste) und `CAP_ZIEL_PCT = 11.9` (Zielwert, B-Median). Gesetzt wird damit auf
+> `ceil(1080 × 11,9 %)` = **129 px = 11,94 %**, also **4,8 Pixel** Reserve.
+>
+> **Gilt ab V05.** V01–V04 sind mit 125 px veröffentlicht und bleiben so. Geprüft,
+> dass die Mehrhöhe keine geplante Zeile über die 1840-px-Breitengrenze schiebt:
+> V05 1659 px · V06 1616 · V07 1677 · V08 1807 — alle passen. V01s Zeile
+> (`SO TIRED TONIGHT`) läge bei 1845 px und würde reißen; sie ist aber gebaut und
+> bleibt bei 125 px.
 
 ---
 
