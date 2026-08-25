@@ -143,14 +143,26 @@ zoom_zyklus_s      = 300
 video_crf          = 28
 video_preset       = medium
 # Pixelformat der Videospur. yuv420p = 8 Bit, yuv420p10le = 10 Bit.
-# Gemessener Banding-Befund 2026-08-23 (produktion/motive/bandingtest/):
-# bei CRF 28 verliert der Nachthimmel in 8 Bit sieben der 48 Luma-Stufen im
-# dunklen Bereich, die groesste einfarbige Flaeche waechst gegenueber dem
-# Quellbild um Faktor 90. In 10 Bit bleiben alle 48 Stufen, der Faktor faellt
-# auf 15, und die Datei wird KLEINER (4,92 statt 6,62 MB je 300-s-Zyklus).
-# NICHT umgestellt: yuv420p10le ist H.264 High 10, und ob YouTubes Ingest das
-# annimmt, ist ungeprueft. Umstellung ist eine Zeile - erst nach einem Test.
-video_pixelformat  = yuv420p
+#
+# Umgestellt auf 10 Bit am 2026-08-23 (Entscheidung des Kanalinhabers).
+# Gemessener Banding-Befund, produktion/motive/bandingtest/: bei CRF 28
+# verliert der Nachthimmel in 8 Bit sieben der 48 Luma-Stufen im dunklen
+# Bereich - das ist Wertebereichs-Arithmetik (48 x 219/255 = 41,2) und durch
+# keine Bitrate zu beheben. In 10 Bit bleiben alle 48, die groesste einfarbige
+# Flaeche faellt von Faktor 90 auf 15 gegenueber dem Quellbild, und die Datei
+# wird KLEINER (4,92 statt 6,62 MB je 300-s-Zyklus).
+#
+# WICHTIGER VORBEHALT: YouTube encodiert alles neu, meist VP9/AV1 in 8 Bit.
+# Der lokal gemessene Wert ist NICHT das, was der Zuschauer sieht. 10 Bit hilft
+# nur indirekt - ein bandingfreier Quellstrom gibt dem YouTube-Encoder nichts
+# zum Verstaerken. Ob das ankommt, ist erst nach dem Upload nachweisbar.
+#
+# Zweiter offener Punkt: yuv420p10le ist H.264 High 10. Ob YouTubes Ingest das
+# annimmt, ist von hier aus nicht pruefbar. Faellt der Upload durch, ist der
+# getestete Rueckfallweg yuv420p bei video_crf = 22 (0,99 GB statt 0,55 GB,
+# Fleckenfaktor 28 statt 90). Dither ist KEIN Rueckfallweg - gemessen
+# schlechter als der Ist-Zustand.
+video_pixelformat  = yuv420p10le
 audio_bitrate      = 192k
 
 # --- Laufzeit (Formel §2) ---

@@ -30,6 +30,14 @@ Dither hilft NICHT: sowohl `noise=alls=4` als auch `-tune grain` haben die
 Fleckengroesse verschlechtert (109x bzw. 113x). Der Grund ist derselbe wie
 unter 1 - beide arbeiten in 8 Bit, wo die Stufen schon fehlen.
 
+GRENZE DIESER MESSGROESSE: sie misst Flachheit, und Rauschen macht flach
+unflach. Am unencodierten Standbild senkt `noise=alls=4` den Wert allein
+schon um Faktor 5 (0,0124 -> 0,0025 %), ohne jeden Encode. Der Vergleich
+8 Bit gegen 10 Bit ist davon nicht betroffen (keine der beiden ist
+gedithert), und der Stufenwert erst recht nicht. Die Dither-Varianten sind
+konfundiert - aber zu ihren Gunsten: haette das Rauschen den Encode
+ueberlebt, waere ihr Wert gesunken statt gestiegen.
+
 Aufruf:  python3 produktion/motive/banding_test.py [--encode]
          Ohne --encode werden nur vorhandene Testdateien vermessen.
 """
