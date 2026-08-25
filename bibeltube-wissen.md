@@ -2018,7 +2018,7 @@ Support the channel: [Spendenlink]
 
 # Video 05
 
-**Titel:** `You're Tired, I Know… Sleep to the Whole Story, Read Slowly`
+**Titel:** `You're Tired, I Know… Luke's Whole Story, Read Slowly Until Morning`
 **Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1). Titel muss
 vor dem Bau angepasst werden; „Gospel of Luke" ist der Name des eigenen Korpus.
 Thumbnail-Text, Beschreibung und Tags ziehen mit.
@@ -2027,11 +2027,24 @@ Thumbnail-Text, Beschreibung und Tags ziehen mit.
 **Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
 Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
-> **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Sleep to the Story of Jesus
-> Tonight". Damit lag der Titel bei 71,4 % gemeinsamer inhaltstragender Wörter mit
-> A's „You're Tired, I Know... Jesus Watches Over You Tonight" (233K) —
-> geteilt: *know, tired, you, jesus, tonight*. Über der 50-%-Grenze. „Jesus" und
-> „Tonight" sind gestrichen, der belegte Anker bleibt. Jetzt 50,0 %.
+> **Abgrenzung, Stand 2026-08-23 (freigegeben).** Zwei Runden:
+>
+> 1. Ursprünglich „…Sleep to the Story of Jesus Tonight" — 71,4 % gegen A's 233K-Titel.
+>    „Jesus" und „Tonight" gestrichen → „…Sleep to the Whole Story, Read Slowly",
+>    **50,0 %**. Das lag genau auf der Gate-Grenze (`<= 50 %`) und wäre bei der für
+>    V05 vorgegebenen 45-%-Schranke durchgefallen.
+> 2. Dazu kam die Eigennamen-Pflicht (Formel §1). Die naheliegende Fassung
+>    „…The Gospel of Luke, Read Slowly Until Morning" hält zwar 33,3 % gegen die
+>    Gewinner, liegt aber bei **44,4 % gegen C's totes Mashup** *„You're tired, I
+>    know… Rest to the Gospel of John"* (17 Aufrufe) — näher an der Kopie als an
+>    jedem Original. Es ist das Wort **„Gospel"**, das die Nähe erzeugt, nicht der
+>    Anker.
+>
+> **Gewählt:** „Luke's Whole Story" statt „The Gospel of Luke". Der belegte Anker
+> (A, 201K) bleibt, der Eigenname bleibt, und alle drei Messungen fallen auf
+> **30,0 / 30,0 / 30,0 %** (Gewinner / eigener Katalog / Kopisten) — der
+> ausgeglichenste Wert im ganzen Feld. Gemessen mit
+> `produktion/titel_kandidaten.py`.
 
 **Textkorpus:** Lukas + Prediger
 **Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS

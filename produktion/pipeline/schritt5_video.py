@@ -48,7 +48,7 @@ def pixelformat(cfg):
     Die Umstellung ist nicht entschieden: yuv420p10le ist H.264 High 10, und
     ob YouTubes Ingest das annimmt, ist ungeprueft.
     """
-    return str(cfg.get("video_pixelformat", "yuv420p"))
+    return str(cfg["video_pixelformat"])
 
 
 def zyklus_bauen(bild, ziel, cfg):
@@ -66,7 +66,7 @@ def zyklus_bauen(bild, ziel, cfg):
         vf = f"scale={cfg['breite']}:{cfg['hoehe']},format={pixelformat(cfg)}"
     cmd = ["ffmpeg", "-y", "-loglevel", "error",
            "-loop", "1", "-framerate", str(fps), "-t", str(T), "-i", bild,
-           "-vf", vf, "-c:v", "libx264", "-preset", str(cfg.get("video_preset", "medium")),
+           "-vf", vf, "-c:v", "libx264", "-preset", str(cfg["video_preset"]),
            "-crf", str(int(cfg["video_crf"])), "-g", str(fps * 10),
            "-pix_fmt", pixelformat(cfg), "-an", ziel]
     subprocess.run(cmd, check=True)
@@ -135,7 +135,7 @@ def main():
         raise SystemExit(f"Mischung fehlt: {mix} — erst Schritt 3 laufen lassen.")
 
     zyklus = arbeit(a.video, "zyklus.mp4")
-    if cfg.get("videoquelle", "standbild") == "ki_clips":
+    if cfg["videoquelle"] == "ki_clips":
         # Echte Bild-zu-Video-Clips als Zyklus, per Bitstrom-Kopie gefuegt.
         # Kein Zoom obendrauf: die Clips bewegen sich selbst (Formel §5
         # ist damit erfuellt), und ein Zoom wuerde den kompletten
@@ -174,7 +174,7 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat",
                         "-safe", "0", "-i", lst,
                         "-c:v", "libx264", "-preset",
-                        str(cfg.get("video_preset", "slow")),
+                        str(cfg["video_preset"]),
                         "-crf", str(int(cfg["video_crf"])),
                         "-pix_fmt", pixelformat(cfg),
                         "-x264-params", "keyint=240:min-keyint=240:scenecut=0",

@@ -12,13 +12,21 @@ Vorgaben aus Formel §5 (PFLICHT, 11 Stichproben + 90 Thumbnails):
   - **genau eine** warme Lichtquelle im Bild
   - gemalt, nicht fotorealistisch
 
-Mit `--bild` wird ein extern erzeugtes Bild uebernommen und geprueft. Ohne
-`--bild` erzeugt das Skript selbst einen einfachen Ersatz, damit die
-Pipeline auch ohne Bildgenerator vollstaendig durchlaeuft.
+Mit `--bild` wird ein extern erzeugtes Bild uebernommen und geprueft.
+
+`--ersatzbild` erzeugt stattdessen einen im Skript gerechneten Notbehelf,
+damit die Pipeline auch ohne Bildgenerator durchlaeuft. Das war bis
+2026-08-23 das VORGABEVERHALTEN bei fehlendem --bild: ein Aufruf ohne
+Argument hat still ein synthetisches Bild gebaut, und der Lauf ist damit
+durchgelaufen - 3,5 Stunden Video mit einem Ersatzmuster statt des
+Serienmotivs. Gemeldet wurde es nur als Zeile "herkunft" im QA-Bericht,
+gesperrt gar nicht. Gate 1.7 (Serienmotiv) ist eine Sichtpruefung und
+haette es fangen muessen; darauf soll sich niemand verlassen muessen.
+Seitdem muss der Notbehelf ausdruecklich verlangt werden.
 
 Aufruf:
     python3 produktion/pipeline/schritt4_bild.py V1 --bild roh.png
-    python3 produktion/pipeline/schritt4_bild.py V1
+    python3 produktion/pipeline/schritt4_bild.py V1 --ersatzbild
 """
 import argparse
 import json
@@ -112,7 +120,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
     ap.add_argument("--bild", help="extern erzeugtes Bild uebernehmen")
+    ap.add_argument("--ersatzbild", action="store_true",
+                    help="Notbehelf im Skript rechnen statt ein echtes Motiv "
+                         "zu uebernehmen - bricht die Serienbindung")
     a = ap.parse_args()
+    if not a.bild and not a.ersatzbild:
+        raise SystemExit(
+            "Kein Bild angegeben.\n"
+            "  --bild DATEI   das erzeugte Serienmotiv uebernehmen (Regelfall)\n"
+            "  --ersatzbild   synthetischen Notbehelf rechnen; bricht die\n"
+            "                 Serienbindung (Formel Paragraph 5, Gate 1.7) und ist\n"
+            "                 nur fuer Trockenlaeufe der Pipeline gedacht")
     cfg = config()
     b, h = int(cfg["breite"]), int(cfg["hoehe"])
 
@@ -121,7 +139,7 @@ def main():
         herkunft = f"extern: {os.path.basename(a.bild)}"
     else:
         im = ersatzbild(b, h, saat=int(a.video[1:]))
-        herkunft = "im Skript erzeugt (kein Bildgenerator verwendet)"
+        herkunft = "NOTBEHELF im Skript erzeugt - kein Serienmotiv"
 
     ziel = os.path.join(ordner(a.video), NAME)
     im.save(ziel)

@@ -46,8 +46,20 @@ def config(pfad=CONFIG):
             continue
         k, v = zeile.split("=", 1)
         cfg[k.strip()] = _wandeln(v.strip())
+    # Jeder Schluessel, dessen Fehlen das Ergebnis veraendert, MUSS hier stehen.
+    # Sonst greift still ein Vorgabewert aus cfg.get() im jeweiligen Skript, und
+    # der Lauf produziert etwas anderes als dokumentiert, ohne es zu melden.
+    # Erweitert 2026-08-23 nach dem Audit der stillen Rueckfaelle: Anlass war
+    # ki_clip_ordner_V5, das ohne Eintrag auf die Clips von V1 zurueckfiel.
     pflicht = ["stimme_id", "tts_modell", "prosody_speed", "pegel_stimme_dbfs",
-               "pegel_bett_dbfs", "bett_datei", "fps", "breite", "hoehe"]
+               "pegel_bett_dbfs", "bett_datei", "fps", "breite", "hoehe",
+               # Bild und Video
+               "videoquelle", "video_crf", "video_preset", "video_pixelformat",
+               "zoom_faktor",
+               # Mischung
+               "abstand_soll_db", "peak_max_dbfs", "vorlauf_s",
+               # Text und Qualitaetsschwellen
+               "chunk_max_zeichen", "laufzeit_min_h", "sprachanteil_min_pct"]
     fehlt = [k for k in pflicht if k not in cfg]
     if fehlt:
         raise SystemExit(f"{pfad}: fehlende Werte {fehlt}")

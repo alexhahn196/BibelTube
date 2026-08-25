@@ -117,7 +117,12 @@ fps                = 24
 #               ein Zoom obendrauf würde den kopierfähigen Bitstrom in einen
 #               vollständigen Re-Encode verwandeln (LCM-Zyklus 1200 s).
 #   standbild = bisheriger Weg: Standbild + Atem-Zoom (300-s-Zyklus)
-videoquelle        = ki_clips
+# 2026-08-23 auf standbild zurueckgestellt (Entscheidung des Kanalinhabers):
+# Formel Paragraph 5 verlangt ein Standmotiv mit sanfter Bewegung ohne
+# Szenenschnitt, belegt an 11/11 Stichproben. V3 - der einzige Treffer des
+# Kanals - lief so. KI-Clips waeren eine zusaetzliche Variable ohne Beleg,
+# und V05-V08 sollen den Korpuswechsel als einzige Aenderung testen.
+videoquelle        = standbild
 # Die Clips gehoeren zum Standbild ihres Videos und sind mit keinem anderen
 # Motiv verwendbar. Deshalb je Video ein eigener Ordner; ki_clip_ordner_V<n>
 # schlaegt den allgemeinen Wert.
