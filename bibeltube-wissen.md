@@ -1,7 +1,7 @@
 # BibelTube — Wissensstand
 
 Die vier Arbeitsdokumente, ungekürzt aneinandergehängt.
-**Erzeugt am 23.08.2026 von `produktion/wissen_zusammenstellen.py`** — nicht von Hand
+**Erzeugt am 25.08.2026 von `produktion/wissen_zusammenstellen.py`** — nicht von Hand
 pflegen, sondern neu bauen.
 
 1. `regeln/erfolgsregeln.md`

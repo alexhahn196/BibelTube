@@ -145,8 +145,20 @@ def main():
         # Jedes Video hat eigene Clips: sie gehoeren zu seinem Standbild und
         # sind mit keinem anderen Motiv verwendbar. Ein Eintrag
         # ki_clip_ordner_V2 schlaegt deshalb den allgemeinen Wert.
+        # Der allgemeine Wert ki_clip_ordner ist KEIN brauchbarer Rueckfall:
+        # er zeigt auf die Clips von V1. Ein Video ohne eigenen Eintrag wuerde
+        # damit still mit fremdem Motiv rendern - 35 Minuten Rechenzeit fuer
+        # ein Ergebnis, das die Serienbindung (Formel §5, Gate 1.7) bricht,
+        # ohne dass irgendetwas warnt. Beim Anlegen von V05 ist genau das
+        # aufgefallen (2026-08-23). Deshalb: harter Abbruch statt Rueckfall.
         schluessel = f"ki_clip_ordner_{a.video}"
-        ordner_clips = cfg.get(schluessel, cfg["ki_clip_ordner"])
+        if schluessel not in cfg:
+            raise SystemExit(
+                f"videoquelle=ki_clips, aber {schluessel} fehlt in config.md.\n"
+                f"Ohne eigenen Eintrag wuerde {a.video} mit den Clips von "
+                f"{cfg['ki_clip_ordner']} rendern - also mit fremdem Motiv.\n"
+                f"Entweder {schluessel} eintragen oder videoquelle=standbild setzen.")
+        ordner_clips = cfg[schluessel]
         clips = sorted(_glob.glob(os.path.join(_pfad(ordner_clips),
                                                "clip-*.mp4")))
         if not clips:
