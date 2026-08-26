@@ -1,9 +1,9 @@
 {
  "video": "V5",
- "erzeugt": "2026-08-26T09:03:51",
- "commit": "81ce3eb62ff1f572f6e73c5baad89ba19504c12a",
+ "erzeugt": "2026-08-26T18:41:51",
+ "commit": "45e93b304dd279f1ee11f7a5f66587583c5cfbb7",
  "arbeitsbaum_sauber": false,
- "config_sha256": "37f782e657410f2a",
+ "config_sha256": "a05b4b395cd89abd",
  "bett_datei": "produktion/klang/bett_mono_feuer_leise.flac",
  "videoquelle": "standbild",
  "stimme_id": "cb6381fb822345bd89c207fb49551d24",
@@ -60,8 +60,8 @@
  "schritt5_video": {
   "dauer_hms": "3:24:14",
   "dauer_h": 3.404,
-  "groesse_mb": 780.9,
-  "bitrate_gesamt_kbps": 509.8,
+  "groesse_mb": 851.6,
+  "bitrate_gesamt_kbps": 556.0,
   "aufloesung": "1920x1080",
   "fps": 24,
   "sync_versatz_s": 0.0,

@@ -72,7 +72,7 @@ gospel of luke, whole gospel of luke, bible for sleep, christian sleep meditatio
 | Größe | Wert | Vorgabe |
 |---|---|---|
 | Laufzeit | 3:24:14 (3.40 h) | ≥3.0 h, Ziel 3.4–3.8 h |
-| Dateigröße | 780.9 MB | — |
+| Dateigröße | 851.6 MB | — |
 | Bild | 1920x1080 @ 24 fps | 1920×1080, 24–30 fps (§5) |
 | Ton-Versatz | 0.0 s | 0 |
 | Tempo | 148.1 WPM | 120–160 WPM (§5b) |
