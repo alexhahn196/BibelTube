@@ -11,9 +11,19 @@ produktion/pipeline/gofile_hochladen.sh V5           # lädt hoch
 produktion/pipeline/gofile_hochladen.sh V5 --nur-pruefen   # rechnet nur Prüfsummen
 ```
 
-Ohne `GOFILE_TOKEN` läuft der Upload **anonym**: GoFile nimmt die Dateien an,
-sie landen aber in keinem Konto und sind später nicht zu verwalten oder zu
-löschen. Das Skript sagt es an und fragt nicht nach.
+Ohne `GOFILE_TOKEN` legt das Skript ein **Gastkonto** an und lädt mit dessen
+Wegwerf-Token hoch. Die Dateien hängen dann an keinem Konto des Kanalinhabers.
+Der Gast-Token wird am Ende ausgegeben und **nirgends gespeichert** — nur mit
+ihm sind die Dateien später noch zu verwalten oder zu löschen. Das Skript sagt
+es an und fragt nicht nach.
+
+> **Korrektur 2026-08-26.** Hier stand: „Ohne `GOFILE_TOKEN` läuft der Upload
+> **anonym**: GoFile nimmt die Dateien an." Das stimmt nicht mehr. Der erste
+> V05-Upload scheiterte mit `error-createGuestAccount`: der Upload-Endpunkt
+> weist inzwischen jede Anfrage **ohne** `Authorization`-Header ab.
+> Nachgeprüft statt vermutet — `POST https://api.gofile.io/accounts` legt
+> weiterhin ohne Weiteres ein Gastkonto an und liefert einen Token; nur der
+> tokenlose Upload ist weggefallen. Genau diesen Umweg geht das Skript jetzt.
 
 Hochgeladen wird, was im Paketordner liegt — fehlende Rollen werden
 übersprungen, nicht erfunden:

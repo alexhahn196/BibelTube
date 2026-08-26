@@ -1,1 +1,45 @@
-{"format":1,"auslieferungen":[]}
+{
+  "format": 1,
+  "auslieferungen": [
+    {
+      "video": "V5",
+      "titel": "Rest Your Eyes… The Whole Gospel of Luke, Read Slowly Until Morning Comes",
+      "hochgeladen_am": "2026-08-26T18:05:09Z",
+      "dateien": [
+        {
+          "rolle": "video",
+          "name": "video-05.mp4",
+          "bytes": 780887110,
+          "sha256": "0e32d5100ad88bf57d37b7dc678e21c3cb63bed79cc9df7d95cdf3b065978277",
+          "gofile": {
+            "fileId": "98783bf2-db99-441f-bab7-064b0d074122",
+            "downloadPage": "https://gofile.io/d/2ifjRVxE",
+            "server": "store-eu-par-7"
+          }
+        },
+        {
+          "rolle": "ton",
+          "name": "video-05.flac",
+          "bytes": 502165358,
+          "sha256": "973028eb661668027015ce0bf94b6a2241346c10fe2e3af098184ee738d5a140",
+          "gofile": {
+            "fileId": "ce5f814d-16e1-4cf3-930a-218cd8c8b6be",
+            "downloadPage": "https://gofile.io/d/emCMm5vt",
+            "server": "store-eu-par-7"
+          }
+        },
+        {
+          "rolle": "untertitel",
+          "name": "video-05.srt",
+          "bytes": 253389,
+          "sha256": "a1cccd72c494ef146a2a9b4167f781463dcab8e31ea18c690d85d57432822ce3",
+          "gofile": {
+            "fileId": "8ccd6053-c36e-4878-9f52-16f29a253c2f",
+            "downloadPage": "https://gofile.io/d/WotQAGWH",
+            "server": "store-eu-par-7"
+          }
+        }
+      ]
+    }
+  ]
+}

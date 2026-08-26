@@ -46,7 +46,22 @@ stimme_id          = cb6381fb822345bd89c207fb49551d24
 tts_modell         = s2.1-pro-free
 tts_endpoint       = https://api.fish.audio/v1/tts
 prosody_speed      = 0.88
-wpm_erwartet       = 145.9
+# Gemessen, nicht geschaetzt: produktion/video-05/qa.json, schritt2_tts
+# (30.220 Woerter / 3,402 h = 148,1). Vorher stand hier 145.9 ohne Quelle,
+# und produktion/wortzahlen.py rechnete mit 140 - zwei Zahlen fuer dieselbe
+# Groesse. Beide waren Punkte DERSELBEN Geraden, siehe unten.
+#
+# Die Sprechgeschwindigkeit haengt am Korpus, nicht an der Zeit. Ueber die
+# fuenf gerenderten Videos gegen den Erzaehlanteil aus korpus_pruefung.py:
+#     WPM = 141,15 + 0,0769 x Erzaehlanteil%      r = 0,972   r^2 = 0,946
+#     V01   0,0 % -> 140,4      V02   0,0 % -> 141,8
+#     V03  62,3 % -> 146,3      V04  83,0 % -> 146,6      V05  81,7 % -> 148,1
+# Vers-Korpora (Psalmen, Sprueche) liegen bei rund 141, Erzaehlstoff bei
+# 147-148. Gate 1.13 (M8) verlangt seit Gate 2 fuer JEDES kuenftige Video
+# >= 80 % Erzaehlanteil - damit gilt nur noch der Erzaehl-Ast, und dort sind
+# 146,6 und 148,1 die einzigen zwei Messungen. Faellt ein Korpus je unter
+# 80 %, ist dieser Wert zu hoch und die Gerade oben die bessere Schaetzung.
+wpm_erwartet       = 148.1
 
 # --- Text ---
 uebersetzung       = webbe

@@ -5,7 +5,10 @@ die Doppelvergabe.
 
 Gate 1 fuehrt seit 2026-08-23 zwei Pruefungen, die vorher nicht existierten:
   1.13 Korpusart  - Hauptkorpus muss durchlaufender Erzaehlstoff sein
-  1.1  Korpuslaenge - 29.000-31.500 Woerter = 3,4-3,8 h bei 140 WPM
+  1.1  Korpuslaenge - Wortfenster, hergeleitet aus config.md (Zielband und
+       wpm_erwartet). Kein fester Wert mehr: die Sprechgeschwindigkeit haengt
+       am Korpus, und ein Fenster aus 140 WPM liess bei 148,1 zu kurze
+       Korpora durch - genau so landete V05 bei 3,40 h statt 3,6 h.
 Beide standen dort als "von Hand". Dieses Skript macht sie nachrechenbar.
 
 GATTUNGSTABELLE: Die Zuordnung Erzaehlung/Nicht-Erzaehlung steht unten im
@@ -28,8 +31,36 @@ import sys
 
 KAPITEL = os.path.join("produktion", "korpus", "kapitel.json")
 PLAN = os.path.join("produktion", "korpus", "plan.json")
-BAND = (29000, 31500)
-WPM = 140
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "pipeline"))
+from gemeinsam import config as _config  # noqa: E402
+
+_CFG = _config()
+#: Aus config.md, damit die Zahl nur EINMAL im Repo steht. Herleitung und
+#: Korpusabhaengigkeit stehen dort im Kommentar bei wpm_erwartet.
+WPM = float(_CFG["wpm_erwartet"])
+ZIEL_H = (float(_CFG["laufzeit_ziel_von_h"]), float(_CFG["laufzeit_ziel_bis_h"]))
+#: Vor- und Nachlauf des Klangbetts liegen vor bzw. hinter der Sprache und
+#: verlaengern das fertige Video, ohne ein Wort zu kosten.
+_RAND_S = float(_CFG["vorlauf_s"]) + float(_CFG["nachlauf_s"])
+#: Der Rahmen (Hook, 2 CTA, Eingangsgebet). Gemessen an V05:
+#: produktion/video-05/qa.json fuehrt woerter_rahmen 232.
+RAHMEN_W = 232
+#: Jede Kapitelansage ("Luke, chapter one") sind drei gesprochene Woerter.
+#: An V05 exakt nachgerechnet: 29.880 + 3x36 + 232 = 30.220 = woerter_gesamt.
+ANSAGE_W = 3
+
+
+def _video_h(korpus_w: int, kapitel_n: int) -> float:
+    """Laufzeit des fertigen Videos aus der reinen Korpus-Wortzahl."""
+    gesamt = korpus_w + ANSAGE_W * kapitel_n + RAHMEN_W
+    return gesamt / WPM / 60 + _RAND_S / 3600
+
+
+def band_fuer(kapitel_n: int) -> tuple[int, int]:
+    """Das Korpus-Wortfenster, das dieses Video ins Zielband bringt."""
+    def w(h: float) -> int:
+        return round((h - _RAND_S / 3600) * 60 * WPM) - ANSAGE_W * kapitel_n - RAHMEN_W
+    return w(ZIEL_H[0]), w(ZIEL_H[1])
 
 DEUTSCH = {
     "apostelgeschichte": "acts", "markus": "mark", "matthaeus": "matthew",
@@ -126,7 +157,8 @@ def bewerte(specs, kap):
     doppelt = len(kapitel) - len(set(kapitel))
     groesster = max(teile, key=lambda t: t["woerter"]) if teile else None
     return {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
-            "erz_pct": 100 * erz / w if w else 0, "stunden": w / WPM / 60,
+            "erz_pct": 100 * erz / w if w else 0,
+            "stunden": _video_h(w, len(set(kapitel))),
             "doppelt": doppelt, "groesster": groesster,
             "groesster_ist_erzaehlung": bool(groesster and
                                              groesster["erzaehlung"] / groesster["woerter"] >= 0.8)}
@@ -148,7 +180,7 @@ def main():
         w = sum(kap[k]["w"] for k in refs)
         erz = sum(kap[f"{b} {i}"]["w"] for b, i in kapitel if ERZAEHLUNG.get(b, lambda _: False)(i))
         r = {"teile": [], "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
-             "erz_pct": 100 * erz / w, "stunden": w / WPM / 60, "doppelt": 0,
+             "erz_pct": 100 * erz / w, "stunden": _video_h(w, len(kapitel)), "doppelt": 0,
              "groesster": None, "groesster_ist_erzaehlung": True}
         print(f"Plan {a.plan}: {plan[a.plan]['name']}")
     else:
@@ -162,10 +194,12 @@ def main():
         print(f"{t['spec']:34s} {t['woerter']:8,d} {q:10.1f} % {'ja' if t['ganzes_buch'] else 'NEIN':>12s}")
 
     print(f"\n{'SUMME':34s} {r['woerter']:8,d} {r['erz_pct']:10.1f} %")
-    print(f"{'Laufzeit bei ' + str(WPM) + ' WPM':34s} {r['stunden']:8.2f} h")
+    print(f"{'Videolaufzeit bei ' + str(WPM) + ' WPM':34s} {r['stunden']:8.2f} h"
+          f"   (Ziel {ZIEL_H[0]}-{ZIEL_H[1]} h)")
 
     fehler = []
     print("\nPruefungen:")
+    BAND = band_fuer(len(r["kapitel"]))
     band = BAND[0] <= r["woerter"] <= BAND[1]
     print(f"  1.1  Korpuslaenge {BAND[0]:,}-{BAND[1]:,} W   "
           f"{'OK' if band else 'REISST — ' + ('zu kurz' if r['woerter'] < BAND[0] else 'zu lang')}")
