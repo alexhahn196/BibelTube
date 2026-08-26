@@ -617,6 +617,32 @@ bleibt die Rahmung unverändert.
 Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
 *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
 
+> ### Auflösungsgrenze des Ähnlichkeitsmaßes (2026-08-26)
+>
+> `titel_pruefung.py` misst *Anteil geteilter inhaltstragender Wörter* =
+> geteilt ÷ eigene Wortzahl. **Der Nenner ist klein.** Über die 21 Gewinner-
+> und 8 eigenen Titel liegt er bei 3 bis 11, Median 6 — ein einzelnes Wort
+> wiegt damit **9,1 bis 33,3 Prozentpunkte, im Median 16,7**.
+>
+> Daraus folgt: **Unterschiede unterhalb der Größenordnung eines Wortes sind
+> kein Signal.** Als Faustregel — unter etwa 10 Prozentpunkten nichts
+> hineinlesen; bei kurzen Titeln liegt die Schwelle noch deutlich höher. Zwei
+> Kandidaten mit 27 % und 33 % sind nicht „der eine besser", sie sind gleich.
+>
+> **Nachgewiesen am V05-Paar.** „…Read Slowly Until Morning **Comes**" misst
+> 27,3 %, ohne „Comes" 30,0 %. Der Zähler ist in beiden Fällen **identisch**
+> (`eyes, rest, your` — drei Wörter); nur der Nenner fällt von 11 auf 10. Das
+> gestrichene Wort teilt der nächste Gewinnertitel gar nicht.
+>
+> Das heißt: **ein inhaltsleeres Füllwort verbessert den Messwert**, einfach
+> weil es den Nenner verdünnt. Das Maß lässt sich in diese Richtung
+> beliebig schönen. Wer einen Titel gegen einen anderen ausspielt, muss
+> deshalb die **geteilten Wörter** ansehen, nicht den Prozentwert —
+> `titel_kandidaten.py` gibt sie deshalb mit aus.
+>
+> Die Grenze aus Gate 1.2 (< 50 %) bleibt davon unberührt: sie trennt „hat
+> die Hälfte gemeinsam" von „hat sie nicht", und dafür reicht die Auflösung.
+
 > ### Offen (2026-08-26): ab Video 09 ist kein belegter Anker mehr frei
 >
 > Die 13 belegten Anker sind faktisch aufgebraucht. Fünf kommen in **A-Titeln**

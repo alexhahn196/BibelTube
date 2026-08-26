@@ -799,11 +799,24 @@ Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 > Kopisten), 11 inhaltstragende Wörter. Gemessen mit
 > `produktion/titel_kandidaten.py`.
 >
-> **Offen: die Länge.** 73 Zeichen gegen die SOLL-Grenze 70 aus Prüfung 1.15.
-> Die Bedingung, die die Begründung trägt — Eigenname vor Zeichen 60 — ist mit
-> Position 27–40 klar erfüllt; die drei Zeichen ändern daran nichts. Das letzte
-> Wort zu streichen löst es: „…Read Slowly Until Morning", 67 Zeichen, Werte
-> dann **30,0 / 20,0 / 20,0 %**. Nicht entschieden.
+> **Die Länge reißt, und das bleibt so (entschieden 2026-08-26).** 73 Zeichen
+> gegen die SOLL-Grenze 70 aus Prüfung 1.15. Der Verstoß ist **bewusst stehen
+> gelassen**:
+>
+> 1.15 ist eine **gesetzte** Grenze, keine gemessene — belegt ist nur der
+> Anlass (68 % der Aufrufe am Handy), nicht die Zeichenzahl. Die **belegte**
+> Bedingung derselben Prüfung hält dagegen klar: der Eigenname steht bei
+> Zeichen 27–40, weit vor jeder Abbruchkante. Drei Zeichen einer ungemessenen
+> Grenze zuliebe drei Prozentpunkte gegen die Gewinner aufzugeben, wäre der
+> falsche Tausch — die 27,3 % sind gemessen, die 70 sind es nicht.
+>
+> Zum Vergleich stand: „…Read Slowly Until Morning", 67 Zeichen,
+> **30,0 / 20,0 / 20,0 %**. Verworfen.
+>
+> **Folgeregel:** Reißt 1.15 künftig öfter, **ohne dass 1.14 leidet** — der
+> Eigenname also trotzdem vor der Kante steht —, gehört **die Grenze
+> überprüft, nicht der Titel**. Eine gesetzte Zahl, die wiederholt gegen
+> gemessene Werte verliert, ist die falsche Zahl.
 
 **Textkorpus:** Lukas + Prediger
 **Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS

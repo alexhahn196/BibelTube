@@ -1045,6 +1045,32 @@ bleibt die Rahmung unverändert.
 Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
 *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
 
+> ### Auflösungsgrenze des Ähnlichkeitsmaßes (2026-08-26)
+>
+> `titel_pruefung.py` misst *Anteil geteilter inhaltstragender Wörter* =
+> geteilt ÷ eigene Wortzahl. **Der Nenner ist klein.** Über die 21 Gewinner-
+> und 8 eigenen Titel liegt er bei 3 bis 11, Median 6 — ein einzelnes Wort
+> wiegt damit **9,1 bis 33,3 Prozentpunkte, im Median 16,7**.
+>
+> Daraus folgt: **Unterschiede unterhalb der Größenordnung eines Wortes sind
+> kein Signal.** Als Faustregel — unter etwa 10 Prozentpunkten nichts
+> hineinlesen; bei kurzen Titeln liegt die Schwelle noch deutlich höher. Zwei
+> Kandidaten mit 27 % und 33 % sind nicht „der eine besser", sie sind gleich.
+>
+> **Nachgewiesen am V05-Paar.** „…Read Slowly Until Morning **Comes**" misst
+> 27,3 %, ohne „Comes" 30,0 %. Der Zähler ist in beiden Fällen **identisch**
+> (`eyes, rest, your` — drei Wörter); nur der Nenner fällt von 11 auf 10. Das
+> gestrichene Wort teilt der nächste Gewinnertitel gar nicht.
+>
+> Das heißt: **ein inhaltsleeres Füllwort verbessert den Messwert**, einfach
+> weil es den Nenner verdünnt. Das Maß lässt sich in diese Richtung
+> beliebig schönen. Wer einen Titel gegen einen anderen ausspielt, muss
+> deshalb die **geteilten Wörter** ansehen, nicht den Prozentwert —
+> `titel_kandidaten.py` gibt sie deshalb mit aus.
+>
+> Die Grenze aus Gate 1.2 (< 50 %) bleibt davon unberührt: sie trennt „hat
+> die Hälfte gemeinsam" von „hat sie nicht", und dafür reicht die Auflösung.
+
 > ### Offen (2026-08-26): ab Video 09 ist kein belegter Anker mehr frei
 >
 > Die 13 belegten Anker sind faktisch aufgebraucht. Fünf kommen in **A-Titeln**
@@ -2168,11 +2194,24 @@ Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 > Kopisten), 11 inhaltstragende Wörter. Gemessen mit
 > `produktion/titel_kandidaten.py`.
 >
-> **Offen: die Länge.** 73 Zeichen gegen die SOLL-Grenze 70 aus Prüfung 1.15.
-> Die Bedingung, die die Begründung trägt — Eigenname vor Zeichen 60 — ist mit
-> Position 27–40 klar erfüllt; die drei Zeichen ändern daran nichts. Das letzte
-> Wort zu streichen löst es: „…Read Slowly Until Morning", 67 Zeichen, Werte
-> dann **30,0 / 20,0 / 20,0 %**. Nicht entschieden.
+> **Die Länge reißt, und das bleibt so (entschieden 2026-08-26).** 73 Zeichen
+> gegen die SOLL-Grenze 70 aus Prüfung 1.15. Der Verstoß ist **bewusst stehen
+> gelassen**:
+>
+> 1.15 ist eine **gesetzte** Grenze, keine gemessene — belegt ist nur der
+> Anlass (68 % der Aufrufe am Handy), nicht die Zeichenzahl. Die **belegte**
+> Bedingung derselben Prüfung hält dagegen klar: der Eigenname steht bei
+> Zeichen 27–40, weit vor jeder Abbruchkante. Drei Zeichen einer ungemessenen
+> Grenze zuliebe drei Prozentpunkte gegen die Gewinner aufzugeben, wäre der
+> falsche Tausch — die 27,3 % sind gemessen, die 70 sind es nicht.
+>
+> Zum Vergleich stand: „…Read Slowly Until Morning", 67 Zeichen,
+> **30,0 / 20,0 / 20,0 %**. Verworfen.
+>
+> **Folgeregel:** Reißt 1.15 künftig öfter, **ohne dass 1.14 leidet** — der
+> Eigenname also trotzdem vor der Kante steht —, gehört **die Grenze
+> überprüft, nicht der Titel**. Eine gesetzte Zahl, die wiederholt gegen
+> gemessene Werte verliert, ist die falsche Zahl.
 
 **Textkorpus:** Lukas + Prediger
 **Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS

@@ -16,6 +16,14 @@ Unterschiede:
   2. Die Grenze ist als Parameter frei setzbar. Gate 1 verlangt < 50 %;
      fuer V05 wurde vom Kanalinhaber < 45 % vorgegeben.
 
+AUFLOESUNG - beim Vergleich zweier Kandidaten beachten: der Nenner ist die
+eigene Wortzahl und liegt bei 3 bis 11 (Median 6). Ein einzelnes Wort wiegt
+damit 9 bis 33 Prozentpunkte. Unterschiede unter rund 10 Punkten sind KEIN
+Signal, und ein inhaltsleeres Fuellwort verbessert den Wert allein dadurch,
+dass es den Nenner verduennt. Deshalb gibt dieses Skript die geteilten
+Woerter mit aus - die sind die Aussage, nicht der Prozentwert.
+Siehe formel/video-formel.md Paragraph 10, "Aufloesungsgrenze".
+
 Aufruf:
     python3 produktion/titel_kandidaten.py --grenze 0.45 "Titel A" "Titel B"
     python3 produktion/titel_kandidaten.py --datei kandidaten.json
