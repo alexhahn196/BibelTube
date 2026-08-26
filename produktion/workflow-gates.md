@@ -298,6 +298,24 @@ die Quelle vollständig war. **`git fetch --all` gehört vor jede Aussage der
 Form „existiert nicht".** Und ein Negativbefund über die Historie muss
 dazusagen, gegen welchen Ref-Stand er gilt.
 
+**Die Einordnung des Falls wird dadurch eine andere, und das ist der
+eigentliche Ertrag.** Die 129 px waren zunächst als „Meldung ohne Deckung"
+geführt — als hätte ein Bericht eine Zahl erfunden. Das trifft nicht zu:
+**die Meldung war gedeckt, die Prüfung war unvollständig.** Die Zahl lag
+auf einem Zweig, den die Suche nicht kannte.
+
+Das ist der schwerere Fehler von beiden. Eine ungedeckte Meldung fällt beim
+nächsten Blick in die Messdatei auf. Eine unvollständige Prüfung *bestätigt*
+sich selbst: sie liefert einen sauberen Negativbefund, der wie ein Ergebnis
+aussieht, und niemand sucht weiter. Deshalb steht die Vollständigkeit der
+Quelle jetzt als Schritt 0 vor allem anderen.
+
+Der Kern der Regel bleibt davon unberührt: **für Video 04 wurde die Zahl nie
+gemessen**, und sie wurde trotzdem zwei Runden lang als Ausgangslage
+weitergegeben. Eine Kennzahl gilt erst aus einer eingecheckten Messdatei —
+und ab jetzt zusätzlich: aus einer Messdatei, die man auch gefunden hätte,
+wenn man vollständig gesucht hätte.
+
 ### Das Prüfverfahren gehört vor die Meldung, nicht in die Rückfrage
 
 Bevor eine Kennzahl in einen Bericht oder in ein Dokument geht:
@@ -345,8 +363,26 @@ und in `produktion/video-01/upload-checkliste.md` maschinell erzeugt, aber
 im Repo nicht nachprüfbar.
 
 Diese Werte sind nicht erfunden — sie sind unbelegbar, und nach der Regel
-oben gelten sie damit nicht als gemessen. Solange die Lücke offen ist, wird
-in einem Bericht dazugesagt, dass die Quelle nicht eingecheckt ist. Die
-saubere Auflösung wäre, die QA-Dateien eines abgeschlossenen Renderlaufs
-neben `upload.md` in `produktion/video-0*/` zu legen; das ist noch nicht
-entschieden.
+oben gelten sie damit nicht als gemessen.
+
+**Geschlossen ab Video 05 (2026-08-26).** `schritt7_paket.py` schreibt die
+Messwerte eines Laufs jetzt als **`produktion/video-0N/qa.json`** neben
+`upload.md`: rund 40 Felder aus den Schritten 1–6, ein bis zwei Kilobyte je
+Video. Draußen bleiben die großen Zwischenstände — Chunk-Listen, ASR-Wortzeiten,
+der Skript-Volltext (steht in `videos-01-08.md` und im SRT), die Kapitelmarken
+(stehen in `beschreibung.txt`).
+
+Der Kopf der Datei ist der Teil, der die Fehlerklasse tatsächlich schließt:
+
+| Feld | wofür |
+|---|---|
+| `commit` | der Stand, auf dem gerendert wurde |
+| `arbeitsbaum_sauber` | ob dieser Commit den Lauf überhaupt beschreibt — ein Hash über einem geänderten Baum belegt nichts |
+| `config_sha256` | die gelesene `config.md`, gehasht |
+| `bett_datei`, `videoquelle`, `stimme_id`, `tts_modell`, `prosody_speed` | die Entscheidungen, die den Lauf prägen |
+
+Damit zeigt ein Messwert auf einen **Stand**, nicht auf eine Sitzung. Die
+Tabelle in `upload.md` trägt eine Kopfzeile, die auf `qa.json` verweist.
+
+**Nicht rückwirkend.** Für V01–V04 existiert `produktion/arbeit/` nicht mehr;
+ihre Tabellen tragen stattdessen einen Vermerk, dass sie unbelegbar bleiben.

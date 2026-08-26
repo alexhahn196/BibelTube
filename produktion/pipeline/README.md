@@ -78,6 +78,18 @@ kein Datenbefund.
 
 ---
 
+## Was ein Lauf hinterlässt
+
+Die Zwischenstände liegen in `produktion/arbeit/video-0N/` und sind
+**gitignored** — die Chunks, die WAVs, die QA-Dateien der Schritte 1–6.
+
+Eingecheckt wird genau eine Messdatei je Video: **`produktion/video-0N/qa.json`**,
+von Schritt 7 aus den QA-Dateien zusammengezogen. Sie ist die Quelle für jede
+Zahl in `upload.md` und trägt im Kopf `commit`, `arbeitsbaum_sauber` und
+`config_sha256`. Ohne sie wäre jeder Renderwert im Repository unbelegbar —
+das war er bis Video 04, siehe den Prozessbefund in
+[`workflow-gates.md`](../workflow-gates.md).
+
 ## Wo die Dokumente sich untereinander widersprechen
 
 Aufgelöst nach der Verbindlichkeitsliste in `produktion/videos-01-08.md`

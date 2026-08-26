@@ -172,6 +172,18 @@ Sie stehen bereits in der Beschreibung oben.
 
 ## Messwerte dieses Renderlaufs
 
+> **Diese Tabelle ist nicht belegbar (Vermerk 2026-08-26).** Die Werte stammen
+> aus den QA-Dateien des Renderlaufs in `produktion/arbeit/` — und das
+> Verzeichnis steht in `.gitignore`. Die Quelle existiert nicht mehr. Nach der
+> Regel in `produktion/workflow-gates.md` („Prozessbefund — was als gemessen
+> gilt") gelten diese Zahlen damit **nicht als gemessen**: sie sind maschinell
+> erzeugt, aber im Repository nicht nachprüfbar.
+>
+> Ab Video 05 schreibt `schritt7_paket.py` die Messwerte als `qa.json` neben
+> `upload.md`, mit Commit und Config-Prüfsumme. **Nicht rückwirkend** — für
+> V01–V04 ist die Lücke nicht mehr zu schließen.
+
+
 | Größe | Wert | Vorgabe |
 |---|---|---|
 | Laufzeit | 3:37:32 (3.62 h) | ≥3.0 h, Ziel 3.4–3.8 h |
