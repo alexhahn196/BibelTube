@@ -355,6 +355,40 @@ als bindende Vorgabe weitergegeben. Die drei schwersten — Zahlen ohne jede
 Messdatei, die trotzdem als Grenze gelten — sind die Thumbnail-Wortgrenze
 (`formel/thumbnail-checkliste.md`), Gate 1.4 und der Gate-2-Auslöser.
 
+### Zweite Anwendung 2026-08-26: der Preis, der nie gefallen ist
+
+Am 2026-08-26 hat dieselbe Regel einen zweiten Fall aufgelöst — und zwar
+einen, in dem der Widerspruch bereits als „aus dem Repo nicht entscheidbar"
+dokumentiert war.
+
+`produktion/motive/README.md` behauptete, Seedance 1.5 Pro habe für Video 01
+**144 Credits** je Vierer-Satz gekostet und der Preis habe sich danach auf 72
+halbiert. Die Commit-Nachricht zu genau dem Lauf, der angeblich 72 kostete,
+schrieb ihrerseits 144. Bis dahin galt für die Planung der teurere Wert.
+
+Das Transaktionsprotokoll bei Higgsfield reichte am 2026-08-26 wieder weit
+genug zurück. Ausgezählt: **fünf** Clipsätze, **fünfmal 4 × −18 = 72**, von
+V01 am 2026-08-04 bis V05 am 2026-08-26. Der Preis hat sich nie geändert.
+Falsch waren beide 144er — und auch die Erzählung von der Halbierung.
+
+Woher die 144 kamen, ist ebenfalls belegt: die **Vorabpreisauskunft** der API
+(`get_cost`) meldet für dieselbe Anfrage 36 Credits je Clip. Unmittelbar
+danach wurden 18 abgebucht, gegengeprüft am Guthaben (2397,9 → 2325,9).
+
+**Regel, die daraus folgt und über diesen Fall hinausgeht:** Ein
+Vorabpreis, ein Kostenvoranschlag, eine Schätzung des Dienstes ist eine
+Absicht. Die Abrechnung ist das Ergebnis. Wer eine Kostenzahl in ein Dokument
+schreibt, schreibt das Buchungsdatum dazu — eine Kostenangabe ohne
+Buchungsdatum ist keine.
+
+**Und der Teil, der wehtut:** Der Widerspruch stand seit dem 2026-08-26 als
+„nicht auflösbar" im Repo, weil die abrufbaren Protokollseiten damals nur bis
+2026-08-15 zurückreichten. Das war richtig beobachtet und falsch
+abgeschlossen: nicht abrufbar hieß nur „nicht auf der ersten Seite". Die
+Auflösung brauchte vier Abrufe mit einem Seitenzeiger. Ein Beleg, den man
+nicht auf Anhieb sieht, ist nicht dasselbe wie ein Beleg, den es nicht gibt —
+derselbe Fehlertyp wie beim fehlenden `git fetch --all` oben.
+
 ### Bekannte Lücke: die Renderwerte sind nicht eingecheckt
 
 `produktion/arbeit/` steht in `.gitignore`. Alle QA-Dateien eines

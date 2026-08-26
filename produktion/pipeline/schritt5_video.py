@@ -213,7 +213,13 @@ def main():
         "groesse_mb": round(os.path.getsize(ziel) / 1e6, 1),
         "bitrate_gesamt_kbps": round(os.path.getsize(ziel) * 8 / d / 1000, 1),
         "zyklus_s": T, "zyklus_wiederholungen": wdh,
-        "zoom": bool(cfg.get("zoom", True)), "zoom_faktor": float(cfg["zoom_faktor"]),
+        # Nicht der config-Wert, sondern was tatsaechlich angewandt wurde: bei
+        # videoquelle = ki_clips entfaellt der Atem-Zoom (die Clips bewegen sich
+        # selbst). Frueher stand hier cfg["zoom"] - dann meldete die Messdatei
+        # "zoom": true fuer einen Lauf, der gar keinen Zoom hatte.
+        "videoquelle": cfg["videoquelle"],
+        "zoom": bool(cfg.get("zoom", True)) and cfg["videoquelle"] != "ki_clips",
+        "zoom_faktor": float(cfg["zoom_faktor"]),
         "fps": int(cfg["fps"]), "aufloesung": f"{cfg['breite']}x{cfg['hoehe']}",
         "renderzeit_s": round(time.time() - t0, 1),
     }

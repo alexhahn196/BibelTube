@@ -150,7 +150,22 @@ fps                = 24
 # Szenenschnitt, belegt an 11/11 Stichproben. V3 - der einzige Treffer des
 # Kanals - lief so. KI-Clips waeren eine zusaetzliche Variable ohne Beleg,
 # und V05-V08 sollen den Korpuswechsel als einzige Aenderung testen.
-videoquelle        = standbild
+#
+# 2026-08-26 zurueck auf ki_clips (Entscheidung des Kanalinhabers). Die
+# Begruendung von 08-23 war in einem Punkt falsch herum gedacht: V01, V02,
+# V03 und V04 liefen ALLE mit ki_clips (Belege: die vier Clipsaetze in
+# produktion/motive/loops/ und je vier Seedance-Buchungen am 2026-08-04,
+# 08-06, 08-06 und 08-07 im Higgsfield-Transaktionsprotokoll). Damit war
+# standbild bei V05 nicht die Konstante, sondern die zweite Aenderung neben
+# dem Korpus. Der Ruecksprung auf ki_clips entfernt eine Variable, er fuegt
+# keine hinzu.
+#
+# Kosten: die tatsaechlich gebuchten Betraege stehen in
+# produktion/motive/README.md, Abschnitt "KI-Clips Video 05" - dort steht der
+# Wert aus dem Transaktionsprotokoll, nicht der Vorabpreis. Fuer die Planung
+# von V06-V08 gilt der Vorabpreis von Seedance 1.5 Pro (1080p, 12 s), nicht
+# der historische Satz von V01-V04.
+videoquelle        = ki_clips
 # Die Clips gehoeren zum Standbild ihres Videos und sind mit keinem anderen
 # Motiv verwendbar. Deshalb je Video ein eigener Ordner; ki_clip_ordner_V<n>
 # schlaegt den allgemeinen Wert.
@@ -159,6 +174,7 @@ ki_clip_ordner_V1  = produktion/motive/loops/ki
 ki_clip_ordner_V2  = produktion/motive/loops/ki-v02
 ki_clip_ordner_V3  = produktion/motive/loops/ki-v03
 ki_clip_ordner_V4  = produktion/motive/loops/ki-v04
+ki_clip_ordner_V5  = produktion/motive/loops/ki-v05
 
 # Kapitelmarken sind je Video entschieden, nicht global: videos-01-08.md
 # empfiehlt ja bei 01/02/06/08 und nein bei 03/04/05/07 (Formel §7 fuehrt sie
