@@ -195,7 +195,7 @@ video_preset       = medium
 # getestete Rueckfallweg yuv420p bei video_crf = 22 (0,99 GB statt 0,55 GB,
 # Fleckenfaktor 28 statt 90). Dither ist KEIN Rueckfallweg - gemessen
 # schlechter als der Ist-Zustand.
-video_pixelformat  = yuv420p10le
+video_pixelformat  = yuv420p
 audio_bitrate      = 192k
 
 # --- Laufzeit (Formel §2) ---
