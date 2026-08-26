@@ -1,0 +1,20 @@
+{
+ "datei": "thumbnail.png",
+ "text": "GOSPEL OF LUKE",
+ "woerter": 3,
+ "schrift": "FreeSerifBold.ttf",
+ "fontgroesse_px": 190,
+ "versalhoehe_px": 129,
+ "versalhoehe_pct": 11.94,
+ "textbreite_px": 1659,
+ "rand_je_seite_px": 130,
+ "kontrast_direkt_mittel": 16.6,
+ "kontrast_direkt_p95": 12.2,
+ "kontrast_roh_mittel": 13.8,
+ "kontrast_roh_p95": 8.8,
+ "groesse_kb": 3128.9,
+ "cap_ok": true,
+ "kontrast_ok": true,
+ "woerter_ok": true,
+ "bestanden": true
+}

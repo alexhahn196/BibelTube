@@ -1,13 +1,168 @@
 # Videos 01–08 — Textebene
 
-> **Stand: 2026-08-04.** Verbindlich sind `formel/video-formel.md` (v2.1),
+> **Stand: 2026-08-23.** Verbindlich sind `formel/video-formel.md` (**v2.2**),
 > `regeln/erfolgsregeln.md` und `formel/thumbnail-checkliste.md`.
+> **Der Textteil unten stammt vom 2026-08-04 und ist für V05–V08 nicht mehr
+> vollständig gültig** — was Gate 2 daran geändert hat, steht im nächsten Abschnitt.
 > Wortzahlen sind **gemessen**, nicht geschätzt: `produktion/wortzahlen.py` hat alle
 > 518 in Frage kommenden WEBBE-Kapitel abgerufen und gezählt
 > (`produktion/korpus/kapitel.json`, `produktion/korpus/plan.json`).
 > Alle acht Titel sind gegen die 21 bekannten Gewinner-Titel geprüft
 > (`produktion/titel_pruefung.py`, Ergebnis am Dateiende).
 > Noch kein Rendering, keine Stimme.
+
+## Was Gate 2 an diesem Plan ändert (2026-08-23)
+
+*Quelle: eigene Kanaldaten Gate 2, `regeln/daten/gate2_eigene_kanaldaten.json`.
+Auswertung: `produktion/workflow-gates.md`, Gate 2.*
+
+Zwei neue Regeln greifen ab V05 direkt in diesen Plan ein:
+
+- **M8** (`regeln/erfolgsregeln.md`): Hauptkorpus muss **durchlaufender Erzählstoff**
+  sein — Evangelien, Apostelgeschichte, Genesis-Erzählungen. Spruchsammlungen
+  (Psalmen, Sprüche, Prediger) und **prophetische Rede** nur als Beigabe.
+- **Formel §1**: **Eigenname im Titel ist Pflicht — in jedem Video**, nicht mehr
+  „~jedes 4.". Ausgeschlossen ist, dass er über die Suche wirkt (0 Suchaufrufe in
+  28 Tagen) oder über die Klickrate (V3 hat den zweitschlechtesten CTR des Kanals).
+  Ob er überhaupt wirkt, ist offen — **die Pflicht ist eine billige Konvention, kein
+  belegter Hebel** (§1, „die sparsamere Erklärung"). Der belegte Hebel ist M8.
+
+### Die vier geplanten Videos gegen die neuen Regeln
+
+| | Korpus laut Plan | Zusammensetzung | M8 | Eigenname im Titel |
+|---|---|---|---|---|
+| **V05** | Lukas + Prediger | Lukas 24.399 W (**81,7 %**) · Prediger 5.481 W (18,3 %) | **erfüllt** — Erzählstoff trägt, Prediger ist Beigabe | **fehlt** — „…Sleep to the Whole Story, Read Slowly" |
+| **V06** | Jesaja 1–25 + 40–66 + Daniel 4–6 | Jesaja 27.573 W (**89,8 %**) · Daniel 3.120 W (10,2 %) | **verletzt** — prophetische Rede ist Hauptkorpus | vorhanden („Isaiah") |
+| **V07** | Markus + Römer + Offb. 1–11 | Markus 14.261 W (**49,0 %**) · Römer 9.431 W (32,4 %) · Offenbarung 5.431 W (18,6 %) | **grenzwertig** — Erzählstoff unter der Hälfte, Rest Brief und Apokalyptik | **fehlt** — „…God's Promises for a Quiet Heart" |
+| **V08** | Genesis 1–42 | Genesis 29.835 W (100 %) | **erfüllt** — von M8 ausdrücklich genannt | **fehlt** — „…Sleep to the Beginning of Everything" |
+
+**V05 kann so gebaut werden, sobald der Titel einen Eigennamen trägt.** Der Korpus
+bleibt, wie er ist; nur die Titelzeile — und mit ihr Thumbnail-Text, Beschreibung und
+Tags — muss den Evangeliennamen tragen. Das ist die einzige Änderung, die V05 blockiert.
+
+**V06 muss umgeplant werden**, V07 braucht eine Entscheidung. Je zwei durchgerechnete
+Varianten stehen unten; entschieden ist noch nichts.
+
+### Korpusvarianten V06 und V07 — zur Entscheidung, noch nicht übernommen
+
+*Gerechnet am 2026-08-23 mit `produktion/korpus_pruefung.py` gegen die gemessenen
+Wortzahlen in `produktion/korpus/kapitel.json` (723 Kapitel, keine Lücken). Alle vier
+bestehen Gate-1-Prüfung 1.1 und 1.13 und überschneiden sich mit keinem anderen Video.
+**Die Reihenfolge in der Spalte „Korpus" ist Teil des Vorschlags, nicht Zufall** —
+Begründung unten.*
+
+| | Korpus, in Lesereihenfolge | Wörter | Erzählanteil | Laufzeit @140 | endet auf |
+|---|---|---|---|---|---|
+| **V06-A** | Apostelgeschichte → Ester → Rut | **30.987** | **100,0 %** | 3,69 h | Rut 4,22 (Genealogie auf David) |
+| **V06-B** | Apostelgeschichte → Ester 1–8 → Rut | **29.940** | **100,0 %** | 3,56 h | Rut 4,22 |
+| **V07-A** | Markus → 1. Könige 3–16 → Jona | **29.564** | 99,3 % | 3,52 h | Jona 4,11 (offene Frage) |
+| **V07-B** | Markus → 1. Könige 3–19 | **30.880** | **100,0 %** | 3,68 h | 1. Kön 19,21 (Elisa folgt Elija) |
+
+**Alle vier Kombinationen sind kollisionsfrei.** V06 belegt Ester und Rut, V07-A
+zusätzlich Jona, V07-B gar kein Kurzbuch — es gibt keine Kopplung zu beachten.
+
+#### Warum die Reihenfolge in der Tabelle steht
+
+Der **Schlussblock ist die teuerste Position im Video**. Er läuft, wenn der Hörer
+entweder schläft oder im leichtesten Schlaf liegt, und er ist das Letzte, was von
+3,5 Stunden hängenbleibt. Dieselben drei Bücher in anderer Reihenfolge sind deshalb
+nicht dieselbe Entscheidung. Konkret, alles im WEBBE-Text nachgelesen:
+
+- **Ester am Schluss** hieße, das Video auf 9,5–16 enden zu lassen — 500 Erschlagene in
+  Susa, Hamans zehn Söhne gehängt, insgesamt 75.000 Tote. Mit **Rut am Schluss** endet
+  es auf *„and Obed became the father of Jesse, and Jesse became the father of David"*.
+- **Daniel 4–6 am Schluss** wäre 6,24: die Ankläger *„them, their children, and their
+  wives; and the lions mauled them, and broke all their bones in pieces"*. Deshalb steht
+  Daniel in keiner der beiden V06-Varianten mehr.
+- **1. Könige am Schluss** wäre 16,34 (Hiel verliert beim Bau Jerichos seinen ältesten
+  und seinen jüngsten Sohn) — in V07-A fängt Jona das ab, in V07-B verschiebt der
+  Schnitt bei 19 das Ende auf Elisas Berufung.
+
+#### Was die beiden V06-Varianten unterscheidet: Ester 9
+
+Beide sind identisch bis auf die letzten zwei Kapitel Esters. **A** liest Ester
+vollständig — drei ganze Bücher, kein einziger Schnitt, kanonisch die sauberste
+Variante. **B** endet Ester bei 8,17: *„the Jews had gladness, joy, a feast and a
+holiday"*. Die Rettung ist vollzogen, die Vergeltung fällt weg. Kosten: ein Schnitt im
+Buchinneren und 1.047 Wörter (7,5 min).
+
+#### Was die beiden V07-Varianten unterscheidet: ob ein Kurzbuch mitkommt
+
+**A** braucht Jona, um ins Band zu kommen, und gewinnt dadurch den besten Schluss im
+ganzen Feld — Jona 4,11 ist eine offene Frage Gottes über eine Stadt und ihr Vieh, kein
+Gericht. **B** kommt mit zwei Bausteinen aus und lässt alle Kurzbücher frei; der
+Schnitt bei 1. Könige 19 ist ein echter Erzählabschluss (Elijas Nachfolge geregelt,
+vor dem Ahab-Kriegszyklus in 20–22).
+
+Beide beginnen 1. Könige bei **3,1** und nicht bei 1,1. Das ist Absicht: Kapitel 1–2
+sind Abischag und die Säuberung an Adonija, Joab und Schimi. Der Einstieg bei 3,5 —
+*„In Gibeon, the LORD appeared to Solomon in a dream by night"* — ist für einen Kanal
+namens *The Nightly Word* die passendste Übergangsstelle, die das Material hergibt.
+In V07-B kommt 19,11–12 dazu, die Stimme, die weder im Sturm noch im Erdbeben noch im
+Feuer ist.
+
+**Was in beiden V07-Varianten drinbleibt und nicht wegzuschneiden ist:** 18,40, Elija
+lässt die 450 Baalspropheten am Bach Kischon töten. Es liegt in der Videomitte, nicht
+am Schluss — aber es ist da.
+
+#### Was hier verworfen wurde und warum
+
+Ein erster Vorschlag lautete **V07 = Markus + Exodus 1–20 + Jona** bzw.
+**Markus + 1. Samuel 1–20**. Beide sind arithmetisch einwandfrei und beide sind an der
+Tonprüfung gescheitert — auch das im Text nachgelesen:
+
+- **Exodus 1–20** trägt 1,22 (*„You shall cast every son who is born into the river"*),
+  4,24–26 (*„the LORD met Moses and wanted to kill him"* — der Blutbräutigam), die
+  Plagen 7–10 und den Tod der Erstgeburt. Das ist die angsterzeugendste zusammenhängende
+  Strecke im ganzen verfügbaren Material, und sie läge vollständig im Schlaffenster.
+- **1. Samuel 1–20** trägt 15,3: *„kill both man and woman, infant and nursing baby"* —
+  ein Ausrottungsbefehl im Gottesmund, bei rund 3 Stunden Laufzeit mit warmer
+  Flüsterstimme gelesen. 1. Samuel 1–22 wäre schlimmer: es endet auf 22,18–19, dem
+  Priestermord von Nob einschließlich *„children and nursing babies"*.
+
+Das ist **kein Regelbruch** — M5 und V5 regeln die *Rahmung*, nicht den Bibeltext, und
+der Text wird nach V4 wörtlich gelesen, nicht geglättet. Es ist eine Nischenfrage: der
+Kanal verkauft Ruhe.
+
+#### Ein struktureller Befund, der für jede V07-Variante gilt
+
+Markus hat 14.261 Wörter. Damit der Korpus die Untergrenze von 29.000 erreicht, muss der
+Rest mindestens 14.739 beitragen — **mehr als Markus selbst.** Markus liegt in jeder
+gültigen V07-Variante zwischen **45,3 % und 49,2 %** des Korpus und kann die Hälfte
+rechnerisch nie tragen. Der Titel nennt also unvermeidlich den kleineren Teil. Das ist
+kein Fehler der Auswahl, sondern eine Folge davon, dass Markus das kürzeste Evangelium
+ist; die Beschreibung muss den zweiten Block deshalb ausdrücklich benennen.
+
+Was danach noch fehlt, sobald entschieden ist: neue Titel mit Eigenname, neue
+Eingangsgebete, neue Thumbnail-Zeilen, und `produktion/korpus/plan.json` nachziehen.
+
+**Noch nicht verplantes Material, gemessen** (`produktion/korpus/kapitel.json`):
+
+| Buch | Kapitel | Wörter | Art nach M8 |
+|---|---|---|---|
+| Apostelgeschichte | 28 | 23.143 | **Erzählstoff** — in M8 ausdrücklich genannt |
+| Genesis 43–50 | 8 | 5.992 | **Erzählstoff** |
+| Jesaja 26–39 | 14 | 7.984 | prophetische Rede — nur Beigabe |
+| Offenbarung 12–22 | 11 | 5.949 | Apokalyptik — nur Beigabe |
+| Daniel 7–12 | 6 | 5.182 | Visionsbericht — nur Beigabe |
+
+Der einzige verbliebene Erzählblock in Zielgröße ist die **Apostelgeschichte**
+(23.143 W); auf 3,4–3,8 h fehlen ihr rund 6.000 Wörter. Genesis 43–50 (5.992 W)
+schließt diese Lücke fast genau — dann wäre allerdings V08 neu zu schneiden.
+
+### Zwei Folgefragen, die dieser Plan noch offen trägt
+
+1. ~~**Der Hook-Test ab Video 05 kollidiert mit der Versuchsdisziplin.**~~
+   **Entschieden am 2026-08-23: Hook-Test auf V09+ verschoben, V05–V08 laufen alle mit
+   Variante (a).** Begründung im Upload-Plan oben — eine Variable pro Runde, und (a)
+   ist die Variante, unter der V3 gelaufen ist. Damit bleibt der Korpuswechsel nach M8
+   die einzige geänderte Größe zwischen V01–V04 und V05–V08.
+2. **Die Kapitelmarken-Empfehlung hängt an den alten Korpora.** „Ja bei 01, 02, 06, 08"
+   war mit 89/61 Psalmen und 52 Jesaja-Kapiteln begründet. Fällt der Jesaja-Korpus weg,
+   fällt die Begründung für V06 mit — und `kapitelmarken_videos` in
+   `produktion/config.md` (aktuell `V1,V2,V6,V8`) ist dann nachzuziehen.
+
+---
 
 ## Wo deine Vorgaben von den Dokumenten abweichen
 
@@ -29,8 +184,11 @@ Du hast gesagt, bei Widersprüchen gewinnen die Dokumente. Drei Stellen:
    selbst, eine anonyme Gestalt ist unbelegt.* Ursprünglicher Stand: stammen aus
    Formel §5 (belegtes Motiv-Set) und `thumbnail-checkliste.md`.
 
-Kein Widerspruch: dein Längenband 3,4–3,8 h deckt sich mit Formel §2, und
-„2 von 8 Titeln mit Eigennamen" entspricht der Testreihe „~jedes 4. Video".
+Kein Widerspruch: dein Längenband 3,4–3,8 h deckt sich mit Formel §2.
+~~Und „2 von 8 Titeln mit Eigennamen" entspricht der Testreihe „~jedes 4. Video".~~
+**Überholt am 2026-08-23:** Die Testreihe ist ausgewertet, Eigennamen sind seitdem in
+**jedem** Titel Pflicht (Formel §1). Von den acht geplanten Titeln erfüllen das zwei —
+V03 (gebaut) und V06. Siehe „Was Gate 2 an diesem Plan ändert" oben.
 
 ---
 
@@ -51,15 +209,35 @@ Startdatum ist ein Vorschlag — verschiebe den Block, das Muster bleibt.
 | 07 | Mi 09.09.2026 | 5 Tage |
 | 08 | Mo 14.09.2026 | 5 Tage |
 
-**Hook-Test ab Video 05:** Videos 01–04 laufen mit Variante (a), kurze Begrüßung.
-Ab 05 wechseln sich (a) und (b) ab — 05 und 07 kalt, 06 und 08 mit Begrüßung.
-So steht nach acht Videos je ein Paar gegeneinander. Beide Varianten sind unten
-ausformuliert, die Zuordnung ist eine Planungsentscheidung, kein Datenbefund:
-Formel §3 hält fest, dass ein fester Aufbau **nicht belegt** ist.
+**Hook-Test — am 2026-08-23 auf V09+ verschoben. V05 bis V08 laufen ALLE mit
+Variante (a), kurze Begrüßung.**
+
+> ~~Ab 05 wechseln sich (a) und (b) ab — 05 und 07 kalt, 06 und 08 mit Begrüßung.~~
+>
+> **Begründung: eine Variable pro Runde.** V05–V08 testen den Korpuswechsel nach
+> **M8** — Erzählstoff statt Spruchsammlung. Liefe daneben ein Hook-Test, wären zwei
+> Variablen gleichzeitig in Bewegung und keiner der beiden Befunde ließe sich dem
+> einen oder anderen zuordnen. Dieselbe Begründung hat an Gate 2 schon die
+> Kadenzfrage (M1) und die gekürzte Rahmung (Formel §9) vertagt; sie gilt hier
+> genauso.
+>
+> **Warum (a) und nicht (b):** V01–V04 liefen alle mit (a) — darunter V3, das
+> einzige Video des Kanals, das bisher funktioniert (14,4 % Endretention, 80 % der
+> Kanal-Wiedergabezeit). (a) beizubehalten hält V05–V08 mit V01–V04 vergleichbar.
+> (b) wäre die Abweichung, und Abweichungen kosten in dieser Runde die Aussage.
+>
+> Beide Varianten bleiben bei jedem Video ausformuliert stehen — der Test wird
+> nachgeholt, nicht gestrichen. Formel §3 hält weiterhin fest, dass ein festes
+> Aufbauschema **nicht belegt** ist.
+>
+> *Entschieden vom Kanalinhaber am 2026-08-23, nach der Gate-2-Auswertung.*
 
 **Nicht verplant und für Video 09+ frei:** Apostelgeschichte (23.143 W),
 Jesaja 26–39 (7.984 W), Daniel 7–12 (5.182 W), Offenbarung 12–22 (5.949 W),
 Genesis 43–50 (5.992 W).
+*Seit 2026-08-23 ist dieser Rest keine Reserve mehr, sondern Nachschub für die
+Umplanung von V06/V07 — nach M8 taugt davon nur die Apostelgeschichte als
+Hauptkorpus, Genesis 43–50 als zweiter Erzählblock. Tabelle oben.*
 
 ---
 
@@ -543,16 +721,33 @@ Support the channel: [Spendenlink]
 
 # Video 05
 
-**Titel:** `You're Tired, I Know… Sleep to the Whole Story, Read Slowly`
-**Eigennamen-Test:** nein
+**Titel:** `You're Tired, I Know… Luke's Whole Story, Read Slowly Until Morning`
+**Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1). Titel muss
+vor dem Bau angepasst werden; „Gospel of Luke" ist der Name des eigenen Korpus.
+Thumbnail-Text, Beschreibung und Tags ziehen mit.
+**Korpusart nach M8:** erfüllt — Lukas 81,7 %, Prediger als Beigabe.
 **Anker:** „You're Tired, I Know…" (belegt, A 201K)
-**Hook-Test:** Variante **(b), kalter Start** — Beginn der Gegenüberstellung
+**Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
+Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
-> **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Sleep to the Story of Jesus
-> Tonight". Damit lag der Titel bei 71,4 % gemeinsamer inhaltstragender Wörter mit
-> A's „You're Tired, I Know... Jesus Watches Over You Tonight" (233K) —
-> geteilt: *know, tired, you, jesus, tonight*. Über der 50-%-Grenze. „Jesus" und
-> „Tonight" sind gestrichen, der belegte Anker bleibt. Jetzt 50,0 %.
+> **Abgrenzung, Stand 2026-08-23 (freigegeben).** Zwei Runden:
+>
+> 1. Ursprünglich „…Sleep to the Story of Jesus Tonight" — 71,4 % gegen A's 233K-Titel.
+>    „Jesus" und „Tonight" gestrichen → „…Sleep to the Whole Story, Read Slowly",
+>    **50,0 %**. Das lag genau auf der Gate-Grenze (`<= 50 %`) und wäre bei der für
+>    V05 vorgegebenen 45-%-Schranke durchgefallen.
+> 2. Dazu kam die Eigennamen-Pflicht (Formel §1). Die naheliegende Fassung
+>    „…The Gospel of Luke, Read Slowly Until Morning" hält zwar 33,3 % gegen die
+>    Gewinner, liegt aber bei **44,4 % gegen C's totes Mashup** *„You're tired, I
+>    know… Rest to the Gospel of John"* (17 Aufrufe) — näher an der Kopie als an
+>    jedem Original. Es ist das Wort **„Gospel"**, das die Nähe erzeugt, nicht der
+>    Anker.
+>
+> **Gewählt:** „Luke's Whole Story" statt „The Gospel of Luke". Der belegte Anker
+> (A, 201K) bleibt, der Eigenname bleibt, und alle drei Messungen fallen auf
+> **30,0 / 30,0 / 30,0 %** (Gewinner / eigener Katalog / Kopisten) — der
+> ausgeglichenste Wert im ganzen Feld. Gemessen mit
+> `produktion/titel_kandidaten.py`.
 
 **Textkorpus:** Lukas + Prediger
 **Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS
@@ -584,12 +779,12 @@ Support the channel: [Spendenlink]
 
 ### Hook
 
-**(a) mit kurzer Begrüßung** *(nicht für dieses Video geplant, aber ausformuliert)*
+**(a) mit kurzer Begrüßung** ← **für Video 05 verwenden** *(seit 2026-08-23)*
 > „You're tired — I know. This isn't something you have to listen to, it's just
 > something to fall asleep in. The whole Gospel of Luke, read slowly, and then
 > Ecclesiastes. Close your eyes."
 
-**(b) kalter Start** ← **für Video 05 verwenden**
+**(b) kalter Start** *(ausformuliert, für den Hook-Test ab V09 aufgehoben)*
 > „Luke, chapter one. Since many have undertaken to set in order a narrative concerning
 > those matters which have been fulfilled among us…"
 
@@ -602,10 +797,17 @@ Support the channel: [Spendenlink]
 
 **Motiv:** Grundmotiv, aber Blickwinkel etwas näher an der sitzenden Figur —
 Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch.
-**Text:** `YOU'RE TIRED` (2 Wörter)
+**Text:** `GOSPEL OF LUKE` (3 Wörter)
 
 > **2026-08-06:** getauscht mit Video 03, das jetzt das Wassermotiv trägt.
 > Begründung: siehe Video 03.
+>
+> **2026-08-23:** Zeile von ~~`YOU'RE TIRED`~~ auf `GOSPEL OF LUKE` geändert —
+> Entscheidung des Kanalinhabers, damit Titel und Thumbnail denselben Eigennamen
+> führen (Formel §1). Nachgemessen mit der Methode aus `thumbnail.py`, FreeSerif
+> Bold @ 184 px, Versalhöhe 125 px: **1607 px** breit, 156 px Rand je Seite —
+> 2 px schmaler als `GOSPEL OF JOHN` bei Video 03 (1609 px). Die Serie bleibt in
+> der Zeilenbreite deckungsgleich. Tabelle in `produktion/motive/README.md`.
 
 ### Beschreibung
 
@@ -643,9 +845,14 @@ Support the channel: [Spendenlink]
 # Video 06
 
 **Titel:** `Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes`
-**Eigennamen-Test:** **JA** — „Isaiah" (Testreihe 2 von 2)
+**Eigenname im Titel:** vorhanden („Isaiah"). ~~Testreihe 2 von 2~~ — die Testreihe ist
+seit 2026-08-23 ausgewertet und zur Pflicht geworden (Formel §1).
+**Korpusart nach M8:** ⚠ **verletzt** — Jesaja 89,8 %, also prophetische Rede als
+Hauptkorpus. **Dieses Video ist so nicht baubar**, der Korpus muss neu geschnitten
+werden. Siehe „Was Gate 2 an diesem Plan ändert" am Dokumentanfang.
 **Anker:** „Don't Go to Sleep Worried…" (belegt, B 32K)
-**Hook-Test:** Variante **(a)**
+**Hook:** Variante **(a), kurze Begrüßung** *(unverändert; Hook-Test seit
+2026-08-23 auf V09+ verschoben)*
 
 > **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Isaiah's Comfort for a Restless
 > Heart". Damit lag der Titel bei 62,5 % gemeinsamer inhaltstragender Wörter mit
@@ -742,9 +949,13 @@ Support the channel: [Spendenlink]
 # Video 07
 
 **Titel:** `Fall Asleep Without Stress… God's Promises for a Quiet Heart`
-**Eigennamen-Test:** nein
+**Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1).
+**Korpusart nach M8:** ⚠ **grenzwertig** — Markus trägt nur 49,0 %, dazu Römer 32,4 %
+(Brief) und Offenbarung 18,6 % (Apokalyptik). Braucht eine Entscheidung, bevor gebaut
+wird.
 **Anker:** „Fall Asleep Without Stress…" (belegt, B 35K)
-**Hook-Test:** Variante **(b), kalter Start**
+**Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
+Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
 **Textkorpus:** Markus + Römer + Offenbarung 1–11
 **Gemessen:** 29.123 Wörter → **3,47 h** → ca. 151.700 Zeichen TTS
@@ -774,11 +985,11 @@ Support the channel: [Spendenlink]
 
 ### Hook
 
-**(a) mit kurzer Begrüßung** *(nicht für dieses Video geplant)*
+**(a) mit kurzer Begrüßung** ← **für Video 07 verwenden** *(seit 2026-08-23)*
 > „Fall asleep without stress tonight. Nothing is asked of you here. The Gospel of
 > Mark, then Romans — read slowly, all the way through. Close your eyes."
 
-**(b) kalter Start** ← **für Video 07 verwenden**
+**(b) kalter Start** *(ausformuliert, für den Hook-Test ab V09 aufgehoben)*
 > „Mark, chapter one. The beginning of the Good News of Jesus Christ, the Son of God…"
 
 ### CTA (2)
@@ -845,9 +1056,12 @@ Rest well tonight. Subscribing helps you find the next one.
 # Video 08
 
 **Titel:** `You Need Rest… Sleep to the Beginning of Everything`
-**Eigennamen-Test:** nein
+**Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1). „Genesis"
+ist der Name des eigenen Korpus.
+**Korpusart nach M8:** erfüllt — Genesis-Erzählungen, in M8 ausdrücklich genannt.
 **Anker:** „You Need Rest…" (belegt, A 36K)
-**Hook-Test:** Variante **(a)**
+**Hook:** Variante **(a), kurze Begrüßung** *(unverändert; Hook-Test seit
+2026-08-23 auf V09+ verschoben)*
 
 **Textkorpus:** Genesis 1–42
 **Gemessen:** 29.835 Wörter → **3,55 h** → ca. 155.400 Zeichen TTS
@@ -978,10 +1192,15 @@ Maß.
 
 ## Was hier offen bleibt
 
-- **Ob die Eigennamen-Titel (03, 06) besser laufen** — das ist die Testreihe, n=1 in
-  den Ausgangsdaten. Auswertung frühestens nach Video 10, Prüfkriterium in Formel §9.
-- **Ob Hook (a) oder (b) trägt** — nicht belegt (Formel §3). Die Zuordnung ab Video 05
-  ist ein Testaufbau, kein Befund. Aussagekräftig wird er erst mit mehr als je zwei Fällen.
+- ~~**Ob die Eigennamen-Titel (03, 06) besser laufen**~~ — **an Gate 2 beantwortet
+  (2026-08-23).** Eigennamen sind seitdem in jedem Titel Pflicht (Formel §1); die
+  Testreihe existiert nicht mehr. Offen bleibt nur, ob der Eigenname oder der
+  Erzählstoff wirkt — V3 trug beides, und V05–V08 tragen ebenfalls beides.
+- **Ob Hook (a) oder (b) trägt** — nicht belegt (Formel §3), und **seit 2026-08-23
+  auch nicht in dieser Runde zu klären**: V05–V08 laufen alle mit (a), damit der
+  Korpuswechsel nach M8 die einzige geänderte Variable bleibt. Der Test ist auf V09+
+  verschoben, beide Varianten stehen bei jedem Video ausformuliert bereit.
+  Aussagekräftig wird er ohnehin erst mit mehr als je zwei Fällen.
 - **Ob die Gebete überhaupt etwas bewirken** — weder für Reichweite noch für YPP aus
   diesen Daten belegbar. Sie kosten wenig und stehen als Absicherung drin.
 - **Welche Motivvariante innerhalb der Serie wirkt** — B's Thumbnails sind bei 166.000

@@ -2,6 +2,17 @@
 """
 Gate 1.11 - Pegelabstand in BEIDEN Wiedergabefaellen.
 
+**NICHT TEIL DER PIPELINE.** Gate 1.11 prueft `schritt3_bett.py`; es misst
+seit 2026-08-23 selbst beide Faelle und schreibt sie nach `qa_mix.json`
+(`gemessen_bett_je_kanal_dbfs`, `gemessener_abstand_je_kanal_db`,
+`bett_dekorreliert_db`, getrennte Flags). Dieses Skript ist am 2026-08-25
+unabhaengig davon entstanden und bleibt als Einzelwerkzeug liegen: es misst
+eine BETT-DATEI allein, ohne Renderlauf, und beantwortet damit die Frage
+"wieviel verliert dieses Bett beim Downmix" fuer ein Artefakt, das noch
+nirgends verwendet wird. Ergebnis in
+`produktion/pipeline/qa/pegel_wiedergabe.json`.
+
+
 `schritt3_bett.py` mischt stereo, misst aber mono: sowohl `rahmen_datei()`
 als auch `rms_db(bett.mean(axis=1))` summieren vorher L und R. Der Wert in
 `qa_mix.json` beschreibt deshalb nur den MONO-Fall.

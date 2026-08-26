@@ -81,7 +81,7 @@ kein Datenbefund.
 ## Wo die Dokumente sich untereinander widersprechen
 
 Aufgelöst nach der Verbindlichkeitsliste in `produktion/videos-01-08.md`
-(Formel v2.1 → erfolgsregeln → produktions-spec).
+(Formel v2.2 → erfolgsregeln → produktions-spec).
 
 | Thema | Widerspruch | Verwendet |
 |---|---|---|

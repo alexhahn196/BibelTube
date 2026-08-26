@@ -1,6 +1,7 @@
-# Video-Formel v2.1 — Arbeitsdokument
+# Video-Formel v2.2 — Arbeitsdokument
 
-> **Stand: 2026-08-02.** v2.1 = deine v2, Element für Element gegen die Rohdaten geprüft.
+> **Stand: 2026-08-23.** v2.1 = deine v2, Element für Element gegen die **Fremd**daten
+> geprüft (2026-08-02). **v2.2 = die erste Revision aus eigenen Kanaldaten.**
 > Datengrundlage: `regeln/daten/` (21 Gewinner-Videos aus 2 Kanälen, 129 Verlierer-Videos aus
 > 8 Kanälen, 19 Voll-Metadatensätze, 4 Gewinner-Transkripte, 90 Thumbnails) plus
 > `teardown/produktions-spec.md` (454 Videos, 8 etablierte Kanäle) und `regeln/erfolgsregeln.md`.
@@ -9,6 +10,17 @@
 > fasst die harten Prüfungen dieses Dokuments als Gate 1 zusammen — Kernregel dort:
 > *kein Rendering, bevor Titel und Thumbnail stehen.* Gate 2 ersetzt nach Video 4
 > Fremdbefunde durch eigene CTR- und Retention-Daten.
+>
+> **2026-08-23 — Gate 2 ausgewertet, eigene Zahlen eingearbeitet.** Kanal
+> *The Nightly Word*, 4 Videos, 25.07.–22.08.2026: 151 Aufrufe, 69,4 Wiedergabestunden,
+> 5.535 Impressionen, CTR 2,71 %, 2 Abonnenten.
+> Geändert: **§1** (Eigenname von Testreihe zu Pflicht) · **§4** (Korpus-Regel M8 neu) ·
+> **§6** (Kadenz-Entscheidung) · **§7** (Traffic-Quellen) · **§9** (Anfangsabfall als
+> Beobachtung, Eigennamen-Frage geschlossen) · **§10** (Eigennamenliste ist keine
+> Testreihenliste mehr).
+> Jede dieser Stellen trägt die Marke *eigene Kanaldaten Gate 2* und ein Datum; alles
+> **ohne** diese Marke stammt weiterhin aus den 10 Fremdkanälen. Rohwerte:
+> `regeln/daten/gate2_eigene_kanaldaten.json`.
 >
 > **Status: Qualifikations-Checkliste, kein Hit-Rezept.** Beleg: B #7 und #8 unterscheiden sich
 > in keiner messbaren Variable und um Faktor 128 in den Views. Erfüllung verhindert Scheitern,
@@ -19,7 +31,7 @@
 
 | # | Element | Verdikt |
 |---|---|---|
-| 1 | Zustands-Anker als Pflicht | **bleibt** — 9/10 Treffer |
+| 1 | Zustands-Anker als Pflicht | **bleibt** — 9/10 Treffer (Anredeform 2026-08-23 nachkorrigiert: Du-Ansprache ist 7/9, nicht 9/9) |
 | 2 | „Tonight" im Pflichtmuster | **schärfen** — nur 6/10 Treffer |
 | 3 | Deine drei Titel-Beispiele | **schärfen** — alle drei aus meiner *ungeprüft*-Liste |
 | 4 | „Gospel of John = zweitbestes Video" | **Faktenfehler** — es ist A's **bestes** (245K) |
@@ -40,8 +52,26 @@
 
 ## 1. TITEL
 
-**PFLICHT — Zustands-Anker in Du-Ansprache.** 9 von 10 Treffern (>30K). Einzige Ausnahme ist
-A's schwächster Treffer („Come Little Lamb", 47K).
+**PFLICHT — Zustands-Anker.** 9 von 10 Treffern (>30K). Einzige Ausnahme ist
+A's schwächster Treffer („Come Little Lamb", 47K) — der einzige Titel ohne Zustand.
+
+> **Faktenkorrektur 2026-08-23: „in Du-Ansprache" ist zu scharf formuliert gewesen.**
+> Bis heute stand hier „Zustands-Anker **in Du-Ansprache**, 9 von 10 Treffern". Die
+> 9 von 10 stimmen — sie gelten aber dem **Zustand**, nicht der Anredeform. Die 9
+> Zustands-Titel gegen §10 durchgezählt:
+>
+> | Ansprache | Anzahl | Titel |
+> |---|---|---|
+> | zweite Person | 4 | `If You're Anxious,` 245K · `I Know You're Tired…` 233K · `You're Tired, I Know…` 201K · `You Need Rest…` 36K |
+> | Imperativ (Du mitgemeint) | 3 | `Stop Thinking For A Moment,` 96K · `Fall Asleep Without Stress…` 35K · `Don't Go to Sleep Worried…` 32K |
+> | **erste Person** | **1** | **`Lord, I Feel Tired` 184K** |
+> | kein Pronomen | 1 | `No More Thinking Tonight…` 166K |
+>
+> **Du-Ansprache ist also 7 von 9, nicht 9 von 9.** A's 184K-Treffer spricht nicht den
+> Hörer an, sondern legt ihm die eigenen Worte in den Mund — und das ist der
+> viertstärkste Titel im ganzen Datensatz. Ein Titel in erster Person ist damit
+> **belegt, nicht verboten.** Was Pflicht bleibt, ist der **Zustand**; die Anredeform
+> ist häufig, aber nicht durchgehend.
 
 **Muster:** `[Gefühlszustand] + [Zusage mit Jesus/Gott]`, „Tonight" **optional**.
 > *Korrektur zu v2:* „Tonight" steht in **6 von 10** Treffern, nicht in allen. A's 184K-Video
@@ -54,10 +84,77 @@ A's schwächster Treffer („Come Little Lamb", 47K).
 Everything…"*) stammen alle aus meiner **ungeprüft**-Liste — nie von einem Gewinner verwendet.
 Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Rennen.
 
-**TESTREIHE (ungeprüft, ~jedes 4. Video): Eigenname ergänzen.**
-> *Faktenkorrektur:* *„If You're Anxious, Rest to the **Gospel of John** Tonight"* ist mit
-> 245.000 Views A's **bestes** Video, nicht das zweitbeste. Das stärkt die Testreihe leicht —
-> ändert aber nichts daran, dass n=1 ist und 20 von 21 Gewinner-Titeln ohne Eigennamen auskommen.
+**PFLICHT (seit 2026-08-23) — Eigenname in JEDEM Titel.**
+
+> **~~TESTREIHE (ungeprüft, ~jedes 4. Video): Eigenname ergänzen.~~ — ersetzt.**
+> Die Testreihe ist gelaufen und **bestätigt, aber aus einem anderen Grund als vermutet**
+> *(eigene Kanaldaten Gate 2, 2026-08-23)*.
+>
+> V3 ist das einzige der vier eigenen Videos mit einem Eigennamen im Titel („Gospel of
+> John") und hält **3.130 von 5.535 Impressionen, 91 von 151 Aufrufen und 1 von 2
+> Abonnenten** — bei einem CTR von 1,82 %, dem zweitschlechtesten des Kanals.
+>
+> **Der Wirkungsweg ist nicht die Suche.** Die Traffic-Quellen zeigen **null
+> Suchverkehr** (YouTube-Suche: 0 Aufrufe in 28 Tagen, kanalweit — Tabelle in §7). Der
+> Eigenname wirkt über die **kontextliche Zuordnung im Vorschlagsband**: er sagt dem
+> Empfehlungssystem, neben welche Videos dieses gehört. Genau deshalb gehört er in
+> **jeden** Titel und nicht in jeden vierten — ein Zuordnungssignal wirkt nicht als
+> Stichprobe.
+>
+> **Der Zustands-Anker bleibt Pflicht — das ist ein UND, kein ODER.** V3 trägt beides:
+> *„If You're Overwhelmed, Let the Gospel of John Quiet Your Mind"*.
+>
+> **Was diese Daten NICHT hergeben:** ein eigenes Video mit Eigennamen gegen drei ohne.
+> V3 unterscheidet sich zusätzlich im **Korpus** (Erzählstoff statt Spruchsammlung, M8) —
+> Eigenname und Erzählstoff sind hier **nicht getrennt**, dasselbe Video trägt beides.
+> V05–V08 tragen ebenfalls beides und stellen die Trennung damit auch künftig nicht her.
+> Sie entstünde erst durch ein Erzählvideo **ohne** Eigennamen im Titel — und dieser
+> Test steht hinter dem Korpuswechsel an, nicht neben ihm (eine Variable pro Runde).
+> Der frühere Einwand bleibt formal richtig: 20 von 21 Gewinner-Titeln kommen ohne
+> Eigennamen aus. Die eigenen Impressionen schlagen ihn trotzdem — Gate 2, Kernregel.
+>
+> *Faktenkorrektur aus v2.1, weiterhin gültig:* *„If You're Anxious, Rest to the
+> **Gospel of John** Tonight"* ist mit 245.000 Views A's **bestes** Video, nicht das
+> zweitbeste.
+
+> ### Einschränkung, nachgetragen am 2026-08-23: die sparsamere Erklärung
+>
+> *(eigene Kanaldaten Gate 2 — diese Einschränkung schwächt die Regel darüber
+> bewusst ab, statt sie zu verteidigen.)*
+>
+> Die 3.130 Impressionen von V3 sind oben als Argument **für** den Eigennamen
+> geführt. Sie können aber genauso gut die **Folge der besseren Retention** sein
+> statt die Folge des Titels. YouTube liefert nach Wiedergabezeit aus — und V3 trägt
+> 80 % der Kanal-Wiedergabezeit (M8).
+>
+> **Was die Zahlen ausschließen und was nicht.** Drei Erklärungen stehen im Raum:
+>
+> | | Kette | Status |
+> |---|---|---|
+> | A | Eigenname → attraktiverer Titel → **höhere Klickrate** → mehr Impressionen | **widerlegt** |
+> | B | Eigenname → bessere kontextliche Zuordnung → mehr Impressionen | möglich, **unbelegt** |
+> | C | Erzählstoff → mehr Wiedergabezeit → mehr Impressionen | möglich, **belegt** (M8) |
+>
+> **A fällt, und zwar an einer einzigen Zahl:** V3 hat mit **1,82 %** den
+> *zweitschlechtesten* CTR des Kanals. Ein Titel, der zieht, müsste sich **zuerst
+> im CTR zeigen** — dort und nirgends sonst wirkt ein Titel unmittelbar. Er tut es
+> nicht. Damit ist die naheliegendste Lesart des Befunds erledigt.
+>
+> **B und C trennen die eigenen Daten nicht.** Beide sagen dasselbe voraus, was man
+> sieht: viele Impressionen bei unauffälligem CTR. Aber sie sind nicht gleich gut
+> gestützt — **C beruft sich auf einen Mechanismus, der hier gemessen ist**
+> (Retention, Faktor 6, M8), **B auf einen zusätzlichen, der es nicht ist.** Nach
+> dem sparsameren Prinzip gewinnt C.
+>
+> **Was daraus folgt:**
+> - **Der Eigenname bleibt Pflicht** — er kostet nichts, er ist plausibel, und er
+>   wegzulassen würde eine Variable ändern, ohne dass etwas dafür spräche.
+> - **Er ist aber kein belegter Hebel, sondern eine billige Konvention.** Wer diese
+>   Regel liest, soll nicht glauben, hier sei ein Wirkmechanismus nachgewiesen.
+> - **Der belegte Hebel dieses Kanals ist M8, nicht der Titel.** Wenn Arbeitszeit
+>   zwischen Titelfeilen und Korpuswahl verteilt wird, gehört sie in den Korpus.
+> - Getrennt würden B und C erst durch ein Video mit Erzählstoff **ohne** Eigennamen
+>   im Titel. Das steht hinter dem Korpuswechsel an — eine Variable pro Runde.
 
 **VERBOTEN — belegt:**
 - Titel von Konkurrenten wörtlich übernehmen. Kanal F kopierte A's 233K-Titel inklusive
@@ -77,6 +174,12 @@ Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Ren
 > hätte B's zweitgrößten Treffer verhindert. Die tatsächliche Regel ist bereits als PFLICHT
 > abgedeckt: **nie ohne Zustands-Anker.** B #3 „Sleep To THESE Psalms And See What God Does"
 > (304 Views) ist genau der Fall ohne Zustand.
+>
+> *Ergänzung 2026-08-23 (eigene Kanaldaten Gate 2):* Der Punkt ist durch **M8** praktisch
+> stillgelegt. Psalms bleiben als Anker erlaubt — aber der Titel benennt den Korpus, und
+> Psalmen dürfen nicht mehr Hauptkorpus sein. Ein Psalms-Titel ohne Psalmen-Korpus wäre
+> eine Falschauskunft an Zuschauer und Empfehlungssystem. Also: bis auf Weiteres kein
+> Psalms-Anker.
 
 ---
 
@@ -149,6 +252,16 @@ Video (233.704 Views) startet nach 2,1 s kalt mit „John chapter 15" — ohne R
 ---
 
 ## 4. TEXT
+
+> **Korpusart — neu geregelt am 2026-08-23, siehe M8 in
+> [`regeln/erfolgsregeln.md`](../regeln/erfolgsregeln.md)** *(eigene Kanaldaten Gate 2)*.
+> Der **Hauptkorpus muss durchlaufender Erzählstoff sein** — Evangelien,
+> Apostelgeschichte, Genesis-Erzählungen. **Spruchsammlungen** (Psalmen, Sprüche,
+> Prediger) und **prophetische Rede** nur als Beigabe, nie als Hauptkorpus.
+> Beleg: Endretention nach 3,5 h bei den eigenen Videos — V3 Johannes 14,4 % gegen
+> V2 Psalmen+Sprüche 2,4 %, **Faktor 6**, dazu 80 % der Kanal-Wiedergabezeit auf V3.
+> Dieses Dokument hatte zur Korpusart bis dahin **nichts** zu sagen, und das war kein
+> Versehen: Fremddaten geben sie nicht her, weil aus ihnen nur Views ablesbar sind.
 
 **Wörtlich gelesen, niemals maschinell paraphrasiert.** Todesursache bei Kanal C:
 *„Strike all of my opponents on the mandible."*
@@ -235,6 +348,51 @@ ein Verlierer mit 156 Views. Du brauchst keinen menschlichen Sprecher, und er w�
 - **Grillen: 0/3 Gewinner, 2/3 Verlierer.** n zu klein für eine Regel, aber im Zweifel weglassen.
 - **Stimme in 6/6 Fällen klar über dem Bett** — Musik verschluckt sie nie. Das ist die einzige
   harte Abmisch-Regel, die die Daten hergeben.
+
+> ### 2026-08-23 — der Stereoaufbau des Betts ist ein Fehler, kein Merkmal
+>
+> *(eigene Kanaldaten Gate 2. Rohwerte in `regeln/daten/gate2_eigene_kanaldaten.json`,
+> Messung reproduzierbar mit `produktion/klang/klang_proben.py`.)*
+>
+> **Das Publikum hört mono.** 68 % der Aufrufe kommen vom Handy, 12 % vom Fernseher —
+> zusammen 80 %, und beide geben über Handy-, Bluetooth- oder TV-Lautsprecher aus. Der
+> Mono-Summenfall ist der **Regelfall**, nicht der Sonderfall.
+>
+> **Das Bett ist kein echtes Stereo.** `bett_pad_feuer.flac` trägt in R dasselbe Signal
+> wie in L, nur um **240 Samples = 5,442 ms** versetzt (`np.roll(sig, 240)` in
+> `stimmtest/musikbett.py`). Wer das zu Mono summiert, bekommt einen Kammfilter:
+> erste Auslöschung bei **91,9 Hz**, dann alle **183,8 Hz**. Gemessen gegen die Theorie
+> |cos(π f T)| — Übereinstimmung auf 0,1 dB.
+>
+> **Der Schaden ist nicht der Pegel, sondern der Akkord.** Das Pad besteht aus Grundton,
+> Quinte, Oktave, Duodezime und Doppeloktave (55 · 82,5 · 110 · 165 · 220 Hz). Die erste
+> Kammkerbe sitzt bei 91,9 Hz — zwischen Quinte und Oktave. Pegel relativ zum Grundton:
+>
+> | | Quinte E2 | Oktave A2 | Duodezime E3 | Doppeloktave A3 | max. Abw. |
+> |---|---|---|---|---|---|
+> | **Bauplan** | −5,26 | −5,26 | −11,88 | −16,75 | — |
+> | **Mono-Summe, wie es jetzt ist** | **−16,18** | −11,78 | −7,99 | −13,49 | **10,9 dB** |
+> | **Mono-Summe, Bett echt mono** | −4,86 | −6,12 | −12,19 | −16,28 | 0,9 dB |
+>
+> Die Quinte, die den Charakter des Betts trägt, liegt am Handylautsprecher **10,9 dB
+> unter dem Bauplan**; gleichzeitig rückt die Duodezime 3,9 dB nach oben. Das ist kein
+> Lautstärkeproblem — **das ist ein anderer Akkord als der, der im Hörtest ausgewählt
+> wurde.** Mit echt monoem Bett stimmt er auf 0,9 dB.
+>
+> **Die Stimme ist nicht betroffen.** `schritt3_bett.py` addiert sie identisch in beide
+> Kanäle (Zeilen 102/103), ohne Versatz. Gemessen: 0,00 dB Verlust in der Mono-Summe.
+> Genau deshalb fällt der Fehler nicht auf — die Stimme klingt richtig, das Bett darunter
+> nicht.
+>
+> **Nebenfolge für die 12-dB-Regel.** Die Pipeline normiert das Bett am Mono-Downmix auf
+> −31 dBFS. Weil dieser Downmix 5,2 dB leiser ist als ein einzelner Kanal, steht das Bett
+> **je Kanal bei −25,8 dBFS**: `qa_mix.json` meldet 12,0 dB Abstand, am Kopfhörer sind es
+> **6,8 dB**. Mit echt monoem Bett sind es in beiden Fällen 12,0 dB — die Umstellung
+> repariert also auch diese Inkonsistenz.
+>
+> **Was hier NICHT gemessen ist:** der fertige Mix. `produktion/arbeit/` ist gitignored
+> und in dieser Sitzung leer; alle Aussagen zum Mix sind aus dem Bett und aus dem Code
+> von `schritt3_bett.py` hergeleitet, nicht am fertigen Video nachgemessen.
 - Weder „Delta-Wellen" noch „Klavier+Regen" aus dem Ursprungsbriefing waren hörbar zu bestätigen.
   Klavier trat nur bei Verlierer F auf.
 
@@ -292,6 +450,16 @@ Verfügbarkeit der besseren TTS-Stimme, nicht das Geschlecht.
 (Gewinner 1,3–1,5/Wo; alle 8 Verlierer 2,0–13,5). **Null Shorts** (J: 856.688 Shorts-Views →
 171 Langform-Views bei 2.210 Subs).
 
+> **Kadenz-Entscheidung 2026-08-23 — bleibt bei 5 Tagen** *(eigene Kanaldaten Gate 2)*.
+> Dafür sprach eine **Fremdkohorte**: 74 Wissenschafts-Schlafkanäle unter 2 Jahren,
+> Kadenz dort der stärkste Treiber (Median 311 $/Mon. bei 0–1,5 Uploads/Woche gegen
+> 1.770 $ bei 6+). Dagegen sprach die eigene M1-Verteilung — beide Gewinner 1,3–1,4/Woche,
+> alle 8 Verlierer 2,0–13,5, keine Überlappung; alle drei Tage wären 2,33/Woche und damit
+> im Verliererband. Ausschlaggebend war die Versuchsdisziplin: V05–V08 sollen den
+> Korpuswechsel nach M8 als **einzige** geänderte Variable testen. Kadenz erst danach.
+> Beide Seiten ausgeführt unter M1 in
+> [`regeln/erfolgsregeln.md`](../regeln/erfolgsregeln.md).
+
 **Ergänzung aus den Daten:** Kanalbeschreibung und Kanal-Keywords müssen ausschließlich die
 Nische beschreiben. E wirbt bis heute für „Tibetan Singing Bowls" (40 Subs), H trägt
 Mythologie-Keywords und Atlantis-Videos im Katalog (Median 52 Views).
@@ -315,6 +483,35 @@ erst den Nutzen, dann buymeacoffee) — n=1, schwacher Beleg.
 > die beiden ≥3h-Flops haben 6 und 22. Bei n=5 ist das keine belastbare Negativregel — aber
 > „echte Tags" als Pflicht zu führen, behauptet einen Nutzen, den kein Gewinner belegt. Setz sie,
 > weil sie nichts kosten; erwarte nichts davon.
+
+**Optimiert wird auf das Vorschlagsband, nicht auf die Startseite.**
+*(eigene Kanaldaten Gate 2, 2026-08-23 — Traffic-Quellen des Kanals über 28 Tage,
+146 von 151 Aufrufen zugeordnet.)*
+
+| Quelle | Aufrufe | Ø Sehdauer |
+|---|---|---|
+| Vorgeschlagene Videos | 102 | **29,7 min** |
+| Startseite / Abo-Feed | 36 | **10,2 min** |
+| Direkt oder extern | 6 | 89,8 min |
+| Sonstige YouTube-Seiten | 2 | 104 min |
+| **YouTube-Suche** | **0** | — |
+
+Die Startseite liefert die **schlechtesten Zuschauer des Kanals**: 10,2 min gegen 29,7 min
+aus dem Vorschlagsband, gut ein Drittel. Wo Titel und Thumbnail zwischen beiden abwägen
+müssten — Anschlussfähigkeit an ähnliche Videos gegen Auffälligkeit im offenen Feed —,
+gewinnt das Vorschlagsband. Praktisch heißt das: Eigenname (§1) und Serienmotiv (§5)
+wiegen schwerer als ein Titel, der isoliert auf der Startseite auffällt.
+
+**Suchoptimierung ist bei diesem Kanalstand kein Hebel.** Null Suchaufrufe in 28 Tagen.
+Tags und Beschreibungs-Keywords bleiben trotzdem, weil sie nichts kosten — aber es ist
+nichts von ihnen zu erwarten (siehe den Tag-Befund oben). Die beiden hohen Ø-Sehdauern
+(89,8 und 104 min) hängen an 6 bzw. 2 Aufrufen und tragen nichts.
+
+> **Zahlenwarnung — die Traffic-Quelle „SUBSCRIBER" ist keine Abonnentenzahl.**
+> Die YouTube-API meldet **Startseite und Abo-Feed** unter dem Label `SUBSCRIBER`. Das
+> bedeutet **nicht** „Aufrufe durch Abonnenten". Der Kanal hatte im ganzen Zeitraum
+> **2 Abonnenten**. Wer das Label wörtlich liest, hält 36 Aufrufe für Abo-Traffic,
+> den es nicht gibt.
 
 **KI-Kennzeichnung aktivieren** — Compliance-Entscheidung, kein Datenbeleg in beide Richtungen.
 Gehört zu §8.
@@ -341,9 +538,49 @@ Checkliste nicht mit ungeprüften Annahmen verwässert.
   CTR aus fremden Analytics nicht auflösbar.
 - **Ob WEBBE so gut trägt wie NIV.** Prüfkriterium: dieselbe Psalmenauswahl einmal in beiden
   Fassungen als 2-Minuten-Probe sprechen lassen, gegen Muttersprachler-Ohr prüfen.
-- **Ob Eigennamen einem Neustarter helfen.** n=1. Prüfkriterium: ab Video 10 je 5 Videos
-  mit/ohne, Median-Views vergleichen.
-- **Optimale Kadenz innerhalb 4–7 Tagen.** Belegt ist nur die Obergrenze.
+- **Ob Eigennamen einem Neustarter helfen** — **am 2026-08-23 nur teilweise geklärt**
+  *(eigene Kanaldaten Gate 2)*. Sicher ist: **nicht über die Suche** (0 Suchaufrufe in
+  28 Tagen) und **nicht über die Klickrate** (V3 hat den zweitschlechtesten CTR des
+  Kanals). Beides ist ausgeschlossen. Ob der Eigenname über die kontextliche Zuordnung
+  im Vorschlagsband wirkt oder ob V3's Impressionen schlicht der besseren Retention
+  folgen, **trennen die eigenen Daten nicht** — V3 trug Eigenname und Erzählstoff
+  zugleich, und die Retention ist die gemessene der beiden Größen. Ausgeführt in §1
+  unter „die sparsamere Erklärung". Der Eigenname ist trotzdem Pflicht, aber als
+  billige Konvention, nicht als belegter Hebel.
+  *Prüfkriterium:* ein Video mit Erzählstoff-Korpus **ohne** Eigennamen im Titel —
+  frühestens nach V08, wenn der Korpuswechsel ausgewertet ist.
+- **Optimale Kadenz innerhalb 4–7 Tagen.** Belegt ist nur die Obergrenze. Die Frage,
+  ob häufiger besser wäre, ist am 2026-08-23 **gestellt und vertagt** worden, nicht
+  beantwortet — siehe §6 und M1.
+
+### Beobachtung, ausdrücklich noch KEINE Regel: der Anfangsabfall
+
+*(eigene Kanaldaten Gate 2, 2026-08-23)*
+
+Beide Videos mit Retentionskurve verlieren im selben Fenster den größten Teil ihres
+Publikums — **zwischen Minute 2 und Minute 4**:
+
+| | Minute 2 | Minute 4 |
+|---|---|---|
+| V3 Johannes | 100 % | **40 %** |
+| V2 Psalmen + Sprüche | 100 % | **29 %** |
+
+In diesem Fenster liegen **Hook (~20 s) und Eingangsgebet (~80 s)**.
+
+**Warum daraus jetzt keine Regel wird — drei Gründe:**
+1. YouTubes Messpunkte sind bei 3,5 h Laufzeit **2-Minuten-Blöcke**. Der Abfall ist
+   nicht auf die Sekunde lokalisierbar und trifft Hook und Gebet gemeinsam; welches
+   von beidem kostet, sagen die Daten nicht.
+2. Ein **steiler Anfangsabfall ist bei Long-Form normal** — er ist kein Befund, solange
+   nichts Vergleichbares dagegensteht.
+3. **n=91** Aufrufe für die stärkere der beiden Kurven ist klein.
+
+Die Rahmung jetzt zu kürzen hieße raten — und das Eingangsgebet steht ohnehin als
+Policy-Absicherung in §8, nicht als Reichweiten-Element.
+
+*Prüfkriterium:* Zeigen **V05–V08 dasselbe Muster**, wird **ein** Video mit gekürzter
+Rahmung getestet. **Eine Variable pro Runde** — solange der Korpuswechsel nach M8 läuft,
+bleibt die Rahmung unverändert.
 
 ---
 
@@ -374,8 +611,15 @@ Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwen
 `When Sleep Won't Come…` · `You've Carried Enough Today…` · `If Tonight Feels Heavy,` ·
 `Too Tired to Pray? …` · `When Tomorrow Feels Too Big…` · `If You're Lying Awake Again…`
 
-**Eigennamen für die Testreihe** (aus Lauf 1, etablierte Kanäle, kanal-normiert — für einen
-Neustarter ungeprüft): Gospel of John 3,0–3,3× (n=14) · Gospels 2,8–3,3× (n=31) ·
+**Eigennamen — seit 2026-08-23 Pflichtbestandteil jedes Titels (§1), nicht mehr Testreihe.**
+Die folgenden Faktoren stammen aus Lauf 1 (etablierte Kanäle, kanal-normiert) und sind
+**View**-Werte; sie sagen nichts über Sehdauer und nichts über das Vorschlagsband, über das
+der Eigenname bei diesem Kanal wirkt. Als Rangfolge für die Auswahl brauchbar, als Beleg
+für die Pflicht nicht — der steht in §1. Achtung auf die Wechselwirkung mit **M8**:
+`Psalms`, `Proverbs` und die prophetischen Bücher sind als **Hauptkorpus** ausgeschlossen,
+unabhängig von ihrem Anker-Faktor.
+
+Gospel of John 3,0–3,3× (n=14) · Gospels 2,8–3,3× (n=31) ·
 Isaiah (773K-Video, n=10) · Book of Enoch 2,3× (n=46) · Angels 1,4–6,9× (n=36) ·
 Daniel (536K, n=11) · Sermon on the Mount (413K, n=1) · Proverbs (93K, n=1) ·
 Revelation 1,5× (n=12) · Ephesians/Galatians/Colossians (1,0 Mio., n=1) ·

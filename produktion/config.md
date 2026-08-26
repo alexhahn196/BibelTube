@@ -65,6 +65,10 @@ chunk_pegel_angleichen = ja
 tts_parallel       = 12
 
 # --- Pegel (Formel §5b: Stimme in 6/6 Fällen klar über dem Bett) ---
+# Der Abstand wird seit 2026-08-23 in BEIDEN Wiedergabefällen geprüft:
+# Mono-Summe und je Kanal, beide >= abstand_soll_db. Vorher wurde nur die
+# Mono-Summe gemessen, und weil das alte Bett dort 5,2 dB verlor, meldete
+# qa_mix.json 12,0 dB, wo am Kopfhörer 6,8 dB standen (V01-V04).
 pegel_stimme_dbfs  = -19.0
 pegel_bett_dbfs    = -31.0
 abstand_soll_db    = 12.0
@@ -74,12 +78,26 @@ abstand_soll_db    = 12.0
 peak_max_dbfs      = -1.0
 ducking            = nein
 
-# --- Klangbett (Runde 2, dauerhaft) ---
-# Bitidentische FLAC-Kopie des in Runde 2 gehörten Betts. Bewusst als
-# ARTEFAKT abgelegt und nicht als Rezept: stimmtest/musikbett.py zieht die
-# Pad-Schicht aus einem UNGESEEDETEN np.random.randn - ein erneuter Lauf
-# ergäbe ein anderes Bett. Diese Datei nicht neu erzeugen.
-bett_datei         = produktion/klang/bett_pad_feuer.flac
+# --- Klangbett (Runde 2; Stereoaufbau korrigiert 2026-08-23) ---
+# Das Pad bleibt ein ARTEFAKT und kein Rezept: stimmtest/musikbett.py zieht
+# die Luftschicht aus einem UNGESEEDETEN np.random.randn, ein erneuter Lauf
+# ergäbe ein anderes Bett. Nicht neu erzeugen.
+#
+# 2026-08-23: bett_pad_feuer.flac trug R = L um 240 Samples versetzt (5,442 ms).
+# In der Mono-Summe - was 80 % des Publikums hört, 68 % Handy und 12 % TV -
+# ergab das einen Kammfilter mit der ersten Kerbe bei 91,9 Hz. Der drückte die
+# Quinte des Pads (82,5 Hz) 10,9 dB unter den Bauplan: ein anderer Akkord als
+# der im Hörtest ausgewählte. Details in formel/video-formel.md §5b.
+#
+# Das neue Bett ist ECHT MONO (L = R, kein Versatz) und trägt die Feuerschicht
+# 6 dB leiser mit Tiefpass bei 1,1 kHz (Variante e, entschieden vom
+# Kanalinhaber). Es ist AUS dem alten Artefakt herausgetrennt, nicht neu
+# erzeugt - das Pad ist dasselbe. Erzeugt mit
+#   python3 produktion/klang/klang_proben.py --produktionsbett
+# V01-V04 sind mit dem alten Bett gerendert; es bleibt deshalb liegen.
+bett_datei         = produktion/klang/bett_mono_feuer_leise.flac
+# nur zur Nachvollziehbarkeit von V01-V04, wird von der Pipeline nicht gelesen:
+bett_datei_alt     = produktion/klang/bett_pad_feuer.flac
 # Formel §3: Sprache beginnt in Sekunde 0-3 (n=24). Deshalb 1,5 s statt der
 # 4 s aus stimmtest/musik-prompt.md — siehe Konflikt-Notiz in der README.
 vorlauf_s          = 1.5
@@ -99,7 +117,12 @@ fps                = 24
 #               ein Zoom obendrauf würde den kopierfähigen Bitstrom in einen
 #               vollständigen Re-Encode verwandeln (LCM-Zyklus 1200 s).
 #   standbild = bisheriger Weg: Standbild + Atem-Zoom (300-s-Zyklus)
-videoquelle        = ki_clips
+# 2026-08-23 auf standbild zurueckgestellt (Entscheidung des Kanalinhabers):
+# Formel Paragraph 5 verlangt ein Standmotiv mit sanfter Bewegung ohne
+# Szenenschnitt, belegt an 11/11 Stichproben. V3 - der einzige Treffer des
+# Kanals - lief so. KI-Clips waeren eine zusaetzliche Variable ohne Beleg,
+# und V05-V08 sollen den Korpuswechsel als einzige Aenderung testen.
+videoquelle        = standbild
 # Die Clips gehoeren zum Standbild ihres Videos und sind mit keinem anderen
 # Motiv verwendbar. Deshalb je Video ein eigener Ordner; ki_clip_ordner_V<n>
 # schlaegt den allgemeinen Wert.
@@ -124,6 +147,27 @@ zoom_faktor        = 1.04
 zoom_zyklus_s      = 300
 video_crf          = 28
 video_preset       = medium
+# Pixelformat der Videospur. yuv420p = 8 Bit, yuv420p10le = 10 Bit.
+#
+# Umgestellt auf 10 Bit am 2026-08-23 (Entscheidung des Kanalinhabers).
+# Gemessener Banding-Befund, produktion/motive/bandingtest/: bei CRF 28
+# verliert der Nachthimmel in 8 Bit sieben der 48 Luma-Stufen im dunklen
+# Bereich - das ist Wertebereichs-Arithmetik (48 x 219/255 = 41,2) und durch
+# keine Bitrate zu beheben. In 10 Bit bleiben alle 48, die groesste einfarbige
+# Flaeche faellt von Faktor 90 auf 15 gegenueber dem Quellbild, und die Datei
+# wird KLEINER (4,92 statt 6,62 MB je 300-s-Zyklus).
+#
+# WICHTIGER VORBEHALT: YouTube encodiert alles neu, meist VP9/AV1 in 8 Bit.
+# Der lokal gemessene Wert ist NICHT das, was der Zuschauer sieht. 10 Bit hilft
+# nur indirekt - ein bandingfreier Quellstrom gibt dem YouTube-Encoder nichts
+# zum Verstaerken. Ob das ankommt, ist erst nach dem Upload nachweisbar.
+#
+# Zweiter offener Punkt: yuv420p10le ist H.264 High 10. Ob YouTubes Ingest das
+# annimmt, ist von hier aus nicht pruefbar. Faellt der Upload durch, ist der
+# getestete Rueckfallweg yuv420p bei video_crf = 22 (0,99 GB statt 0,55 GB,
+# Fleckenfaktor 28 statt 90). Dither ist KEIN Rueckfallweg - gemessen
+# schlechter als der Ist-Zustand.
+video_pixelformat  = yuv420p10le
 audio_bitrate      = 192k
 
 # --- Laufzeit (Formel §2) ---
