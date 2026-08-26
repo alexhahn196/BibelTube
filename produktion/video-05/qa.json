@@ -1,0 +1,86 @@
+{
+ "video": "V5",
+ "erzeugt": "2026-08-26T09:03:51",
+ "commit": "81ce3eb62ff1f572f6e73c5baad89ba19504c12a",
+ "arbeitsbaum_sauber": false,
+ "config_sha256": "37f782e657410f2a",
+ "bett_datei": "produktion/klang/bett_mono_feuer_leise.flac",
+ "videoquelle": "standbild",
+ "stimme_id": "cb6381fb822345bd89c207fb49551d24",
+ "tts_modell": "s2.1-pro-free",
+ "prosody_speed": 0.88,
+ "schritt1_text": {
+  "titel": "Rest Your Eyes… The Whole Gospel of Luke, Read Slowly Until Morning Comes",
+  "hook_variante": "a",
+  "kapitel_anzahl": 36,
+  "woerter_gesamt": 30220,
+  "woerter_korpus": 29988,
+  "woerter_rahmen": 232,
+  "zeichen_tts": 156458,
+  "laufzeit_erwartet_h": 3.452,
+  "cta_anzahl": 2,
+  "versalien_uebrig": [],
+  "ziffern_im_text": []
+ },
+ "schritt2_tts": {
+  "dauer_h": 3.402,
+  "woerter": 30220,
+  "wpm": 148.1,
+  "zeichen_tts": 157878,
+  "chunks": 87,
+  "sprachanteil_pct": 66.6,
+  "sprachanteil_vergleichbar_pct": 95.2,
+  "laengste_pause_s": 1.48,
+  "sprach_rms_db": -17.01,
+  "peak_dbfs": 0.0,
+  "naht_sprung_max_db": 4.39,
+  "chunk_pegel_sprung_max_db": 0.01
+ },
+ "schritt3_bett": {
+  "gain_stimme_db": -1.99,
+  "gain_bett_db": 0.2,
+  "gemessen_stimme_dbfs": -19.0,
+  "gemessen_bett_allein_dbfs": -31.0,
+  "gemessen_bett_je_kanal_dbfs": -31.0,
+  "gemessener_abstand_db": 12.0,
+  "gemessener_abstand_je_kanal_db": 12.0,
+  "bett_dekorreliert_db": 0.0,
+  "soll_abstand_db": 12.0,
+  "abstand_eingehalten_mono": true,
+  "abstand_eingehalten_je_kanal": true,
+  "peak_dbfs": -1.81,
+  "stichprobe_schreibweg_db": -0.0,
+  "ducking": false
+ },
+ "schritt4_bild": {
+  "dunkelanteil_pct": 95.1,
+  "breite": 1920,
+  "hoehe": 1080
+ },
+ "schritt5_video": {
+  "dauer_hms": "3:24:14",
+  "dauer_h": 3.404,
+  "groesse_mb": 780.9,
+  "bitrate_gesamt_kbps": 509.8,
+  "aufloesung": "1920x1080",
+  "fps": 24,
+  "sync_versatz_s": 0.0,
+  "differenz_streams_s": 0.1,
+  "zyklus_s": 300,
+  "zoom": true,
+  "zoom_faktor": 1.04
+ },
+ "schritt6_srt": {
+  "kacheln": 2605,
+  "erste_kachel_s": 1.5,
+  "abdeckung_pct": 89.1,
+  "modell": "base.en",
+  "zuordnungsquote_median": 0.9885,
+  "ueberlappungen": 0
+ },
+ "qa_namen": {
+  "eigennamen_gesamt": 317,
+  "vorkommen_gesamt": 947,
+  "beanstandet": []
+ }
+}
