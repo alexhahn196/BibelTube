@@ -617,6 +617,29 @@ bleibt die Rahmung unverändert.
 Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
 *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
 
+> ### Offen (2026-08-26): ab Video 09 ist kein belegter Anker mehr frei
+>
+> Die 13 belegten Anker sind faktisch aufgebraucht. Fünf kommen in **A-Titeln**
+> vor (1, 2, 3, 4, 7) und scheiden damit für ein Video aus, das nicht wie eine
+> Kopie aussehen soll. Acht sind im Achterplan vergeben: 5→V4 · 6→V2 · 8→V7 ·
+> 9→V6 · 10→V3 · **11→V5** · 12 und 13 bleiben. Für **V09 und alles danach**
+> bleibt nichts.
+>
+> Drei Wege, keiner davon jetzt zu entscheiden:
+>
+> 1. **Belegte Anker wiederverwenden.** Die Formel erlaubt es ausdrücklich —
+>    §1: „Ein bewährter Anker ist wiederverwendbar; die Streuung liegt
+>    woanders." B #4 und B #7 tragen denselben Anker, und **#7 war der
+>    166K-Durchbruch**. Das ist der einzige der drei Wege mit Beleg.
+> 2. **Die 7 ungeprüften aus der Liste unten einsetzen.** Kostet je einen
+>    belegten Anker und ist genau der Fall, den Gate 1.3 als SOLL-Abweichung
+>    führt.
+> 3. **Eigene Anker aus Kanaldaten ableiten**, sobald genug Videos mit CTR
+>    laufen. Gate 2 sieht dafür bereits vor, §10 „um eine eigene Spalte zu
+>    ergänzen" — braucht aber Fallzahlen, die es vor V09 nicht gibt.
+>
+> Zu entscheiden vor dem Titelbau für V09, nicht früher.
+
 **Ungeprüft — abgeleitet, ohne Beleg (7):** `If Your Mind Won't Slow Down,` ·
 `When Sleep Won't Come…` · `You've Carried Enough Today…` · `If Tonight Feels Heavy,` ·
 `Too Tired to Pray? …` · `When Tomorrow Feels Too Big…` · `If You're Lying Awake Again…`

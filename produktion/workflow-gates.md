@@ -43,6 +43,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.13 | **Korpusart** | Erzählanteil ≥ 80 %, und der größte Block ist selbst Erzählung | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | `produktion/korpus_pruefung.py` |
 | 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
 
+| 1.15 | **Titellänge** | unter **70 Zeichen**, und der Eigenname beginnt vor Zeichen **60** | **Gesetzte Grenze, nicht gemessen.** Belegt ist nur der Anlass: Gate 2 (2026-08-23) hat **68 % der Aufrufe am Handy** gemessen, TV und Handy zusammen 80 %. In der Vorschlagsleiste am Handy bricht der Titel bei rund 60 Zeichen ab — *wo genau*, ist nicht gemessen und hängt an Gerät und Schriftgröße. Steht der Eigenname jenseits der Kante, trägt er die kontextliche Zuordnung nicht mehr, auf der 1.14 beruht. SOLL, nicht MUSS. | `produktion/titel_kandidaten.py` meldet Länge und Position |
 **1.1 und 1.11 sind Sonderfälle:** Die Korpuslänge lässt sich erst nach dem
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
 (Schritt 3). Beide liegen aber **vor** dem teuren Teil — TTS und Montage —
@@ -108,9 +109,10 @@ Artefakt kommt und nicht aus einem Bericht:
 Die Umstellung greift also. V01–V04 bleiben betroffen und sind nicht
 reparierbar — sie sind veröffentlicht.
 
-**Wenn eine Prüfung reißt:** anhalten und entscheiden, nicht umgehen. Die
-einzige Prüfung mit Ermessensspielraum ist 1.3 (SOLL, nicht MUSS) — ein
-ungeprüfter Anker ist erlaubt, kostet aber bewusst einen belegten.
+**Wenn eine Prüfung reißt:** anhalten und entscheiden, nicht umgehen. Prüfungen
+mit Ermessensspielraum sind **1.3** (ein ungeprüfter Anker ist erlaubt, kostet
+aber bewusst einen belegten) und **1.15** (die Zeichenzahl ist gesetzt; die
+Bedingung, die die Begründung trägt, ist die Position des Eigennamens).
 
 ---
 

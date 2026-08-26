@@ -47,6 +47,12 @@ def main():
     ap.add_argument("titel", nargs="*")
     ap.add_argument("--datei", help="JSON-Liste von Titeln")
     ap.add_argument("--grenze", type=float, default=0.45)
+    ap.add_argument("--eigenname", help="Buchname fuer Pruefung 1.15, z.B. "
+                                        "'Gospel of Luke'")
+    ap.add_argument("--max-zeichen", type=int, default=70,
+                    help="Gate 1.15, gesetzte Grenze (SOLL)")
+    ap.add_argument("--name-vor", type=int, default=60,
+                    help="Gate 1.15: Eigenname beginnt vor diesem Zeichen")
     a = ap.parse_args()
 
     kandidaten = list(a.titel)
@@ -88,14 +94,39 @@ def main():
         print(f"          naechster eigener Titel:  {qe}")
         warn = "  <- naeher an einem Kopisten als an jedem Gewinner" if ak > ag else ""
         print(f"          {ak*100:5.1f} % gegen die Kopisten-Titel (V3){warn}")
-        print(f"          naechster Kopisten-Titel: {qk}\n")
+        print(f"          naechster Kopisten-Titel: {qk}")
+
+        # Pruefung 1.15 - gesetzte Grenze, kein Messwert. Belegt ist nur der
+        # Anlass: Gate 2 hat 68 % der Aufrufe am Handy gemessen, und in der
+        # Vorschlagsleiste bricht der Titel dort ab. WO genau, ist nicht
+        # gemessen und haengt an Geraet und Schriftgroesse - deshalb SOLL.
+        lang = len(t)
+        laenge_ok = lang < a.max_zeichen
+        print(f"          {lang:5d} Zeichen             "
+              f"{'OK' if laenge_ok else 'ZU LANG'} (SOLL < {a.max_zeichen}, gesetzt)")
+        pos, name_ok = None, None
+        if a.eigenname:
+            i = t.find(a.eigenname)
+            if i < 0:
+                name_ok = False
+                print(f"          Eigenname fehlt im Titel        "
+                      f"REISST 1.14: {a.eigenname!r}")
+            else:
+                pos = i + 1
+                name_ok = pos < a.name_vor
+                print(f"          Eigenname ab Zeichen {pos:<3d}        "
+                      f"{'OK' if name_ok else 'ZU SPAET'} "
+                      f"(SOLL < {a.name_vor}, gesetzt)")
+        print()
         ergebnis.append({"titel": t, "gegen_gewinner_pct": round(ag * 100, 1),
                          "naechster_gewinner": qg,
                          "gegen_eigene_pct": round(ae * 100, 1),
                          "naechster_eigener": qe,
                          "gegen_kopisten_pct": round(ak * 100, 1),
                          "naechster_kopist": qk,
-                         "inhaltswoerter": n, "ok": ok})
+                         "inhaltswoerter": n, "ok": ok,
+                         "zeichen": lang, "laenge_ok": laenge_ok,
+                         "eigenname_ab_zeichen": pos, "eigenname_ok": name_ok})
     print(f"Verstoesse gegen die {a.grenze*100:.0f}-%-Grenze: {verstoesse}")
     print(json.dumps(ergebnis, ensure_ascii=False))
     return 1 if verstoesse else 0

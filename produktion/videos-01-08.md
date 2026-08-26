@@ -746,12 +746,26 @@ Support the channel: [Spendenlink]
 
 # Video 05
 
-**Titel:** `You're Tired, I Know… Luke's Whole Story, Read Slowly Until Morning`
-**Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1). Titel muss
-vor dem Bau angepasst werden; „Gospel of Luke" ist der Name des eigenen Korpus.
-Thumbnail-Text, Beschreibung und Tags ziehen mit.
+**Titel:** `Rest Your Eyes… The Whole Gospel of Luke, Read Slowly Until Morning Comes`
+**Eigenname im Titel:** ✓ „Gospel of Luke", Zeichen 27–40 — also vor der
+Abbruchkante der Vorschlagsleiste (Prüfung 1.15).
+**Titellänge:** 73 Zeichen — **SOLL-Abweichung**, 1.15 verlangt unter 70. Siehe
+Runde 3 der Abgrenzung unten.
 **Korpusart nach M8:** erfüllt — Lukas 81,7 %, Prediger als Beigabe.
-**Anker:** „You're Tired, I Know…" (belegt, A 201K)
+**Anker:** „Rest Your Eyes…" (belegt, **B-Flop, 915 Aufrufe**)
+
+> **Der Anker ist in diesem Test nicht die geprüfte Variable.** §10 führt die
+> letzten vier der 13 Anker ausdrücklich als „belegt als *verwendet*, nicht als
+> *wirksam*" — sie stammen aus Flop-Videos desselben Kanals. „Rest Your Eyes…"
+> ist einer davon (915 Aufrufe). Er steht hier, weil er als einziger die vier
+> Bedingungen gleichzeitig erfüllt (belegt · in keinem A-Titel · im Achterplan
+> frei · alle drei Messrichtungen unter 40 %), **nicht** weil ihm Wirkung
+> zugetraut wird.
+>
+> Video 05 prüft nach M8 den **Korpus** (Erzählstoff), nicht den Titel. Wenn
+> V05 gut oder schlecht läuft, ist das **kein Befund über Anker 11** — der
+> Anker ist mitgeführt, nicht getestet. Wer später aus dem Ergebnis auf die
+> Ankerstärke schließt, verwechselt Beifracht mit Messgröße.
 **Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
 Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
@@ -768,11 +782,28 @@ Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 >    jedem Original. Es ist das Wort **„Gospel"**, das die Nähe erzeugt, nicht der
 >    Anker.
 >
-> **Gewählt:** „Luke's Whole Story" statt „The Gospel of Luke". Der belegte Anker
-> (A, 201K) bleibt, der Eigenname bleibt, und alle drei Messungen fallen auf
-> **30,0 / 30,0 / 30,0 %** (Gewinner / eigener Katalog / Kopisten) — der
-> ausgeglichenste Wert im ganzen Feld. Gemessen mit
+> 3. **2026-08-26 — „Luke's" ist kein Buchname.** Gate 1.14 verlangt den
+>    Eigennamen; der Gate-2-Befund lautete „Gospel of John", also die Form, unter
+>    der andere Kanäle dasselbe Buch führen. Darauf beruht die kontextliche
+>    Zuordnung im Vorschlagsband — ein Genitiv leistet das nicht. Die Fassung aus
+>    Runde 2 fiel damit.
+>
+>    Zugleich schied der Anker „You're Tired, I Know…" aus: genau diese Hälfte hat
+>    Kanal C mit einer Gospel-Hälfte kombiniert. Von den 13 belegten Ankern
+>    bleiben nach Abzug der A-Titel (1, 2, 3, 4, 7) und des Achterplans (5→V4,
+>    6→V2, 8→V7, 9→V6) noch **11, 12 und 13** — und 13 teilt `know/tired/you`
+>    mit eben jenem Kopisten-Titel.
+>
+> **Gewählt:** Anker 11, „Rest Your Eyes… The Whole Gospel of Luke, Read Slowly
+> Until Morning Comes" — **27,3 / 18,2 / 18,2 %** (Gewinner / eigener Katalog /
+> Kopisten), 11 inhaltstragende Wörter. Gemessen mit
 > `produktion/titel_kandidaten.py`.
+>
+> **Offen: die Länge.** 73 Zeichen gegen die SOLL-Grenze 70 aus Prüfung 1.15.
+> Die Bedingung, die die Begründung trägt — Eigenname vor Zeichen 60 — ist mit
+> Position 27–40 klar erfüllt; die drei Zeichen ändern daran nichts. Das letzte
+> Wort zu streichen löst es: „…Read Slowly Until Morning", 67 Zeichen, Werte
+> dann **30,0 / 20,0 / 20,0 %**. Nicht entschieden.
 
 **Textkorpus:** Lukas + Prediger
 **Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS
@@ -837,7 +868,7 @@ Kopf gesenkt, Hände im Schoß; Feuer im Vordergrund rechts, Mond klein und hoch
 ### Beschreibung
 
 ```
-You're Tired, I Know… Sleep to the Whole Story, Read Slowly
+Rest Your Eyes… The Whole Gospel of Luke, Read Slowly Until Morning Comes
 
 For the stretch of days that doesn't seem to end. The complete Gospel of Luke,
 followed by Ecclesiastes — read slowly, without interruption, from beginning to end.
@@ -859,11 +890,11 @@ Support the channel: [Spendenlink]
 #biblesleep #gospeloflukeforsleep #christiansleep #bibleversesforsleep #ecclesiastes
 ```
 
-**Tags:** `gospel of luke`, `bible for sleep`, `christian sleep meditation`,
-`ecclesiastes`, `scripture for sleep`, `luke bible reading`,
-`new testament for sleep`, `bible reading for sleep`, `sleep with god's word`,
-`life of jesus`, `bedtime bible`, `peaceful bible reading`, `world english bible`,
-`christian bedtime`, `weary soul`
+**Tags:** `gospel of luke`, `whole gospel of luke`, `bible for sleep`,
+`christian sleep meditation`, `ecclesiastes`, `scripture for sleep`,
+`luke bible reading`, `new testament for sleep`, `bible reading for sleep`,
+`sleep with god's word`, `life of jesus`, `bedtime bible`,
+`peaceful bible reading`, `world english bible`, `rest your eyes`
 
 ---
 
