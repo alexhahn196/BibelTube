@@ -35,11 +35,27 @@ MANIFEST="$WURZEL/produktion/auslieferung/manifest.json"
 mkdir -p "$(dirname "$MANIFEST")"
 [ -f "$MANIFEST" ] || echo '{"format":1,"auslieferungen":[]}' > "$MANIFEST"
 
-if [ -z "${GOFILE_TOKEN:-}" ]; then
-  echo "HINWEIS: GOFILE_TOKEN ist nicht gesetzt - Upload laeuft anonym."
-  echo "         Die Dateien landen in keinem Konto und sind spaeter nicht"
-  echo "         zu verwalten oder zu loeschen. Mit Token aufrufen:"
-  echo "             export GOFILE_TOKEN=... && $0 $VIDEO"
+# Der Upload-Endpunkt beantwortet eine Anfrage OHNE Authorization-Header seit
+# 2026-08 mit "error-createGuestAccount" - der frueher hier dokumentierte
+# voellig anonyme Weg existiert nicht mehr. Ein Gastkonto ist aber weiterhin
+# frei anzulegen und liefert einen Wegwerf-Token; damit laeuft der Upload wie
+# zuvor, nur eben authentifiziert. Der Token gehoert NICHT ins Repo: er wird
+# hier erzeugt, benutzt und am Ende ausgegeben, damit ein Mensch die Dateien
+# notfalls doch noch verwalten kann.
+TOKEN="${GOFILE_TOKEN:-}"
+GASTTOKEN=""
+if [ -z "$TOKEN" ]; then
+  echo "HINWEIS: GOFILE_TOKEN ist nicht gesetzt - es wird ein GASTKONTO angelegt."
+  echo "         Die Dateien haengen dann an einem Wegwerf-Konto, nicht an deinem."
+  GASTTOKEN="$(curl -sS --max-time 30 -X POST https://api.gofile.io/accounts \
+               | jq -r '.data.token // ""')"
+  if [ -z "$GASTTOKEN" ] || [ "$GASTTOKEN" = "null" ]; then
+    echo "Gastkonto konnte nicht angelegt werden - mit eigenem Token aufrufen:" >&2
+    echo "    export GOFILE_TOKEN=... && $0 $VIDEO" >&2
+    exit 1
+  fi
+  TOKEN="$GASTTOKEN"
+  echo "         Gast-Token angelegt (wird am Ende ausgegeben)."
   echo
 fi
 
@@ -66,13 +82,8 @@ for PAAR in "video:mp4" "ton:flac" "untertitel:srt"; do
     continue
   fi
 
-  if [ -n "${GOFILE_TOKEN:-}" ]; then
-    ANTWORT="$(curl -sS --max-time 7200 -X POST "https://$SERVER.gofile.io/contents/uploadfile" \
-               -H "Authorization: Bearer $GOFILE_TOKEN" -F "file=@$DATEI")"
-  else
-    ANTWORT="$(curl -sS --max-time 7200 -X POST "https://$SERVER.gofile.io/contents/uploadfile" \
-               -F "file=@$DATEI")"
-  fi
+  ANTWORT="$(curl -sS --max-time 7200 -X POST "https://$SERVER.gofile.io/contents/uploadfile" \
+             -H "Authorization: Bearer $TOKEN" -F "file=@$DATEI")"
   STATUS="$(echo "$ANTWORT" | jq -r '.status // "fehler"')"
   if [ "$STATUS" != "ok" ]; then
     echo "        UPLOAD FEHLGESCHLAGEN: $(echo "$ANTWORT" | head -c 300)" >&2
@@ -108,3 +119,10 @@ jq --argjson n "$NEU" '.auslieferungen += [$n]' "$MANIFEST" > "$TMP" && mv "$TMP
 echo
 echo "Manifest ergaenzt: ${MANIFEST#$WURZEL/}"
 jq -r '.auslieferungen[-1] | "  \(.video)  \(.titel)\n" + (.dateien[] | "    \(.rolle): \(.gofile.downloadPage)")' "$MANIFEST"
+
+if [ -n "$GASTTOKEN" ]; then
+  echo
+  echo "Gast-Token dieser Auslieferung (NICHT ins Repo, nicht im Manifest):"
+  echo "    $GASTTOKEN"
+  echo "  Nur damit sind die Dateien spaeter noch zu verwalten oder zu loeschen."
+fi
