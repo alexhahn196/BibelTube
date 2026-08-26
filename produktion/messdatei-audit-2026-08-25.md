@@ -4,6 +4,18 @@ Vollständige Prüfung aller Zahlenwerte in den Dokumenten dieses Repositories g
 die eingecheckten Messdateien — ausgelöst durch den Prozessbefund in
 [`workflow-gates.md`](workflow-gates.md#prozessbefund-2026-08-25--was-als-gemessen-gilt).
 
+> **Geltungsbereich — 2026-08-26 nachgetragen.** Dieser Audit wurde gegen den
+> Stand von `main` (`5a750a4`) gefahren. Zum Zeitpunkt des Laufs waren die
+> Remote-Refs nicht aktualisiert; der Zweig
+> `claude/gate-2-befunde-dokumentieren-47ar4s` mit **15 weiteren Commits** war
+> deshalb nicht im Blick. Dort ist ein Teil der Funde bereits behoben — unter
+> anderem die Versalhöhe (Zielwert 11,9 % von der Prüfgrenze 11,5 % getrennt),
+> das Klangbett (Variante e, Gate 1.11 in beiden Wiedergabefällen 12,00 dB),
+> `videoquelle = standbild`, der stille Motiv-Rückfall in `schritt5_video.py`
+> und die Faktenkorrektur „Du-Ansprache 7 von 9". **Jeder Fund unten ist gegen
+> diesen Zweig gegenzuprüfen, bevor er korrigiert wird.** Die Lehre daraus
+> steht im Prozessbefund unter „`--all` ist nur so vollständig wie die Refs".
+
 **Verfahren je Wert:** in allen Schreibweisen über alle eingecheckten Daten-
 dateien gesucht (Komma und Punkt, gerundet und ungerundet, Prozent und Absolutwert),
 dann `git log -S`, dann alle Versionen der vermuteten Messdatei, dann Messdateien

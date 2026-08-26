@@ -58,10 +58,29 @@ in beiden Kanälen und summiert verlustfrei. Gemessen
 
 Der Unterschied hängt allein am Bett (Downmix-Verlust +5,20 dB, Korrelation
 L/R −0,396) und ist damit für alle Videos gleich, solange `bett_datei`
-dieselbe ist. Die vier gerenderten Videos 01–04 sind betroffen. Was daraus
-folgt — Bett um 5,2 dB absenken, Bett mono machen, oder 6,8 dB auf Kopfhörern
-akzeptieren — ist **nicht entschieden**; `abstand_soll_db` in `config.md`
-bleibt bis dahin bei 12,0.
+dieselbe ist. Die vier gerenderten Videos 01–04 sind betroffen.
+
+> **Nachtrag 2026-08-26 — auf `main` offen, auf dem Gate-2-Zweig gelöst.**
+> Die Zahlen oben gelten für `bett_pad_feuer.flac`, das Bett, auf das
+> `config.md` in `main` zeigt. Auf dem Zweig
+> `claude/gate-2-befunde-dokumentieren-47ar4s` ist das Bett seit Commit
+> `190dbc5` auf Variante (e) umgestellt —
+> `produktion/klang/bett_mono_feuer_leise.flac`, echt mono, Feuer −6 dB mit
+> Tiefpass bei 1,1 kHz. Eigene Gegenmessung am Artefakt dieses Zweigs:
+>
+> | Bett | L == R | Korrelation | Downmix-Verlust | Mono | Stereo |
+> |---|---|---|---|---|---|
+> | `bett_pad_feuer.flac` | nein | −0,396 | +5,198 dB | 12,00 dB | **6,80 dB** |
+> | `bett_mono_feuer_leise.flac` | **bitgleich** | +1,000 | **0,000 dB** | 12,00 dB | **12,00 dB** |
+>
+> Dort misst auch `schritt3_bett.py` selbst beide Fälle und prüft beide gegen
+> `abstand_soll_db` (`gemessen_bett_je_kanal_dbfs`,
+> `gemessener_abstand_je_kanal_db`, `bett_dekorreliert_db`, getrennte Flags) —
+> das ersetzt `pegel_wiedergabe.py` aus diesem Zweig vollständig.
+>
+> **Solange der Zweig nicht gemergt ist, trägt jeder Render von `main` aus den
+> Mangel weiter.** Videos 01–04 bleiben betroffen und sind nicht reparierbar:
+> sie sind veröffentlicht.
 
 **Wenn eine Prüfung reißt:** anhalten und entscheiden, nicht umgehen. Die
 einzige Prüfung mit Ermessensspielraum ist 1.3 (SOLL, nicht MUSS) — ein
@@ -135,23 +154,57 @@ schlagen Fremddaten" hilft nicht, solange unklar ist, ob die eigene Zahl
 ### Der Fall
 
 Der Sitzungsbericht zu Video 04 meldete eine Thumbnail-Versalhöhe von
-**„129 px = 11,94 %"** — als Ergebnis einer Schriftvergrößerung. Die
-Vergrößerung hat es nie gegeben.
+**„129 px = 11,94 %"** — als Ergebnis einer Schriftvergrößerung an *Video 04*.
+Diese Änderung hat es nie gegeben.
 `produktion/video-04/thumbnail_messung.json` steht seit seinem einzigen
 Commit (`9fcb2a0`) auf `fontgroesse_px 184` · `versalhoehe_px 125` ·
-`versalhoehe_pct 11.57` — identisch zu allen vier anderen
-Thumbnail-Messungen des Kanals. Die Zahlen 129 und 11,94 kommen in keiner
-Datei und in keiner Version der Historie vor.
+`versalhoehe_pct 11.57` — identisch zu den vier anderen Thumbnails der
+Videos 01–04.
 
 Der Wert wurde ungeprüft übernommen und **zwei Runden lang als Ausgangslage
 weiterverwendet**. Der Schaden waren nicht die 4 Pixel. Der Schaden war,
-dass zwei Runden auf einer Zahl aufbauten, die nie existiert hat.
+dass zwei Runden auf einer Zahl aufbauten, die für dieses Video nie
+gemessen worden war.
+
+> **Nachtrag 2026-08-26 — die Zahl selbst war richtig gedacht.**
+> Auf dem Zweig `claude/gate-2-befunde-dokumentieren-47ar4s` (zum Zeitpunkt
+> dieses Nachtrags 15 Commits vor `main`, nicht gemergt) ist derselbe Befund
+> unabhängig gemacht **und aufgelöst** worden: Commit `db333c4` trennt den
+> Zielwert von der Prüfgrenze — `CAP_MIN_PCT = 11.5` bleibt die Grenze aus der
+> Checkliste, `CAP_ZIEL_PCT = 11.9` ist der Median der B-Serie (n=13), und
+> `ceil(1080 × 11,9 %)` ergibt **genau 129 px = 11,94 %**. Das Thumbnail
+> `produktion/video-05/thumbnail_messung.json` trägt diesen Wert dort als
+> gemessenes Ergebnis. Die 129 war also keine Erfindung, sondern eine
+> Absicht, die zum Zeitpunkt des V04-Berichts noch nicht implementiert war —
+> und sie ist inzwischen implementiert.
+>
+> Der ursprüngliche Grund für 125 px war überdies schlecht: 125 ist
+> `ceil(1080 × 11,5 %)`, also 0,8 Pixel Reserve über der eigenen Prüfgrenze.
+> Eine Prüfung, die ihr Ergebnis gerade so besteht, prüft nichts.
+
+### Der zweite Fehler: `--all` ist nur so vollständig wie die Refs
+
+Die Prüfung, die diesen Prozessbefund ausgelöst hat, wurde mit
+`git log --all -S"129"` gemacht — und meldete „kommt in keiner Version der
+Historie vor". Das war falsch. Der Arbeitsbaum war frisch geklont, aber
+**vor der Suche wurde nicht `git fetch` ausgeführt**; die Refs kannten den
+Zweig mit der V05-Messung nicht. `--all` heißt „alle bekannten Refs", nicht
+„alle Refs".
+
+Damit hat das Prüfverfahren denselben Fehler gemacht, den es aufdecken
+sollte, nur eine Ebene höher: ein Negativbefund wurde gemeldet, ohne dass
+die Quelle vollständig war. **`git fetch --all` gehört vor jede Aussage der
+Form „existiert nicht".** Und ein Negativbefund über die Historie muss
+dazusagen, gegen welchen Ref-Stand er gilt.
 
 ### Das Prüfverfahren gehört vor die Meldung, nicht in die Rückfrage
 
 Bevor eine Kennzahl in einen Bericht oder in ein Dokument geht:
 
-1. `git log --oneline -- <messdatei>` — gibt es die Datei, und wie oft
+0. `git fetch --all` — **zuerst.** Ohne das ist jeder Negativbefund wertlos
+   (siehe unten). Danach `git branch -a` und `git log --oneline main..<zweig>`
+   für jeden Zweig, den `main` nicht enthält.
+1. `git log --oneline --all -- <messdatei>` — gibt es die Datei, und wie oft
    wurde sie geschrieben?
 2. `git show <commit>:<messdatei>` für **jede** Version — stand der Wert je
    drin?
