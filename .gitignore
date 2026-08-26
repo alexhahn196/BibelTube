@@ -21,6 +21,12 @@ produktion/arbeit/
 produktion/korpus/text/
 produktion/video-*/*.mp4
 produktion/video-*/*.wav
+# Die ausgelieferte Tonspur. Das Repo traegt die Beschreibung der
+# Auslieferung (produktion/auslieferung/manifest.json), nicht die
+# Auslieferung selbst — eine 3,4-h-FLAC ist rund 1 GB.
+# produktion/klang/*.flac bleibt bewusst versioniert: das Klangbett ist
+# ein Kanalartefakt, kein Lieferstueck.
+produktion/video-*/*.flac
 __pycache__/
 *.pyc
 produktion/motive/loops/render.log
