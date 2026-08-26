@@ -31,7 +31,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.1 | **Korpuslänge** | ≥ 3,0 h; Ziel 3,4–3,8 h | Formel §2: kein Video unter 3 h je über 2.500 Views (n=6), alle 10 Treffer ≥ 3,2 h | `schritt1_text.py` meldet die erwartete Laufzeit |
 | 1.2 | **Titelähnlichkeit** | < 50 % gemeinsame inhaltstragende Wörter mit **jedem** Gewinnertitel — **und nicht näher an einem Kopisten-Titel als am nächsten Gewinner** | Formel §1: Kanal F kopierte wörtlich → 18 Views; Kanal C baute Mashups → 17 Views | `produktion/titel_pruefung.py` (Bestand), `produktion/titel_kandidaten.py` (neue Titel, misst zusätzlich gegen Kopisten und den eigenen Katalog) |
 | 1.3 | **Titelanker** | einer der 13 belegten Anker | Formel §10 („diese zuerst verwenden"); die 7 abgeleiteten sind ausdrücklich ungeprüft | von Hand gegen §10 |
-| 1.4 | **Thumbnail: Wörter** | höchstens 4 | Checkliste | `thumbnail.py` |
+| 1.4 | **Thumbnail: Wörter** | höchstens 4 | Checkliste — **gesetzter Spielraum, nicht gemessen**: keine Messdatei führt eine Wortzahl je Feld-Thumbnail; beobachtet sind bei A und B nur 2- und 3-Wort-**Zeilen** (`thumbnail_forensik.json`). Eine Zeile ist kein Bild — 2 + 2 sind vier Wörter. | `thumbnail.py` |
 | 1.5 | **Thumbnail: Versalhöhe** | ≥ 11,5 % der Bildhöhe (≥ 125 px bei 1080p) | Checkliste | `thumbnail.py` |
 | 1.6 | **Thumbnail: Kontrast** | ≥ 10 : 1 zum direkten Hintergrund | Checkliste | `thumbnail.py` |
 | 1.7 | **Thumbnail: Serienmotiv** | gleiches Motiv wie die letzten Uploads | Formel §5 (B: 13/13); trägt die Kanalidentität, nicht den Einzeltreffer | Sichtprüfung |
@@ -117,7 +117,9 @@ ungeprüfter Anker ist erlaubt, kostet aber bewusst einen belegten.
 ## Gate 2 — Feedback-Schleife nach Video 4
 
 **Auslöser:** Video 4 ist veröffentlicht **und** das älteste Video ist
-mindestens **14 Tage** alt. Nicht früher: YouTube braucht Zeit, bis
+mindestens **14 Tage** alt — **gesetzt, nicht gemessen**: der Fremddatensatz
+enthält weder Impressionen noch CTR noch Zeitreihen, eine Reifekurve ist daraus
+nicht ableitbar und steht in keiner Messdatei. Nicht früher: YouTube braucht Zeit, bis
 Impressionen und CTR stabil sind, und die ersten Tage werden von der
 Abo-Startverteilung verzerrt.
 

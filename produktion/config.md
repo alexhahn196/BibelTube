@@ -72,9 +72,18 @@ tts_parallel       = 12
 pegel_stimme_dbfs  = -19.0
 pegel_bett_dbfs    = -31.0
 abstand_soll_db    = 12.0
-# Video 02 landete mit -0,13 dBFS ueber der eigenen Vorgabe von -0,3: die
-# Normalisierung skaliert nur nach unten, und der gemessene Spitzenwert lag
-# schon darunter. -1,0 gibt Reserve, ohne hoerbar leiser zu sein.
+# Korrigiert 2026-08-26. Hier stand: "Video 02 landete mit -0,13 dBFS ueber
+# der eigenen Vorgabe von -0,3: die Normalisierung skaliert nur nach unten,
+# und der gemessene Spitzenwert lag schon darunter." Der zweite Halbsatz
+# widerspricht dem eigenen Code: schritt3_bett.py misst die Rohspitze, bildet
+# skal = min(1.0, ziel_peak/spitze) und protokolliert nur den Peak NACH der
+# Skalierung. Video 02 steht in upload.md auf exakt -0,3 dBFS - das ist genau
+# der Fall "Rohspitze lag DARUEBER und wurde heruntergezogen"; laege sie
+# darunter, bliebe der niedrigere Istwert stehen (V01 -1,61, V04 -1,18).
+# Die -0,13 ist die Rohspitze vor der Skalierung. Sie geht nur nach stdout
+# und in keine eingecheckte Datei - nicht nachpruefbar, deshalb hier ohne
+# Zahl. Belegt und nachpruefbar ist: V02 landete auf der Grenze, ohne jede
+# Reserve. -1,0 gibt Reserve, ohne hoerbar leiser zu sein.
 peak_max_dbfs      = -1.0
 ducking            = nein
 
@@ -98,7 +107,11 @@ ducking            = nein
 bett_datei         = produktion/klang/bett_mono_feuer_leise.flac
 # nur zur Nachvollziehbarkeit von V01-V04, wird von der Pipeline nicht gelesen:
 bett_datei_alt     = produktion/klang/bett_pad_feuer.flac
-# Formel §3: Sprache beginnt in Sekunde 0-3 (n=24). Deshalb 1,5 s statt der
+# Formel §3: Sprache beginnt in Sekunde 0-3 (n=11, regeln/daten/
+# skript_anatomie.json: 0,0-3,1 s). Bis 2026-08-26 stand hier "n=24" mit
+# Verweis auf teardown/.../matrix_voll.csv - die Datei hat 24 Zeilen, aber
+# 0,0-7,8 s und 6 Werte ueber 3,0 s; sie belegt die Regel nicht.
+# Deshalb 1,5 s statt der
 # 4 s aus stimmtest/musik-prompt.md — siehe Konflikt-Notiz in der README.
 vorlauf_s          = 1.5
 einblende_s        = 1.5

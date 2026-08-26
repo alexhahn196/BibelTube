@@ -323,8 +323,24 @@ Gleiches Verfahren wie oben, Quelle ist `motiv-video-02.png` als `start_image`
 
 **Der Preis hat sich halbiert:** Seedance 1.5 Pro kostet jetzt **18 Credits je
 Clip** statt 36 — die vier Clips haben **72 Credits** gekostet, nicht die für
-V01 vermerkten 144 (belegt im Transaktionsprotokoll, 4 × −18 am 2026-08-06).
-Für die Planung der Videos 03–08 gilt der neue Wert.
+V01 vermerkten 144. Für die Planung der Videos 03–08 gilt der neue Wert.
+
+> **Widerspruch im Repo, nicht auflösbar aus dem Repo (2026-08-26).**
+> Der Commit, der genau diese vier Clips einbrachte — `072ef0c` „Video 02:
+> 4 KI-Clips erzeugt, geprueft und zur 48-s-Kette gefuegt" — schreibt in
+> seiner Nachricht **144 Credits**, dieser Abschnitt schreibt **72**. Beide
+> beschreiben denselben Lauf. Einer von beiden ist falsch.
+>
+> Entscheiden lässt es sich hier nicht: der einzige Beleg ist das
+> Transaktionsprotokoll bei Higgsfield (4 × −18 am 2026-08-06), und das liegt
+> **außerhalb des Repositories**. Ich habe es angefragt; die abrufbaren Seiten
+> reichen derzeit nur bis 2026-08-15 zurück, der Lauf liegt davor.
+>
+> Bis das geklärt ist, gilt für die Planung der **teurere** Wert: **rechne mit
+> 144 Credits je Vierer-Satz**, nicht mit 72. Eine Kostenplanung, die sich auf
+> die günstigere von zwei widersprüchlichen Zahlen stützt, ist die falsche
+> Richtung zu irren. Der Satz „(erneut 144 Credits bei Seedance 1.5)" weiter
+> oben im V01-Abschnitt ist damit vorerst der maßgebliche.
 
 Drei Prompt-Änderungen gegenüber V01, alle aus dem V01-Befund:
 

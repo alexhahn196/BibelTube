@@ -1,7 +1,7 @@
 # BibelTube — Wissensstand
 
 Die vier Arbeitsdokumente, ungekürzt aneinandergehängt.
-**Erzeugt am 25.08.2026 von `produktion/wissen_zusammenstellen.py`** — nicht von Hand
+**Erzeugt am 26.08.2026 von `produktion/wissen_zusammenstellen.py`** — nicht von Hand
 pflegen, sondern neu bauen.
 
 1. `regeln/erfolgsregeln.md`
@@ -629,7 +629,17 @@ Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Ren
 ## 3. AUFBAU
 
 **PFLICHT — Sprache beginnt in Sekunde 0–3.** Kein Musikintro, kein Logo, kein Vorspann.
-(n=24 aus Lauf 1: 0,0–3,4 s; Gewinner 0,1–3,1 s.)
+(**n=11**, `regeln/daten/skript_anatomie.json`: `sprechbeginn_s` 0,0–3,1 s.)
+
+> **Quellenkorrektur 2026-08-26.** Hier stand „n=24 aus Lauf 1: 0,0–3,4 s".
+> Das ist falsch: `teardown/teardown_batch_20260802_090410/matrix_voll.csv`
+> hat zwar genau 24 Zeilen, `sprache_start_s` läuft dort aber von **0,0 bis
+> 7,8 s**, und **6 der 24** liegen über 3,0 s (3,1 · 3,4 · 3,4 · 3,5 · 6,8 ·
+> 7,8). Die genannte Spanne schnitt drei ihrer eigenen Datenpunkte ab.
+> Die **Regel bleibt** — sie ist durch die andere Messdatei gedeckt:
+> `skript_anatomie.json` führt 11 Videos mit 0,0 / 0,0 / 0,0 / 0,1 / 0,2 /
+> 0,2 / 0,3 / 0,4 / 2,1 / 2,4 / 3,1 s. Falsch war die Quellenangabe, nicht
+> der Wert.
 
 **PFLICHT — Sprachanteil 97–100 % der Lauftzeit**, längste Pause <20 s. (n=24.)
 
@@ -1153,11 +1163,29 @@ Erfolg und dem geringsten Streuungsrisiko:
 |---|---|---|---|
 | **Versalhöhe** | **≥ 11,5 % der Bildhöhe** (≈ 83 px bei 720p, ≈125 px bei 1080p) — **gesetzt wird auf 11,9 %**, siehe unten | 9,9–12,1 %, Median 11,9 % | 13 |
 | **Kontrast Text/Hintergrund** | **≥ 10:1** | 10,1–17,5:1, Median 15,4:1 | 13 |
-| **Wortzahl** | **maximal 4 Wörter** | Gewinner 0–4 | 21 |
+| **Wortzahl** | **maximal 4 Wörter** — **gesetzter Spielraum, nicht gemessen**, siehe unten | Gewinner 0–4 | 21 |
 
 Zum Vergleich die Verlierergruppen: Versalhöhe Median **9,0–9,5 %** — also rund ein Viertel
 kleiner als bei den Gewinnern (n=69). Das ist der einzige typografische Messwert, der Gewinner
 und Verlierer sauber trennt.
+
+> ### Die Wortgrenze 4 ist gesetzt, nicht gemessen (2026-08-26)
+>
+> **Keine eingecheckte Messdatei enthält eine Wortzahl je Feld-Thumbnail.**
+> `regeln/daten/thumb_textmessung.json` zählt Zeilen und Glyphen,
+> `motiv_inventar.json` führt `text` nur als 0/1, `thumb_messung.json` nur
+> Maße und Schärfe. Die Spalte „Gewinner 0–4, n=21" ist also keine Messung.
+>
+> Beobachtet ist etwas Schmaleres: `regeln/daten/thumbnail_forensik.json`
+> hält die Textzeilen von A („Time To Sleep.", „Sleep Deep", „Peaceful
+> Sleep.") und B („TIME TO REST", „YOU NEED REST", „SLEEP DEEP", „JUST
+> SLEEP") fest — **ausschließlich 2- und 3-Wort-Zeilen**.
+>
+> Daraus folgt **keine** Grenze von 3. Eine Zeile ist kein Bild: ein
+> zweizeiliges Thumbnail mit 2 + 2 trägt vier Wörter und widerspricht der
+> Beobachtung nicht. Aus einer Zeilenmessung eine Bildregel zu machen wäre
+> derselbe Fehler in die andere Richtung. **Die 4 bleibt** — als bewusst
+> gesetzter Spielraum über dem Beobachteten, nicht als Messergebnis.
 
 Der Kontrastwert 10:1 ist bewusst hoch angesetzt: WCAG verlangt 4,5:1, die Gewinner-Serie
 liefert aber durchgehend das Doppelte bis Dreifache. Du hast keinen Grund, unter ihren
@@ -1242,7 +1270,7 @@ schnell geht.
 ## Checkliste vor dem Upload
 
 **Typografie**
-- [ ] Maximal **4 Wörter** im Bild
+- [ ] Maximal **4 Wörter** im Bild *(gesetzter Spielraum; beobachtet sind bei A und B nur 2- und 3-Wort-Zeilen)*
 - [ ] Versalien, fett — keine dünnen Serifen in Gemischtschreibung
 - [ ] Versalhöhe **≥ 11,5 % der Bildhöhe** (bei 1920×1080: **≥ 125 px**)
 - [ ] Kontrast Text zu direktem Hintergrund **≥ 10:1** (weißer Text nur über dem dunklen
@@ -1565,10 +1593,35 @@ Hauptkorpus, Genesis 43–50 als zweiter Erzählblock. Tabelle oben.*
 Videos, nur in Details variiert — B nutzt in 13 von 13 Thumbnails dasselbe Bild.
 Grundmotiv für diesen Kanal *(entschieden 2026-08-04 nach
 `formel/thumbnail-motive.md`, Richtung 2 — die frühere „schlafende Gestalt" ist
-ersetzt: eine anonyme Figur kommt in 90 Feld-Thumbnails null Mal als Hauptmotiv
-vor, alle 10 Treffer zeigen erkennbar Jesus; die sitzende Bauform trägt 4/10
-Treffer plus den stärksten kanal-normierten Einzelwert und ist mit 11/90 im
-Feld deutlich seltener kopiert als die liegende mit 22/90)*:
+ersetzt — **Zahlen korrigiert am 2026-08-26**, die Entscheidung trägt weiter
+und steht danach besser da als vorher)*:
+
+> Hier stand: „eine anonyme Figur kommt in 90 Feld-Thumbnails **null Mal** als
+> Hauptmotiv vor". Das ist falsch. `regeln/daten/motiv_inventar.json` führt
+> `fig` (Figur ohne erkennbaren Jesus) **2 von 90**.
+>
+> Der Befund kippt dadurch nicht, er wird schärfer: **beide** liegen in
+> `WORST`. In `GEW` (n=21) und in `BEST` (n=39) kommt `fig` **kein einziges
+> Mal** vor. Die einzigen zwei anonymen Figuren im Feld sind Flops — das ist
+> ein stärkeres Argument als ein glattes „null Mal", weil es eine Richtung
+> zeigt statt einer Abwesenheit.
+>
+> Zwei weitere Zahlen desselben Satzes, ebenfalls nachgemessen:
+> - „die sitzende Bauform trägt **4/10** Treffer" → `thumbnail-motive.md`
+>   zerlegt die 10 Treffer als `js` 6 · `jsit` 3 · `jr` 1. Es sind **3/10**.
+>   Der stärkste kanal-normierte Einzelwert (H, 519× Kanalmedian) ist
+>   weiterhin ein sitzender Jesus ohne Blickkontakt.
+> - „**11/90**" für die sitzende Bauform stimmt (`jsit` = 11).
+> - „die liegende mit **22/90**" stimmt nicht: die Messdatei codiert die
+>   liegende Bauform als `js` = **41/90**. Die 22 stammt aus einem visuellen
+>   Ähnlichkeitsurteil in `thumbnail-motive.md` („22 der 90 tragen es fast
+>   identisch") und ist keine Bauform-Häufigkeit. Der Abstand zur sitzenden
+>   Bauform ist damit **größer** als behauptet, nicht kleiner.
+>
+> „Alle 10 Treffer zeigen erkennbar Jesus" bleibt: in `GEW` gibt es kein
+> einziges Nicht-Jesus-Motiv.
+
+Grundmotiv also unverändert:
 
 > **Erkennbare sitzende Jesus-Figur** (schlichtes Gewand, Bart), allein in weiter
 > dunkler Nachtlandschaft, Augen geschlossen oder gesenkt, im Profil oder halb

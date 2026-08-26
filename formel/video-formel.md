@@ -201,7 +201,17 @@ Sie sind plausibel, aber es gibt 13 Anker mit Beleg; die gehören zuerst ins Ren
 ## 3. AUFBAU
 
 **PFLICHT — Sprache beginnt in Sekunde 0–3.** Kein Musikintro, kein Logo, kein Vorspann.
-(n=24 aus Lauf 1: 0,0–3,4 s; Gewinner 0,1–3,1 s.)
+(**n=11**, `regeln/daten/skript_anatomie.json`: `sprechbeginn_s` 0,0–3,1 s.)
+
+> **Quellenkorrektur 2026-08-26.** Hier stand „n=24 aus Lauf 1: 0,0–3,4 s".
+> Das ist falsch: `teardown/teardown_batch_20260802_090410/matrix_voll.csv`
+> hat zwar genau 24 Zeilen, `sprache_start_s` läuft dort aber von **0,0 bis
+> 7,8 s**, und **6 der 24** liegen über 3,0 s (3,1 · 3,4 · 3,4 · 3,5 · 6,8 ·
+> 7,8). Die genannte Spanne schnitt drei ihrer eigenen Datenpunkte ab.
+> Die **Regel bleibt** — sie ist durch die andere Messdatei gedeckt:
+> `skript_anatomie.json` führt 11 Videos mit 0,0 / 0,0 / 0,0 / 0,1 / 0,2 /
+> 0,2 / 0,3 / 0,4 / 2,1 / 2,4 / 3,1 s. Falsch war die Quellenangabe, nicht
+> der Wert.
 
 **PFLICHT — Sprachanteil 97–100 % der Lauftzeit**, längste Pause <20 s. (n=24.)
 

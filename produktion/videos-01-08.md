@@ -247,10 +247,35 @@ Hauptkorpus, Genesis 43–50 als zweiter Erzählblock. Tabelle oben.*
 Videos, nur in Details variiert — B nutzt in 13 von 13 Thumbnails dasselbe Bild.
 Grundmotiv für diesen Kanal *(entschieden 2026-08-04 nach
 `formel/thumbnail-motive.md`, Richtung 2 — die frühere „schlafende Gestalt" ist
-ersetzt: eine anonyme Figur kommt in 90 Feld-Thumbnails null Mal als Hauptmotiv
-vor, alle 10 Treffer zeigen erkennbar Jesus; die sitzende Bauform trägt 4/10
-Treffer plus den stärksten kanal-normierten Einzelwert und ist mit 11/90 im
-Feld deutlich seltener kopiert als die liegende mit 22/90)*:
+ersetzt — **Zahlen korrigiert am 2026-08-26**, die Entscheidung trägt weiter
+und steht danach besser da als vorher)*:
+
+> Hier stand: „eine anonyme Figur kommt in 90 Feld-Thumbnails **null Mal** als
+> Hauptmotiv vor". Das ist falsch. `regeln/daten/motiv_inventar.json` führt
+> `fig` (Figur ohne erkennbaren Jesus) **2 von 90**.
+>
+> Der Befund kippt dadurch nicht, er wird schärfer: **beide** liegen in
+> `WORST`. In `GEW` (n=21) und in `BEST` (n=39) kommt `fig` **kein einziges
+> Mal** vor. Die einzigen zwei anonymen Figuren im Feld sind Flops — das ist
+> ein stärkeres Argument als ein glattes „null Mal", weil es eine Richtung
+> zeigt statt einer Abwesenheit.
+>
+> Zwei weitere Zahlen desselben Satzes, ebenfalls nachgemessen:
+> - „die sitzende Bauform trägt **4/10** Treffer" → `thumbnail-motive.md`
+>   zerlegt die 10 Treffer als `js` 6 · `jsit` 3 · `jr` 1. Es sind **3/10**.
+>   Der stärkste kanal-normierte Einzelwert (H, 519× Kanalmedian) ist
+>   weiterhin ein sitzender Jesus ohne Blickkontakt.
+> - „**11/90**" für die sitzende Bauform stimmt (`jsit` = 11).
+> - „die liegende mit **22/90**" stimmt nicht: die Messdatei codiert die
+>   liegende Bauform als `js` = **41/90**. Die 22 stammt aus einem visuellen
+>   Ähnlichkeitsurteil in `thumbnail-motive.md` („22 der 90 tragen es fast
+>   identisch") und ist keine Bauform-Häufigkeit. Der Abstand zur sitzenden
+>   Bauform ist damit **größer** als behauptet, nicht kleiner.
+>
+> „Alle 10 Treffer zeigen erkennbar Jesus" bleibt: in `GEW` gibt es kein
+> einziges Nicht-Jesus-Motiv.
+
+Grundmotiv also unverändert:
 
 > **Erkennbare sitzende Jesus-Figur** (schlichtes Gewand, Bart), allein in weiter
 > dunkler Nachtlandschaft, Augen geschlossen oder gesenkt, im Profil oder halb

@@ -43,11 +43,29 @@ Erfolg und dem geringsten Streuungsrisiko:
 |---|---|---|---|
 | **Versalhöhe** | **≥ 11,5 % der Bildhöhe** (≈ 83 px bei 720p, ≈125 px bei 1080p) — **gesetzt wird auf 11,9 %**, siehe unten | 9,9–12,1 %, Median 11,9 % | 13 |
 | **Kontrast Text/Hintergrund** | **≥ 10:1** | 10,1–17,5:1, Median 15,4:1 | 13 |
-| **Wortzahl** | **maximal 4 Wörter** | Gewinner 0–4 | 21 |
+| **Wortzahl** | **maximal 4 Wörter** — **gesetzter Spielraum, nicht gemessen**, siehe unten | Gewinner 0–4 | 21 |
 
 Zum Vergleich die Verlierergruppen: Versalhöhe Median **9,0–9,5 %** — also rund ein Viertel
 kleiner als bei den Gewinnern (n=69). Das ist der einzige typografische Messwert, der Gewinner
 und Verlierer sauber trennt.
+
+> ### Die Wortgrenze 4 ist gesetzt, nicht gemessen (2026-08-26)
+>
+> **Keine eingecheckte Messdatei enthält eine Wortzahl je Feld-Thumbnail.**
+> `regeln/daten/thumb_textmessung.json` zählt Zeilen und Glyphen,
+> `motiv_inventar.json` führt `text` nur als 0/1, `thumb_messung.json` nur
+> Maße und Schärfe. Die Spalte „Gewinner 0–4, n=21" ist also keine Messung.
+>
+> Beobachtet ist etwas Schmaleres: `regeln/daten/thumbnail_forensik.json`
+> hält die Textzeilen von A („Time To Sleep.", „Sleep Deep", „Peaceful
+> Sleep.") und B („TIME TO REST", „YOU NEED REST", „SLEEP DEEP", „JUST
+> SLEEP") fest — **ausschließlich 2- und 3-Wort-Zeilen**.
+>
+> Daraus folgt **keine** Grenze von 3. Eine Zeile ist kein Bild: ein
+> zweizeiliges Thumbnail mit 2 + 2 trägt vier Wörter und widerspricht der
+> Beobachtung nicht. Aus einer Zeilenmessung eine Bildregel zu machen wäre
+> derselbe Fehler in die andere Richtung. **Die 4 bleibt** — als bewusst
+> gesetzter Spielraum über dem Beobachteten, nicht als Messergebnis.
 
 Der Kontrastwert 10:1 ist bewusst hoch angesetzt: WCAG verlangt 4,5:1, die Gewinner-Serie
 liefert aber durchgehend das Doppelte bis Dreifache. Du hast keinen Grund, unter ihren
@@ -132,7 +150,7 @@ schnell geht.
 ## Checkliste vor dem Upload
 
 **Typografie**
-- [ ] Maximal **4 Wörter** im Bild
+- [ ] Maximal **4 Wörter** im Bild *(gesetzter Spielraum; beobachtet sind bei A und B nur 2- und 3-Wort-Zeilen)*
 - [ ] Versalien, fett — keine dünnen Serifen in Gemischtschreibung
 - [ ] Versalhöhe **≥ 11,5 % der Bildhöhe** (bei 1920×1080: **≥ 125 px**)
 - [ ] Kontrast Text zu direktem Hintergrund **≥ 10:1** (weißer Text nur über dem dunklen
