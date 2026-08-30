@@ -1,0 +1,80 @@
+{
+ "zweck": "Gemessenes Sprechtempo der gerenderten Videos, Quelle fuer wpm_erwartet in config.md",
+ "messgrundlage": "Untertitelspur aus demselben Renderlauf; Woerter = Skriptwoerter der SRT-Kacheln, Dauer = Ende der letzten Kachel minus vorlauf_s. ffprobe auf die Audiodatei war nicht moeglich: die gerenderten WAV/MP4 stehen in .gitignore und liegen nicht im Repository, ffprobe ist in der Arbeitsumgebung nicht vorhanden.",
+ "gegenprobe": "Jeder Wert stimmt mit dem Tempo ueberein, das schritt2_tts.py beim Rendern aus dem Audio-Array gemessen und in video-0X/upload.md eingetragen hat. Das Skript bricht bei Abweichung ab.",
+ "stimme": "MILO SOOTHING VOICE, prosody_speed 0.88 - ueber alle vier Laeufe unveraendert",
+ "nicht_gemessen": [
+  "V05 - nicht gerendert",
+  "V06-V08 - nicht gerendert"
+ ],
+ "videos": [
+  {
+   "video": "V01",
+   "korpus": "Psalmen 1-89 + 1 Petrus + Jakobus",
+   "woerter_gesprochen": 30155,
+   "woerter_bibelkorpus_plan": 29670,
+   "woerter_rahmen": 485,
+   "srt_erste_kachel_s": 1.5,
+   "srt_letzte_kachel_s": 12890.146,
+   "sprechdauer_s": 12888.6,
+   "sprechdauer_hms": "3:34:48",
+   "wpm": 140.4,
+   "wpm_beim_rendern": 140.4,
+   "srt_kacheln": 3300
+  },
+  {
+   "video": "V02",
+   "korpus": "Psalmen 90-150 + Sprueche",
+   "woerter_gesprochen": 30821,
+   "woerter_bibelkorpus_plan": 30260,
+   "woerter_rahmen": 561,
+   "srt_erste_kachel_s": 1.5,
+   "srt_letzte_kachel_s": 13044.883,
+   "sprechdauer_s": 13043.4,
+   "sprechdauer_hms": "3:37:23",
+   "wpm": 141.8,
+   "wpm_beim_rendern": 141.8,
+   "srt_kacheln": 3128
+  },
+  {
+   "video": "V03",
+   "korpus": "Johannes + Hebraeer + 1 Johannes + Kolosser",
+   "woerter_gesprochen": 30422,
+   "woerter_bibelkorpus_plan": 30009,
+   "woerter_rahmen": 413,
+   "srt_erste_kachel_s": 1.5,
+   "srt_letzte_kachel_s": 12476.453,
+   "sprechdauer_s": 12475.0,
+   "sprechdauer_hms": "3:27:54",
+   "wpm": 146.3,
+   "wpm_beim_rendern": 146.3,
+   "srt_kacheln": 2640
+  },
+  {
+   "video": "V04",
+   "korpus": "Matthaeus + Epheser + Philipper + Daniel 1-3",
+   "woerter_gesprochen": 31466,
+   "woerter_bibelkorpus_plan": 31112,
+   "woerter_rahmen": 354,
+   "srt_erste_kachel_s": 1.5,
+   "srt_letzte_kachel_s": 12881.693,
+   "sprechdauer_s": 12880.2,
+   "sprechdauer_hms": "3:34:40",
+   "wpm": 146.6,
+   "wpm_beim_rendern": 146.6,
+   "srt_kacheln": 2705
+  }
+ ],
+ "spanne_wpm": [
+  140.4,
+  146.6
+ ],
+ "mittel_ungewichtet": 143.8,
+ "gesamt_wortgewichtet": 143.7,
+ "woerter_gesamt": 122864,
+ "sprechdauer_gesamt_s": 51287.2,
+ "poesie_v01_v02": 141.1,
+ "prosa_v03_v04": 146.4,
+ "befund_textsorte": "Die Spanne ist nicht Streuung, sondern Textsorte: V01/V02 (Psalmen, Sprueche) laufen langsamer als V03/V04 (Evangelien). prosody_speed war in allen vier Laeufen 0.88, die Konfiguration hat sich also nicht geaendert. n=4, zwei Videos je Gruppe.",
+ "empfehlung_config": "wpm_erwartet = wortgewichtetes Gesamttempo. Fuer einen reinen Erzaehlkorpus ist der Prosawert der bessere Schaetzer; das ist bei n=2 je Gruppe aber kein belastbarer eigener Parameter."
+}

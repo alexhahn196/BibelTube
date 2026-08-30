@@ -1,0 +1,3229 @@
+{
+ "zweck": "Nachrechnung des Erzaehlanteils der bereits geplanten und teils gerenderten Videos V01-V05. Messung, keine Bewertung.",
+ "regel": "Erzaehlend = fortlaufende Handlung mit Akteuren, Ortswechsel und Zeitverlauf. Nicht erzaehlend = Gesetzestexte, Kult- und Bauvorschriften, Genealogien, eingelegte Lieder und Gebete, prophetische Rede, apokalyptische Vision, Briefe und Lehrreden. Direkte Rede innerhalb einer laufenden Szene (Dialog, Befehl, Botenwort) bleibt erzaehlend. Ein Kapitel, dessen Wortmehrheit aus zusammenhaengender Rede ohne Handlungsfortschritt besteht, ist nicht erzaehlend, es sei denn, der Bruch laesst sich sauber an Versgrenzen ziehen; dann werden beide Teile gemessen. Reine Regierungs- und Rahmenformeln mit Quellenverweis gelten als Chroniknotiz, nicht als Erzaehlung. Im Zweifel gegen den Erzaehlanteil.",
+ "quelle": "bible-api.com, translation=webbe",
+ "zaehlmethode": "Verstexte mit Leerzeichen verbunden, dann str.split()",
+ "hinweis_flagge": "Bei geteilten Kapiteln ist 'erzaehlend' nur ein Etikett; massgeblich ist 'erzaehlend_woerter' aus den gemessenen Versbereichen.",
+ "hinweis_korpus": "Gezaehlt ist der Bibelkorpus aus plan.json. Eingangsgebet, Hook und CTA sind nicht enthalten - sie stehen in keiner der beiden Kategorien der Regel.",
+ "gate_erzaehlanteil": 0.8,
+ "videos": [
+  {
+   "video": "V1",
+   "name": "Psalmen 1-89 + 1 Petrus + Jakobus",
+   "woerter_korpus": 29670,
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0,
+   "haelt_gate_m8": false,
+   "je_buch": {
+    "psalms": {
+     "woerter": 25004,
+     "erzaehlend_woerter": 0,
+     "kapitel": 89,
+     "erzaehlanteil": 0.0
+    },
+    "1 peter": {
+     "woerter": 2416,
+     "erzaehlend_woerter": 0,
+     "kapitel": 5,
+     "erzaehlanteil": 0.0
+    },
+    "james": {
+     "woerter": 2250,
+     "erzaehlend_woerter": 0,
+     "kapitel": 5,
+     "erzaehlanteil": 0.0
+    }
+   }
+  },
+  {
+   "video": "V2",
+   "name": "Psalmen 90-150 + Sprueche",
+   "woerter_korpus": 30260,
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0,
+   "haelt_gate_m8": false,
+   "je_buch": {
+    "psalms": {
+     "woerter": 15727,
+     "erzaehlend_woerter": 0,
+     "kapitel": 61,
+     "erzaehlanteil": 0.0
+    },
+    "proverbs": {
+     "woerter": 14533,
+     "erzaehlend_woerter": 0,
+     "kapitel": 31,
+     "erzaehlanteil": 0.0
+    }
+   }
+  },
+  {
+   "video": "V3",
+   "name": "Johannes + Hebraeer + 1 Johannes + Kolosser",
+   "woerter_korpus": 30009,
+   "erzaehlend_woerter": 11463,
+   "erzaehlanteil": 0.382,
+   "haelt_gate_m8": false,
+   "je_buch": {
+    "john": {
+     "woerter": 18692,
+     "erzaehlend_woerter": 11463,
+     "kapitel": 21,
+     "erzaehlanteil": 0.6133
+    },
+    "hebrews": {
+     "woerter": 6873,
+     "erzaehlend_woerter": 0,
+     "kapitel": 13,
+     "erzaehlanteil": 0.0
+    },
+    "1 john": {
+     "woerter": 2453,
+     "erzaehlend_woerter": 0,
+     "kapitel": 5,
+     "erzaehlanteil": 0.0
+    },
+    "colossians": {
+     "woerter": 1991,
+     "erzaehlend_woerter": 0,
+     "kapitel": 4,
+     "erzaehlanteil": 0.0
+    }
+   }
+  },
+  {
+   "video": "V4",
+   "name": "Matthaeus + Epheser + Philipper + Daniel 1-3",
+   "woerter_korpus": 31112,
+   "erzaehlend_woerter": 14258,
+   "erzaehlanteil": 0.4583,
+   "haelt_gate_m8": false,
+   "je_buch": {
+    "matthew": {
+     "woerter": 22831,
+     "erzaehlend_woerter": 11992,
+     "kapitel": 28,
+     "erzaehlanteil": 0.5253
+    },
+    "ephesians": {
+     "woerter": 3082,
+     "erzaehlend_woerter": 0,
+     "kapitel": 6,
+     "erzaehlanteil": 0.0
+    },
+    "philippians": {
+     "woerter": 2219,
+     "erzaehlend_woerter": 0,
+     "kapitel": 4,
+     "erzaehlanteil": 0.0
+    },
+    "daniel": {
+     "woerter": 2980,
+     "erzaehlend_woerter": 2266,
+     "kapitel": 3,
+     "erzaehlanteil": 0.7604
+    }
+   }
+  },
+  {
+   "video": "V5",
+   "name": "Lukas + Prediger",
+   "woerter_korpus": 29880,
+   "erzaehlend_woerter": 14217,
+   "erzaehlanteil": 0.4758,
+   "haelt_gate_m8": false,
+   "je_buch": {
+    "luke": {
+     "woerter": 24399,
+     "erzaehlend_woerter": 14217,
+     "kapitel": 24,
+     "erzaehlanteil": 0.5827
+    },
+    "ecclesiastes": {
+     "woerter": 5481,
+     "erzaehlend_woerter": 0,
+     "kapitel": 12,
+     "erzaehlanteil": 0.0
+    }
+   }
+  }
+ ],
+ "kapitel": {
+  "psalms 1": {
+   "buch": "psalms",
+   "kapitel": 1,
+   "woerter": 122,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 2": {
+   "buch": "psalms",
+   "kapitel": 2,
+   "woerter": 202,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 3": {
+   "buch": "psalms",
+   "kapitel": 3,
+   "woerter": 139,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 4": {
+   "buch": "psalms",
+   "kapitel": 4,
+   "woerter": 152,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 5": {
+   "buch": "psalms",
+   "kapitel": 5,
+   "woerter": 236,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 6": {
+   "buch": "psalms",
+   "kapitel": 6,
+   "woerter": 150,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 7": {
+   "buch": "psalms",
+   "kapitel": 7,
+   "woerter": 316,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 8": {
+   "buch": "psalms",
+   "kapitel": 8,
+   "woerter": 160,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 9": {
+   "buch": "psalms",
+   "kapitel": 9,
+   "woerter": 350,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 10": {
+   "buch": "psalms",
+   "kapitel": 10,
+   "woerter": 328,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 11": {
+   "buch": "psalms",
+   "kapitel": 11,
+   "woerter": 130,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 12": {
+   "buch": "psalms",
+   "kapitel": 12,
+   "woerter": 143,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 13": {
+   "buch": "psalms",
+   "kapitel": 13,
+   "woerter": 100,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 14": {
+   "buch": "psalms",
+   "kapitel": 14,
+   "woerter": 149,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 15": {
+   "buch": "psalms",
+   "kapitel": 15,
+   "woerter": 102,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 16": {
+   "buch": "psalms",
+   "kapitel": 16,
+   "woerter": 202,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 17": {
+   "buch": "psalms",
+   "kapitel": 17,
+   "woerter": 286,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 18": {
+   "buch": "psalms",
+   "kapitel": 18,
+   "woerter": 879,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 19": {
+   "buch": "psalms",
+   "kapitel": 19,
+   "woerter": 255,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 20": {
+   "buch": "psalms",
+   "kapitel": 20,
+   "woerter": 148,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 21": {
+   "buch": "psalms",
+   "kapitel": 21,
+   "woerter": 225,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 22": {
+   "buch": "psalms",
+   "kapitel": 22,
+   "woerter": 554,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 23": {
+   "buch": "psalms",
+   "kapitel": 23,
+   "woerter": 114,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 24": {
+   "buch": "psalms",
+   "kapitel": 24,
+   "woerter": 170,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 25": {
+   "buch": "psalms",
+   "kapitel": 25,
+   "woerter": 328,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 26": {
+   "buch": "psalms",
+   "kapitel": 26,
+   "woerter": 175,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 27": {
+   "buch": "psalms",
+   "kapitel": 27,
+   "woerter": 324,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 28": {
+   "buch": "psalms",
+   "kapitel": 28,
+   "woerter": 204,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 29": {
+   "buch": "psalms",
+   "kapitel": 29,
+   "woerter": 164,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 30": {
+   "buch": "psalms",
+   "kapitel": 30,
+   "woerter": 220,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 31": {
+   "buch": "psalms",
+   "kapitel": 31,
+   "woerter": 485,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 32": {
+   "buch": "psalms",
+   "kapitel": 32,
+   "woerter": 231,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 33": {
+   "buch": "psalms",
+   "kapitel": 33,
+   "woerter": 347,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 34": {
+   "buch": "psalms",
+   "kapitel": 34,
+   "woerter": 333,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 35": {
+   "buch": "psalms",
+   "kapitel": 35,
+   "woerter": 529,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 36": {
+   "buch": "psalms",
+   "kapitel": 36,
+   "woerter": 221,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 37": {
+   "buch": "psalms",
+   "kapitel": 37,
+   "woerter": 675,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 38": {
+   "buch": "psalms",
+   "kapitel": 38,
+   "woerter": 332,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 39": {
+   "buch": "psalms",
+   "kapitel": 39,
+   "woerter": 248,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 40": {
+   "buch": "psalms",
+   "kapitel": 40,
+   "woerter": 392,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 41": {
+   "buch": "psalms",
+   "kapitel": 41,
+   "woerter": 229,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 42": {
+   "buch": "psalms",
+   "kapitel": 42,
+   "woerter": 265,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 43": {
+   "buch": "psalms",
+   "kapitel": 43,
+   "woerter": 120,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 44": {
+   "buch": "psalms",
+   "kapitel": 44,
+   "woerter": 437,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 45": {
+   "buch": "psalms",
+   "kapitel": 45,
+   "woerter": 308,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 46": {
+   "buch": "psalms",
+   "kapitel": 46,
+   "woerter": 191,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 47": {
+   "buch": "psalms",
+   "kapitel": 47,
+   "woerter": 135,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 48": {
+   "buch": "psalms",
+   "kapitel": 48,
+   "woerter": 218,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 49": {
+   "buch": "psalms",
+   "kapitel": 49,
+   "woerter": 322,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 50": {
+   "buch": "psalms",
+   "kapitel": 50,
+   "woerter": 371,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 51": {
+   "buch": "psalms",
+   "kapitel": 51,
+   "woerter": 312,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 52": {
+   "buch": "psalms",
+   "kapitel": 52,
+   "woerter": 161,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 53": {
+   "buch": "psalms",
+   "kapitel": 53,
+   "woerter": 152,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 54": {
+   "buch": "psalms",
+   "kapitel": 54,
+   "woerter": 109,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 55": {
+   "buch": "psalms",
+   "kapitel": 55,
+   "woerter": 404,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 56": {
+   "buch": "psalms",
+   "kapitel": 56,
+   "woerter": 222,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 57": {
+   "buch": "psalms",
+   "kapitel": 57,
+   "woerter": 226,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 58": {
+   "buch": "psalms",
+   "kapitel": 58,
+   "woerter": 205,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 59": {
+   "buch": "psalms",
+   "kapitel": 59,
+   "woerter": 330,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 60": {
+   "buch": "psalms",
+   "kapitel": 60,
+   "woerter": 199,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 61": {
+   "buch": "psalms",
+   "kapitel": 61,
+   "woerter": 132,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 62": {
+   "buch": "psalms",
+   "kapitel": 62,
+   "woerter": 222,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 63": {
+   "buch": "psalms",
+   "kapitel": 63,
+   "woerter": 195,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 64": {
+   "buch": "psalms",
+   "kapitel": 64,
+   "woerter": 164,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 65": {
+   "buch": "psalms",
+   "kapitel": 65,
+   "woerter": 241,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 66": {
+   "buch": "psalms",
+   "kapitel": 66,
+   "woerter": 311,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 67": {
+   "buch": "psalms",
+   "kapitel": 67,
+   "woerter": 107,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 68": {
+   "buch": "psalms",
+   "kapitel": 68,
+   "woerter": 646,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 69": {
+   "buch": "psalms",
+   "kapitel": 69,
+   "woerter": 631,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 70": {
+   "buch": "psalms",
+   "kapitel": 70,
+   "woerter": 89,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 71": {
+   "buch": "psalms",
+   "kapitel": 71,
+   "woerter": 427,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 72": {
+   "buch": "psalms",
+   "kapitel": 72,
+   "woerter": 342,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 73": {
+   "buch": "psalms",
+   "kapitel": 73,
+   "woerter": 400,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 74": {
+   "buch": "psalms",
+   "kapitel": 74,
+   "woerter": 385,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 75": {
+   "buch": "psalms",
+   "kapitel": 75,
+   "woerter": 171,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 76": {
+   "buch": "psalms",
+   "kapitel": 76,
+   "woerter": 186,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 77": {
+   "buch": "psalms",
+   "kapitel": 77,
+   "woerter": 311,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 78": {
+   "buch": "psalms",
+   "kapitel": 78,
+   "woerter": 1167,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 79": {
+   "buch": "psalms",
+   "kapitel": 79,
+   "woerter": 263,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 80": {
+   "buch": "psalms",
+   "kapitel": 80,
+   "woerter": 303,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 81": {
+   "buch": "psalms",
+   "kapitel": 81,
+   "woerter": 277,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 82": {
+   "buch": "psalms",
+   "kapitel": 82,
+   "woerter": 115,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 83": {
+   "buch": "psalms",
+   "kapitel": 83,
+   "woerter": 247,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 84": {
+   "buch": "psalms",
+   "kapitel": 84,
+   "woerter": 220,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 85": {
+   "buch": "psalms",
+   "kapitel": 85,
+   "woerter": 191,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 86": {
+   "buch": "psalms",
+   "kapitel": 86,
+   "woerter": 298,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 87": {
+   "buch": "psalms",
+   "kapitel": 87,
+   "woerter": 108,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 88": {
+   "buch": "psalms",
+   "kapitel": 88,
+   "woerter": 290,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 89": {
+   "buch": "psalms",
+   "kapitel": 89,
+   "woerter": 829,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 90": {
+   "buch": "psalms",
+   "kapitel": 90,
+   "woerter": 294,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 91": {
+   "buch": "psalms",
+   "kapitel": 91,
+   "woerter": 287,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 92": {
+   "buch": "psalms",
+   "kapitel": 92,
+   "woerter": 232,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 93": {
+   "buch": "psalms",
+   "kapitel": 93,
+   "woerter": 82,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 94": {
+   "buch": "psalms",
+   "kapitel": 94,
+   "woerter": 327,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 95": {
+   "buch": "psalms",
+   "kapitel": 95,
+   "woerter": 178,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 96": {
+   "buch": "psalms",
+   "kapitel": 96,
+   "woerter": 218,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 97": {
+   "buch": "psalms",
+   "kapitel": 97,
+   "woerter": 188,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 98": {
+   "buch": "psalms",
+   "kapitel": 98,
+   "woerter": 175,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 99": {
+   "buch": "psalms",
+   "kapitel": 99,
+   "woerter": 151,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 100": {
+   "buch": "psalms",
+   "kapitel": 100,
+   "woerter": 83,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 101": {
+   "buch": "psalms",
+   "kapitel": 101,
+   "woerter": 165,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 102": {
+   "buch": "psalms",
+   "kapitel": 102,
+   "woerter": 444,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 103": {
+   "buch": "psalms",
+   "kapitel": 103,
+   "woerter": 340,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 104": {
+   "buch": "psalms",
+   "kapitel": 104,
+   "woerter": 567,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 105": {
+   "buch": "psalms",
+   "kapitel": 105,
+   "woerter": 607,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 106": {
+   "buch": "psalms",
+   "kapitel": 106,
+   "woerter": 730,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 107": {
+   "buch": "psalms",
+   "kapitel": 107,
+   "woerter": 667,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 108": {
+   "buch": "psalms",
+   "kapitel": 108,
+   "woerter": 196,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 109": {
+   "buch": "psalms",
+   "kapitel": 109,
+   "woerter": 509,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 110": {
+   "buch": "psalms",
+   "kapitel": 110,
+   "woerter": 140,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 111": {
+   "buch": "psalms",
+   "kapitel": 111,
+   "woerter": 164,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 112": {
+   "buch": "psalms",
+   "kapitel": 112,
+   "woerter": 163,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 113": {
+   "buch": "psalms",
+   "kapitel": 113,
+   "woerter": 127,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 114": {
+   "buch": "psalms",
+   "kapitel": 114,
+   "woerter": 103,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 115": {
+   "buch": "psalms",
+   "kapitel": 115,
+   "woerter": 263,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 116": {
+   "buch": "psalms",
+   "kapitel": 116,
+   "woerter": 277,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 117": {
+   "buch": "psalms",
+   "kapitel": 117,
+   "woerter": 27,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 118": {
+   "buch": "psalms",
+   "kapitel": 118,
+   "woerter": 450,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 119": {
+   "buch": "psalms",
+   "kapitel": 119,
+   "woerter": 2310,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 120": {
+   "buch": "psalms",
+   "kapitel": 120,
+   "woerter": 89,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 121": {
+   "buch": "psalms",
+   "kapitel": 121,
+   "woerter": 110,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 122": {
+   "buch": "psalms",
+   "kapitel": 122,
+   "woerter": 118,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 123": {
+   "buch": "psalms",
+   "kapitel": 123,
+   "woerter": 88,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 124": {
+   "buch": "psalms",
+   "kapitel": 124,
+   "woerter": 121,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 125": {
+   "buch": "psalms",
+   "kapitel": 125,
+   "woerter": 101,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 126": {
+   "buch": "psalms",
+   "kapitel": 126,
+   "woerter": 92,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 127": {
+   "buch": "psalms",
+   "kapitel": 127,
+   "woerter": 107,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 128": {
+   "buch": "psalms",
+   "kapitel": 128,
+   "woerter": 100,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 129": {
+   "buch": "psalms",
+   "kapitel": 129,
+   "woerter": 119,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 130": {
+   "buch": "psalms",
+   "kapitel": 130,
+   "woerter": 105,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 131": {
+   "buch": "psalms",
+   "kapitel": 131,
+   "woerter": 59,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 132": {
+   "buch": "psalms",
+   "kapitel": 132,
+   "woerter": 273,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 133": {
+   "buch": "psalms",
+   "kapitel": 133,
+   "woerter": 66,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 134": {
+   "buch": "psalms",
+   "kapitel": 134,
+   "woerter": 42,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 135": {
+   "buch": "psalms",
+   "kapitel": 135,
+   "woerter": 304,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 136": {
+   "buch": "psalms",
+   "kapitel": 136,
+   "woerter": 347,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 137": {
+   "buch": "psalms",
+   "kapitel": 137,
+   "woerter": 156,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 138": {
+   "buch": "psalms",
+   "kapitel": 138,
+   "woerter": 175,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 139": {
+   "buch": "psalms",
+   "kapitel": 139,
+   "woerter": 389,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 140": {
+   "buch": "psalms",
+   "kapitel": 140,
+   "woerter": 233,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 141": {
+   "buch": "psalms",
+   "kapitel": 141,
+   "woerter": 199,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 142": {
+   "buch": "psalms",
+   "kapitel": 142,
+   "woerter": 148,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 143": {
+   "buch": "psalms",
+   "kapitel": 143,
+   "woerter": 243,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 144": {
+   "buch": "psalms",
+   "kapitel": 144,
+   "woerter": 273,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 145": {
+   "buch": "psalms",
+   "kapitel": 145,
+   "woerter": 330,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 146": {
+   "buch": "psalms",
+   "kapitel": 146,
+   "woerter": 173,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 147": {
+   "buch": "psalms",
+   "kapitel": 147,
+   "woerter": 290,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 148": {
+   "buch": "psalms",
+   "kapitel": 148,
+   "woerter": 195,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 149": {
+   "buch": "psalms",
+   "kapitel": 149,
+   "woerter": 139,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "psalms 150": {
+   "buch": "psalms",
+   "kapitel": 150,
+   "woerter": 79,
+   "erzaehlend": false,
+   "begruendung": "Lied und Gebet ueber das ganze Buch; auch die Geschichtspsalmen (78, 105, 106, 135, 136) erzaehlen im Lied, nicht in Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 1": {
+   "buch": "proverbs",
+   "kapitel": 1,
+   "woerter": 507,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 2": {
+   "buch": "proverbs",
+   "kapitel": 2,
+   "woerter": 310,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 3": {
+   "buch": "proverbs",
+   "kapitel": 3,
+   "woerter": 529,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 4": {
+   "buch": "proverbs",
+   "kapitel": 4,
+   "woerter": 407,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 5": {
+   "buch": "proverbs",
+   "kapitel": 5,
+   "woerter": 335,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 6": {
+   "buch": "proverbs",
+   "kapitel": 6,
+   "woerter": 537,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 7": {
+   "buch": "proverbs",
+   "kapitel": 7,
+   "woerter": 402,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 8": {
+   "buch": "proverbs",
+   "kapitel": 8,
+   "woerter": 522,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 9": {
+   "buch": "proverbs",
+   "kapitel": 9,
+   "woerter": 282,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 10": {
+   "buch": "proverbs",
+   "kapitel": 10,
+   "woerter": 525,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 11": {
+   "buch": "proverbs",
+   "kapitel": 11,
+   "woerter": 515,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 12": {
+   "buch": "proverbs",
+   "kapitel": 12,
+   "woerter": 464,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 13": {
+   "buch": "proverbs",
+   "kapitel": 13,
+   "woerter": 380,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 14": {
+   "buch": "proverbs",
+   "kapitel": 14,
+   "woerter": 574,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 15": {
+   "buch": "proverbs",
+   "kapitel": 15,
+   "woerter": 524,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 16": {
+   "buch": "proverbs",
+   "kapitel": 16,
+   "woerter": 524,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 17": {
+   "buch": "proverbs",
+   "kapitel": 17,
+   "woerter": 464,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 18": {
+   "buch": "proverbs",
+   "kapitel": 18,
+   "woerter": 356,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 19": {
+   "buch": "proverbs",
+   "kapitel": 19,
+   "woerter": 483,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 20": {
+   "buch": "proverbs",
+   "kapitel": 20,
+   "woerter": 481,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 21": {
+   "buch": "proverbs",
+   "kapitel": 21,
+   "woerter": 488,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 22": {
+   "buch": "proverbs",
+   "kapitel": 22,
+   "woerter": 460,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 23": {
+   "buch": "proverbs",
+   "kapitel": 23,
+   "woerter": 552,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 24": {
+   "buch": "proverbs",
+   "kapitel": 24,
+   "woerter": 540,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 25": {
+   "buch": "proverbs",
+   "kapitel": 25,
+   "woerter": 501,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 26": {
+   "buch": "proverbs",
+   "kapitel": 26,
+   "woerter": 463,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 27": {
+   "buch": "proverbs",
+   "kapitel": 27,
+   "woerter": 437,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 28": {
+   "buch": "proverbs",
+   "kapitel": 28,
+   "woerter": 480,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 29": {
+   "buch": "proverbs",
+   "kapitel": 29,
+   "woerter": 424,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 30": {
+   "buch": "proverbs",
+   "kapitel": 30,
+   "woerter": 619,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "proverbs 31": {
+   "buch": "proverbs",
+   "kapitel": 31,
+   "woerter": 448,
+   "erzaehlend": false,
+   "begruendung": "Spruchweisheit und Lehrrede; kein Handlungstraeger, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 1": {
+   "buch": "ecclesiastes",
+   "kapitel": 1,
+   "woerter": 375,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 2": {
+   "buch": "ecclesiastes",
+   "kapitel": 2,
+   "woerter": 723,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 3": {
+   "buch": "ecclesiastes",
+   "kapitel": 3,
+   "woerter": 513,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 4": {
+   "buch": "ecclesiastes",
+   "kapitel": 4,
+   "woerter": 372,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 5": {
+   "buch": "ecclesiastes",
+   "kapitel": 5,
+   "woerter": 526,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 6": {
+   "buch": "ecclesiastes",
+   "kapitel": 6,
+   "woerter": 300,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 7": {
+   "buch": "ecclesiastes",
+   "kapitel": 7,
+   "woerter": 612,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 8": {
+   "buch": "ecclesiastes",
+   "kapitel": 8,
+   "woerter": 485,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 9": {
+   "buch": "ecclesiastes",
+   "kapitel": 9,
+   "woerter": 549,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 10": {
+   "buch": "ecclesiastes",
+   "kapitel": 10,
+   "woerter": 397,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 11": {
+   "buch": "ecclesiastes",
+   "kapitel": 11,
+   "woerter": 272,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ecclesiastes 12": {
+   "buch": "ecclesiastes",
+   "kapitel": 12,
+   "woerter": 357,
+   "erzaehlend": false,
+   "begruendung": "Lehrrede in der Ichform; der Rueckblick auf Bauten und Besitz (Kap. 1-2) ist Bilanz, keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 peter 1": {
+   "buch": "1 peter",
+   "kapitel": 1,
+   "woerter": 604,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 peter 2": {
+   "buch": "1 peter",
+   "kapitel": 2,
+   "woerter": 516,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 peter 3": {
+   "buch": "1 peter",
+   "kapitel": 3,
+   "woerter": 525,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 peter 4": {
+   "buch": "1 peter",
+   "kapitel": 4,
+   "woerter": 473,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 peter 5": {
+   "buch": "1 peter",
+   "kapitel": 5,
+   "woerter": 298,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "james 1": {
+   "buch": "james",
+   "kapitel": 1,
+   "woerter": 541,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "james 2": {
+   "buch": "james",
+   "kapitel": 2,
+   "woerter": 510,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "james 3": {
+   "buch": "james",
+   "kapitel": 3,
+   "woerter": 367,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "james 4": {
+   "buch": "james",
+   "kapitel": 4,
+   "woerter": 358,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "james 5": {
+   "buch": "james",
+   "kapitel": 5,
+   "woerter": 474,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 1": {
+   "buch": "hebrews",
+   "kapitel": 1,
+   "woerter": 336,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 2": {
+   "buch": "hebrews",
+   "kapitel": 2,
+   "woerter": 448,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 3": {
+   "buch": "hebrews",
+   "kapitel": 3,
+   "woerter": 360,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 4": {
+   "buch": "hebrews",
+   "kapitel": 4,
+   "woerter": 401,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 5": {
+   "buch": "hebrews",
+   "kapitel": 5,
+   "woerter": 309,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 6": {
+   "buch": "hebrews",
+   "kapitel": 6,
+   "woerter": 426,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 7": {
+   "buch": "hebrews",
+   "kapitel": 7,
+   "woerter": 610,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 8": {
+   "buch": "hebrews",
+   "kapitel": 8,
+   "woerter": 394,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 9": {
+   "buch": "hebrews",
+   "kapitel": 9,
+   "woerter": 693,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 10": {
+   "buch": "hebrews",
+   "kapitel": 10,
+   "woerter": 769,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 11": {
+   "buch": "hebrews",
+   "kapitel": 11,
+   "woerter": 927,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 12": {
+   "buch": "hebrews",
+   "kapitel": 12,
+   "woerter": 687,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "hebrews 13": {
+   "buch": "hebrews",
+   "kapitel": 13,
+   "woerter": 513,
+   "erzaehlend": false,
+   "begruendung": "Brief; auch der Glaubenszeugen-Katalog Kap. 11 bleibt Aufzaehlung im Brief, keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 john 1": {
+   "buch": "1 john",
+   "kapitel": 1,
+   "woerter": 246,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 john 2": {
+   "buch": "1 john",
+   "kapitel": 2,
+   "woerter": 711,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 john 3": {
+   "buch": "1 john",
+   "kapitel": 3,
+   "woerter": 520,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 john 4": {
+   "buch": "1 john",
+   "kapitel": 4,
+   "woerter": 486,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 john 5": {
+   "buch": "1 john",
+   "kapitel": 5,
+   "woerter": 490,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "colossians 1": {
+   "buch": "colossians",
+   "kapitel": 1,
+   "woerter": 663,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "colossians 2": {
+   "buch": "colossians",
+   "kapitel": 2,
+   "woerter": 505,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "colossians 3": {
+   "buch": "colossians",
+   "kapitel": 3,
+   "woerter": 461,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "colossians 4": {
+   "buch": "colossians",
+   "kapitel": 4,
+   "woerter": 362,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ephesians 1": {
+   "buch": "ephesians",
+   "kapitel": 1,
+   "woerter": 513,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ephesians 2": {
+   "buch": "ephesians",
+   "kapitel": 2,
+   "woerter": 446,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ephesians 3": {
+   "buch": "ephesians",
+   "kapitel": 3,
+   "woerter": 427,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ephesians 4": {
+   "buch": "ephesians",
+   "kapitel": 4,
+   "woerter": 626,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ephesians 5": {
+   "buch": "ephesians",
+   "kapitel": 5,
+   "woerter": 562,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "ephesians 6": {
+   "buch": "ephesians",
+   "kapitel": 6,
+   "woerter": 508,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "philippians 1": {
+   "buch": "philippians",
+   "kapitel": 1,
+   "woerter": 651,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "philippians 2": {
+   "buch": "philippians",
+   "kapitel": 2,
+   "woerter": 600,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "philippians 3": {
+   "buch": "philippians",
+   "kapitel": 3,
+   "woerter": 495,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "philippians 4": {
+   "buch": "philippians",
+   "kapitel": 4,
+   "woerter": 473,
+   "erzaehlend": false,
+   "begruendung": "Brief.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "john 1": {
+   "buch": "john",
+   "kapitel": 1,
+   "woerter": 970,
+   "erzaehlend": false,
+   "begruendung": "Der Prolog V.1-18 ist theologischer Hymnus ohne Akteur, Ort und Zeit; ab V.19 ('This is John's testimony') laeuft die Szene mit Gesandtschaft, Taufe und Juengerberufung.",
+   "erzaehlend_woerter": 670,
+   "teilung": {
+    "erzaehlend": [
+     "19-51"
+    ],
+    "nicht_erzaehlend": [
+     "1-18"
+    ]
+   },
+   "erzaehlanteil": 0.6907
+  },
+  "john 2": {
+   "buch": "john",
+   "kapitel": 2,
+   "woerter": 483,
+   "erzaehlend": true,
+   "begruendung": "Hochzeit zu Kana und Tempelreinigung - zwei Szenen mit Ortswechsel Kana/Jerusalem und Zeitverlauf.",
+   "erzaehlend_woerter": 483,
+   "erzaehlanteil": 1.0
+  },
+  "john 3": {
+   "buch": "john",
+   "kapitel": 3,
+   "woerter": 731,
+   "erzaehlend": false,
+   "begruendung": "Nikodemus kommt bei Nacht (V.1-2) und der Taeufer-Abschnitt in Judaea (V.22-30) sind Szene; die Belehrung V.3-21 und das Zeugnis V.31-36 sind geschlossene Rede ohne Handlungsfortschritt und tragen die Wortmehrheit.",
+   "erzaehlend_woerter": 216,
+   "teilung": {
+    "erzaehlend": [
+     "1-2",
+     "22-30"
+    ],
+    "nicht_erzaehlend": [
+     "3-21",
+     "31-36"
+    ]
+   },
+   "erzaehlanteil": 0.2955
+  },
+  "john 4": {
+   "buch": "john",
+   "kapitel": 4,
+   "woerter": 1073,
+   "erzaehlend": true,
+   "begruendung": "Reise Judaea-Samaria-Galilaea mit Brunnengespraech, Juengern, Samaritern und der Heilung des Beamtensohns - durchgehend Ortswechsel und Zeitverlauf.",
+   "erzaehlend_woerter": 1073,
+   "erzaehlanteil": 1.0
+  },
+  "john 5": {
+   "buch": "john",
+   "kapitel": 5,
+   "woerter": 980,
+   "erzaehlend": false,
+   "begruendung": "Heilung am Teich Bethesda und Sabbatkonflikt V.1-18 sind Szene; die Rede V.19-47 (602 von 980 Woertern) laeuft ohne Handlung weiter.",
+   "erzaehlend_woerter": 378,
+   "teilung": {
+    "erzaehlend": [
+     "1-18"
+    ],
+    "nicht_erzaehlend": [
+     "19-47"
+    ]
+   },
+   "erzaehlanteil": 0.3857
+  },
+  "john 6": {
+   "buch": "john",
+   "kapitel": 6,
+   "woerter": 1487,
+   "erzaehlend": true,
+   "begruendung": "Speisung, Seewandel und Ueberfahrt V.1-25 sowie die Abkehr der Juenger und das Petrusbekenntnis V.60-71 sind Handlung; die Brotrede V.26-59 samt Ortsnotiz V.59 ist Lehrrede.",
+   "erzaehlend_woerter": 767,
+   "teilung": {
+    "erzaehlend": [
+     "1-25",
+     "60-71"
+    ],
+    "nicht_erzaehlend": [
+     "26-59"
+    ]
+   },
+   "erzaehlanteil": 0.5158
+  },
+  "john 7": {
+   "buch": "john",
+   "kapitel": 7,
+   "woerter": 982,
+   "erzaehlend": true,
+   "begruendung": "Laubhuettenfest als laufende Szene mit Bruedern, Suchen, ausgesandten Haeschern und Nikodemus; herausgeloest nur der Lehrblock V.16-24.",
+   "erzaehlend_woerter": 804,
+   "teilung": {
+    "erzaehlend": [
+     "1-15",
+     "25-53"
+    ],
+    "nicht_erzaehlend": [
+     "16-24"
+    ]
+   },
+   "erzaehlanteil": 0.8187
+  },
+  "john 8": {
+   "buch": "john",
+   "kapitel": 8,
+   "woerter": 1274,
+   "erzaehlend": false,
+   "begruendung": "Die Ehebrecherin V.1-11 und der Steinigungsversuch V.59 sind Szene; der Streit V.12-58 ist Kontroversrede ohne Handlungsfortschritt und traegt die Mehrheit.",
+   "erzaehlend_woerter": 253,
+   "teilung": {
+    "erzaehlend": [
+     "1-11",
+     "59"
+    ],
+    "nicht_erzaehlend": [
+     "12-58"
+    ]
+   },
+   "erzaehlanteil": 0.1986
+  },
+  "john 9": {
+   "buch": "john",
+   "kapitel": 9,
+   "woerter": 819,
+   "erzaehlend": true,
+   "begruendung": "Blindgeborener: Heilung, dreifaches Verhoer, Ausschluss aus der Synagoge und Wiederbegegnung - fortlaufende Handlung mit Akteuren.",
+   "erzaehlend_woerter": 819,
+   "erzaehlanteil": 1.0
+  },
+  "john 10": {
+   "buch": "john",
+   "kapitel": 10,
+   "woerter": 800,
+   "erzaehlend": false,
+   "begruendung": "Die Hirtenrede V.1-18 ist geschlossene Bildrede; ab V.19 ('a division arose again') laufen Spaltung, Tempelweihfest, Steinigungsversuch und Rueckzug an den Jordan.",
+   "erzaehlend_woerter": 419,
+   "teilung": {
+    "erzaehlend": [
+     "19-42"
+    ],
+    "nicht_erzaehlend": [
+     "1-18"
+    ]
+   },
+   "erzaehlanteil": 0.5238
+  },
+  "john 11": {
+   "buch": "john",
+   "kapitel": 11,
+   "woerter": 1139,
+   "erzaehlend": true,
+   "begruendung": "Auferweckung des Lazarus: Botschaft, Reise nach Bethanien, Grabszene und der Beschluss des Hohen Rates.",
+   "erzaehlend_woerter": 1139,
+   "erzaehlanteil": 1.0
+  },
+  "john 12": {
+   "buch": "john",
+   "kapitel": 12,
+   "woerter": 1058,
+   "erzaehlend": true,
+   "begruendung": "Salbung in Bethanien, Einzug in Jerusalem und die Griechen bei Philippus V.1-22 sind Handlung; ab V.23 Rede, Erzaehlerkommentar mit Jesaja-Zitaten und Schlussrede.",
+   "erzaehlend_woerter": 454,
+   "teilung": {
+    "erzaehlend": [
+     "1-22"
+    ],
+    "nicht_erzaehlend": [
+     "23-50"
+    ]
+   },
+   "erzaehlanteil": 0.4291
+  },
+  "john 13": {
+   "buch": "john",
+   "kapitel": 13,
+   "woerter": 822,
+   "erzaehlend": true,
+   "begruendung": "Fusswaschung und Verraeteransage V.1-30 sind Szene mit Zeitverlauf; ab V.31 beginnt die Abschiedsrede.",
+   "erzaehlend_woerter": 635,
+   "teilung": {
+    "erzaehlend": [
+     "1-30"
+    ],
+    "nicht_erzaehlend": [
+     "31-38"
+    ]
+   },
+   "erzaehlanteil": 0.7725
+  },
+  "john 14": {
+   "buch": "john",
+   "kapitel": 14,
+   "woerter": 716,
+   "erzaehlend": false,
+   "begruendung": "Abschiedsrede in voller Laenge; kein Akteur ausser dem Sprechenden, kein Ortswechsel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "john 15": {
+   "buch": "john",
+   "kapitel": 15,
+   "woerter": 604,
+   "erzaehlend": false,
+   "begruendung": "Abschiedsrede (Weinstock, Freundschaft, Hass der Welt) - 100 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "john 16": {
+   "buch": "john",
+   "kapitel": 16,
+   "woerter": 782,
+   "erzaehlend": false,
+   "begruendung": "Abschiedsrede ueber den Beistand und die Wiedersehensfreude.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "john 17": {
+   "buch": "john",
+   "kapitel": 17,
+   "woerter": 619,
+   "erzaehlend": false,
+   "begruendung": "Hohepriesterliches Gebet - eingelegtes Gebet ueber das ganze Kapitel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "john 18": {
+   "buch": "john",
+   "kapitel": 18,
+   "woerter": 933,
+   "erzaehlend": true,
+   "begruendung": "Gefangennahme im Garten, Verhoer bei Hannas und Kaiaphas, Petrusverleugnung und Prozess vor Pilatus.",
+   "erzaehlend_woerter": 933,
+   "erzaehlanteil": 1.0
+  },
+  "john 19": {
+   "buch": "john",
+   "kapitel": 19,
+   "woerter": 986,
+   "erzaehlend": true,
+   "begruendung": "Geisselung, Kreuzigung, Tod und Grablegung - durchgehende Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 986,
+   "erzaehlanteil": 1.0
+  },
+  "john 20": {
+   "buch": "john",
+   "kapitel": 20,
+   "woerter": 733,
+   "erzaehlend": true,
+   "begruendung": "Leeres Grab, Maria Magdalena, die Juenger hinter verschlossenen Tueren und Thomas - Szenenfolge mit Zeitverlauf.",
+   "erzaehlend_woerter": 733,
+   "erzaehlanteil": 1.0
+  },
+  "john 21": {
+   "buch": "john",
+   "kapitel": 21,
+   "woerter": 701,
+   "erzaehlend": true,
+   "begruendung": "Fischzug am See Tiberias, Mahl am Kohlenfeuer und die Wiedereinsetzung des Petrus.",
+   "erzaehlend_woerter": 701,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 1": {
+   "buch": "matthew",
+   "kapitel": 1,
+   "woerter": 540,
+   "erzaehlend": false,
+   "begruendung": "V.1-17 ist der Stammbaum von Abraham bis Josef; erst V.18 setzt mit Josefs Traum und der Geburt eine Szene ein.",
+   "erzaehlend_woerter": 208,
+   "teilung": {
+    "erzaehlend": [
+     "18-25"
+    ],
+    "nicht_erzaehlend": [
+     "1-17"
+    ]
+   },
+   "erzaehlanteil": 0.3852
+  },
+  "matthew 2": {
+   "buch": "matthew",
+   "kapitel": 2,
+   "woerter": 580,
+   "erzaehlend": true,
+   "begruendung": "Magier aus dem Osten, Flucht nach Aegypten, Kindermord und Rueckkehr nach Nazareth - Ortswechsel und Zeitverlauf.",
+   "erzaehlend_woerter": 580,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 3": {
+   "buch": "matthew",
+   "kapitel": 3,
+   "woerter": 377,
+   "erzaehlend": true,
+   "begruendung": "Auftreten des Taeufers und die Taufe Jesu sind Szene; die Busspredigt V.8-12 (127 von 377 Woertern) ist Verkuendigungsrede.",
+   "erzaehlend_woerter": 250,
+   "teilung": {
+    "erzaehlend": [
+     "1-7",
+     "13-17"
+    ],
+    "nicht_erzaehlend": [
+     "8-12"
+    ]
+   },
+   "erzaehlanteil": 0.6631
+  },
+  "matthew 4": {
+   "buch": "matthew",
+   "kapitel": 4,
+   "woerter": 509,
+   "erzaehlend": true,
+   "begruendung": "Versuchung in der Wueste mit dreifachem Ortswechsel, Rueckzug nach Kapernaum und Berufung der ersten Juenger.",
+   "erzaehlend_woerter": 509,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 5": {
+   "buch": "matthew",
+   "kapitel": 5,
+   "woerter": 1062,
+   "erzaehlend": false,
+   "begruendung": "Bergpredigt, erster Teil - 97 Prozent zusammenhaengende Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 6": {
+   "buch": "matthew",
+   "kapitel": 6,
+   "woerter": 770,
+   "erzaehlend": false,
+   "begruendung": "Bergpredigt, zweiter Teil - 100 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 7": {
+   "buch": "matthew",
+   "kapitel": 7,
+   "woerter": 592,
+   "erzaehlend": false,
+   "begruendung": "Bergpredigt, Schluss; nur die Reaktionsnotiz V.28-29 waere Handlung, zu klein fuer eine eigene Naht.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 8": {
+   "buch": "matthew",
+   "kapitel": 8,
+   "woerter": 720,
+   "erzaehlend": true,
+   "begruendung": "Aussaetziger, Hauptmann von Kapernaum, Sturmstillung und die Gadarener - vier Szenen mit Ortswechsel.",
+   "erzaehlend_woerter": 720,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 9": {
+   "buch": "matthew",
+   "kapitel": 9,
+   "woerter": 797,
+   "erzaehlend": true,
+   "begruendung": "Gelaehmter, Berufung des Matthaeus, Jairus, blutfluessige Frau, Blinde und Stummer - dichte Szenenfolge.",
+   "erzaehlend_woerter": 797,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 10": {
+   "buch": "matthew",
+   "kapitel": 10,
+   "woerter": 869,
+   "erzaehlend": false,
+   "begruendung": "Aussendungsrede - 88 Prozent Rede, die Aussendung selbst nur zwei Verse.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 11": {
+   "buch": "matthew",
+   "kapitel": 11,
+   "woerter": 642,
+   "erzaehlend": false,
+   "begruendung": "Nur die Anfrage des Taeufers V.1-7 und die Ueberleitung V.20 sind Szene; die Rede ueber Johannes V.8-19 und die Weherufe samt Heilandsruf V.21-30 tragen 486 von 642 Woertern.",
+   "erzaehlend_woerter": 156,
+   "teilung": {
+    "erzaehlend": [
+     "1-7",
+     "20"
+    ],
+    "nicht_erzaehlend": [
+     "8-19",
+     "21-30"
+    ]
+   },
+   "erzaehlanteil": 0.243
+  },
+  "matthew 12": {
+   "buch": "matthew",
+   "kapitel": 12,
+   "woerter": 1108,
+   "erzaehlend": true,
+   "begruendung": "Aehrenraufen, Heilung am Sabbat und der Beschluss der Pharisaeer V.1-14 sowie Mutter und Brueder V.46-50 sind Handlung; dazwischen Jesaja-Zitat und Beelzebul-Streitrede.",
+   "erzaehlend_woerter": 390,
+   "teilung": {
+    "erzaehlend": [
+     "1-14",
+     "46-50"
+    ],
+    "nicht_erzaehlend": [
+     "15-45"
+    ]
+   },
+   "erzaehlanteil": 0.352
+  },
+  "matthew 13": {
+   "buch": "matthew",
+   "kapitel": 13,
+   "woerter": 1309,
+   "erzaehlend": false,
+   "begruendung": "Gleichnisrede vom Saemann bis zum Fischnetz; erst V.53-58 (Verwerfung in Nazareth) ist wieder Szene.",
+   "erzaehlend_woerter": 111,
+   "teilung": {
+    "erzaehlend": [
+     "53-58"
+    ],
+    "nicht_erzaehlend": [
+     "1-52"
+    ]
+   },
+   "erzaehlanteil": 0.0848
+  },
+  "matthew 14": {
+   "buch": "matthew",
+   "kapitel": 14,
+   "woerter": 692,
+   "erzaehlend": true,
+   "begruendung": "Tod des Taeufers, Speisung der Fuenftausend und der Seewandel - Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 692,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 15": {
+   "buch": "matthew",
+   "kapitel": 15,
+   "woerter": 738,
+   "erzaehlend": true,
+   "begruendung": "Streit um die Ueberlieferung, die kanaanaeische Frau und die Speisung der Viertausend; die Rede bleibt Wechselrede in laufender Szene.",
+   "erzaehlend_woerter": 738,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 16": {
+   "buch": "matthew",
+   "kapitel": 16,
+   "woerter": 644,
+   "erzaehlend": true,
+   "begruendung": "Zeichenforderung, Ueberfahrt, Petrusbekenntnis bei Caesarea Philippi und die erste Leidensansage mit Petrusschelte.",
+   "erzaehlend_woerter": 644,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 17": {
+   "buch": "matthew",
+   "kapitel": 17,
+   "woerter": 594,
+   "erzaehlend": true,
+   "begruendung": "Verklaerung auf dem Berg, Heilung des fallsuechtigen Knaben und die Tempelsteuer im Fischmaul.",
+   "erzaehlend_woerter": 594,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 18": {
+   "buch": "matthew",
+   "kapitel": 18,
+   "woerter": 843,
+   "erzaehlend": false,
+   "begruendung": "Gemeinderede ueber das Kind, das verlorene Schaf, die Zurechtweisung und den unbarmherzigen Knecht - 91 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 19": {
+   "buch": "matthew",
+   "kapitel": 19,
+   "woerter": 685,
+   "erzaehlend": true,
+   "begruendung": "Aufbruch nach Judaea, Streitgespraech ueber die Ehescheidung, Segnung der Kinder und der reiche Juengling, der weggeht.",
+   "erzaehlend_woerter": 685,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 20": {
+   "buch": "matthew",
+   "kapitel": 20,
+   "woerter": 760,
+   "erzaehlend": true,
+   "begruendung": "Das Gleichnis von den Arbeitern im Weinberg V.1-16 ist geschlossene Bildrede; ab V.17 laufen Aufstieg nach Jerusalem, Zebedaeussoehne und die Blinden von Jericho.",
+   "erzaehlend_woerter": 422,
+   "teilung": {
+    "erzaehlend": [
+     "17-34"
+    ],
+    "nicht_erzaehlend": [
+     "1-16"
+    ]
+   },
+   "erzaehlanteil": 0.5553
+  },
+  "matthew 21": {
+   "buch": "matthew",
+   "kapitel": 21,
+   "woerter": 1076,
+   "erzaehlend": true,
+   "begruendung": "Einzug, Tempelreinigung, verdorrter Feigenbaum und Vollmachtsfrage V.1-27 sowie die Reaktion V.45-46 sind Handlung; die beiden Gleichnisse V.28-44 sind Rede.",
+   "erzaehlend_woerter": 679,
+   "teilung": {
+    "erzaehlend": [
+     "1-27",
+     "45-46"
+    ],
+    "nicht_erzaehlend": [
+     "28-44"
+    ]
+   },
+   "erzaehlanteil": 0.631
+  },
+  "matthew 22": {
+   "buch": "matthew",
+   "kapitel": 22,
+   "woerter": 798,
+   "erzaehlend": true,
+   "begruendung": "Das Gleichnis vom Hochzeitsmahl V.1-14 ist Bildrede; ab V.15 kommen Pharisaeer, Herodianer und Sadduzaeer nacheinander und werden abgewiesen.",
+   "erzaehlend_woerter": 524,
+   "teilung": {
+    "erzaehlend": [
+     "15-46"
+    ],
+    "nicht_erzaehlend": [
+     "1-14"
+    ]
+   },
+   "erzaehlanteil": 0.6566
+  },
+  "matthew 23": {
+   "buch": "matthew",
+   "kapitel": 23,
+   "woerter": 815,
+   "erzaehlend": false,
+   "begruendung": "Weherufe gegen Schriftgelehrte und Pharisaeer - 99 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 24": {
+   "buch": "matthew",
+   "kapitel": 24,
+   "woerter": 1042,
+   "erzaehlend": false,
+   "begruendung": "Endzeitrede auf dem Oelberg - 90 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 25": {
+   "buch": "matthew",
+   "kapitel": 25,
+   "woerter": 976,
+   "erzaehlend": false,
+   "begruendung": "Gleichnisse von den Jungfrauen, den Talenten und dem Weltgericht - 100 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "matthew 26": {
+   "buch": "matthew",
+   "kapitel": 26,
+   "woerter": 1573,
+   "erzaehlend": true,
+   "begruendung": "Salbung in Bethanien, Passamahl, Gethsemane, Gefangennahme, Verhoer und Petrusverleugnung.",
+   "erzaehlend_woerter": 1573,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 27": {
+   "buch": "matthew",
+   "kapitel": 27,
+   "woerter": 1307,
+   "erzaehlend": true,
+   "begruendung": "Auslieferung an Pilatus, Judas' Ende, Kreuzigung, Tod und Grabwache.",
+   "erzaehlend_woerter": 1307,
+   "erzaehlanteil": 1.0
+  },
+  "matthew 28": {
+   "buch": "matthew",
+   "kapitel": 28,
+   "woerter": 413,
+   "erzaehlend": true,
+   "begruendung": "Frauen am leeren Grab, Engel, Begegnung mit dem Auferstandenen und die Wache am Grab.",
+   "erzaehlend_woerter": 413,
+   "erzaehlanteil": 1.0
+  },
+  "luke 1": {
+   "buch": "luke",
+   "kapitel": 1,
+   "woerter": 1490,
+   "erzaehlend": true,
+   "begruendung": "Zacharias im Tempel, Verkuendigung und Heimsuchung sowie Geburt und Beschneidung des Taeufers sind Szene; herausgeloest Widmungsvorrede V.1-4, Magnificat V.46-55 und Benedictus V.67-79.",
+   "erzaehlend_woerter": 1072,
+   "teilung": {
+    "erzaehlend": [
+     "5-45",
+     "56-66",
+     "80"
+    ],
+    "nicht_erzaehlend": [
+     "1-4",
+     "46-55",
+     "67-79"
+    ]
+   },
+   "erzaehlanteil": 0.7195
+  },
+  "luke 2": {
+   "buch": "luke",
+   "kapitel": 2,
+   "woerter": 1047,
+   "erzaehlend": true,
+   "begruendung": "Schaetzung, Geburt, Hirten, Darstellung im Tempel und der zwoelfjaehrige Jesus sind durchgehend Handlung; nur der Lobgesang des Simeon V.29-32 ist eingelegtes Lied.",
+   "erzaehlend_woerter": 1003,
+   "teilung": {
+    "erzaehlend": [
+     "1-28",
+     "33-52"
+    ],
+    "nicht_erzaehlend": [
+     "29-32"
+    ]
+   },
+   "erzaehlanteil": 0.958
+  },
+  "luke 3": {
+   "buch": "luke",
+   "kapitel": 3,
+   "woerter": 843,
+   "erzaehlend": false,
+   "begruendung": "Nur die Datierung V.1-2 sowie Herodes' Zugriff und die Taufe V.19-22 sind Szene; die Busspredigt V.3-18 ist Verkuendigung, V.23-38 der Stammbaum rueckwaerts bis Adam.",
+   "erzaehlend_woerter": 151,
+   "teilung": {
+    "erzaehlend": [
+     "1-2",
+     "19-22"
+    ],
+    "nicht_erzaehlend": [
+     "3-18",
+     "23-38"
+    ]
+   },
+   "erzaehlanteil": 0.1791
+  },
+  "luke 4": {
+   "buch": "luke",
+   "kapitel": 4,
+   "woerter": 973,
+   "erzaehlend": true,
+   "begruendung": "Versuchung, Verwerfung in Nazareth mit Fluchtversuch der Menge, Kapernaum und die Wanderung durch Judaea - Ortswechsel und Zeitverlauf.",
+   "erzaehlend_woerter": 973,
+   "erzaehlanteil": 1.0
+  },
+  "luke 5": {
+   "buch": "luke",
+   "kapitel": 5,
+   "woerter": 885,
+   "erzaehlend": true,
+   "begruendung": "Fischzug und Berufung, Aussaetziger, Gelaehmter durchs Dach, Berufung des Levi und die Fastenfrage.",
+   "erzaehlend_woerter": 885,
+   "erzaehlanteil": 1.0
+  },
+  "luke 6": {
+   "buch": "luke",
+   "kapitel": 6,
+   "woerter": 1171,
+   "erzaehlend": true,
+   "begruendung": "Aehrenraufen, Heilung der verdorrten Hand, Wahl der Zwoelf und der Zulauf V.1-19 sind Handlung; die Feldrede V.20-49 ist geschlossene Lehrrede.",
+   "erzaehlend_woerter": 429,
+   "teilung": {
+    "erzaehlend": [
+     "1-19"
+    ],
+    "nicht_erzaehlend": [
+     "20-49"
+    ]
+   },
+   "erzaehlanteil": 0.3664
+  },
+  "luke 7": {
+   "buch": "luke",
+   "kapitel": 7,
+   "woerter": 1127,
+   "erzaehlend": true,
+   "begruendung": "Hauptmann von Kapernaum, Jungling zu Nain, die Anfrage des Taeufers und die Suenderin im Haus des Pharisaeers.",
+   "erzaehlend_woerter": 1127,
+   "erzaehlanteil": 1.0
+  },
+  "luke 8": {
+   "buch": "luke",
+   "kapitel": 8,
+   "woerter": 1352,
+   "erzaehlend": true,
+   "begruendung": "Die begleitenden Frauen V.1-4 und der Block Mutter/Brueder, Sturmstillung, Gerasener, Jairus V.19-56 sind Handlung; das Saemanngleichnis mit Deutung V.5-18 ist Rede.",
+   "erzaehlend_woerter": 990,
+   "teilung": {
+    "erzaehlend": [
+     "1-4",
+     "19-56"
+    ],
+    "nicht_erzaehlend": [
+     "5-18"
+    ]
+   },
+   "erzaehlanteil": 0.7322
+  },
+  "luke 9": {
+   "buch": "luke",
+   "kapitel": 9,
+   "woerter": 1373,
+   "erzaehlend": true,
+   "begruendung": "Aussendung der Zwoelf, Speisung, Bekenntnis, Verklaerung, der fallsuechtige Knabe und der Aufbruch nach Jerusalem.",
+   "erzaehlend_woerter": 1373,
+   "erzaehlanteil": 1.0
+  },
+  "luke 10": {
+   "buch": "luke",
+   "kapitel": 10,
+   "woerter": 939,
+   "erzaehlend": false,
+   "begruendung": "Aussendungsrede V.2-16 und das Samaritergleichnis V.30-36 sind Rede; Szene bleiben die Aussendung V.1, die Rueckkehr der Siebzig mit der Gesetzeslehrerfrage V.17-29 und Marta und Maria V.37-42.",
+   "erzaehlend_woerter": 463,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "17-29",
+     "37-42"
+    ],
+    "nicht_erzaehlend": [
+     "2-16",
+     "30-36"
+    ]
+   },
+   "erzaehlanteil": 0.4931
+  },
+  "luke 11": {
+   "buch": "luke",
+   "kapitel": 11,
+   "woerter": 1290,
+   "erzaehlend": false,
+   "begruendung": "Vaterunser, Beelzebulstreit, Zeichenforderung und Weherufe - 78 Prozent geschlossene Rede; die Szenenreste (V.14, V.37-38, V.53-54) liegen zu verstreut fuer eine saubere Naht.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "luke 12": {
+   "buch": "luke",
+   "kapitel": 12,
+   "woerter": 1312,
+   "erzaehlend": false,
+   "begruendung": "Warnung vor Heuchelei, reicher Kornbauer, Sorgenrede, treuer Verwalter und Zeichen der Zeit - 88 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "luke 13": {
+   "buch": "luke",
+   "kapitel": 13,
+   "woerter": 815,
+   "erzaehlend": false,
+   "begruendung": "Nur die Heilung der gekruemmten Frau am Sabbat V.10-17 ist Szene; Bussruf und Feigenbaum V.1-9 sowie Senfkorn, enge Tuer und Herodeswort V.18-35 sind Rede.",
+   "erzaehlend_woerter": 192,
+   "teilung": {
+    "erzaehlend": [
+     "10-17"
+    ],
+    "nicht_erzaehlend": [
+     "1-9",
+     "18-35"
+    ]
+   },
+   "erzaehlanteil": 0.2356
+  },
+  "luke 14": {
+   "buch": "luke",
+   "kapitel": 14,
+   "woerter": 772,
+   "erzaehlend": false,
+   "begruendung": "Nur die Sabbatheilung im Haus des Pharisaeers V.1-6 ist Szene; Ehrenplaetze, grosses Gastmahl und Nachfolgebedingungen V.7-35 sind Rede.",
+   "erzaehlend_woerter": 99,
+   "teilung": {
+    "erzaehlend": [
+     "1-6"
+    ],
+    "nicht_erzaehlend": [
+     "7-35"
+    ]
+   },
+   "erzaehlanteil": 0.1282
+  },
+  "luke 15": {
+   "buch": "luke",
+   "kapitel": 15,
+   "woerter": 687,
+   "erzaehlend": false,
+   "begruendung": "Verlorenes Schaf, verlorene Drachme und verlorener Sohn - 94 Prozent Gleichnisrede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "luke 16": {
+   "buch": "luke",
+   "kapitel": 16,
+   "woerter": 760,
+   "erzaehlend": false,
+   "begruendung": "Ungerechter Verwalter und der reiche Mann mit Lazarus - 94 Prozent Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "luke 17": {
+   "buch": "luke",
+   "kapitel": 17,
+   "woerter": 729,
+   "erzaehlend": false,
+   "begruendung": "Nur die zehn Aussaetzigen V.11-19 sind Szene mit Ortswechsel; Vergebungslehre V.1-10 und die Rede vom Kommen des Reiches V.20-37 sind Rede.",
+   "erzaehlend_woerter": 145,
+   "teilung": {
+    "erzaehlend": [
+     "11-19"
+    ],
+    "nicht_erzaehlend": [
+     "1-10",
+     "20-37"
+    ]
+   },
+   "erzaehlanteil": 0.1989
+  },
+  "luke 18": {
+   "buch": "luke",
+   "kapitel": 18,
+   "woerter": 822,
+   "erzaehlend": true,
+   "begruendung": "Die Gleichnisse von der Witwe und vom Pharisaeer und Zoellner V.1-14 sind Rede; ab V.15 laufen Kindersegnung, reicher Oberer, Leidensansage und der Blinde von Jericho.",
+   "erzaehlend_woerter": 534,
+   "teilung": {
+    "erzaehlend": [
+     "15-43"
+    ],
+    "nicht_erzaehlend": [
+     "1-14"
+    ]
+   },
+   "erzaehlanteil": 0.6496
+  },
+  "luke 19": {
+   "buch": "luke",
+   "kapitel": 19,
+   "woerter": 969,
+   "erzaehlend": true,
+   "begruendung": "Zachaeus V.1-11 sowie Einzug, Weinen ueber Jerusalem und Tempelreinigung V.28-48 sind Handlung; das Mnengleichnis V.12-27 ist Bildrede.",
+   "erzaehlend_woerter": 626,
+   "teilung": {
+    "erzaehlend": [
+     "1-11",
+     "28-48"
+    ],
+    "nicht_erzaehlend": [
+     "12-27"
+    ]
+   },
+   "erzaehlanteil": 0.646
+  },
+  "luke 20": {
+   "buch": "luke",
+   "kapitel": 20,
+   "woerter": 893,
+   "erzaehlend": true,
+   "begruendung": "Vollmachtsfrage V.1-8 und die Folge von Kundschaftern, Sadduzaeern und Davidsfrage V.19-47 sind Szene; das Winzergleichnis V.9-18 ist Bildrede.",
+   "erzaehlend_woerter": 657,
+   "teilung": {
+    "erzaehlend": [
+     "1-8",
+     "19-47"
+    ],
+    "nicht_erzaehlend": [
+     "9-18"
+    ]
+   },
+   "erzaehlanteil": 0.7357
+  },
+  "luke 21": {
+   "buch": "luke",
+   "kapitel": 21,
+   "woerter": 764,
+   "erzaehlend": false,
+   "begruendung": "Nur das Scherflein der Witwe V.1-4 und die Tagesordnungsnotiz V.37-38 sind Szene; die Endzeitrede V.5-36 traegt 606 von 764 Woertern.",
+   "erzaehlend_woerter": 112,
+   "teilung": {
+    "erzaehlend": [
+     "1-4",
+     "37-38"
+    ],
+    "nicht_erzaehlend": [
+     "5-36"
+    ]
+   },
+   "erzaehlanteil": 0.1466
+  },
+  "luke 22": {
+   "buch": "luke",
+   "kapitel": 22,
+   "woerter": 1359,
+   "erzaehlend": true,
+   "begruendung": "Verrat des Judas, Passamahl, Oelberg, Gefangennahme, Petrusverleugnung und Verhoer vor dem Hohen Rat.",
+   "erzaehlend_woerter": 1359,
+   "erzaehlanteil": 1.0
+  },
+  "luke 23": {
+   "buch": "luke",
+   "kapitel": 23,
+   "woerter": 1050,
+   "erzaehlend": true,
+   "begruendung": "Prozess vor Pilatus und Herodes, Kreuzweg, Kreuzigung, Tod und Grablegung.",
+   "erzaehlend_woerter": 1050,
+   "erzaehlanteil": 1.0
+  },
+  "luke 24": {
+   "buch": "luke",
+   "kapitel": 24,
+   "woerter": 977,
+   "erzaehlend": true,
+   "begruendung": "Frauen am Grab, Emmausgang mit Wiedererkennen beim Brotbrechen, Erscheinung vor den Elf und Abschied bei Bethanien.",
+   "erzaehlend_woerter": 977,
+   "erzaehlanteil": 1.0
+  },
+  "daniel 1": {
+   "buch": "daniel",
+   "kapitel": 1,
+   "woerter": 567,
+   "erzaehlend": true,
+   "begruendung": "Wegfuehrung nach Babel, Auswahl der Knaben, die zehntaegige Probe mit Gemuese und der Dienstantritt vor dem Koenig - Zeitverlauf ueber drei Jahre.",
+   "erzaehlend_woerter": 567,
+   "erzaehlanteil": 1.0
+  },
+  "daniel 2": {
+   "buch": "daniel",
+   "kapitel": 2,
+   "woerter": 1451,
+   "erzaehlend": true,
+   "begruendung": "Traum, Todesbefehl, Danielis Bitte, die naechtliche Offenbarung und die Erhoehung am Schluss sind Szene; herausgeloest der Lobpreis V.20-23 als eingelegtes Gebet und die Deutungsrede V.27-45 (583 Woerter).",
+   "erzaehlend_woerter": 737,
+   "teilung": {
+    "erzaehlend": [
+     "1-19",
+     "24-26",
+     "46-49"
+    ],
+    "nicht_erzaehlend": [
+     "20-23",
+     "27-45"
+    ]
+   },
+   "erzaehlanteil": 0.5079
+  },
+  "daniel 3": {
+   "buch": "daniel",
+   "kapitel": 3,
+   "woerter": 962,
+   "erzaehlend": true,
+   "begruendung": "Goldbild in der Ebene Dura, Anklage, Feuerofen, die vierte Gestalt im Feuer und die Erhoehung der drei - fortlaufende Handlung; die Beamten- und Instrumentenlisten stehen im Erzaehlfluss.",
+   "erzaehlend_woerter": 962,
+   "erzaehlanteil": 1.0
+  }
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "was": "Gate-2-Auswertung nach Video 4. Erste eigene Kanaldaten des Projekts. Traegt Regel M8 (regeln/erfolgsregeln.md) und Gate 1.13 (produktion/workflow-gates.md).",
+ "datum_auswertung": "2026-08-23",
+ "stand_kanal": "4 veroeffentlichte Langform-Videos",
+ "herkunft_gesamt": "abgetippt",
+ "herkunft_erklaerung": {
+  "abgetippt": "Von Hand aus der YouTube-Studio-Oberflaeche uebernommen. Nicht gegen einen Export geprueft, keine Nachkommastellen ueber das Abgelesene hinaus.",
+  "export": "Aus einer von YouTube Studio erzeugten CSV-Datei uebernommen.",
+  "berechnet": "In dieser Datei aus abgetippten Werten abgeleitet, Formel steht dabei."
+ },
+ "offen": [
+  "CSV-Export steht aus. Bis dahin sind alle Rohwerte abgetippt und koennen Ablese- und Rundungsfehler enthalten.",
+  "Die Upload-Daten der vier Videos sind im Repository nirgends festgehalten. Die Laenge des Messfensters je Video ist daher nicht ableitbar - und damit auch nicht, wieviel Vorsprung V02 gegenueber V03 an Laufzeit hatte."
+ ],
+ "kanal": {
+  "aufrufe": {
+   "wert": 151,
+   "einheit": "Aufrufe",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "wiedergabestunden": {
+   "wert": 69.4,
+   "einheit": "Stunden",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "abonnenten": {
+   "wert": 2,
+   "einheit": "Abonnenten",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "impressionen": {
+   "wert": 5535,
+   "einheit": "Impressionen",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "klickrate": {
+   "wert": 2.73,
+   "einheit": "Prozent",
+   "quelle": "abgeleitet",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "berechnet",
+   "bezug": "aufrufe / impressionen",
+   "hinweis": "Die Groesse, die dem ganzen Fremddatensatz fehlt (workflow-gates.md, Gate 2)."
+  },
+  "durchschnittliche_wiedergabedauer": {
+   "wert": 27.6,
+   "einheit": "Minuten",
+   "quelle": "abgeleitet",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "berechnet",
+   "bezug": "wiedergabestunden * 60 / aufrufe",
+   "hinweis": "Kanalmittel ueber alle vier Videos, nicht je Video aufgeloest."
+  }
+ },
+ "traffic": {
+  "aus_vorgeschlagenen_videos": {
+   "wert": 102,
+   "einheit": "Aufrufe",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt",
+   "hinweis": "102 von 151 Aufrufen = 67,5 Prozent."
+  },
+  "aus_suche": {
+   "wert": 0,
+   "einheit": "Aufrufe",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt",
+   "hinweis": "Null. Titel-Keywords tragen bei diesem Kanal bisher nichts; die Verteilung laeuft ueber den Vorschlag."
+  },
+  "uebrige": {
+   "wert": 49,
+   "einheit": "Aufrufe",
+   "quelle": "abgeleitet",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "berechnet",
+   "bezug": "aufrufe - vorgeschlagene - suche",
+   "hinweis": "Quelle im Studio nicht aufgeschluesselt abgetippt."
+  }
+ },
+ "geraete": {
+  "anteil_mobil": {
+   "wert": 68,
+   "einheit": "Prozent",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "anteil_tv": {
+   "wert": 12,
+   "einheit": "Prozent",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "sitzungsdauer_tv": {
+   "wert": 70,
+   "einheit": "Minuten",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt"
+  },
+  "sitzungsdauer_handy": {
+   "wert": 23,
+   "einheit": "Minuten",
+   "quelle": "YouTube Studio",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "abgetippt",
+   "hinweis": "TV-Sitzungen laufen dreimal so lang wie Handy-Sitzungen, stellen aber nur 12 Prozent der Aufrufe."
+  }
+ },
+ "videos": {
+  "V02": {
+   "korpus": "Psalmen 90-150 + Sprueche",
+   "laufzeit_h": 3.62,
+   "endretention": {
+    "wert": 2.4,
+    "einheit": "Prozent",
+    "quelle": "YouTube Studio",
+    "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+    "herkunft": "abgetippt",
+    "hinweis": "Anteil der Zuschauer, die nach 3,5 h noch da sind."
+   }
+  },
+  "V03": {
+   "korpus": "Johannes + Hebraeer + 1 Johannes + Kolosser",
+   "laufzeit_h": 3.47,
+   "endretention": {
+    "wert": 14.4,
+    "einheit": "Prozent",
+    "quelle": "YouTube Studio",
+    "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+    "herkunft": "abgetippt",
+    "hinweis": "Anteil der Zuschauer, die nach 3,5 h noch da sind."
+   },
+   "anteil_an_wiedergabezeit": {
+    "wert": 80,
+    "einheit": "Prozent",
+    "quelle": "YouTube Studio",
+    "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+    "herkunft": "abgetippt",
+    "hinweis": "V03 traegt 80 Prozent der Wiedergabezeit des ganzen Kanals."
+   }
+  },
+  "_hinweis": "Fuer V01 und V04 wurden keine Endretentionswerte abgetippt. Der Vergleich stuetzt sich damit auf zwei Videos, nicht auf vier."
+ },
+ "vergleich_v03_v02": {
+  "faktor_endretention": {
+   "wert": 6.0,
+   "einheit": "Faktor",
+   "quelle": "abgeleitet",
+   "zeitraum": "Kanalstart bis 2026-08-23 (Lebenszeitwerte, Kanal gesamt)",
+   "herkunft": "berechnet",
+   "bezug": "14,4 / 2,4"
+  },
+  "erzaehlanteil_v03": {
+   "wert": 38.2,
+   "einheit": "Prozent",
+   "quelle": "produktion/korpus/eigene_videos_erzaehlanteil.json",
+   "zeitraum": "gemessen 2026-08-30",
+   "herkunft": "berechnet",
+   "hinweis": "Nachtraeglich gemessen, lag zum Zeitpunkt der Auswertung nicht vor."
+  },
+  "erzaehlanteil_v02": {
+   "wert": 0.0,
+   "einheit": "Prozent",
+   "quelle": "produktion/korpus/eigene_videos_erzaehlanteil.json",
+   "zeitraum": "gemessen 2026-08-30",
+   "herkunft": "berechnet",
+   "hinweis": "Psalmen und Sprueche enthalten nach der Regel keinen Erzaehlstoff."
+  },
+  "stoerfaktoren": [
+   "n=2 Videos, ein Kanal, je eine Beobachtung pro Bedingung.",
+   "V02 und V03 unterscheiden sich nicht nur im Textkorpus, sondern auch in Titel, Thumbnail, Uploadzeitpunkt und Position in der Kanalhistorie.",
+   "V03 bezieht ueberdurchschnittlich viel Verkehr aus vorgeschlagenen Videos. Ob der Erzaehlstoff die Retention traegt oder die Retention die Verteilung und damit ein anderes Publikum, ist aus diesen Daten nicht trennbar.",
+   "Kein Vergleichsvideo bei gleicher Laufzeit und gleichem Textkorpus. V03 ist mit 3,47 h das kuerzeste der vier.",
+   "Die absoluten Zahlen sind klein: 151 Aufrufe und 2 Abonnenten insgesamt. 14,4 Prozent Endretention koennen eine Handvoll Sitzungen sein."
+  ]
+ }
+}

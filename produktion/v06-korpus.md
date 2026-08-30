@@ -6,16 +6,25 @@
 > gleiche Zählmethode wie [`produktion/wortzahlen.py`](wortzahlen.py)
 > (bible-api.com, `translation=webbe`, Verstexte mit Leerzeichen verbunden, dann
 > `str.split()`), damit die Zahlen mit V01–V05 vergleichbar bleiben.
-> Erzeugt und nachrechenbar mit [`produktion/erzaehlanteil.py`](erzaehlanteil.py)
-> (Rückgabewert 0 = alle drei Varianten bestehen Zielband, 80-%-Gate und Dominanz).
+> Erzeugt und nachrechenbar mit [`produktion/erzaehlanteil.py`](erzaehlanteil.py).
 > Rohdaten: [`korpus/erzaehlanteil.json`](korpus/erzaehlanteil.json) (250 Kapitel
 > einzeln eingestuft) und [`korpus/v06_varianten.json`](korpus/v06_varianten.json).
-> **`plan.json` ist unverändert.** Kein Titel, kein Gebet, kein Thumbnail, kein TTS,
-> kein Rendering.
+> Kein Titel, kein Gebet, kein Thumbnail, kein TTS, kein Rendering.
+>
+> **Nachtrag 2026-08-30, zweiter Durchgang.** Das Sprechtempo ist inzwischen an den
+> vier Renderläufen **gemessen** (143,7 WPM statt der unbelegten 148,1 aus dem
+> Auftrag, siehe [`korpus/wpm_gemessen.json`](korpus/wpm_gemessen.json)). Damit
+> verschiebt sich das Zielband nach unten — und **Variante V06-C fällt heraus**
+> (3:53 h gegen die Obergrenze 3,8 h). `erzaehlanteil.py` meldet das und gibt
+> seither **1** statt 0 zurück. **Variante A ist als V06 in `plan.json`
+> eingetragen** (Status „geplant, Titel offen"), in kanonischer Lesereihenfolge
+> Rut → 1 Samuel → Ester.
 
 **Vorgaben, gegen die gerechnet wurde:** Erzählanteil ≥ 80 % der Wörter · Zielband
-30.215–33.767 W (3,4–3,8 h bei 148,1 WPM) · ein dominantes Buch ≥ 60 % der Wörter ·
-ganze Bücher bevorzugt, Schnitte nur an Erzählnähten.
+3,4–3,8 h · ein dominantes Buch ≥ 60 % der Wörter · ganze Bücher bevorzugt,
+Schnitte nur an Erzählnähten. Tempo und Zielband liest das Skript aus
+[`config.md`](config.md); bei 143,7 WPM sind das **29.315–32.764 Wörter**
+(bei der ursprünglich vorgegebenen 148,1: 30.215–33.767).
 
 ---
 
@@ -23,13 +32,18 @@ ganze Bücher bevorzugt, Schnitte nur an Erzählnähten.
 
 | Variante | Korpus | Wörter | Erzählanteil | Laufzeit | dominantes Buch | Nachttauglichkeit *(Einschätzung, keine Messung)* | was danach für V07+ übrig bleibt |
 |---|---|---:|---:|---:|---|---|---|
-| **V06-A**<br>Anthologie | 1 Samuel 1–31 + Rut 1–4 + Ester 1–10 | 31.482 | **89,03 %** | 3:33 h | **1 Samuel** (75 %) | Rut ist der ruhigste Stoff im ganzen Vorrat. Gegen den Zweck: 1 Sam 15 (Bann an Amalek), 17 (Enthauptung), 18,25–27 (zweihundert Vorhäute), 22 (85 erschlagene Priester), 28 (Totenbeschwörerin), 31 (Selbstmord, Leichenschändung), Ester 9 (75.000 Erschlagene). Alles im Mittelteil. | 170.132 W. **Apostelgeschichte bleibt ganz frei** — das einzige noch unverplante NT-Buch. Dazu 2 Samuel, beide Königsbücher, Josua, Richter, Exodus, Jona, Daniel 4–12, Genesis 43–50. **Kein Torso.** |
-| **V06-B**<br>Lebensbogen | 1 Samuel 16–31 + 2 Samuel 1–24 | 31.929 | **88,55 %** | 3:36 h | **2 Samuel** (61 %) | Die schwerste Stelle im ganzen Vorrat: 2 Sam 13 (Vergewaltigung Tamars) ist um 2 Uhr nachts nicht zumutbar. Dazu 2 Sam 4, 11, 12, 18, 21 und aus dem ersten Teil 1 Sam 17, 22, 28, 31. Der Stoff wird nach hinten **düsterer statt ruhiger**. | 169.685 W, davon **1 Samuel 1–15 als Torso** (11.156 W: Eli, Samuels Berufung, Sauls Aufstieg — ohne Fortsetzung zu kurz). Apostelgeschichte, Königsbücher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4–12, Genesis 43–50 frei. |
-| **V06-C**<br>AT + NT | Apostelgeschichte 1–12 + 1 Samuel 1–31 | 33.460 | **83,63 %** | 3:46 h | **1 Samuel** (71 %) | Apg 1–12 ist der ruhigste NT-Stoff im Vorrat; kritisch dort nur Apg 5 (Hananias und Saphira), 7,54–60 (Steinigung), 12 (Enthauptung, Herodes von Würmern gefressen). Der 1-Samuel-Teil bringt dieselben Stellen wie V06-A mit. | 168.154 W, davon **Apostelgeschichte 13–28 als Torso** (13.321 W: die Paulusreisen ohne Anfang). 2 Samuel, Königsbücher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4–12, Genesis 43–50 frei. |
+| **V06-A**<br>Anthologie | 1 Samuel 1–31 + Rut 1–4 + Ester 1–10 | 31.482 | **89,03 %** | 3:39 h | **1 Samuel** (75 %) | Rut ist der ruhigste Stoff im ganzen Vorrat. Gegen den Zweck: 1 Sam 15 (Bann an Amalek), 17 (Enthauptung), 18,25–27 (zweihundert Vorhäute), 22 (85 erschlagene Priester), 28 (Totenbeschwörerin), 31 (Selbstmord, Leichenschändung), Ester 9 (75.000 Erschlagene). Alles im Mittelteil. | 170.132 W. **Apostelgeschichte bleibt ganz frei** — das einzige noch unverplante NT-Buch. Dazu 2 Samuel, beide Königsbücher, Josua, Richter, Exodus, Jona, Daniel 4–12, Genesis 43–50. **Kein Torso.** |
+| **V06-B**<br>Lebensbogen | 1 Samuel 16–31 + 2 Samuel 1–24 | 31.929 | **88,55 %** | 3:42 h | **2 Samuel** (61 %) | Die schwerste Stelle im ganzen Vorrat: 2 Sam 13 (Vergewaltigung Tamars) ist um 2 Uhr nachts nicht zumutbar. Dazu 2 Sam 4, 11, 12, 18, 21 und aus dem ersten Teil 1 Sam 17, 22, 28, 31. Der Stoff wird nach hinten **düsterer statt ruhiger**. | 169.685 W, davon **1 Samuel 1–15 als Torso** (11.156 W: Eli, Samuels Berufung, Sauls Aufstieg — ohne Fortsetzung zu kurz). Apostelgeschichte, Königsbücher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4–12, Genesis 43–50 frei. |
+| **V06-C**<br>AT + NT | Apostelgeschichte 1–12 + 1 Samuel 1–31 | 33.460 | **83,63 %** | **3:53 h** | **1 Samuel** (71 %) | Apg 1–12 ist der ruhigste NT-Stoff im Vorrat; kritisch dort nur Apg 5 (Hananias und Saphira), 7,54–60 (Steinigung), 12 (Enthauptung, Herodes von Würmern gefressen). Der 1-Samuel-Teil bringt dieselben Stellen wie V06-A mit. | 168.154 W, davon **Apostelgeschichte 13–28 als Torso** (13.321 W: die Paulusreisen ohne Anfang). 2 Samuel, Königsbücher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4–12, Genesis 43–50 frei. |
 
-Alle drei bestehen alle drei Gates. Die Nachttauglichkeits-Spalte ist ausdrücklich
-**keine Messung** — sie benennt Stellen, von denen ich annehme, dass sie gegen den
-Zweck arbeiten. Es gibt dazu keine eigenen Kanaldaten.
+**A und B bestehen alle drei Gates. C reißt das Zielband** — mit dem gemessenen
+Tempo läuft der Korpus 3:53 h statt der zunächst gerechneten 3:46 h und liegt damit
+über der Obergrenze von 3,8 h. Erzählanteil und Dominanz hält C weiterhin; es ist
+allein die Länge. Umgebaut wurde nichts.
+
+Die Nachttauglichkeits-Spalte ist ausdrücklich **keine Messung** — sie benennt
+Stellen, von denen ich annehme, dass sie gegen den Zweck arbeiten. Es gibt dazu
+keine eigenen Kanaldaten.
 
 ---
 
@@ -156,6 +170,43 @@ komplett als nicht erzählend. Aktuell fällt keine der 85 Teilungen durch.
 
 ---
 
+## Nachtrag: was die eigenen Videos V01–V05 tragen
+
+Gemessen mit derselben Regel und derselben Messlogik wie oben — 
+[`produktion/eigene_videos_erzaehlanteil.py`](eigene_videos_erzaehlanteil.py) importiert
+sie aus `erzaehlanteil.py`, das dabei unverändert bleibt. Ergebnis je Kapitel in
+[`korpus/eigene_videos_erzaehlanteil.json`](korpus/eigene_videos_erzaehlanteil.json)
+(311 zusätzlich eingestufte Kapitel). Gezählt ist der Bibelkorpus aus `plan.json`;
+Eingangsgebet, Hook und CTA fallen in keine der beiden Kategorien der Regel und
+sind nicht enthalten.
+
+| Video | Korpus | Wörter | Erzählanteil | was ihn trägt | Regel M8 |
+|---|---|---:|---:|---|---|
+| **V01** | Psalmen 1–89 + 1 Petrus + Jakobus | 29.670 | **0,0 %** | — | reißt |
+| **V02** | Psalmen 90–150 + Sprüche | 30.260 | **0,0 %** | — | reißt |
+| **V03** | Johannes + Hebräer + 1 Johannes + Kolosser | 30.009 | **38,2 %** | Johannes 61,3 % | reißt |
+| **V04** | Matthäus + Epheser + Philipper + Daniel 1–3 | 31.112 | **45,8 %** | Matthäus 52,5 % · Daniel 1–3 76,0 % | reißt |
+| **V05** | Lukas + Prediger | 29.880 | **47,6 %** | Lukas 58,3 % | reißt |
+
+**Alle fünf reißen das 80-%-Gate — V03 eingeschlossen, das Video, aus dem die Regel
+abgeleitet wurde.** V03 kommt auf 38,2 %: Hebräer, 1 Johannes und Kolosser sind
+Briefe und tragen null, und Johannes selbst hält nur 61,3 %, weil Prolog (1,1–18),
+Brotrede (6,26–59), Streitreden (5,19–47; 8,12–58; 10,1–18) und die Abschiedsreden
+samt hohepriesterlichem Gebet (Kap. 14–17) zusammen mehr als ein Drittel des Buches
+ausmachen. Das ist so gemessen und nicht repariert worden: weder wurde die Regel
+angepasst noch ein Kapitel umgestuft.
+
+Was daraus folgt, steht in [`regeln/erfolgsregeln.md`](../regeln/erfolgsregeln.md)
+bei M8 und nicht hier — kurz: der Kanal hat die 80-%-Schwelle nie getestet. Das
+beste eigene Video liegt bei 47,6 %. Belegt ist ein Abstand zwischen *etwas*
+Erzählstoff (V03, 38,2 %, 14,4 % Endretention) und *keinem* (V02, 0 %, 2,4 %).
+Die Schwelle 80 % ist eine Planungsentscheidung mit Sicherheitsabstand, keine
+Ableitung. Variante A liegt mit 89,03 % weit jenseits von allem, was der Kanal
+bisher gezeigt hat — das ist ihre Chance und zugleich der Grund, warum ihre
+Wirkung ungeprüft ist.
+
+---
+
 ## Abweichungen zu den Projektdokumenten
 
 **Gemeldet, nicht stillschweigend korrigiert.**
@@ -166,37 +217,51 @@ komplett als nicht erzählend. Aktuell fällt keine der 85 Teilungen durch.
    5.182, Offenbarung 12–22 = 5.949, Genesis 43–50 = 5.992. Auch alle acht
    Wortsummen in `plan.json` rechnen sich auf das Wort genau nach.
 
-2. **Laufzeiten: die Dokumente rechnen mit 140 WPM, die Vorgabe mit 148,1 WPM.**
-   `wortzahlen.py` schreibt das Feld `stunden_140wpm`, und `plan.json` sowie
-   `videos-01-08.md` führen dieselben Werte als Laufzeit. Bei 148,1 WPM sind dieselben
-   Korpora rund 5 % kürzer, und **fünf der acht geplanten Videos fallen unter das
-   Zielband von 3,4 h**:
+2. **Laufzeiten standen auf drei verschiedenen Tempi — inzwischen aufgelöst.**
+   `wortzahlen.py` rechnete mit fest verdrahteten 140 WPM, `config.md` erwartete
+   145,9, der V06-Auftrag gab 148,1 vor, und keiner der drei Werte war belegt.
+   Seit dem 23.08.-Nachtrag steht **ein** gemessener Wert in `config.md`
+   (**143,7 WPM**); `wortzahlen.py`, `plan.json` und `erzaehlanteil.py` lesen ihn
+   von dort, statt eigene Zahlen zu führen. Die Laufzeiten in `plan.json` sind
+   entsprechend neu ausgewiesen — die Wortzahlen sind unverändert:
 
-   | | Wörter | Doku (140 WPM) | bei 148,1 WPM | |
-   |---|---:|---:|---:|---|
-   | V01 | 29.670 | 3,53 h | **3,34 h** | unter Band |
-   | V02 | 30.260 | 3,60 h | 3,41 h | im Band |
-   | V03 | 30.009 | 3,57 h | **3,38 h** | unter Band |
-   | V04 | 31.112 | 3,70 h | 3,50 h | im Band |
-   | V05 | 29.880 | 3,56 h | **3,36 h** | unter Band |
-   | V07 | 29.123 | 3,47 h | **3,28 h** | unter Band |
-   | V08 | 29.835 | 3,55 h | **3,36 h** | unter Band |
+   | | Wörter | vorher (140 WPM) | jetzt (143,7 WPM) | tatsächlich gerendert |
+   |---|---:|---:|---:|---:|
+   | V01 | 29.670 | 3,53 h | 3,44 h | 3:34:48 = 3,58 h |
+   | V02 | 30.260 | 3,60 h | 3,51 h | 3:37:23 = 3,62 h |
+   | V03 | 30.009 | 3,57 h | 3,48 h | 3:27:54 = 3,47 h |
+   | V04 | 31.112 | 3,70 h | 3,61 h | 3:34:40 = 3,58 h |
+   | V05 | 29.880 | 3,56 h | 3,47 h | nicht gerendert |
+   | V07 | 29.123 | 3,47 h | **3,38 h** | nicht gerendert |
+   | V08 | 29.835 | 3,55 h | 3,46 h | nicht gerendert |
 
-   Das betrifft V01–V05 nachträglich und V07/V08 in der Planung. Ich habe nichts
-   davon geändert.
+   **V07 liegt mit 3,38 h weiterhin unter dem Zielband** — das ist der einzige
+   Planwert, der nach der Umstellung noch danebenliegt. Nicht geändert.
+   Die Spalte ganz rechts zeigt zugleich, dass die Planzahl die echte Laufzeit
+   systematisch **unterschätzt**: sie zählt nur den Bibelkorpus, während
+   Eingangsgebet, Hook und CTA in den vier Läufen 354–561 Wörter dazugelegt haben
+   (rund 0,05 h).
 
-3. **148,1 WPM liegt über jedem gemessenen Wert im Repo.** Die vier gerenderten
-   Videos liegen bei 140,4 · 141,8 · 146,3 · 146,6 WPM (`video-0X/upload.md`), und
-   `config.md` erwartet 145,9. Woher 148,1 stammt, steht nirgends. Gerechnet ist wie
-   vorgegeben mit 148,1; bei 145,9 wären die drei Varianten **3,60 / 3,65 / 3,82 h** —
-   V06-C läge dann knapp über dem Band.
+3. **Die vorgegebenen 148,1 WPM waren zu hoch — und das kostet Variante C.**
+   Nachgemessen an den vier Renderläufen: **143,7 WPM** wortgewichtet, Spanne der
+   Einzelvideos 140,4–146,6. Mit dem gemessenen Tempo läuft V06-C auf **3:53 h** und
+   liegt damit über der Obergrenze von 3,8 h; A (3:39 h) und B (3:42 h) halten.
+   Die Entscheidung für A ist davon nicht berührt — sie ist die kürzeste der drei
+   und hat mit 1.282 Wörtern den größten Abstand zur Obergrenze.
 
-4. **M8 und Gate 1.13 stehen nicht in den Dokumenten.** `regeln/erfolgsregeln.md`
-   (Stand 2026-08-02) kennt M1–M7, `produktion/workflow-gates.md` kennt Gate 1.1–1.12.
-   Auch die Gate-2-Auswertung vom 23.08.2026 (V03 14,4 % gegen V02 2,4 % Endretention)
-   ist nirgends eingetragen — `workflow-gates.md` beschreibt Gate 2 nur als geplanten
-   Ablauf. Die Zahl, auf der diese ganze Rechnung steht, existiert im Repo also nicht.
-   Nachtragen wäre ein eigener Auftrag; ich habe es nicht getan.
+   Die Spanne ist dabei **nicht Streuung, sondern Textsorte**: `prosody_speed` war
+   über alle vier Läufe konstant 0,88, aber Poesie läuft langsamer als Prosa —
+   V01/V02 (Psalmen, Sprüche) 141,1 WPM, V03/V04 (Evangelien) 146,4 WPM. Ein reiner
+   Erzählkorpus wie Variante A liegt näher am Prosawert, würde also eher **3:35 h**
+   laufen als 3:39 h. Als eigener Parameter ist das bei n=2 je Gruppe nicht
+   belastbar, deshalb steht in `config.md` der Gesamtwert und nicht der Prosawert.
+
+4. ~~**M8 und Gate 1.13 stehen nicht in den Dokumenten.**~~ *Erledigt am
+   2026-08-30:* Die Gate-2-Rohzahlen stehen als Messdatei in
+   [`regeln/daten/gate2_2026-08-23.json`](../regeln/daten/gate2_2026-08-23.json)
+   (alle Werte als `abgetippt` gekennzeichnet, CSV-Export steht aus), **M8** in
+   `regeln/erfolgsregeln.md` und **Gate 1.13** in `produktion/workflow-gates.md`,
+   beide mit Verweis auf die Datei und mit der Fallzahl im Text.
 
 5. **Die Verfügbarkeitsliste stimmt mit `plan.json` überein — aber nur, wenn man
    V07/V08 als reserviert behandelt.** Tatsächlich *verbraucht* haben V01–V05:
@@ -222,8 +287,8 @@ komplett als nicht erzählend. Aktuell fällt keine der 85 Teilungen durch.
 
 ## Was hier nicht drinsteht
 
-Kein Titel, kein Eingangsgebet, kein Hook, kein Thumbnail, kein TTS, kein Rendering,
-keine Änderung an `plan.json`, `videos-01-08.md` oder den Regeldateien. Sobald eine
-Variante gewählt ist, sind das die nächsten Schritte — und Gate 1.2/1.3
-(Titelähnlichkeit und Anker) sind dann gegen `produktion/titel_pruefung.py` zu prüfen,
-nicht hier.
+Kein Titel, kein Eingangsgebet, kein Hook, kein Thumbnail, kein TTS, kein Rendering.
+`plan.json` trägt seit dem 30.08. Variante A als V06 mit dem Status
+„geplant, Titel offen" — mehr nicht. Die nächsten Schritte sind Titel und Thumbnail,
+und Gate 1.2/1.3 (Titelähnlichkeit und Anker) sind dann gegen
+`produktion/titel_pruefung.py` zu prüfen, nicht hier.

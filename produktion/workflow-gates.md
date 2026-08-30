@@ -36,6 +36,13 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) ·
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
 | 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet** | `schritt3_bett.py` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
+| 1.13 | **Erzählanteil** | ≥ 80 % der Wörter durchlaufender Erzählstoff; ein dominantes Buch ≥ 60 % | Regel M8 aus Gate 2 (23.08.2026): V03 14,4 % gegen V02 2,4 % Endretention — **n=2 Videos, ein Kanal; die Grenze 80 % ist gesetzt, nicht gemessen** | `produktion/erzaehlanteil.py`; Datenlage in [`regeln/daten/gate2_2026-08-23.json`](../regeln/daten/gate2_2026-08-23.json) |
+
+**1.13 ist die einzige Prüfung aus eigenen Daten.** Alle anderen stammen aus dem
+Fremddatensatz. Sie ist zugleich die am dünnsten belegte: zwei Videos, ein Kanal,
+und die Schwelle selbst ist eine Planungsentscheidung — siehe M8. Sie greift
+**vor** dem Textbau, weil sie den Korpus betrifft und nicht das Rendering:
+gerissen wird sie am Reißbrett, nicht in der Pipeline.
 
 **1.1 und 1.11 sind Sonderfälle:** Die Korpuslänge lässt sich erst nach dem
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
@@ -49,6 +56,16 @@ ungeprüfter Anker ist erlaubt, kostet aber bewusst einen belegten.
 ---
 
 ## Gate 2 — Feedback-Schleife nach Video 4
+
+> **Gelaufen am 23.08.2026.** Die Rohzahlen stehen in
+> [`regeln/daten/gate2_2026-08-23.json`](../regeln/daten/gate2_2026-08-23.json)
+> (abgetippt aus YouTube Studio, CSV-Export steht aus). Kanal gesamt: 151 Aufrufe ·
+> 5.535 Impressionen · Klickrate 2,73 % · 69,4 Wiedergabestunden · 2 Abonnenten.
+> **0 Aufrufe aus der Suche**, 102 von 151 aus vorgeschlagenen Videos. 68 % Mobil,
+> 12 % TV — TV-Sitzungen laufen mit 70 min dreimal so lang wie Handy-Sitzungen
+> (23 min). Die eine Entscheidung, die daraus folgte, ist **Regel M8** und damit
+> Prüfung 1.13 oben. Der Abschnitt unten beschreibt das Verfahren; er ist nicht
+> nachträglich an das Ergebnis angepasst worden.
 
 **Auslöser:** Video 4 ist veröffentlicht **und** das älteste Video ist
 mindestens **14 Tage** alt. Nicht früher: YouTube braucht Zeit, bis

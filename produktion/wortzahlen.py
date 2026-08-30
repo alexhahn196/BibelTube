@@ -3,6 +3,14 @@
 Zahlen steht statt auf Schaetzungen. Ergebnis: produktion/korpus/wortzahlen.json"""
 import json,os,re,time,urllib.request,urllib.parse
 from concurrent.futures import ThreadPoolExecutor
+def _wpm():
+    """Sprechtempo aus produktion/config.md - dort steht der einzige Wert."""
+    t=open("produktion/config.md",encoding="utf-8").read()
+    for z in "\n".join(re.findall(r"```ini\n(.*?)```",t,re.S)).splitlines():
+        z=z.split("#",1)[0].strip()
+        if z.startswith("wpm_erwartet"): return float(z.split("=",1)[1])
+    raise SystemExit("wpm_erwartet fehlt in produktion/config.md")
+WPM=_wpm()
 BUECHER={"psalms":150,"john":21,"matthew":28,"luke":24,"mark":16,"proverbs":31,
          "isaiah":66,"revelation":22,"1 john":5,"romans":16,"ephesians":6,
          "philippians":4,"colossians":4,"james":5,"1 peter":5,"hebrews":13,
@@ -37,8 +45,9 @@ for b,n in BUECHER.items():
     ks=[cache.get(f"{b} {i}") for i in range(1,n+1)]
     fehl=[i for i,x in enumerate(ks,1) if not x]
     w=sum(x["w"] for x in ks if x)
-    summe[b]={"woerter":w,"kapitel":n,"fehlend":fehl,"stunden_140wpm":round(w/140/60,2)}
-json.dump(summe,open("produktion/korpus/wortzahlen.json","w"),indent=1)
+    summe[b]={"woerter":w,"kapitel":n,"fehlend":fehl,"stunden":round(w/WPM/60,2)}
+json.dump({"wpm":WPM,"wpm_quelle":"produktion/config.md","buecher":summe},
+          open("produktion/korpus/wortzahlen.json","w"),indent=1)
 for b,v in sorted(summe.items(),key=lambda x:-x[1]["woerter"]):
     f=f" FEHLEND:{v['fehlend']}" if v["fehlend"] else ""
-    print(f"{b:14s} {v['woerter']:>7,} W  {v['stunden_140wpm']:>5.2f} h{f}")
+    print(f"{b:14s} {v['woerter']:>7,} W  {v['stunden']:>5.2f} h{f}")

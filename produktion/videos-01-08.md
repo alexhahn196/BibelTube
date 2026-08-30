@@ -57,9 +57,28 @@ So steht nach acht Videos je ein Paar gegeneinander. Beide Varianten sind unten
 ausformuliert, die Zuordnung ist eine Planungsentscheidung, kein Datenbefund:
 Formel §3 hält fest, dass ein fester Aufbau **nicht belegt** ist.
 
-**Nicht verplant und für Video 09+ frei:** Apostelgeschichte (23.143 W),
-Jesaja 26–39 (7.984 W), Daniel 7–12 (5.182 W), Offenbarung 12–22 (5.949 W),
-Genesis 43–50 (5.992 W).
+**Nicht verplant und für Video 09+ frei** *(Stand 2026-08-30, nach der V06-Neuplanung;
+Erzählanteil nach Regel M8 gemessen, wo eingestuft — `produktion/korpus/erzaehlanteil.json`)*:
+
+| Buch | Kapitel | Wörter | Erzählanteil |
+|---|---|---:|---:|
+| Jesaja | 1–66 | 35.557 | nicht eingestuft (prophetische Rede) |
+| Exodus | 1–40 | 30.926 | 46,5 % |
+| Apostelgeschichte | 1–28 | 23.143 | 73,0 % |
+| 1 Könige | 1–22 | 23.067 | 58,9 % |
+| 2 Könige | 1–25 | 22.226 | 73,3 % |
+| 2 Samuel | 1–24 | 19.447 | 81,8 % |
+| Richter | 1–21 | 17.922 | 86,1 % |
+| Josua | 1–24 | 17.835 | 61,6 % |
+| Daniel | 4–12 | 8.302 | 27,2 % |
+| Genesis | 43–50 | 5.992 | 84,9 % |
+| Offenbarung | 12–22 | 5.949 | nicht eingestuft (apokalyptische Vision) |
+| Jona | 1–4 | 1.272 | 86,4 % |
+
+Zusammen 211.638 W. Jesaja ist durch die V06-Neuplanung vollständig zurückgefallen,
+unter M8 als Hauptstoff aber unbrauchbar. Für ein M8-taugliches V09 tragen nur
+2 Samuel, Richter, Jona und Genesis 43–50 über 80 % — keines davon reicht allein
+für ein dominantes Buch im Zielband.
 
 ---
 
@@ -125,7 +144,10 @@ SRT-Untertitelspur hochladen (0 von 19 Gewinner-Videos hat eine, echte Lücke).
 **Anker:** „I Know You're Tired…" (belegt, A 233K) · kein „Tonight" (in 6/10 Treffern, kein Muss)
 
 **Textkorpus:** Psalmen 1–89 + 1. Petrus + Jakobus
-**Gemessen:** 29.670 Wörter → **3,53 h** bei 140 WPM → ca. 154.600 Zeichen TTS
+**Gemessen:** 29.670 Wörter → **3,44 h** beim gemessenen Tempo aus
+`produktion/config.md` (143,7 WPM, Beleg: `produktion/korpus/wpm_gemessen.json`)
+→ ca. 154.600 Zeichen TTS. *Tatsächlich gerendert: 3:34:48 = 3,58 h — die
+Planzahl zählt nur den Bibelkorpus, Gebet, Hook und CTA kommen dazu.*
 
 ### Eingangsgebet (182 Wörter)
 
@@ -641,6 +663,15 @@ Support the channel: [Spendenlink]
 ---
 
 # Video 06
+
+> **⚠ Überholt seit 2026-08-30.** Der hier beschriebene Jesaja-Korpus ist gestrichen:
+> 10,2 % Erzählanteil, reißt Gate 1.13 / Regel M8. **Verbindlich ist
+> `produktion/korpus/plan.json`**, dort steht V06 als *Rut + 1 Samuel + Ester*
+> (31.482 W, 89,03 % Erzählanteil, Status „geplant, Titel offen"). Begründung und
+> die beiden verworfenen Alternativen: [`v06-korpus.md`](v06-korpus.md).
+> **Titel, Eingangsgebet und Hook unten gehören zum alten Korpus und sind
+> hinfällig** — sie stehen noch da, weil ihre Neufassung ein eigener Auftrag ist,
+> nicht weil sie gelten.
 
 **Titel:** `Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes`
 **Eigennamen-Test:** **JA** — „Isaiah" (Testreihe 2 von 2)

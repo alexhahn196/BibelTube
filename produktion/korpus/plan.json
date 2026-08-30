@@ -1,4 +1,12 @@
 {
+ "_meta": {
+  "stand": "2026-08-30",
+  "wpm": 143.7,
+  "wpm_quelle": "produktion/config.md (wpm_erwartet) - gemessen in produktion/korpus/wpm_gemessen.json",
+  "stunden_basis": "woerter / wpm / 60. Gezaehlt ist nur der Bibelkorpus. Eingangsgebet, Hook und CTA kommen beim Textbau dazu - in den vier gerenderten Videos waren das 354-561 Woerter, also rund 0,05 h zusaetzlich.",
+  "woerter_quelle": "produktion/korpus/kapitel.json, gemessen von produktion/wortzahlen.py (WEBBE)",
+  "hinweis_stunden": "Bis 2026-08-30 standen hier Laufzeiten auf Basis 140 WPM. Sie sind auf das gemessene Tempo umgestellt; die Wortzahlen sind unveraendert."
+ },
  "V1": {
   "name": "Psalmen 1-89 + 1 Petrus + Jakobus",
   "refs": [
@@ -103,7 +111,7 @@
    "james 5"
   ],
   "woerter": 29670,
-  "stunden": 3.53,
+  "stunden": 3.44,
   "zeichen_tts": 154581
  },
  "V2": {
@@ -203,7 +211,7 @@
    "proverbs 31"
   ],
   "woerter": 30260,
-  "stunden": 3.6,
+  "stunden": 3.51,
   "zeichen_tts": 157655
  },
  "V3": {
@@ -254,7 +262,7 @@
    "colossians 4"
   ],
   "woerter": 30009,
-  "stunden": 3.57,
+  "stunden": 3.48,
   "zeichen_tts": 156347
  },
  "V4": {
@@ -303,7 +311,7 @@
    "daniel 3"
   ],
   "woerter": 31112,
-  "stunden": 3.7,
+  "stunden": 3.61,
   "zeichen_tts": 162094
  },
  "V5": {
@@ -347,71 +355,67 @@
    "ecclesiastes 12"
   ],
   "woerter": 29880,
-  "stunden": 3.56,
+  "stunden": 3.47,
   "zeichen_tts": 155675
  },
  "V6": {
-  "name": "Jesaja 1-25 + Jesaja 40-66 + Daniel 4-6",
+  "name": "Rut + 1 Samuel + Ester",
+  "status": "geplant, Titel offen",
+  "entschieden": "2026-08-30, Variante A aus produktion/v06-korpus.md",
+  "begruendung": "Erzaehlanteil 89,03 % der Woerter (Regel M8, Grenze 80 %). Drei vollstaendige Buecher ohne Schnitt, dominantes Buch 1 Samuel mit 75,1 % der Woerter. Reihenfolge kanonisch: Rut, 1 Samuel, Ester.",
   "refs": [
-   "isaiah 1",
-   "isaiah 2",
-   "isaiah 3",
-   "isaiah 4",
-   "isaiah 5",
-   "isaiah 6",
-   "isaiah 7",
-   "isaiah 8",
-   "isaiah 9",
-   "isaiah 10",
-   "isaiah 11",
-   "isaiah 12",
-   "isaiah 13",
-   "isaiah 14",
-   "isaiah 15",
-   "isaiah 16",
-   "isaiah 17",
-   "isaiah 18",
-   "isaiah 19",
-   "isaiah 20",
-   "isaiah 21",
-   "isaiah 22",
-   "isaiah 23",
-   "isaiah 24",
-   "isaiah 25",
-   "isaiah 40",
-   "isaiah 41",
-   "isaiah 42",
-   "isaiah 43",
-   "isaiah 44",
-   "isaiah 45",
-   "isaiah 46",
-   "isaiah 47",
-   "isaiah 48",
-   "isaiah 49",
-   "isaiah 50",
-   "isaiah 51",
-   "isaiah 52",
-   "isaiah 53",
-   "isaiah 54",
-   "isaiah 55",
-   "isaiah 56",
-   "isaiah 57",
-   "isaiah 58",
-   "isaiah 59",
-   "isaiah 60",
-   "isaiah 61",
-   "isaiah 62",
-   "isaiah 63",
-   "isaiah 64",
-   "isaiah 65",
-   "isaiah 66",
-   "daniel 4",
-   "daniel 5",
-   "daniel 6"
+   "ruth 1",
+   "ruth 2",
+   "ruth 3",
+   "ruth 4",
+   "1 samuel 1",
+   "1 samuel 2",
+   "1 samuel 3",
+   "1 samuel 4",
+   "1 samuel 5",
+   "1 samuel 6",
+   "1 samuel 7",
+   "1 samuel 8",
+   "1 samuel 9",
+   "1 samuel 10",
+   "1 samuel 11",
+   "1 samuel 12",
+   "1 samuel 13",
+   "1 samuel 14",
+   "1 samuel 15",
+   "1 samuel 16",
+   "1 samuel 17",
+   "1 samuel 18",
+   "1 samuel 19",
+   "1 samuel 20",
+   "1 samuel 21",
+   "1 samuel 22",
+   "1 samuel 23",
+   "1 samuel 24",
+   "1 samuel 25",
+   "1 samuel 26",
+   "1 samuel 27",
+   "1 samuel 28",
+   "1 samuel 29",
+   "1 samuel 30",
+   "1 samuel 31",
+   "esther 1",
+   "esther 2",
+   "esther 3",
+   "esther 4",
+   "esther 5",
+   "esther 6",
+   "esther 7",
+   "esther 8",
+   "esther 9",
+   "esther 10"
   ],
-  "woerter": 30693,
+  "woerter": 31482,
+  "erzaehlend_woerter": 28028,
+  "erzaehlanteil": 0.8903,
   "stunden": 3.65,
-  "zeichen_tts": 159911
+  "zeichen_tts": null,
+  "zeichen_tts_hinweis": "Steht erst nach dem Textbau fest: schritt1_text.py zaehlt den normalisierten Text, nicht die rohe WEBBE-Zeichensumme."
  },
  "V7": {
   "name": "Markus + Roemer + Offenbarung 1-11",
@@ -461,7 +465,7 @@
    "revelation 11"
   ],
   "woerter": 29123,
-  "stunden": 3.47,
+  "stunden": 3.38,
   "zeichen_tts": 151731
  },
  "V8": {
@@ -511,7 +515,7 @@
    "genesis 42"
   ],
   "woerter": 29835,
-  "stunden": 3.55,
+  "stunden": 3.46,
   "zeichen_tts": 155440
  }
 }

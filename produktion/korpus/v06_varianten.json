@@ -1,8 +1,8 @@
 {
- "wpm": 148.1,
+ "wpm": 143.7,
  "zielband_woerter": [
-  30215,
-  33767
+  29315,
+  32764
  ],
  "gate_erzaehlanteil": 0.8,
  "gate_dominanz": 0.6,
@@ -40,8 +40,8 @@
    "woerter": 31482,
    "erzaehlend_woerter": 28028,
    "erzaehlanteil": 0.8903,
-   "laufzeit_h": 3.543,
-   "laufzeit": "3:33 h",
+   "laufzeit_h": 3.651,
+   "laufzeit": "3:39 h",
    "dominantes_buch": "1 samuel",
    "dominanz": 0.7508,
    "eigenname": "Samuel",
@@ -81,8 +81,8 @@
    "woerter": 31929,
    "erzaehlend_woerter": 28272,
    "erzaehlanteil": 0.8855,
-   "laufzeit_h": 3.593,
-   "laufzeit": "3:36 h",
+   "laufzeit_h": 3.703,
+   "laufzeit": "3:42 h",
    "dominantes_buch": "2 samuel",
    "dominanz": 0.6091,
    "eigenname": "David",
@@ -122,8 +122,8 @@
    "woerter": 33460,
    "erzaehlend_woerter": 27981,
    "erzaehlanteil": 0.8363,
-   "laufzeit_h": 3.765,
-   "laufzeit": "3:46 h",
+   "laufzeit_h": 3.881,
+   "laufzeit": "3:53 h",
    "dominantes_buch": "1 samuel",
    "dominanz": 0.7065,
    "eigenname": "Samuel",
@@ -132,11 +132,11 @@
    "risiko": "Mit 83,6 % der niedrigste Erzaehlanteil der drei; Apg 1-12 traegt selbst nur 70,6 %, weil Pfingstpredigt, Tempelrede und Stephanusrede darin liegen. Der Sprung zwischen Jerusalem und der Richterzeit hat keine erzaehlerische Bruecke, und Apg 13-28 bleibt als Torso zurueck.",
    "rest_fuer_v07": "168.154 W, davon Apostelgeschichte 13-28 (13.321 W) als Torso: die Paulusreisen ohne Anfang. 2 Samuel, beide Koenigsbuecher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4-12 und Genesis 43-50 bleiben ungeschnitten.",
    "pruefungen": {
-    "band": true,
+    "band": false,
     "erzaehlanteil_80": true,
     "dominanz_60": true
    },
-   "bestanden": true
+   "bestanden": false
   }
  ]
 }

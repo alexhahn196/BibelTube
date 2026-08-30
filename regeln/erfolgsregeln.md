@@ -117,6 +117,36 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   Beide Gewinner: Beschreibung deckungsgleich mit Inhalt (2/2 vs. 2/8 Verlierer mit Altlasten,
   Rest der Verlierer scheitert an anderem).
 
+### M8 — Textkorpus aus durchlaufendem Erzählstoff, ≥ 80 % der Wörter
+- [ ] Erzählanteil des Korpus ≥ 80 % der Wörter, gemessen mit `produktion/erzaehlanteil.py`?
+- [ ] Ein dominantes Buch trägt ≥ 60 % der Wörter?
+- **Erste eigene Daten des Projekts**, Gate 2 vom 23.08.2026 nach 4 Videos:
+  [`regeln/daten/gate2_2026-08-23.json`](daten/gate2_2026-08-23.json).
+  **V03** (Johannes + Hebräer + 1 Joh + Kolosser, 3,47 h) hält nach 3,5 h **14,4 %**
+  Endretention und trägt **80 % der gesamten Wiedergabezeit** des Kanals.
+  **V02** (Psalmen 90–150 + Sprüche, 3,62 h) hält **2,4 %**. Faktor 6.
+- **Was die Zahlen tragen — und was nicht.** Diese Regel steht auf **n=2 Videos
+  eines einzigen Kanals**, je eine Beobachtung pro Bedingung, bei 151 Aufrufen und
+  2 Abonnenten insgesamt. Es gibt **kein Vergleichsvideo bei gleicher Laufzeit und
+  gleichem Korpus**; V03 ist mit 3,47 h zugleich das kürzeste der vier. V02 und V03
+  unterscheiden sich außerdem in Titel, Thumbnail, Uploadzeitpunkt und Position in
+  der Kanalhistorie. V03 bezieht überdurchschnittlich viel Verkehr aus
+  vorgeschlagenen Videos — ob der Erzählstoff die Retention trägt oder umgekehrt
+  die Retention die Verteilung und damit ein anderes Publikum, ist aus diesen
+  Daten **nicht trennbar**.
+- **Die Grenze 80 % ist nicht gemessen, sondern gesetzt.** Nachgerechnet
+  ([`produktion/korpus/eigene_videos_erzaehlanteil.json`](../produktion/korpus/eigene_videos_erzaehlanteil.json))
+  liegt V03 bei **38,2 %** Erzählanteil und V02 bei **0 %**. Belegt ist damit ein
+  Abstand zwischen *etwas* Erzählstoff und *keinem* — nicht die Schwelle 80 %.
+  **Kein eigenes Video liegt bisher über 47,6 %**, die Schwelle ist also von keiner
+  eigenen Messung berührt. Sie ist eine Planungsentscheidung mit Sicherheitsabstand,
+  keine Ableitung aus den Daten. Wer sie senkt, verliert keinen Beleg.
+- **Selbstanwendung:** Nach dieser Regel fallen **alle fünf** bisher geplanten
+  Videos durch, V03 eingeschlossen — das Video, aus dem die Regel stammt.
+  Das ist kein Argument gegen die Regel und keines für sie; es heißt, dass der
+  Kanal ab V06 etwas anderes tut als bisher, und dass die Regel bei V09 gegen
+  dann vorliegende eigene Retentionsdaten zu prüfen ist.
+
 ---
 
 ## 2. DARF-NICHT-Regeln (dokumentierte Todesursachen)

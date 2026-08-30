@@ -1,182 +1,186 @@
 {
- "psalms": {
-  "woerter": 40731,
-  "kapitel": 150,
-  "fehlend": [],
-  "stunden_140wpm": 4.85
- },
- "john": {
-  "woerter": 18692,
-  "kapitel": 21,
-  "fehlend": [],
-  "stunden_140wpm": 2.23
- },
- "matthew": {
-  "woerter": 22831,
-  "kapitel": 28,
-  "fehlend": [],
-  "stunden_140wpm": 2.72
- },
- "luke": {
-  "woerter": 24399,
-  "kapitel": 24,
-  "fehlend": [],
-  "stunden_140wpm": 2.9
- },
- "mark": {
-  "woerter": 14261,
-  "kapitel": 16,
-  "fehlend": [],
-  "stunden_140wpm": 1.7
- },
- "proverbs": {
-  "woerter": 14533,
-  "kapitel": 31,
-  "fehlend": [],
-  "stunden_140wpm": 1.73
- },
- "isaiah": {
-  "woerter": 35557,
-  "kapitel": 66,
-  "fehlend": [],
-  "stunden_140wpm": 4.23
- },
- "revelation": {
-  "woerter": 11380,
-  "kapitel": 22,
-  "fehlend": [],
-  "stunden_140wpm": 1.35
- },
- "1 john": {
-  "woerter": 2453,
-  "kapitel": 5,
-  "fehlend": [],
-  "stunden_140wpm": 0.29
- },
- "romans": {
-  "woerter": 9431,
-  "kapitel": 16,
-  "fehlend": [],
-  "stunden_140wpm": 1.12
- },
- "ephesians": {
-  "woerter": 3082,
-  "kapitel": 6,
-  "fehlend": [],
-  "stunden_140wpm": 0.37
- },
- "philippians": {
-  "woerter": 2219,
-  "kapitel": 4,
-  "fehlend": [],
-  "stunden_140wpm": 0.26
- },
- "colossians": {
-  "woerter": 1991,
-  "kapitel": 4,
-  "fehlend": [],
-  "stunden_140wpm": 0.24
- },
- "james": {
-  "woerter": 2250,
-  "kapitel": 5,
-  "fehlend": [],
-  "stunden_140wpm": 0.27
- },
- "1 peter": {
-  "woerter": 2416,
-  "kapitel": 5,
-  "fehlend": [],
-  "stunden_140wpm": 0.29
- },
- "hebrews": {
-  "woerter": 6873,
-  "kapitel": 13,
-  "fehlend": [],
-  "stunden_140wpm": 0.82
- },
- "acts": {
-  "woerter": 23143,
-  "kapitel": 28,
-  "fehlend": [],
-  "stunden_140wpm": 2.76
- },
- "genesis": {
-  "woerter": 35827,
-  "kapitel": 50,
-  "fehlend": [],
-  "stunden_140wpm": 4.27
- },
- "ecclesiastes": {
-  "woerter": 5481,
-  "kapitel": 12,
-  "fehlend": [],
-  "stunden_140wpm": 0.65
- },
- "daniel": {
-  "woerter": 11282,
-  "kapitel": 12,
-  "fehlend": [],
-  "stunden_140wpm": 1.34
- },
- "exodus": {
-  "woerter": 30926,
-  "kapitel": 40,
-  "fehlend": [],
-  "stunden_140wpm": 3.68
- },
- "joshua": {
-  "woerter": 17835,
-  "kapitel": 24,
-  "fehlend": [],
-  "stunden_140wpm": 2.12
- },
- "judges": {
-  "woerter": 17922,
-  "kapitel": 21,
-  "fehlend": [],
-  "stunden_140wpm": 2.13
- },
- "ruth": {
-  "woerter": 2436,
-  "kapitel": 4,
-  "fehlend": [],
-  "stunden_140wpm": 0.29
- },
- "1 samuel": {
-  "woerter": 23638,
-  "kapitel": 31,
-  "fehlend": [],
-  "stunden_140wpm": 2.81
- },
- "2 samuel": {
-  "woerter": 19447,
-  "kapitel": 24,
-  "fehlend": [],
-  "stunden_140wpm": 2.32
- },
- "1 kings": {
-  "woerter": 23067,
-  "kapitel": 22,
-  "fehlend": [],
-  "stunden_140wpm": 2.75
- },
- "2 kings": {
-  "woerter": 22226,
-  "kapitel": 25,
-  "fehlend": [],
-  "stunden_140wpm": 2.65
- },
- "esther": {
-  "woerter": 5408,
-  "kapitel": 10,
-  "fehlend": [],
-  "stunden_140wpm": 0.64
- },
- "jonah": {
-  "woerter": 1272,
-  "kapitel": 4,
-  "fehlend": [],
-  "stunden_140wpm": 0.15
+ "wpm": 143.7,
+ "wpm_quelle": "produktion/config.md",
+ "buecher": {
+  "psalms": {
+   "woerter": 40731,
+   "kapitel": 150,
+   "fehlend": [],
+   "stunden": 4.72
+  },
+  "john": {
+   "woerter": 18692,
+   "kapitel": 21,
+   "fehlend": [],
+   "stunden": 2.17
+  },
+  "matthew": {
+   "woerter": 22831,
+   "kapitel": 28,
+   "fehlend": [],
+   "stunden": 2.65
+  },
+  "luke": {
+   "woerter": 24399,
+   "kapitel": 24,
+   "fehlend": [],
+   "stunden": 2.83
+  },
+  "mark": {
+   "woerter": 14261,
+   "kapitel": 16,
+   "fehlend": [],
+   "stunden": 1.65
+  },
+  "proverbs": {
+   "woerter": 14533,
+   "kapitel": 31,
+   "fehlend": [],
+   "stunden": 1.69
+  },
+  "isaiah": {
+   "woerter": 35557,
+   "kapitel": 66,
+   "fehlend": [],
+   "stunden": 4.12
+  },
+  "revelation": {
+   "woerter": 11380,
+   "kapitel": 22,
+   "fehlend": [],
+   "stunden": 1.32
+  },
+  "1 john": {
+   "woerter": 2453,
+   "kapitel": 5,
+   "fehlend": [],
+   "stunden": 0.28
+  },
+  "romans": {
+   "woerter": 9431,
+   "kapitel": 16,
+   "fehlend": [],
+   "stunden": 1.09
+  },
+  "ephesians": {
+   "woerter": 3082,
+   "kapitel": 6,
+   "fehlend": [],
+   "stunden": 0.36
+  },
+  "philippians": {
+   "woerter": 2219,
+   "kapitel": 4,
+   "fehlend": [],
+   "stunden": 0.26
+  },
+  "colossians": {
+   "woerter": 1991,
+   "kapitel": 4,
+   "fehlend": [],
+   "stunden": 0.23
+  },
+  "james": {
+   "woerter": 2250,
+   "kapitel": 5,
+   "fehlend": [],
+   "stunden": 0.26
+  },
+  "1 peter": {
+   "woerter": 2416,
+   "kapitel": 5,
+   "fehlend": [],
+   "stunden": 0.28
+  },
+  "hebrews": {
+   "woerter": 6873,
+   "kapitel": 13,
+   "fehlend": [],
+   "stunden": 0.8
+  },
+  "acts": {
+   "woerter": 23143,
+   "kapitel": 28,
+   "fehlend": [],
+   "stunden": 2.68
+  },
+  "genesis": {
+   "woerter": 35827,
+   "kapitel": 50,
+   "fehlend": [],
+   "stunden": 4.16
+  },
+  "ecclesiastes": {
+   "woerter": 5481,
+   "kapitel": 12,
+   "fehlend": [],
+   "stunden": 0.64
+  },
+  "daniel": {
+   "woerter": 11282,
+   "kapitel": 12,
+   "fehlend": [],
+   "stunden": 1.31
+  },
+  "exodus": {
+   "woerter": 30926,
+   "kapitel": 40,
+   "fehlend": [],
+   "stunden": 3.59
+  },
+  "joshua": {
+   "woerter": 17835,
+   "kapitel": 24,
+   "fehlend": [],
+   "stunden": 2.07
+  },
+  "judges": {
+   "woerter": 17922,
+   "kapitel": 21,
+   "fehlend": [],
+   "stunden": 2.08
+  },
+  "ruth": {
+   "woerter": 2436,
+   "kapitel": 4,
+   "fehlend": [],
+   "stunden": 0.28
+  },
+  "1 samuel": {
+   "woerter": 23638,
+   "kapitel": 31,
+   "fehlend": [],
+   "stunden": 2.74
+  },
+  "2 samuel": {
+   "woerter": 19447,
+   "kapitel": 24,
+   "fehlend": [],
+   "stunden": 2.26
+  },
+  "1 kings": {
+   "woerter": 23067,
+   "kapitel": 22,
+   "fehlend": [],
+   "stunden": 2.68
+  },
+  "2 kings": {
+   "woerter": 22226,
+   "kapitel": 25,
+   "fehlend": [],
+   "stunden": 2.58
+  },
+  "esther": {
+   "woerter": 5408,
+   "kapitel": 10,
+   "fehlend": [],
+   "stunden": 0.63
+  },
+  "jonah": {
+   "woerter": 1272,
+   "kapitel": 4,
+   "fehlend": [],
+   "stunden": 0.15
+  }
  }
 }

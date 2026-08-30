@@ -9,6 +9,13 @@ Erzeugt:
 Rueckgabewert 0 bedeutet: alle drei Varianten bestehen Zielband, 80-%-Gate und
 die 60-%-Dominanz. Jeder andere Wert heisst, dass mindestens eine reisst.
 
+Sprechtempo und Zielband kommen aus produktion/config.md (wpm_erwartet,
+laufzeit_ziel_von_h, laufzeit_ziel_bis_h) - dort steht der einzige Tempowert des
+Projekts, gemessen in produktion/korpus/wpm_gemessen.json. Bis 2026-08-30 stand
+hier fest 148,1 WPM aus der V06-Vorgabe; dieser Wert war unbelegt. Mit dem
+gemessenen Tempo verschiebt sich das Zielband nach unten, und Variante V06-C
+faellt darueber hinaus - das Skript meldet das und gibt 1 zurueck.
+
 Wortzahlen kommen aus derselben Quelle und mit derselben Zaehlmethode wie
 produktion/wortzahlen.py (bible-api.com, translation=webbe, Verstexte mit
 Leerzeichen verbunden, dann str.split()), damit die Zahlen mit V01-V05
@@ -23,8 +30,26 @@ VERSE = "produktion/korpus/kapitel_verse.json"
 AUS_EINSTUFUNG = "produktion/korpus/erzaehlanteil.json"
 AUS_VARIANTEN = "produktion/korpus/v06_varianten.json"
 
-WPM = 148.1                      # Vorgabe der V06-Neuplanung
-BAND = (30215, 33767)            # 3,4-3,8 h bei 148,1 WPM
+def _config():
+    """Sprechtempo und Zielband aus produktion/config.md - dort steht der einzige Wert."""
+    text = open("produktion/config.md", encoding="utf-8").read()
+    werte = {}
+    for zeile in "\n".join(re.findall(r"```ini\n(.*?)```", text, re.S)).splitlines():
+        zeile = zeile.split("#", 1)[0].strip()
+        if "=" in zeile:
+            k, v = zeile.split("=", 1)
+            werte[k.strip()] = v.strip()
+    fehlt = [k for k in ("wpm_erwartet", "laufzeit_ziel_von_h", "laufzeit_ziel_bis_h")
+             if k not in werte]
+    if fehlt:
+        raise SystemExit("produktion/config.md: fehlende Werte %s" % fehlt)
+    return (float(werte["wpm_erwartet"]),
+            float(werte["laufzeit_ziel_von_h"]),
+            float(werte["laufzeit_ziel_bis_h"]))
+
+
+WPM, ZIEL_VON_H, ZIEL_BIS_H = _config()
+BAND = (round(ZIEL_VON_H * 60 * WPM), round(ZIEL_BIS_H * 60 * WPM))
 GATE_ERZAEHLEND = 0.80           # Regel M8
 GATE_DOMINANZ = 0.60             # ein dominantes Buch je Variante
 

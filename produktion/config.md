@@ -46,7 +46,14 @@ stimme_id          = cb6381fb822345bd89c207fb49551d24
 tts_modell         = s2.1-pro-free
 tts_endpoint       = https://api.fish.audio/v1/tts
 prosody_speed      = 0.88
-wpm_erwartet       = 145.9
+# Gemessen an den vier gerenderten Videos (wortgewichtet ueber 122.864
+# Woerter / 51.287 s): produktion/korpus/wpm_gemessen.json, erzeugt von
+# produktion/wpm_messen.py. Der frueher hier stehende Wert 145.9 war eine
+# Schaetzung ohne Beleg. DIES IST DIE EINZIGE STELLE, an der ein Sprechtempo
+# steht - plan.json und die Dokumentation verweisen hierher.
+# Spanne der Einzelvideos 140,4-146,6 WPM; die Spanne ist Textsorte, nicht
+# Streuung: Poesie (V01/V02) 141,1 - Prosa (V03/V04) 146,4.
+wpm_erwartet       = 143.7
 
 # --- Text ---
 uebersetzung       = webbe
