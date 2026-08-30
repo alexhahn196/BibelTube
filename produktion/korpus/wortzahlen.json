@@ -118,5 +118,65 @@
   "kapitel": 12,
   "fehlend": [],
   "stunden_140wpm": 1.34
+ },
+ "exodus": {
+  "woerter": 30926,
+  "kapitel": 40,
+  "fehlend": [],
+  "stunden_140wpm": 3.68
+ },
+ "joshua": {
+  "woerter": 17835,
+  "kapitel": 24,
+  "fehlend": [],
+  "stunden_140wpm": 2.12
+ },
+ "judges": {
+  "woerter": 17922,
+  "kapitel": 21,
+  "fehlend": [],
+  "stunden_140wpm": 2.13
+ },
+ "ruth": {
+  "woerter": 2436,
+  "kapitel": 4,
+  "fehlend": [],
+  "stunden_140wpm": 0.29
+ },
+ "1 samuel": {
+  "woerter": 23638,
+  "kapitel": 31,
+  "fehlend": [],
+  "stunden_140wpm": 2.81
+ },
+ "2 samuel": {
+  "woerter": 19447,
+  "kapitel": 24,
+  "fehlend": [],
+  "stunden_140wpm": 2.32
+ },
+ "1 kings": {
+  "woerter": 23067,
+  "kapitel": 22,
+  "fehlend": [],
+  "stunden_140wpm": 2.75
+ },
+ "2 kings": {
+  "woerter": 22226,
+  "kapitel": 25,
+  "fehlend": [],
+  "stunden_140wpm": 2.65
+ },
+ "esther": {
+  "woerter": 5408,
+  "kapitel": 10,
+  "fehlend": [],
+  "stunden_140wpm": 0.64
+ },
+ "jonah": {
+  "woerter": 1272,
+  "kapitel": 4,
+  "fehlend": [],
+  "stunden_140wpm": 0.15
  }
 }

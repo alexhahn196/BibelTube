@@ -1,0 +1,142 @@
+{
+ "wpm": 148.1,
+ "zielband_woerter": [
+  30215,
+  33767
+ ],
+ "gate_erzaehlanteil": 0.8,
+ "gate_dominanz": 0.6,
+ "varianten": [
+  {
+   "kuerzel": "V06-A",
+   "name": "1 Samuel + Rut + Ester",
+   "bauart": "Anthologie",
+   "teile": [
+    {
+     "buch": "1 samuel",
+     "von": 1,
+     "bis": 31,
+     "kapitel": 31,
+     "woerter": 23638,
+     "erzaehlend_woerter": 21051
+    },
+    {
+     "buch": "ruth",
+     "von": 1,
+     "bis": 4,
+     "kapitel": 4,
+     "woerter": 2436,
+     "erzaehlend_woerter": 2323
+    },
+    {
+     "buch": "esther",
+     "von": 1,
+     "bis": 10,
+     "kapitel": 10,
+     "woerter": 5408,
+     "erzaehlend_woerter": 4654
+    }
+   ],
+   "woerter": 31482,
+   "erzaehlend_woerter": 28028,
+   "erzaehlanteil": 0.8903,
+   "laufzeit_h": 3.543,
+   "laufzeit": "3:33 h",
+   "dominantes_buch": "1 samuel",
+   "dominanz": 0.7508,
+   "eigenname": "Samuel",
+   "nachttauglichkeit": "EINSCHAETZUNG, KEINE MESSUNG. Rut 1-4 ist der ruhigste Erzaehlstoff im ganzen Pool. Kritisch: 1 Sam 15 (Bann an Amalek, Agag zerhauen), 1 Sam 17 (Enthauptung Goliats), 1 Sam 18,25-27 (zweihundert Vorhaeute als Brautpreis), 1 Sam 22 (Priestermord in Nob, 85 Erschlagene), 1 Sam 28 (Totenbeschwoererin von En-Dor, unheimlich statt beruhigend), 1 Sam 31 (Sauls Selbstmord und Leichenschaendung), Ester 9 (75.000 Erschlagene, zehn Soehne aufgehaengt). Rund ein Sechstel der Laufzeit liegt in solchen Passagen, alle im Mittelteil.",
+   "staerke": "Hoechster Erzaehlanteil der drei und drei vollstaendige Buecher ohne einen einzigen Schnitt, also kein Torso fuer spaeter. Drei abgeschlossene Geschichten mit je eigenem Ende geben dem Nachthoerer drei Ruhepunkte statt eines.",
+   "risiko": "Der Eigenname 'Samuel' traegt den Titel schwaecher als 'David' oder 'Esther', und die drei Buecher haben ausser der Richterzeit keine gemeinsame Klammer. 1 Samuel ist der gewalttaetigste der drei Korpora im Mittelteil.",
+   "rest_fuer_v07": "170.132 W. Apostelgeschichte bleibt vollstaendig frei - das einzige noch unverplante NT-Buch. Dazu 2 Samuel, beide Koenigsbuecher, Josua, Richter, Exodus, Jona, Daniel 4-12 und Genesis 43-50, alle ungeschnitten.",
+   "pruefungen": {
+    "band": true,
+    "erzaehlanteil_80": true,
+    "dominanz_60": true
+   },
+   "bestanden": true
+  },
+  {
+   "kuerzel": "V06-B",
+   "name": "1 Samuel 16-31 + 2 Samuel (Davids Leben)",
+   "bauart": "Lebensbogen",
+   "teile": [
+    {
+     "buch": "1 samuel",
+     "von": 16,
+     "bis": 31,
+     "kapitel": 16,
+     "woerter": 12482,
+     "erzaehlend_woerter": 12355
+    },
+    {
+     "buch": "2 samuel",
+     "von": 1,
+     "bis": 24,
+     "kapitel": 24,
+     "woerter": 19447,
+     "erzaehlend_woerter": 15917
+    }
+   ],
+   "woerter": 31929,
+   "erzaehlend_woerter": 28272,
+   "erzaehlanteil": 0.8855,
+   "laufzeit_h": 3.593,
+   "laufzeit": "3:36 h",
+   "dominantes_buch": "2 samuel",
+   "dominanz": 0.6091,
+   "eigenname": "David",
+   "nachttauglichkeit": "EINSCHAETZUNG, KEINE MESSUNG. Die schwerste Passage im gesamten Pool: 2 Sam 13 (Amnons Vergewaltigung Tamars) ist um 2 Uhr nachts nicht zumutbar. Dazu 2 Sam 11 (Ehebruch und Auftragsmord), 2 Sam 12 (Tod des Kindes), 2 Sam 4 (abgeschlagener Kopf Ischboschets), 2 Sam 18 (Absaloms Tod an der Eiche), 2 Sam 21 (sieben Soehne Sauls aufgehaengt, Rizpas Totenwache) und aus dem ersten Teil 1 Sam 17, 22, 28, 31. Der Stoff wird nach hinten duesterer statt ruhiger - genau die falsche Richtung fuer ein Einschlafvideo.",
+   "staerke": "Ein einziger durchlaufender Erzaehlbogen von der Salbung bis zum Tod, ohne Themenwechsel - das ist formal am naechsten an V03 (Johannes), dem Video, aus dem Regel M8 stammt. 'David' ist der staerkste Eigenname im ganzen verfuegbaren Pool.",
+   "risiko": "Dominantes Buch ist 2 Samuel mit nur 60,9 % - die knappste Dominanz der drei, und der Buchname 'Second Samuel' taugt nicht als Titelwort, der Korpus laeuft faktisch unter 'David'. Ausserdem bleibt 1 Samuel 1-15 als Torso zurueck.",
+   "rest_fuer_v07": "169.685 W, aber davon 1 Samuel 1-15 (11.156 W) als Torso: Eli, Samuels Berufung und Sauls Aufstieg ohne Fortsetzung, allein zu kurz fuer ein Video. Apostelgeschichte, beide Koenigsbuecher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4-12 und Genesis 43-50 bleiben frei.",
+   "pruefungen": {
+    "band": true,
+    "erzaehlanteil_80": true,
+    "dominanz_60": true
+   },
+   "bestanden": true
+  },
+  {
+   "kuerzel": "V06-C",
+   "name": "Apostelgeschichte 1-12 + 1 Samuel",
+   "bauart": "AT + NT",
+   "teile": [
+    {
+     "buch": "acts",
+     "von": 1,
+     "bis": 12,
+     "kapitel": 12,
+     "woerter": 9822,
+     "erzaehlend_woerter": 6930
+    },
+    {
+     "buch": "1 samuel",
+     "von": 1,
+     "bis": 31,
+     "kapitel": 31,
+     "woerter": 23638,
+     "erzaehlend_woerter": 21051
+    }
+   ],
+   "woerter": 33460,
+   "erzaehlend_woerter": 27981,
+   "erzaehlanteil": 0.8363,
+   "laufzeit_h": 3.765,
+   "laufzeit": "3:46 h",
+   "dominantes_buch": "1 samuel",
+   "dominanz": 0.7065,
+   "eigenname": "Samuel",
+   "nachttauglichkeit": "EINSCHAETZUNG, KEINE MESSUNG. Apg 1-12 ist der ruhigste NT-Erzaehlstoff im Pool; kritisch dort nur Apg 5 (Hananias und Saphira fallen tot um), Apg 7,54-60 (Steinigung des Stephanus) und Apg 12 (Jakobus enthauptet, Herodes von Wuermern gefressen). Der 1-Samuel-Teil bringt dieselben Stellen wie Variante A mit (1 Sam 15, 17, 18, 22, 28, 31).",
+   "staerke": "Die einzige Variante mit NT-Anteil, die das Gate haelt, und mit 33.460 W die laengste - naeher an den 3,8 h, wo die bisherigen Videos ihre Zuschauer am laengsten halten. Apg 1-12 endet mit einer echten Schlusskadenz (Tod des Herodes, 'das Wort Gottes wuchs'), ist also kein abgeschnittener Torso.",
+   "risiko": "Mit 83,6 % der niedrigste Erzaehlanteil der drei; Apg 1-12 traegt selbst nur 70,6 %, weil Pfingstpredigt, Tempelrede und Stephanusrede darin liegen. Der Sprung zwischen Jerusalem und der Richterzeit hat keine erzaehlerische Bruecke, und Apg 13-28 bleibt als Torso zurueck.",
+   "rest_fuer_v07": "168.154 W, davon Apostelgeschichte 13-28 (13.321 W) als Torso: die Paulusreisen ohne Anfang. 2 Samuel, beide Koenigsbuecher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4-12 und Genesis 43-50 bleiben ungeschnitten.",
+   "pruefungen": {
+    "band": true,
+    "erzaehlanteil_80": true,
+    "dominanz_60": true
+   },
+   "bestanden": true
+  }
+ ]
+}

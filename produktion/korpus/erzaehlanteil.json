@@ -1,0 +1,3027 @@
+{
+ "regel": "Erzaehlend = fortlaufende Handlung mit Akteuren, Ortswechsel und Zeitverlauf. Nicht erzaehlend = Gesetzestexte, Kult- und Bauvorschriften, Genealogien, eingelegte Lieder und Gebete, prophetische Rede, apokalyptische Vision, Briefe und Lehrreden. Direkte Rede innerhalb einer laufenden Szene (Dialog, Befehl, Botenwort) bleibt erzaehlend. Ein Kapitel, dessen Wortmehrheit aus zusammenhaengender Rede ohne Handlungsfortschritt besteht, ist nicht erzaehlend, es sei denn, der Bruch laesst sich sauber an Versgrenzen ziehen; dann werden beide Teile gemessen. Reine Regierungs- und Rahmenformeln mit Quellenverweis gelten als Chroniknotiz, nicht als Erzaehlung. Im Zweifel gegen den Erzaehlanteil.",
+ "quelle": "bible-api.com, translation=webbe",
+ "zaehlmethode": "Verstexte mit Leerzeichen verbunden, dann str.split()",
+ "hinweis_flagge": "Bei geteilten Kapiteln ist 'erzaehlend' nur ein Etikett nach der gemessenen Wortmehrheit; massgeblich ist 'erzaehlend_woerter' aus den gemessenen Versbereichen.",
+ "kapitel": {
+  "acts 1": {
+   "buch": "acts",
+   "kapitel": 1,
+   "woerter": 626,
+   "erzaehlend": true,
+   "begruendung": "Nur V.24-25 (43 W., nachgezaehlt) faellt: woertlich eingelegtes Gebet, nach Regel 3 ohne Ermessen nicht erzaehlend und wie acts 4,24-30 zu behandeln; Petrus' Rede V.16-22 bleibt erzaehlend, weil sie als Beschlussrede die Loswahl V.23-26 unmittelbar ausloest, und der Prolog V.1-2 ist mit V.3 eine Satzperiode mit Handlungsreferat, keine reine Rahmenformel.",
+   "erzaehlend_woerter": 583,
+   "teilung": {
+    "erzaehlend": [
+     "1-23",
+     "26"
+    ],
+    "nicht_erzaehlend": [
+     "24-25"
+    ]
+   },
+   "erzaehlanteil": 0.9313
+  },
+  "acts 2": {
+   "buch": "acts",
+   "kapitel": 2,
+   "woerter": 972,
+   "erzaehlend": false,
+   "begruendung": "Pfingstereignis (V.1-13) und Taufe der Dreitausend (V.37-47) sind Handlung, aber Petrus' Pfingstpredigt V.14-36 traegt mit 533 von 972 Woertern die Mehrheit; sauber an Versgrenzen geteilt.",
+   "erzaehlend_woerter": 439,
+   "teilung": {
+    "erzaehlend": [
+     "1-13",
+     "37-47"
+    ],
+    "nicht_erzaehlend": [
+     "14-36"
+    ]
+   },
+   "erzaehlanteil": 0.4516
+  },
+  "acts 3": {
+   "buch": "acts",
+   "kapitel": 3,
+   "woerter": 622,
+   "erzaehlend": false,
+   "begruendung": "Heilung des Lahmen am Tor Schoen (V.1-11, 241 Woerter) ist Handlung, Petrus' Tempelpredigt in Salomos Halle V.12-26 (381 Woerter) ist zusammenhaengende Rede und ueberwiegt.",
+   "erzaehlend_woerter": 241,
+   "teilung": {
+    "erzaehlend": [
+     "1-11"
+    ],
+    "nicht_erzaehlend": [
+     "12-26"
+    ]
+   },
+   "erzaehlanteil": 0.3875
+  },
+  "acts 4": {
+   "buch": "acts",
+   "kapitel": 4,
+   "woerter": 840,
+   "erzaehlend": true,
+   "begruendung": "Verhaftung und Verhoer vor dem Hohen Rat (V.1-23) sowie Guetergemeinschaft/Barnabas (V.31-37) sind Handlung; nur das eingelegte Gemeindegebet V.24-30 ist herausgeloest.",
+   "erzaehlend_woerter": 684,
+   "teilung": {
+    "erzaehlend": [
+     "1-23",
+     "31-37"
+    ],
+    "nicht_erzaehlend": [
+     "24-30"
+    ]
+   },
+   "erzaehlanteil": 0.8143
+  },
+  "acts 5": {
+   "buch": "acts",
+   "kapitel": 5,
+   "woerter": 965,
+   "erzaehlend": true,
+   "begruendung": "Hananias und Saphira, Zeichen der Apostel, Gefaengnisbefreiung und Verhoer; Gamaliels Rat (V.33-39, 193 von 965 Woertern) ist Wechselrede in der Ratssitzung und fuehrt zur Freilassung.",
+   "erzaehlend_woerter": 965,
+   "erzaehlanteil": 1.0
+  },
+  "acts 6": {
+   "buch": "acts",
+   "kapitel": 6,
+   "woerter": 335,
+   "erzaehlend": true,
+   "begruendung": "Streit der Hellenisten, Wahl der sieben Armenpfleger und Verhaftung des Stephanus - durchgehend Handlung mit Akteuren.",
+   "erzaehlend_woerter": 335,
+   "erzaehlanteil": 1.0
+  },
+  "acts 7": {
+   "buch": "acts",
+   "kapitel": 7,
+   "woerter": 1371,
+   "erzaehlend": false,
+   "begruendung": "V.1 ist nur die Redeeroeffnung des Hohepriesters ohne Handlung und gehoert zum Redeblock; die Stephanusrede V.1-53 (1215 von 1371 Woertern) dominiert, nur die Steinigung V.54-60 ist Szene.",
+   "erzaehlend_woerter": 148,
+   "teilung": {
+    "erzaehlend": [
+     "54-60"
+    ],
+    "nicht_erzaehlend": [
+     "1-53"
+    ]
+   },
+   "erzaehlanteil": 0.108
+  },
+  "acts 8": {
+   "buch": "acts",
+   "kapitel": 8,
+   "woerter": 818,
+   "erzaehlend": true,
+   "begruendung": "V.32-33 (56 W., nachgezaehlt) sind ausdruecklich als gelesene Schriftstelle eingefuehrter Jesaja-Text - prophetische Rede ohne Akteur und Handlungsschritt, sauber an Versgrenzen, wie eingelegte Dokumente sonst auch herausgeloest.",
+   "erzaehlend_woerter": 762,
+   "teilung": {
+    "erzaehlend": [
+     "1-31",
+     "34-40"
+    ],
+    "nicht_erzaehlend": [
+     "32-33"
+    ]
+   },
+   "erzaehlanteil": 0.9315
+  },
+  "acts 9": {
+   "buch": "acts",
+   "kapitel": 9,
+   "woerter": 953,
+   "erzaehlend": true,
+   "begruendung": "Bekehrung des Saulus vor Damaskus, Ananias, Flucht im Korb, Heilung des Aeneas und Auferweckung der Tabitha - reine Szenenfolge.",
+   "erzaehlend_woerter": 953,
+   "erzaehlanteil": 1.0
+  },
+  "acts 10": {
+   "buch": "acts",
+   "kapitel": 10,
+   "woerter": 1058,
+   "erzaehlend": true,
+   "begruendung": "Kornelius-Vision, Petrus' Tuchvision und Reise nach Caesarea (V.1-33) plus Geistausgiessung und Taufe (V.44-48) tragen 839 von 1058 Woertern; Petrus' Predigt V.34-43 ist abgetrennt.",
+   "erzaehlend_woerter": 839,
+   "teilung": {
+    "erzaehlend": [
+     "1-33",
+     "44-48"
+    ],
+    "nicht_erzaehlend": [
+     "34-43"
+    ]
+   },
+   "erzaehlanteil": 0.793
+  },
+  "acts 11": {
+   "buch": "acts",
+   "kapitel": 11,
+   "woerter": 635,
+   "erzaehlend": true,
+   "begruendung": "V.4 ist noch Erzaehlerrahmen ('Petrus begann und legte es ihnen der Reihe nach dar'), die Rede setzt erst V.5 ein; Rahmen V.1-4 und Antiochia/Barnabas/Saulus/Agabus V.18-30 tragen 354 von 635 Woertern gegen 281 der Wiedererzaehlung V.5-17.",
+   "erzaehlend_woerter": 354,
+   "teilung": {
+    "erzaehlend": [
+     "1-4",
+     "18-30"
+    ],
+    "nicht_erzaehlend": [
+     "5-17"
+    ]
+   },
+   "erzaehlanteil": 0.5575
+  },
+  "acts 12": {
+   "buch": "acts",
+   "kapitel": 12,
+   "woerter": 627,
+   "erzaehlend": true,
+   "begruendung": "Hinrichtung des Jakobus, Petrus' Befreiung durch den Engel, Szene an Rhodes Tuer und Tod des Herodes - durchgehende Handlung.",
+   "erzaehlend_woerter": 627,
+   "erzaehlanteil": 1.0
+  },
+  "acts 13": {
+   "buch": "acts",
+   "kapitel": 13,
+   "woerter": 1190,
+   "erzaehlend": true,
+   "begruendung": "Aussendung von Barnabas und Saulus, Elymas auf Zypern und Reisen (V.1-15) sowie Reaktion und Vertreibung aus Antiochia (V.42-52) ergeben 625 von 1190 Woertern gegen die Synagogenpredigt V.16-41.",
+   "erzaehlend_woerter": 625,
+   "teilung": {
+    "erzaehlend": [
+     "1-15",
+     "42-52"
+    ],
+    "nicht_erzaehlend": [
+     "16-41"
+    ]
+   },
+   "erzaehlanteil": 0.5252
+  },
+  "acts 14": {
+   "buch": "acts",
+   "kapitel": 14,
+   "woerter": 607,
+   "erzaehlend": true,
+   "begruendung": "Ikonion, Heilung des Lahmen in Lystra mit dem Zeus-Opfer, Steinigung des Paulus und Rueckreise; der Zuruf an die Menge (V.15-17) ist kurz und in der Szene.",
+   "erzaehlend_woerter": 607,
+   "erzaehlanteil": 1.0
+  },
+  "acts 15": {
+   "buch": "acts",
+   "kapitel": 15,
+   "woerter": 890,
+   "erzaehlend": true,
+   "begruendung": "Apostelkonzil als Versammlungsszene mit Wechselrede und Beschluss (V.1-22) und Trennung von Paulus und Barnabas (V.30-41) ueberwiegen deutlich; nur der Aposteldekret-Brief V.23-29 ist Briefe-Text.",
+   "erzaehlend_woerter": 717,
+   "teilung": {
+    "erzaehlend": [
+     "1-22",
+     "30-41"
+    ],
+    "nicht_erzaehlend": [
+     "23-29"
+    ]
+   },
+   "erzaehlanteil": 0.8056
+  },
+  "acts 16": {
+   "buch": "acts",
+   "kapitel": 16,
+   "woerter": 918,
+   "erzaehlend": true,
+   "begruendung": "Timotheus, der mazedonische Ruf, Lydia, die Wahrsagerin und das Erdbeben im Gefaengnis von Philippi - lauter Handlung mit Ortswechseln.",
+   "erzaehlend_woerter": 918,
+   "erzaehlanteil": 1.0
+  },
+  "acts 17": {
+   "buch": "acts",
+   "kapitel": 17,
+   "woerter": 824,
+   "erzaehlend": true,
+   "begruendung": "Thessalonich, Beroea und Ankunft in Athen (V.1-21) plus Reaktion der Hoerer (V.32-34) ergeben 553 von 824 Woertern; die Areopagrede V.22-31 ist abgetrennt.",
+   "erzaehlend_woerter": 553,
+   "teilung": {
+    "erzaehlend": [
+     "1-21",
+     "32-34"
+    ],
+    "nicht_erzaehlend": [
+     "22-31"
+    ]
+   },
+   "erzaehlanteil": 0.6711
+  },
+  "acts 18": {
+   "buch": "acts",
+   "kapitel": 18,
+   "woerter": 660,
+   "erzaehlend": true,
+   "begruendung": "Paulus bei Aquila und Priscilla in Korinth, Prozess vor Gallio, Reise nach Ephesus und Apollos - fortlaufende Handlung.",
+   "erzaehlend_woerter": 660,
+   "erzaehlanteil": 1.0
+  },
+  "acts 19": {
+   "buch": "acts",
+   "kapitel": 19,
+   "woerter": 926,
+   "erzaehlend": true,
+   "begruendung": "Johannesjuenger in Ephesus, Skevas' Soehne, Buecherverbrennung und Demetrius-Aufruhr; die Rede des Stadtschreibers (V.35-41, 164 von 926 Woertern) beendet den Auflauf innerhalb der Szene.",
+   "erzaehlend_woerter": 926,
+   "erzaehlanteil": 1.0
+  },
+  "acts 20": {
+   "buch": "acts",
+   "kapitel": 20,
+   "woerter": 852,
+   "erzaehlend": true,
+   "begruendung": "Reise durch Mazedonien, Eutychus in Troas und Fahrt nach Milet (V.1-17) plus Abschied am Strand (V.36-38) ergeben 447 von 852 Woertern gegen die Abschiedsrede an die Aeltesten V.18-35.",
+   "erzaehlend_woerter": 447,
+   "teilung": {
+    "erzaehlend": [
+     "1-17",
+     "36-38"
+    ],
+    "nicht_erzaehlend": [
+     "18-35"
+    ]
+   },
+   "erzaehlanteil": 0.5246
+  },
+  "acts 21": {
+   "buch": "acts",
+   "kapitel": 21,
+   "woerter": 1009,
+   "erzaehlend": true,
+   "begruendung": "Seereise nach Tyrus und Caesarea, Agabus' Zeichenhandlung, Nasiraeergeluebde im Tempel und Verhaftung des Paulus - durchgehend Handlung.",
+   "erzaehlend_woerter": 1009,
+   "erzaehlanteil": 1.0
+  },
+  "acts 22": {
+   "buch": "acts",
+   "kapitel": 22,
+   "woerter": 729,
+   "erzaehlend": false,
+   "begruendung": "Paulus' Verteidigungsrede auf der Freitreppe mit dem Damaskusbericht (V.1-21) macht 485 von 729 Woertern aus; nur Tumult, Geisselung und Buergerrecht (V.22-30) sind Handlung.",
+   "erzaehlend_woerter": 244,
+   "teilung": {
+    "erzaehlend": [
+     "22-30"
+    ],
+    "nicht_erzaehlend": [
+     "1-21"
+    ]
+   },
+   "erzaehlanteil": 0.3347
+  },
+  "acts 23": {
+   "buch": "acts",
+   "kapitel": 23,
+   "woerter": 861,
+   "erzaehlend": true,
+   "begruendung": "Verhoer vor dem Synedrium, Spaltung von Pharisaeern und Sadduzaeern, Mordkomplott und Nachttransport nach Caesarea tragen das Kapitel; nur der Brief des Claudius Lysias V.26-30 ist herausgeloest.",
+   "erzaehlend_woerter": 749,
+   "teilung": {
+    "erzaehlend": [
+     "1-25",
+     "31-35"
+    ],
+    "nicht_erzaehlend": [
+     "26-30"
+    ]
+   },
+   "erzaehlanteil": 0.8699
+  },
+  "acts 24": {
+   "buch": "acts",
+   "kapitel": 24,
+   "woerter": 593,
+   "erzaehlend": false,
+   "begruendung": "V.1 (Ankunft nach fuenf Tagen) und V.9 (Zustimmung der Juden) sind echte Handlungsnotizen; Tertullus' Anklage V.2-8 (119 W.) und Paulus' Verteidigung V.10-21 (269 W.) machen 388 von 593 Woertern aus, Handlung nur V.1, 9, 22-27.",
+   "erzaehlend_woerter": 205,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "9",
+     "22-27"
+    ],
+    "nicht_erzaehlend": [
+     "2-8",
+     "10-21"
+    ]
+   },
+   "erzaehlanteil": 0.3457
+  },
+  "acts 25": {
+   "buch": "acts",
+   "kapitel": 25,
+   "woerter": 718,
+   "erzaehlend": true,
+   "begruendung": "Festus' Fallbericht an Agrippa V.14-21 (210 W.) wiederholt nur V.1-12 ohne Handlungsfortschritt, seine Eroeffnungsansprache V.24-27 (119 W.) ebenso; Handlung V.1-13 und V.22-23 traegt mit 389 von 718 Woertern die Mehrheit, Naht sauber an Versgrenzen.",
+   "erzaehlend_woerter": 389,
+   "teilung": {
+    "erzaehlend": [
+     "1-13",
+     "22-23"
+    ],
+    "nicht_erzaehlend": [
+     "14-21",
+     "24-27"
+    ]
+   },
+   "erzaehlanteil": 0.5418
+  },
+  "acts 26": {
+   "buch": "acts",
+   "kapitel": 26,
+   "woerter": 751,
+   "erzaehlend": false,
+   "begruendung": "V.1 ist Szene (Redeerlaubnis Agrippas, Paulus streckt die Hand aus), die Verteidigungsrede V.2-23 umfasst 542 von 751 Woertern; nur Wortwechsel mit Festus/Agrippa und Aufbruch V.24-32 sind Handlung.",
+   "erzaehlend_woerter": 209,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "24-32"
+    ],
+    "nicht_erzaehlend": [
+     "2-23"
+    ]
+   },
+   "erzaehlanteil": 0.2783
+  },
+  "acts 27": {
+   "buch": "acts",
+   "kapitel": 27,
+   "woerter": 1012,
+   "erzaehlend": true,
+   "begruendung": "Seefahrt nach Rom mit Sturm Euroklydon, Leichtern des Schiffes und Strandung vor Malta - reiner Reisebericht mit Zeitverlauf.",
+   "erzaehlend_woerter": 1012,
+   "erzaehlanteil": 1.0
+  },
+  "acts 28": {
+   "buch": "acts",
+   "kapitel": 28,
+   "woerter": 781,
+   "erzaehlend": true,
+   "begruendung": "Malta, Heilungen, Fahrt nach Rom und Gespraech mit den Judenaeltesten sind durchlaufende Handlung (V.1-25, V.29-31); das Jesaja-Orakel samt Schlusswort V.26-28 (91 W.) ist prophetische Rede und wird nach Regel 3 sauber an Versgrenzen abgetrennt.",
+   "erzaehlend_woerter": 690,
+   "teilung": {
+    "erzaehlend": [
+     "1-25",
+     "29-31"
+    ],
+    "nicht_erzaehlend": [
+     "26-28"
+    ]
+   },
+   "erzaehlanteil": 0.8835
+  },
+  "exodus 1": {
+   "buch": "exodus",
+   "kapitel": 1,
+   "woerter": 426,
+   "erzaehlend": true,
+   "begruendung": "Unterdrueckung Israels in Aegypten, Fronarbeit und die Szene mit den Hebammen Schiphra und Pua vor Pharao.",
+   "erzaehlend_woerter": 426,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 2": {
+   "buch": "exodus",
+   "kapitel": 2,
+   "woerter": 603,
+   "erzaehlend": true,
+   "begruendung": "Geburt und Aussetzung des Mose, Totschlag des Aegypters, Flucht nach Midian und Heirat mit Zippora.",
+   "erzaehlend_woerter": 603,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 3": {
+   "buch": "exodus",
+   "kapitel": 3,
+   "woerter": 728,
+   "erzaehlend": true,
+   "begruendung": "Szene am brennenden Dornbusch am Horeb mit Wechselrede zwischen Gott und Mose (Berufung, Namensoffenbarung).",
+   "erzaehlend_woerter": 728,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 4": {
+   "buch": "exodus",
+   "kapitel": 4,
+   "woerter": 825,
+   "erzaehlend": true,
+   "begruendung": "Zeichen mit Stab und aussaetziger Hand, Einsetzung Aarons, Rueckreise nach Aegypten und Zippora am Nachtlager.",
+   "erzaehlend_woerter": 825,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 5": {
+   "buch": "exodus",
+   "kapitel": 5,
+   "woerter": 580,
+   "erzaehlend": true,
+   "begruendung": "Erste Audienz bei Pharao, Verschaerfung der Ziegelfron und Klage der israelitischen Aufseher.",
+   "erzaehlend_woerter": 580,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 6": {
+   "buch": "exodus",
+   "kapitel": 6,
+   "woerter": 710,
+   "erzaehlend": false,
+   "begruendung": "V.1-8 sind 237 Woerter geschlossene Gottesrede (Ankuendigung + Namensoffenbarung 'Ich bin JHWH') ohne Handlungsvollzug, V.14-27 sind 311 Woerter Geschlechterregister Ruben/Simeon/Levi; erzaehlend bleiben nur V.9-13 (Mose redet zum Volk, es hoert nicht, Sendung zu Pharao, Einwand) und die kurze Wiederaufnahmeszene V.28-30, zusammen 162 von 710 Woertern.",
+   "erzaehlend_woerter": 162,
+   "teilung": {
+    "erzaehlend": [
+     "9-13",
+     "28-30"
+    ],
+    "nicht_erzaehlend": [
+     "1-8",
+     "14-27"
+    ]
+   },
+   "erzaehlanteil": 0.2282
+  },
+  "exodus 7": {
+   "buch": "exodus",
+   "kapitel": 7,
+   "woerter": 649,
+   "erzaehlend": true,
+   "begruendung": "Stab-Schlangen-Zeichen vor Pharao und die erste Plage, das Blutwasser des Nils, als fortlaufende Handlung.",
+   "erzaehlend_woerter": 649,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 8": {
+   "buch": "exodus",
+   "kapitel": 8,
+   "woerter": 899,
+   "erzaehlend": true,
+   "begruendung": "Frosch-, Stechmuecken- und Fliegenplage mit Pharaos wiederholten Verhandlungen und Wortbruch.",
+   "erzaehlend_woerter": 899,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 9": {
+   "buch": "exodus",
+   "kapitel": 9,
+   "woerter": 943,
+   "erzaehlend": true,
+   "begruendung": "Viehpest, Geschwuere und Hagelplage; Botenwort und Pharaos Suendenbekenntnis stehen in laufender Szene.",
+   "erzaehlend_woerter": 943,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 10": {
+   "buch": "exodus",
+   "kapitel": 10,
+   "woerter": 867,
+   "erzaehlend": true,
+   "begruendung": "Heuschreckenplage und Finsternis, dazu die Verhandlungen mit Pharao bis zum Bruch mit Mose.",
+   "erzaehlend_woerter": 867,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 11": {
+   "buch": "exodus",
+   "kapitel": 11,
+   "woerter": 309,
+   "erzaehlend": true,
+   "begruendung": "Ankuendigung der Erstgeburtsplage als Botenwort in der Konfrontationsszene, mit Moses zornigem Abgang von Pharao.",
+   "erzaehlend_woerter": 309,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 12": {
+   "buch": "exodus",
+   "kapitel": 12,
+   "woerter": 1424,
+   "erzaehlend": false,
+   "begruendung": "Passa- und Mazzotvorschriften V.1-27 (831 W.) plus Passaordnung fuer Fremde V.42-49 (200 W., dabei ist V.42 selbst kultische Merkformel ohne Handlung) ueberwiegen klar; erzaehlend nur Erstgeburtsschlag, Vertreibung und Auszug V.28-41 sowie die Ausfuehrungs- und Auszugsnotiz V.50-51, zusammen 393 von 1424 Woertern.",
+   "erzaehlend_woerter": 393,
+   "teilung": {
+    "erzaehlend": [
+     "28-41",
+     "50-51"
+    ],
+    "nicht_erzaehlend": [
+     "1-27",
+     "42-49"
+    ]
+   },
+   "erzaehlanteil": 0.276
+  },
+  "exodus 13": {
+   "buch": "exodus",
+   "kapitel": 13,
+   "woerter": 647,
+   "erzaehlend": false,
+   "begruendung": "Erstgeburts- und Mazzotgebot samt Sohnesbelehrung (V. 1-16) traegt die Mehrheit; erst V. 17-22 erzaehlt Aufbruch, Josefsgebeine und Wolken-/Feuersaeule.",
+   "erzaehlend_woerter": 182,
+   "teilung": {
+    "erzaehlend": [
+     "17-22"
+    ],
+    "nicht_erzaehlend": [
+     "1-16"
+    ]
+   },
+   "erzaehlanteil": 0.2813
+  },
+  "exodus 14": {
+   "buch": "exodus",
+   "kapitel": 14,
+   "woerter": 872,
+   "erzaehlend": true,
+   "begruendung": "Verfolgung durch Pharaos Streitwagen, Durchzug durchs Schilfmeer und Untergang des aegyptischen Heeres.",
+   "erzaehlend_woerter": 872,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 15": {
+   "buch": "exodus",
+   "kapitel": 15,
+   "woerter": 670,
+   "erzaehlend": false,
+   "begruendung": "Das eingelegte Meerlied des Mose (V. 1-18) ueberwiegt; erzaehlend sind Mirjams Reigen und der Zug nach Mara und Elim (V. 19-27).",
+   "erzaehlend_woerter": 275,
+   "teilung": {
+    "erzaehlend": [
+     "19-27"
+    ],
+    "nicht_erzaehlend": [
+     "1-18"
+    ]
+   },
+   "erzaehlanteil": 0.4104
+  },
+  "exodus 16": {
+   "buch": "exodus",
+   "kapitel": 16,
+   "woerter": 983,
+   "erzaehlend": true,
+   "begruendung": "Murren in der Wueste Sin, Wachteln und Manna, Sabbatprobe am sechsten Tag - durchgehend Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 983,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 17": {
+   "buch": "exodus",
+   "kapitel": 17,
+   "woerter": 423,
+   "erzaehlend": true,
+   "begruendung": "Wasser aus dem Felsen bei Massa und Meriba und die Schlacht gegen Amalek mit Moses erhobenen Haenden.",
+   "erzaehlend_woerter": 423,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 18": {
+   "buch": "exodus",
+   "kapitel": 18,
+   "woerter": 701,
+   "erzaehlend": true,
+   "begruendung": "Besuch Jitros im Lager am Gottesberg, Opfermahl und die Einsetzung der Richter samt Ausfuehrung und Abschied.",
+   "erzaehlend_woerter": 701,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 19": {
+   "buch": "exodus",
+   "kapitel": 19,
+   "woerter": 656,
+   "erzaehlend": true,
+   "begruendung": "Ankunft am Sinai, Heiligung des Volkes und die Theophanie mit Donner, Rauch und Posaunenschall.",
+   "erzaehlend_woerter": 656,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 20": {
+   "buch": "exodus",
+   "kapitel": 20,
+   "woerter": 559,
+   "erzaehlend": false,
+   "begruendung": "Dekalog (V. 1-17) und Altargesetz (V. 22-26) ueberwiegen; erzaehlend ist nur die Furchtszene des Volkes am Berg (V. 18-21).",
+   "erzaehlend_woerter": 95,
+   "teilung": {
+    "erzaehlend": [
+     "18-21"
+    ],
+    "nicht_erzaehlend": [
+     "1-17",
+     "22-26"
+    ]
+   },
+   "erzaehlanteil": 0.1699
+  },
+  "exodus 21": {
+   "buch": "exodus",
+   "kapitel": 21,
+   "woerter": 865,
+   "erzaehlend": false,
+   "begruendung": "Bundesbuch: Sklavenrecht, Koerperverletzung, Toetungsfaelle und Ersatzrecht fuer stoessige Rinder - reiner Gesetzestext.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 22": {
+   "buch": "exodus",
+   "kapitel": 22,
+   "woerter": 770,
+   "erzaehlend": false,
+   "begruendung": "Bundesbuch: Diebstahl-, Schadens-, Darlehens- und Sozialrecht sowie Erstlingsgaben - reiner Gesetzestext.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 23": {
+   "buch": "exodus",
+   "kapitel": 23,
+   "woerter": 814,
+   "erzaehlend": false,
+   "begruendung": "Bundesbuch: Rechtspflege, Sabbatjahr, drei Wallfahrtsfeste und die Verheissung des vorausziehenden Engels - Gesetzes- und Verheissungsrede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 24": {
+   "buch": "exodus",
+   "kapitel": 24,
+   "woerter": 450,
+   "erzaehlend": true,
+   "begruendung": "Bundesschluss am Sinai: Altarbau, Blutbesprengung, Mahl der Aeltesten vor Gott und Moses Aufstieg in die Wolke.",
+   "erzaehlend_woerter": 450,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 25": {
+   "buch": "exodus",
+   "kapitel": 25,
+   "woerter": 864,
+   "erzaehlend": false,
+   "begruendung": "Bauvorschriften fuer Lade, Schaubrottisch und Leuchter mit genauen Massangaben.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 26": {
+   "buch": "exodus",
+   "kapitel": 26,
+   "woerter": 894,
+   "erzaehlend": false,
+   "begruendung": "Bauvorschriften fuer Zeltbahnen, Decken, Bretter, Riegel und den Vorhang der Stiftshuette.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 27": {
+   "buch": "exodus",
+   "kapitel": 27,
+   "woerter": 529,
+   "erzaehlend": false,
+   "begruendung": "Bauvorschriften fuer Brandopferaltar, Vorhof und das Oel fuer den Leuchter.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 28": {
+   "buch": "exodus",
+   "kapitel": 28,
+   "woerter": 1173,
+   "erzaehlend": false,
+   "begruendung": "Kultvorschrift fuer die Priesterkleider Aarons: Efod, Brustschild mit zwoelf Steinen, Oberkleid, Stirnblech und Beinkleider.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 29": {
+   "buch": "exodus",
+   "kapitel": 29,
+   "woerter": 1275,
+   "erzaehlend": false,
+   "begruendung": "Ritualvorschrift fuer die siebentaegige Priesterweihe Aarons und seiner Soehne samt taeglichem Brandopfer.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 30": {
+   "buch": "exodus",
+   "kapitel": 30,
+   "woerter": 916,
+   "erzaehlend": false,
+   "begruendung": "Vorschriften fuer Raeucheraltar, Halbschekel-Abgabe, Becken, Salboel und Raeucherwerk.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 31": {
+   "buch": "exodus",
+   "kapitel": 31,
+   "woerter": 414,
+   "erzaehlend": false,
+   "begruendung": "Beauftragung Bezalels und Oholiabs als Gottesrede, Sabbatgebot als ewiges Zeichen, nur die Schlussnotiz zu den Tafeln ist Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 32": {
+   "buch": "exodus",
+   "kapitel": 32,
+   "woerter": 1037,
+   "erzaehlend": true,
+   "begruendung": "Goldenes Kalb: Aarons Guss, Moses Fuerbitte, Zerbrechen der Tafeln, Strafgericht der Leviten und Plage.",
+   "erzaehlend_woerter": 1037,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 33": {
+   "buch": "exodus",
+   "kapitel": 33,
+   "woerter": 658,
+   "erzaehlend": true,
+   "begruendung": "Trauer des Volkes ueber die Schmuckablegung, Zelt der Begegnung mit Wolkensaeule und Moses Wechselrede um Gottes Mitgehen und Herrlichkeit.",
+   "erzaehlend_woerter": 658,
+   "erzaehlanteil": 1.0
+  },
+  "exodus 34": {
+   "buch": "exodus",
+   "kapitel": 34,
+   "woerter": 969,
+   "erzaehlend": true,
+   "begruendung": "Neue Tafeln, Gottes Vorueberzug und Moses strahlendes Gesicht rahmen den eingeschobenen Gesetzesblock des Bundesprivilegrechts (V. 10-26).",
+   "erzaehlend_woerter": 502,
+   "teilung": {
+    "erzaehlend": [
+     "1-9",
+     "27-35"
+    ],
+    "nicht_erzaehlend": [
+     "10-26"
+    ]
+   },
+   "erzaehlanteil": 0.5181
+  },
+  "exodus 35": {
+   "buch": "exodus",
+   "kapitel": 35,
+   "woerter": 761,
+   "erzaehlend": false,
+   "begruendung": "Sabbatgebot, Materialliste fuer die Stiftshuette, Aufzaehlung der Gaben und die Rede ueber Bezalel und Oholiab - Kultanweisung und Listen ohne Handlungsfortschritt.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 36": {
+   "buch": "exodus",
+   "kapitel": 36,
+   "woerter": 871,
+   "erzaehlend": false,
+   "begruendung": "Der Baubericht zu Zeltbahnen, Brettern und Vorhang (V. 8-38) ueberwiegt klar; nur die Szene um die zu reichlichen Gaben und Moses Halt-Befehl (V. 2-7) ist Handlung.",
+   "erzaehlend_woerter": 166,
+   "teilung": {
+    "erzaehlend": [
+     "2-7"
+    ],
+    "nicht_erzaehlend": [
+     "1",
+     "8-38"
+    ]
+   },
+   "erzaehlanteil": 0.1906
+  },
+  "exodus 37": {
+   "buch": "exodus",
+   "kapitel": 37,
+   "woerter": 672,
+   "erzaehlend": false,
+   "begruendung": "Ausfuehrungsbericht zur Anfertigung von Lade, Tisch, Leuchter und Raeucheraltar mit Massangaben.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 38": {
+   "buch": "exodus",
+   "kapitel": 38,
+   "woerter": 787,
+   "erzaehlend": false,
+   "begruendung": "Ausfuehrungsbericht zu Brandopferaltar, Becken und Vorhof samt Abrechnung ueber Gold, Silber und Bronze.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 39": {
+   "buch": "exodus",
+   "kapitel": 39,
+   "woerter": 964,
+   "erzaehlend": false,
+   "begruendung": "Anfertigung der Priesterkleider und abschliessendes Inventarverzeichnis aller Werkstuecke vor Mose.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "exodus 40": {
+   "buch": "exodus",
+   "kapitel": 40,
+   "woerter": 769,
+   "erzaehlend": false,
+   "begruendung": "Aufrichtungsbefehl und der listenfoermige Vollzugsbericht zur Stiftshuette (V. 1-33) beherrschen das Kapitel; nur der Schluss ueber Wolke und Herrlichkeit ist szenisch.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 1": {
+   "buch": "joshua",
+   "kapitel": 1,
+   "woerter": 549,
+   "erzaehlend": false,
+   "begruendung": "Nachgelesen: Vv1-9 sind eine zusammenhaengende Gottesrede (Beauftragung, Zusage, Gesetzesmahnung 'dies Buch des Gesetzes soll nicht von deinem Munde weichen') ohne Ortswechsel oder Handlungsfortschritt; ab V10 ('Then Joshua commanded the officers') laeuft eine Szene mit Marschbefehl, Anrede an die Ostjordanstaemme und deren Antwort. Naht liegt sauber an Versgrenze 9/10, daher Teilung; gemessen 285 Woerter Redeblock gegen 264 Woerter Szene, also Etikett nicht erzaehlend.",
+   "erzaehlend_woerter": 264,
+   "teilung": {
+    "erzaehlend": [
+     "10-18"
+    ],
+    "nicht_erzaehlend": [
+     "1-9"
+    ]
+   },
+   "erzaehlanteil": 0.4809
+  },
+  "joshua 2": {
+   "buch": "joshua",
+   "kapitel": 2,
+   "woerter": 731,
+   "erzaehlend": true,
+   "begruendung": "Die Kundschafter bei Rahab in Jericho: Verstecken auf dem Dach, Flucht am Seil, roter Faden, Rueckkehr zu Josua - durchgehende Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 731,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 3": {
+   "buch": "joshua",
+   "kapitel": 3,
+   "woerter": 533,
+   "erzaehlend": true,
+   "begruendung": "Der Zug ueber den Jordan: Aufbruch von Schittim, Marschbefehle an die Priester, das Wasser staut sich, das Volk zieht trockenen Fusses hinueber.",
+   "erzaehlend_woerter": 533,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 4": {
+   "buch": "joshua",
+   "kapitel": 4,
+   "woerter": 674,
+   "erzaehlend": true,
+   "begruendung": "Die zwoelf Gedenksteine aus dem Jordanbett werden geholt und in Gilgal aufgerichtet, die Priester steigen herauf, das Wasser kehrt zurueck.",
+   "erzaehlend_woerter": 674,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 5": {
+   "buch": "joshua",
+   "kapitel": 5,
+   "woerter": 505,
+   "erzaehlend": true,
+   "begruendung": "Beschneidung in Gibeat-Haaralot, Passafeier in den Ebenen von Jericho, Ende des Manna und die Begegnung mit dem Fuersten des Heeres JHWHs.",
+   "erzaehlend_woerter": 505,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 6": {
+   "buch": "joshua",
+   "kapitel": 6,
+   "woerter": 854,
+   "erzaehlend": true,
+   "begruendung": "Der Fall Jerichos: sieben Tage Umzug mit Widderhoernern, Kriegsgeschrei, Einsturz der Mauer, Rettung Rahabs und Verbrennung der Stadt.",
+   "erzaehlend_woerter": 854,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 7": {
+   "buch": "joshua",
+   "kapitel": 7,
+   "woerter": 886,
+   "erzaehlend": true,
+   "begruendung": "Achans Diebstahl am Banngut: Niederlage vor Ai, Josuas Klage, Losverfahren, Gestaendnis und Steinigung im Tal Achor.",
+   "erzaehlend_woerter": 886,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 8": {
+   "buch": "joshua",
+   "kapitel": 8,
+   "woerter": 1130,
+   "erzaehlend": true,
+   "begruendung": "Eroberung Ais durch den Hinterhalt, Hinrichtung des Koenigs, danach Altarbau auf dem Ebal und Verlesung des Gesetzes - durchweg ausgefuehrte Handlung.",
+   "erzaehlend_woerter": 1130,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 9": {
+   "buch": "joshua",
+   "kapitel": 9,
+   "woerter": 750,
+   "erzaehlend": true,
+   "begruendung": "Die List der Gibeoniter mit altem Brot und zerrissenen Schlaeuchen, der erschlichene Bundesschluss und ihre Verurteilung zu Holzhauern und Wassertraegern.",
+   "erzaehlend_woerter": 750,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 10": {
+   "buch": "joshua",
+   "kapitel": 10,
+   "woerter": 1317,
+   "erzaehlend": true,
+   "begruendung": "Schlacht bei Gibeon gegen die fuenf Amoriterkoenige, Hagelsteine, Sonnenstillstand, die Koenige in der Hoehle von Makkeda und der Feldzug im Sueden.",
+   "erzaehlend_woerter": 1317,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 11": {
+   "buch": "joshua",
+   "kapitel": 11,
+   "woerter": 671,
+   "erzaehlend": true,
+   "begruendung": "Feldzug gegen Jabin von Hazor am Wasser von Merom, Laehmung der Pferde, Verbrennung Hazors und Vertilgung der Anakiter.",
+   "erzaehlend_woerter": 671,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 12": {
+   "buch": "joshua",
+   "kapitel": 12,
+   "woerter": 467,
+   "erzaehlend": false,
+   "begruendung": "Reines Verzeichnis der besiegten Koenige - Sihon und Og im Ostjordanland, dann die Aufzaehlung 'der Koenig von Jericho, einer; der Koenig von Ai, einer' bis 31.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 13": {
+   "buch": "joshua",
+   "kapitel": 13,
+   "woerter": 798,
+   "erzaehlend": false,
+   "begruendung": "Aufzaehlung des noch nicht eroberten Landes und Grenz- und Staedtelisten des ostjordanischen Erbteils von Ruben, Gad und Halb-Manasse.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 14": {
+   "buch": "joshua",
+   "kapitel": 14,
+   "woerter": 463,
+   "erzaehlend": true,
+   "begruendung": "Nach der Verwaltungsnotiz zur Landverteilung (1-5) folgt die ausgefuehrte Szene, in der Kaleb in Gilgal vor Josua tritt und Hebron erhaelt (6-15).",
+   "erzaehlend_woerter": 323,
+   "teilung": {
+    "erzaehlend": [
+     "6-15"
+    ],
+    "nicht_erzaehlend": [
+     "1-5"
+    ]
+   },
+   "erzaehlanteil": 0.6976
+  },
+  "joshua 15": {
+   "buch": "joshua",
+   "kapitel": 15,
+   "woerter": 922,
+   "erzaehlend": false,
+   "begruendung": "Grenzbeschreibung und lange Staedtelisten Judas, darin als klar abgegrenzte Episode Kalebs Eroberung von Debir und Achsas Bitte um die Wasserquellen (13-19).",
+   "erzaehlend_woerter": 168,
+   "teilung": {
+    "erzaehlend": [
+     "13-19"
+    ],
+    "nicht_erzaehlend": [
+     "1-12",
+     "20-63"
+    ]
+   },
+   "erzaehlanteil": 0.1822
+  },
+  "joshua 16": {
+   "buch": "joshua",
+   "kapitel": 16,
+   "woerter": 256,
+   "erzaehlend": false,
+   "begruendung": "Reine Grenzbeschreibung des Erbteils der Josefsoehne bzw. Ephraims von Jericho ueber Bet-Horon bis zum Meer.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 17": {
+   "buch": "joshua",
+   "kapitel": 17,
+   "woerter": 634,
+   "erzaehlend": false,
+   "begruendung": "Erbteil Manasses mit Sippenregister, Zelofhads Toechtern und Grenzliste; die angehaengte Wechselrede der Josefsoehne mit Josua bleibt in der Minderheit.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 18": {
+   "buch": "joshua",
+   "kapitel": 18,
+   "woerter": 705,
+   "erzaehlend": false,
+   "begruendung": "Versammlung in Silo, Aussendung der Landvermesser und Losentscheid (1-10) laufen als Handlung, danach folgt die Grenz- und Staedteliste Benjamins (11-28).",
+   "erzaehlend_woerter": 294,
+   "teilung": {
+    "erzaehlend": [
+     "1-10"
+    ],
+    "nicht_erzaehlend": [
+     "11-28"
+    ]
+   },
+   "erzaehlanteil": 0.417
+  },
+  "joshua 19": {
+   "buch": "joshua",
+   "kapitel": 19,
+   "woerter": 857,
+   "erzaehlend": false,
+   "begruendung": "Loszuteilungen fuer Simeon, Sebulon, Issachar, Asser, Naftali und Dan als reine Grenz- und Staedtelisten mit Schlussnotiz zu Josuas Erbteil.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 20": {
+   "buch": "joshua",
+   "kapitel": 20,
+   "woerter": 303,
+   "erzaehlend": false,
+   "begruendung": "Rechtsvorschrift ueber die Asylstaedte fuer den Totschlaeger samt der Aufzaehlung der sechs Zufluchtsstaedte.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 21": {
+   "buch": "joshua",
+   "kapitel": 21,
+   "woerter": 1032,
+   "erzaehlend": false,
+   "begruendung": "Verzeichnis der 48 Levitenstaedte mit Weideland, nach Kehatitern, Gerschonitern und Merariten geordnet.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 22": {
+   "buch": "joshua",
+   "kapitel": 22,
+   "woerter": 1263,
+   "erzaehlend": true,
+   "begruendung": "Heimkehr der Ostjordanstaemme, Bau des grossen Altars am Jordan, drohender Buergerkrieg und die Gesandtschaft des Pinhas - Anklage und Antwort sind Wechselrede in einer sich aufloesenden Szene.",
+   "erzaehlend_woerter": 1263,
+   "erzaehlanteil": 1.0
+  },
+  "joshua 23": {
+   "buch": "joshua",
+   "kapitel": 23,
+   "woerter": 559,
+   "erzaehlend": false,
+   "begruendung": "Josuas Abschiedsrede an die Aeltesten: Mahnung zum Gesetz, Warnung vor Mischehen und vor dem Verlust des Landes - fast der ganze Kapiteltext ist Rede ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "joshua 24": {
+   "buch": "joshua",
+   "kapitel": 24,
+   "woerter": 976,
+   "erzaehlend": true,
+   "begruendung": "Die Gottesrede mit dem Geschichtsrueckblick von Terach bis zur Landgabe (2-13) ist Predigt, waehrend Versammlung, Wechselrede 'wir wollen dem HERRN dienen', Bundesschluss, Gedenkstein und die Begraebnisse Josuas, Josefs und Eleasars Handlung sind.",
+   "erzaehlend_woerter": 617,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "14-33"
+    ],
+    "nicht_erzaehlend": [
+     "2-13"
+    ]
+   },
+   "erzaehlanteil": 0.6322
+  },
+  "judges 1": {
+   "buch": "judges",
+   "kapitel": 1,
+   "woerter": 909,
+   "erzaehlend": true,
+   "begruendung": "Eroberungszuege nach Josuas Tod (Adoni-Besek, Kaleb/Achsa, Bethel-Kundschafter) als Handlung, ab V.27 nur noch Liste der Staemme, die ihre Landesteile nicht einnahmen.",
+   "erzaehlend_woerter": 643,
+   "teilung": {
+    "erzaehlend": [
+     "1-26"
+    ],
+    "nicht_erzaehlend": [
+     "27-36"
+    ]
+   },
+   "erzaehlanteil": 0.7074
+  },
+  "judges 2": {
+   "buch": "judges",
+   "kapitel": 2,
+   "woerter": 646,
+   "erzaehlend": false,
+   "begruendung": "Szene des Engels in Bochim und Josuas Tod/Begraebnis laufen als Handlung, V.11-23 ist theologische Rahmensumme des Richterzyklus mit Gottesrede.",
+   "erzaehlend_woerter": 265,
+   "teilung": {
+    "erzaehlend": [
+     "1-10"
+    ],
+    "nicht_erzaehlend": [
+     "11-23"
+    ]
+   },
+   "erzaehlanteil": 0.4102
+  },
+  "judges 3": {
+   "buch": "judges",
+   "kapitel": 3,
+   "woerter": 800,
+   "erzaehlend": true,
+   "begruendung": "V.1-6 Liste der zur Pruefung belassenen Voelker, ab V.7 durchlaufende Handlung um Otniel und vor allem Ehuds Attentat auf Eglon.",
+   "erzaehlend_woerter": 658,
+   "teilung": {
+    "erzaehlend": [
+     "7-31"
+    ],
+    "nicht_erzaehlend": [
+     "1-6"
+    ]
+   },
+   "erzaehlanteil": 0.8225
+  },
+  "judges 4": {
+   "buch": "judges",
+   "kapitel": 4,
+   "woerter": 718,
+   "erzaehlend": true,
+   "begruendung": "Debora, Barak, Schlacht am Kischon gegen Sisera und Jaels Zeltpflock -- fortlaufende Szenen mit Ortswechseln.",
+   "erzaehlend_woerter": 718,
+   "erzaehlanteil": 1.0
+  },
+  "judges 5": {
+   "buch": "judges",
+   "kapitel": 5,
+   "woerter": 719,
+   "erzaehlend": false,
+   "begruendung": "Das Debora-Lied fuellt praktisch das ganze Kapitel (V.2-31) als eingelegtes Siegeslied, nur V.1 ist Erzaehlrahmen.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "judges 6": {
+   "buch": "judges",
+   "kapitel": 6,
+   "woerter": 1229,
+   "erzaehlend": true,
+   "begruendung": "Midianiternot, Berufung Gideons am Terebinth, Zerstoerung des Baalsaltars und Wollvlies- Probe als zusammenhaengende Handlung.",
+   "erzaehlend_woerter": 1229,
+   "erzaehlanteil": 1.0
+  },
+  "judges 7": {
+   "buch": "judges",
+   "kapitel": 7,
+   "woerter": 918,
+   "erzaehlend": true,
+   "begruendung": "Auslese der 300 Mann am Wasser, Traumdeutung im Midianiterlager und Ueberfall mit Kruegen und Fackeln.",
+   "erzaehlend_woerter": 918,
+   "erzaehlanteil": 1.0
+  },
+  "judges 8": {
+   "buch": "judges",
+   "kapitel": 8,
+   "woerter": 942,
+   "erzaehlend": true,
+   "begruendung": "Gideons Streit mit Ephraim, Verfolgung von Sebach und Zalmunna, Strafe an Sukkot und Pnuel, Ephod und Gideons Tod.",
+   "erzaehlend_woerter": 942,
+   "erzaehlanteil": 1.0
+  },
+  "judges 9": {
+   "buch": "judges",
+   "kapitel": 9,
+   "woerter": 1581,
+   "erzaehlend": true,
+   "begruendung": "Handlung (Putsch, Brudermord, Gaal-Aufstand, Tebez/Muehlstein) traegt 1240 von 1581 Woertern; nur V.8-20 ist Jotams Baeumefabel samt Anwendung als eingelegte Rede ohne Handlungsfortschritt, V.7 bleibt Szene (Aufstieg auf den Garizim), Naht bei 7/8 und 20/21 sauber.",
+   "erzaehlend_woerter": 1240,
+   "teilung": {
+    "erzaehlend": [
+     "1-7",
+     "21-57"
+    ],
+    "nicht_erzaehlend": [
+     "8-20"
+    ]
+   },
+   "erzaehlanteil": 0.7843
+  },
+  "judges 10": {
+   "buch": "judges",
+   "kapitel": 10,
+   "woerter": 447,
+   "erzaehlend": true,
+   "begruendung": "V.1-5 blosse Richternotizen zu Tola und Jair, ab V.6 Ammoniterbedraengnis, Zwiegespraech mit JHWH und Aufmarsch nach Mizpa.",
+   "erzaehlend_woerter": 359,
+   "teilung": {
+    "erzaehlend": [
+     "6-18"
+    ],
+    "nicht_erzaehlend": [
+     "1-5"
+    ]
+   },
+   "erzaehlanteil": 0.8031
+  },
+  "judges 11": {
+   "buch": "judges",
+   "kapitel": 11,
+   "woerter": 1175,
+   "erzaehlend": true,
+   "begruendung": "V15-27 ist Jeftas langes geschichtlich-juristisches Botenschreiben an den Ammoniterkoenig (402 Woerter, reine Argumentation ohne Handlung), waehrend V1-14 (Vertreibung, Berufung, Botenwechsel) und V28-40 (Geluebde, Feldzug, Tochter) mit 773 Woertern die Mehrheit tragen; Nahtstellen bei V14/15 und V27/28 liegen exakt auf Versgrenzen.",
+   "erzaehlend_woerter": 773,
+   "teilung": {
+    "erzaehlend": [
+     "1-14",
+     "28-40"
+    ],
+    "nicht_erzaehlend": [
+     "15-27"
+    ]
+   },
+   "erzaehlanteil": 0.6579
+  },
+  "judges 12": {
+   "buch": "judges",
+   "kapitel": 12,
+   "woerter": 379,
+   "erzaehlend": true,
+   "begruendung": "V.7 ist bereits reine Richter-Rahmenformel (regierte sechs Jahre, starb, wurde begraben) und gehoert zu den Amtsnotizen ab V.8, nicht zur Szene; V.1-6 (Ephraimkrieg, Schibbolet- Probe an den Jordanfurten, 235 Woerter) uebertrifft die Notizenliste (144 Woerter).",
+   "erzaehlend_woerter": 235,
+   "teilung": {
+    "erzaehlend": [
+     "1-6"
+    ],
+    "nicht_erzaehlend": [
+     "7-15"
+    ]
+   },
+   "erzaehlanteil": 0.6201
+  },
+  "judges 13": {
+   "buch": "judges",
+   "kapitel": 13,
+   "woerter": 693,
+   "erzaehlend": true,
+   "begruendung": "Erscheinung des Gottesboten bei Manoach und seiner Frau, Opfer auf dem Felsen und Geburt Simsons.",
+   "erzaehlend_woerter": 693,
+   "erzaehlanteil": 1.0
+  },
+  "judges 14": {
+   "buch": "judges",
+   "kapitel": 14,
+   "woerter": 647,
+   "erzaehlend": true,
+   "begruendung": "Simsons Hochzeit in Timna, Loewe und Honig, Raetsel und Erschlagen der Aschkeloniter -- Dialog innerhalb der Handlung.",
+   "erzaehlend_woerter": 647,
+   "erzaehlanteil": 1.0
+  },
+  "judges 15": {
+   "buch": "judges",
+   "kapitel": 15,
+   "woerter": 602,
+   "erzaehlend": true,
+   "begruendung": "Fuechse mit Fackeln in den Kornfeldern, Auslieferung am Felsen Etam und Eselskinnbacken -- der Spottvers ist nur eine Zeile.",
+   "erzaehlend_woerter": 602,
+   "erzaehlanteil": 1.0
+  },
+  "judges 16": {
+   "buch": "judges",
+   "kapitel": 16,
+   "woerter": 1039,
+   "erzaehlend": true,
+   "begruendung": "Simson in Gaza, Delila und das Haargeheimnis, Blendung und Einsturz des Dagontempels.",
+   "erzaehlend_woerter": 1039,
+   "erzaehlanteil": 1.0
+  },
+  "judges 17": {
+   "buch": "judges",
+   "kapitel": 17,
+   "woerter": 379,
+   "erzaehlend": true,
+   "begruendung": "Michas gestohlenes Silber, das Gussbild im Hausheiligtum und die Anstellung des wandernden Leviten.",
+   "erzaehlend_woerter": 379,
+   "erzaehlanteil": 1.0
+  },
+  "judges 18": {
+   "buch": "judges",
+   "kapitel": 18,
+   "woerter": 998,
+   "erzaehlend": true,
+   "begruendung": "Danitische Kundschafter, Raub von Michas Kultbild und Priester, Eroberung von Lajisch/Dan.",
+   "erzaehlend_woerter": 998,
+   "erzaehlanteil": 1.0
+  },
+  "judges 19": {
+   "buch": "judges",
+   "kapitel": 19,
+   "woerter": 1028,
+   "erzaehlend": true,
+   "begruendung": "Der Levit holt seine Nebenfrau aus Bethlehem, Nachtlager in Gibea, Schandtat und Zerstueckelung.",
+   "erzaehlend_woerter": 1028,
+   "erzaehlanteil": 1.0
+  },
+  "judges 20": {
+   "buch": "judges",
+   "kapitel": 20,
+   "woerter": 1369,
+   "erzaehlend": true,
+   "begruendung": "Stammesversammlung in Mizpa und die drei Feldzuege gegen Benjamin mit Hinterhalt bei Gibea.",
+   "erzaehlend_woerter": 1369,
+   "erzaehlanteil": 1.0
+  },
+  "judges 21": {
+   "buch": "judges",
+   "kapitel": 21,
+   "woerter": 704,
+   "erzaehlend": true,
+   "begruendung": "Frauenbeschaffung fuer Benjamin: Strafzug gegen Jabesch-Gilead und Maedchenraub beim Fest in Schilo.",
+   "erzaehlend_woerter": 704,
+   "erzaehlanteil": 1.0
+  },
+  "ruth 1": {
+   "buch": "ruth",
+   "kapitel": 1,
+   "woerter": 601,
+   "erzaehlend": true,
+   "begruendung": "Elimelechs Auswanderung nach Moab, Tod der Maenner, Naomis Rueckkehr mit Ruth nach Bethlehem - durchgehend Handlung mit Ortswechsel und Szenendialog.",
+   "erzaehlend_woerter": 601,
+   "erzaehlanteil": 1.0
+  },
+  "ruth 2": {
+   "buch": "ruth",
+   "kapitel": 2,
+   "woerter": 711,
+   "erzaehlend": true,
+   "begruendung": "Ruth liest Aehren auf Boas' Feld, Begegnung und Gespraech mit Boas, Rueckkehr zu Naomi am Abend - fortlaufende Szene.",
+   "erzaehlend_woerter": 711,
+   "erzaehlanteil": 1.0
+  },
+  "ruth 3": {
+   "buch": "ruth",
+   "kapitel": 3,
+   "woerter": 484,
+   "erzaehlend": true,
+   "begruendung": "Durchgehende Nachtszene: Naomis Anweisung, Ruths Gang zur Tenne, Boas erwacht um Mitternacht, Zusage der Loeserpflicht, Rueckkehr mit sechs Mass Gerste - alle Rede ist Dialog innerhalb fortlaufender Handlung mit Ortswechsel und Zeitverlauf, kein Redeblock, daher keine Teilung noetig.",
+   "erzaehlend_woerter": 484,
+   "erzaehlanteil": 1.0
+  },
+  "ruth 4": {
+   "buch": "ruth",
+   "kapitel": 4,
+   "woerter": 640,
+   "erzaehlend": true,
+   "begruendung": "V. 7 ist am WEBBE-Wortlaut nachgeprueft eine antiquarische Erzaehler-Erklaerung des Loese-/Sandalenbrauchs ohne Akteur und Handlungsfortschritt (Brauch-/Rechtstext), und die Naht liegt sauber an Versgrenzen zwischen der Rede in V. 6 und der Handlungsfortsetzung in V. 8 (41 von 640 Woertern; Erzaehlanteil 527/640).",
+   "erzaehlend_woerter": 527,
+   "teilung": {
+    "erzaehlend": [
+     "1-6",
+     "8-17"
+    ],
+    "nicht_erzaehlend": [
+     "7",
+     "18-22"
+    ]
+   },
+   "erzaehlanteil": 0.8234
+  },
+  "1 samuel 1": {
+   "buch": "1 samuel",
+   "kapitel": 1,
+   "woerter": 718,
+   "erzaehlend": true,
+   "begruendung": "Elkanas Wallfahrt nach Schilo, Hannas Geluebde, Samuels Geburt und Uebergabe an Eli - durchlaufende Handlung mit Ortswechsel und Zeitverlauf.",
+   "erzaehlend_woerter": 718,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 2": {
+   "buch": "1 samuel",
+   "kapitel": 2,
+   "woerter": 1064,
+   "erzaehlend": false,
+   "begruendung": "V.13-17 ist am Wortlaut nachgeprueft iterative Kultbrauch-Beschreibung ('The custom of the priests...', 'They did this to all the Israelites...', Konditionalrede 'If the man said... then he would say') samt bewertender Schlussnotiz V.17; erst V.18 ('But Samuel ministered') setzt die Szene wieder ein, der Bruch liegt sauber an Versgrenzen.",
+   "erzaehlend_woerter": 257,
+   "teilung": {
+    "erzaehlend": [
+     "11-12",
+     "18-26"
+    ],
+    "nicht_erzaehlend": [
+     "1-10",
+     "13-17",
+     "27-36"
+    ]
+   },
+   "erzaehlanteil": 0.2415
+  },
+  "1 samuel 3": {
+   "buch": "1 samuel",
+   "kapitel": 3,
+   "woerter": 496,
+   "erzaehlend": true,
+   "begruendung": "Naechtliche Berufung Samuels in Schilo mit Wechselrede zwischen Samuel und Eli und dem Bericht am Morgen.",
+   "erzaehlend_woerter": 496,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 4": {
+   "buch": "1 samuel",
+   "kapitel": 4,
+   "woerter": 677,
+   "erzaehlend": true,
+   "begruendung": "Schlacht bei Eben-Eser, Raub der Bundeslade, Tod der Soehne Elis, Elis Sturz und die Geburt Ikabods - fortlaufende Handlung.",
+   "erzaehlend_woerter": 677,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 5": {
+   "buch": "1 samuel",
+   "kapitel": 5,
+   "woerter": 406,
+   "erzaehlend": true,
+   "begruendung": "Die Lade bei den Philistern: Dagon stuerzt in Aschdod, Beulenplage, Weitertransport nach Gat und Ekron - Ortswechsel und Zeitverlauf.",
+   "erzaehlend_woerter": 406,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 6": {
+   "buch": "1 samuel",
+   "kapitel": 6,
+   "woerter": 722,
+   "erzaehlend": true,
+   "begruendung": "V.17-18 ist nachgeprueft Inventarkatalog nach Staedten plus 'to this day'-Aetiologie (86 W.) und damit Liste statt Szene, waehrend V.3-9 Rede in laufender Szene bleibt (Frage V.2, Rat, Ausfuehrung V.10 'The men did so') und daher erzaehlend zaehlt.",
+   "erzaehlend_woerter": 636,
+   "teilung": {
+    "erzaehlend": [
+     "1-16",
+     "19-21"
+    ],
+    "nicht_erzaehlend": [
+     "17-18"
+    ]
+   },
+   "erzaehlanteil": 0.8809
+  },
+  "1 samuel 7": {
+   "buch": "1 samuel",
+   "kapitel": 7,
+   "woerter": 479,
+   "erzaehlend": true,
+   "begruendung": "V.15-17 ist reine Richter-Rahmenformel nach Praezisierung 4 ('all the days of his life', 'from year to year in a circuit'), waehrend V.13-14 noch das Ergebnis der erzaehlten Schlacht berichtet und deshalb erzaehlend bleibt.",
+   "erzaehlend_woerter": 424,
+   "teilung": {
+    "erzaehlend": [
+     "1-14"
+    ],
+    "nicht_erzaehlend": [
+     "15-17"
+    ]
+   },
+   "erzaehlanteil": 0.8852
+  },
+  "1 samuel 8": {
+   "buch": "1 samuel",
+   "kapitel": 8,
+   "woerter": 525,
+   "erzaehlend": true,
+   "begruendung": "Nachgezaehlt am WEBBE-Wortlaut: Rahmen 1-10 (228 W.) und 19-22 (93 W.) sind Handlung mit Ortswechsel nach Rama und Dialog, dazwischen steht als geschlossener Rechts-/Lehrblock das 'Recht des Koenigs' 11-18 (204 W., kein Handlungsfortschritt); die Naht liegt sauber an Versgrenzen (Redeeinleitung V.11, Redeschluss V.18), Erzaehlteil traegt die Mehrheit.",
+   "erzaehlend_woerter": 321,
+   "teilung": {
+    "erzaehlend": [
+     "1-10",
+     "19-22"
+    ],
+    "nicht_erzaehlend": [
+     "11-18"
+    ]
+   },
+   "erzaehlanteil": 0.6114
+  },
+  "1 samuel 9": {
+   "buch": "1 samuel",
+   "kapitel": 9,
+   "woerter": 935,
+   "erzaehlend": true,
+   "begruendung": "Saul sucht die Eselinnen, trifft den Seher Samuel in der Stadt und wird zum Opfermahl geladen - Reise mit Ortswechsel.",
+   "erzaehlend_woerter": 935,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 10": {
+   "buch": "1 samuel",
+   "kapitel": 10,
+   "woerter": 816,
+   "erzaehlend": true,
+   "begruendung": "V.2-8 (275 W. nachgezaehlt) sind durchgaengig Futur-Ankuendigung dreier Zeichen plus Gilgal-Auftrag ohne jeden Handlungsfortschritt zwischen der Salbung V.1 und dem Aufbruch V.9 - prophetische Rede und damit nicht erzaehlend, Bruch sauber an Versgrenzen.",
+   "erzaehlend_woerter": 541,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "9-27"
+    ],
+    "nicht_erzaehlend": [
+     "2-8"
+    ]
+   },
+   "erzaehlanteil": 0.663
+  },
+  "1 samuel 11": {
+   "buch": "1 samuel",
+   "kapitel": 11,
+   "woerter": 459,
+   "erzaehlend": true,
+   "begruendung": "Nahasch belagert Jabesch-Gilead, Saul zerstueckelt das Rindergespann, Feldzug und Koenigserneuerung in Gilgal.",
+   "erzaehlend_woerter": 459,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 12": {
+   "buch": "1 samuel",
+   "kapitel": 12,
+   "woerter": 750,
+   "erzaehlend": false,
+   "begruendung": "Samuels Abschiedsrede an ganz Israel (Rechenschaft, Geschichtsrueckblick, Mahnung); nur die Donnerszene (18-19) ist Handlung, zu klein fuer eine saubere Teilung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 samuel 13": {
+   "buch": "1 samuel",
+   "kapitel": 13,
+   "woerter": 654,
+   "erzaehlend": true,
+   "begruendung": "V.1 ist reine Regierungsformel (Praezisierung 4) und V.19-22 ein iterativer Zustandsexkurs zur Schmiedenot mit Gebuehrentarif ('The price was one payim each'), waehrend V.23 die Handlung wieder aufnimmt.",
+   "erzaehlend_woerter": 541,
+   "teilung": {
+    "erzaehlend": [
+     "2-18",
+     "23"
+    ],
+    "nicht_erzaehlend": [
+     "1",
+     "19-22"
+    ]
+   },
+   "erzaehlanteil": 0.8272
+  },
+  "1 samuel 14": {
+   "buch": "1 samuel",
+   "kapitel": 14,
+   "woerter": 1538,
+   "erzaehlend": true,
+   "begruendung": "V.47-52 (170 W. nachgezaehlt) ist geschlossener Regierungssummar, Genealogie- und Beamtenliste plus Dauerformel 'all the days of Saul'; die Szene endet sauber mit V.46.",
+   "erzaehlend_woerter": 1368,
+   "teilung": {
+    "erzaehlend": [
+     "1-46"
+    ],
+    "nicht_erzaehlend": [
+     "47-52"
+    ]
+   },
+   "erzaehlanteil": 0.8895
+  },
+  "1 samuel 15": {
+   "buch": "1 samuel",
+   "kapitel": 15,
+   "woerter": 917,
+   "erzaehlend": true,
+   "begruendung": "Feldzug gegen Amalek, Sauls Schonung Agags, Streitgespraech mit Samuel und die Hinrichtung Agags in Gilgal.",
+   "erzaehlend_woerter": 917,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 16": {
+   "buch": "1 samuel",
+   "kapitel": 16,
+   "woerter": 637,
+   "erzaehlend": true,
+   "begruendung": "Samuel salbt David in Bethlehem, danach kommt David als Harfenspieler an Sauls Hof.",
+   "erzaehlend_woerter": 637,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 17": {
+   "buch": "1 samuel",
+   "kapitel": 17,
+   "woerter": 1628,
+   "erzaehlend": true,
+   "begruendung": "Goliats Herausforderung im Terebinthental, Davids Kampf und Sieg; alle Reden stehen in der laufenden Szene.",
+   "erzaehlend_woerter": 1628,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 18": {
+   "buch": "1 samuel",
+   "kapitel": 18,
+   "woerter": 761,
+   "erzaehlend": true,
+   "begruendung": "Jonatans Freundschaftsbund, Sauls Neid nach dem Frauenlied, Speerwurf und Michals Brautpreis von hundert Vorhaeuten.",
+   "erzaehlend_woerter": 761,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 19": {
+   "buch": "1 samuel",
+   "kapitel": 19,
+   "woerter": 648,
+   "erzaehlend": true,
+   "begruendung": "Sauls Nachstellungen: Michals Fluchtlist mit dem Hausgoetzen, Davids Flucht zu Samuel nach Rama und die Prophetenekstase der Boten.",
+   "erzaehlend_woerter": 648,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 20": {
+   "buch": "1 samuel",
+   "kapitel": 20,
+   "woerter": 1203,
+   "erzaehlend": true,
+   "begruendung": "Davids Bund mit Jonatan, das Neumondmahl mit Sauls Zorn und das Pfeilzeichen auf dem Feld.",
+   "erzaehlend_woerter": 1203,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 21": {
+   "buch": "1 samuel",
+   "kapitel": 21,
+   "woerter": 476,
+   "erzaehlend": true,
+   "begruendung": "David holt die Schaubrote und Goliats Schwert bei Ahimelech in Nob und stellt sich bei Achisch in Gat wahnsinnig.",
+   "erzaehlend_woerter": 476,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 22": {
+   "buch": "1 samuel",
+   "kapitel": 22,
+   "woerter": 719,
+   "erzaehlend": true,
+   "begruendung": "David in der Hoehle Adullam und in Moab, Dogs Anzeige und das Priestermorden zu Nob mit Abjatars Flucht.",
+   "erzaehlend_woerter": 719,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 23": {
+   "buch": "1 samuel",
+   "kapitel": 23,
+   "woerter": 793,
+   "erzaehlend": true,
+   "begruendung": "Befreiung Kelas, Efod-Orakel, Verrat der Siphiter und Sauls Abbruch der Verfolgung am Felsen der Trennung.",
+   "erzaehlend_woerter": 793,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 24": {
+   "buch": "1 samuel",
+   "kapitel": 24,
+   "woerter": 629,
+   "erzaehlend": true,
+   "begruendung": "David schneidet Saul in der Hoehle bei En-Gedi den Mantelzipfel ab und ruft ihm nach - Dialog innerhalb der Szene.",
+   "erzaehlend_woerter": 629,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 25": {
+   "buch": "1 samuel",
+   "kapitel": 25,
+   "woerter": 1340,
+   "erzaehlend": true,
+   "begruendung": "Nabals Weigerung, Abigajils Ritt mit Proviant und Bittrede, Nabals Tod und Abigajils Heirat mit David.",
+   "erzaehlend_woerter": 1340,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 26": {
+   "buch": "1 samuel",
+   "kapitel": 26,
+   "woerter": 815,
+   "erzaehlend": true,
+   "begruendung": "David nimmt dem schlafenden Saul im Lager auf Hachila Speer und Wasserkrug und ruft Abner vom Gegenhang aus an.",
+   "erzaehlend_woerter": 815,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 27": {
+   "buch": "1 samuel",
+   "kapitel": 27,
+   "woerter": 372,
+   "erzaehlend": true,
+   "begruendung": "David siedelt bei Achisch in Ziklag und fuehrt Raubzuege gegen Geschuriter und Amalekiter mit Taeuschungsberichten.",
+   "erzaehlend_woerter": 372,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 28": {
+   "buch": "1 samuel",
+   "kapitel": 28,
+   "woerter": 787,
+   "erzaehlend": true,
+   "begruendung": "Saul geht nachts verkleidet zur Totenbeschwoererin von En-Dor; die Samuel-Erscheinung ist Rede in laufender Szene mit Sauls Zusammenbruch.",
+   "erzaehlend_woerter": 787,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 29": {
+   "buch": "1 samuel",
+   "kapitel": 29,
+   "woerter": 414,
+   "erzaehlend": true,
+   "begruendung": "Die Philisterfuersten in Afek weisen David ab, Achisch schickt ihn am Morgen zurueck.",
+   "erzaehlend_woerter": 414,
+   "erzaehlanteil": 1.0
+  },
+  "1 samuel 30": {
+   "buch": "1 samuel",
+   "kapitel": 30,
+   "woerter": 921,
+   "erzaehlend": true,
+   "begruendung": "V.25 ist aetiologische Rechtssetzung ('a statute and an ordinance for Israel to this day') und V.27-31 ein reiner Ortsnamenkatalog ohne Akteur und Zeitverlauf, waehrend V.26 mit Davids Ankunft in Ziklag und Botenwort Handlung bleibt.",
+   "erzaehlend_woerter": 794,
+   "teilung": {
+    "erzaehlend": [
+     "1-24",
+     "26"
+    ],
+    "nicht_erzaehlend": [
+     "25",
+     "27-31"
+    ]
+   },
+   "erzaehlanteil": 0.8621
+  },
+  "1 samuel 31": {
+   "buch": "1 samuel",
+   "kapitel": 31,
+   "woerter": 339,
+   "erzaehlend": true,
+   "begruendung": "Schlacht auf dem Gilboa, Sauls Tod im Schwert, Schaendung der Leichen und Bergung durch die Maenner von Jabesch.",
+   "erzaehlend_woerter": 339,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 1": {
+   "buch": "2 samuel",
+   "kapitel": 1,
+   "woerter": 660,
+   "erzaehlend": true,
+   "begruendung": "V.17-18 sind Ueberschrift des Klagelieds plus Quellenverweis ('written in the book of Jashar'), enden im WEBBE mit Doppelpunkt und gehoeren nach Regel 3/4 zum eingelegten Lied - parallel zu 22,1; erzaehlend bleiben nachgezaehlt 423 von 665 Woertern.",
+   "erzaehlend_woerter": 418,
+   "teilung": {
+    "erzaehlend": [
+     "1-16"
+    ],
+    "nicht_erzaehlend": [
+     "17-27"
+    ]
+   },
+   "erzaehlanteil": 0.6333
+  },
+  "2 samuel 2": {
+   "buch": "2 samuel",
+   "kapitel": 2,
+   "woerter": 841,
+   "erzaehlend": true,
+   "begruendung": "V.10-11 (nachgezaehlt 45 Woerter) sind reine Regierungsformeln wie 5,4-5, die dort bereits ausgeschieden wurden; Regel 4 greift, der Bruch liegt sauber zwischen V.9 (Abner macht Ischboschet zum Koenig) und V.12 (Aufbruch nach Gibeon).",
+   "erzaehlend_woerter": 796,
+   "teilung": {
+    "erzaehlend": [
+     "1-9",
+     "12-32"
+    ],
+    "nicht_erzaehlend": [
+     "10-11"
+    ]
+   },
+   "erzaehlanteil": 0.9465
+  },
+  "2 samuel 3": {
+   "buch": "2 samuel",
+   "kapitel": 3,
+   "woerter": 1084,
+   "erzaehlend": true,
+   "begruendung": "Abners Uebertritt zu David, Michals Rueckgabe und Abners Ermordung durch Joab; herausgeloest sind die Sohnesliste aus Hebron (V.2-5) und Davids Klagelied ueber Abner (V.33-34).",
+   "erzaehlend_woerter": 967,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "6-32",
+     "35-39"
+    ],
+    "nicht_erzaehlend": [
+     "2-5",
+     "33-34"
+    ]
+   },
+   "erzaehlanteil": 0.8921
+  },
+  "2 samuel 4": {
+   "buch": "2 samuel",
+   "kapitel": 4,
+   "woerter": 409,
+   "erzaehlend": true,
+   "begruendung": "Rechab und Baana ermorden Ischboschet und werden von David dafuer hingerichtet - reine Szenenfolge.",
+   "erzaehlend_woerter": 409,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 5": {
+   "buch": "2 samuel",
+   "kapitel": 5,
+   "woerter": 569,
+   "erzaehlend": true,
+   "begruendung": "Salbung, Einnahme Zions und zwei Philisterschlachten sind Handlung; V.4-5 ist reine Regierungsformel (Chroniknotiz) und V.14-16 die Namensliste, waehrend V.13 noch erzaehlende Notiz mit Akteur ist.",
+   "erzaehlend_woerter": 506,
+   "teilung": {
+    "erzaehlend": [
+     "1-3",
+     "6-13",
+     "17-25"
+    ],
+    "nicht_erzaehlend": [
+     "4-5",
+     "14-16"
+    ]
+   },
+   "erzaehlanteil": 0.8893
+  },
+  "2 samuel 6": {
+   "buch": "2 samuel",
+   "kapitel": 6,
+   "woerter": 623,
+   "erzaehlend": true,
+   "begruendung": "Ueberfuehrung der Lade, Usas Tod, Aufenthalt bei Obed-Edom, Davids Tanz und der Streit mit Michal - fortlaufende Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 623,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 7": {
+   "buch": "2 samuel",
+   "kapitel": 7,
+   "woerter": 810,
+   "erzaehlend": false,
+   "begruendung": "Nur V.1-3 sind Szene (David/Nathan); V.4-17 Gottesrede mit Dynastieverheissung und V.18-29 Davids Dankgebet tragen die klare Wortmehrheit - die Naht liegt sauber bei V.3/4, deshalb geteilt, aber das Kapitel zaehlt als nicht erzaehlend.",
+   "erzaehlend_woerter": 61,
+   "teilung": {
+    "erzaehlend": [
+     "1-3"
+    ],
+    "nicht_erzaehlend": [
+     "4-29"
+    ]
+   },
+   "erzaehlanteil": 0.0753
+  },
+  "2 samuel 8": {
+   "buch": "2 samuel",
+   "kapitel": 8,
+   "woerter": 421,
+   "erzaehlend": true,
+   "begruendung": "V.1-14 annalistischer Feldzugsbericht mit Akteuren, Ortswechsel und Zeitverlauf; V.15 ist bereits allgemeine Regierungsformel ('David reigned over all Israel... executed justice') und leitet das Beamtenregister V.16-18 ein.",
+   "erzaehlend_woerter": 356,
+   "teilung": {
+    "erzaehlend": [
+     "1-14"
+    ],
+    "nicht_erzaehlend": [
+     "15-18"
+    ]
+   },
+   "erzaehlanteil": 0.8456
+  },
+  "2 samuel 9": {
+   "buch": "2 samuel",
+   "kapitel": 9,
+   "woerter": 371,
+   "erzaehlend": true,
+   "begruendung": "David sucht ueber Ziba den lahmen Mephiboschet und holt ihn an seinen Tisch - durchgehende Szene mit Dialog.",
+   "erzaehlend_woerter": 371,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 10": {
+   "buch": "2 samuel",
+   "kapitel": 10,
+   "woerter": 581,
+   "erzaehlend": true,
+   "begruendung": "Schmaehung von Davids Gesandten durch Hanun und der daraus folgende Ammoniter-Aramaeer- Krieg unter Joab - fortlaufende Handlung.",
+   "erzaehlend_woerter": 581,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 11": {
+   "buch": "2 samuel",
+   "kapitel": 11,
+   "woerter": 741,
+   "erzaehlend": true,
+   "begruendung": "Davids Ehebruch mit Batseba und die Beseitigung Urijas vor Rabba - reine Erzaehlhandlung mit Zeitverlauf.",
+   "erzaehlend_woerter": 741,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 12": {
+   "buch": "2 samuel",
+   "kapitel": 12,
+   "woerter": 959,
+   "erzaehlend": true,
+   "begruendung": "V.7-12 ist ein geschlossener JHWH-Gerichtsspruch mit doppelter Botenformel (V.7 und V.11) ohne Handlungsfortschritt - dieselbe prophetische Redeform wie 7,4-17, die dort ausgeschieden wurde; der Mischvers 7 faellt nach 'im Zweifel gegen den Erzaehlanteil' auf die nicht erzaehlende Seite, erzaehlend bleiben 749 von 962 Woertern.",
+   "erzaehlend_woerter": 748,
+   "teilung": {
+    "erzaehlend": [
+     "1-6",
+     "13-31"
+    ],
+    "nicht_erzaehlend": [
+     "7-12"
+    ]
+   },
+   "erzaehlanteil": 0.78
+  },
+  "2 samuel 13": {
+   "buch": "2 samuel",
+   "kapitel": 13,
+   "woerter": 1076,
+   "erzaehlend": true,
+   "begruendung": "Amnons Vergewaltigung Tamars und Absaloms Rachemord beim Schafschur in Baal-Hazor, dann Flucht nach Geschur.",
+   "erzaehlend_woerter": 1076,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 14": {
+   "buch": "2 samuel",
+   "kapitel": 14,
+   "woerter": 1071,
+   "erzaehlend": true,
+   "begruendung": "V.25-27 (nachgezaehlt 102 Woerter) ist Beschreibungs- und Kinderlisten-Exkurs (Schoenheit, iterative Haarnotiz 'at every year's end', 'Three sons were born to Absalom') ohne Handlung; die Szene laeuft von V.24 sauber nach V.28 weiter, gleiche Textsorte wie die ausgeschiedenen Listen 3,2-5 und 5,14-16.",
+   "erzaehlend_woerter": 969,
+   "teilung": {
+    "erzaehlend": [
+     "1-24",
+     "28-33"
+    ],
+    "nicht_erzaehlend": [
+     "25-27"
+    ]
+   },
+   "erzaehlanteil": 0.9048
+  },
+  "2 samuel 15": {
+   "buch": "2 samuel",
+   "kapitel": 15,
+   "woerter": 1037,
+   "erzaehlend": true,
+   "begruendung": "Absaloms Verschwoerung in Hebron und Davids Flucht ueber den Kidron zum Oelberg mit Zadok und Huschai - staendiger Ortswechsel.",
+   "erzaehlend_woerter": 1037,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 16": {
+   "buch": "2 samuel",
+   "kapitel": 16,
+   "woerter": 698,
+   "erzaehlend": true,
+   "begruendung": "Ziba mit den Vorraeten, Schimis Fluch in Bahurim und Absaloms Einzug in Jerusalem mit Ahitofels Rat - fortlaufende Handlung.",
+   "erzaehlend_woerter": 698,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 17": {
+   "buch": "2 samuel",
+   "kapitel": 17,
+   "woerter": 886,
+   "erzaehlend": true,
+   "begruendung": "Der Ratschlag Ahitofels gegen den Huschais, die Botenkette ueber En-Rogel und Ahitofels Selbstmord - Reden dienen der Handlung.",
+   "erzaehlend_woerter": 886,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 18": {
+   "buch": "2 samuel",
+   "kapitel": 18,
+   "woerter": 1061,
+   "erzaehlend": true,
+   "begruendung": "Schlacht im Wald Ephraim, Absaloms Tod an der Eiche durch Joab und die Botenlaeufer zu David - durchgehende Handlung.",
+   "erzaehlend_woerter": 1061,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 19": {
+   "buch": "2 samuel",
+   "kapitel": 19,
+   "woerter": 1402,
+   "erzaehlend": true,
+   "begruendung": "Joab stellt den trauernden David zur Rede, dann Rueckkehr ueber den Jordan mit Schimi, Mephiboschet und Barsillai - Szenenfolge mit Ortswechsel.",
+   "erzaehlend_woerter": 1402,
+   "erzaehlanteil": 1.0
+  },
+  "2 samuel 20": {
+   "buch": "2 samuel",
+   "kapitel": 20,
+   "woerter": 823,
+   "erzaehlend": true,
+   "begruendung": "Schebas Aufstand, Amasas Ermordung und die Belagerung von Abel-Bet-Maacha; abgetrennt die abschliessende Beamtenliste (V.23-26).",
+   "erzaehlend_woerter": 767,
+   "teilung": {
+    "erzaehlend": [
+     "1-22"
+    ],
+    "nicht_erzaehlend": [
+     "23-26"
+    ]
+   },
+   "erzaehlanteil": 0.932
+  },
+  "2 samuel 21": {
+   "buch": "2 samuel",
+   "kapitel": 21,
+   "woerter": 757,
+   "erzaehlend": true,
+   "begruendung": "V.18-22 (nachgezaehlt 132 Woerter) ist ein formelhafter Heldenkatalog mit dreifach gleicher Einleitung und abschliessender Summenformel 'These four were born to the giant in Gath' - derselbe Registertyp wie 23,8-39 (0 %); die echte Szene endet sauber mit V.17.",
+   "erzaehlend_woerter": 625,
+   "teilung": {
+    "erzaehlend": [
+     "1-17"
+    ],
+    "nicht_erzaehlend": [
+     "18-22"
+    ]
+   },
+   "erzaehlanteil": 0.8256
+  },
+  "2 samuel 22": {
+   "buch": "2 samuel",
+   "kapitel": 22,
+   "woerter": 907,
+   "erzaehlend": false,
+   "begruendung": "Das gesamte Kapitel ist Davids Danklied nach der Errettung (Parallele zu Psalm 18), nur V.1 ist Ueberschrift.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "2 samuel 23": {
+   "buch": "2 samuel",
+   "kapitel": 23,
+   "woerter": 841,
+   "erzaehlend": false,
+   "begruendung": "Letzte Worte Davids als Gottesspruch (V.1-7) plus Heldenkatalog der Dreissig mit Namensliste (V.8-39) - Spruch und Register ueberwiegen.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "2 samuel 24": {
+   "buch": "2 samuel",
+   "kapitel": 24,
+   "woerter": 819,
+   "erzaehlend": true,
+   "begruendung": "Volkszaehlung durch Joab, Gads Strafangebot, Pest und Altarbau auf der Tenne Araunas - fortlaufende Handlung.",
+   "erzaehlend_woerter": 819,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 1": {
+   "buch": "1 kings",
+   "kapitel": 1,
+   "woerter": 1402,
+   "erzaehlend": true,
+   "begruendung": "Adonijas Thronanmassung, Natans und Batsebas Intervention und Salomos Salbung am Gihon - durchgehende Szenenfolge mit Ortswechsel.",
+   "erzaehlend_woerter": 1402,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 2": {
+   "buch": "1 kings",
+   "kapitel": 2,
+   "woerter": 1410,
+   "erzaehlend": true,
+   "begruendung": "V.2-9 sind Davids Abschiedsrede/Testament ohne Handlungsfortschritt (336 W.), der Erzaehlrahmen V.1 und die geschlossene Handlungskette Tod Davids, Adonija, Abjatar, Joab, Schimi (1074 W. = 76%) tragen klar; Naht liegt sauber an Versgrenzen.",
+   "erzaehlend_woerter": 1074,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "10-46"
+    ],
+    "nicht_erzaehlend": [
+     "2-9"
+    ]
+   },
+   "erzaehlanteil": 0.7617
+  },
+  "1 kings 3": {
+   "buch": "1 kings",
+   "kapitel": 3,
+   "woerter": 806,
+   "erzaehlend": true,
+   "begruendung": "Traumoffenbarung in Gibeon als Wechselrede und das Salomonische Urteil ueber die beiden Frauen - fortlaufende Handlung.",
+   "erzaehlend_woerter": 806,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 4": {
+   "buch": "1 kings",
+   "kapitel": 4,
+   "woerter": 673,
+   "erzaehlend": false,
+   "begruendung": "Beamtenliste Salomos, zwoelf Versorgungsbezirke, Hofbedarfszahlen und Weisheitsnotiz - reine Register und Summarien ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 kings 5": {
+   "buch": "1 kings",
+   "kapitel": 5,
+   "woerter": 508,
+   "erzaehlend": false,
+   "begruendung": "Rund die Haelfte der Woerter (248 von 508) sind die schriftlichen Botenworte Salomos und Hirams ueber den Tempelbau, dazu 132 W. Fronarbeiter- und Materialstatistik; nur ca. 128 W. Rahmennotizen (Vertrag, Lieferung) ohne Szene, Ortswechsel oder Zeitverlauf - Brief plus Verwaltungsnotiz, keine saubere Teilung moeglich.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 kings 6": {
+   "buch": "1 kings",
+   "kapitel": 6,
+   "woerter": 957,
+   "erzaehlend": false,
+   "begruendung": "Massangaben des Tempelbaus: Hallen, Seitenkammern, Zedernverkleidung, Cherubim und Tueren - Baubeschreibung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 kings 7": {
+   "buch": "1 kings",
+   "kapitel": 7,
+   "woerter": 1363,
+   "erzaehlend": false,
+   "begruendung": "Palastbau und Hirams Bronzearbeiten: Saeulen Jachin und Boas, ehernes Meer, Kesselwagen und Tempelgeraet - Bau- und Inventarbeschreibung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 kings 8": {
+   "buch": "1 kings",
+   "kapitel": 8,
+   "woerter": 2068,
+   "erzaehlend": false,
+   "begruendung": "Ladeueberfuehrung und Opferfest sind Handlung, doch Salomos Weihgebet und die beiden Segensreden tragen die Wortmehrheit; Naht an V. 11/12 und 61/62 sauber.",
+   "erzaehlend_woerter": 504,
+   "teilung": {
+    "erzaehlend": [
+     "1-11",
+     "62-66"
+    ],
+    "nicht_erzaehlend": [
+     "12-61"
+    ]
+   },
+   "erzaehlanteil": 0.2437
+  },
+  "1 kings 9": {
+   "buch": "1 kings",
+   "kapitel": 9,
+   "woerter": 774,
+   "erzaehlend": false,
+   "begruendung": "Zweite Gotteserscheinung als laengere Warnrede, danach Staedteabtretung an Hiram, Fronliste und Bauzusammenfassung - kein Handlungsfaden.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "1 kings 10": {
+   "buch": "1 kings",
+   "kapitel": 10,
+   "woerter": 794,
+   "erzaehlend": false,
+   "begruendung": "Besuch der Koenigin von Saba ist eine Szene mit Anreise und Dialog, ab V. 14 folgt der Reichtumskatalog (Gold, Schilde, Elfenbeinthron, Pferdehandel); Naht bei V. 13/14 sauber.",
+   "erzaehlend_woerter": 381,
+   "teilung": {
+    "erzaehlend": [
+     "1-13"
+    ],
+    "nicht_erzaehlend": [
+     "14-29"
+    ]
+   },
+   "erzaehlanteil": 0.4798
+  },
+  "1 kings 11": {
+   "buch": "1 kings",
+   "kapitel": 11,
+   "woerter": 1204,
+   "erzaehlend": true,
+   "begruendung": "Salomos Abfall, Hadad, Reson und Jerobeams Flucht sind Handlung (737 W. = 61%); die Gottesrede V.11-13, Ahijas Orakel V.31-39 und die Schlussformel V.41-43 sind Rede bzw. Chroniknotiz - Teilung deckt V.1-43 lueckenlos ab.",
+   "erzaehlend_woerter": 737,
+   "teilung": {
+    "erzaehlend": [
+     "1-10",
+     "14-30",
+     "40"
+    ],
+    "nicht_erzaehlend": [
+     "11-13",
+     "31-39",
+     "41-43"
+    ]
+   },
+   "erzaehlanteil": 0.6121
+  },
+  "1 kings 12": {
+   "buch": "1 kings",
+   "kapitel": 12,
+   "woerter": 994,
+   "erzaehlend": true,
+   "begruendung": "Reichsteilung in Sichem: Rehabeams Beratung, harte Antwort, Steinigung Adorams und Jerobeams Stierbilder in Bethel und Dan.",
+   "erzaehlend_woerter": 994,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 13": {
+   "buch": "1 kings",
+   "kapitel": 13,
+   "woerter": 1060,
+   "erzaehlend": true,
+   "begruendung": "Der Gottesmann aus Juda am Altar von Bethel, verdorrte Hand des Koenigs, Verfuehrung durch den alten Propheten und Tod durch den Loewen.",
+   "erzaehlend_woerter": 1060,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 14": {
+   "buch": "1 kings",
+   "kapitel": 14,
+   "woerter": 930,
+   "erzaehlend": false,
+   "begruendung": "Der Verkleidungsgang der Frau Jerobeams (1-6), der Tod des Kindes (17-18) und der Schischak-Ueberfall mit den Bronzeschilden (25-28) sind ausgefuehrte Szenen, bleiben aber mit 333 W. gegen 597 W. Gerichtsorakel und Regierungsformeln in der Minderheit; B-Teilung ist praeziser als A und deckt V.1-31 exakt ab.",
+   "erzaehlend_woerter": 333,
+   "teilung": {
+    "erzaehlend": [
+     "1-6",
+     "17-18",
+     "25-28"
+    ],
+    "nicht_erzaehlend": [
+     "7-16",
+     "19-24",
+     "29-31"
+    ]
+   },
+   "erzaehlanteil": 0.3581
+  },
+  "1 kings 15": {
+   "buch": "1 kings",
+   "kapitel": 15,
+   "woerter": 916,
+   "erzaehlend": false,
+   "begruendung": "Regierungsformeln fuer Abijam, Asa, Nadab und Bascha; nur Asas Buendnis mit Ben-Hadad und der Abbruch von Rama ist eine ausgefuehrte Szene.",
+   "erzaehlend_woerter": 220,
+   "teilung": {
+    "erzaehlend": [
+     "17-22"
+    ],
+    "nicht_erzaehlend": [
+     "1-16",
+     "23-34"
+    ]
+   },
+   "erzaehlanteil": 0.2402
+  },
+  "1 kings 16": {
+   "buch": "1 kings",
+   "kapitel": 16,
+   "woerter": 984,
+   "erzaehlend": false,
+   "begruendung": "Jehu-Orakel und dichte Chronik- und Quellenformeln dominieren (ca. 780 W.); nur Simris Mord an Ela in Arzas Haus (9-12) und Omris Erhebung samt Belagerung von Tirza und Simris Selbstverbrennung (15-18) sind ausgefuehrte Szenen - A's Teilung war unsauber (V.19-20 sind Formeln), hier korrigiert, Abdeckung V.1-34 lueckenlos.",
+   "erzaehlend_woerter": 219,
+   "teilung": {
+    "erzaehlend": [
+     "9-12",
+     "15-18"
+    ],
+    "nicht_erzaehlend": [
+     "1-8",
+     "13-14",
+     "19-34"
+    ]
+   },
+   "erzaehlanteil": 0.2226
+  },
+  "1 kings 17": {
+   "buch": "1 kings",
+   "kapitel": 17,
+   "woerter": 629,
+   "erzaehlend": true,
+   "begruendung": "Elija am Bach Krit von Raben gespeist, bei der Witwe in Sarepta, Mehl und Oel und die Erweckung ihres Sohnes.",
+   "erzaehlend_woerter": 629,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 18": {
+   "buch": "1 kings",
+   "kapitel": 18,
+   "woerter": 1277,
+   "erzaehlend": true,
+   "begruendung": "Obadja, Begegnung mit Ahab und das Gottesurteil auf dem Karmel mit anschliessendem Regen und Elijas Lauf nach Jesreel.",
+   "erzaehlend_woerter": 1277,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 19": {
+   "buch": "1 kings",
+   "kapitel": 19,
+   "woerter": 682,
+   "erzaehlend": true,
+   "begruendung": "Elijas Flucht vor Isebel, Engel unter dem Ginster, Gotteserscheinung am Horeb und Berufung Elischas beim Pfluegen.",
+   "erzaehlend_woerter": 682,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 20": {
+   "buch": "1 kings",
+   "kapitel": 20,
+   "woerter": 1375,
+   "erzaehlend": true,
+   "begruendung": "Ben-Hadads Belagerung Samarias, zwei Feldzuege, der Vertrag mit Ahab und das Gleichnis des verkleideten Propheten - fortlaufende Kriegshandlung.",
+   "erzaehlend_woerter": 1375,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 21": {
+   "buch": "1 kings",
+   "kapitel": 21,
+   "woerter": 849,
+   "erzaehlend": true,
+   "begruendung": "Nabots Weinberg: Isebels Briefintrige, Steinigung Nabots und Elijas Auftritt im Weinberg mit Ahabs Busse.",
+   "erzaehlend_woerter": 849,
+   "erzaehlanteil": 1.0
+  },
+  "1 kings 22": {
+   "buch": "1 kings",
+   "kapitel": 22,
+   "woerter": 1412,
+   "erzaehlend": true,
+   "begruendung": "Micha ben Jimla vor Ahab und Joschafat, Zug nach Ramot-Gilead und Ahabs Tod bis zum Blutlecken der Hunde (V.1-38, 1034 W. = 73%) sind Handlung; V.39-40 sind bereits reine Quellen- und Sterbeformel fuer Ahab, daher gehoert der Schnitt vor V.39 - Abdeckung V.1-53 lueckenlos.",
+   "erzaehlend_woerter": 1034,
+   "teilung": {
+    "erzaehlend": [
+     "1-38"
+    ],
+    "nicht_erzaehlend": [
+     "39-53"
+    ]
+   },
+   "erzaehlanteil": 0.7323
+  },
+  "2 kings 1": {
+   "buch": "2 kings",
+   "kapitel": 1,
+   "woerter": 622,
+   "erzaehlend": true,
+   "begruendung": "V.18 ist reine Quellenformel (25 W.) und V.17 besteht zu 25 von 37 nachgezaehlten Woertern aus Thronbesteigungs-/Synchronismusformel, deren Bruch mitten im Vers liegt - also nach Praezisierung 4 und der konservativen Regel beide Verse nicht erzaehlend; die Szene endet mit dem Botenwort V.16.",
+   "erzaehlend_woerter": 560,
+   "teilung": {
+    "erzaehlend": [
+     "1-16"
+    ],
+    "nicht_erzaehlend": [
+     "17-18"
+    ]
+   },
+   "erzaehlanteil": 0.9003
+  },
+  "2 kings 2": {
+   "buch": "2 kings",
+   "kapitel": 2,
+   "woerter": 762,
+   "erzaehlend": true,
+   "begruendung": "Elijas Himmelfahrt im Feuerwagen, Weg Gilgal-Bethel-Jericho-Jordan, Elischas Mantel, Heilung der Quelle und die Baeren bei Bethel.",
+   "erzaehlend_woerter": 762,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 3": {
+   "buch": "2 kings",
+   "kapitel": 3,
+   "woerter": 811,
+   "erzaehlend": true,
+   "begruendung": "V.1-3 (26+32+24 = 82 von 811 nachgezaehlten Woertern) sind vollstaendiger deuteronomistischer Koenigsrahmen ohne Akteursszene, Ortswechsel oder Zeitverlauf; die Handlung setzt erst mit Mescha in V.4 ein, die Naht liegt sauber an der Versgrenze 3/4.",
+   "erzaehlend_woerter": 729,
+   "teilung": {
+    "erzaehlend": [
+     "4-27"
+    ],
+    "nicht_erzaehlend": [
+     "1-3"
+    ]
+   },
+   "erzaehlanteil": 0.8989
+  },
+  "2 kings 4": {
+   "buch": "2 kings",
+   "kapitel": 4,
+   "woerter": 1256,
+   "erzaehlend": true,
+   "begruendung": "Elischa-Wunderreihe: Oelkrug der Witwe, Sohn der Schunemiterin, Tod im Topf und Speisung der Hundert - lauter ausgefuehrte Szenen.",
+   "erzaehlend_woerter": 1256,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 5": {
+   "buch": "2 kings",
+   "kapitel": 5,
+   "woerter": 939,
+   "erzaehlend": true,
+   "begruendung": "Naamans Aussatzheilung im Jordan und Gehasis Betrug - durchgehende Handlung von Damaskus nach Samaria und zurueck.",
+   "erzaehlend_woerter": 939,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 6": {
+   "buch": "2 kings",
+   "kapitel": 6,
+   "woerter": 947,
+   "erzaehlend": true,
+   "begruendung": "Schwimmendes Eisen, Blendung des syrischen Heeres bei Dotan und Beginn der Hungersnot in der belagerten Stadt Samaria.",
+   "erzaehlend_woerter": 947,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 7": {
+   "buch": "2 kings",
+   "kapitel": 7,
+   "woerter": 784,
+   "erzaehlend": true,
+   "begruendung": "V.18-20 (40+41+18 = 99 W., davon 81 woertlich wiederholtes Prophetenwort aus V.1-2) sind rueckblickende Erfuellungsnotiz ohne neuen Akteur, Ortswechsel oder Zeitfortschritt - auch V.20 wiederholt nur die schon in V.17 erzaehlte Zertrampelung, daher der einheitliche Schnitt an der Versgrenze 17/18.",
+   "erzaehlend_woerter": 685,
+   "teilung": {
+    "erzaehlend": [
+     "1-17"
+    ],
+    "nicht_erzaehlend": [
+     "18-20"
+    ]
+   },
+   "erzaehlanteil": 0.8737
+  },
+  "2 kings 8": {
+   "buch": "2 kings",
+   "kapitel": 8,
+   "woerter": 898,
+   "erzaehlend": true,
+   "begruendung": "V.1-15 Schunemiterin vor dem Koenig und Hasaels Mord an Benhadad als Szene; ab V.16 nur noch Regierungsformeln zu Joram und Ahasja mit Quellenverweis.",
+   "erzaehlend_woerter": 519,
+   "teilung": {
+    "erzaehlend": [
+     "1-15"
+    ],
+    "nicht_erzaehlend": [
+     "16-29"
+    ]
+   },
+   "erzaehlanteil": 0.578
+  },
+  "2 kings 9": {
+   "buch": "2 kings",
+   "kapitel": 9,
+   "woerter": 1144,
+   "erzaehlend": true,
+   "begruendung": "Jehus Salbung durch den Prophetenjuenger, die Fahrt nach Jesreel, Toetung Jorams und Ahasjas und Isebels Sturz aus dem Fenster.",
+   "erzaehlend_woerter": 1144,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 10": {
+   "buch": "2 kings",
+   "kapitel": 10,
+   "woerter": 1140,
+   "erzaehlend": true,
+   "begruendung": "Jehu laesst die siebzig Ahabsoehne koepfen, trifft Ahasjas Brueder und Jonadab und schlachtet die Baalsdiener im Tempel - fortlaufende Handlung.",
+   "erzaehlend_woerter": 1140,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 11": {
+   "buch": "2 kings",
+   "kapitel": 11,
+   "woerter": 694,
+   "erzaehlend": true,
+   "begruendung": "Ataljas Gewaltherrschaft, Verstecken des Joasch im Tempel, Jojadas Wachplan, Kroenung und Ataljas Toetung - geschlossene Szenenfolge.",
+   "erzaehlend_woerter": 694,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 12": {
+   "buch": "2 kings",
+   "kapitel": 12,
+   "woerter": 667,
+   "erzaehlend": true,
+   "begruendung": "V4-18 und V20-21 sind ausgefuehrte Handlung (Joaschs Anweisung an die Priester, Jojadas angebohrte Truhe, Geldzaehlung und Auszahlung, Hasaels Zug gegen Gath, Tribut, Ermordung des Koenigs); V1-3 Regierungsformel und V19 Quellenverweis sind Chroniknotiz, Naht liegt sauber an Versgrenzen.",
+   "erzaehlend_woerter": 577,
+   "teilung": {
+    "erzaehlend": [
+     "4-18",
+     "20-21"
+    ],
+    "nicht_erzaehlend": [
+     "1-3",
+     "19"
+    ]
+   },
+   "erzaehlanteil": 0.8651
+  },
+  "2 kings 13": {
+   "buch": "2 kings",
+   "kapitel": 13,
+   "woerter": 732,
+   "erzaehlend": false,
+   "begruendung": "Rahmenformeln zu Joahas und Joasch (V.1-13) und Schlussnotizen zu Hasael (V.22-25) ueberwiegen; nur V.14-21 sind die ausgefuehrte Szene von Elischas Pfeilorakel, Tod und Totenerweckung am Grab.",
+   "erzaehlend_woerter": 249,
+   "teilung": {
+    "erzaehlend": [
+     "14-21"
+    ],
+    "nicht_erzaehlend": [
+     "1-13",
+     "22-25"
+    ]
+   },
+   "erzaehlanteil": 0.3402
+  },
+  "2 kings 14": {
+   "buch": "2 kings",
+   "kapitel": 14,
+   "woerter": 838,
+   "erzaehlend": false,
+   "begruendung": "Ausgefuehrt ist nur V.5-14 (Amazjas Rache, Distelfabel des Joasch, Schlacht bei Beth- Schemesch); Rest sind Regierungs- und Quellenformeln zu Amazja, Asarja und Jerobeam.",
+   "erzaehlend_woerter": 337,
+   "teilung": {
+    "erzaehlend": [
+     "5-14"
+    ],
+    "nicht_erzaehlend": [
+     "1-4",
+     "15-29"
+    ]
+   },
+   "erzaehlanteil": 0.4021
+  },
+  "2 kings 15": {
+   "buch": "2 kings",
+   "kapitel": 15,
+   "woerter": 1034,
+   "erzaehlend": false,
+   "begruendung": "Reine Koenigsliste von Asarja bis Jotam mit Thronbesteigungs-, Bewertungs- und Quellenformeln; die Umsturznotizen (Schallum, Menahem, Pekach) bleiben Chronikvermerke ohne ausgefuehrte Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "2 kings 16": {
+   "buch": "2 kings",
+   "kapitel": 16,
+   "woerter": 628,
+   "erzaehlend": true,
+   "begruendung": "V5-18 tragen als Handlungsfolge (Belagerung durch Rezin und Pekah, Hilferuf und Tribut an Tiglat-Pileser, Reise nach Damaskus, Urijas Altarbau, Ahas' Umbauten); der Altarbefehl V15 ist Rede in laufender Szene, V1-4 und V19-20 sind reine Regierungs- und Sterbeformel.",
+   "erzaehlend_woerter": 470,
+   "teilung": {
+    "erzaehlend": [
+     "5-18"
+    ],
+    "nicht_erzaehlend": [
+     "1-4",
+     "19-20"
+    ]
+   },
+   "erzaehlanteil": 0.7484
+  },
+  "2 kings 17": {
+   "buch": "2 kings",
+   "kapitel": 17,
+   "woerter": 1224,
+   "erzaehlend": false,
+   "begruendung": "Nur V.1-6 (Hoscheas Verrat, Fall Samarias) und V.24-28 (Ansiedlung der Fremdvoelker, Loewenplage, Rueckkehr des Priesters) sind Handlung; V.7-23 ist die grosse Schuldpredigt und V.29-41 Goetzenkatalog samt Bundesmahnrede.",
+   "erzaehlend_woerter": 356,
+   "teilung": {
+    "erzaehlend": [
+     "1-6",
+     "24-28"
+    ],
+    "nicht_erzaehlend": [
+     "7-23",
+     "29-41"
+    ]
+   },
+   "erzaehlanteil": 0.2908
+  },
+  "2 kings 18": {
+   "buch": "2 kings",
+   "kapitel": 18,
+   "woerter": 1155,
+   "erzaehlend": true,
+   "begruendung": "Hiskias Reform, Sanheribs Feldzug und die Verhandlungsszene am Wasserleitungsgraben: Rabschakes Reden sind Botenwort im laufenden Belagerungsgespraech mit Antwort, Schweigen und Rueckkehr der Beamten.",
+   "erzaehlend_woerter": 1155,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 19": {
+   "buch": "2 kings",
+   "kapitel": 19,
+   "woerter": 1065,
+   "erzaehlend": false,
+   "begruendung": "Nachgelesen: Sanheribs Schreiben V10-13 ist ausdruecklich ein Brief (V14 'empfing den Brief'), Hiskias Tempelgebet V15-19 und Jesajas Spottorakel V20-34 sind Gebet und Prophetenrede; nur Botengang V1-9, Briefempfang V14 und Engelschlag V35-37 sind Handlung, 363 gegen 702 Woerter.",
+   "erzaehlend_woerter": 363,
+   "teilung": {
+    "erzaehlend": [
+     "1-9",
+     "14",
+     "35-37"
+    ],
+    "nicht_erzaehlend": [
+     "10-13",
+     "15-34"
+    ]
+   },
+   "erzaehlanteil": 0.3408
+  },
+  "2 kings 20": {
+   "buch": "2 kings",
+   "kapitel": 20,
+   "woerter": 625,
+   "erzaehlend": true,
+   "begruendung": "Hiskias Krankheit und Heilung durch den Feigenkuchen, das Schattenzeichen an der Sonnenuhr und der Besuch der babylonischen Gesandten - durchgehender Szenenverlauf.",
+   "erzaehlend_woerter": 625,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 21": {
+   "buch": "2 kings",
+   "kapitel": 21,
+   "woerter": 726,
+   "erzaehlend": false,
+   "begruendung": "Suendenkatalog Manasses und Amons in Rahmen- und Bewertungsformeln, dazu das prophetische Unheilsorakel V.10-15; keine ausgefuehrte Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "2 kings 22": {
+   "buch": "2 kings",
+   "kapitel": 22,
+   "woerter": 654,
+   "erzaehlend": true,
+   "begruendung": "V3-14 sind Handlung mit Ortswechsel (Schafans Gang zum Tempel, Hilkijas Fund des Gesetzbuches, Vorlesen vor Josia, Botengang zur Prophetin Hulda); V1-2 ist Regierungsformel, V15-20 ein geschlossenes Gottesorakel, Erzaehlteil traegt mit 381 gegen 273 Woerter die Mehrheit.",
+   "erzaehlend_woerter": 381,
+   "teilung": {
+    "erzaehlend": [
+     "3-14"
+    ],
+    "nicht_erzaehlend": [
+     "1-2",
+     "15-20"
+    ]
+   },
+   "erzaehlanteil": 0.5826
+  },
+  "2 kings 23": {
+   "buch": "2 kings",
+   "kapitel": 23,
+   "woerter": 1407,
+   "erzaehlend": true,
+   "begruendung": "Joschijas Bundesschluss und Reformzug: er verbrennt, zerbricht und entweiht Kultstaetten von Jerusalem bis Bethel, feiert Passa und faellt bei Megiddo - lauter Handlungen mit Ortswechsel.",
+   "erzaehlend_woerter": 1407,
+   "erzaehlanteil": 1.0
+  },
+  "2 kings 24": {
+   "buch": "2 kings",
+   "kapitel": 24,
+   "woerter": 551,
+   "erzaehlend": false,
+   "begruendung": "Nachgezaehlt: nur V10-17 (Belagerung, Jojachins Kapitulation, Wegfuehrung nach Babel) sind ausgefuehrte Szene mit 234 Woertern; V1-9 und V18-20 sind Chronik-, Quellen- und Regierungsformeln samt Deutungsnotiz zu Manasses Schuld mit 317 Woertern, also Mehrheit nicht erzaehlend.",
+   "erzaehlend_woerter": 234,
+   "teilung": {
+    "erzaehlend": [
+     "10-17"
+    ],
+    "nicht_erzaehlend": [
+     "1-9",
+     "18-20"
+    ]
+   },
+   "erzaehlanteil": 0.4247
+  },
+  "2 kings 25": {
+   "buch": "2 kings",
+   "kapitel": 25,
+   "woerter": 923,
+   "erzaehlend": true,
+   "begruendung": "V1-12 und V18-30 sind durchlaufende Handlung (Belagerung, Zedekias Flucht und Blendung, Tempelbrand, Hinrichtungen in Ribla, Gedaljas Ermordung, Jojachins Begnadigung); V13-17 ist reines Bronzeinventar mit Saeulenmassen, sauber an Versgrenzen abtrennbar.",
+   "erzaehlend_woerter": 768,
+   "teilung": {
+    "erzaehlend": [
+     "1-12",
+     "18-30"
+    ],
+    "nicht_erzaehlend": [
+     "13-17"
+    ]
+   },
+   "erzaehlanteil": 0.8321
+  },
+  "esther 1": {
+   "buch": "esther",
+   "kapitel": 1,
+   "woerter": 666,
+   "erzaehlend": true,
+   "begruendung": "V.6 ist reine statische Ausstattungsbeschreibung ohne Akteur, V.7 Gefaess-Inventar, V.8 ausdrueckliche Rechts-/Brauchnotiz ('In accordance with the law, the drinking was not compulsory') - kein Zeitverlauf, und der Bruch liegt sauber zwischen der Handlung V.5 und V.9 (92 von 666 Woertern nachgezaehlt).",
+   "erzaehlend_woerter": 574,
+   "teilung": {
+    "erzaehlend": [
+     "1-5",
+     "9-22"
+    ],
+    "nicht_erzaehlend": [
+     "6-8"
+    ]
+   },
+   "erzaehlanteil": 0.8619
+  },
+  "esther 2": {
+   "buch": "esther",
+   "kapitel": 2,
+   "woerter": 757,
+   "erzaehlend": true,
+   "begruendung": "V.12-14 ist durchgehend iterative Harems-Verfahrensregel ('Each young woman's turn came ... The young woman then came to the king like this ... She came in to the king no more, unless') ohne benannten Akteur und ohne einmalige Szene; die Handlung setzt sauber erst V.15 wieder ein (122 von 757 Woertern nachgezaehlt).",
+   "erzaehlend_woerter": 635,
+   "teilung": {
+    "erzaehlend": [
+     "1-11",
+     "15-23"
+    ],
+    "nicht_erzaehlend": [
+     "12-14"
+    ]
+   },
+   "erzaehlanteil": 0.8388
+  },
+  "esther 3": {
+   "buch": "esther",
+   "kapitel": 3,
+   "woerter": 552,
+   "erzaehlend": true,
+   "begruendung": "Hamans Aufstieg, Mordechais verweigerter Kniefall, das Losen des Pur und der erwirkte Vernichtungserlass - erzaehlter Handlungsverlauf mit kurzen Dialogen.",
+   "erzaehlend_woerter": 552,
+   "erzaehlanteil": 1.0
+  },
+  "esther 4": {
+   "buch": "esther",
+   "kapitel": 4,
+   "woerter": 494,
+   "erzaehlend": true,
+   "begruendung": "Mordechais Trauer im Sack, der Botenverkehr durch Hatach und Esthers Entschluss zum Fastenaufruf - Wechselrede innerhalb laufender Handlung.",
+   "erzaehlend_woerter": 494,
+   "erzaehlanteil": 1.0
+  },
+  "esther 5": {
+   "buch": "esther",
+   "kapitel": 5,
+   "woerter": 465,
+   "erzaehlend": true,
+   "begruendung": "Esthers Gang in den Innenhof, das erste Gastmahl und Hamans Prahlerei mit dem Bau des Galgens - reine Szenenhandlung.",
+   "erzaehlend_woerter": 465,
+   "erzaehlanteil": 1.0
+  },
+  "esther 6": {
+   "buch": "esther",
+   "kapitel": 6,
+   "woerter": 455,
+   "erzaehlend": true,
+   "begruendung": "Schlaflose Nacht des Koenigs, Verlesung der Chronik und Hamans erzwungene Ehrung Mordechais auf dem Pferd - dichte Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 455,
+   "erzaehlanteil": 1.0
+  },
+  "esther 7": {
+   "buch": "esther",
+   "kapitel": 7,
+   "woerter": 340,
+   "erzaehlend": true,
+   "begruendung": "Zweites Gastmahl, Esthers Anklage, Hamans Sturz am Polster und seine Hinrichtung am Galgen - durchgehende Szene.",
+   "erzaehlend_woerter": 340,
+   "erzaehlanteil": 1.0
+  },
+  "esther 8": {
+   "buch": "esther",
+   "kapitel": 8,
+   "woerter": 632,
+   "erzaehlend": true,
+   "begruendung": "Durchgehend Handlung: Siegelring an Mordechai, Esthers Fussfall und Zepterszene mit Dialog innerhalb der Szene, Abfassung und Aussendung des Gegenerlasses als erzaehlter Vorgang (Briefinhalt nur referiert, nicht zitiert), Mordechais Auszug im Koenigsgewand - keine Teilung noetig.",
+   "erzaehlend_woerter": 632,
+   "erzaehlanteil": 1.0
+  },
+  "esther 9": {
+   "buch": "esther",
+   "kapitel": 9,
+   "woerter": 957,
+   "erzaehlend": true,
+   "begruendung": "V.1-18 Kampf, Toetung der zehn Hamansoehne, Esthers zweite Bitte und der zweite Tag als fortlaufende Handlung (507 Woerter); ab V.19 aetiologische Brauchnotiz im Praesens und dann Mordechais/Esthers Purim-Briefe mit Festverordnung, also Gesetzes- und Brieftext - Naht liegt sauber vor V.19, Abdeckung 1-18 + 19-32 = alle 32 Verse.",
+   "erzaehlend_woerter": 507,
+   "teilung": {
+    "erzaehlend": [
+     "1-18"
+    ],
+    "nicht_erzaehlend": [
+     "19-32"
+    ]
+   },
+   "erzaehlanteil": 0.5298
+  },
+  "esther 10": {
+   "buch": "esther",
+   "kapitel": 10,
+   "woerter": 90,
+   "erzaehlend": false,
+   "begruendung": "Nur Rahmennotiz ueber Ahasveros' Tribut, Quellenverweis auf die Chronik der Koenige von Medien und Persien und Schlusslob auf Mordechai - keine Szene.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "jonah 1": {
+   "buch": "jonah",
+   "kapitel": 1,
+   "woerter": 500,
+   "erzaehlend": true,
+   "begruendung": "Jonas Flucht nach Tarsis, Sturm, Losentscheid und Wurf ins Meer mit Seeleuten als Akteuren, Ortswechsel Joppe-Schiff und Zeitverlauf; die Reden sind Szenendialog.",
+   "erzaehlend_woerter": 500,
+   "erzaehlanteil": 1.0
+  },
+  "jonah 2": {
+   "buch": "jonah",
+   "kapitel": 2,
+   "woerter": 202,
+   "erzaehlend": false,
+   "begruendung": "Nur V.1 (Jona betet im Fischbauch) und V.10 (der Fisch speit ihn aus) sind Handlung, V.2-9 ist Jonas eingelegter Dankpsalm und traegt die Wortmehrheit.",
+   "erzaehlend_woerter": 29,
+   "teilung": {
+    "erzaehlend": [
+     "1",
+     "10"
+    ],
+    "nicht_erzaehlend": [
+     "2-9"
+    ]
+   },
+   "erzaehlanteil": 0.1436
+  },
+  "jonah 3": {
+   "buch": "jonah",
+   "kapitel": 3,
+   "woerter": 243,
+   "erzaehlend": true,
+   "begruendung": "Zweiter Auftrag, Jonas Gang durch Ninive, Busse der Stadt und des Koenigs bis zu Gottes Umkehr; das Fastenedikt V.7-9 ist ein Befehl innerhalb der weiterlaufenden Szene und bleibt in der Minderheit.",
+   "erzaehlend_woerter": 243,
+   "erzaehlanteil": 1.0
+  },
+  "jonah 4": {
+   "buch": "jonah",
+   "kapitel": 4,
+   "woerter": 327,
+   "erzaehlend": true,
+   "begruendung": "Jonas Zorn vor der Stadt, die Laubhuette, Rizinus, Wurm und Ostwind als fortlaufende Handlung mit Tagesverlauf; die Gottesrede V.10-11 ist nur der kurze Schlussdialog.",
+   "erzaehlend_woerter": 327,
+   "erzaehlanteil": 1.0
+  },
+  "daniel 4": {
+   "buch": "daniel",
+   "kapitel": 4,
+   "woerter": 1252,
+   "erzaehlend": false,
+   "begruendung": "Nachgezaehlt 773 von 1252 Woertern (61,7 %) sind Briefformel und Doxologie (V.1-3), Traumvision mit Waechter-Dekret (V.10-17), Daniels Deutungs- und Mahnrede (V.20-27) sowie Schlusslobpreis (V.34-35.37); erzaehlend bleiben Traumbericht an den anwesenden Daniel, Wahnsinn und Wiedereinsetzung, der Bruch liegt sauber an Versgrenzen.",
+   "erzaehlend_woerter": 479,
+   "teilung": {
+    "erzaehlend": [
+     "4-9",
+     "18-19",
+     "28-33",
+     "36"
+    ],
+    "nicht_erzaehlend": [
+     "1-3",
+     "10-17",
+     "20-27",
+     "34-35",
+     "37"
+    ]
+   },
+   "erzaehlanteil": 0.3826
+  },
+  "daniel 5": {
+   "buch": "daniel",
+   "kapitel": 5,
+   "woerter": 978,
+   "erzaehlend": true,
+   "begruendung": "Belsazars Gastmahl mit der Schrift an der Wand, Danielis Deutung von Mene Tekel und noch in derselben Nacht Belsazars Tod und Darius' Machtuebernahme.",
+   "erzaehlend_woerter": 978,
+   "erzaehlanteil": 1.0
+  },
+  "daniel 6": {
+   "buch": "daniel",
+   "kapitel": 6,
+   "woerter": 890,
+   "erzaehlend": true,
+   "begruendung": "V25-27 ist ein zitierter Rundbrief mit derselben Formel wie Dan 4,1 plus eingelegter Doxologie ohne Akteur, Ort oder Zeitverlauf (93 von 890 Woertern, Bruch sauber an 24/25 und 27/28); V28 bleibt als erzaehlender Ausgang ueber Daniels weiteres Ergehen stehen, da es keine reine Regierungsformel mit Quellenverweis ist.",
+   "erzaehlend_woerter": 797,
+   "teilung": {
+    "erzaehlend": [
+     "1-24",
+     "28"
+    ],
+    "nicht_erzaehlend": [
+     "25-27"
+    ]
+   },
+   "erzaehlanteil": 0.8955
+  },
+  "daniel 7": {
+   "buch": "daniel",
+   "kapitel": 7,
+   "woerter": 912,
+   "erzaehlend": false,
+   "begruendung": "Danielis Nachtgesicht von den vier Tieren, dem Alten der Tage und dem Menschensohn samt Deutung -- apokalyptische Vision, nur der Datumsvermerk in V.1 ist Rahmen.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "daniel 8": {
+   "buch": "daniel",
+   "kapitel": 8,
+   "woerter": 837,
+   "erzaehlend": false,
+   "begruendung": "Die Vision von Widder und Ziegenbock in Susa mit Gabriels Deutung ueber das kleine Horn und die 2300 Abende -- reiner Visions- und Deutungstext.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "daniel 9": {
+   "buch": "daniel",
+   "kapitel": 9,
+   "woerter": 932,
+   "erzaehlend": false,
+   "begruendung": "Danielis langes Buss- und Suendenbekenntnisgebet und darauf Gabriels Offenbarung der siebzig Jahrwochen -- eingelegtes Gebet plus Orakel, keine Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "daniel 10": {
+   "buch": "daniel",
+   "kapitel": 10,
+   "woerter": 612,
+   "erzaehlend": false,
+   "begruendung": "Danielis dreiwoechiges Fasten und die Erscheinung des Mannes in Leinen am Tigris als Eroeffnung der Schlussvision -- Epiphanie- und Redeszene innerhalb der Vision, die ohne Bruch in die Prophetie von Kap. 11 uebergeht.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "daniel 11": {
+   "buch": "daniel",
+   "kapitel": 11,
+   "woerter": 1494,
+   "erzaehlend": false,
+   "begruendung": "Die durchgehende Engelrede ueber die Perserkoenige, den Griechenkoenig und die Kriege der Koenige des Nordens und des Suedens -- Prophetenorakel ohne Szenenhandlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "daniel 12": {
+   "buch": "daniel",
+   "kapitel": 12,
+   "woerter": 395,
+   "erzaehlend": false,
+   "begruendung": "Fortsetzung der Engelrede ueber Michael, Auferstehung, Versiegeln des Buches und die Zeitangaben von 1290 und 1335 Tagen -- eschatologische Rede.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "genesis 43": {
+   "buch": "genesis",
+   "kapitel": 43,
+   "woerter": 865,
+   "erzaehlend": true,
+   "begruendung": "Zweite Reise der Brueder nach Aegypten mit Benjamin, Israels Einwilligung und das Mahl in Josephs Haus - durchgehende Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 865,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 44": {
+   "buch": "genesis",
+   "kapitel": 44,
+   "woerter": 832,
+   "erzaehlend": true,
+   "begruendung": "Der Silberbecher in Benjamins Sack, Verfolgung, Durchsuchung und Judas Fuerbitte vor Joseph - Szene mit Wechselrede, die Rede (V.18-34) bleibt Minderheit der Woerter.",
+   "erzaehlend_woerter": 832,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 45": {
+   "buch": "genesis",
+   "kapitel": 45,
+   "woerter": 687,
+   "erzaehlend": true,
+   "begruendung": "Joseph gibt sich den Bruedern zu erkennen, Pharaos Einladung und die Rueckreise nach Kanaan zu Jakob - fortlaufende Handlung.",
+   "erzaehlend_woerter": 687,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 46": {
+   "buch": "genesis",
+   "kapitel": 46,
+   "woerter": 698,
+   "erzaehlend": true,
+   "begruendung": "Erzaehlter Aufbruch nach Beerscheba und Wiedersehen in Goschen umrahmen die Namensliste der 70 Seelen, die nach Aegypten zogen - saubere Naht an V.8 und V.28.",
+   "erzaehlend_woerter": 362,
+   "teilung": {
+    "erzaehlend": [
+     "1-7",
+     "28-34"
+    ],
+    "nicht_erzaehlend": [
+     "8-27"
+    ]
+   },
+   "erzaehlanteil": 0.5186
+  },
+  "genesis 47": {
+   "buch": "genesis",
+   "kapitel": 47,
+   "woerter": 939,
+   "erzaehlend": true,
+   "begruendung": "Jakob und die Brueder vor dem Pharao, Josephs Hungersnot-Verwaltung (Land- und Viehkauf) und Jakobs Begraebniseid - Handlung mit Zeitverlauf.",
+   "erzaehlend_woerter": 939,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 48": {
+   "buch": "genesis",
+   "kapitel": 48,
+   "woerter": 605,
+   "erzaehlend": true,
+   "begruendung": "Krankenbettszene: Jakob adoptiert Ephraim und Manasse und kreuzt die Haende, Joseph widerspricht - Handlung mit Dialog, Segensspruch nur eingebettet.",
+   "erzaehlend_woerter": 605,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 49": {
+   "buch": "genesis",
+   "kapitel": 49,
+   "woerter": 725,
+   "erzaehlend": false,
+   "begruendung": "Jakobs Stammesspruch-Gedicht ueber die zwoelf Soehne (V.1-27, rund 570 Woerter) ueberwiegt klar; nur die Begraebnisanweisung und Jakobs Tod ab V.28 sind Handlung.",
+   "erzaehlend_woerter": 154,
+   "teilung": {
+    "erzaehlend": [
+     "28-33"
+    ],
+    "nicht_erzaehlend": [
+     "1-27"
+    ]
+   },
+   "erzaehlanteil": 0.2124
+  },
+  "genesis 50": {
+   "buch": "genesis",
+   "kapitel": 50,
+   "woerter": 641,
+   "erzaehlend": true,
+   "begruendung": "Einbalsamierung und Trauerzug zur Hoehle Machpela, Versoehnung mit den Bruedern und Josephs Tod - durchgehende Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 641,
+   "erzaehlanteil": 1.0
+  }
+ }
+}

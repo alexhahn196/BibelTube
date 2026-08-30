@@ -6,7 +6,10 @@ from concurrent.futures import ThreadPoolExecutor
 BUECHER={"psalms":150,"john":21,"matthew":28,"luke":24,"mark":16,"proverbs":31,
          "isaiah":66,"revelation":22,"1 john":5,"romans":16,"ephesians":6,
          "philippians":4,"colossians":4,"james":5,"1 peter":5,"hebrews":13,
-         "acts":28,"genesis":50,"ecclesiastes":12,"daniel":12}
+         "acts":28,"genesis":50,"ecclesiastes":12,"daniel":12,
+         # 2026-08-30 ergaenzt fuer die V06-Neuplanung (Erzaehlkorpus, Regel M8):
+         "exodus":40,"joshua":24,"judges":21,"ruth":4,"1 samuel":31,
+         "2 samuel":24,"1 kings":22,"2 kings":25,"esther":10,"jonah":4}
 CACHE="produktion/korpus/kapitel.json"
 cache=json.load(open(CACHE)) if os.path.exists(CACHE) else {}
 def hole(key):
