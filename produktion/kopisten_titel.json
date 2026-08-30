@@ -1,0 +1,245 @@
+{
+ "was": "Titel der beiden dokumentierten Titel-Kopisten. Kanal F kopierte A's 233K-Titel woertlich samt Tippfehler und bekam 18 Aufrufe (video-formel.md Paragraph 1, VERBOTEN-Abschnitt); Kanal C kopiert die Gewinner-Bildwelt und die Titelmuster und ist tot (regeln/erfolgsregeln.md, M3 und V3). Ein eigener Titel darf keinem dieser Titel nahekommen - nicht weil sie gut sind, sondern weil Naehe zu ihnen belegt ins Leere laeuft.",
+ "quelle": "regeln/daten/listings/*_videos.jsonl, extrahiert 2026-08-30",
+ "kanaele": {
+  "C": {
+   "kanal": "The Bible Sacred",
+   "n": 35,
+   "videos": [
+    {
+     "titel": "Go To Bed Listening To THESE Psalms And See What God Does",
+     "aufrufe": 113
+    },
+    {
+     "titel": "You deserve some rest, hear the Teachings of Jesus",
+     "aufrufe": 89
+    },
+    {
+     "titel": "The Most Peaceful Sleep You've Ever Had With These Bible Verses",
+     "aufrufe": 81
+    },
+    {
+     "titel": "If You're Overwhelmed, Sleep To These Psalms Tonight",
+     "aufrufe": 62
+    },
+    {
+     "titel": "Fall Asleep to the Full Book of Isaiah – Peaceful Bible Reading for Deep Sleep",
+     "aufrufe": 60
+    },
+    {
+     "titel": "Fall Asleep to Words of Strength and Faith | 1 & 2 Peter Sleep Audio",
+     "aufrufe": 59
+    },
+    {
+     "titel": "Go To Bed Listening To THESE Miracles And See What God Does",
+     "aufrufe": 59
+    },
+    {
+     "titel": "Jesus is with you... Fall Asleep Wrapped in God's Love",
+     "aufrufe": 58
+    },
+    {
+     "titel": "If You Need Peace, Sleep To These Psalms Tonight",
+     "aufrufe": 57
+    },
+    {
+     "titel": "Fall Asleep Without Stress… Jesus Is With You",
+     "aufrufe": 52
+    },
+    {
+     "titel": "If You're Exhausted, Sleep To These Psalms Tonight",
+     "aufrufe": 51
+    },
+    {
+     "titel": "Stop Here And Get Some Rest… Jesus Will Keep You Safe",
+     "aufrufe": 47
+    },
+    {
+     "titel": "Fall Asleep Listening To THESE Healing Psalms And See What God Does",
+     "aufrufe": 47
+    },
+    {
+     "titel": "If You Feel Empty… Sleep To These Psalms Tonight",
+     "aufrufe": 44
+    },
+    {
+     "titel": "You Need Some Rest, Hear the Miracles of Jesus",
+     "aufrufe": 41
+    },
+    {
+     "titel": "Try To Get Some Sleep... Jesus Loves You",
+     "aufrufe": 40
+    },
+    {
+     "titel": "If You're Seeking Forgiveness.. Sleep to God's Word Tonight",
+     "aufrufe": 40
+    },
+    {
+     "titel": "Listen to the Teachings of Jesus",
+     "aufrufe": 38
+    },
+    {
+     "titel": "Stop Scrolling... Sleep To These Verses Tonight",
+     "aufrufe": 37
+    },
+    {
+     "titel": "Fall Asleep to the Complete Biblical Timeline (Every Book Makes Sense Now)",
+     "aufrufe": 35
+    },
+    {
+     "titel": "Don't Forget To Sleep Tonight... Jesus Is With You",
+     "aufrufe": 33
+    },
+    {
+     "titel": "If You're Anxious, Sleep To These Psalms Tonight",
+     "aufrufe": 29
+    },
+    {
+     "titel": "Fall Asleep to Revelation Narrated with Deeper Meanings | Mysteries, Visions & Jesus' Return",
+     "aufrufe": 24
+    },
+    {
+     "titel": "If You Need Peace, Let These Bible Verses Calm You Tonight",
+     "aufrufe": 23
+    },
+    {
+     "titel": "You’re tired, I know… Rest by the Fire with Jesus",
+     "aufrufe": 21
+    },
+    {
+     "titel": "Finally some time alone with Jesus...",
+     "aufrufe": 21
+    },
+    {
+     "titel": "Tomorrow You’ll Feel Better… Jesus Is With You",
+     "aufrufe": 20
+    },
+    {
+     "titel": "You're tired, I know… Rest to the Gospel of John",
+     "aufrufe": 17
+    },
+    {
+     "titel": "Don’t Worry Tonight... Jesus Is With You",
+     "aufrufe": 16
+    },
+    {
+     "titel": "No More Thinking Tonight… Jesus Is With You",
+     "aufrufe": 16
+    },
+    {
+     "titel": "You’re weary, I know… Rest by the Fire with Jesus",
+     "aufrufe": 15
+    },
+    {
+     "titel": "Close Your Eyes... Listen to Everything Jesus Ever Said",
+     "aufrufe": 11
+    },
+    {
+     "titel": "He Is Risen… Sleep To The Story of Jesus Tonight",
+     "aufrufe": 7
+    },
+    {
+     "titel": "Come, Traveler… Find Rest With Jesus",
+     "aufrufe": 4
+    },
+    {
+     "titel": "Play THESE Psalms All Night And See What God Does",
+     "aufrufe": 4
+    }
+   ]
+  },
+  "F": {
+   "kanal": "God's Peaceful Sleep",
+   "n": 10,
+   "videos": [
+    {
+     "titel": "God's presence brings you deep, restful sleep",
+     "aufrufe": 23
+    },
+    {
+     "titel": "I Know You're Tried... Jesus Watches Over you Tonight",
+     "aufrufe": 18
+    },
+    {
+     "titel": "Go To Bed Listening To Jesus... Peace Tonight ",
+     "aufrufe": 15
+    },
+    {
+     "titel": "Close your eyes tonight… and spend time listening to Jesus.",
+     "aufrufe": 14
+    },
+    {
+     "titel": "Fall Asleep Tonight Without Stress... Jesus Is With You",
+     "aufrufe": 8
+    },
+    {
+     "titel": "Before You Close Your Eyes, Pray This Prayer. ",
+     "aufrufe": 7
+    },
+    {
+     "titel": "If You Are Anxious, Sleep to These Psalms Tonight",
+     "aufrufe": 2
+    },
+    {
+     "titel": "Close Your Eyes... Jesus Is With You",
+     "aufrufe": 2
+    },
+    {
+     "titel": "God Is Working Even While You Sleep. ",
+     "aufrufe": 1
+    },
+    {
+     "titel": "Christian Sleep Meditation | Psalm 91 Fills Your Night with God's Peace",
+     "aufrufe": 1
+    }
+   ]
+  }
+ },
+ "titel": [
+  "Go To Bed Listening To THESE Psalms And See What God Does",
+  "You deserve some rest, hear the Teachings of Jesus",
+  "The Most Peaceful Sleep You've Ever Had With These Bible Verses",
+  "If You're Overwhelmed, Sleep To These Psalms Tonight",
+  "Fall Asleep to the Full Book of Isaiah – Peaceful Bible Reading for Deep Sleep",
+  "Fall Asleep to Words of Strength and Faith | 1 & 2 Peter Sleep Audio",
+  "Go To Bed Listening To THESE Miracles And See What God Does",
+  "Jesus is with you... Fall Asleep Wrapped in God's Love",
+  "If You Need Peace, Sleep To These Psalms Tonight",
+  "Fall Asleep Without Stress… Jesus Is With You",
+  "If You're Exhausted, Sleep To These Psalms Tonight",
+  "Stop Here And Get Some Rest… Jesus Will Keep You Safe",
+  "Fall Asleep Listening To THESE Healing Psalms And See What God Does",
+  "If You Feel Empty… Sleep To These Psalms Tonight",
+  "You Need Some Rest, Hear the Miracles of Jesus",
+  "Try To Get Some Sleep... Jesus Loves You",
+  "If You're Seeking Forgiveness.. Sleep to God's Word Tonight",
+  "Listen to the Teachings of Jesus",
+  "Stop Scrolling... Sleep To These Verses Tonight",
+  "Fall Asleep to the Complete Biblical Timeline (Every Book Makes Sense Now)",
+  "Don't Forget To Sleep Tonight... Jesus Is With You",
+  "If You're Anxious, Sleep To These Psalms Tonight",
+  "Fall Asleep to Revelation Narrated with Deeper Meanings | Mysteries, Visions & Jesus' Return",
+  "If You Need Peace, Let These Bible Verses Calm You Tonight",
+  "You’re tired, I know… Rest by the Fire with Jesus",
+  "Finally some time alone with Jesus...",
+  "Tomorrow You’ll Feel Better… Jesus Is With You",
+  "You're tired, I know… Rest to the Gospel of John",
+  "Don’t Worry Tonight... Jesus Is With You",
+  "No More Thinking Tonight… Jesus Is With You",
+  "You’re weary, I know… Rest by the Fire with Jesus",
+  "Close Your Eyes... Listen to Everything Jesus Ever Said",
+  "He Is Risen… Sleep To The Story of Jesus Tonight",
+  "Come, Traveler… Find Rest With Jesus",
+  "Play THESE Psalms All Night And See What God Does",
+  "God's presence brings you deep, restful sleep",
+  "I Know You're Tried... Jesus Watches Over you Tonight",
+  "Go To Bed Listening To Jesus... Peace Tonight ",
+  "Close your eyes tonight… and spend time listening to Jesus.",
+  "Fall Asleep Tonight Without Stress... Jesus Is With You",
+  "Before You Close Your Eyes, Pray This Prayer. ",
+  "If You Are Anxious, Sleep to These Psalms Tonight",
+  "Close Your Eyes... Jesus Is With You",
+  "God Is Working Even While You Sleep. ",
+  "Christian Sleep Meditation | Psalm 91 Fills Your Night with God's Peace"
+ ]
+}

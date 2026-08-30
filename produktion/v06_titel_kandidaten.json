@@ -1,0 +1,74 @@
+[
+ {
+  "nr": "K1",
+  "titel": "If You're Anxious, Let Saul and David Take the Night Shift",
+  "anker": "If You're Anxious,",
+  "anker_beleg": "245K",
+  "anker_status": "unbenutzt",
+  "eigenname": "Saul and David",
+  "eigenname_position": 23,
+  "zeichen": 58,
+  "thumbnail": "SAUL AND DAVID",
+  "thumbnail_woerter": 3
+ },
+ {
+  "nr": "K2",
+  "titel": "Lord, I Feel Tired — Stay With Samuel Until Morning Comes",
+  "anker": "Lord, I Feel Tired",
+  "anker_beleg": "184K",
+  "anker_status": "unbenutzt",
+  "eigenname": "Samuel",
+  "eigenname_position": 31,
+  "zeichen": 57,
+  "thumbnail": "SAMUEL TILL MORNING",
+  "thumbnail_woerter": 3
+ },
+ {
+  "nr": "K3",
+  "titel": "I Know You're Tired… First Samuel Runs All the Way to Morning",
+  "anker": "I Know You're Tired…",
+  "anker_beleg": "233K",
+  "anker_status": "wiederverwendet aus V01",
+  "eigenname": "First Samuel",
+  "eigenname_position": 21,
+  "zeichen": 61,
+  "thumbnail": "ALL OF FIRST SAMUEL",
+  "thumbnail_woerter": 4
+ },
+ {
+  "nr": "K4",
+  "titel": "No More Thinking Tonight… Follow Samuel, Saul and David Till Dawn",
+  "anker": "No More Thinking Tonight…",
+  "anker_beleg": "166K",
+  "anker_status": "wiederverwendet aus V04",
+  "eigenname": "Samuel, Saul and David",
+  "eigenname_position": 33,
+  "zeichen": 65,
+  "thumbnail": "SAMUEL SAUL DAVID",
+  "thumbnail_woerter": 3
+ },
+ {
+  "nr": "K5",
+  "titel": "Stop Thinking For A Moment, and Stay With Samuel Till Dawn",
+  "anker": "Stop Thinking For A Moment,",
+  "anker_beleg": "96K",
+  "anker_status": "wiederverwendet aus V02",
+  "eigenname": "Samuel",
+  "eigenname_position": 42,
+  "zeichen": 58,
+  "thumbnail": "STAY WITH SAMUEL",
+  "thumbnail_woerter": 3
+ },
+ {
+  "nr": "K6",
+  "titel": "You Deserve Some Rest… David Waited Years for the Throne Too",
+  "anker": "You Deserve Some Rest…",
+  "anker_beleg": "559",
+  "anker_status": "unbenutzt",
+  "eigenname": "David",
+  "eigenname_position": 23,
+  "zeichen": 60,
+  "thumbnail": "DAVID WAITED",
+  "thumbnail_woerter": 2
+ }
+]
