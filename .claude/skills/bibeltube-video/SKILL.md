@@ -847,32 +847,82 @@ Danach `python3 produktion/pipeline/ki_clip_pruefung.py <clips>` — Drift,
 Naht-Sprung, Auflösung/fps/Dauer. Und **hinsehen**: Stil erhalten? Figur still?
 Keine verformten Objekte? Rauch nicht kräftiger als bestellt?
 
-### Nahtblende — fester Schritt, nicht optional
+### Naht prüfen — und erst blenden, wenn die Messung es verlangt
 
 **Das Modell schließt die Schleife nicht von selbst, trotz
-`start_image = end_image`.** Gemessen an allen vier Clipsätzen des Kanals
-(`qa-ki-clips.json`):
+`start_image = end_image`.** In den **rohen** Clips liegt der letzte Frame nie
+auf dem ersten (`qa-ki-clips.json`, alle vier Sätze: 1,92–3,15 mittlere
+Abweichung). Der Trick liefert die *Nähe*, die den Schnitt möglich macht, nicht
+die Identität.
 
-| Satz | erster vs. letzter Frame | Sprung an der Naht | normaler Frameschritt |
-|---|---|---|---|
-| ki-v02 | 2,43–2,48 | 2,43–2,69 | 1,42–1,71 |
-| ki-v03 | 1,92–2,36 | 1,92–3,12 | 0,78–0,96 |
-| ki-v04 | 2,77–2,85 | 2,77–3,08 | 0,37–0,60 |
-| ki-v05 | 3,03–3,15 | 3,03–3,22 | 1,15–1,27 |
+**Entscheidend ist aber nicht der rohe Clip, sondern der kodierte Zyklus.**
+Gemessen am fertigen V05-Zyklus (4 Clips, CRF 28, 1156 Frames):
 
-**In keinem einzigen Clip landet der letzte Frame auf dem ersten.** Der Sprung
-ist das 1,7- bis 5,6-fache eines normalen Frameschritts — bei einem Video, das
-den 48-s-Zyklus über 3,4 Stunden **256-mal** durchläuft. Der Trick liefert die
-*Nähe*, die den Schnitt überhaupt möglich macht; er liefert nicht die Identität.
+| | Sprung | lokaler Median | Faktor |
+|---|---:|---:|---:|
+| Naht 1 (12,0 s) | 1,41 | 0,80 | **1,76** |
+| Naht 2 (24,0 s) | 1,47 | 0,77 | **1,91** |
+| Naht 3 (36,1 s) | 1,46 | 0,70 | **2,10** |
 
-Deshalb: **an jeder Clipgrenze eine kurze Blende**, bevor der Zyklus gebaut
-wird. Eine halbe Sekunde reicht — der Zyklus wird ohnehin einmal neu kodiert
-(CRF 28), die Blende kostet also keinen zusätzlichen Durchgang. Danach die
-Kette erneut messen: der Nahtwert muss in die Größenordnung des normalen
-Frameschritts fallen, sonst hat die Blende nicht gegriffen.
+Also **1,8- bis 2,1-fach** über der Umgebung — nicht mehr. Und:
 
-Ohne Blende ist der Schnitt alle 12 Sekunden ein sichtbares Zucken — in einem
-Einschlafvideo genau der Blickfang, den das ganze Bildkonzept vermeiden soll.
+> **Die Nähte sind gar nicht die größten Sprünge im Zyklus.** Die vier größten
+> (2,2–2,4) liegen bei den Frames **249, 499, 749, 999** — und die Keyframes des
+> Zyklus liegen bei **1, 251, 501, 751, 1001**. Das sind die Frames unmittelbar
+> vor jeder GOP-Grenze: **Kodierartefakte, kein Bildinhalt.** Wer im Zyklus nach
+> Sprüngen sucht, findet zuerst die und hält sie für Nähte.
+
+**Eine 0,5-s-Überblendung an jeder Naht bringt an diesen Clips nichts
+Messbares.** Nachgefahren mit `xfade`:
+
+| | ohne Blende | mit Blende |
+|---|---:|---:|
+| Median Frameschritt | 0,888 | 0,890 |
+| Maximum im Zyklus | 2,442 | 2,456 |
+| Umgebung Naht 1 / 2 / 3 | 2,17 / 1,52 / 1,89 | 2,17 / 1,57 / 1,43 |
+
+Eine Naht wird besser, eine bleibt gleich, eine minimal schlechter. Dazu kostet
+die Blende 1,5 s Zyklusdauer (48,17 → 46,67 s).
+
+**Deshalb die Regel: messen, dann entscheiden — nicht blind blenden.**
+
+```bash
+# Zyklus bauen, dann Frameschritte messen und die Nähte ansehen
+python3 - <<'EOF'
+import cv2, numpy as np
+cap = cv2.VideoCapture("produktion/arbeit/video-0N/zyklus.mp4")
+prev, d = None, []
+while True:
+    ok, f = cap.read()
+    if not ok: break
+    g = cv2.cvtColor(f, cv2.COLOR_BGR2GRAY).astype(np.float32)
+    if prev is not None: d.append(float(np.mean(np.abs(g - prev))))
+    prev = g
+d = np.array(d)
+for k, i in enumerate([288, 577, 866], 1):        # 4 Clips a 289 Frames
+    umfeld = np.median(np.concatenate([d[i-30:i-2], d[i+3:i+31]]))
+    print(f"Naht {k}: {d[i]:.3f} gegen Umfeld {umfeld:.3f} -> Faktor {d[i]/umfeld:.2f}")
+EOF
+```
+
+**Blenden, wenn ein Faktor deutlich über 2,5 liegt** oder eine Naht beim
+Hinsehen zuckt. Dann so, und danach neu messen:
+
+```bash
+ffmpeg -v error -i clip-1.mp4 -i clip-2.mp4 -i clip-3.mp4 -i clip-4.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=fade:duration=0.5:offset=11.54[a];\
+[a][2:v]xfade=transition=fade:duration=0.5:offset=23.08[b];\
+[b][3:v]xfade=transition=fade:duration=0.5:offset=34.62[v]" \
+  -map "[v]" -c:v libx264 -crf 28 -preset medium -pix_fmt yuv420p -an zyklus.mp4
+```
+
+> **Die Rundnaht bleibt ungeblendet.** `xfade` verbindet nur die drei inneren
+> Schnitte; der Rücksprung vom Ende des Zyklus auf seinen Anfang — der über
+> 3,4 Stunden **255-mal** vorkommt — lässt sich so nicht behandeln. Er ist in
+> `qa-ki-clips.json` als Paar `clip-4 → clip-1` mitgemessen und war bei V05 mit
+> 3,218 der schlechteste Wert des Satzes. Wenn irgendwo geblendet werden muss,
+> dann dort — und dafür gibt es im Repo noch kein Verfahren. **Offene Frage,
+> nicht stillschweigend übergehen.**
 
 ### 1088 → 1080: bekannter Generatorfall
 
@@ -1143,3 +1193,11 @@ Faktor 11 zu klein angegebene Branch-Differenz.
    hinter dem Korpuswechsel an.
 5. **Ob die Gebete überhaupt etwas bewirken** — weder für Reichweite noch für
    YPP gibt es einen Beleg.
+6. **Die Rundnaht des Zyklus ist unbehandelt.** Der Rücksprung vom Ende des
+   48-s-Zyklus auf seinen Anfang kommt über 3,4 Stunden **255-mal** vor und ist
+   in `qa-ki-clips.json` der schlechteste Nahtwert des V05-Satzes (3,218,
+   Paar `clip-4 → clip-1`). `xfade` erreicht ihn nicht — es verbindet nur die
+   drei inneren Schnitte. Ein Verfahren dafür (etwa: den Zyklus mit
+   überlappendem Vor- und Nachlauf bauen und die Überlappung blenden) gibt es
+   im Repo nicht. Zu entscheiden, bevor die Bildspur des nächsten Videos gebaut
+   wird — oder bewusst zu lassen, dann mit Begründung.
