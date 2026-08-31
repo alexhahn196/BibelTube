@@ -144,10 +144,33 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
 > Quelle *eigene Kanaldaten Gate 2*. M1–M7 stammen aus 10 fremden Kanälen und kennen
 > weder Impressionen noch Retention. M8 ist aus beidem gebaut.
 
-- [ ] Hauptkorpus ist **durchlaufender Erzählstoff** — Evangelien, Apostelgeschichte,
-      Genesis-Erzählungen?
-- [ ] **Spruchsammlungen** (Psalmen, Sprüche, Prediger) und **prophetische Rede** nur als
-      Beigabe, nie als Hauptkorpus?
+**Das Kriterium, in drei Haken — Struktur, nicht Prozentsatz:**
+
+- [ ] Ein **dominantes Buch** trägt **≥ 60 % der Wörter**?
+- [ ] Dieses Buch ist selbst **durchlaufendes Erzählwerk** — Evangelien,
+      Apostelgeschichte, Genesis- und Samuel-Erzählungen?
+- [ ] Es wird **in voller Länge** gelesen? (Teilung nur an einer Erzählnaht,
+      und die gehört begründet.)
+- [ ] **Nebenstoff ist frei.** Was neben dem dominanten Buch steht, darf
+      Spruchsammlung, Brief oder prophetische Rede sein — Rahmen, nie Hauptsache.
+
+Geprüft mit `produktion/korpus_pruefung.py`.
+
+> **Die frühere Schwelle „Erzählanteil ≥ 80 %" ist am 2026-08-31 gefallen.**
+> Sie war von keiner eigenen Messung berührt. Kapitelweise gemessen
+> (`produktion/korpus/erzaehlanteil.json`) liegen V01–V05 bei **0,0 · 0,0 ·
+> 38,2 · 45,8 · 47,6 %** — **kein einziges produziertes Video erreicht 80 %**,
+> auch V03 nicht, das einzige, das funktioniert hat.
+>
+> Dazu kam, dass es die Zahl **zweimal** gab: buchweise gerechnet steht V05 bei
+> 81,7 %, kapitelweise bei 47,6 %. Dasselbe Gate gab je nach Körnung das
+> Gegenteil aus. Zwei Wahrheiten sind schlimmer als eine falsche — man kann
+> sich die passende aussuchen.
+>
+> Was der Beleg unten wirklich trägt, ist der Unterschied **Evangelium gegen
+> Spruchsammlung**, nicht 80 gegen 79. Genau den prüfen die drei Haken. Der
+> Erzählanteil wird weiter **gemessen und gemeldet** — kapitelweise, das ist
+> die gültige Messung —, aber er entscheidet nichts.
 - **Beleg (eigene Kanaldaten Gate 2, n=4 Videos, 2 Retentionskurven):**
   Endretention nach 3,5 Stunden — **V3 Johannes (Erzählung) 14,4 %** gegen
   **V2 Psalmen 90–150 + Sprüche 2,4 %**. **Faktor 6.**

@@ -29,8 +29,8 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import (SR, arbeit, config, hms, pfad,  # noqa: E402
-                       rms_db, sprach_rms_db)
+from gemeinsam import (SR, Gates, arbeit, config, gate_abschluss,  # noqa: E402
+                       hms, pfad, rms_db, sprach_rms_db)
 
 BLOCK = 1 << 20
 
@@ -166,6 +166,8 @@ def main():
     ap.add_argument("video")
     ap.add_argument("--nur-messen", action="store_true",
                     help="vorhandene mix.wav nur nachmessen, nicht neu bauen")
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     a = ap.parse_args()
     cfg = config()
 
@@ -244,7 +246,21 @@ def main():
     print(f"  Stichprobe Schreibweg {b['stichprobe_schreibweg_db']:+.2f} dB "
           f"(Bett im Nachlauf gegen die Quelle — 0,00 = fehlerfrei geschrieben)")
     print(f"  Ducking               {'ja' if b['ducking'] else 'nein'}")
-    return 0
+
+    # Gate 1.11. Beide Wiedergabefaelle muessen halten, nicht nur die
+    # Mono-Summe: qa_mix.json mass bis 2026-08-23 nur den Downmix und meldete
+    # 12,0 dB, wo am Kopfhoerer 6,8 dB standen (V01-V04). Ein dekorreliertes
+    # Bett verliert im Downmix Pegel und sieht dadurch besser aus, als es ist.
+    g = Gates(a.force)
+    g.pruefen("1.11", "Pegelabstand (Mono-Summe)", b["abstand_eingehalten_mono"],
+              f"{b['gemessener_abstand_db']} dB statt {b['soll_abstand_db']} dB")
+    g.pruefen("1.11", "Pegelabstand (je Kanal)", b["abstand_eingehalten_je_kanal"],
+              f"{b['gemessener_abstand_je_kanal_db']} dB statt "
+              f"{b['soll_abstand_db']} dB — am Kopfhoerer hoerbar, "
+              f"in der Mono-Summe nicht")
+    g.pruefen("", "Peak", b["peak_dbfs"] <= float(cfg["peak_max_dbfs"]),
+              f"{b['peak_dbfs']} dBFS ueber der Grenze {cfg['peak_max_dbfs']} dBFS")
+    return gate_abschluss(g, "Schritt 3 (Klangbett)")
 
 
 if __name__ == "__main__":

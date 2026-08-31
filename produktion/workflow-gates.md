@@ -28,7 +28,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 
 | # | Prüfung | Grenze | Woher | Womit |
 |---|---|---|---|---|
-| 1.1 | **Korpuslänge** | ≥ 3,0 h; Ziel 3,4–3,8 h | Formel §2: kein Video unter 3 h je über 2.500 Views (n=6), alle 10 Treffer ≥ 3,2 h | `schritt1_text.py` meldet die erwartete Laufzeit |
+| 1.1 | **Korpuslänge** | ≥ 3,0 h; Ziel 3,4–3,8 h | Formel §2: kein Video unter 3 h je über 2.500 Views (n=6), alle 10 Treffer ≥ 3,2 h | `schritt1_text.py` (Schätzung) und `schritt5_video.py` (fertige Datei) — **beide brechen ab**, wenn die harte Untergrenze reißt |
 | 1.2 | **Titelähnlichkeit** | < 50 % gemeinsame inhaltstragende Wörter mit **jedem** Gewinnertitel — **und nicht näher an einem Kopisten-Titel als am nächsten Gewinner** | Formel §1: Kanal F kopierte wörtlich → 18 Views; Kanal C baute Mashups → 17 Views | `produktion/titel_pruefung.py` (Bestand), `produktion/titel_kandidaten.py` (neue Titel, misst zusätzlich gegen Kopisten und den eigenen Katalog). **Auflösung beachten:** ein Wort wiegt 9–33 Prozentpunkte, Unterschiede darunter sind kein Signal — siehe §10 „Auflösungsgrenze". |
 | 1.3 | **Titelanker** | einer der 13 belegten Anker | Formel §10 („diese zuerst verwenden"); die 7 abgeleiteten sind ausdrücklich ungeprüft | von Hand gegen §10 |
 | 1.4 | **Thumbnail: Wörter** | höchstens 4 | Checkliste — **gesetzter Spielraum, nicht gemessen**: keine Messdatei führt eine Wortzahl je Feld-Thumbnail; beobachtet sind bei A und B nur 2- und 3-Wort-**Zeilen** (`thumbnail_forensik.json`). Eine Zeile ist kein Bild — 2 + 2 sind vier Wörter. | `thumbnail.py` |
@@ -36,11 +36,11 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.6 | **Thumbnail: Kontrast** | ≥ 10 : 1 zum direkten Hintergrund | Checkliste | `thumbnail.py` |
 | 1.7 | **Thumbnail: Serienmotiv** | gleiches Motiv wie die letzten Uploads | Formel §5 (B: 13/13); trägt die Kanalidentität, nicht den Einzeltreffer | Sichtprüfung |
 | 1.8 | **160×90-Kontrolle** | Text in einer Sekunde erfassbar, Lichtquelle erkennbar | Checkliste | Sichtprüfung am Handy |
-| 1.9 | **Sprechbeginn** | Sekunde 0–3, kein Musikintro | Formel §3 PFLICHT (n=24; Gewinner 0,1–3,1 s) | `vorlauf_s` in `config.md`, nachgemessen in `schritt6_srt.py` (erste Kachel) |
+| 1.9 | **Sprechbeginn** | Sekunde 0–3, kein Musikintro | Formel §3 PFLICHT (n=24; Gewinner 0,1–3,1 s) | `vorlauf_s` in `config.md`, nachgemessen in `schritt6_srt.py` (erste Kachel) — **bricht ab** |
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
-| 1.11 | **Pegelabstand** | Stimme ≥ 12 dB über dem Bett, über Sprachabschnitte gemessen — **in der Mono-Summe UND je Kanal, beide Werte** | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet**. Zwei Werte statt einem seit 2026-08-23: `qa_mix.json` maß nur den Mono-Downmix und meldete 12,0 dB, wo am Kopfhörer 6,8 dB standen (V01–V04). | `schritt3_bett.py`, meldet `abstand_eingehalten_mono` und `abstand_eingehalten_je_kanal` |
+| 1.11 | **Pegelabstand** | Stimme ≥ 12 dB über dem Bett, über Sprachabschnitte gemessen — **in der Mono-Summe UND je Kanal, beide Werte** | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet**. Zwei Werte statt einem seit 2026-08-23: `qa_mix.json` maß nur den Mono-Downmix und meldete 12,0 dB, wo am Kopfhörer 6,8 dB standen (V01–V04). | `schritt3_bett.py`, meldet `abstand_eingehalten_mono` und `abstand_eingehalten_je_kanal` — **bricht bei beiden ab** |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
-| 1.13 | **Korpusart** | Erzählanteil ≥ 80 %, und der größte Block ist selbst Erzählung | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | `produktion/korpus_pruefung.py` |
+| 1.13 | **Korpusart** | **dominantes Buch ≥ 60 % der Wörter UND selbst durchlaufendes Erzählwerk UND in voller Länge gelesen.** Nebenstoff frei. Der Erzählanteil wird gemessen und gemeldet, **gatet aber nicht** — Begründung unten. | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | `produktion/korpus_pruefung.py` |
 | 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
 
 | 1.15 | **Titellänge** | unter **70 Zeichen**, und der Eigenname beginnt vor Zeichen **60** | **Gesetzte Grenze, nicht gemessen.** Belegt ist nur der Anlass: Gate 2 (2026-08-23) hat **68 % der Aufrufe am Handy** gemessen, TV und Handy zusammen 80 %. In der Vorschlagsleiste am Handy bricht der Titel bei rund 60 Zeichen ab — *wo genau*, ist nicht gemessen und hängt an Gerät und Schriftgröße. Steht der Eigenname jenseits der Kante, trägt er die kontextliche Zuordnung nicht mehr, auf der 1.14 beruht. SOLL, nicht MUSS. | `produktion/titel_kandidaten.py` meldet Länge und Position |
@@ -48,6 +48,52 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 Textbau prüfen (Schritt 1), der Pegelabstand erst nach der Mischung
 (Schritt 3). Beide liegen aber **vor** dem teuren Teil — TTS und Montage —
 und beide brechen die Pipeline hart ab, wenn sie reißen.
+
+> **Korrektur 2026-08-31: Bis heute taten sie das nicht.** Der Satz oben stand
+> seit dem 2026-08-23 hier und beschrieb den Code falsch. `schritt1_text.py`
+> druckte „UNTER der harten Untergrenze" und gab **0** zurück,
+> `schritt3_bett.py` druckte „REISST" und gab **0** zurück — der Lauf ging
+> danach durch den bezahlten TTS-Schritt und die Montage weiter. Eine Prüfung,
+> die nichts prüft, kostet mehr als gar keine: sie hält jemanden davon ab,
+> selbst nachzusehen.
+>
+> Umgestellt am 2026-08-31. Die Schritte **1, 2, 3, 5 und 6** geben jetzt bei
+> einem Gate-Verstoß **1** zurück und halten die Pipeline an. `--force` geht
+> darüber hinweg, muss aber ausdrücklich gesetzt werden und schreibt eine
+> Warnung ins Protokoll; der Verstoß steht so oder so in der Messdatei des
+> Schritts. Welche Prüfungen dabei gefunden wurden:
+>
+> | Schritt | Prüfung | vorher | jetzt |
+> |---|---|---|---|
+> | 1 Text | **1.1** Laufzeit unter `laufzeit_min_h` | gedruckt, `return 0` | **Abbruch** |
+> | 1 Text | Laufzeit außerhalb des Zielbands | gedruckt | laute Warnung, kein Abbruch — das Band ist die Empfehlung aus dem Treffer-Median, keine Grenze, und V08 liegt mit **einem Wort** darunter |
+> | 2 TTS | Sprachanteil unter `sprachanteil_min_pct` | gedruckt mit „verlangt ≥ 95 %", `return 0` | **Abbruch** |
+> | 2 TTS | längste Pause über `laengste_pause_max_s` | gedruckt mit „Grenze 20 s", `return 0` | **Abbruch** |
+> | 3 Bett | **1.11** Pegelabstand Mono-Summe | gedruckt „REISST", `return 0` | **Abbruch** |
+> | 3 Bett | **1.11** Pegelabstand je Kanal | gedruckt „REISST", `return 0` | **Abbruch** |
+> | 3 Bett | Peak über `peak_max_dbfs` | gedruckt „ÜBERSCHRITTEN", `return 0` | **Abbruch** |
+> | 5 Video | **1.1** Laufzeit der fertigen Datei | gedruckt „VERLETZT", `return 0` | **Abbruch** |
+> | 5 Video | Ton-Versatz über 0,5 s | gedruckt | **Abbruch** |
+> | 6 SRT | **1.9** Sprechbeginn über `sprachstart_max_s` | gedruckt mit „Formel §3", `return 0` | **Abbruch** |
+> | 6 SRT | überlappende Untertitelkacheln | gedruckt | **Abbruch** |
+>
+> **Kein Gate geworden — und warum nicht:**
+>
+> - **Peak in Schritt 2.** `peak_max_dbfs = -1,0` ist das Ziel **nach** der
+>   Skalierung in Schritt 3, keine Grenze für die rohe Stimmspur. V05 liegt dort
+>   bei **0,0 dBFS** und in der fertigen Mischung bei −1,81. Ein Gate an dieser
+>   Stelle hätte jeden korrekten Lauf abgebrochen — geprüft wird der Peak dort,
+>   wo er gilt.
+> - **„Nähte auffällig", „Versalien übrig", „Ziffern im Text", Bett mehr als
+>   3 dB zu leise, Kacheln über zwei Zeilen.** Hinweise ohne Grenzwert in
+>   `config.md`. Ein Gate braucht eine Zahl, die jemand entschieden hat.
+> - **Schritt 4 (Standbild) und 7 (Paket)** haben keine Gate-Prüfungen; Schritt 7
+>   gab schon vorher 1 zurück, wenn Paketdateien fehlen.
+>
+> **Gegengeprobt an V05**, dem einzigen vollständig gemessenen Video: alle
+> Prüfungen bestehen, kein falscher Alarm. Und am laufenden Schritt 3 gegen die
+> echte Mischung: bestehend → 0, künstlich gerissen → **1**, gerissen mit
+> `--force` → 0.
 
 ### Audit 2026-08-23: welche Prüfung deckt nur einen Wiedergabefall ab?
 

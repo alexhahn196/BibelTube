@@ -29,7 +29,8 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import SR, arbeit, config, dauer_s, ffprobe, hms, ordner  # noqa: E402
+from gemeinsam import (SR, Gates, arbeit, config, dauer_s,  # noqa: E402
+                       ffprobe, gate_abschluss, hms, ordner)
 
 NAME_BILD = "PLATZHALTER_standbild.png"
 
@@ -121,6 +122,8 @@ def sync_pruefen(mp4, mix, bei_s=3600.0, fenster_s=8.0):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     ap.add_argument("--neu-zyklus", action="store_true", dest="neu_zyklus",
                     help="Zoom-Zyklus neu kodieren statt wiederverwenden")
     a = ap.parse_args()
@@ -242,7 +245,20 @@ def main():
           f"Audio {b['audio_stream_s']} s, Differenz {b['differenz_streams_s']} s")
     print(f"  Ton-Versatz gemessen  {b['sync_versatz_s']} s")
     print(f"  Renderzeit            {b['renderzeit_s']} s")
-    return 0
+
+    # Gate 1.1 ein zweites Mal, jetzt an der fertigen Datei statt an der
+    # Schaetzung aus Schritt 1. Nur die harte Untergrenze bricht ab; das
+    # Zielband wird gemeldet, aber nicht erzwungen.
+    g = Gates(a.force)
+    g.pruefen("1.1", "Laufzeit der Datei", b["ueber_untergrenze"],
+              f"{b['dauer_h']:.3f} h unter der harten Untergrenze "
+              f"{cfg['laufzeit_min_h']} h")
+    g.pruefen("", "Ton-Versatz", abs(b["sync_versatz_s"]) <= 0.5,
+              f"{b['sync_versatz_s']} s zwischen Bild und Ton")
+    if not b["im_zielband"]:
+        print(f"  WARNUNG: ausserhalb des Zielbands "
+              f"{cfg['laufzeit_ziel_von_h']}–{cfg['laufzeit_ziel_bis_h']} h.")
+    return gate_abschluss(g, "Schritt 5 (Video)")
 
 
 if __name__ == "__main__":

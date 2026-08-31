@@ -32,6 +32,8 @@ SCHRITTE = [
     (7, "Paket",       "schritt7_paket.py", []),
 ]
 ZUSATZ = [("Aussprache-QA", "qa_namen.py")]
+#: Schritte mit Gate-Pruefungen; nur die kennen --force.
+FORCE_FAEHIG = {1, 2, 3, 5, 6}
 
 
 def main():
@@ -42,6 +44,10 @@ def main():
     ap.add_argument("--nur", type=int, nargs="+")
     ap.add_argument("--bild", help="Standbild für Schritt 4")
     ap.add_argument("--hook", choices=["a", "b"])
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse in ALLEN Schritten melden, aber nicht "
+                         "abbrechen. Ausdruecklich setzen; die Verstoesse stehen "
+                         "trotzdem in den Messdateien.")
     a = ap.parse_args()
 
     if a.video[0] != "V" or not a.video[1:].isdigit():
@@ -54,6 +60,12 @@ def main():
     if 2 in gewaehlt and not os.environ.get("FISH_KEY"):
         raise SystemExit("FISH_KEY ist nicht gesetzt — Schritt 2 braucht ihn.")
 
+    if a.force:
+        print("ACHTUNG: --force ist gesetzt. Gate-Verstoesse halten die Pipeline\n"
+              "         NICHT an. Sie stehen weiter in den Messdateien und im\n"
+              "         Protokoll — wer so ausliefert, tut es wissentlich.\n",
+              flush=True)
+
     t0 = time.time()
     zeiten = []
     for nr, name, datei, argumente in SCHRITTE:
@@ -64,6 +76,9 @@ def main():
             cmd += ["--hook", a.hook]
         if nr == 4 and a.bild:
             cmd += ["--bild", a.bild]
+        # Schritt 4 und 7 kennen keine Gates und damit kein --force.
+        if a.force and nr in FORCE_FAEHIG:
+            cmd += ["--force"]
         print(f"\n{'='*66}\nSCHRITT {nr} — {name}\n{'='*66}", flush=True)
         t = time.time()
         r = subprocess.run(cmd)
@@ -71,6 +86,9 @@ def main():
         if r.returncode != 0:
             print(f"\nSchritt {nr} ({name}) ist mit Code {r.returncode} "
                   f"abgebrochen. Die Pipeline hält hier an.")
+            if nr in FORCE_FAEHIG:
+                print(f"  War es ein Gate-Verstoss und ist er bewusst in Kauf "
+                      f"genommen: erneut mit --force.")
             return r.returncode
         if nr == 6:
             for zname, zdatei in ZUSATZ:

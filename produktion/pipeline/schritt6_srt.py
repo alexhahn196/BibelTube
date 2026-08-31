@@ -28,7 +28,8 @@ from concurrent.futures import ProcessPoolExecutor
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import arbeit, config, hms, ordner  # noqa: E402
+from gemeinsam import (Gates, arbeit, config,  # noqa: E402
+                       gate_abschluss, hms, ordner)
 
 MAX_ZEICHEN = 84          # zwei Zeilen a 42
 MAX_DAUER = 6.5
@@ -136,6 +137,8 @@ def main():
     ap.add_argument("--threads", type=int, default=2)
     ap.add_argument("--neu-erkennen", action="store_true",
                     dest="neu_erkennen", help="Erkennung nicht aus dem Cache nehmen")
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     a = ap.parse_args()
     cfg = config()
     t0 = time.time()
@@ -274,7 +277,19 @@ def main():
           f"(so ist der Konkurrenz-Sprachanteil gemessen)")
     print(f"  Rechenzeit            {b['rechenzeit_s']} s")
     print(f"  geschrieben: {ziel}")
-    return 0
+
+    # Gate 1.9. Die erste Untertitelkachel ist die einzige eingecheckte
+    # Messung des Sprechbeginns - Formel Paragraph 3 fuehrt ihn als PFLICHT
+    # (n=11, 0,0-3,1 s). Ueberlappende Kacheln sind kein Gate, aber ein
+    # Auslieferungsfehler und werden gemeldet.
+    g = Gates(a.force)
+    g.pruefen("1.9", "Sprechbeginn",
+              b["erste_kachel_s"] <= float(cfg["sprachstart_max_s"]),
+              f"erste Kachel bei {b['erste_kachel_s']} s, Grenze "
+              f"{cfg['sprachstart_max_s']} s")
+    g.pruefen("", "Ueberlappende Kacheln", b["ueberlappungen"] == 0,
+              f"{b['ueberlappungen']} Kachelpaare ueberlappen")
+    return gate_abschluss(g, "Schritt 6 (Untertitel)")
 
 
 if __name__ == "__main__":

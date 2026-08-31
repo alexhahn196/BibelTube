@@ -11,12 +11,57 @@ Gate 1 fuehrt seit 2026-08-23 zwei Pruefungen, die vorher nicht existierten:
        Korpora durch - genau so landete V05 bei 3,40 h statt 3,6 h.
 Beide standen dort als "von Hand". Dieses Skript macht sie nachrechenbar.
 
+=============================================================================
+DIE 80-PROZENT-SCHWELLE IST AM 2026-08-31 GEFALLEN. WARUM.
+=============================================================================
+Bis dahin pruefte 1.13 hier "Erzaehlanteil >= 80 %" gegen die Gattungstabelle
+weiter unten. Diese Tabelle stuft BUCHWEISE ein - Lukas ist darin komplett
+Erzaehlung. Es gab aber eine zweite, eingecheckte Messung derselben Groesse:
+produktion/korpus/erzaehlanteil.json stuft KAPITELWEISE ein und zaehlt
+Lehrreden, Gleichniszyklen und eingelegte Gebete heraus.
+
+Beide sind echte Messdateien. Sie widersprechen sich:
+
+    Video          buchweise (hier)   kapitelweise (erzaehlanteil.json)
+    V03 Johannes        62,3 %                38,2 %
+    V04 Matthaeus       83,0 %                45,8 %
+    V05 Lukas           81,7 %                47,6 %
+
+Dasselbe Gate gab damit je nach Koernung das Gegenteil aus: V05 bestand hier
+mit 81,7 % und fiel dort mit 47,6 % durch. Zwei Wahrheiten sind schlimmer als
+eine falsche - man kann sich die passende aussuchen.
+
+Aufgeloest: die kapitelweise Messung ist die feinere und ist ab jetzt die
+gueltige. Sie wird unten GEMELDET. Sie GATET nicht, und die buchweise erst
+recht nicht:
+
+  - Die 80 % sind von keiner eigenen Messung beruehrt. V01-V05 liegen
+    kapitelweise bei 0,0 bis 47,6 % - kein einziges produziertes Video
+    erreicht sie.
+  - V03, das einzige Video des Kanals, das funktioniert hat (14,4 %
+    Endretention, 80 % der Kanal-Wiedergabezeit), faellt in BEIDEN Messungen
+    durch (62,3 / 38,2 %). Die 80 koennen also nicht die Groesse sein, an der
+    V03 gegen V02 gewonnen hat.
+  - Was M8 belegt, ist die STRUKTUR: Evangelium gegen Spruchsammlung, nicht
+    80 gegen 79. Genau die prueft 1.13 jetzt:
+        dominantes Buch >= 60 % der Woerter
+        UND dieses Buch ist selbst durchlaufendes Erzaehlwerk
+        UND es wird in voller Laenge gelesen
+    Nebenstoff ist frei.
+
 GATTUNGSTABELLE: Die Zuordnung Erzaehlung/Nicht-Erzaehlung steht unten im
-Klartext, kapitelweise, und ist das einzige Urteil in diesem Skript - alles
-andere ist Arithmetik auf produktion/korpus/kapitel.json. Sie folgt der
-Standardgliederung und ist bewusst konservativ: im Zweifel NICHT Erzaehlung.
-Wer sie fuer falsch haelt, aendert sie hier und sieht sofort, was das an den
-Prozentsaetzen bewegt.
+Klartext und folgt der Standardgliederung. Sie ist nach dem Obigen NICHT mehr
+die Quelle des Erzaehlanteils - sie beantwortet nur noch die Ja/Nein-Frage
+"ist das dominante Buch ueberhaupt Erzaehlwerk". In dieser Rolle ist sie
+belastbar: dass Lukas Erzaehlung ist und Jesaja nicht, haengt nicht an der
+Koernung.
+
+WICHTIG, NICHT LOESCHEN: Die buchweisen Prozentsaetze bleiben stehen und
+werden weiter gedruckt - als "Gattungsanteil", nicht als Erzaehlanteil. Die
+WPM-Regression in config.md (WPM = 141,15 + 0,0769 x Erzaehlanteil%) ist auf
+GENAU DIESE Werte gefittet (0,0 / 0,0 / 62,3 / 83,0 / 81,7). Wer sie durch die
+kapitelweisen ersetzt, muss die Regression neu fitten - sonst rechnet das
+halbe Projekt mit einem falschen Tempo.
 
 Aufruf:
     python3 produktion/korpus_pruefung.py "Apostelgeschichte" "Rut" "Ester"
@@ -31,6 +76,11 @@ import sys
 
 KAPITEL = os.path.join("produktion", "korpus", "kapitel.json")
 PLAN = os.path.join("produktion", "korpus", "plan.json")
+#: Die feine, kapitelweise Einstufung. Sie ist die gueltige Messung des
+#: Erzaehlanteils (siehe Kopfkommentar). Liegt sie nicht vor, wird der Wert
+#: als NICHT GEMESSEN gemeldet - nicht durch den groben Wert ersetzt.
+FEIN = os.path.join("produktion", "korpus", "erzaehlanteil.json")
+DOMINANZ_MIN = 0.60
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "pipeline"))
 from gemeinsam import config as _config  # noqa: E402
 
@@ -112,6 +162,38 @@ ERZAEHLUNG = {
 }
 
 
+def fein_lesen():
+    """Kapitelweise Erzaehleinstufung, falls eingecheckt. Sonst None."""
+    if not os.path.exists(FEIN):
+        return None
+    try:
+        return json.load(open(FEIN, encoding="utf-8"))["kapitel"]
+    except (KeyError, ValueError):
+        return None
+
+
+def fein_anteil(kapitel, kap, fein):
+    """Erzaehlanteil aus der kapitelweisen Einstufung.
+
+    Gibt (anteil, abgedeckt_pct) zurueck. Kapitel, die die Einstufung nicht
+    kennt, gehen NICHT als 0 ein - sie senken die Abdeckung. Ein Anteil ueber
+    einer lueckenhaften Grundlage waere eine erfundene Zahl.
+    """
+    w_ges = w_bekannt = w_erz = 0
+    for b, i in kapitel:
+        w = kap[f"{b} {i}"]["w"]
+        w_ges += w
+        e = fein.get(f"{b} {i}")
+        if e is None:
+            continue
+        w_bekannt += w
+        if e.get("erzaehlend"):
+            w_erz += w
+    if not w_bekannt:
+        return None, 0.0
+    return 100 * w_erz / w_bekannt, 100 * w_bekannt / w_ges
+
+
 def buchlaenge(kap, buch):
     n = 0
     while f"{buch} {n+1}" in kap:
@@ -179,16 +261,34 @@ def main():
         kapitel = [(k.rsplit(" ", 1)[0], int(k.rsplit(" ", 1)[1])) for k in refs]
         w = sum(kap[k]["w"] for k in refs)
         erz = sum(kap[f"{b} {i}"]["w"] for b, i in kapitel if ERZAEHLUNG.get(b, lambda _: False)(i))
-        r = {"teile": [], "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
+        # Bis 2026-08-31 blieb "teile" hier leer und 1.13 wurde beim Plan-Pfad
+        # STILL uebersprungen - dieselbe Pruefung, die bei Bausteinen greift.
+        # Die Bloecke werden jetzt aus den refs zurueckgebaut, damit --plan und
+        # Bausteinaufruf dieselben Pruefungen fahren.
+        teile = []
+        for b in dict.fromkeys(b for b, _ in kapitel):
+            ii = sorted(i for x, i in kapitel if x == b)
+            bw = sum(kap[f"{b} {i}"]["w"] for i in ii)
+            be = sum(kap[f"{b} {i}"]["w"] for i in ii
+                     if ERZAEHLUNG.get(b, lambda _: False)(i))
+            voll = buchlaenge(kap, b)
+            spec = b if (ii == list(range(1, voll + 1))) else f"{b} {ii[0]}-{ii[-1]}"
+            teile.append({"spec": spec, "buch": b, "von": ii[0], "bis": ii[-1],
+                          "ganzes_buch": ii == list(range(1, voll + 1)),
+                          "woerter": bw, "erzaehlung": be})
+        groesster = max(teile, key=lambda t: t["woerter"]) if teile else None
+        r = {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
              "erz_pct": 100 * erz / w, "stunden": _video_h(w, len(kapitel)), "doppelt": 0,
-             "groesster": None, "groesster_ist_erzaehlung": True}
+             "groesster": groesster,
+             "groesster_ist_erzaehlung": bool(groesster and
+                                              groesster["erzaehlung"] / groesster["woerter"] >= 0.8)}
         print(f"Plan {a.plan}: {plan[a.plan]['name']}")
     else:
         if not a.bausteine:
             ap.error("Bausteine oder --plan angeben")
         r = bewerte(a.bausteine, kap)
 
-    print(f"\n{'Baustein':34s} {'Woerter':>8s} {'Erzaehlung':>11s} {'ganzes Buch':>12s}")
+    print(f"\n{'Baustein':34s} {'Woerter':>8s} {'Gattung*':>11s} {'ganzes Buch':>12s}")
     for t in r["teile"]:
         q = 100 * t["erzaehlung"] / t["woerter"] if t["woerter"] else 0
         print(f"{t['spec']:34s} {t['woerter']:8,d} {q:10.1f} % {'ja' if t['ganzes_buch'] else 'NEIN':>12s}")
@@ -196,6 +296,27 @@ def main():
     print(f"\n{'SUMME':34s} {r['woerter']:8,d} {r['erz_pct']:10.1f} %")
     print(f"{'Videolaufzeit bei ' + str(WPM) + ' WPM':34s} {r['stunden']:8.2f} h"
           f"   (Ziel {ZIEL_H[0]}-{ZIEL_H[1]} h)")
+    print("\n* Gattungsanteil, buchweise gerechnet — UEBERHOLT, kein Erzaehlanteil.")
+    print("  Der gueltige Erzaehlanteil steht unten. Siehe Kopfkommentar.")
+
+    # --- Erzaehlanteil: gemessen und gemeldet, aber kein Gate ---
+    fein = fein_lesen()
+    if fein:
+        anteil, abdeckung = fein_anteil(sorted(r["kapitel"]), kap, fein)
+    else:
+        anteil, abdeckung = None, 0.0
+    print("\nErzaehlanteil (kapitelweise, die gueltige Messung):")
+    if anteil is None:
+        print(f"  NICHT GEMESSEN — {FEIN} fehlt oder kennt keines dieser Kapitel.")
+        print("  Die Datei liegt auf dem Branch claude/bibeltube-v06-korpus-m8-rz2oce.")
+        print("  Der Wert wird NICHT durch den buchweisen Gattungsanteil ersetzt.")
+    else:
+        print(f"  {anteil:.1f} %   (Grundlage: {abdeckung:.0f} % der Korpuswoerter "
+              f"kapitelweise eingestuft)")
+        if abdeckung < 99.5:
+            print(f"  Die restlichen {100-abdeckung:.0f} % sind nicht eingestuft und "
+                  f"gehen nicht in den Wert ein.")
+    print("  Das ist eine Meldung, kein Gate. Begruendung im Kopfkommentar.")
 
     fehler = []
     print("\nPruefungen:")
@@ -205,18 +326,27 @@ def main():
           f"{'OK' if band else 'REISST — ' + ('zu kurz' if r['woerter'] < BAND[0] else 'zu lang')}")
     if not band:
         fehler.append("1.1")
-    erz_ok = r["erz_pct"] >= 80
-    print(f"  1.13 Erzaehlanteil >= 80 %            "
-          f"{'OK' if erz_ok else 'REISST'}  ({r['erz_pct']:.1f} %)")
-    if not erz_ok:
-        fehler.append("1.13")
     if r["groesster"]:
         g = r["groesster"]
+        anteil_dom = g["woerter"] / r["woerter"]
+        dom_ok = anteil_dom >= DOMINANZ_MIN
+        print(f"  1.13 dominantes Buch >= {DOMINANZ_MIN*100:.0f} %          "
+              f"{'OK' if dom_ok else 'REISST'}  "
+              f"({g['spec']}, {g['woerter']:,} W = {100*anteil_dom:.1f} %)")
+        if not dom_ok:
+            fehler.append("1.13-Dominanz")
         gk = r["groesster_ist_erzaehlung"]
-        print(f"  1.13 groesster Block ist Erzaehlung   {'OK' if gk else 'REISST'}  "
-              f"({g['spec']}, {g['woerter']:,} W = {100*g['woerter']/r['woerter']:.1f} % des Korpus)")
+        print(f"  1.13 dominantes Buch ist Erzaehlwerk  {'OK' if gk else 'REISST'}")
         if not gk:
-            fehler.append("1.13-Hauptkorpus")
+            fehler.append("1.13-Erzaehlwerk")
+        voll_n = buchlaenge(kap, g["buch"])
+        print(f"  1.13 in voller Laenge gelesen         "
+              f"{'OK' if g['ganzes_buch'] else 'REISST'}"
+              + ("" if g["ganzes_buch"] else
+                 f"  (gelesen {g['von']}-{g['bis']} von 1-{voll_n}; "
+                 f"eine Teilung braucht eine Erzaehlnaht und eine Begruendung)"))
+        if not g["ganzes_buch"]:
+            fehler.append("1.13-Vollstaendigkeit")
     doppelt_text = "OK" if not r["doppelt"] else f"{r['doppelt']} KAPITEL DOPPELT"
     print(f"  Doppelte Kapitel im Korpus            {doppelt_text}")
     if r["doppelt"]:
