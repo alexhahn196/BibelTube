@@ -1427,7 +1427,7 @@ Zwei neue Regeln greifen ab V05 direkt in diesen Plan ein:
 | | Korpus laut Plan | Zusammensetzung | M8 | Eigenname im Titel |
 |---|---|---|---|---|
 | **V05** | Lukas + Prediger | Lukas 24.399 W (**81,7 %**) · Prediger 5.481 W (18,3 %) | **erfüllt** — Erzählstoff trägt, Prediger ist Beigabe | **fehlt** — „…Sleep to the Whole Story, Read Slowly" |
-| **V06** | Jesaja 1–25 + 40–66 + Daniel 4–6 | Jesaja 27.573 W (**89,8 %**) · Daniel 3.120 W (10,2 %) | **verletzt** — prophetische Rede ist Hauptkorpus | vorhanden („Isaiah") |
+| **V06** | ~~Jesaja 1–25 + 40–66 + Daniel 4–6~~ → **Rut + 1 Samuel + Ester** | ~~Jesaja 27.573 W (89,8 %) · Daniel 3.120 W (10,2 %)~~ → 1 Samuel 23.638 W (**75,1 %**) · Ester 5.408 W (17,2 %) · Rut 2.436 W (7,7 %) | ~~verletzt~~ → **erfüllt** (neu geschnitten 2026-08-30) | vorhanden („First Samuel") |
 | **V07** | Markus + Römer + Offb. 1–11 | Markus 14.261 W (**49,0 %**) · Römer 9.431 W (32,4 %) · Offenbarung 5.431 W (18,6 %) | **grenzwertig** — Erzählstoff unter der Hälfte, Rest Brief und Apokalyptik | **fehlt** — „…God's Promises for a Quiet Heart" |
 | **V08** | Genesis 1–42 | Genesis 29.835 W (100 %) | **erfüllt** — von M8 ausdrücklich genannt | **fehlt** — „…Sleep to the Beginning of Everything" |
 

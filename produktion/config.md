@@ -180,6 +180,14 @@ ki_clip_ordner_V5  = produktion/motive/loops/ki-v05
 # empfiehlt ja bei 01/02/06/08 und nein bei 03/04/05/07 (Formel §7 fuehrt sie
 # als optional - A's drei groesste Treffer haben null). Schritt 6 erzeugt sie
 # immer; nur die hier genannten Videos bekommen sie ins Upload-Paket.
+#
+# 2026-08-31: V6 bleibt in der Liste, die BEGRUENDUNG ist nachgezogen. Sie hing
+# an "52 Jesaja-Kapitel"; der Jesaja-Korpus ist gestrichen. V06 liest jetzt
+# Rut + 1 Samuel + Ester = 45 Kapitel, gerendert mit 46 Marken (45 Kapitel plus
+# "Opening prayer", siehe produktion/video-06/upload.md auf dem Branch
+# claude/bibeltube-v06-korpus-m8-rz2oce). Der Nutzen liegt jetzt darin, dass es
+# DREI eigenstaendige Buecher sind, zwischen denen ein Hoerer springen koennen
+# soll - nicht darin, dass ein langes Buch viele Kapitel hat.
 kapitelmarken_videos = V1,V2,V6,V8
 # Formel §5: "Standmotiv mit sanfter Bewegung" ist PFLICHT (11/11 Stichproben).
 # Ein völlig statisches Bild wäre ein Dokumentverstoß.

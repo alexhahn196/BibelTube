@@ -617,6 +617,55 @@ bleibt die Rahmung unverändert.
 Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
 *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
 
+> ### Wie nah jeder Anker an den Kopisten liegt (gemessen 2026-08-31)
+>
+> Gate 1.2 hat eine zweite Bedingung: *nicht näher an einem Kopisten-Titel als am
+> nächsten Gewinner.* Sie ist die einzige Titelregel aus einem dokumentierten
+> Todesfall — Kanal F kopierte wörtlich und bekam **18 Aufrufe**. Bis heute stand
+> nirgends, **welche der 13 Anker die Kopisten schon benutzt haben.**
+>
+> Alle 13 gegen `produktion/kopisten_titel.json` gemessen (45 Titel: C 35, F 10),
+> mit `produktion/titel_kandidaten.py`, Anteil geteilter inhaltstragender Wörter:
+>
+> | | Anker | Beleg | vergeben an | Kopisten-Nähe | nächster Kopisten-Titel |
+> |---|---|---:|---|---:|---|
+> | 1 | `If You're Anxious,` | 245K | — | **100 %** | „If You're Anxious, Sleep To These Psalms Tonight" |
+> | 2 | `I Know You're Tired…` | 233K | V01 | **100 %** | „You're tired, I know… Rest by the Fire with Jesus" |
+> | 3 | `You're Tired, I Know…` | 201K | — | **100 %** | „You're tired, I know… Rest by the Fire with Jesus" |
+> | **4** | **`Lord, I Feel Tired`** | **184K** | — | **33 %** | „If You Feel Empty… Sleep To These Psalms Tonight" |
+> | 5 | `No More Thinking Tonight…` | 166K | V04 | **100 %** | „No More Thinking Tonight… Jesus Is With You" |
+> | 6 | `Stop Thinking For A Moment,` | 96K | V02 | **33 %** | „Stop Here And Get Some Rest… Jesus Will Keep You Safe" |
+> | 7 | `You Need Rest…` | 36K | V08 | **100 %** | „You Need Some Rest, Hear the Miracles of Jesus" |
+> | 8 | `Fall Asleep Without Stress…` | 35K | V07 | **100 %** | „Fall Asleep Without Stress… Jesus Is With You" |
+> | 9 | `Don't Go to Sleep Worried…` | 32K | V06 | 50 % | „Don't Forget To Sleep Tonight... Jesus Is With You" |
+> | 10 | `If You're Overwhelmed,` | 1,3K | V03 | **100 %** | „If You're Overwhelmed, Sleep To These Psalms Tonight" |
+> | 11 | `Rest Your Eyes…` | 915 | V05 | 67 % | „Close Your Eyes... Listen to Everything Jesus Ever Said" |
+> | 12 | `You Deserve Some Rest…` | 559 | — | **100 %** | „You deserve some rest, hear the Teachings of Jesus" |
+> | 13 | `God Knows You're Tired…` | 140 | — | 75 % | „You're tired, I know… Rest by the Fire with Jesus" |
+>
+> **Acht von dreizehn liegen bei 100 %** — die Kopisten haben sie wörtlich
+> übernommen. Das ist keine Randnotiz: wer einen dieser acht setzt, teilt
+> **alle** inhaltstragenden Wörter seines Auftakts mit einem Kanal, der daran
+> gestorben ist. Die Grenze reißt dadurch nicht automatisch — gemessen wird der
+> ganze Titel, und eine eigene zweite Hälfte verdünnt den Wert —, aber die
+> Reserve ist aufgebraucht, bevor der Titel überhaupt anfängt.
+>
+> **Unter den noch freien Ankern (#1, #3, #4, #12, #13) ist `Lord, I Feel Tired`
+> der einzige ohne Kopisten-Nachbarn.** #1, #3 und #12 stehen bei 100 %, #13 bei
+> 75 %. `You Deserve Some Rest…` ist dabei der ungünstigste Fall überhaupt: C hat
+> ihn fast wörtlich („You deserve some rest, hear the Teachings of Jesus",
+> 89 Aufrufe).
+>
+> **Wozu das nicht taugt:** Diese Spalte misst **Nähe zu Toten**, nicht Wirkung.
+> Ein Anker mit 100 % ist nicht verbrannt — B hat mit wiederholten Ankern den
+> 166K-Durchbruch gehabt (§1, Wiederholungsverbot gestrichen). Sie sagt nur, wo
+> die zweite Titelhälfte die ganze Arbeit tun muss.
+>
+> **Nachmessen statt abschreiben:**
+> `python3 produktion/titel_kandidaten.py --grenze 0.45 "Kandidat"` gibt die
+> Kopisten-Nähe je Titel mit den geteilten Wörtern aus. Die Liste der Kopisten
+> kann wachsen; diese Tabelle ist der Stand vom 2026-08-31.
+
 > ### Auflösungsgrenze des Ähnlichkeitsmaßes (2026-08-26)
 >
 > `titel_pruefung.py` misst *Anteil geteilter inhaltstragender Wörter* =

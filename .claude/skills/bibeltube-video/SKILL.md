@@ -38,6 +38,25 @@ Praktisch für diesen Skill:
 | `config.md` | **`produktion/config.md`** |
 | `produktion/videos-NN.md` | Auf HEAD stehen **alle** Textebenen in `produktion/videos-01-08.md` als Blöcke `# Video 0N`. Auf dem V06-Branch ist `vorlage.py` so geändert, dass es **Einzeldateien** `produktion/videos-<nn>.md` findet; dort existiert `videos-06.md`, und der V06-Block in `videos-01-08.md` ist entfernt. **Sieh nach, welche der beiden Welten gerade gilt**, bevor du schreibst. |
 
+### Die V06-Runde liegt auf zwei Ständen — lies nicht gegen den halben
+
+**Genau eine Datei ist im Hauptzweig, alles andere nicht.** Stand 2026-08-31:
+
+| | im Hauptzweig | nur auf dem Branch |
+|---|---|---|
+| **Vergleichslisten** | `produktion/kopisten_titel.json` (45 Titel) | — |
+| **Erzählanteil** | — | `korpus/erzaehlanteil.json` · `korpus/eigene_videos_erzaehlanteil.json` · `erzaehlanteil.py` · `eigene_videos_erzaehlanteil.py` |
+| **Tempo** | — | `korpus/wpm_gemessen.json` · `wpm_messen.py` |
+| **V06-Runde** | — | `v06-korpus.md` · `v06-titel.md` · `v06_titel_kandidaten.json` · `korpus/v06_varianten.json` · `videos-06.md` |
+| **V06-Paket** | — | `produktion/video-06/` (Titel, Beschreibung, Tags, Thumbnail, SRT, `upload.md`) |
+| **Gate-2-Rohdaten** | — | `regeln/daten/gate2_2026-08-23.json` |
+| **Verse je Kapitel** | — | `korpus/kapitel_verse.json` |
+
+`kopisten_titel.json` wurde am 2026-08-31 **einzeln** herübergeholt, weil
+`titel_kandidaten.py` sonst gegen zwei statt 45 Titel gemessen hätte. Das war
+eine Datei, kein Merge — und es ist der Grund, warum der Stand jetzt **halb**
+ist. Wer eine Zahl aus der V06-Runde zitiert, sagt dazu, von welchem Stand.
+
 ### Der unvereinigte V06-Branch — größer und gefährlicher, als er aussieht
 
 `origin/claude/bibeltube-v06-korpus-m8-rz2oce` trägt Werkzeuge, die dieser
@@ -247,6 +266,44 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
    > Gen 42/43 liegt mitten in der Hungersnot-Sequenz; sauber ist das nicht.
    > Wenn du teilst: sag, an welchem Erzählschluss, und dass es dein Urteil ist.
 5. **Laufzeit im Band 3,4–3,8 h**, gerechnet mit dem WPM aus `config.md`.
+
+### Bekannter Fall: 1.13 und das Zielband klemmen sich gegenseitig ein
+
+**Bevor du Bücher sortierst, sieh nach, ob das dominante Buch überhaupt in die
+Zange passt.** Die beiden Regeln sind je für sich vernünftig und schließen
+gemeinsam Bücher aus, gegen die strukturell nichts spricht:
+
+- Zielband → Gesamtkorpus mindestens **29.722 W** (kleinste Bandgrenze über
+  n = 30…80), höchstens **33.426 W**.
+- 1.13 → dominantes Buch mindestens **60 %** davon.
+- 1.13 → dominantes Buch **in voller Länge**, es kann also nicht beschnitten
+  werden, um zu passen.
+
+**Daraus folgt ein Fenster für das dominante Buch: 17.833 W bis 33.426 W.**
+Darunter kommt es nie auf 60 %, darüber sprengt es allein schon das Band.
+
+| | Wörter | |
+|---|---:|---|
+| Markus | 14.261 | **zu klein** — bei 60 % dürfte der Korpus höchstens 23.768 W haben, das Band beginnt bei 29.722 |
+| ganz Genesis | 35.827 | **zu groß** — `band_fuer(50)` endet bei 33.366 |
+
+**Beide fallen an der Größe, nicht an ihrer Struktur.** Markus ist ein
+Evangelium, Genesis nennt M8 ausdrücklich als Erzählstoff. Genau das macht V07
+und V08 in ihrer Planfassung unbaubar — nicht ein Fehler im Korpus, sondern die
+Zange.
+
+**Nur neun Bücher des ganzen Bestands können je dominantes Buch sein** (Größe
+**und** Erzählwerk): `1 samuel` 23.638 · `luke` 24.399 · `acts` 23.143 ·
+`1 kings` 23.067 · `matthew` 22.831 · `2 kings` 22.226 · `2 samuel` 19.447 ·
+`judges` 17.922 · `john` 18.692.
+Knapp daneben: `joshua` 17.835 (2 W über der Grenze, fällt aber am
+Erzählanteil), `exodus` 30.926 (Größe passt, Gesetzesteile drücken den
+Erzählanteil unter 80 %).
+
+> **Nur dokumentiert, keine Schwelle geändert.** Weder die 60 %, noch das Band,
+> noch „in voller Länge" werden hier angefasst. Wer eine davon lockern will,
+> entscheidet das als Kanalinhaber — und wer es tut, sollte wissen, dass die
+> Zange und nicht die Struktur der Grund war.
 
 ### Nachttauglichkeit — als Einschätzung kennzeichnen
 
@@ -811,12 +868,19 @@ erkennbaren Nutzen.
 Eintragen in `kapitelmarken_videos` in `produktion/config.md`. §7: beide Muster
 gewinnen, es ist eine **Nutzbarkeits- und keine Reichweitenfrage**.
 
-> **Den vorhandenen Eintrag gegen den NEUEN Korpus prüfen — er stammt aus dem
-> alten Plan.** `kapitelmarken_videos = V1,V2,V6,V8` führt V6, eingetragen für
-> die 52 Jesaja-Kapitel. Wird V06 ein durchlaufender Erzählkorpus, verlangt
-> dieser Ablauf **keine** Kapitelmarken — der Eintrag muss raus, sonst baut die
-> Pipeline stillschweigend 45 Marken. Dasselbe gilt für V08, wenn sein Korpus
-> neu geschnitten wird.
+> **Den vorhandenen Eintrag gegen den NEUEN Korpus prüfen — er kann aus einem
+> alten Plan stammen.** `kapitelmarken_videos = V1,V2,V6,V8`. Der V6-Eintrag war
+> mit „52 Jesaja-Kapitel" begründet; der Korpus ist inzwischen Rut + 1 Samuel +
+> Ester. **Der Eintrag bleibt trotzdem** — die Begründung ist am 2026-08-31
+> nachgezogen worden: drei eigenständige Bücher, zwischen denen ein Hörer
+> springen können soll, 45 Kapitel / **46 Marken** (mit „Opening prayer").
+>
+> **Grenzfall, den dieser Ablauf nicht auflöst:** V06 ist zugleich
+> durchlaufender Erzählstoff — der Fall, für den oben „nein" steht. Bei einem
+> Korpus aus mehreren ganzen Erzählbüchern trennen die beiden Kriterien nicht.
+> Entscheide es und schreib die Begründung dazu; **ändere die Regel nicht
+> nebenbei.** Für V08 steht dieselbe Prüfung noch aus, sobald sein Korpus neu
+> geschnitten ist.
 
 ---
 
@@ -1296,9 +1360,12 @@ ausgewiesen.
    (35.827 W) passt nie ins Band (`band_fuer(50)` endet bei 33.366). Die
    „ein Wort"-Erzählung, die hier vorher stand, verharmlost einen strukturellen
    Fehler zu einem Rundungsproblem.
-3. **V06 auf HEAD ist noch Jesaja** (89,8 % dominant, aber prophetische Rede —
-   nach M8 als Hauptkorpus ausgeschlossen; grober Erzählanteil 10,2 %). Der
-   Ersatz steht nur auf dem unvereinigten Branch.
+3. **V06 ist neu geschnitten** — Rut + 1 Samuel + Ester statt Jesaja. Auf HEAD
+   ist das seit 2026-08-31 in `videos-01-08.md`, `bibeltube-wissen.md`,
+   `config.md` und `motive/README.md` nachgezogen; Titel, Texte, Thumbnail und
+   Renderpaket liegen weiter **nur auf dem Branch**. **`plan.json` auf HEAD
+   führt für V6 weiter den Jesaja-Korpus** — das ist die letzte Stelle, an der
+   der alte Stand als Maschinen-Eingabe steht, und sie zieht der Branch mit.
 4. **Die drei Erklärungen für V03's Impressionen** (Titel-CTR / kontextliche
    Zuordnung / Retention) sind nicht getrennt. Getrennt würden sie erst durch ein
    Erzählvideo **ohne** Eigennamen im Titel — eine Variable pro Runde, das steht

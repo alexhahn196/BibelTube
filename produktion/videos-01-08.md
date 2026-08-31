@@ -32,7 +32,7 @@ Zwei neue Regeln greifen ab V05 direkt in diesen Plan ein:
 | | Korpus laut Plan | Zusammensetzung | M8 | Eigenname im Titel |
 |---|---|---|---|---|
 | **V05** | Lukas + Prediger | Lukas 24.399 W (**81,7 %**) · Prediger 5.481 W (18,3 %) | **erfüllt** — Erzählstoff trägt, Prediger ist Beigabe | **fehlt** — „…Sleep to the Whole Story, Read Slowly" |
-| **V06** | Jesaja 1–25 + 40–66 + Daniel 4–6 | Jesaja 27.573 W (**89,8 %**) · Daniel 3.120 W (10,2 %) | **verletzt** — prophetische Rede ist Hauptkorpus | vorhanden („Isaiah") |
+| **V06** | ~~Jesaja 1–25 + 40–66 + Daniel 4–6~~ → **Rut + 1 Samuel + Ester** | ~~Jesaja 27.573 W (89,8 %) · Daniel 3.120 W (10,2 %)~~ → 1 Samuel 23.638 W (**75,1 %**) · Ester 5.408 W (17,2 %) · Rut 2.436 W (7,7 %) | ~~verletzt~~ → **erfüllt** (neu geschnitten 2026-08-30) | vorhanden („First Samuel") |
 | **V07** | Markus + Römer + Offb. 1–11 | Markus 14.261 W (**49,0 %**) · Römer 9.431 W (32,4 %) · Offenbarung 5.431 W (18,6 %) | **grenzwertig** — Erzählstoff unter der Hälfte, Rest Brief und Apokalyptik | **fehlt** — „…God's Promises for a Quiet Heart" |
 | **V08** | Genesis 1–42 | Genesis 29.835 W (100 %) | **erfüllt** — von M8 ausdrücklich genannt | **fehlt** — „…Sleep to the Beginning of Everything" |
 
@@ -157,10 +157,13 @@ schließt diese Lücke fast genau — dann wäre allerdings V08 neu zu schneiden
    Variante (a).** Begründung im Upload-Plan oben — eine Variable pro Runde, und (a)
    ist die Variante, unter der V3 gelaufen ist. Damit bleibt der Korpuswechsel nach M8
    die einzige geänderte Größe zwischen V01–V04 und V05–V08.
-2. **Die Kapitelmarken-Empfehlung hängt an den alten Korpora.** „Ja bei 01, 02, 06, 08"
-   war mit 89/61 Psalmen und 52 Jesaja-Kapiteln begründet. Fällt der Jesaja-Korpus weg,
-   fällt die Begründung für V06 mit — und `kapitelmarken_videos` in
-   `produktion/config.md` (aktuell `V1,V2,V6,V8`) ist dann nachzuziehen.
+2. ~~**Die Kapitelmarken-Empfehlung hängt an den alten Korpora.**~~
+   **Erledigt am 2026-08-31.** Der Jesaja-Korpus ist weggefallen, die Begründung
+   für V06 war damit hinfällig. Nachgezogen: V06 liest Rut + 1 Samuel + Ester,
+   **45 Kapitel / 46 Marken**, und die Empfehlung „ja" trägt weiter — jetzt
+   begründet mit drei eigenständigen Büchern statt mit einem langen
+   prophetischen. `kapitelmarken_videos = V1,V2,V6,V8` bleibt unverändert; nur
+   der Kommentar daneben stimmte nicht mehr.
 
 ---
 
@@ -301,9 +304,25 @@ Begründung: Formel §7 stellt fest, dass A's drei größte Treffer **null** Kap
 haben und B durchgehend welche setzt — beide Muster gewinnen, es ist also eine
 Nutzbarkeits- und keine Reichweitenfrage. Nutzen entsteht dort, wo viele kurze,
 eigenständige Einheiten vorliegen und Hörer gezielt springen: 89 bzw. 61 Psalmen
-(01, 02), 52 Jesaja-Kapitel (06), 42 Genesis-Kapitel (08). Bei den
-Evangelien-Videos ist der Text ein durchlaufender Erzählstrang; dort wären
-Kapitelmarken 20–30 Zeilen ohne erkennbaren Nutzen.
+(01, 02), **45 Kapitel aus drei Büchern — Rut 4, 1 Samuel 31, Ester 10 — bei
+V06**, 42 Genesis-Kapitel (08). Bei den Evangelien-Videos ist der Text ein
+durchlaufender Erzählstrang; dort wären Kapitelmarken 20–30 Zeilen ohne
+erkennbaren Nutzen.
+
+> **Begründung für V06 nachgezogen 2026-08-31.** Hier stand „52 Jesaja-Kapitel
+> (06)". Der Jesaja-Korpus ist gestrichen; V06 liest **Rut + 1 Samuel + Ester**.
+> Die Empfehlung „ja" **trägt weiter, aber aus einem anderen Grund**: nicht ein
+> langes prophetisches Buch mit vielen Kapiteln, sondern **drei eigenständige
+> Bücher**, zwischen denen ein Hörer springen können soll. Gerendert sind es
+> **46 Marken** — 45 Kapitel plus „Opening prayer"
+> (`produktion/video-06/upload.md`, auf dem Branch
+> `claude/bibeltube-v06-korpus-m8-rz2oce`).
+>
+> **Grenzfall, ausdrücklich vermerkt:** V06 ist zugleich durchlaufender
+> Erzählstoff — der Fall, für den derselbe Absatz „nein" empfiehlt. Die beiden
+> Kriterien (viele kurze Einheiten ↔ durchlaufender Strang) trennen einen
+> Drei-Bücher-Erzählkorpus nicht sauber. Entschieden ist „ja"; die Regel bleibt
+> unverändert.
 
 **Beim Upload:** KI-Kennzeichnung („altered or synthetic content") setzen —
 Compliance-Entscheidung nach Formel §8, kein Datenbeleg in beide Richtungen.
