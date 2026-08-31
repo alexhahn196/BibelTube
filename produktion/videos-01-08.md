@@ -117,8 +117,8 @@ Begründung: Formel §7 stellt fest, dass A's drei größte Treffer **null** Kap
 haben und B durchgehend welche setzt — beide Muster gewinnen, es ist also eine
 Nutzbarkeits- und keine Reichweitenfrage. Nutzen entsteht dort, wo viele kurze,
 eigenständige Einheiten vorliegen und Hörer gezielt springen: 89 bzw. 61 Psalmen
-(01, 02), 52 Jesaja-Kapitel (06), 42 Genesis-Kapitel (08). Bei den
-Evangelien-Videos ist der Text ein durchlaufender Erzählstrang; dort wären
+(01, 02), 45 Kapitel aus Rut, 1 Samuel und Ester (06), 42 Genesis-Kapitel (08).
+Bei den Evangelien-Videos ist der Text ein durchlaufender Erzählstrang; dort wären
 Kapitelmarken 20–30 Zeilen ohne erkennbaren Nutzen.
 
 **Beim Upload:** KI-Kennzeichnung („altered or synthetic content") setzen —

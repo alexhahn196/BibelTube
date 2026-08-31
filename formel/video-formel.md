@@ -370,6 +370,58 @@ Checkliste nicht mit ungeprüften Annahmen verwässert.
 Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
 *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
 
+
+### Wie stark die Kopisten die Anker schon belegen (gemessen 2026-08-31)
+
+Alle 13 Anker gegen die **45 Titel der Kopisten C und F**
+(`produktion/kopisten_titel.json`), gemessen mit
+`produktion/titel_pruefung.py` — Anteil der inhaltstragenden Wörter des Ankers,
+die im nächstliegenden Kopisten-Titel wiederkehren.
+
+| Anker | Beleg | Kopisten | geteilte Wörter | nächster Kopisten-Titel |
+|---|---:|---:|---|---|
+| `If You're Anxious,` | 245K | **100 %** | `anxiou`, `if`, `you` | C · 29 Aufrufe: „If You're Anxious, Sleep To These Psalms To…“ |
+| `I Know You're Tired…` | 233K | **100 %** | `know`, `tir`, `you` | C · 21 Aufrufe: „You’re tired, I know… Rest by the Fire with…“ |
+| `You're Tired, I Know…` | 201K | **100 %** | `know`, `tir`, `you` | C · 21 Aufrufe: „You’re tired, I know… Rest by the Fire with…“ |
+| `Lord, I Feel Tired` | 184K | **33 %** | `feel` | C · 44 Aufrufe: „If You Feel Empty… Sleep To These Psalms To…“ |
+| `No More Thinking Tonight…` | 166K | **100 %** | `no`, `think`, `tonight` | C · 16 Aufrufe: „No More Thinking Tonight… Jesus Is With You“ |
+| `Stop Thinking For A Moment,` | 96K | **33 %** | `stop` | C · 47 Aufrufe: „Stop Here And Get Some Rest… Jesus Will Kee…“ |
+| `You Need Rest…` | 36K | **100 %** | `need`, `rest`, `you` | C · 41 Aufrufe: „You Need Some Rest, Hear the Miracles of Je…“ |
+| `Fall Asleep Without Stress…` | 35K | **100 %** | `asleep`, `fall`, `stres`, `without` | C · 52 Aufrufe: „Fall Asleep Without Stress… Jesus Is With Y…“ |
+| `Don't Go to Sleep Worried…` | 32K | **50 %** | `not`, `sleep` | C · 33 Aufrufe: „Don't Forget To Sleep Tonight... Jesus Is W…“ |
+| `If You're Overwhelmed,` | 1,3K | **100 %** | `if`, `overwhelm`, `you` | C · 62 Aufrufe: „If You're Overwhelmed, Sleep To These Psalm…“ |
+| `Rest Your Eyes…` | 915 | **67 %** | `eyes`, `your` | C · 11 Aufrufe: „Close Your Eyes... Listen to Everything Jes…“ |
+| `You Deserve Some Rest…` | 559 | **100 %** | `deserve`, `rest`, `you` | C · 89 Aufrufe: „You deserve some rest, hear the Teachings o…“ |
+| `God Knows You're Tired…` | 140 | **75 %** | `know`, `tir`, `you` | C · 21 Aufrufe: „You’re tired, I know… Rest by the Fire with…“ |
+
+**Acht von dreizehn Ankern stehen bei 100 % — alle acht gegen Kanal C.**
+C hat die Gewinner-Anker nicht sinngemäß nachgebaut, sondern wörtlich
+übernommen; F ist in dieser Auswertung nie der nächste Nachbar, weil F weniger
+und gröber kopiert hat. Der Anker allein trägt also keine Abgrenzung mehr.
+
+**Frei sind zwei, nicht einer:** `Lord, I Feel Tired` (184K) und
+`Stop Thinking For A Moment,` (96K), beide gemessen bei 33 %. Zwischen ihnen
+liegt ein Unterschied, den die Zahl nicht zeigt: bei `Stop Thinking For A
+Moment,` beginnt der nächste Kopisten-Titel trotzdem mit demselben Wort
+(„Stop Here And Get Some Rest…"), bei `Lord, I Feel Tired` teilt der nächste
+Nachbar nur `feel` in völlig anderer Bauform. **`Lord, I Feel Tired` ist damit
+der einzige Anker ohne erkennbaren Kopisten-Nachbarn** — gemessen gleichauf mit
+#6, qualitativ freier.
+
+**Was daraus folgt — und was nicht.** Ein Anker bei 100 % ist **kein**
+Ausschlussgrund: §1 verbietet das wörtliche Kopieren fremder *Titel*, nicht die
+Wiederverwendung eines belegten *Ankers*, und das Wiederholungsverbot ist
+gestrichen. Die Abgrenzung muss nur woanders herkommen. V06 ist der Fall dazu:
+Anker `I Know You're Tired…` steht bei 100 % gegen die Kopisten, der
+**vollständige** Titel `I Know You're Tired… First Samuel Runs All the Way to
+Morning` aber bei 37,5 % — die zweite Hälfte verdünnt den Anker unter die
+Grenze. Wer einen 100-%-Anker nimmt, braucht eine zweite Hälfte, die ihn
+allein trägt.
+
+> Gemessen an 45 Kopisten-Titeln aus zwei toten Kanälen. Es ist eine
+> Abstandsmessung, **keine Wirkungsmessung**: dass Nähe zu C und F schadet, ist
+> aus F's 18-Aufrufe-Fall belegt, aus C's Zahlen nur nahegelegt.
+
 **Ungeprüft — abgeleitet, ohne Beleg (7):** `If Your Mind Won't Slow Down,` ·
 `When Sleep Won't Come…` · `You've Carried Enough Today…` · `If Tonight Feels Heavy,` ·
 `Too Tired to Pray? …` · `When Tomorrow Feels Too Big…` · `If You're Lying Awake Again…`

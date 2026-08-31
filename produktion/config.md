@@ -125,10 +125,17 @@ ki_clip_ordner_V3  = produktion/motive/loops/ki-v03
 ki_clip_ordner_V4  = produktion/motive/loops/ki-v04
 ki_clip_ordner_V6  = produktion/motive/loops/ki-v06
 
-# Kapitelmarken sind je Video entschieden, nicht global: videos-01-08.md
-# empfiehlt ja bei 01/02/06/08 und nein bei 03/04/05/07 (Formel §7 fuehrt sie
-# als optional - A's drei groesste Treffer haben null). Schritt 6 erzeugt sie
-# immer; nur die hier genannten Videos bekommen sie ins Upload-Paket.
+# Kapitelmarken sind je Video entschieden, nicht global: ja bei 01/02/06/08,
+# nein bei 03/04/05/07 (Formel §7 fuehrt sie als optional - A's drei groesste
+# Treffer haben null). Schritt 6 erzeugt sie immer; nur die hier genannten
+# Videos bekommen sie ins Upload-Paket.
+# Der Grund je Video ist die Zahl kurzer, in sich geschlossener Einheiten:
+# 89 bzw. 61 Psalmen (01, 02), 42 Genesis-Kapitel (08) und fuer V06 die
+# 45 Kapitel aus Rut, 1 Samuel und Ester - im Paket 46 Marken, weil die
+# Eroeffnung bei 0:00 dazukommt (produktion/video-06/upload.md).
+# 2026-08-31 nachgezogen: hier stand vorher die Begruendung des gestrichenen
+# Jesaja-Korpus (52 Kapitel). Der Wert V6 war und bleibt richtig, nur die
+# Begruendung war veraltet.
 kapitelmarken_videos = V1,V2,V6,V8
 # Formel §5: "Standmotiv mit sanfter Bewegung" ist PFLICHT (11/11 Stichproben).
 # Ein völlig statisches Bild wäre ein Dokumentverstoß.

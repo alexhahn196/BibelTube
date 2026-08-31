@@ -638,6 +638,58 @@ Checkliste nicht mit ungeprüften Annahmen verwässert.
 Die letzten vier stammen aus Flop-Videos desselben Kanals — belegt als *verwendet*, nicht als
 *wirksam*. Bei B trugen Treffer und Flops dasselbe Muster.
 
+
+### Wie stark die Kopisten die Anker schon belegen (gemessen 2026-08-31)
+
+Alle 13 Anker gegen die **45 Titel der Kopisten C und F**
+(`produktion/kopisten_titel.json`), gemessen mit
+`produktion/titel_pruefung.py` — Anteil der inhaltstragenden Wörter des Ankers,
+die im nächstliegenden Kopisten-Titel wiederkehren.
+
+| Anker | Beleg | Kopisten | geteilte Wörter | nächster Kopisten-Titel |
+|---|---:|---:|---|---|
+| `If You're Anxious,` | 245K | **100 %** | `anxiou`, `if`, `you` | C · 29 Aufrufe: „If You're Anxious, Sleep To These Psalms To…“ |
+| `I Know You're Tired…` | 233K | **100 %** | `know`, `tir`, `you` | C · 21 Aufrufe: „You’re tired, I know… Rest by the Fire with…“ |
+| `You're Tired, I Know…` | 201K | **100 %** | `know`, `tir`, `you` | C · 21 Aufrufe: „You’re tired, I know… Rest by the Fire with…“ |
+| `Lord, I Feel Tired` | 184K | **33 %** | `feel` | C · 44 Aufrufe: „If You Feel Empty… Sleep To These Psalms To…“ |
+| `No More Thinking Tonight…` | 166K | **100 %** | `no`, `think`, `tonight` | C · 16 Aufrufe: „No More Thinking Tonight… Jesus Is With You“ |
+| `Stop Thinking For A Moment,` | 96K | **33 %** | `stop` | C · 47 Aufrufe: „Stop Here And Get Some Rest… Jesus Will Kee…“ |
+| `You Need Rest…` | 36K | **100 %** | `need`, `rest`, `you` | C · 41 Aufrufe: „You Need Some Rest, Hear the Miracles of Je…“ |
+| `Fall Asleep Without Stress…` | 35K | **100 %** | `asleep`, `fall`, `stres`, `without` | C · 52 Aufrufe: „Fall Asleep Without Stress… Jesus Is With Y…“ |
+| `Don't Go to Sleep Worried…` | 32K | **50 %** | `not`, `sleep` | C · 33 Aufrufe: „Don't Forget To Sleep Tonight... Jesus Is W…“ |
+| `If You're Overwhelmed,` | 1,3K | **100 %** | `if`, `overwhelm`, `you` | C · 62 Aufrufe: „If You're Overwhelmed, Sleep To These Psalm…“ |
+| `Rest Your Eyes…` | 915 | **67 %** | `eyes`, `your` | C · 11 Aufrufe: „Close Your Eyes... Listen to Everything Jes…“ |
+| `You Deserve Some Rest…` | 559 | **100 %** | `deserve`, `rest`, `you` | C · 89 Aufrufe: „You deserve some rest, hear the Teachings o…“ |
+| `God Knows You're Tired…` | 140 | **75 %** | `know`, `tir`, `you` | C · 21 Aufrufe: „You’re tired, I know… Rest by the Fire with…“ |
+
+**Acht von dreizehn Ankern stehen bei 100 % — alle acht gegen Kanal C.**
+C hat die Gewinner-Anker nicht sinngemäß nachgebaut, sondern wörtlich
+übernommen; F ist in dieser Auswertung nie der nächste Nachbar, weil F weniger
+und gröber kopiert hat. Der Anker allein trägt also keine Abgrenzung mehr.
+
+**Frei sind zwei, nicht einer:** `Lord, I Feel Tired` (184K) und
+`Stop Thinking For A Moment,` (96K), beide gemessen bei 33 %. Zwischen ihnen
+liegt ein Unterschied, den die Zahl nicht zeigt: bei `Stop Thinking For A
+Moment,` beginnt der nächste Kopisten-Titel trotzdem mit demselben Wort
+(„Stop Here And Get Some Rest…"), bei `Lord, I Feel Tired` teilt der nächste
+Nachbar nur `feel` in völlig anderer Bauform. **`Lord, I Feel Tired` ist damit
+der einzige Anker ohne erkennbaren Kopisten-Nachbarn** — gemessen gleichauf mit
+#6, qualitativ freier.
+
+**Was daraus folgt — und was nicht.** Ein Anker bei 100 % ist **kein**
+Ausschlussgrund: §1 verbietet das wörtliche Kopieren fremder *Titel*, nicht die
+Wiederverwendung eines belegten *Ankers*, und das Wiederholungsverbot ist
+gestrichen. Die Abgrenzung muss nur woanders herkommen. V06 ist der Fall dazu:
+Anker `I Know You're Tired…` steht bei 100 % gegen die Kopisten, der
+**vollständige** Titel `I Know You're Tired… First Samuel Runs All the Way to
+Morning` aber bei 37,5 % — die zweite Hälfte verdünnt den Anker unter die
+Grenze. Wer einen 100-%-Anker nimmt, braucht eine zweite Hälfte, die ihn
+allein trägt.
+
+> Gemessen an 45 Kopisten-Titeln aus zwei toten Kanälen. Es ist eine
+> Abstandsmessung, **keine Wirkungsmessung**: dass Nähe zu C und F schadet, ist
+> aus F's 18-Aufrufe-Fall belegt, aus C's Zahlen nur nahegelegt.
+
 **Ungeprüft — abgeleitet, ohne Beleg (7):** `If Your Mind Won't Slow Down,` ·
 `When Sleep Won't Come…` · `You've Carried Enough Today…` · `If Tonight Feels Heavy,` ·
 `Too Tired to Pray? …` · `When Tomorrow Feels Too Big…` · `If You're Lying Awake Again…`
@@ -977,8 +1029,8 @@ Begründung: Formel §7 stellt fest, dass A's drei größte Treffer **null** Kap
 haben und B durchgehend welche setzt — beide Muster gewinnen, es ist also eine
 Nutzbarkeits- und keine Reichweitenfrage. Nutzen entsteht dort, wo viele kurze,
 eigenständige Einheiten vorliegen und Hörer gezielt springen: 89 bzw. 61 Psalmen
-(01, 02), 52 Jesaja-Kapitel (06), 42 Genesis-Kapitel (08). Bei den
-Evangelien-Videos ist der Text ein durchlaufender Erzählstrang; dort wären
+(01, 02), 45 Kapitel aus Rut, 1 Samuel und Ester (06), 42 Genesis-Kapitel (08).
+Bei den Evangelien-Videos ist der Text ein durchlaufender Erzählstrang; dort wären
 Kapitelmarken 20–30 Zeilen ohne erkennbaren Nutzen.
 
 **Beim Upload:** KI-Kennzeichnung („altered or synthetic content") setzen —
@@ -1482,111 +1534,21 @@ Support the channel: [Spendenlink]
 
 # Video 06
 
-> **⚠ Überholt seit 2026-08-30.** Der hier beschriebene Jesaja-Korpus ist gestrichen:
-> 10,2 % Erzählanteil, reißt Gate 1.13 / Regel M8. **Verbindlich ist
-> `produktion/korpus/plan.json`**, dort steht V06 als *Rut + 1 Samuel + Ester*
-> (31.482 W, 89,03 % Erzählanteil, Status „geplant, Titel offen"). Begründung und
-> die beiden verworfenen Alternativen: [`v06-korpus.md`](v06-korpus.md).
-> **Titel, Eingangsgebet und Hook unten gehören zum alten Korpus und sind
-> hinfällig** — sie stehen noch da, weil ihre Neufassung ein eigener Auftrag ist,
-> nicht weil sie gelten.
-
-**Titel:** `Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes`
-**Eigennamen-Test:** **JA** — „Isaiah" (Testreihe 2 von 2)
-**Anker:** „Don't Go to Sleep Worried…" (belegt, B 32K)
-**Hook-Test:** Variante **(a)**
-
-> **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Isaiah's Comfort for a Restless
-> Heart". Damit lag der Titel bei 62,5 % gemeinsamer inhaltstragender Wörter mit
-> B's „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" (32K) —
-> geteilt: *go, heart, not, sleep, worried*. „Heart" ist ersetzt, der belegte Anker
-> bleibt. Jetzt 44,4 %.
-
-**Textkorpus:** Jesaja 1–25 + Jesaja 40–66 + Daniel 4–6
-**Gemessen:** 30.693 Wörter → **3,65 h** → ca. 159.900 Zeichen TTS
-
-> Jesaja 26–39 bleibt bewusst frei für ein späteres Video.
-
-### Eingangsgebet (166 Wörter)
-
-> Father, I'm carrying something into the night that I can't do anything about until
-> morning — and possibly not then either.
+> **Herausgelöst am 2026-08-30, hier nachgezogen am 2026-08-31.** Der
+> Jesaja-Korpus, der hier stand, ist gestrichen (10,2 % Erzählanteil, reißt
+> Gate 1.13 / Regel M8); Titel, Gebet, Hook, Beschreibung und Tags dazu waren
+> mit ihm hinfällig und sind entfernt statt konserviert — sie stehen in der
+> Historie (`git log -- bibeltube-wissen.md`).
 >
-> That's the part that keeps me awake. Not the trouble itself, but the fact that it
-> sits outside my reach, and I keep reaching anyway.
+> **Was gilt:** Rut + 1 Samuel + Ester, 31.482 W, 89,03 % Erzählanteil, Titel
+> `I Know You're Tired… First Samuel Runs All the Way to Morning`. Die
+> Textebene steht in `produktion/videos-06.md` und wird von dort maschinell
+> gelesen; Begründung in `produktion/v06-korpus.md` und
+> `produktion/v06-titel.md`. Video ist gerendert
+> (`produktion/korpus/v06_render.json`).
 >
-> You spoke to a whole nation through Isaiah when things were far past mending, and you
-> didn't begin by explaining yourself. You began by saying: comfort my people. Speak
-> tenderly. The word came before the repair.
->
-> Speak tenderly to me tonight, then. Before anything is fixed.
->
-> Let these chapters be a hand on my shoulder rather than an argument. I'm not in a
-> state to be convinced of much. But I can be quieted.
->
-> Loosen the grip. Take the night shift. Let the thing I'm worried about stay in your
-> keeping until it's actually mine to handle again.
->
-> And for everyone listening who is worried about someone they love — give them a few
-> hours of not carrying it.
->
-> Amen.
-
-### Hook
-
-**(a) mit kurzer Begrüßung** ← **für Video 06 verwenden**
-> „Don't go to sleep worried. Whatever it is, it isn't yours to hold through the night.
-> For the next few hours it's just Isaiah, read slowly — the comfort chapters and the
-> ones before them. Get comfortable and let your eyes close."
-
-**(b) kalter Start**
-> „Isaiah, chapter one. The vision of Isaiah the son of Amoz, which he saw concerning
-> Judah and Jerusalem…"
-
-### CTA (2)
-
-1. „If you're worried about someone tonight, leave their name or just say what's
-   weighing on you — people here pray through the comments."
-2. „Subscribe if you'd like the next reading to find you."
-
-### Thumbnail
-
-**Motiv:** Grundmotiv, Feuer klein, weiter Horizont mit ferner Hügelkette,
-sehr großer Sternenhimmel, Gewand stärker in Rot betont.
-**Text:** `ISAIAH TONIGHT` (2 Wörter)
-
-### Beschreibung
-
-```
-Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes
-
-For the nights when you're carrying something you can't do anything about yet. Isaiah
-chapters 1–25 and 40–66, with Daniel 4–6 — read slowly, without interruption.
-
-Nothing here needs following. Let it play and close your eyes.
-
-Focused on:
-• Worry you can't act on tonight
-• Comfort spoken before anything is fixed
-• Being kept through the dark hours
-• Deep, unhurried sleep
-
-Read from the World English Bible (British Edition).
-
-Sleep well. Subscribing helps you find the next reading.
-
-Support the channel: [Spendenlink]
-
-#isaiah #biblesleep #christiansleep #bibleversesforsleep #comfortscripture
-```
-
-**Tags:** `book of isaiah`, `isaiah for sleep`, `bible for sleep`,
-`christian sleep meditation`, `comfort scripture`, `scripture for sleep`,
-`old testament for sleep`, `bible reading for sleep`, `sleep with god's word`,
-`worry and anxiety`, `bedtime bible`, `peaceful bible reading`,
-`world english bible`, `christian bedtime`, `prophets bible`
-
----
+> Dieses Dokument ist eine Momentaufnahme der vier Arbeitsdokumente vom
+> 04.08.2026 — verbindlich sind immer die Originale, nicht diese Kopie.
 
 # Video 07
 

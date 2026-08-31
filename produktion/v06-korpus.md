@@ -285,6 +285,51 @@ Wirkung ungeprüft ist.
 
 ---
 
+## Wo diese Runde liegt — Stand 2026-08-31, nachgeprüft
+
+**Nichts aus der V06-Runde ist im Hauptzweig.** `origin/main` steht auf
+`5a750a4`; weder die Messdateien noch die Werkzeuge noch das Video-Paket sind
+dort. Wer eine Zahl aus dieser Runde zitiert, zitiert vom Branch
+`claude/bibeltube-v06-korpus-m8-rz2oce`.
+
+**Neu auf dem Branch, im Hauptzweig nicht vorhanden (34 Dateien):**
+
+| | Dateien |
+|---|---|
+| Erzählanteil | `erzaehlanteil.py` · `eigene_videos_erzaehlanteil.py` · `korpus/erzaehlanteil.json` · `korpus/eigene_videos_erzaehlanteil.json` · `korpus/kapitel_verse.json` |
+| Tempo | `wpm_messen.py` · `korpus/wpm_gemessen.json` |
+| V06-Runde | `v06-korpus.md` · `v06-titel.md` · `v06_titel_kandidaten.json` · `korpus/v06_varianten.json` · `videos-06.md` |
+| Render | `render_messung.py` · `korpus/v06_render.json` · `klang/bett_mono_feuer_leise.flac` · `motive/motiv-V6.png` (+`_160x90`) |
+| Vergleichsliste | `kopisten_titel.json` |
+| Gate-2-Rohdaten | `regeln/daten/gate2_2026-08-23.json` |
+| Paket und Clips | `produktion/video-06/` (9 Dateien) · `produktion/motive/loops/ki-v06/` (6 Dateien) |
+
+**Gegenüber dem Hauptzweig geändert (13 Dateien):** `config.md` ·
+`eigene_titel.json` · `korpus/plan.json` · `korpus/kapitel.json` ·
+`korpus/wortzahlen.json` · `wortzahlen.py` · `titel_pruefung.py` ·
+`pipeline/vorlage.py` · `pipeline/schritt5_video.py` · `videos-01-08.md` ·
+`workflow-gates.md` · `regeln/erfolgsregeln.md` · `bibeltube-wissen.md`.
+
+### Zwei Korrekturen an einer verbreiteten Annahme
+
+**`kopisten_titel.json` ist nicht im Hauptzweig.** Sie existiert zweimal —
+auf diesem Branch (`f31ac14`) und auf
+`origin/claude/historien-fund-messdatei-w4hjlc` (`1d2440b`) — und beide
+Fassungen sind **byte-identisch** (SHA-256 `f98dddc6…`, je 45 Titel). Es gibt
+also keine Divergenz, die aufzulösen wäre, aber auch keinen Hauptzweig-Stand,
+gegen den man messen könnte.
+
+**`.claude/skills/bibeltube-video/SKILL.md` ist ebenfalls nicht im
+Hauptzweig**, sondern nur auf `historien-fund-messdatei-w4hjlc`. Die Tabelle
+dort, die `kopisten_titel.json` als „im Hauptzweig" führt, ist nach dieser
+Prüfung falsch und gehört korrigiert — das kann nur auf jenem Branch
+geschehen.
+
+> Geprüft mit `git fetch origin`, `git cat-file -e origin/main:<pfad>` und
+> `git diff --name-status origin/main...HEAD`, nicht aus der Erinnerung.
+
+---
+
 ## Was hier nicht drinsteht
 
 Kein Titel, kein Eingangsgebet, kein Hook, kein Thumbnail, kein TTS, kein Rendering.
