@@ -32,35 +32,56 @@ Praktisch für diesen Skill:
 
 ## Wo die Quellen wirklich liegen
 
-Drei der üblich genannten Pfade stimmen nicht. Nachgeprüft am 2026-08-31:
-
 | gemeint | tatsächlich |
 |---|---|
 | `plan.json` | **`produktion/korpus/plan.json`** |
-| `produktion/videos-06.md` | **existiert nicht.** V06 ist der Block `# Video 06` in `produktion/videos-01-08.md`. Die V06-Vorarbeit liegt in `produktion/v06-korpus.md` und `produktion/v06-titel.md` — **auf einem unvereinigten Branch**, siehe unten. |
 | `config.md` | **`produktion/config.md`** |
+| `produktion/videos-NN.md` | Auf HEAD stehen **alle** Textebenen in `produktion/videos-01-08.md` als Blöcke `# Video 0N`. Auf dem V06-Branch ist `vorlage.py` so geändert, dass es **Einzeldateien** `produktion/videos-<nn>.md` findet; dort existiert `videos-06.md`, und der V06-Block in `videos-01-08.md` ist entfernt. **Sieh nach, welche der beiden Welten gerade gilt**, bevor du schreibst. |
 
-### Der unvereinigte V06-Branch
+### Der unvereinigte V06-Branch — größer und gefährlicher, als er aussieht
 
-`origin/claude/bibeltube-v06-korpus-m8-rz2oce` (3 Commits, weder in `main` noch
-in einem anderen Branch) trägt Werkzeuge, die dieser Ablauf braucht und die auf
-`main`/HEAD **fehlen**:
+`origin/claude/bibeltube-v06-korpus-m8-rz2oce` trägt Werkzeuge, die dieser
+Ablauf braucht und die auf `main`/HEAD **fehlen**:
 
 | Datei | Zweck |
 |---|---|
-| `produktion/erzaehlanteil.py` | misst den Erzählanteil eines Korpus |
+| `produktion/erzaehlanteil.py` | versgenaue Erzählanteil-Einstufung |
 | `produktion/kopisten_titel.json` | **45** Kopisten-Titel (C: 35, F: 10) — die dritte Vergleichsliste |
 | `produktion/titel_pruefung.py` (neuere Fassung) | misst gegen **drei** Listen statt einer, Kandidatengrenze 45 % |
-| `produktion/v06-korpus.md`, `v06-titel.md` | die ausgeführte V06-Runde als Vorbild |
+| `produktion/korpus/erzaehlanteil.json` | 250 Kapitel einzeln eingestuft, mit Begründung |
+| `produktion/korpus/eigene_videos_erzaehlanteil.json` | Erzählanteil V01–V05, versgenau |
 | `produktion/korpus/wpm_gemessen.json` | gemessenes Tempo je Video |
-| `produktion/korpus/eigene_videos_erzaehlanteil.json` | Erzählanteil V01–V05 |
-| `produktion/korpus/plan.json` (Fassung mit `_meta`) | Laufzeiten auf gemessenem Tempo |
+| `produktion/wortzahlen.py` (30 Bücher statt 20) | siehe Schritt 0 |
 
-**Bis der Branch vereinigt ist:** lies daraus mit
-`git show origin/claude/bibeltube-v06-korpus-m8-rz2oce:PFAD` und führe Skripte
-über eine Kopie im Scratchpad aus. **Vereinige nichts eigenmächtig** — der
-Branch überschneidet sich in 9 Dateien mit HEAD, das ist ein eigener Auftrag.
-Melde es einmal im Freigabepunkt, dann arbeite weiter.
+> ### ⚠️ Nicht vereinigen, ohne das hier gelesen zu haben
+>
+> - **99 Dateien Unterschied**, +11.561 / −20.017 Zeilen — nicht 9.
+> - **Der Branch löscht `produktion/video-05/` vollständig**, `qa.json`
+>   eingeschlossen. Er ist **vor** der V05-Auslieferung abgezweigt. `qa.json` ist
+>   die Quelle von `wpm_erwartet = 148.1`; eine naive Vereinigung setzt das
+>   Projekt tempotechnisch auf V01–V04 zurück.
+> - Er ändert das **Format** von `korpus/wortzahlen.json` (flach →
+>   `{"wpm":…, "buecher":{…}}`). Alles, was die Datei liest, bricht über die
+>   Vereinigung hinweg.
+> - Er führt `wpm_erwartet = 143.7` statt 148,1 — siehe Schritt 0.
+>
+> **Vereinige nichts eigenmächtig.** Das ist ein eigener Auftrag mit
+> Konfliktauflösung. Melde es einmal im Freigabepunkt, dann arbeite weiter.
+
+**Bis dahin:** lies mit `git show <branch>:PFAD` und führe Skripte über eine
+Kopie im Scratchpad aus — **nie über `main()`**, siehe Schritt 1.
+
+> ### Der Branch bewegt sich
+>
+> Am 2026-08-31 stand er auf `f31ac14` (3 Commits, kein `videos-06.md`).
+> Wenige Stunden später auf `9d7eedc` (4 Commits, **mit** `videos-06.md` und
+> `produktion/video-06/`). Eine Aussage über seinen Inhalt ist **zum Zeitpunkt
+> des Abrufs** wahr und danach nicht mehr.
+>
+> `git fetch --all` ist deshalb nicht Schritt 0 einer Sitzung, sondern
+> **Schritt 0 jeder Aussage über einen Branch**. „Existiert nicht" heißt immer
+> nur „existierte in dem Commit, den ich abgerufen hatte, nicht" — und gehört
+> mit dem Commit-Hash gemeldet, nie ohne.
 
 ---
 
@@ -68,16 +89,44 @@ Melde es einmal im Freigabepunkt, dann arbeite weiter.
 
 **Nichts vorschreiben, was sich ausrechnen lässt.**
 
-1. `git fetch --all`, Arbeitsbaum sauber, Branch geprüft.
-2. **Freie Bücher ausrechnen, nicht fortschreiben.** Aus
-   `produktion/korpus/plan.json` alle `refs` aller **bereits ausgelieferten**
-   Videos einsammeln, gegen `produktion/korpus/kapitel.json` und
-   `produktion/korpus/wortzahlen.json` halten, Rest = frei. Der Absatz „Nicht
-   verplant und für Video 09+ frei" in `videos-01-08.md` ist eine **Momentaufnahme
-   von 2026-08-23** und darf nicht als Bestand gelesen werden.
-3. **WPM aus `produktion/config.md` lesen** (`wpm_erwartet`). Nie hart
-   eintragen, nie aus einem Bericht übernehmen, nie aus `plan.json` —
-   die dortigen `stunden` sind auf HEAD mit einem **älteren** Tempo gerechnet.
+1. `git fetch --all`, Arbeitsbaum sauber, Branch und Commit notiert.
+2. **Freie Bücher ausrechnen, nicht fortschreiben.**
+
+   | | was zählt |
+   |---|---|
+   | **verbraucht** | die `refs` der Videos, für die ein `produktion/video-0N/`-Paket existiert — derzeit **V01–V05** |
+   | **reserviert** | die `refs` der geplanten Videos aus `plan.json` — derzeit **V06–V08**. Nicht anfassen. |
+   | **frei** | alles Übrige aus `produktion/korpus/kapitel.json` |
+
+   > **Grundgesamtheit ist `kapitel.json` (30 Bücher), nicht
+   > `wortzahlen.json`.** Letzteres kennt auf HEAD nur **20** Bücher — und die
+   > 10 fehlenden sind ausgerechnet die freien Erzählbücher: Rut, 1/2 Samuel,
+   > 1/2 Könige, Josua, Richter, Ester, Exodus, Jona. `wortzahlen.py` auf HEAD
+   > hat eine 20-Buch-Liste und kann sie nicht erzeugen; die Branch-Fassung hat
+   > 30, aber ein anderes Ausgabeformat. **Wer `wortzahlen.json` als Bestand
+   > liest, findet keinen einzigen freien Erzählstoff und meldet fälschlich
+   > „es gibt nichts".**
+   >
+   > Der Absatz „Nicht verplant und für Video 09+ frei" in `videos-01-08.md`
+   > nennt 5 Blöcke. Frei sind **13**. Momentaufnahme von 2026-08-23, kein
+   > Bestand.
+
+   Jede fertige Variante am Ende mit `--gegen V7 --gegen V8` gegenprüfen.
+
+3. **WPM aus `produktion/config.md` auf HEAD lesen** (`wpm_erwartet`). Nie hart
+   eintragen, nie aus einem Bericht, nie aus `plan.json` — die dortigen
+   `stunden` sind auf HEAD mit einem älteren Tempo gerechnet.
+
+   > **Es gibt zwei `config.md` mit zwei Tempi.** HEAD: **148,1** (aus
+   > `video-05/qa.json`). V06-Branch: **143,7** (wortgewichtet über V01–V04,
+   > `wpm_gemessen.json` — der Branch kennt V05 nicht). Der Unterschied
+   > verschiebt das Wortband um rund **900 Wörter** und kippt Grenzfälle.
+   >
+   > **Falle:** Skripte vom Branch lesen `config.md` aus dem *Arbeitsverzeichnis*.
+   > Wer sie gegen HEAD laufen lässt, bekommt 148,1 — auch dort, wo ihr eigener
+   > Kommentar für 143,7 geschrieben ist. Maßgeblich ist HEAD. Den Konflikt
+   > melden, nicht auflösen.
+
 4. Zielband bestätigen aus derselben Datei: `laufzeit_ziel_von_h` /
    `laufzeit_ziel_bis_h` = **3,4–3,8 h**, harte Untergrenze
    `laufzeit_min_h` = 3,0 h.
@@ -103,9 +152,34 @@ w(h) = round((h - _RAND_S/3600) * 60 * WPM) - ANSAGE_W*kapitel_n - RAHMEN_W
 ```
 
 Nutze **die Funktionen des Skripts** (`band_fuer(n)`, `_video_h(w, n)`), nicht
-eine nachgebaute Formel. Gegenprobe, die stimmen muss: V05 mit 29.988
-Korpuswörtern und 36 Kapiteln → 3,40 h; gerendert wurden **3,404 h**
-(`produktion/video-05/qa.json`).
+eine nachgebaute Formel.
+
+**Gegenprobe, die stimmen muss** — sie steht als Kommentar in
+`korpus_pruefung.py:49`:
+
+```
+V05:  29.880  +  3×36  +  232  =  30.220 Wörter
+      ↑ plan.json         ↑ RAHMEN_W
+      _video_h(29880, 36) = 3,403 h        gerendert: 3,404 h (video-05/qa.json)
+```
+
+> **Der Eingabewert ist `plan.json/woerter`, nicht `qa.json/woerter_korpus`.**
+> `qa.json` führt 29.988 — das sind **29.880 + 108 Ansagewörter**, die schon
+> drinstecken. Wer den einsetzt, addiert sie ein zweites Mal und landet bei
+> 3,415 h. Die Gegenprobe scheitert dann, ohne dass etwas kaputt ist.
+
+> **Zwei Wortbänder, 385 Wörter auseinander.** `korpus_pruefung.band_fuer(45)`
+> ergibt **29.827–33.381** (Rahmen und Ansagen abgezogen).
+> `erzaehlanteil.BAND` auf dem Branch ergibt **30.212–33.767**
+> (`round(3,4 × 60 × WPM)`, ohne Rahmen). Ein Korpus mit 30.000 W besteht beim
+> einen und reißt beim anderen.
+> **Maßgeblich ist `band_fuer(n)`.** Von `erzaehlanteil.py` nur die
+> Erzählanteile verwenden, sein Bandurteil ignorieren.
+
+> **Das Band hängt an der Kapitelzahl, die erst mit dem Korpus feststeht.**
+> Über den plausiblen Bereich n = 30…80 liegt es bei **29.722–33.426 W** —
+> das ist die Spanne für die Suche. Sobald eine Variante steht, mit
+> `band_fuer(n)` für ihr echtes *n* bestätigen.
 
 > **`RAHMEN_W = 232` ist an genau einem Video gemessen** — V05
 > (`produktion/arbeit/video-05/skript.json`: Hook 33 + CTA 13 + CTA 7 +
@@ -121,12 +195,21 @@ Korpuswörtern und 36 Kapiteln → 3,40 h; gerendert wurden **3,404 h**
 
 1. **Dominantes Buch ≥ 60 % der Wörter** — und dieses Buch ist selbst
    durchlaufendes Erzählwerk, **in voller Länge gelesen**.
+   „Selbst Erzählwerk" ist in `korpus_pruefung.py:164` als Zahl hinterlegt:
+   **der größte Block muss kapitelweise ≥ 80 % erzählend sein**
+   (`groesster_ist_erzaehlung`). Ohne diese Schwelle ist Abbruchbedingung 3
+   nicht überprüfbar. Beispiel, an dem sie greift: Exodus allein hält Band
+   (30.926 W) und Dominanz (100 %) und fällt genau hier durch.
 2. **Nebenstoff frei.** Was neben dem dominanten Buch steht, darf
    Spruchsammlung, Brief oder Prophetie sein — Rahmen, nicht Hauptsache.
-3. **Kanonische Lesereihenfolge.** Rut → 1 Samuel → Ester, nicht nach Länge
-   oder Wirkung sortiert.
-4. **Ganze Bücher bevorzugen.** Teilung nur an einer **Erzählnaht**
-   (Genesis 1–42 ist eine, Jesaja 1–25 + 40–66 ist keine).
+3. **Kanonische Lesereihenfolge**, nicht nach Länge oder Wirkung sortiert.
+   V05 liest Lukas vor Prediger, V04 Matthäus vor Epheser/Philipper/Daniel.
+4. **Ganze Bücher bevorzugen.** Teilung nur an einer **Erzählnaht**.
+
+   > **Es gibt dafür weder Liste noch Werkzeug — das ist Ermessen und gehört
+   > begründet.** Der Bestand nutzt Genesis 1–42 / 43–50 als Naht, aber
+   > Gen 42/43 liegt mitten in der Hungersnot-Sequenz; sauber ist das nicht.
+   > Wenn du teilst: sag, an welchem Erzählschluss, und dass es dein Urteil ist.
 5. **Laufzeit im Band 3,4–3,8 h**, gerechnet mit dem WPM aus `config.md`.
 
 ### Nachttauglichkeit — als Einschätzung kennzeichnen
@@ -181,7 +264,16 @@ Wortzahl, Erzählanteil und Laufzeit aus derselben Rechnung kommen.
 
 **Deshalb: messen, ausweisen, nicht darüber abbrechen.** Gib **beide** Werte an,
 oder den einen mit dem Namen der Messung dazu — „81,7 % buchweise" ist eine
-Aussage, „81,7 %" allein ist es nicht.
+Aussage, „81,7 %" allein ist es nicht. Der Lauf von `korpus_pruefung.py`, den
+Schritt 1 ohnehin verlangt, druckt den groben Wert direkt neben die Laufzeit;
+wer daneben den feinen nennt, muss beide beschriften.
+
+> **Die WPM-Regression hängt an der groben Spalte.** `config.md` leitet
+> `wpm_erwartet` aus `WPM = 141,15 + 0,0769 × Erzählanteil%` her, gefittet auf
+> V01–V05 mit den **buchweisen** Werten (0,0 / 0,0 / 62,3 / 83,0 / 81,7).
+> Wer dort die versgenauen Werte einsetzt, bekommt ein anderes vorhergesagtes
+> Tempo und damit ein anderes Wortband. **Die Regression nicht mit der feinen
+> Messung füttern**, ohne sie neu zu fitten.
 
 Was M8 in `regeln/erfolgsregeln.md` wirklich belegt, ist die **Struktur**:
 *„Hauptkorpus ist durchlaufender Erzählstoff … Spruchsammlungen und prophetische
@@ -200,21 +292,53 @@ durchlaufendes Erzählwerk. Nicht der Prozentwert.
 | `produktion/korpus/erzaehlanteil.json` | **250 Kapitel, 178 erzählend**, mit Begründung je Kapitel: `ruth` 4 · `1 samuel` 31 · `2 samuel` 24 · `1 kings` 22 · `2 kings` 25 · `joshua` 24 · `judges` 21 · `esther` 10 · `exodus` 40 · `genesis` 8 · `daniel` 9 · `jonah` 4 · `acts` 28 |
 | `produktion/korpus/eigene_videos_erzaehlanteil.json` | die schon gelesenen Korpora je Video, mit `je_buch`-Aufschlüsselung |
 
-`produktion/erzaehlanteil.py` ist dabei **auf V06 zugeschnitten**, nicht
-allgemein: es hat die drei V06-Varianten fest im Code und schreibt
-`v06_varianten.json`. Als fertiges Werkzeug für ein anderes Video taugt es
-nicht — als Vorlage für Zählmethode und Config-Anbindung schon (es liest
-`wpm_erwartet` aus `config.md`, genau richtig).
+> **`produktion/erzaehlanteil.py` NICHT über `main()` laufen lassen.** Es hat
+> die V06-Varianten fest im Code und **schreibt beim Lauf zwei Dateien** —
+> `korpus/erzaehlanteil.json` und `korpus/v06_varianten.json`. Eine CLI für
+> einen eigenen Korpus hat es nicht. Nutzbar ist nur `einstufung_rechnen()`,
+> importiert. Oder — einfacher — die eingecheckte `korpus/erzaehlanteil.json`
+> direkt lesen: ein eigener Lauf ist mit ihr deckungsgleich (250 Kapitel,
+> 0 Abweichungen).
 
 **Liegt ein Buch in keiner der beiden Dateien, ist sein feiner Erzählanteil nicht
 gemessen.** Markus, Römer und Offenbarung — der ganze V07-Plan — fehlen in
 beiden. Dann nur den groben Wert melden und ihn so nennen.
 
+### Was die Variante kostet — ausrechnen, nicht beschreiben
+
+Der Restbestand ist groß und trotzdem knapp: **Rut (2.436 W), Ester (5.408 W)
+und Jona (1.272 W) sind die einzigen kurzen Füllbücher.** Jedes große Erzählbuch
+braucht eines davon, um ins Band zu kommen. Wer alle drei verbraucht, macht
+spätere Videos unbaubar.
+
+Je Variante ausrechnen:
+
+- **Wieviele gültige Kombinationen bleiben danach übrig?** (Band + Dominanz
+  ≥ 60 % + größter Block ≥ 80 % erzählend.)
+- **Verbraucht sie einen Block, den ein späteres Video zur Rettung braucht?**
+  Nachgerechnet am 2026-08-31:
+
+  | | Laufzeit | |
+  |---|---:|---|
+  | V07 wie geplant (29.123 W, 43 Kap) | **3,320 h** | **reißt** |
+  | V07 + Jona | 3,465 h | gerettet |
+  | V07 + Rut | 3,596 h | gerettet |
+  | V07 + Ester | 3,932 h | über dem Band |
+  | V08 wie geplant (29.835 W, 42 Kap) | 3,400 h | **reißt 1.1 um genau 1 Wort** |
+  | V08 + Jona | 3,544 h | gerettet |
+
+  **Jona kann nur eines von beiden retten.** Eine V06-Variante, die Jona
+  verbraucht, entscheidet damit still über V07 oder V08 mit. Das gehört in den
+  Freigabepunkt.
+
 ### Ausgabe je Variante
 
-Bücher · Kapitelzahl · Wörter · Laufzeit bei aktuellem WPM · dominantes Buch mit
-Prozentanteil · Erzählanteil · Nachttauglichkeit (Einschätzung) · was die Variante
-kostet (welche Bücher sie für spätere Videos verbraucht).
+Bücher (kanonisch) · Kapitelzahl · Wörter · Wortband bei diesem *n* ·
+Laufzeit bei aktuellem WPM · dominantes Buch mit Prozentanteil · dessen eigener
+Erzählanteil · Erzählanteil der Variante **mit dem Namen der Messung** ·
+ganze Bücher ja/nein · Rückgabewert von `korpus_pruefung.py` ·
+Überschneidung mit V07/V08 · Nachttauglichkeit (Einschätzung) ·
+was sie kostet (Zahlen von oben).
 
 ---
 
@@ -239,6 +363,22 @@ als **gestrichen, widerlegt**: B #4 und B #7 tragen denselben Anker, und **#7 wa
 der 166K-Durchbruch**. Die Abgrenzung läuft über die **zweite Titelhälfte**,
 nicht über den Anker.
 
+> **Welche Anker frei sind, rechne selbst aus — die Buchhaltung in §10 stimmt
+> nicht.** Dort steht „Acht sind im Achterplan vergeben: 5→V4 · 6→V2 · 8→V7 ·
+> 9→V6 · 10→V3 · 11→V5 · 12 und 13 bleiben" — das sind **sechs** Zuordnungen,
+> nicht acht, und V01 (#2) sowie V08 (#7) fehlen darin.
+>
+> Verlässlich ist `produktion/eigene_titel.json`: welcher der 13 Anker steht in
+> welchem eigenen Titel. Auf HEAD sind **8** vergeben (#2, #5, #6, #7, #8, #9,
+> #10, #11) und **5 frei**: #1 `If You're Anxious,` 245K · #3 `You're Tired,
+> I Know…` 201K · #4 `Lord, I Feel Tired` 184K · #12 `You Deserve Some Rest…`
+> 559 · #13 `God Knows You're Tired…` 140.
+>
+> Davon stehen #1, #3 und #4 zugleich in **A-Titeln** — brauchbar, aber näher
+> am Feld. Wirklich unbelastet sind nur #12 und #13, und das sind zwei der vier
+> Flop-Anker. **Die von §10 für V09 vorhergesagte Ankerknappheit ist schon
+> jetzt da.** Bau die Liste bei jedem Lauf neu, statt §10 abzuschreiben.
+
 ### Eigenname
 
 Ausgeschrieben und **eindeutig als Bibelbuch lesbar**: `First Samuel`, `the
@@ -256,7 +396,16 @@ des Kanals. Ein Titel, der zieht, müsste sich zuerst im CTR zeigen. Tut er nich
 | Länge | **unter 70 Zeichen** | gesetzt (1.15, SOLL) |
 | Eigenname beginnt | **vor Zeichen 60** | gesetzt (1.15, SOLL) |
 | Ähnlichkeit gegen alle drei Listen | **unter 45 %** | gemessen |
+| **Abstand zu den Kopisten** | **nicht näher an einem Kopisten-Titel als am nächsten Gewinner** | gemessen — **kein Skript prüft das** |
 | `titel_pruefung.py` | Rückgabewert **0** | — |
+
+> **Die zweite Hälfte von Gate 1.2 wird von keinem Werkzeug geprüft — lies sie
+> von Hand.** Wortlaut: *„… **und nicht näher an einem Kopisten-Titel als am
+> nächsten Gewinner**."* Sie stammt aus einem konkreten Beinahe-Fehler bei V05
+> (33,3 % gegen den Gewinner, 44,4 % gegen C's totes Mashup) und ist die einzige
+> Titelregel, die aus einem echten Vorfall geboren wurde. Ein Kandidat, der
+> beide Werte gleich hat, steht auf Gleichstand — das ist noch kein Verstoß,
+> aber null Reserve. Nenn es.
 
 Die drei Listen: `produktion/gewinner_titel.json` (**21**) ·
 `produktion/eigene_titel.json` (**8**, V1–V8) ·
@@ -285,6 +434,16 @@ geteilten Wörter** aus.
 >    verdrahtet** (Zeile 82). **V05 ist ausgeliefert und fehlt.** Ein Kandidat
 >    könnte direkt neben V05 liegen, ohne dass der Prüfer etwas meldet — prüf
 >    ihn zusätzlich von Hand gegen den V05-Titel.
+> 3. Beide Prüfer schneiden die **noch nicht gerenderten** Titel weg (Branch-
+>    Fassung: V1–V5). Ein neuer Titel wird damit **nie** gegen die schon
+>    gesetzten Titel der Folgevideos gemessen. Von Hand nachziehen, sonst baut
+>    man zwei Videos mit demselben Anker und merkt es erst beim Upload.
+>
+> **Folge für die gemeldete Zahl:** `titel_kandidaten.py` (HEAD) vergleicht
+> gegen 21 + 4 + 2 = **27** Titel, `titel_pruefung.py` (Branch) gegen
+> 21 + 5 + 45 = **71**. Derselbe Kandidat kann bei dem einen 12,5 % und beim
+> anderen 37,5 % gegen die Kopisten messen. **Nenne, mit welchem Prüfer gemessen
+> wurde** — sonst ist die Prozentzahl bedeutungslos.
 
 > **45 % gilt für Kandidaten, 50 % für den Bestand.** `titel_pruefung.py` auf HEAD
 > misst gegen **eine** Liste mit Grenze 50 %; die Fassung auf dem V06-Branch misst
@@ -306,9 +465,11 @@ geteilten Wörter** aus.
 > ganzen Datensatz** (§1: „Titel von Konkurrenten wörtlich übernehmen").
 >
 > Die zweite Hälfte muss eine **eigene Zusage** sein, in der der Eigenname
-> vorkommt: `…First Samuel Runs All the Way to Morning`, `…Let Saul and David
-> Take the Night Shift`. Ebenfalls ausgeschlossen: `the Book of X`, `the Story of
-> X` — dieselbe Bauform.
+> vorkommt. Aus dem eigenen Bestand:
+> `…Let the Gospel of John Quiet Your Mind` (V03),
+> `…The Whole Gospel of Luke, Read Slowly Until Morning Comes` (V05).
+> Ebenfalls ausgeschlossen: `the Book of X`, `the Story of X` — dieselbe
+> Bauform, dazu bei zweiteiligen Büchern sachlich falsch.
 
 ### Je Kandidat auszuweisen
 
@@ -326,16 +487,53 @@ Prozent.
 > in diese Richtung beliebig schönen.
 
 **Eigene Empfehlung mit Begründung, ausdrücklich als Empfehlung markiert.**
-Vorbild für Ton und Tiefe: `produktion/v06-titel.md` (V06-Branch) — Kandidatentabelle,
-je Kandidat „was ihn trägt / woran er scheitert", dann eine Empfehlung mit dem
-Satz *„Das ist eine Empfehlung, keine Entscheidung. Du entscheidest."*
+Vorbild für Ton und Tiefe ist die zuletzt gelaufene Titelrunde im Repo —
+Kandidatentabelle, je Kandidat „was ihn trägt / woran er scheitert", dann eine
+Empfehlung mit dem Satz *„Das ist eine Empfehlung, keine Entscheidung. Du
+entscheidest."*
+
+> **Nimm als Vorbild ein *abgeschlossenes* Video, nie das, das du gerade baust.**
+> Wer die Beispiele aus der laufenden Runde zieht, schreibt die Antwort in die
+> Aufgabe. (Genau das ist dieser Datei beim ersten Entwurf passiert: sie trug
+> Korpus und Titel des nächsten Videos als Beispiele und machte einen
+> unabhängigen Testlauf unmöglich.)
 
 ### Eigennamen-Deckung prüfen, bevor du einen Namen setzt
 
-Rechne aus, wieviel Prozent des Korpus der Name wirklich abdeckt. Vorbild V06:
-`David` deckt 39,6 %, `First Samuel` deckt 75,1 %, `David and Goliath` deckt
-**5,2 %** — grober Etikettenschwindel, ausgeschlossen. Ein Name, der unter der
-Hälfte deckt, überverkauft; sag das dazu.
+Rechne aus, wieviel Prozent des Korpus der Name wirklich abdeckt — aus
+`kapitel.json`, buchweise. Im Bestand:
+
+| | Deckung |
+|---|---:|
+| V05 `the Gospel of Luke` | **81,7 %** |
+| V05 `Ecclesiastes` | 18,3 % |
+| V03 `the Gospel of John` | **62,3 %** |
+| V03 `Hebrews` | 22,9 % |
+
+**Ein Name, der unter der Hälfte deckt, überverkauft.** Sag es dazu, oder nimm
+ihn nicht. Der Sonderfall, vor dem zu warnen ist: der Name mit der größten
+Wiedererkennung ist oft der mit der kleinsten Deckung — eine einzelne berühmte
+Episode kann 5 % eines Korpus sein und trotzdem der erste Titelvorschlag.
+
+### Zwei Dinge, die erst später wehtun, aber hier entschieden werden
+
+1. **Der Thumbnail-Text hängt am Eigennamen.** `MAX_WOERTER = 4`.
+   `THE ACTS OF THE APOSTLES` sind fünf Wörter und reißen — der Name
+   entscheidet also über das Thumbnail mit, nicht erst Schritt 4. Führ den
+   Thumbnail-Text je Kandidat gleich mit auf.
+2. **Bei zwei Namen im Titel zählt für 1.15 der Name des dominanten Buchs.**
+   Wenn ein Nebenbuch früher steht, ist die Prüfung trotzdem am dominanten zu
+   messen — er trägt die kontextliche Zuordnung, auf der 1.14 beruht.
+
+### Reihenfolge: der Titel braucht einen Korpus, der erst danach entschieden wird
+
+Das ist eine echte Zirkularität dieses Ablaufs, und sie wird so aufgelöst:
+
+- **4–6 Kandidaten für die von dir empfohlene Korpusvariante**, plus
+  **je einen Rückfallkandidaten pro Alternative**.
+- Wählt der Kanalinhaber eine andere Variante, wird **Schritt 2 für diese
+  wiederholt**. Das ist **kein zweiter Freigabepunkt** — es ist derselbe, nur
+  noch nicht abgeschlossen.
 
 ---
 
@@ -371,9 +569,14 @@ melden, nicht selbst entscheiden und nicht weiterrendern.
 
 ## Schritt 3 — Textebene
 
-Alles wird in den Block `# Video 0N` in **`produktion/videos-01-08.md`**
-geschrieben — das ist die Vorlagendatei, die `produktion/pipeline/vorlage.py`
-parst. `vorlage.pruefe()` verlangt **alle** diese Felder, sonst bricht Schritt 1
+**Erst nachsehen, wohin `vorlage.py` schaut.** Auf HEAD parst es Blöcke
+`# Video 0N` aus **`produktion/videos-01-08.md`**. Auf dem V06-Branch ist es so
+geändert, dass es **Einzeldateien** `produktion/videos-<nn>.md` findet, und der
+V06-Block in `videos-01-08.md` ist dort entfernt. Schreib in die Datei, die der
+Parser im aktuellen Baum tatsächlich liest — nicht in beide, das ist genau der
+doppelte Textstand, den `vorlage.py` verhindern soll.
+
+`vorlage.pruefe()` verlangt **alle** diese Felder, sonst bricht Schritt 1
 der Pipeline ab:
 
 `titel` · `korpus_text` · `woerter_soll` · `beschreibung` · `thumb_motiv` ·
@@ -780,7 +983,7 @@ stimmen, eine Prüfsumme nicht.
 
 ## Wo Dokument und Praxis auseinandergehen
 
-Acht Stellen. Im Ablauf oben steht jeweils die **Praxis**.
+Dreizehn Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 
 | # | Dokument sagt | Praxis zeigt | im Skill festgeschrieben |
 |---|---|---|---|
@@ -792,11 +995,41 @@ Acht Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 | 6 | `korpus_pruefung.py`: `RAHMEN_W = 232` | an **einem** Video gemessen (V05); V01–V04 wiesen 354–561 aus (inkl. Kapitelansagen) | 232 als Planwert, tatsächliche Rahmenwortzahl nach Schritt 3 melden |
 | 7 | Gate 1.1 und 1.11 „brechen die Pipeline hart ab" | beide geben **0** zurück und drucken nur eine Warnung | nach Schritt 1 und 3 **von Hand** prüfen und anhalten |
 | 8 | `v06-titel.md`: „V01, **V05**, V07 und V08 bei exakt 50,0 %" | Prüflauf gibt für V05 **27,3 %** aus | V01, V07, V08 — V05 gehört nicht dazu |
+| 9 | `videos-01-08.md`: „Nicht verplant und für Video 09+ frei" nennt **5 Blöcke** | frei sind **13** Blöcke; `wortzahlen.json` kennt 10 davon gar nicht | Bestand aus `kapitel.json` ausrechnen, nie aus `wortzahlen.json` oder aus dem Absatz |
+| 10 | Gate 1.2 nennt eine zweite Bedingung (Abstand zu Kopisten) | **kein Skript prüft sie** | von Hand lesen und melden |
+| 11 | §10 zählt „acht Anker im Achterplan vergeben" | es sind **sechs** genannte Zuordnungen, V01 und V08 fehlen darin | freie Anker aus `eigene_titel.json` neu ausrechnen |
+| 12 | `plan.json` führt V08 mit 3,55 h (HEAD) bzw. 3,46 h (Branch) | `korpus_pruefung.py --plan V8` → **DURCHGEFALLEN**, 1.1 reißt um **1 Wort** | V08 gilt als offen, nicht als geplant |
+| 13 | Skill-Entwurf: „Branch überschneidet sich in **9 Dateien**" | **99 Dateien**, und er **löscht `produktion/video-05/` samt `qa.json`** | nicht vereinigen ohne Konfliktauflösung |
 
 Dazu zwei Altlasten, die **kein** Vorbild sind:
 `produktion/video-03/beschreibung.txt` trägt eine deutsche Überschrift `Kapitel:`
 statt `Chapters:` und einen liegengebliebenen Formel-§7-Kommentar mitten im
 Auslieferungstext. Beides nicht nachbauen.
+
+---
+
+## Trockenlauf gegen V06 (2026-08-31) — was er ergeben hat
+
+Der Ablauf wurde einmal blind gegen V06 gefahren: Schritt 0–2, ohne Zugriff auf
+`v06-korpus.md`, `v06-titel.md` und die dortigen Kandidatendateien.
+
+| | Ziel | Ergebnis |
+|---|---|---|
+| Korpus | Variante A (Rut + 1 Samuel + Ester) | **getroffen**, als Empfehlung von 26 gültigen Kombinationen |
+| Titel | ein Kandidat der Bauform von K3 | **Bauform getroffen** — Anker aus den 13, Eigenname ausgeschrieben, zweite Hälfte als eigene Zusage, < 70 Zeichen, Name vor Zeichen 60. Empfohlen wurde ein anderer der sechs. |
+
+> **Der Trockenlauf war nicht unabhängig, und das ist ein Befund über diese
+> Datei.** Der erste Entwurf trug Korpus und Titelfragmente von V06 als
+> Beispiele — der Lauf konnte die Lösung lesen, ohne eine gesperrte Datei zu
+> öffnen. Zusätzlich druckt `git show <branch> --stat` die Commit-Nachricht mit,
+> in der der freigegebene Titel wörtlich steht. Die Beispiele sind seither auf
+> abgeschlossene Videos umgestellt; die Regel dazu steht in Schritt 2.
+
+Aus dem Lauf sind **24 Mängel** an dieser Datei zurückgekommen; alle sind
+eingearbeitet. Die schwersten waren die falsch gerechnete Gegenprobe in
+Schritt 0, `wortzahlen.json` als Bestandsquelle, die zwei Wortbänder, die zwei
+Erzählanteil-Messungen, die fehlende zweite Hälfte von Gate 1.2 und die um den
+Faktor 11 zu klein angegebene Branch-Differenz.
 
 ---
 
@@ -818,8 +1051,14 @@ Auslieferungstext. Beides nicht nachbauen.
    Das ist kein Fehler im alten Plan, sondern die Folge des inzwischen
    **gemessenen** Tempos und der M8-Regel. Schritt 1 muss für V07 also
    **wirklich neu rechnen**, nicht fortschreiben.
-   Zum Vergleich: V08 Genesis 1–42 ist 100 % dominant und landet bei
-   **3,400 h** — genau auf der Kante des Bands.
+
+   **V08 reißt ebenfalls — um genau ein Wort.** Genesis 1–42 ist 100 %
+   dominant und 100 % erzählend, hat 29.835 W bei einer Untergrenze von
+   **29.836 W**: `korpus_pruefung.py --plan V8` meldet
+   `1.1 REISST — zu kurz` / `DURCHGEFALLEN`. Ein Skill, dessen oberste Regel
+   die Messdatei über den Bericht stellt, nennt das **durchgefallen**, nicht
+   „auf der Kante". Jona (1.272 W) würde es heilen — kann aber nur einmal
+   vergeben werden, siehe Schritt 1.
 3. **V06 auf HEAD ist noch Jesaja** (89,8 % dominant, aber prophetische Rede —
    nach M8 als Hauptkorpus ausgeschlossen; grober Erzählanteil 10,2 %). Der
    Ersatz steht nur auf dem unvereinigten Branch.
