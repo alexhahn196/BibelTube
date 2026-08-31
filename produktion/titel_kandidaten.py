@@ -36,6 +36,13 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from titel_pruefung import inhalt  # noqa: E402
 
+KOPISTEN = "produktion/kopisten_titel.json"
+
+
+def _ausgeliefert(nr):
+    """V5 -> True, wenn produktion/video-05/ existiert."""
+    return os.path.isdir(os.path.join("produktion", f"video-{int(nr[1:]):02d}"))
+
 
 def naechster(mein, menge):
     m = inhalt(mein)
@@ -70,20 +77,30 @@ def main():
         ap.error("keine Titel angegeben")
 
     gewinner = json.load(open("produktion/gewinner_titel.json", encoding="utf-8"))
-    # Woertlich aus regeln/erfolgsregeln.md V3 bzw. formel/video-formel.md Paragraph 1.
-    kopisten = [
-        # Kanal C, Mashup aus A-Titeln, 17 Views
-        "You're tired, I know... Rest to the Gospel of John",
-        # Kanal F, woertliche Kopie von A's 233K-Titel inklusive Tippfehler, 18 Views
-        "I Know You're Tried... Jesus Watches Over you Tonight",
-    ]
+
+    # Bis 2026-08-31 standen hier ZWEI Kopisten-Titel fest im Code, waehrend
+    # produktion/kopisten_titel.json 45 fuehrt. Ein Kandidat konnte damit
+    # dicht neben einem Kopisten-Titel liegen, ohne dass etwas gemeldet wurde -
+    # und Naehe zu den Kopisten ist die einzige belegte Todesursache im
+    # Datensatz (Kanal F: 18 Aufrufe).
+    kopisten = json.load(open(KOPISTEN, encoding="utf-8"))["titel"]
+
+    # Veroeffentlicht ist, wofuer ein Paketordner existiert. Frueher stand hier
+    # ("V1","V2","V3","V4") fest verdrahtet - V05 war ausgeliefert und wurde
+    # trotzdem nicht verglichen. Eine Liste, die von Hand nachgezogen werden
+    # muss, wird irgendwann nicht nachgezogen.
     eigene_alle = json.load(open("produktion/eigene_titel.json", encoding="utf-8"))
-    # veroeffentlicht sind V1-V4
-    eigene = [d["titel"] for d in eigene_alle if d["nr"] in ("V1", "V2", "V3", "V4")]
+    eigene = [d["titel"] for d in eigene_alle if _ausgeliefert(d["nr"])]
+    geplant = [d["titel"] for d in eigene_alle if not _ausgeliefert(d["nr"])]
 
     print(f"Grenze {a.grenze*100:.0f} %  |  {len(gewinner)} Gewinner-Titel, "
           f"{len(eigene)} eigene veroeffentlichte, {len(kopisten)} Kopisten-Titel "
-          f"({len(gewinner)+len(eigene)+len(kopisten)} Vergleichstitel gesamt)\n")
+          f"({len(gewinner)+len(eigene)+len(kopisten)} Vergleichstitel gesamt)")
+    if geplant:
+        print(f"           dazu {len(geplant)} geplante eigene Titel - sie werden "
+              f"mitgemessen, damit\n           nicht zwei Videos denselben Auftakt "
+              f"bekommen.")
+    print()
 
     verstoesse = 0
     ergebnis = []
@@ -91,7 +108,13 @@ def main():
         (ag, qg, gg), n = naechster(t, gewinner)
         (ae, qe, ge), _ = naechster(t, eigene)
         (ak, qk, gk), _ = naechster(t, kopisten)
-        ok = ag <= a.grenze
+        (ap_, qp, gp), _ = naechster(t, geplant) if geplant else ((0.0, "", set()), n)
+        # Gate 1.2 hat ZWEI Bedingungen. Die zweite - "nicht naeher an einem
+        # Kopisten-Titel als am naechsten Gewinner" - stand hier bisher nur als
+        # Warnung. Sie ist die Bedingung aus dem einzigen dokumentierten
+        # Todesfall (Kanal F, 18 Aufrufe) und zaehlt ab 2026-08-31 als Verstoss.
+        naeher_am_kopisten = ak > ag
+        ok = ag <= a.grenze and not naeher_am_kopisten
         verstoesse += 0 if ok else 1
         print(f"{'OK    ' if ok else 'ZU NAH'}  {ag*100:5.1f} % gegen Gewinner   {t}")
         print(f"          {n} inhaltstragende Woerter: {sorted(inhalt(t))}")
@@ -100,9 +123,14 @@ def main():
         print(f"          {ae*100:5.1f} % gegen den eigenen Katalog "
               f"(geteilt: {sorted(ge) if ge else '-'})")
         print(f"          naechster eigener Titel:  {qe}")
-        warn = "  <- naeher an einem Kopisten als an jedem Gewinner" if ak > ag else ""
+        warn = ("  <- VERSTOSS: naeher an einem Kopisten als am naechsten Gewinner"
+                if naeher_am_kopisten else "")
         print(f"          {ak*100:5.1f} % gegen die Kopisten-Titel (V3){warn}")
         print(f"          naechster Kopisten-Titel: {qk}")
+        if geplant:
+            print(f"          {ap_*100:5.1f} % gegen die geplanten eigenen Titel "
+                  f"(geteilt: {sorted(gp) if gp else '-'})")
+            print(f"          naechster geplanter Titel: {qp}")
 
         # Pruefung 1.15 - gesetzte Grenze, kein Messwert. Belegt ist nur der
         # Anlass: Gate 2 hat 68 % der Aufrufe am Handy gemessen, und in der
@@ -132,10 +160,14 @@ def main():
                          "naechster_eigener": qe,
                          "gegen_kopisten_pct": round(ak * 100, 1),
                          "naechster_kopist": qk,
+                         "naeher_am_kopisten_als_am_gewinner": naeher_am_kopisten,
+                         "gegen_geplante_pct": round(ap_ * 100, 1) if geplant else None,
+                         "naechster_geplanter": qp if geplant else None,
                          "inhaltswoerter": n, "ok": ok,
                          "zeichen": lang, "laenge_ok": laenge_ok,
                          "eigenname_ab_zeichen": pos, "eigenname_ok": name_ok})
-    print(f"Verstoesse gegen die {a.grenze*100:.0f}-%-Grenze: {verstoesse}")
+    print(f"Verstoesse gegen Gate 1.2 (Grenze {a.grenze*100:.0f} % oder naeher "
+          f"am Kopisten): {verstoesse}")
     print(json.dumps(ergebnis, ensure_ascii=False))
     return 1 if verstoesse else 0
 

@@ -1239,15 +1239,35 @@ strenge Richtung: sie machen die gemessene Ähnlichkeit größer, nicht kleiner.
 | 02 | 44,4 % | B „Stop Thinking For A Moment, Sleep To These Psalms Tonight" | moment, stop, think, tonight |
 | 03 | 44,4 % | A „If You're Anxious, Rest to the Gospel of John Tonight" | gospel, if, john, you |
 | 04 | 44,4 % | B „No More Thinking Tonight… Jesus Is With You" | jesus, no, think, tonight |
-| 05 | 50,0 % | A „God Knows You're Tired... Sleep To These Psalms Tonight" | know, sleep, tired, you |
+| 05 | **27,3 %** | A „Rest Your Eyes... Jesus Is With You" | eyes, rest, your |
 | 06 | 44,4 % | B „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" | go, not, sleep, worried |
 | 07 | 50,0 % | B „Fall Asleep Without Stress… Jesus Is With You" | asleep, fall, stress, without |
 | 08 | 50,0 % | A „You Need Rest... Jesus Watches Over You Tonight" | need, rest, you |
 
-**Verstöße: 0.** Vier Titel liegen exakt auf der Grenze (50,0 %) — das ist kein Zufall,
-sondern die Bauweise: Der belegte Anker *ist* die erste Titelhälfte, und er kommt aus
-den Gewinner-Titeln. Wer den Anker behält, teilt zwangsläufig dessen Wörter. Die Grenze
-zwingt damit genau das, was sie soll: **die zweite Hälfte muss vollständig eigen sein.**
+**Verstöße: 0.** **Drei** Titel liegen exakt auf der Grenze (50,0 %): 01, 07, 08 — das
+ist kein Zufall, sondern die Bauweise: Der belegte Anker *ist* die erste Titelhälfte,
+und er kommt aus den Gewinner-Titeln. Wer den Anker behält, teilt zwangsläufig dessen
+Wörter. Die Grenze zwingt damit genau das, was sie soll: **die zweite Hälfte muss
+vollständig eigen sein.**
+
+> **Korrektur 2026-08-31: V05 stand hier mit 50,0 % und dem falschen Vergleichstitel.**
+> Nachgemessen sind es **27,3 %** — der niedrigste Wert des ganzen Bestands, nicht der
+> höchste.
+>
+> **Ursache:** Diese Tabelle wurde gerechnet, als V05 noch seinen ersten Titel trug.
+> Am 2026-08-26 hat der Kanalinhaber ihn auf „Rest Your Eyes… The Whole Gospel of Luke,
+> Read Slowly Until Morning Comes" geändert (Anker 11 statt des Vorgängers, elf statt
+> acht inhaltstragende Wörter). Die Tabelle wurde nicht neu gefahren. Der Satz
+> „vier Titel liegen exakt auf der Grenze" stimmte davor und war danach falsch.
+>
+> **Weitergetragen:** `produktion/v06-titel.md` (auf dem Branch
+> `claude/bibeltube-v06-korpus-m8-rz2oce`) zitiert die 50,0 % für V05 aus dieser
+> Tabelle weiter. Dort ist der Wert ebenfalls falsch; die Datei liegt außerhalb von
+> HEAD und wird mit dem Branch berichtigt.
+>
+> **Regel daraus:** Eine Tabelle mit gerechneten Werten gehört nach jeder Titeländerung
+> neu gefahren, nicht fortgeschrieben — `python3 produktion/titel_pruefung.py` dauert
+> unter einer Sekunde. Alle Werte oben sind am 2026-08-31 neu gemessen.
 
 Drei Titel mussten dafür geändert werden (03, 05, 06 — Begründung jeweils im Block).
 Nachprüfbar mit `python3 produktion/titel_pruefung.py`; Rückgabewert 0 = bestanden.
