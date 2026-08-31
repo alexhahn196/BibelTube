@@ -89,6 +89,30 @@ Kopie im Scratchpad aus — **nie über `main()`**, siehe Schritt 1.
 
 **Nichts vorschreiben, was sich ausrechnen lässt.**
 
+### Zuerst: die zwei Dinge, ohne die alles andere Zeitverschwendung ist
+
+**Vor jeder anderen Prüfung, vor jedem Vorschlag:**
+
+```bash
+[ -n "$FISH_KEY" ] || echo "FISH_KEY fehlt"
+ls produktion/motive/loops/ki-v<NN>/clip-*.mp4 2>/dev/null | wc -l   # muss 4 sein
+grep -n "^ki_clip_ordner_V<N>" produktion/config.md                  # muss existieren
+```
+
+- **`FISH_KEY` nicht gesetzt → abbrechen und melden.** Ohne ihn scheitert
+  Schritt 2, und zwar erst nach Textbau und Kapitelabruf. Der Schlüssel steht
+  ausschließlich in der Umgebungsvariablen und nie im Repo.
+- **KI-Clips nicht vorhanden → abbrechen und melden.** Vier `clip-*.mp4` im
+  Ordner dieses Videos, plus der Eintrag `ki_clip_ordner_V<n>` in `config.md`.
+  Fehlt der Eintrag, bricht Schritt 5 ab; fehlen die Clips, bricht er auch ab —
+  aber erst nach TTS und Mischung, also nach dem teuren Teil.
+
+Beides ist billig zu prüfen und teuer zu übersehen. **Melden, nicht selbst
+beschaffen** — Clips kosten 72 Credits, und ob sie erzeugt werden, entscheidet
+der Kanalinhaber am Freigabepunkt.
+
+### Dann erst
+
 1. `git fetch --all`, Arbeitsbaum sauber, Branch und Commit notiert.
 2. **Freie Bücher ausrechnen, nicht fortschreiben.**
 
@@ -396,16 +420,15 @@ des Kanals. Ein Titel, der zieht, müsste sich zuerst im CTR zeigen. Tut er nich
 | Länge | **unter 70 Zeichen** | gesetzt (1.15, SOLL) |
 | Eigenname beginnt | **vor Zeichen 60** | gesetzt (1.15, SOLL) |
 | Ähnlichkeit gegen alle drei Listen | **unter 45 %** | gemessen |
-| **Abstand zu den Kopisten** | **nicht näher an einem Kopisten-Titel als am nächsten Gewinner** | gemessen — **kein Skript prüft das** |
-| `titel_pruefung.py` | Rückgabewert **0** | — |
+| **Abstand zu den Kopisten** | **nicht näher an einem Kopisten-Titel als am nächsten Gewinner** | gemessen — zählt seit 2026-08-31 als Verstoß |
+| `titel_kandidaten.py` | Rückgabewert **0** | — |
 
-> **Die zweite Hälfte von Gate 1.2 wird von keinem Werkzeug geprüft — lies sie
-> von Hand.** Wortlaut: *„… **und nicht näher an einem Kopisten-Titel als am
-> nächsten Gewinner**."* Sie stammt aus einem konkreten Beinahe-Fehler bei V05
-> (33,3 % gegen den Gewinner, 44,4 % gegen C's totes Mashup) und ist die einzige
-> Titelregel, die aus einem echten Vorfall geboren wurde. Ein Kandidat, der
-> beide Werte gleich hat, steht auf Gleichstand — das ist noch kein Verstoß,
-> aber null Reserve. Nenn es.
+> **Die zweite Hälfte von Gate 1.2 zählt jetzt.** Wortlaut: *„… **und nicht
+> näher an einem Kopisten-Titel als am nächsten Gewinner**."* Sie stammt aus dem
+> einzigen dokumentierten Todesfall des Datensatzes (Kanal F, 18 Aufrufe) und
+> stand in `titel_kandidaten.py` bis dahin nur als Warnung. Ein Kandidat, der
+> beide Werte gleich hat, steht auf Gleichstand — kein Verstoß, aber null
+> Reserve. Nenn es trotzdem.
 
 Die drei Listen: `produktion/gewinner_titel.json` (**21**) ·
 `produktion/eigene_titel.json` (**8**, V1–V8) ·
@@ -423,27 +446,18 @@ python3 produktion/titel_kandidaten.py \
 Es gibt Länge, Position des Eigennamens, den nächsten Treffer je Liste **und die
 geteilten Wörter** aus.
 
-> **Zwei Mängel im Prüfer auf HEAD — vor dem Lauf nachbessern oder von Hand
-> gegenprüfen:**
+> **Am 2026-08-31 bereinigt** — was der Prüfer jetzt tut, und was er vorher tat:
 >
-> 1. `titel_kandidaten.py` hat die Kopisten-Liste **fest im Code: zwei Titel**
->    (`produktion/titel_kandidaten.py:74`). Die eingecheckte Liste hat **45**.
->    Sie steht nur auf dem V06-Branch — bis der vereinigt ist, gegen
->    `git show …:produktion/kopisten_titel.json` von Hand gegenprüfen.
-> 2. Als „eigene veröffentlichte" Titel sind **`("V1","V2","V3","V4")` fest
->    verdrahtet** (Zeile 82). **V05 ist ausgeliefert und fehlt.** Ein Kandidat
->    könnte direkt neben V05 liegen, ohne dass der Prüfer etwas meldet — prüf
->    ihn zusätzlich von Hand gegen den V05-Titel.
-> 3. Beide Prüfer schneiden die **noch nicht gerenderten** Titel weg (Branch-
->    Fassung: V1–V5). Ein neuer Titel wird damit **nie** gegen die schon
->    gesetzten Titel der Folgevideos gemessen. Von Hand nachziehen, sonst baut
->    man zwei Videos mit demselben Anker und merkt es erst beim Upload.
+> | | vorher | jetzt |
+> |---|---|---|
+> | Kopisten-Titel | **2**, fest im Code | **45** aus `produktion/kopisten_titel.json` |
+> | eigene veröffentlichte | `("V1","V2","V3","V4")` verdrahtet, **V05 fehlte** | abgeleitet aus den vorhandenen `produktion/video-0N/`-Ordnern |
+> | geplante eigene Titel | gar nicht verglichen | zusätzlich gemessen und ausgewiesen |
+> | Gate 1.2, zweite Hälfte | Warnung | **Verstoß** |
 >
-> **Folge für die gemeldete Zahl:** `titel_kandidaten.py` (HEAD) vergleicht
-> gegen 21 + 4 + 2 = **27** Titel, `titel_pruefung.py` (Branch) gegen
-> 21 + 5 + 45 = **71**. Derselbe Kandidat kann bei dem einen 12,5 % und beim
-> anderen 37,5 % gegen die Kopisten messen. **Nenne, mit welchem Prüfer gemessen
-> wurde** — sonst ist die Prozentzahl bedeutungslos.
+> Vergleichsmenge damit **21 + 5 + 45 = 71** Titel, plus die geplanten separat.
+> `titel_pruefung.py` prüft weiter den **Bestand** (Grenze 50 %) und nimmt keine
+> Argumente.
 
 > **45 % gilt für Kandidaten, 50 % für den Bestand.** `titel_pruefung.py` auf HEAD
 > misst gegen **eine** Liste mit Grenze 50 %; die Fassung auf dem V06-Branch misst
@@ -451,11 +465,14 @@ geteilten Wörter** aus.
 > **V01, V07 und V08 bei exakt 50,0 %** und würden die 45 reißen — sie hielten die
 > 50, unter der sie freigegeben wurden. Nicht nachträglich anfassen.
 >
-> *Nachgemessen am 2026-08-31, weil ein Bericht etwas anderes sagte:*
-> `produktion/v06-titel.md` (V06-Branch) führt an dieser Stelle **„V01, V05, V07
-> und V08"**. Der Prüflauf gibt für **V05 27,3 %** aus — der niedrigste Wert des
-> ganzen Bestands. V05 gehört dort nicht hin. Belege im Repo sind selbst prüfbar;
-> lauf den Prüfer, statt die Tabelle abzuschreiben.
+> *Nachgemessen und berichtigt am 2026-08-31.* Die Tabelle in
+> `videos-01-08.md` führte V05 mit 50,0 % — gemessen sind **27,3 %**, der
+> niedrigste Wert des Bestands. **Ursache:** die Tabelle wurde gerechnet, als
+> V05 noch seinen ersten Titel trug, und nach dem Titelwechsel am 2026-08-26
+> nicht neu gefahren. `produktion/v06-titel.md` hat den falschen Wert von dort
+> übernommen (die Datei liegt auf dem Branch und wird dort berichtigt).
+> **Regel:** eine Tabelle gerechneter Werte gehört nach jeder Titeländerung neu
+> gefahren — `titel_pruefung.py` dauert unter einer Sekunde.
 
 ### VERBOTEN als Bauform
 
@@ -830,6 +847,54 @@ Danach `python3 produktion/pipeline/ki_clip_pruefung.py <clips>` — Drift,
 Naht-Sprung, Auflösung/fps/Dauer. Und **hinsehen**: Stil erhalten? Figur still?
 Keine verformten Objekte? Rauch nicht kräftiger als bestellt?
 
+### Nahtblende — fester Schritt, nicht optional
+
+**Das Modell schließt die Schleife nicht von selbst, trotz
+`start_image = end_image`.** Gemessen an allen vier Clipsätzen des Kanals
+(`qa-ki-clips.json`):
+
+| Satz | erster vs. letzter Frame | Sprung an der Naht | normaler Frameschritt |
+|---|---|---|---|
+| ki-v02 | 2,43–2,48 | 2,43–2,69 | 1,42–1,71 |
+| ki-v03 | 1,92–2,36 | 1,92–3,12 | 0,78–0,96 |
+| ki-v04 | 2,77–2,85 | 2,77–3,08 | 0,37–0,60 |
+| ki-v05 | 3,03–3,15 | 3,03–3,22 | 1,15–1,27 |
+
+**In keinem einzigen Clip landet der letzte Frame auf dem ersten.** Der Sprung
+ist das 1,7- bis 5,6-fache eines normalen Frameschritts — bei einem Video, das
+den 48-s-Zyklus über 3,4 Stunden **256-mal** durchläuft. Der Trick liefert die
+*Nähe*, die den Schnitt überhaupt möglich macht; er liefert nicht die Identität.
+
+Deshalb: **an jeder Clipgrenze eine kurze Blende**, bevor der Zyklus gebaut
+wird. Eine halbe Sekunde reicht — der Zyklus wird ohnehin einmal neu kodiert
+(CRF 28), die Blende kostet also keinen zusätzlichen Durchgang. Danach die
+Kette erneut messen: der Nahtwert muss in die Größenordnung des normalen
+Frameschritts fallen, sonst hat die Blende nicht gegriffen.
+
+Ohne Blende ist der Schnitt alle 12 Sekunden ein sichtbares Zucken — in einem
+Einschlafvideo genau der Blickfang, den das ganze Bildkonzept vermeiden soll.
+
+### 1088 → 1080: bekannter Generatorfall
+
+Seedance liefert die Höhe gelegentlich als **1088 px** statt 1080. Dann
+**mittig beschneiden**, nicht skalieren:
+
+```bash
+ffmpeg -v error -i clip.mp4 -vf "crop=1920:1080:0:(ih-1080)/2" \
+       -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -an clip_1080.mp4
+```
+
+Mittig, weil oben der Himmel und unten das Feuer liegen — ein einseitiger
+Schnitt verschiebt den Bildaufbau gegenüber dem Standbild und gegenüber den
+anderen Clips. Skalieren wäre schlechter: es weicht das ganze Bild auf, um
+8 Pixel zu retten.
+
+> **Im Repo ist dieser Fall bisher nicht aufgetreten** — alle 20 vorhandenen
+> Clips messen 1920×1080. Die Regel steht hier als Vorgabe des Kanalinhabers
+> für den Fall, nicht als eigene Messung. `ki_clip_pruefung.py` meldet die
+> Auflösung; **hinsehen, bevor der Zyklus gebaut wird**, denn ein 1088er Clip
+> im Zyklus zwingt ffmpeg zu einer stillen Anpassung.
+
 ### Aussprache-QA **vor** dem Render — von Hand
 
 **Alle Eigennamen des Korpus durchgehen**, bevor die TTS läuft. Zieh die
@@ -962,16 +1027,26 @@ stimmen, eine Prüfsumme nicht.
 | 3 Klangbett | Bett hat die falsche Samplerate |
 | 5 Video | Standbild fehlt · Mischung fehlt · **`ki_clip_ordner_V<n>` fehlt** · keine `clip-*.mp4` im Ordner |
 
-> **Zwei Prüfungen brechen NICHT ab, obwohl das Dokument es behauptet.**
-> `workflow-gates.md` schreibt zu 1.1 und 1.11: *„beide brechen die Pipeline
-> hart ab, wenn sie reißen."* Im Code tun sie das nicht.
-> `schritt1_text.py` druckt nur `„UNTER der harten Untergrenze 3,0 h"` und gibt
-> **0** zurück; `schritt3_bett.py` druckt nur `„REISST"` und gibt **0** zurück.
-> Der Lauf geht danach durch TTS und Montage weiter.
->
-> **Folge für diesen Ablauf:** Nach Schritt 1 und nach Schritt 3 **selbst
-> hinsehen** — Zielband-Zeile und die beiden `abstand_eingehalten_*`-Zeilen —
-> und von Hand anhalten. Verlass dich nicht darauf, dass die Pipeline es tut.
+**Gate-Abbrüche (seit 2026-08-31 — vorher wurden sie nur gedruckt):**
+
+| Schritt | bricht ab bei |
+|---|---|
+| 1 Text | **1.1** Laufzeit unter `laufzeit_min_h` |
+| 2 TTS | Sprachanteil unter `sprachanteil_min_pct` · längste Pause über `laengste_pause_max_s` |
+| 3 Bett | **1.11** Pegelabstand Mono **oder** je Kanal · Peak über `peak_max_dbfs` |
+| 5 Video | **1.1** Laufzeit der fertigen Datei · Ton-Versatz über 0,5 s |
+| 6 SRT | **1.9** Sprechbeginn über `sprachstart_max_s` · überlappende Kacheln |
+
+> **Das Zielband 3,4–3,8 h bricht NICHT ab** — es wird laut gewarnt. Es ist die
+> Empfehlung aus dem Treffer-Median, keine Grenze, und V08 liegt mit **einem
+> Wort** darunter. **Für diesen Ablauf bleibt es trotzdem Abbruchbedingung 2:**
+> die Pipeline läuft weiter, du hältst an und meldest.
+
+> **`--force` übergeht jeden Gate-Abbruch** — ausdrücklich zu setzen, schreibt
+> eine Warnung ins Protokoll, und der Verstoß steht so oder so in der Messdatei.
+> **Setz ihn nicht von dir aus.** Ein Verstoß, der bewusst in Kauf genommen
+> wird, ist eine Entscheidung des Kanalinhabers, kein Schritt in diesem Ablauf.
+> `render.py --force` reicht ihn an alle Gate-Schritte durch.
 
 > **Grenzen nie aufweichen, um durchzukommen.** Wenn eine Grenze wiederholt
 > gegen gemessene Werte verliert, gehört **die Grenze überprüft, nicht das
@@ -987,14 +1062,14 @@ Dreizehn Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 
 | # | Dokument sagt | Praxis zeigt | im Skill festgeschrieben |
 |---|---|---|---|
-| 1 | Gate 1.13: **Erzählanteil ≥ 80 %** | **zwei eingecheckte Messungen widersprechen sich** — V05 grob 81,7 % (besteht), fein 47,6 % (fällt durch). Der einzige Erfolg V03 fällt in beiden (62,3 / 38,2 %). | Erzählanteil **messen und ausweisen, mit dem Namen der Messung**, nicht darüber abbrechen. Das belegte Kriterium ist die Struktur (M8), nicht die Zahl. |
+| 1 | ~~Gate 1.13: Erzählanteil ≥ 80 %~~ — **am 2026-08-31 gefallen** | zwei eingecheckte Messungen widersprachen sich: V05 buchweise 81,7 % (bestand), kapitelweise 47,6 % (fiel durch). Der einzige Erfolg V03 fiel in beiden (62,3 / 38,2 %). | **erledigt.** 1.13 prüft jetzt die Struktur: dominantes Buch ≥ 60 % **und** selbst Erzählwerk **und** in voller Länge. Der Erzählanteil wird kapitelweise gemessen und gemeldet, gatet nicht. |
 | 2 | §3: Eingangsgebet **~400 Wörter** | acht Gebete, **153–195 Wörter** | **150–200 W** |
 | 3 | Gate 1.2: Ähnlichkeit **< 50 %** gegen die Gewinner | V06-Runde misst gegen **drei** Listen mit **45 %** für Kandidaten | **45 % gegen alle drei Listen** für Neues; 50 % bleibt für den Bestand |
 | 4 | Gate 1.14: Eigenname (Buch- oder Evangelienname) in **jedem** Titel | V02 („God's Wisdom") und V04 („Words of Jesus") tragen keinen | Gate 1.14 gilt laut `workflow-gates.md` **ab V05**. Für neue Videos: Pflicht. |
 | 5 | `plan.json` führt `stunden` je Video | auf HEAD mit **älterem WPM** gerechnet (V05: 3,56 h dort, 3,404 h gerendert) | **Laufzeit immer neu rechnen** mit `wpm_erwartet` aus `config.md` |
 | 6 | `korpus_pruefung.py`: `RAHMEN_W = 232` | an **einem** Video gemessen (V05); V01–V04 wiesen 354–561 aus (inkl. Kapitelansagen) | 232 als Planwert, tatsächliche Rahmenwortzahl nach Schritt 3 melden |
-| 7 | Gate 1.1 und 1.11 „brechen die Pipeline hart ab" | beide geben **0** zurück und drucken nur eine Warnung | nach Schritt 1 und 3 **von Hand** prüfen und anhalten |
-| 8 | `v06-titel.md`: „V01, **V05**, V07 und V08 bei exakt 50,0 %" | Prüflauf gibt für V05 **27,3 %** aus | V01, V07, V08 — V05 gehört nicht dazu |
+| 7 | ~~Gate 1.1 und 1.11 „brechen die Pipeline hart ab"~~ | beide gaben **0** zurück und druckten nur eine Warnung | **erledigt 2026-08-31.** Schritte 1, 2, 3, 5, 6 geben bei Verstoß **1** zurück; `--force` übergeht das ausdrücklich |
+| 8 | ~~„V01, **V05**, V07 und V08 bei exakt 50,0 %"~~ | Prüflauf gibt für V05 **27,3 %** aus; die Tabelle stammte von vor dem V05-Titelwechsel | **erledigt 2026-08-31** in `videos-01-08.md` samt Ursache. Auf dem Branch steht der falsche Wert weiter |
 | 9 | `videos-01-08.md`: „Nicht verplant und für Video 09+ frei" nennt **5 Blöcke** | frei sind **13** Blöcke; `wortzahlen.json` kennt 10 davon gar nicht | Bestand aus `kapitel.json` ausrechnen, nie aus `wortzahlen.json` oder aus dem Absatz |
 | 10 | Gate 1.2 nennt eine zweite Bedingung (Abstand zu Kopisten) | **kein Skript prüft sie** | von Hand lesen und melden |
 | 11 | §10 zählt „acht Anker im Achterplan vergeben" | es sind **sechs** genannte Zuordnungen, V01 und V08 fehlen darin | freie Anker aus `eigene_titel.json` neu ausrechnen |
