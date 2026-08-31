@@ -34,6 +34,12 @@ from gemeinsam import SR, arbeit, config, dauer_s, ffprobe, hms, ordner  # noqa:
 NAME_BILD = "PLATZHALTER_standbild.png"
 
 
+def pixfmt(cfg):
+    """Farbraum der Videospur. Steht in produktion/config.md und nur dort;
+    yuv420p (8 Bit) ist die Vorgabe, weil sie auf allen Geraeten dekodiert."""
+    return str(cfg.get("video_pixelformat", "yuv420p"))
+
+
 def zyklus_bauen(bild, ziel, cfg):
     fps = int(cfg["fps"])
     T = int(cfg.get("zoom_zyklus_s", 300))
@@ -43,14 +49,14 @@ def zyklus_bauen(bild, ziel, cfg):
         # Kosinus: z(0)=1, z(n)=1, Steigung an beiden Enden 0 -> nahtlos
         z = f"1+{A/2:.6f}*(1-cos(2*PI*on/{n}))"
         vf = (f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-              f":d=1:s={cfg['breite']}x{cfg['hoehe']}:fps={fps},format=yuv420p")
+              f":d=1:s={cfg['breite']}x{cfg['hoehe']}:fps={fps},format={pixfmt(cfg)}")
     else:
-        vf = f"scale={cfg['breite']}:{cfg['hoehe']},format=yuv420p"
+        vf = f"scale={cfg['breite']}:{cfg['hoehe']},format={pixfmt(cfg)}"
     cmd = ["ffmpeg", "-y", "-loglevel", "error",
            "-loop", "1", "-framerate", str(fps), "-t", str(T), "-i", bild,
            "-vf", vf, "-c:v", "libx264", "-preset", str(cfg.get("video_preset", "medium")),
            "-crf", str(int(cfg["video_crf"])), "-g", str(fps * 10),
-           "-pix_fmt", "yuv420p", "-an", ziel]
+           "-pix_fmt", pixfmt(cfg), "-an", ziel]
     subprocess.run(cmd, check=True)
     return T
 
@@ -146,7 +152,7 @@ def main():
                         "-c:v", "libx264", "-preset",
                         str(cfg.get("video_preset", "slow")),
                         "-crf", str(int(cfg["video_crf"])),
-                        "-pix_fmt", "yuv420p",
+                        "-pix_fmt", pixfmt(cfg),
                         "-x264-params", "keyint=240:min-keyint=240:scenecut=0",
                         "-an", zyklus], check=True)
         T = int(round(dauer_s(zyklus)))

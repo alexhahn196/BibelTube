@@ -24,3 +24,4 @@ produktion/video-*/*.wav
 __pycache__/
 *.pyc
 produktion/motive/loops/render.log
+produktion/video-*/*.flac

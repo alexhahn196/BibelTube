@@ -20,6 +20,17 @@ from gemeinsam import pfad
 QUELLE = pfad("produktion", "videos-01-08.md")
 
 
+def quelle_fuer(video):
+    """Eigene Datei je Video schlaegt die Sammeldatei.
+
+    Video 06 wurde nach der Korpus-Neuplanung aus videos-01-08.md herausgeloest;
+    seine Textebene steht in produktion/videos-06.md. Wer weitere Videos einzeln
+    fuehrt, legt videos-<nn>.md an - gefunden wird sie automatisch.
+    """
+    einzeln = pfad("produktion", "videos-%02d.md" % int(video[1:]))
+    return einzeln if os.path.exists(einzeln) else QUELLE
+
+
 def _zitat(zeilen):
     """Blockzitat (> ...) zu Absaetzen zusammenfassen.
 
@@ -64,7 +75,8 @@ def bloecke(quelle=QUELLE):
     return aus
 
 
-def lies(video, quelle=QUELLE):
+def lies(video, quelle=None):
+    quelle = quelle or quelle_fuer(video)
     roh = bloecke(quelle).get(video)
     if roh is None:
         raise SystemExit(f"Block {video} nicht in {quelle}")

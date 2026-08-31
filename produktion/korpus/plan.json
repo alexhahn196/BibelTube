@@ -360,7 +360,9 @@
  },
  "V6": {
   "name": "Rut + 1 Samuel + Ester",
-  "status": "geplant, Titel offen",
+  "titel": "I Know You're Tired… First Samuel Runs All the Way to Morning",
+  "titel_entschieden": "2026-08-30, Kandidat K3 aus produktion/v06-titel.md",
+  "status": "freigegeben",
   "entschieden": "2026-08-30, Variante A aus produktion/v06-korpus.md",
   "begruendung": "Erzaehlanteil 89,03 % der Woerter (Regel M8, Grenze 80 %). Drei vollstaendige Buecher ohne Schnitt, dominantes Buch 1 Samuel mit 75,1 % der Woerter. Reihenfolge kanonisch: Rut, 1 Samuel, Ester.",
   "refs": [
@@ -414,8 +416,12 @@
   "erzaehlend_woerter": 28028,
   "erzaehlanteil": 0.8903,
   "stunden": 3.65,
-  "zeichen_tts": null,
-  "zeichen_tts_hinweis": "Steht erst nach dem Textbau fest: schritt1_text.py zaehlt den normalisierten Text, nicht die rohe WEBBE-Zeichensumme."
+  "zeichen_tts": 166418,
+  "woerter_gesprochen": 31906,
+  "woerter_kapitelueberschriften": 166,
+  "woerter_rahmen": 258,
+  "stunden_gesprochen": 3.701,
+  "quelle_textebene": "produktion/videos-06.md"
  },
  "V7": {
   "name": "Markus + Roemer + Offenbarung 1-11",

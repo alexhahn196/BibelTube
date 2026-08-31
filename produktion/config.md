@@ -86,7 +86,15 @@ ducking            = nein
 # ARTEFAKT abgelegt und nicht als Rezept: stimmtest/musikbett.py zieht die
 # Pad-Schicht aus einem UNGESEEDETEN np.random.randn - ein erneuter Lauf
 # ergäbe ein anderes Bett. Diese Datei nicht neu erzeugen.
-bett_datei         = produktion/klang/bett_pad_feuer.flac
+# 2026-08-30 auf echt mono umgestellt (Vorgabe V06). Abgeleitet aus dem
+# bestehenden Artefakt, NICHT neu erzeugt: genommen ist der LINKE Kanal, nicht
+# der Stereo-Downmix. Grund: die Kanaele sind mit -0,40 dekorreliert, ein
+# Downmix loescht 5,2 dB aus und verschiebt die Balance (Bass -1,0 dB,
+# Mitten/Hoehen +1,9 bis +3,7 dB) - also ein anderes Bett, nicht dasselbe in
+# mono. Das "-6 dB" im Dateinamen ist reine Dateieigenschaft und wirkt im Mix
+# NICHT: schritt3_bett.py normalisiert das Bett ohnehin auf pegel_bett_dbfs.
+# Die Stereofassung bleibt als bett_pad_feuer.flac liegen.
+bett_datei         = produktion/klang/bett_mono_feuer_leise.flac
 # Formel §3: Sprache beginnt in Sekunde 0-3 (n=24). Deshalb 1,5 s statt der
 # 4 s aus stimmtest/musik-prompt.md — siehe Konflikt-Notiz in der README.
 vorlauf_s          = 1.5
@@ -115,6 +123,7 @@ ki_clip_ordner_V1  = produktion/motive/loops/ki
 ki_clip_ordner_V2  = produktion/motive/loops/ki-v02
 ki_clip_ordner_V3  = produktion/motive/loops/ki-v03
 ki_clip_ordner_V4  = produktion/motive/loops/ki-v04
+ki_clip_ordner_V6  = produktion/motive/loops/ki-v06
 
 # Kapitelmarken sind je Video entschieden, nicht global: videos-01-08.md
 # empfiehlt ja bei 01/02/06/08 und nein bei 03/04/05/07 (Formel §7 fuehrt sie
@@ -129,6 +138,9 @@ zoom_faktor        = 1.04
 # Ein Zyklus ist nahtlos schleifbar, die vollen 3,5 h entstehen per
 # Bitstrom-Kopie statt per Kodierung.
 zoom_zyklus_s      = 300
+# Vorgabe V06: 8-Bit-Farbraum erzwingen, damit die Datei auf allen Geraeten
+# dekodiert (TV-Sitzungen sind 12 % der Aufrufe und die laengsten).
+video_pixelformat  = yuv420p
 video_crf          = 28
 video_preset       = medium
 audio_bitrate      = 192k

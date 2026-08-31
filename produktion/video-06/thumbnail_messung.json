@@ -1,0 +1,20 @@
+{
+ "datei": "thumbnail.png",
+ "text": "FIRST SAMUEL",
+ "woerter": 2,
+ "schrift": "FreeSerifBold.ttf",
+ "fontgroesse_px": 184,
+ "versalhoehe_px": 125,
+ "versalhoehe_pct": 11.57,
+ "textbreite_px": 1368,
+ "rand_je_seite_px": 276,
+ "kontrast_direkt_mittel": 19.1,
+ "kontrast_direkt_p95": 18.4,
+ "kontrast_roh_mittel": 18.5,
+ "kontrast_roh_p95": 17.7,
+ "groesse_kb": 2930.5,
+ "cap_ok": true,
+ "kontrast_ok": true,
+ "woerter_ok": true,
+ "bestanden": true
+}

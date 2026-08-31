@@ -664,111 +664,17 @@ Support the channel: [Spendenlink]
 
 # Video 06
 
-> **⚠ Überholt seit 2026-08-30.** Der hier beschriebene Jesaja-Korpus ist gestrichen:
-> 10,2 % Erzählanteil, reißt Gate 1.13 / Regel M8. **Verbindlich ist
-> `produktion/korpus/plan.json`**, dort steht V06 als *Rut + 1 Samuel + Ester*
-> (31.482 W, 89,03 % Erzählanteil, Status „geplant, Titel offen"). Begründung und
-> die beiden verworfenen Alternativen: [`v06-korpus.md`](v06-korpus.md).
-> **Titel, Eingangsgebet und Hook unten gehören zum alten Korpus und sind
-> hinfällig** — sie stehen noch da, weil ihre Neufassung ein eigener Auftrag ist,
-> nicht weil sie gelten.
-
-**Titel:** `Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes`
-**Eigennamen-Test:** **JA** — „Isaiah" (Testreihe 2 von 2)
-**Anker:** „Don't Go to Sleep Worried…" (belegt, B 32K)
-**Hook-Test:** Variante **(a)**
-
-> **Abgrenzung:** Die zweite Titelhälfte hieß zuerst „Isaiah's Comfort for a Restless
-> Heart". Damit lag der Titel bei 62,5 % gemeinsamer inhaltstragender Wörter mit
-> B's „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" (32K) —
-> geteilt: *go, heart, not, sleep, worried*. „Heart" ist ersetzt, der belegte Anker
-> bleibt. Jetzt 44,4 %.
-
-**Textkorpus:** Jesaja 1–25 + Jesaja 40–66 + Daniel 4–6
-**Gemessen:** 30.693 Wörter → **3,65 h** → ca. 159.900 Zeichen TTS
-
-> Jesaja 26–39 bleibt bewusst frei für ein späteres Video.
-
-### Eingangsgebet (166 Wörter)
-
-> Father, I'm carrying something into the night that I can't do anything about until
-> morning — and possibly not then either.
+> **Herausgelöst am 2026-08-30.** Die Textebene von Video 06 steht in
+> [`produktion/videos-06.md`](videos-06.md) — Titel, Eingangsgebet, Hook, CTA,
+> Thumbnail-Vorgabe, Beschreibung und Tags. `vorlage.py` liest sie von dort.
 >
-> That's the part that keeps me awake. Not the trouble itself, but the fact that it
-> sits outside my reach, and I keep reaching anyway.
->
-> You spoke to a whole nation through Isaiah when things were far past mending, and you
-> didn't begin by explaining yourself. You began by saying: comfort my people. Speak
-> tenderly. The word came before the repair.
->
-> Speak tenderly to me tonight, then. Before anything is fixed.
->
-> Let these chapters be a hand on my shoulder rather than an argument. I'm not in a
-> state to be convinced of much. But I can be quieted.
->
-> Loosen the grip. Take the night shift. Let the thing I'm worried about stay in your
-> keeping until it's actually mine to handle again.
->
-> And for everyone listening who is worried about someone they love — give them a few
-> hours of not carrying it.
->
-> Amen.
-
-### Hook
-
-**(a) mit kurzer Begrüßung** ← **für Video 06 verwenden**
-> „Don't go to sleep worried. Whatever it is, it isn't yours to hold through the night.
-> For the next few hours it's just Isaiah, read slowly — the comfort chapters and the
-> ones before them. Get comfortable and let your eyes close."
-
-**(b) kalter Start**
-> „Isaiah, chapter one. The vision of Isaiah the son of Amoz, which he saw concerning
-> Judah and Jerusalem…"
-
-### CTA (2)
-
-1. „If you're worried about someone tonight, leave their name or just say what's
-   weighing on you — people here pray through the comments."
-2. „Subscribe if you'd like the next reading to find you."
-
-### Thumbnail
-
-**Motiv:** Grundmotiv, Feuer klein, weiter Horizont mit ferner Hügelkette,
-sehr großer Sternenhimmel, Gewand stärker in Rot betont.
-**Text:** `ISAIAH TONIGHT` (2 Wörter)
-
-### Beschreibung
-
-```
-Don't Go to Sleep Worried… Isaiah's Comfort Until Morning Comes
-
-For the nights when you're carrying something you can't do anything about yet. Isaiah
-chapters 1–25 and 40–66, with Daniel 4–6 — read slowly, without interruption.
-
-Nothing here needs following. Let it play and close your eyes.
-
-Focused on:
-• Worry you can't act on tonight
-• Comfort spoken before anything is fixed
-• Being kept through the dark hours
-• Deep, unhurried sleep
-
-Read from the World English Bible (British Edition).
-
-Sleep well. Subscribing helps you find the next reading.
-
-Support the channel: [Spendenlink]
-
-#isaiah #biblesleep #christiansleep #bibleversesforsleep #comfortscripture
-```
-
-**Tags:** `book of isaiah`, `isaiah for sleep`, `bible for sleep`,
-`christian sleep meditation`, `comfort scripture`, `scripture for sleep`,
-`old testament for sleep`, `bible reading for sleep`, `sleep with god's word`,
-`worry and anxiety`, `bedtime bible`, `peaceful bible reading`,
-`world english bible`, `christian bedtime`, `prophets bible`
-
----
+> Der Jesaja-Korpus, der hier stand, ist gestrichen (10,2 % Erzählanteil, reißt
+> Gate 1.13 / Regel M8); Titel, Gebet und Hook dazu sind mit ihm hinfällig und
+> deshalb entfernt statt konserviert. Sie stehen in der Historie
+> (`git log -- produktion/videos-01-08.md`). Was jetzt gilt: Rut + 1 Samuel +
+> Ester, 31.482 W, Titel `I Know You're Tired… First Samuel Runs All the Way to
+> Morning`. Begründung in [`v06-korpus.md`](v06-korpus.md) und
+> [`v06-titel.md`](v06-titel.md).
 
 # Video 07
 
