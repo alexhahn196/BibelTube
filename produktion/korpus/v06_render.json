@@ -1,0 +1,52 @@
+{
+ "was": "Messung des fertigen V06-Renderlaufs. Erste Messung des Projekts direkt an der gerenderten Datei statt an der Untertitelspur.",
+ "datum": "2026-08-31",
+ "herkunft": "gemessen",
+ "werkzeug": "ffprobe 7.0.2-static",
+ "datei": {
+  "pfad": "produktion/video-06/video-06.mp4",
+  "groesse_mb": 1242.5,
+  "video_codec": "h264",
+  "aufloesung": "1920x1080",
+  "pixelformat": "yuv420p",
+  "fps": "24/1",
+  "audio_codec": "aac",
+  "audio_kanaele": 2
+ },
+ "dauer": {
+  "mp4_gesamt_s": 12925.875,
+  "mp4_tonspur_s": 12925.753,
+  "mp4_bildspur_s": 12925.875,
+  "mix_wav_s": 12925.753,
+  "stimme_wav_s": 12918.253,
+  "hms": "3:35:25",
+  "stunden": 3.59,
+  "bild_ton_versatz_s": 0.122
+ },
+ "woerter": {
+  "gesprochen_gesamt": 31906,
+  "bibelverse": 31482,
+  "kapitelueberschriften": 166,
+  "rahmen_gebet_hook_cta": 258,
+  "quelle": "produktion/arbeit/video-06/skript.json"
+ },
+ "wpm": {
+  "gemessen": 148.2,
+  "herkunft": "gemessen",
+  "nenner": "mp4_tonspur_s minus vorlauf_s (1.5) und nachlauf_s (6.0) = reine Sprechdauer, gleicher Nenner wie wpm_gemessen.json",
+  "sprechdauer_s": 12918.3,
+  "config_wpm_erwartet": 143.7,
+  "abweichung_wpm": 4.5,
+  "abweichung_pct": 3.1
+ },
+ "zielband": {
+  "von_h": 3.4,
+  "bis_h": 3.8,
+  "laufzeit_h": 3.59,
+  "im_band": true
+ },
+ "untertitel": {
+  "datei": "produktion/video-06/video-06.srt",
+  "kacheln": 2732
+ }
+}
