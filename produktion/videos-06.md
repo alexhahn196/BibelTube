@@ -88,10 +88,16 @@
 
 **Motiv:** Grundmotiv der Serie, Variation für Video 06 — die sitzende Figur weiter
 links und kleiner als bei V05, dafür mehr Landschaft: ein flacher Hügelkamm gegen
-den Nachthimmel, wie ein Lager am Rand offener Weide. Eine einzelne Öllampe am Boden
-neben der Figur als warme Lichtquelle, kein Lagerfeuer — das unterscheidet V06
-sichtbar von V01–V05, bleibt aber in der Serie. Kopf gesenkt, im Profil nach rechts,
-kein Blickkontakt. Obere Bildhälfte fast leer und tiefblau für den Text.
+den Nachthimmel, wie ein Lager am Rand offener Weide. Kleines, ruhiges Lagerfeuer
+rechts der Figur als **einzige** warme Lichtquelle. Kopf gesenkt, im Profil nach
+rechts, bloßes Haupt, Gesicht sichtbar und vom Feuer angeleuchtet, kein
+Blickkontakt. Obere Bildhälfte fast leer und tiefblau für den Text.
+
+> **Korrektur 2026-08-31:** Ein erster Wurf setzte statt des Feuers eine Öllampe.
+> Verworfen: V01–V05 und alle acht geplanten Motive tragen Feuer, und das Klangbett
+> ist Feuerknistern — die Lampe hätte Bild und Ton auseinanderlaufen lassen. Die
+> Variation gegenüber V01–V05 liegt jetzt allein in Bildausschnitt und Landschaft,
+> nicht in der Lichtquelle.
 **Text:** `FIRST SAMUEL` (2 Wörter)
 
 ### Beschreibung
