@@ -102,7 +102,8 @@ def main():
               f"bekommen.")
     print()
 
-    verstoesse = 0
+    verstoesse = 0      # Gate 1.2 - MUSS, bestimmt den Rueckgabewert
+    soll_maengel = 0    # Gate 1.15 - SOLL, wird getrennt ausgewiesen
     ergebnis = []
     for t in kandidaten:
         (ag, qg, gg), n = naechster(t, gewinner)
@@ -130,7 +131,7 @@ def main():
         if geplant:
             print(f"          {ap_*100:5.1f} % gegen die geplanten eigenen Titel "
                   f"(geteilt: {sorted(gp) if gp else '-'})")
-            print(f"          naechster geplanter Titel: {qp}")
+            print(f"          naechster geplanter Titel: {qp if gp else '-'}")
 
         # Pruefung 1.15 - gesetzte Grenze, kein Messwert. Belegt ist nur der
         # Anlass: Gate 2 hat 68 % der Aufrufe am Handy gemessen, und in der
@@ -166,8 +167,21 @@ def main():
                          "inhaltswoerter": n, "ok": ok,
                          "zeichen": lang, "laenge_ok": laenge_ok,
                          "eigenname_ab_zeichen": pos, "eigenname_ok": name_ok})
-    print(f"Verstoesse gegen Gate 1.2 (Grenze {a.grenze*100:.0f} % oder naeher "
-          f"am Kopisten): {verstoesse}")
+    # 1.15 ist SOLL, nicht MUSS - deshalb ein eigenes Zaehlwerk und kein
+    # Einfluss auf den Rueckgabewert. Bis 2026-08-31 wurde es ueberhaupt nicht
+    # gezaehlt: Laenge und Eigennamenposition standen gedruckt da, ein
+    # 90-Zeichen-Titel ohne Eigennamen gab trotzdem 0 zurueck.
+    for e in ergebnis:
+        if e["laenge_ok"] is False or e["eigenname_ok"] is False:
+            soll_maengel += 1
+    print(f"Gate 1.2 (MUSS) - Verstoesse: {verstoesse}   "
+          f"[Grenze {a.grenze*100:.0f} % oder naeher am Kopisten als am Gewinner]")
+    print(f"Gate 1.15 (SOLL) - Maengel:   {soll_maengel}   "
+          f"[unter {a.max_zeichen} Zeichen, Eigenname vor Zeichen {a.name_vor}]")
+    if soll_maengel:
+        print("  1.15 ist eine gesetzte Grenze, kein Messwert - sie geht NICHT in "
+              "den\n  Rueckgabewert ein. Ein Verstoss gehoert gemeldet und "
+              "begruendet, nicht\n  stillschweigend hingenommen (siehe V05, 73 statt 70 Zeichen).")
     print(json.dumps(ergebnis, ensure_ascii=False))
     return 1 if verstoesse else 0
 

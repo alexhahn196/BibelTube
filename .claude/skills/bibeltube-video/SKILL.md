@@ -46,8 +46,6 @@ Ablauf braucht und die auf `main`/HEAD **fehlen**:
 | Datei | Zweck |
 |---|---|
 | `produktion/erzaehlanteil.py` | versgenaue Erzählanteil-Einstufung |
-| `produktion/kopisten_titel.json` | **45** Kopisten-Titel (C: 35, F: 10) — die dritte Vergleichsliste |
-| `produktion/titel_pruefung.py` (neuere Fassung) | misst gegen **drei** Listen statt einer, Kandidatengrenze 45 % |
 | `produktion/korpus/erzaehlanteil.json` | 250 Kapitel einzeln eingestuft, mit Begründung |
 | `produktion/korpus/eigene_videos_erzaehlanteil.json` | Erzählanteil V01–V05, versgenau |
 | `produktion/korpus/wpm_gemessen.json` | gemessenes Tempo je Video |
@@ -99,17 +97,23 @@ ls produktion/motive/loops/ki-v<NN>/clip-*.mp4 2>/dev/null | wc -l   # muss 4 se
 grep -n "^ki_clip_ordner_V<N>" produktion/config.md                  # muss existieren
 ```
 
-- **`FISH_KEY` nicht gesetzt → abbrechen und melden.** Ohne ihn scheitert
-  Schritt 2, und zwar erst nach Textbau und Kapitelabruf. Der Schlüssel steht
-  ausschließlich in der Umgebungsvariablen und nie im Repo.
-- **KI-Clips nicht vorhanden → abbrechen und melden.** Vier `clip-*.mp4` im
-  Ordner dieses Videos, plus der Eintrag `ki_clip_ordner_V<n>` in `config.md`.
-  Fehlt der Eintrag, bricht Schritt 5 ab; fehlen die Clips, bricht er auch ab —
-  aber erst nach TTS und Mischung, also nach dem teuren Teil.
+**Beides jetzt prüfen, im Freigabepunkt melden — und den Lauf NICHT abbrechen.**
+Die Schritte 0–2 kosten nichts und beschaffen weder Schlüssel noch Clips. Der
+Abbruch gehört **vor Schritt 5**, nicht vor Schritt 0.
 
-Beides ist billig zu prüfen und teuer zu übersehen. **Melden, nicht selbst
-beschaffen** — Clips kosten 72 Credits, und ob sie erzeugt werden, entscheidet
-der Kanalinhaber am Freigabepunkt.
+- **`FISH_KEY`** wird in **Pipeline-Schritt 2 (TTS)** gebraucht, also im
+  Renderlauf — nicht in Schritt 2 dieses Ablaufs. Fehlt er, scheitert der
+  Renderlauf erst nach Textbau und Kapitelabruf. Der Schlüssel steht
+  ausschließlich in der Umgebungsvariablen und nie im Repo.
+- **KI-Clips:** vier `clip-*.mp4` im Ordner dieses Videos, plus der Eintrag
+  `ki_clip_ordner_V<n>` in `config.md`. Fehlt eines von beidem, bricht
+  Pipeline-Schritt 5 ab — aber erst nach TTS und Mischung, also nach dem
+  teuren Teil. Clips kosten **72 Credits**; ob sie erzeugt werden, entscheidet
+  der Kanalinhaber.
+
+> **Schrittnummern sauber trennen.** „Schritt 1–6" in diesem Skill sind die
+> Schritte *dieses Ablaufs*. „Pipeline-Schritt 1–7" sind die Skripte
+> `schritt1_text.py` … `schritt7_paket.py`. Sie decken sich nicht.
 
 ### Dann erst
 
@@ -132,8 +136,10 @@ der Kanalinhaber am Freigabepunkt.
    > „es gibt nichts".**
    >
    > Der Absatz „Nicht verplant und für Video 09+ frei" in `videos-01-08.md`
-   > nennt 5 Blöcke. Frei sind **13**. Momentaufnahme von 2026-08-23, kein
-   > Bestand.
+   > nennt 5 Blöcke — eine Momentaufnahme von 2026-08-23, kein Bestand.
+   > **Schreib hier keine Zahl hin, sondern rechne sie.** Jede genannte Zahl
+   > wird zur nächsten Momentaufnahme; ein Trockenlauf am 2026-08-31 kam auf
+   > **15** Blöcke, wo dieser Skill zuvor 13 behauptete.
 
    Jede fertige Variante am Ende mit `--gegen V7 --gegen V8` gegenprüfen.
 
@@ -226,8 +232,14 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
    (30.926 W) und Dominanz (100 %) und fällt genau hier durch.
 2. **Nebenstoff frei.** Was neben dem dominanten Buch steht, darf
    Spruchsammlung, Brief oder Prophetie sein — Rahmen, nicht Hauptsache.
-3. **Kanonische Lesereihenfolge**, nicht nach Länge oder Wirkung sortiert.
-   V05 liest Lukas vor Prediger, V04 Matthäus vor Epheser/Philipper/Daniel.
+3. **Dominantes Buch zuerst, der Rest kanonisch dahinter** — nicht nach Länge
+   oder Wirkung sortiert.
+
+   > Der Bestand liest **nicht** kanonisch: V05 stellt Lukas vor Prediger, V04
+   > Matthäus vor Epheser/Philipper/Daniel — beides NT vor AT. Die gelebte Regel
+   > ist „dominantes Buch zuerst". Wo dominantes Buch und Kanon
+   > auseinanderfallen, entscheidet die Dominanz; unter den Nebenbüchern
+   > entscheidet der Kanon.
 4. **Ganze Bücher bevorzugen.** Teilung nur an einer **Erzählnaht**.
 
    > **Es gibt dafür weder Liste noch Werkzeug — das ist Ermessen und gehört
@@ -309,6 +321,32 @@ ist Evangelium gegen Spruchsammlung, nicht 80 gegen 79.
 **Was abbricht, ist Kriterium 1** — dominantes Buch unter 60 % oder kein
 durchlaufendes Erzählwerk. Nicht der Prozentwert.
 
+### Die feine Messung holen, ohne etwas zu vereinigen
+
+`produktion/korpus/erzaehlanteil.json` fehlt auf HEAD — `korpus_pruefung.py`
+meldet dann korrekt „NICHT GEMESSEN". So kommst du trotzdem an den Wert:
+
+```bash
+S=<scratchpad>
+git show origin/claude/bibeltube-v06-korpus-m8-rz2oce:produktion/korpus/erzaehlanteil.json \
+  > $S/erzaehlanteil.json
+python3 - <<'EOF'
+import json, importlib.util
+spec = importlib.util.spec_from_file_location('kp', 'produktion/korpus_pruefung.py')
+kp = importlib.util.module_from_spec(spec); spec.loader.exec_module(kp)
+kap  = json.load(open('produktion/korpus/kapitel.json'))
+fein = json.load(open('<scratchpad>/erzaehlanteil.json'))['kapitel']
+kapitel = [("ruth", i) for i in range(1, 5)]      # (buch, nummer) der Variante
+print(kp.fein_anteil(sorted(kapitel), kap, fein))  # (Anteil, Abdeckung in %)
+EOF
+```
+
+> **Nicht ins Repo kopieren.** Die Datei gehört zum Branch; ein zweiter Stand
+> auf HEAD wäre genau der doppelte Textstand, den das Repo sonst vermeidet.
+> Und: `fein_anteil()` gibt die **Abdeckung** mit zurück — liegt sie unter
+> 100 %, ist der Anteil über einer lückenhaften Grundlage gerechnet und gehört
+> so gemeldet.
+
 ### Die feineren Quellen, wenn du sie brauchst
 
 | Datei (V06-Branch) | Inhalt |
@@ -330,30 +368,51 @@ beiden. Dann nur den groben Wert melden und ihn so nennen.
 
 ### Was die Variante kostet — ausrechnen, nicht beschreiben
 
-Der Restbestand ist groß und trotzdem knapp: **Rut (2.436 W), Ester (5.408 W)
-und Jona (1.272 W) sind die einzigen kurzen Füllbücher.** Jedes große Erzählbuch
-braucht eines davon, um ins Band zu kommen. Wer alle drei verbraucht, macht
-spätere Videos unbaubar.
+**Der Engpass ist Ester.** Nachgezählt am 2026-08-31: von den freien Blöcken
+gibt es **9 gültige Kombinationen aus ganzen Büchern — und alle neun enthalten
+Ester.** Ohne Ester sind es **null**. Rut (2.436 W) und Jona (1.272 W) sind
+zusammen zu klein, um die Lücke von rund 23–24 k auf 30 k zu schließen
+(1 Samuel + Rut + Jona = 27.346 W, zu kurz). Ester (5.408 W) ist das einzige
+mittlere Füllbuch.
+
+**Folge: jedes V06 aus ganzen Büchern verbraucht Ester und setzt die
+Ganzbuch-Reserve auf 0.** Ab V09 geht es nur noch mit Teilblöcken
+(`revelation 12-22`, `genesis 43-50`, `daniel 4-12`). Das gehört in den
+Freigabepunkt.
 
 Je Variante ausrechnen:
 
-- **Wieviele gültige Kombinationen bleiben danach übrig?** (Band + Dominanz
-  ≥ 60 % + größter Block ≥ 80 % erzählend.)
-- **Verbraucht sie einen Block, den ein späteres Video zur Rettung braucht?**
-  Nachgerechnet am 2026-08-31:
+- **Wieviele gültige Kombinationen bleiben danach übrig?** Nenn die **Zählregel
+  dazu** — über welchen Pool, mit wievielen Blöcken —, sonst ist die Zahl nicht
+  nachprüfbar. Ein Lauf kam auf 9 (nur ganze Bücher) bzw. 48 (mit Teilblöcken).
+- **Welche dominanten Bücher bleiben danach überhaupt möglich?**
 
-  | | Laufzeit | |
-  |---|---:|---|
-  | V07 wie geplant (29.123 W, 43 Kap) | **3,320 h** | **reißt** |
-  | V07 + Jona | 3,465 h | gerettet |
-  | V07 + Rut | 3,596 h | gerettet |
-  | V07 + Ester | 3,932 h | über dem Band |
-  | V08 wie geplant (29.835 W, 42 Kap) | 3,400 h | **reißt 1.1 um genau 1 Wort** |
-  | V08 + Jona | 3,544 h | gerettet |
-
-  **Jona kann nur eines von beiden retten.** Eine V06-Variante, die Jona
-  verbraucht, entscheidet damit still über V07 oder V08 mit. Das gehört in den
-  Freigabepunkt.
+> ### V07 und V08 sind unter den geltenden Gates nicht baubar — arithmetisch
+>
+> Nicht „knapp daneben", sondern ausgeschlossen. Nachgerechnet:
+>
+> | | 1.1 Laufzeit | 1.13 | Ergebnis |
+> |---|---|---|---|
+> | V07 wie geplant (29.123 W) | 3,320 h — **reißt** | Markus **49,0 %** — reißt | DURCHGEFALLEN |
+> | V07 + Jona | 3,465 h — OK | Markus **46,9 %** — **reißt** | **DURCHGEFALLEN** |
+> | V07 + Rut | 3,596 h — OK | Markus **45,2 %** — **reißt** | **DURCHGEFALLEN** |
+> | V07 + Ester | 3,932 h — reißt | Markus 41,3 % — reißt | DURCHGEFALLEN |
+> | V08 wie geplant (29.835 W) | 3,400 h — reißt um 1 W | **Vollständigkeit reißt** (Gen 1–42 von 1–50) | DURCHGEFALLEN, **zwei** Gates |
+> | V08 + Jona | 3,544 h — OK | **Vollständigkeit reißt** | **DURCHGEFALLEN** |
+>
+> **Der Beweis, warum kein Zusatz hilft:** Markus hat 14.261 W. Bei Dominanz
+> ≥ 60 % darf der Gesamtkorpus höchstens **23.768 W** haben — die kleinste
+> Bandgrenze über n = 30…80 liegt bei **29.722 W**. Die beiden Bedingungen
+> schließen sich aus. Jedes Wort, das V07 ins Band hebt, drückt Markus tiefer
+> unter 60 %.
+> Ganzes Genesis hat **35.827 W**, `band_fuer(50)` endet bei **33.366** —
+> Genesis kann als dominantes Buch nie in voller Länge gelesen werden.
+>
+> **Daraus folgt für Schritt 1:** V07 und V08 müssen ohnehin neu gebaut werden
+> und ziehen dann aus demselben Rest, den V06 gerade anfasst. Das ist das
+> Argument, das in den Freigabepunkt gehört — nicht „Jona rettet eines von
+> beiden". Dieser Satz stand hier und war falsch: er hatte nur die Laufzeit
+> nachgerechnet und 1.13 nicht gefahren.
 
 ### Ausgabe je Variante
 
@@ -398,10 +457,32 @@ nicht über den Anker.
 > I Know…` 201K · #4 `Lord, I Feel Tired` 184K · #12 `You Deserve Some Rest…`
 > 559 · #13 `God Knows You're Tired…` 140.
 >
-> Davon stehen #1, #3 und #4 zugleich in **A-Titeln** — brauchbar, aber näher
-> am Feld. Wirklich unbelastet sind nur #12 und #13, und das sind zwei der vier
-> Flop-Anker. **Die von §10 für V09 vorhergesagte Ankerknappheit ist schon
-> jetzt da.** Bau die Liste bei jedem Lauf neu, statt §10 abzuschreiben.
+> **Und dann miss die freien Anker gegen die 45 Kopisten-Titel** — das ist ein
+> Rechenschritt, keine Einschätzung. Nachgemessen am 2026-08-31:
+>
+> | Anker | Beleg | nächster Kopisten-Titel | Nähe |
+> |---|---:|---|---:|
+> | #1 `If You're Anxious,` | 245K | „If You're Anxious, Sleep To These Psalms Tonight" | **100 %** |
+> | #3 `You're Tired, I Know…` | 201K | „You're tired, I know… Rest by the Fire with Jesus" | **100 %** |
+> | **#4 `Lord, I Feel Tired`** | **184K** | „If You Feel Empty… Sleep To These Psalms Tonight" | **33 %** |
+> | #12 `You Deserve Some Rest…` | 559 | „You deserve some rest, hear the Teachings of Jesus" | **100 %** |
+> | #13 `God Knows You're Tired…` | 140 | „You're tired, I know… Rest by the Fire with Jesus" | 75 % |
+>
+> **Der einzige freie Anker ohne Kopisten-Nachbarn ist #4.** Drei der übrigen
+> vier stehen den Kopisten **wörtlich** zur Verfügung — C und F haben genau
+> diese Auftakte abgeschrieben.
+>
+> > **Hier stand vorher das Gegenteil:** „Wirklich unbelastet sind nur #12 und
+> > #13." Das war ungemessen und falsch — #12 ist der am stärksten belastete
+> > freie Anker überhaupt. Es stand da, weil „unbelastet" mit „kommt in keinem
+> > weiteren A-Titel vor" verwechselt wurde. Alle 13 Anker stammen aus
+> > A/B-Gewinnertiteln; von A-Titeln unbelastet kann per Definition keiner sein.
+> > Die Größe, die zählt, ist die **Nähe zu den Kopisten** — und die misst
+> > `titel_kandidaten.py` in einer Sekunde.
+>
+> **Die von §10 für V09 vorhergesagte Ankerknappheit ist damit schon jetzt da,
+> und schärfer als §10 sie beschreibt.** Bau die Liste bei jedem Lauf neu und
+> miss sie, statt §10 abzuschreiben.
 
 ### Eigenname
 
@@ -432,7 +513,7 @@ des Kanals. Ein Titel, der zieht, müsste sich zuerst im CTR zeigen. Tut er nich
 
 Die drei Listen: `produktion/gewinner_titel.json` (**21**) ·
 `produktion/eigene_titel.json` (**8**, V1–V8) ·
-`produktion/kopisten_titel.json` (**45**: C 35, F 10 — **nur auf dem V06-Branch**).
+`produktion/kopisten_titel.json` (**45**: C 35, F 10 — seit 2026-08-31 auf HEAD).
 
 Kandidaten prüfst du mit **`titel_kandidaten.py`**, den Bestand mit
 `titel_pruefung.py` (der nimmt keine Argumente):
@@ -444,7 +525,14 @@ python3 produktion/titel_kandidaten.py \
 ```
 
 Es gibt Länge, Position des Eigennamens, den nächsten Treffer je Liste **und die
-geteilten Wörter** aus.
+geteilten Wörter** aus, dazu zwei getrennte Zählwerke:
+
+- **Gate 1.2 (MUSS)** — bestimmt den Rückgabewert. 0 = bestanden.
+- **Gate 1.15 (SOLL)** — Länge und Eigennamenposition, **getrennt ausgewiesen
+  und ohne Einfluss auf den Rückgabewert.** Das ist Absicht: 1.15 ist eine
+  gesetzte Grenze, kein Messwert, und V05 reißt sie bewusst. **Lies die Zeile
+  trotzdem** — bis 2026-08-31 wurde 1.15 überhaupt nicht gezählt, ein
+  90-Zeichen-Titel ohne Eigennamen gab RC 0.
 
 > **Am 2026-08-31 bereinigt** — was der Prüfer jetzt tut, und was er vorher tat:
 >
@@ -459,9 +547,12 @@ geteilten Wörter** aus.
 > `titel_pruefung.py` prüft weiter den **Bestand** (Grenze 50 %) und nimmt keine
 > Argumente.
 
-> **45 % gilt für Kandidaten, 50 % für den Bestand.** `titel_pruefung.py` auf HEAD
-> misst gegen **eine** Liste mit Grenze 50 %; die Fassung auf dem V06-Branch misst
-> gegen **drei** mit 45 % für Neues. Nimm die strengere. Am Bestand gemessen liegen
+> **45 % gilt für Kandidaten, 50 % für den Bestand — und das sind zwei
+> Werkzeuge.** `titel_kandidaten.py` (HEAD) prüft **Kandidaten** gegen alle drei
+> Listen mit 45 %. `titel_pruefung.py` (HEAD) prüft den **Bestand** gegen die
+> 21 Gewinner mit 50 % und nimmt keine Argumente; es ist **nicht** die
+> Drei-Listen-Fassung — die liegt weiter nur auf dem Branch und wird für diesen
+> Ablauf auch nicht gebraucht. Am Bestand gemessen liegen
 > **V01, V07 und V08 bei exakt 50,0 %** und würden die 45 reißen — sie hielten die
 > 50, unter der sie freigegeben wurden. Nicht nachträglich anfassen.
 >
@@ -541,6 +632,9 @@ Episode kann 5 % eines Korpus sein und trotzdem der erste Titelvorschlag.
 2. **Bei zwei Namen im Titel zählt für 1.15 der Name des dominanten Buchs.**
    Wenn ein Nebenbuch früher steht, ist die Prüfung trotzdem am dominanten zu
    messen — er trägt die kontextliche Zuordnung, auf der 1.14 beruht.
+   `--eigenname` nimmt **einen** Namen und sucht ihn buchstabengenau mit
+   `find()`; den zweiten kennt das Werkzeug nicht. Für zwei Namen zweimal
+   fahren und den Wert des dominanten Buchs melden.
 
 ### Reihenfolge: der Titel braucht einen Korpus, der erst danach entschieden wird
 
@@ -716,6 +810,13 @@ erkennbaren Nutzen.
 
 Eintragen in `kapitelmarken_videos` in `produktion/config.md`. §7: beide Muster
 gewinnen, es ist eine **Nutzbarkeits- und keine Reichweitenfrage**.
+
+> **Den vorhandenen Eintrag gegen den NEUEN Korpus prüfen — er stammt aus dem
+> alten Plan.** `kapitelmarken_videos = V1,V2,V6,V8` führt V6, eingetragen für
+> die 52 Jesaja-Kapitel. Wird V06 ein durchlaufender Erzählkorpus, verlangt
+> dieser Ablauf **keine** Kapitelmarken — der Eintrag muss raus, sonst baut die
+> Pipeline stillschweigend 45 Marken. Dasselbe gilt für V08, wenn sein Korpus
+> neu geschnitten wird.
 
 ---
 
@@ -1123,7 +1224,7 @@ Dreizehn Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 | 9 | `videos-01-08.md`: „Nicht verplant und für Video 09+ frei" nennt **5 Blöcke** | frei sind **13** Blöcke; `wortzahlen.json` kennt 10 davon gar nicht | Bestand aus `kapitel.json` ausrechnen, nie aus `wortzahlen.json` oder aus dem Absatz |
 | 10 | Gate 1.2 nennt eine zweite Bedingung (Abstand zu Kopisten) | **kein Skript prüft sie** | von Hand lesen und melden |
 | 11 | §10 zählt „acht Anker im Achterplan vergeben" | es sind **sechs** genannte Zuordnungen, V01 und V08 fehlen darin | freie Anker aus `eigene_titel.json` neu ausrechnen |
-| 12 | `plan.json` führt V08 mit 3,55 h (HEAD) bzw. 3,46 h (Branch) | `korpus_pruefung.py --plan V8` → **DURCHGEFALLEN**, 1.1 reißt um **1 Wort** | V08 gilt als offen, nicht als geplant |
+| 12 | `plan.json` führt V08 mit 3,55 h (HEAD) bzw. 3,46 h (Branch) | `korpus_pruefung.py --plan V8` → **DURCHGEFALLEN an ZWEI Gates**: 1.1 (um 1 Wort) **und** 1.13-Vollständigkeit (Gen 1–42 von 1–50). Ganzes Genesis passt nie ins Band. | V08 gilt als offen, nicht als geplant — und die „ein Wort"-Erzählung verharmlost einen strukturellen Fehler |
 | 13 | Skill-Entwurf: „Branch überschneidet sich in **9 Dateien**" | **99 Dateien**, und er **löscht `produktion/video-05/` samt `qa.json`** | nicht vereinigen ohne Konfliktauflösung |
 
 Dazu zwei Altlasten, die **kein** Vorbild sind:
@@ -1133,28 +1234,40 @@ Auslieferungstext. Beides nicht nachbauen.
 
 ---
 
-## Trockenlauf gegen V06 (2026-08-31) — was er ergeben hat
+## Zwei Trockenläufe gegen V06 (2026-08-31) — was sie ergeben haben
 
-Der Ablauf wurde einmal blind gegen V06 gefahren: Schritt 0–2, ohne Zugriff auf
-`v06-korpus.md`, `v06-titel.md` und die dortigen Kandidatendateien.
+Der Ablauf wurde zweimal blind gegen V06 gefahren: Schritt 0–2, ohne Zugriff auf
+`v06-korpus.md`, `v06-titel.md`, `videos-06.md` und die Kandidatendateien.
 
-| | Ziel | Ergebnis |
+| | Ziel | Lauf 1 | Lauf 2 (nach den Reparaturen) |
+|---|---|---|---|
+| Korpus | Variante A (Rut + 1 Samuel + Ester) | **getroffen** | **getroffen**, aus 9 gültigen Ganzbuch-Kombinationen |
+| Titel | ein Kandidat der Bauform von K3 | Bauform getroffen | Bauform getroffen |
+| Werkzeuge | sauber laufen | — | `korpus_pruefung.py` und `titel_kandidaten.py` liefen in **allen** Aufrufen sauber; RC korrekt; `--plan` fährt jetzt dieselben Prüfungen wie der Bausteinpfad |
+
+> **Lauf 1 war nicht unabhängig, und das war ein Befund über diese Datei.** Der
+> erste Entwurf trug Korpus und Titelfragmente von V06 als Beispiele. Seither
+> stehen die Beispiele auf abgeschlossenen Videos; die Regel dazu steht in
+> Schritt 2.
+
+**Aus beiden Läufen kamen 24 + 16 Mängel an dieser Datei zurück; alle sind
+eingearbeitet.** Die schwersten aus Lauf 2 — und sie betrafen ausnahmslos den
+Text, nicht die Werkzeuge:
+
+| | war falsch | ist jetzt |
 |---|---|---|
-| Korpus | Variante A (Rut + 1 Samuel + Ester) | **getroffen**, als Empfehlung von 26 gültigen Kombinationen |
-| Titel | ein Kandidat der Bauform von K3 | **Bauform getroffen** — Anker aus den 13, Eigenname ausgeschrieben, zweite Hälfte als eigene Zusage, < 70 Zeichen, Name vor Zeichen 60. Empfohlen wurde ein anderer der sechs. |
+| Kostentabelle | „V07 + Jona gerettet", „V07 + Rut gerettet", „V08 + Jona gerettet" | alle drei **DURCHGEFALLEN** — geheilt wird nur 1.1, 1.13 reißt weiter. Dazu der arithmetische Beweis, dass V07 und V08 unter den geltenden Gates unbaubar sind. |
+| Engpass | „Rut, Ester und Jona gleichrangig" | **Ester** — alle 9 Ganzbuch-Kombinationen enthalten ihn, ohne ihn null |
+| freie Anker | „unbelastet sind #12 und #13" | **#4 ist der einzige ohne Kopisten-Nachbarn**; #1, #3, #12 stehen den Kopisten zu **100 %** nahe |
+| harte Vorbedingungen | „abbrechen" **und** „entscheidet der Kanalinhaber am Freigabepunkt" | melden, nicht abbrechen; Abbruch erst vor Pipeline-Schritt 5 |
+| Lesereihenfolge | „kanonisch", belegt mit zwei Gegenbeispielen | **dominantes Buch zuerst**, Rest kanonisch |
+| V08 | „reißt um genau ein Wort" | reißt an **zwei** Gates |
+| freie Blöcke | „13" | wird gerechnet, nicht genannt (ein Lauf kam auf 15) |
 
-> **Der Trockenlauf war nicht unabhängig, und das ist ein Befund über diese
-> Datei.** Der erste Entwurf trug Korpus und Titelfragmente von V06 als
-> Beispiele — der Lauf konnte die Lösung lesen, ohne eine gesperrte Datei zu
-> öffnen. Zusätzlich druckt `git show <branch> --stat` die Commit-Nachricht mit,
-> in der der freigegebene Titel wörtlich steht. Die Beispiele sind seither auf
-> abgeschlossene Videos umgestellt; die Regel dazu steht in Schritt 2.
-
-Aus dem Lauf sind **24 Mängel** an dieser Datei zurückgekommen; alle sind
-eingearbeitet. Die schwersten waren die falsch gerechnete Gegenprobe in
-Schritt 0, `wortzahlen.json` als Bestandsquelle, die zwei Wortbänder, die zwei
-Erzählanteil-Messungen, die fehlende zweite Hälfte von Gate 1.2 und die um den
-Faktor 11 zu klein angegebene Branch-Differenz.
+Der Lauf hat außerdem einen Fehler im Werkzeug gefunden, der jetzt behoben ist:
+`titel_kandidaten.py` zählte Gate **1.15 gar nicht** — ein 90-Zeichen-Titel ohne
+Eigennamen gab RC 0. Länge und Eigennamenposition werden jetzt getrennt
+ausgewiesen.
 
 ---
 
@@ -1177,13 +1290,12 @@ Faktor 11 zu klein angegebene Branch-Differenz.
    **gemessenen** Tempos und der M8-Regel. Schritt 1 muss für V07 also
    **wirklich neu rechnen**, nicht fortschreiben.
 
-   **V08 reißt ebenfalls — um genau ein Wort.** Genesis 1–42 ist 100 %
-   dominant und 100 % erzählend, hat 29.835 W bei einer Untergrenze von
-   **29.836 W**: `korpus_pruefung.py --plan V8` meldet
-   `1.1 REISST — zu kurz` / `DURCHGEFALLEN`. Ein Skill, dessen oberste Regel
-   die Messdatei über den Bericht stellt, nennt das **durchgefallen**, nicht
-   „auf der Kante". Jona (1.272 W) würde es heilen — kann aber nur einmal
-   vergeben werden, siehe Schritt 1.
+   **V08 reißt an ZWEI Gates.** 1.1 um genau ein Wort (29.835 gegen 29.836) —
+   **und** 1.13-Vollständigkeit, weil Genesis 1–42 nicht das ganze Buch ist.
+   Jona heilt nur 1.1; die Vollständigkeit bleibt gerissen, und ganzes Genesis
+   (35.827 W) passt nie ins Band (`band_fuer(50)` endet bei 33.366). Die
+   „ein Wort"-Erzählung, die hier vorher stand, verharmlost einen strukturellen
+   Fehler zu einem Rundungsproblem.
 3. **V06 auf HEAD ist noch Jesaja** (89,8 % dominant, aber prophetische Rede —
    nach M8 als Hauptkorpus ausgeschlossen; grober Erzählanteil 10,2 %). Der
    Ersatz steht nur auf dem unvereinigten Branch.
