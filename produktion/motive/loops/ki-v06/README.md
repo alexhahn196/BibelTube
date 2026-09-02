@@ -1,40 +1,39 @@
 # KI-Clips Video 06
 
-Vier Bild-zu-Video-Clips aus `produktion/motive/motiv-V6.png`, erzeugt am
-2026-08-31 mit `flux_3_video` (1080p, 12 s), **start_image = end_image = das
-Standbild**, `generate_audio: false`. Bewegungsvorgabe je Clip verschieden
-(Feuerflackern · Rauch und Sterne · Grasbewegung und Funke · hohe Wolken),
-Kamera in allen vier ausdrücklich unbewegt.
+**Neu erzeugt am 2026-09-02.** Der erste Satz (2026-08-31, `flux_3_video`) hat
+das Video praktisch zum Standbild gemacht: im ausgelieferten MP4 lag der
+Frameschritt bei **0,058** — gegen 0,518 bei V07. Die Clips selbst trugen
+keine Bewegung; die Pipeline hat sie korrekt verarbeitet.
 
-## Zwei Nachbearbeitungen, beide gemessen
+## Der jetzige Satz
 
-**1. Zuschnitt 1088 → 1080.** Der Generator lieferte 1920×1088 (kein
-Letterbox-Balken, echter Inhalt). Mittig beschnitten, je vier Zeilen oben und
-unten, ohne Skalierung.
+Vier Bild-zu-Video-Clips aus `produktion/motive/motiv-V6.png`, Modell
+`seedance1_5`, **1920×1080, 24 fps, 12,042 s, `resolution: 1080p`,
+`generate_audio: false`**, `start_image = end_image = motiv-V6.png`.
 
-**2. Schleife geschlossen.** Trotz identischem Start- und Endbild kam das
-Modell nicht exakt auf den Anfangsframe zurück — `ki_clip_pruefung.py` maß
-einen Nahtsprung von 3,37–5,18 (Median 4,06) bei einem normalen Frameschritt
-von nur 0,07–0,12, also Faktor **40,8**. Jeder Clip wurde deshalb in sich
-geschlossen: die letzte Sekunde wird über die erste geblendet
-(`xfade`, 1 s), Länge dadurch 12,04 s → 11,0 s.
+Ausdrücklich animiert: Feuerflackern, Rauchfäden, Funkenflug, Sternenfunkeln,
+leichte Stoffbewegung am Gewand. Ausdrücklich unverändert: Kamera, Bildaufbau,
+Landschaft, Figur, **Größe und Helligkeit des Feuers**.
 
-Ergebnis danach, mit demselben Werkzeug gemessen:
+| | Frameschritt Median | Urteil |
+|---|---:|---|
+| alter Satz (flux_3_video) | 0,058 | Standbild mit Flackern |
+| erster Neuversuch, zu starker Prompt | 2,495 | Feuer wuchs zur Lohe, Rauchwolke über dem halben Himmel — verworfen |
+| **jetziger Satz** | **0,650** | bewegt sich sichtbar, Bildaufbau unverändert |
 
-| | Nahtsprung Median | Naht / normaler Schritt |
-|---|---:|---:|
-| vorher | 4,06 | 40,8 |
-| **nachher** | **2,49** | **9,5** |
-| zum Vergleich V02 | 2,5 | 1,8 |
-| zum Vergleich V03 | 2,7 | 2,7 |
-| zum Vergleich V04 | 3,0 | 5,4 |
+> **Der Prompt entscheidet, nicht das Modell.** „Kamera unbewegt" heißt nicht
+> „Bild unbewegt" — die Bewegung muss ausdrücklich verlangt werden. Umgekehrt
+> reißt ein zu starker Prompt das Motiv auseinander: „thick smoke", „showers of
+> embers", „surge" ließen das Lagerfeuer zum Scheiterhaufen werden. Der
+> gültige Prompt nennt beides: welche Elemente sich bewegen **und** dass Größe
+> und Helligkeit des Feuers gleich bleiben.
 
-Der **absolute** Sprung liegt damit unter allen drei ausgelieferten Videos.
-Der Faktor bleibt höher, weil diese Clips deutlich statischer sind
-(Frameschritt 0,21–0,30 gegen 0,37–0,54 bei V04) — bei ruhigerem Bild fällt
-derselbe Sprung relativ stärker auf. Kameradrift nach der Bearbeitung
-0,007–0,021 px, also praktisch null.
+## Zyklus
 
-Die Rohclips vor der Bearbeitung sind bewusst **nicht** im Repository (4×7 MB
-ohne eigenen Nutzen); die Messwerte oben und `qa-ki-clips.json` halten fest,
-was die Bearbeitung bewirkt hat.
+Vier Clips aneinander, CRF 28, 1156 Frames, 48,17 s. Nahtfaktoren
+**2,19 / 2,73 / 2,29**.
+
+Blende geprüft (`xfade` 0,5 s an den drei inneren Schnitten): Faktoren
+**3,04 / 2,82 / 2,49** — zwei schlechter, einer praktisch gleich, dazu 1,5 s
+Verlust. **Verworfen**, wie bei V07. Die Rundnaht clip‑4 → clip‑1 bleibt
+unbehandelt; dafür gibt es im Repo kein Verfahren.
