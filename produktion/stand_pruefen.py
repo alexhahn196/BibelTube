@@ -63,6 +63,35 @@ def main():
     pruef("Erzaehlwerk", kp.ERZAEHLWERK_MIN == ea.GATE_ERZAEHLEND == float(cfg["gate_erzaehlanteil_min"]))
     pruef("Abstand", kp.ABSTAND_MIN == ea.GATE_ABSTAND == float(cfg["gate_abstand_min"]))
 
+    print("\n Gate 1.13 - beide Werkzeuge urteilen gleich")
+    kapstd = json.load(open(os.path.join(HIER, "korpus", "kapitel.json"), encoding="utf-8"))
+    feinstd = kp.fein_lesen()
+    moegl = json.load(open(os.path.join(HIER, "korpus", "v07_v08_moeglichkeiten.json"),
+                           encoding="utf-8"))
+    planstd = json.load(open(os.path.join(HIER, "korpus", "plan.json"), encoding="utf-8"))
+    for video, pf in sorted(moegl["planfassungen"].items()):
+        kapitel = [(r.rsplit(" ", 1)[0], int(r.rsplit(" ", 1)[1]))
+                   for r in planstd[video]["refs"]]
+        teile = []
+        for buch in dict.fromkeys(b for b, _ in kapitel):
+            ii = sorted(i for b, i in kapitel if b == buch)
+            voll = kp.buchlaenge(kapstd, buch)
+            teile.append({"spec": buch, "buch": buch, "von": ii[0], "bis": ii[-1],
+                          "kapitel_gelesen": ii, "ganzes_buch": ii == list(range(1, voll + 1)),
+                          "woerter": sum(kapstd["%s %d" % (buch, i)]["w"] for i in ii),
+                          "erzaehlung": 0})
+        r = kp.zusammenfassen(teile, kapitel, kapstd, feinstd)
+        zweiter = r["zweiter"]
+        werte = (round(r["groesster"]["woerter"] / r["woerter"], 4),
+                 round(r["erz_anteil_dominant"], 4),
+                 r["groesster"]["ganzes_buch"],
+                 round((r["groesster"]["woerter"] - (zweiter["woerter"] if zweiter else 0))
+                       / r["woerter"], 4))
+        soll = (pf["dominanz"], pf["vollwerk"]["erzaehlanteil_des_buches"],
+                pf["vollwerk"]["volle_laenge"], pf["abstand"])
+        pruef("%s: Dominanz, Erzaehlwerk, Vollstaendigkeit, Abstand" % video,
+              werte == soll, "%s / %s" % (werte, soll))
+
     print("\n Erzaehlanteil - eine Zahl aus einer Datei")
     kap = json.load(open(os.path.join(HIER, "korpus", "kapitel.json"), encoding="utf-8"))
     fein = kp.fein_lesen()

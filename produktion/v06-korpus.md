@@ -78,9 +78,11 @@ Gottes wuchs und mehrte sich"), ist also kein abgeschnittener Torso, sondern ein
 erzählerisch geschlossene Hälfte.
 *Risiko:* mit 83,63 % der niedrigste Erzählanteil — Apg 1–12 trägt selbst nur 70,6 %,
 weil Pfingstpredigt, Tempelrede und Stephanusrede darin liegen. Der Sprung zwischen
-Jerusalem und der Richterzeit hat keine erzählerische Brücke, und bei dem Tempo, das
-`config.md` erwartet (145,9 WPM), läuft die Variante auf **3,82 h** und damit knapp
-über das Zielband.
+Jerusalem und der Richterzeit hat keine erzählerische Brücke, und beim Tempo aus
+`config.md` (143,7 WPM) läuft die Variante auf **3,88 h** und damit über das
+Zielband. *(Hier stand 145,9 WPM und 3,82 h — ein Tempowert, den `config.md` nie
+geführt hat; korrigiert am 02.09.2026. Beide Zahlen führen zum selben Urteil: über
+der Obergrenze.)*
 
 ---
 
@@ -106,6 +108,16 @@ die Zielband und 80-%-Gate gleichzeitig hält.** Die Zahlen:
 - Apostelgeschichte + Rut + Ester + Daniel 4–6 käme auf 34.107 W und liegt damit
   **340 W über dem Band** — und trüge nur 76,6 %.
 
+> **Der ganze Abschnitt rechnet gegen das Band 30.215–33.767 W, das damals aus der
+> Vorgabe von 148,1 WPM folgte.** Gültig ist seit dem 02.09.2026 **29.315–32.764 W**
+> (143,7 WPM, `config.md`). Die genannten 33.620 W und 34.107 W liegen damit
+> **856 bzw. 1.343 W über der Obergrenze** statt knapp darunter beziehungsweise
+> knapp darüber — das Urteil „geht nicht" wird dadurch nur deutlicher. Der zweite
+> Grund fällt dagegen ganz weg: der Erzählanteil des Gesamtkorpus **gatet nicht
+> mehr** (Strukturfassung). Was heute gegen einen Apostelgeschichte-Korpus spricht,
+> ist Bedingung 2 von Gate 1.13 — die Apostelgeschichte hält mit **73,0 %**
+> kapitelweise das Erzählwerk-Kriterium nicht.
+
 Acts-dominante Kombinationen bestehen nur, wenn man die Apostelgeschichte vorn
 abschneidet (ab Apg 3, 4, 6 oder 7). Das ist keine Erzählnaht, sondern ein Schnitt am
 Wortzähler entlang: das Video begönne mitten in der Handlung und ohne Pfingsten.
@@ -115,8 +127,8 @@ Deshalb steht keine solche Variante hier. **V06-C ist der einzige Weg, das NT
 Ebenfalls ausgeschieden, weil sie die 60-%-Dominanz im Band gar nicht erreichen
 können: Josua (17.835 W) und Richter (17.922 W) — beide zu klein, um in einem
 30.000-W-Korpus auf 60 % zu kommen. *(Genau dieser Satz ist der Anlass der
-Schwellenänderung vom 02.09.: Richter trägt jetzt sechzehn der fünfzig möglichen
-Korpora. Siehe letzter Abschnitt.)* Und Exodus scheitert am Gate selbst: **46,5 %**
+Schwellenänderung vom 02.09.: Richter trägt jetzt zwanzig der 45 möglichen Korpora,
+2 Samuel die übrigen 25. Siehe letzter Abschnitt.)* Und Exodus scheitert am Gate selbst: **46,5 %**
 (Exodus 20–31 und 35–40 sind Gesetz, Kult- und Bauvorschrift), 1 Könige an **58,9 %**
 (Tempelbau Kap. 6–7, Weihgebet Kap. 8), Daniel 4–12 an **27,2 %** (Kap. 7–12 sind
 apokalyptische Vision).
@@ -142,7 +154,9 @@ stehen als `regel` in `korpus/erzaehlanteil.json`:
    das nicht geschrieben im Buch der Chronik") sind Chroniknotiz, nicht Erzählung.
 
 **250 Kapitel** wurden einzeln eingestuft, jedes mit Wortzahl und einer Zeile
-Begründung. **85 Kapitel sind an Versgrenzen geteilt**; die Wortzahl beider Teile ist
+Begründung. **94 Kapitel sind an Versgrenzen geteilt** *(85 waren es beim Stand von
+250 eingestuften Kapiteln; die 162 Kapitel der Runde vom 02.09. haben neun weitere
+Teilungen gebracht)*; die Wortzahl beider Teile ist
 in beiden Fällen **gemessen**, nicht geschätzt — jeder Versbereich wurde einzeln
 abgerufen und gezählt (Zwischenspeicher `korpus/kapitel_verse.json`).
 
@@ -150,7 +164,7 @@ abgerufen und gezählt (Zwischenspeicher `korpus/kapitel_verse.json`).
 deren Teile nicht exakt das ganze Kapitel ergeben — Summe der Teilwortzahlen muss der
 Kapitelwortzahl entsprechen **und** Summe der Verse der Kapitelversanzahl. Eine
 Teilung mit Lücke oder Überlappung fällt durch und das Kapitel zählt dann konservativ
-komplett als nicht erzählend. Aktuell fällt keine der 85 Teilungen durch.
+komplett als nicht erzählend. Aktuell fällt keine der 94 Teilungen durch.
 
 ### Wo die Einstufung unsicher ist
 
@@ -237,7 +251,7 @@ Wirkung ungeprüft ist.
    | V02 | 30.260 | 3,60 h | 3,51 h | 3:37:23 = 3,62 h |
    | V03 | 30.009 | 3,57 h | 3,48 h | 3:27:54 = 3,47 h |
    | V04 | 31.112 | 3,70 h | 3,61 h | 3:34:40 = 3,58 h |
-   | V05 | 29.880 | 3,56 h | 3,47 h | nicht gerendert |
+   | V05 | 29.880 | 3,56 h | 3,47 h | **3,40 h** (`video-05/qa.json`) |
    | V07 | 29.123 | 3,47 h | **3,38 h** | nicht gerendert |
    | V08 | 29.835 | 3,55 h | 3,46 h | nicht gerendert |
 
@@ -280,9 +294,14 @@ Wirkung ungeprüft ist.
    sich das Bild: Markus (14.261 W) ist durchlaufende Erzählung und wäre der
    natürlichste NT-Partner für ein M8-Video.
 
-6. **Nur V01–V04 sind gerendert** (`produktion/video-01` bis `-04`). V05 existiert
-   bisher nur in `plan.json` und `videos-01-08.md`. Ich habe V05 wie vorgegeben als
-   verbraucht behandelt.
+6. ~~**Nur V01–V04 sind gerendert.** V05 existiert bisher nur in `plan.json` und
+   `videos-01-08.md`.~~ **Falsch, berichtigt am 02.09.2026 nach der
+   Zusammenführung.** V05 ist gerendert **und ausgeliefert**: das Paket liegt in
+   `produktion/video-05/` (`qa.json`, `titel.txt`, `upload.md`, `video-05.srt`,
+   Thumbnail), `qa.json` führt einen vollständigen Renderlauf über 3:24:14 = 3,404 h,
+   und `produktion/auslieferung/manifest.json` drei GoFile-Auslieferungen. Der Satz
+   stand hier, weil das V05-Paket auf dem anderen Zweig lag. **Gerendert sind
+   V01–V06.**
 
 7. **Jesaja fällt durch die Streichung zurück in den Vorrat** (35.557 W, der größte
    freie Block überhaupt). Unter M8 ist es als Hauptstoff unbrauchbar — prophetische
@@ -409,7 +428,7 @@ halten alle drei. Aber jede Teilung reißt „in voller Länge", und ganz Genesi
 | Genesis 1–42 *(Planfassung)* | 29.835 | 87,7 % | 3,46 h | liegt mitten in der Hungersnot-Sequenz |
 
 **Als dominantes Buch fällt Genesis damit ganz aus.** Als Nebenstoff steht es in
-vierzehn der 45 möglichen Korpora. Wer Genesis als Titelgeber will, muss die
+fünfzehn der 45 möglichen Korpora. Wer Genesis als Titelgeber will, muss die
 Vollständigkeitsbedingung lockern — das ist eine Entscheidung, keine Rechnung.
 
 > **Die Nähte sind Urteil, keine Messung.** Es gibt im Repo weder eine Nahtliste
@@ -488,12 +507,18 @@ was M8 belegt. Wer eine Variante vorschlägt, nennt den gemeldeten Erzählanteil
 und sagt, was den Rest füllt.
 
 **2. Der Mindestabstand von 15 Punkten kostet neun Korpora — gemessen, bevor er
-festgeschrieben wurde.** Von den 50 Korpora, die vor dieser Runde unter der
-Prozentfassung möglich waren, fallen dadurch neun weg und 41 bleiben. Der
-knappste ausgeschiedene Fall lag bei **9,9 Punkten** (`Genesis 1–11 + Genesis
-37–50 + Markus`: Genesis 55,0 % gegen Markus 45,0 %), der knappste gehaltene bei
-15,6. **Für V07 und V08 blieb reichlich übrig; die Schwelle musste nicht
-aufgeweicht werden.**
+festgeschrieben wurde** — und zwar gegen zwei Bezugsmengen, weil die
+Strukturfassung eine andere Menge durchlässt als die Prozentfassung davor:
+
+| Bezugsmenge | fallen weg | bleiben |
+|---|---:|---:|
+| die 50 Korpora der **Prozentfassung** (Stand vor dieser Runde) | 9 | 41 |
+| die 50 Korpora der **Strukturfassung** (Stand danach) | 5 | **45** |
+
+Der knappste ausgeschiedene Fall lag bei **9,9 Punkten** (`Genesis 1–11 +
+Genesis 37–50 + Markus`: Genesis 55,0 % gegen Markus 45,0 %), der knappste
+gehaltene bei 15,6. **In beiden Rechnungen blieb für V07 und V08 reichlich
+übrig; die Schwelle musste nicht aufgeweicht werden.**
 
 **3. Das tiefere Band ist jetzt das einzige Band.** „Erzählwerk in voller Länge"
 ist unter der Strukturfassung ohnehin Bedingung von 1.13 — jeder Korpus, der

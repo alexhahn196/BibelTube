@@ -178,8 +178,11 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
 - [ ] Es wird **in voller Länge** gelesen? (Teilung nur an einer Erzählnaht,
       und die gehört begründet.)
 - [ ] Es liegt **≥ 15 Prozentpunkte vor dem zweitgrößten Buch**?
-- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn die drei Bedingungen
-      oben halten. Harte Untergrenze 3,0 h in jedem Fall.
+- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn das dominante Buch selbst
+      Erzählwerk ist **und** in voller Länge gelesen wird (die beiden Haken oben;
+      der Mindestabstand spielt für das Band keine Rolle). Da 1.13 beides ohnehin
+      verlangt, gilt für jeden bestehenden Korpus 3,0–3,8 h. Harte Untergrenze
+      3,0 h in jedem Fall.
 - [ ] **Nebenstoff ist frei.** Was neben dem dominanten Buch steht, darf
       Spruchsammlung, Brief oder prophetische Rede sein — Rahmen, nie Hauptsache.
 
@@ -215,9 +218,10 @@ Geprüft mit `produktion/korpus_pruefung.py` und `produktion/erzaehlanteil.py`.
 > Dominanzschwelle allein sagt nur, dass ein Buch über der Hälfte liegt — nicht,
 > dass es die Hauptsache ist. Bei 50,1 gegen 45,0 verkauft der Eigenname im
 > Titel und auf dem Thumbnail ein Buch, das knapp die Hälfte trägt. Gemessen,
-> **bevor** die Schwelle festgeschrieben wurde: von 50 durchgerechneten Korpora
-> fallen dadurch **neun** weg, **41 bleiben**
-> ([`produktion/korpus/v07_v08_moeglichkeiten.json`](produktion/korpus/v07_v08_moeglichkeiten.json)).
+> **bevor** die Schwelle festgeschrieben wurde: gegen die 50 Korpora der
+> Prozentfassung fallen **neun** weg (41 bleiben), gegen die 50 der
+> Strukturfassung **fünf** (45 bleiben — der Inhalt von
+> [`produktion/korpus/v07_v08_moeglichkeiten.json`](produktion/korpus/v07_v08_moeglichkeiten.json)).
 
 - **Beleg (eigene Kanaldaten Gate 2, n=4 Videos, 2 Retentionskurven):**
   Endretention nach 3,5 Stunden — **V3 Johannes (Erzählung) 14,4 %** gegen
@@ -1570,10 +1574,10 @@ Zwei neue Regeln greifen ab V05 direkt in diesen Plan ein:
 
 | | Korpus laut Plan | Zusammensetzung | M8 | Eigenname im Titel |
 |---|---|---|---|---|
-| **V05** | Lukas + Prediger | Lukas 24.399 W (**81,7 %**) · Prediger 5.481 W (18,3 %) | **erfüllt** — Erzählstoff trägt, Prediger ist Beigabe | **fehlt** — „…Sleep to the Whole Story, Read Slowly" |
+| **V05** | Lukas + Prediger | Lukas 24.399 W (**81,7 %**) · Prediger 5.481 W (18,3 %) | **erfüllt** — Erzählstoff trägt, Prediger ist Beigabe | **vorhanden** — „…The Whole Gospel of Luke, Read Slowly Until Morning Comes" |
 | **V06** | ~~Jesaja 1–25 + 40–66 + Daniel 4–6~~ → **Rut + 1 Samuel + Ester** | ~~Jesaja 27.573 W (89,8 %) · Daniel 3.120 W (10,2 %)~~ → 1 Samuel 23.638 W (**75,1 %**) · Ester 5.408 W (17,2 %) · Rut 2.436 W (7,7 %) | ~~verletzt~~ → **erfüllt** (neu geschnitten 2026-08-30) | vorhanden („First Samuel") |
 | **V07** | Markus + Römer + Offb. 1–11 | Markus 14.261 W (**49,0 %**) · Römer 9.431 W (32,4 %) · Offenbarung 5.431 W (18,6 %) | **grenzwertig** — Erzählstoff unter der Hälfte, Rest Brief und Apokalyptik | **fehlt** — „…God's Promises for a Quiet Heart" |
-| **V08** | Genesis 1–42 | Genesis 29.835 W (100 %) | **erfüllt** — von M8 ausdrücklich genannt | **fehlt** — „…Sleep to the Beginning of Everything" |
+| **V08** | Genesis 1–42 | Genesis 29.835 W (100 %) | **verletzt seit 02.09.2026** — Gate 1.13 verlangt das dominante Buch **in voller Länge**; gelesen werden 42 von 50 Kapiteln | **fehlt** — „…Sleep to the Beginning of Everything" |
 
 **V05 kann so gebaut werden, sobald der Titel einen Eigennamen trägt.** Der Korpus
 bleibt, wie er ist; nur die Titelzeile — und mit ihr Thumbnail-Text, Beschreibung und
@@ -1729,8 +1733,9 @@ Du hast gesagt, bei Widersprüchen gewinnen die Dokumente. Drei Stellen:
 Kein Widerspruch: dein Längenband 3,4–3,8 h deckt sich mit Formel §2.
 ~~Und „2 von 8 Titeln mit Eigennamen" entspricht der Testreihe „~jedes 4. Video".~~
 **Überholt am 2026-08-23:** Die Testreihe ist ausgewertet, Eigennamen sind seitdem in
-**jedem** Titel Pflicht (Formel §1). Von den acht geplanten Titeln erfüllen das zwei —
-V03 (gebaut) und V06. Siehe „Was Gate 2 an diesem Plan ändert" oben.
+**jedem** Titel Pflicht (Formel §1). Von den acht geplanten Titeln erfüllen das drei —
+V03, V05 und V06, alle drei gebaut *(nachgezogen 2026-09-02: V05 trägt seit dem
+Titelwechsel vom 26.08. „Gospel of Luke")*. Siehe „Was Gate 2 an diesem Plan ändert" oben.
 
 ---
 
@@ -2003,7 +2008,7 @@ Support the channel: [Spendenlink]
 **Anker:** „Stop Thinking For A Moment," (belegt, B 96K)
 
 **Textkorpus:** Psalmen 90–150 + Sprüche
-**Gemessen:** 30.260 Wörter → **3,60 h** → ca. 157.700 Zeichen TTS
+**Gemessen:** 30.260 Wörter → **3,51 h** (143,7 WPM aus `config.md`) → ca. 157.700 Zeichen TTS
 
 ### Eingangsgebet (166 Wörter)
 
@@ -2106,7 +2111,7 @@ Support the channel: [Spendenlink]
 > Titeln (Formel §1, offene Frage 3).
 
 **Textkorpus:** Johannes + Hebräer + 1. Johannes + Kolosser
-**Gemessen:** 30.009 Wörter → **3,57 h** → ca. 156.300 Zeichen TTS
+**Gemessen:** 30.009 Wörter → **3,48 h** (143,7 WPM aus `config.md`) → ca. 156.300 Zeichen TTS
 
 > **Korpus geprüft und unverändert (2026-08-04).** Zwischenzeitlich stand eine
 > Erweiterung um 1. Petrus + Jakobus im Raum (aus einem Lauf, in dem Johannes
@@ -2222,7 +2227,7 @@ Support the channel: [Spendenlink]
 **Anker:** „No More Thinking Tonight…" (belegt, B 166K — derselbe Anker war B's Durchbruch)
 
 **Textkorpus:** Matthäus + Epheser + Philipper + Daniel 1–3
-**Gemessen:** 31.112 Wörter → **3,70 h** → ca. 162.100 Zeichen TTS
+**Gemessen:** 31.112 Wörter → **3,61 h** (143,7 WPM aus `config.md`) → ca. 162.100 Zeichen TTS
 
 ### Eingangsgebet (161 Wörter)
 
@@ -2404,7 +2409,7 @@ Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 > gemessene Werte verliert, ist die falsche Zahl.
 
 **Textkorpus:** Lukas + Prediger
-**Gemessen:** 29.880 Wörter → **3,56 h** → ca. 155.700 Zeichen TTS
+**Gemessen:** 29.880 Wörter → **3,47 h** (143,7 WPM aus `config.md`) → ca. 155.700 Zeichen TTS
 
 ### Eingangsgebet (179 Wörter)
 
@@ -2522,7 +2527,7 @@ wird.
 Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
 
 **Textkorpus:** Markus + Römer + Offenbarung 1–11
-**Gemessen:** 29.123 Wörter → **3,47 h** → ca. 151.700 Zeichen TTS
+**Gemessen:** 29.123 Wörter → **3,38 h** (143,7 WPM aus `config.md`) → ca. 151.700 Zeichen TTS
 
 ### Eingangsgebet (153 Wörter)
 
@@ -2622,13 +2627,17 @@ Rest well tonight. Subscribing helps you find the next one.
 **Titel:** `You Need Rest… Sleep to the Beginning of Everything`
 **Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1). „Genesis"
 ist der Name des eigenen Korpus.
-**Korpusart nach M8:** erfüllt — Genesis-Erzählungen, in M8 ausdrücklich genannt.
+**Korpusart nach M8:** ⚠ **verletzt** — Genesis ist Erzählstoff (87,2 % kapitelweise)
+und trägt 100 % des Korpus, aber Gate 1.13 verlangt das dominante Buch **in voller
+Länge**: gelesen werden 42 von 50 Kapiteln. `korpus_pruefung.py --plan V8` fällt
+genau daran durch. Der Korpus muss neu geschnitten werden — die Möglichkeiten stehen
+in [`korpus/v07_v08_moeglichkeiten.json`](produktion/korpus/v07_v08_moeglichkeiten.json).
 **Anker:** „You Need Rest…" (belegt, A 36K)
 **Hook:** Variante **(a), kurze Begrüßung** *(unverändert; Hook-Test seit
 2026-08-23 auf V09+ verschoben)*
 
 **Textkorpus:** Genesis 1–42
-**Gemessen:** 29.835 Wörter → **3,55 h** → ca. 155.400 Zeichen TTS
+**Gemessen:** 29.835 Wörter → **3,46 h** (143,7 WPM aus `config.md`) → ca. 155.400 Zeichen TTS
 
 > Genesis 43–50 bleibt frei — sinnvoller Anschluss für Video 09.
 
@@ -2735,7 +2744,7 @@ strenge Richtung: sie machen die gemessene Ähnlichkeit größer, nicht kleiner.
 | 03 | 44,4 % | A „If You're Anxious, Rest to the Gospel of John Tonight" | gospel, if, john, you |
 | 04 | 44,4 % | B „No More Thinking Tonight… Jesus Is With You" | jesus, no, think, tonight |
 | 05 | **27,3 %** | A „Rest Your Eyes... Jesus Is With You" | eyes, rest, your |
-| 06 | 44,4 % | B „Don't Go to Sleep Worried… Let These Psalms Calm Your Heart" | go, not, sleep, worried |
+| 06 | **37,5 %** | A „You're Tired, I Know... Rest Under God's Word Tonight." | know, tired, you |
 | 07 | 50,0 % | B „Fall Asleep Without Stress… Jesus Is With You" | asleep, fall, stress, without |
 | 08 | 50,0 % | A „You Need Rest... Jesus Watches Over You Tonight" | need, rest, you |
 

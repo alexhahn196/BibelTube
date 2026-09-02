@@ -68,8 +68,8 @@ def inhalt(titel):
     # Inhaltstraeger sind. Vorher standen hier die beiden Einzelfaelle
     # "god's" und "isaiah's"; die Verallgemeinerung aendert an keinem der
     # dokumentierten Werte etwas (nachgerechnet 2026-08-23 und erneut bei der
-    # Zusammenfuehrung 2026-09-02 ueber alle 147 Titel der vier Listen:
-    # 0 Abweichungen).
+    # Zusammenfuehrung 2026-09-02 ueber alle 80 Titel der vier Listen -
+    # 21 Gewinner, 8 eigene, 45 Kopisten, 6 Kandidaten: 0 Abweichungen).
     t = re.sub(r"(\w)'s\b", r"\1", t)
     # Satzzeichen abraeumen, sonst bleibt "tired," ein eigener Inhaltstraeger.
     t = re.sub(r"[^a-z' ]", " ", t)

@@ -9,7 +9,10 @@ Baut das vollstaendige Sprechskript eines Videos:
 Die Reihenfolge ist eine **Planungsentscheidung, kein Datenbefund**:
 Formel §3 haelt ausdruecklich fest, dass ein festes Schema
 Hook->CTA->Gebet->Lesung NICHT belegt ist. Belegt sind nur die Randbedingungen,
-die diese Reihenfolge einhaelt: Sprache ab Sekunde 0-3 (n=24), hoechstens
+die diese Reihenfolge einhaelt: Sprache ab Sekunde 0-3 (n=11,
+regeln/daten/skript_anatomie.json; die frueher zitierten n=24 aus der
+teardown-Matrix belegen die Regel nicht, siehe config.md bei vorlauf_s),
+hoechstens
 2 CTA (Gewinner 0-2, tote Kanaele 4-7), und beide CTA laut Vorlage in den
 ersten 60 Sekunden.
 

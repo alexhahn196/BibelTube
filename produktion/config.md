@@ -329,12 +329,17 @@ gate_dominanz_min      = 0.50
 # 15 Punkte heisst: das dominante Buch traegt mindestens die Haelfte, und der
 # zweite hoechstens gut ein Drittel.
 #
-# Gemessen, bevor die Schwelle festgeschrieben wurde: von den 50 Korpora in
-# produktion/korpus/v07_v08_moeglichkeiten.json fallen dadurch NEUN weg,
-# 41 bleiben. Der knappste ausgeschiedene Fall lag bei 9,9 Punkten
-# (Genesis 55,0 % gegen Markus 45,0 %), der knappste gehaltene bei 15,6.
-# Fuer V07 und V08 bleibt reichlich uebrig; die Schwelle musste nicht
-# aufgeweicht werden.
+# Gemessen, bevor die Schwelle festgeschrieben wurde - zwei Bezugsmengen, beide
+# richtig, sie zaehlen nicht dasselbe:
+#   gegen die 50 Korpora der Prozentfassung (Stand vor dem 02.09.):
+#       neun fallen weg, 41 bleiben.
+#   gegen die 50 Korpora der Strukturfassung (Stand danach):
+#       fuenf fallen weg, 45 bleiben - das ist der Inhalt von
+#       produktion/korpus/v07_v08_moeglichkeiten.json.
+# Der knappste ausgeschiedene Fall lag bei 9,9 Punkten (Genesis 55,0 % gegen
+# Markus 45,0 %), der knappste gehaltene bei 15,6.
+# Fuer V07 und V08 bleibt in beiden Rechnungen reichlich uebrig; die Schwelle
+# musste nicht aufgeweicht werden.
 gate_abstand_min       = 0.15
 
 # --- Qualitätsschwellen (Formel §3) ---

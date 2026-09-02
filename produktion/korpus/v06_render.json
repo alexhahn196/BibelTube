@@ -41,9 +41,11 @@
  },
  "zielband": {
   "von_h": 3.4,
+  "von_h_vollwerk": 3.0,
   "bis_h": 3.8,
   "laufzeit_h": 3.59,
-  "im_band": true
+  "im_band": true,
+  "im_band_vollwerk": true
  },
  "untertitel": {
   "datei": "produktion/video-06/video-06.srt",

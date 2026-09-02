@@ -9,8 +9,10 @@ V06-Vorrat nicht vorkommen. erzaehlanteil.py selbst wird nicht angefasst.
 
 Ergebnis: produktion/korpus/eigene_videos_erzaehlanteil.json
 
-Das ist eine Messung, keine Bewertung. Ob ein Video das 80-%-Gate aus Regel M8
-haelt, wird ausgewiesen - die Regel wird daran nicht angepasst.
+Das ist eine Messung, keine Bewertung. Ausgewiesen wird, ob der Erzaehlanteil
+ueber der Schwelle gate_erzaehlanteil_min liegt - das war bis zum 2026-09-02 ein
+Gate und ist seither nur noch eine Meldung: Gate 1.13 prueft in der
+Strukturfassung das dominante BUCH, nicht den Gesamtkorpus.
 """
 import json, os, sys
 
@@ -325,7 +327,12 @@ def main():
             "woerter_korpus": woerter,
             "erzaehlend_woerter": erz,
             "erzaehlanteil": round(erz / woerter, 4),
-            "haelt_gate_m8": erz / woerter >= ea.GATE_ERZAEHLEND,
+            # Seit dem 02.09.2026 gatet der Erzaehlanteil des Gesamtkorpus nicht
+            # mehr (Strukturfassung von Gate 1.13). Das Feld heisst deshalb nicht
+            # mehr "haelt_gate_m8": es sagt nur, ob der Wert ueber der Schwelle
+            # liegt, die frueher ein Gate war und heute die Erzaehlwerk-Frage des
+            # DOMINANTEN BUCHES beantwortet.
+            "ueber_erzaehlwerk_schwelle": erz / woerter >= ea.GATE_ERZAEHLEND,
             "je_buch": pro_buch,
         })
 
@@ -341,18 +348,22 @@ def main():
         "hinweis_korpus": ("Gezaehlt ist der Bibelkorpus aus plan.json. Eingangsgebet, "
                            "Hook und CTA sind nicht enthalten - sie stehen in keiner "
                            "der beiden Kategorien der Regel."),
-        "gate_erzaehlanteil": ea.GATE_ERZAEHLEND,
+        "erzaehlwerk_schwelle": ea.GATE_ERZAEHLEND,
+        "hinweis_gate": ("Der Erzaehlanteil des Gesamtkorpus gatet seit dem "
+                         "2026-09-02 nicht. Die Schwelle gilt fuer das dominante "
+                         "Buch (Gate 1.13, Strukturfassung)."),
         "videos": videos,
         "kapitel": kapitel,
     }, open(AUS, "w"), ensure_ascii=False, indent=1)
 
-    print("%-4s %-46s %8s %9s %9s  %s" % ("", "Korpus", "Woerter", "erzaehl.", "Anteil", "Regel M8"))
+    print("%-4s %-46s %8s %9s %9s  %s" % ("", "Korpus", "Woerter", "erzaehl.", "Anteil", "ueber 80 %?"))
     for v in videos:
         print("%-4s %-46s %8s %9s %8.1f%%  %s"
               % (v["video"], v["name"][:46], "{:,}".format(v["woerter_korpus"]),
                  "{:,}".format(v["erzaehlend_woerter"]), v["erzaehlanteil"] * 100,
-                 "haelt" if v["haelt_gate_m8"] else "REISST"))
-    print("\n(Gate: Erzaehlanteil >= %d %% der Woerter)" % (ea.GATE_ERZAEHLEND * 100))
+                 "ueber" if v["ueber_erzaehlwerk_schwelle"] else "darunter"))
+    print("\n(Letzte Spalte: liegt der Erzaehlanteil ueber %g %%? Das ist KEIN Gate -\n der Erzaehlanteil des Gesamtkorpus wird seit dem 2026-09-02 nur gemeldet.\n Die Schwelle gilt fuer das DOMINANTE BUCH, siehe produktion/workflow-gates.md.)"
+          % (ea.GATE_ERZAEHLEND * 100))
     for v in videos:
         print("\n%s - %s" % (v["video"], v["name"]))
         for b, d in sorted(v["je_buch"].items(), key=lambda x: -x[1]["woerter"]):

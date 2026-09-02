@@ -22,10 +22,14 @@ Lehrreden, Gleichniszyklen und eingelegte Gebete heraus.
 
 Beide sind echte Messdateien. Sie widersprechen sich:
 
-    Video          buchweise (hier)   kapitelweise (erzaehlanteil.json)
+    Video          buchweise (hier)   kapitelweise
     V03 Johannes        62,3 %                38,2 %
     V04 Matthaeus       83,0 %                45,8 %
     V05 Lukas           81,7 %                47,6 %
+
+(Die kapitelweisen Werte dieser drei Videos stehen in
+produktion/korpus/eigene_videos_erzaehlanteil.json, nicht in erzaehlanteil.json -
+letztere fuehrt die freien Buecher, nicht die verbrauchten.)
 
 Dasselbe Gate gab damit je nach Koernung das Gegenteil aus: V05 bestand hier
 mit 81,7 % und fiel dort mit 47,6 % durch. Zwei Wahrheiten sind schlimmer als
@@ -46,7 +50,12 @@ recht nicht:
     80 gegen 79. Genau die prueft 1.13 jetzt:
         dominantes Buch >= gate_dominanz_min der Woerter
         UND dieses Buch ist selbst durchlaufendes Erzaehlwerk
+            (>= gate_erzaehlanteil_min, KAPITELWEISE gemessen aus
+             produktion/korpus/erzaehlanteil.json - nicht aus der
+             Gattungstabelle weiter unten)
         UND es wird in voller Laenge gelesen
+        UND es liegt >= gate_abstand_min vor dem zweitgroessten Buch
+            (neu am 2026-09-02)
     Nebenstoff ist frei.
 
 =============================================================================
@@ -300,25 +309,77 @@ def kapitel_text(ii):
     return "+".join(str(v) if v == b else f"{v}-{b}" for v, b in laeufe)
 
 
-def zusammenfassen(teile, kapitel):
+def zusammenfassen(teile, kapitel, kap=None, fein=None):
     """Baut das Ergebnis aus den Bloecken. EINE Stelle - der --plan-Weg und der
-    Bausteinweg liefen hier frueher durch zwei getrennte, fast gleiche Dicts;
-    der zweite kannte die Vollwerk-Frage dann nicht."""
+    Bausteinweg liefen hier frueher durch zwei getrennte, fast gleiche Dicts.
+
+    Gate 1.13 rechnet auf dem BUCH, nicht auf dem Block, und misst KAPITELWEISE.
+    Beides ist am 2026-09-02 berichtigt worden:
+
+      - Vorher war "das dominante Buch" der groesste BLOCK (max ueber teile),
+        der Mindestabstand aggregierte aber schon pro Buch. Stand ein Buch in
+        mehreren Bloecken, war dasselbe Buch gleichzeitig "dominant" und
+        "zweiter", und die Dominanz wurde zu klein gerechnet.
+      - Vorher kam "ist das dominante Buch Erzaehlwerk" aus der buchweisen
+        Gattungstabelle ERZAEHLUNG, die dieses Skript selbst als UEBERHOLT
+        ausdruckt. Markus zaehlte dort 100 % und kapitelweise 79,4 % - dasselbe
+        Gate gab je nach Werkzeug das Gegenteil aus. Gemessen wird jetzt aus
+        produktion/korpus/erzaehlanteil.json, wie in erzaehlanteil.py.
+
+    Liegt die kapitelweise Einstufung nicht vor, ist die Frage NICHT beantwortbar
+    (None) - sie wird dann gemeldet und nicht durch den buchweisen Gattungswert
+    ersetzt.
+    """
     w = sum(t["woerter"] for t in teile)
     erz = sum(t["erzaehlung"] for t in teile)
-    groesster = max(teile, key=lambda t: t["woerter"]) if teile else None
-    erz_anteil_groesster = (groesster["erzaehlung"] / groesster["woerter"]) if groesster else 0.0
+
+    # Pro BUCH aggregieren: Woerter, gelesene Kapitel, ob das Buch ganz drinsteht.
+    je_buch = {}
+    for t in teile:
+        b = je_buch.setdefault(t["buch"], {"buch": t["buch"], "woerter": 0, "kapitel": set()})
+        b["woerter"] += t["woerter"]
+        b["kapitel"] |= set(t.get("kapitel_gelesen") or range(t["von"], t["bis"] + 1))
+    for b in je_buch.values():
+        b["kapitel"] = sorted(b["kapitel"])
+        b["spec"] = b["buch"]
+        if kap is not None:
+            voll = buchlaenge(kap, b["buch"])
+            b["ganzes_buch"] = b["kapitel"] == list(range(1, voll + 1))
+            if not b["ganzes_buch"]:
+                b["spec"] = f"{b['buch']} {kapitel_text(b['kapitel'])}"
+        else:
+            b["ganzes_buch"] = any(t["buch"] == b["buch"] and t.get("ganzes_buch")
+                                   for t in teile)
+
+    rang = sorted(je_buch.values(), key=lambda x: -x["woerter"])
+    dominant = rang[0] if rang else None
+    zweiter = rang[1] if len(rang) > 1 else None
+
+    erz_anteil_dominant = None
+    if dominant and fein:
+        bekannt = [k for k in dominant["kapitel"] if f"{dominant['buch']} {k}" in fein]
+        if len(bekannt) == len(dominant["kapitel"]) and bekannt:
+            ew = sum(fein[f"{dominant['buch']} {k}"].get("erzaehlend_woerter", 0) for k in bekannt)
+            gw = sum(fein[f"{dominant['buch']} {k}"]["woerter"] for k in bekannt)
+            erz_anteil_dominant = ew / gw if gw else 0.0
+
+    ist_erzaehlwerk = (None if erz_anteil_dominant is None
+                       else erz_anteil_dominant >= ERZAEHLWERK_MIN)
     return {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
             "erz_pct": 100 * erz / w if w else 0,
             "stunden": _video_h(w, len(set(kapitel))),
-            "doppelt": len(kapitel) - len(set(kapitel)), "groesster": groesster,
-            "groesster_ist_erzaehlung": erz_anteil_groesster >= ERZAEHLWERK_MIN,
+            "doppelt": len(kapitel) - len(set(kapitel)),
+            "je_buch": rang,
+            "groesster": dominant,
+            "zweiter": zweiter,
+            "erz_anteil_dominant": erz_anteil_dominant,
+            "groesster_ist_erzaehlung": ist_erzaehlwerk,
             # Erzaehlwerk UND ungekuerzt - nur dann gilt das tiefere Band.
-            "groesster_ist_vollwerk": bool(groesster and groesster["ganzes_buch"]
-                                           and erz_anteil_groesster >= ERZAEHLWERK_MIN)}
+            "groesster_ist_vollwerk": bool(dominant and dominant["ganzes_buch"]
+                                           and ist_erzaehlwerk)}
 
 
-def bewerte(specs, kap):
+def bewerte(specs, kap, fein=None):
     teile, kapitel = [], []
     for s in specs:
         b, a, e = aufloesen(s, kap)
@@ -332,7 +393,7 @@ def bewerte(specs, kap):
                       "erzaehlung": sum(kap[f"{b} {i}"]["w"] for i in range(a, e + 1)
                                         if ERZAEHLUNG[b](i))})
         kapitel += [(b, i) for i in range(a, e + 1)]
-    return zusammenfassen(teile, kapitel)
+    return zusammenfassen(teile, kapitel, kap, fein)
 
 
 def main():
@@ -343,6 +404,9 @@ def main():
                     help="Video aus plan.json, gegen das auf Doppelvergabe geprueft wird")
     a = ap.parse_args()
     kap = json.load(open(KAPITEL, encoding="utf-8"))
+    # Die kapitelweise Einstufung wird VOR der Bewertung geladen: Gate 1.13
+    # misst mit ihr, nicht mit der buchweisen Gattungstabelle.
+    fein = fein_lesen()
 
     if a.plan:
         plan = json.load(open(PLAN, encoding="utf-8"))
@@ -366,12 +430,12 @@ def main():
             teile.append({"spec": spec, "buch": b, "von": ii[0], "bis": ii[-1],
                           "kapitel_gelesen": ii, "ganzes_buch": ganz,
                           "woerter": bw, "erzaehlung": be})
-        r = zusammenfassen(teile, kapitel)
+        r = zusammenfassen(teile, kapitel, kap, fein)
         print(f"Plan {a.plan}: {plan[a.plan]['name']}")
     else:
         if not a.bausteine:
             ap.error("Bausteine oder --plan angeben")
-        r = bewerte(a.bausteine, kap)
+        r = bewerte(a.bausteine, kap, fein)
 
     print(f"\n{'Baustein':34s} {'Woerter':>8s} {'Gattung*':>11s} {'ganzes Buch':>12s}")
     for t in r["teile"]:
@@ -385,7 +449,6 @@ def main():
     print("  Der gueltige Erzaehlanteil steht unten. Siehe Kopfkommentar.")
 
     # --- Erzaehlanteil: gemessen und gemeldet, aber kein Gate ---
-    fein = fein_lesen()
     if fein:
         anteil, abdeckung = fein_anteil(sorted(r["kapitel"]), kap, fein)
     else:
@@ -421,11 +484,19 @@ def main():
         if not dom_ok:
             fehler.append("1.13-Dominanz")
         gk = r["groesster_ist_erzaehlung"]
-        print(f"  1.13 dominantes Buch ist Erzaehlwerk  {'OK' if gk else 'REISST'}")
-        if not gk:
-            fehler.append("1.13-Erzaehlwerk")
+        anteil_dom_erz = r["erz_anteil_dominant"]
+        if gk is None:
+            print("  1.13 dominantes Buch ist Erzaehlwerk  NICHT MESSBAR  "
+                  "(kapitelweise Einstufung fehlt fuer dieses Buch; "
+                  "python3 produktion/erzaehlanteil.py erzeugt sie)")
+            fehler.append("1.13-Erzaehlwerk-nicht-messbar")
+        else:
+            print(f"  1.13 dominantes Buch ist Erzaehlwerk  {'OK' if gk else 'REISST'}  "
+                  f"({100*anteil_dom_erz:.1f} % kapitelweise, Grenze {ERZAEHLWERK_MIN*100:.0f} %)")
+            if not gk:
+                fehler.append("1.13-Erzaehlwerk")
         voll_n = buchlaenge(kap, g["buch"])
-        gelesen = g.get("kapitel_gelesen") or list(range(g["von"], g["bis"] + 1))
+        gelesen = g["kapitel"]
         print(f"  1.13 in voller Laenge gelesen         "
               f"{'OK' if g['ganzes_buch'] else 'REISST'}"
               + ("" if g["ganzes_buch"] else
@@ -434,18 +505,15 @@ def main():
         if not g["ganzes_buch"]:
             fehler.append("1.13-Vollstaendigkeit")
         # Mindestabstand zum zweitgroessten Buch (config.md, gate_abstand_min).
-        je_buch = {}
-        for teil in r["teile"]:
-            je_buch[teil["buch"]] = je_buch.get(teil["buch"], 0) + teil["woerter"]
-        rang = sorted(je_buch.values(), reverse=True)
-        abstand = (rang[0] - (rang[1] if len(rang) > 1 else 0)) / r["woerter"]
+        # Dieselbe Buch-Aggregation wie oben - nicht noch einmal selbst gerechnet.
+        zweiter = r["zweiter"]
+        abstand = (g["woerter"] - (zweiter["woerter"] if zweiter else 0)) / r["woerter"]
         abstand_ok = abstand >= ABSTAND_MIN
-        zweiter = max((k for k, v in je_buch.items() if v != rang[0]),
-                      key=lambda k: je_buch[k], default=None)
         print(f"  1.13 Abstand zum zweiten >= {ABSTAND_MIN*100:.0f} Pkt   "
               f"{'OK' if abstand_ok else 'REISST'}  "
               f"({100*abstand:.1f} Punkte"
-              + (f", zweiter: {zweiter} {100*je_buch[zweiter]/r['woerter']:.1f} %)" if zweiter
+              + (f", zweiter: {zweiter['spec']} "
+                 f"{100*zweiter['woerter']/r['woerter']:.1f} %)" if zweiter
                  else ", kein zweites Buch)"))
         if not abstand_ok:
             fehler.append("1.13-Abstand")

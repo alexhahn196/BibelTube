@@ -6,8 +6,10 @@ Erzeugt:
   produktion/korpus/erzaehlanteil.json   Einstufung je Kapitel
   produktion/korpus/v06_varianten.json   die drei Varianten mit allen Zahlen
 
-Rueckgabewert 0 bedeutet: alle drei Varianten bestehen Zielband, Erzaehlanteil
-und Dominanz. Jeder andere Wert heisst, dass mindestens eine reisst.
+Rueckgabewert 0 bedeutet: alle drei Varianten bestehen Zielband und die vier
+Bedingungen von Gate 1.13 (Dominanz, Erzaehlwerk, volle Laenge, Mindestabstand).
+Jeder andere Wert heisst, dass mindestens eine reisst. Der Erzaehlanteil des
+Gesamtkorpus wird gemeldet und gatet nicht.
 
 Sprechtempo, Zielband und die beiden Gate-Schwellen kommen vollstaendig aus
 produktion/config.md (wpm_erwartet, laufzeit_ziel_von_h[_vollwerk],
@@ -1520,7 +1522,8 @@ def main():
     if not alle_ok:
         print("\nMindestens eine Variante reisst ein Gate.")
         return 1
-    print("\nAlle drei Varianten bestehen Zielband, 80-%-Gate und Dominanz.")
+    print("\nAlle drei Varianten bestehen Zielband, Dominanz, Erzaehlwerk, "
+          "volle Laenge und Mindestabstand.")
     return 0
 
 

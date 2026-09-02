@@ -33,6 +33,8 @@ Aufruf: python3 produktion/klang/klang_proben.py
 import argparse
 import json
 import os
+import os as _os
+import sys as _sys
 
 import numpy as np
 import soundfile as sf
@@ -49,8 +51,14 @@ STEREO_VERSATZ = 240
 NPERSEG, NOVERLAP, MEDIAN = 4096, 3072, 31
 FEUER_DB = -6.0
 FEUER_TIEFPASS_HZ = 1100.0
-PEGEL_BETT_DBFS = -31.0        # config.md, gemessen an der Mono-Summe
-PEGEL_STIMME_DBFS = -19.0
+# Aus config.md gelesen, nicht abgeschrieben - config.md sagt im Kopf
+# ausdruecklich "Kein Wert doppelt irgendwo anders pflegen".
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                  "..", "pipeline"))
+from gemeinsam import config as _config  # noqa: E402
+_CFG = _config()
+PEGEL_BETT_DBFS = float(_CFG["pegel_bett_dbfs"])     # gemessen an der Mono-Summe
+PEGEL_STIMME_DBFS = float(_CFG["pegel_stimme_dbfs"])
 LAUFZEIT_H = 3.5
 ROOT = 55.0                    # stimmtest/musikbett.py
 TEILTOENE = [(ROOT, 0.55, "Grundton A1"), (ROOT * 1.5, 0.30, "Quinte E2"),

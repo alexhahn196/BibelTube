@@ -79,11 +79,19 @@ Spruchsammlung, nicht 80 gegen 79. Kein eigenes Video liegt kapitelweise über
 **Die vierte Bedingung ist neu.** Die Dominanzschwelle allein sagt nur, dass ein
 Buch über der Hälfte liegt — nicht, dass es die Hauptsache ist. Bei 50,1 gegen
 45,0 verkauft der Eigenname im Titel und auf dem Thumbnail ein Buch, das knapp
-die Hälfte trägt. Gemessen, **bevor** die Schwelle festgeschrieben wurde: von
-den 50 Korpora in
-[`korpus/v07_v08_moeglichkeiten.json`](korpus/v07_v08_moeglichkeiten.json)
-fallen dadurch **neun** weg, **41 bleiben** — der knappste ausgeschiedene Fall
-lag bei 9,9 Punkten, der knappste gehaltene bei 15,6.
+die Hälfte trägt. Gemessen, **bevor** die Schwelle festgeschrieben wurde — zwei
+Bezugsmengen, weil die Strukturfassung eine andere Menge durchlässt als die
+Prozentfassung davor:
+
+| Bezugsmenge | fallen weg | bleiben |
+|---|---:|---:|
+| die 50 Korpora der **Prozentfassung** (Stand vor dem 02.09.) | 9 | 41 |
+| die 50 Korpora der **Strukturfassung** (Stand danach) | 5 | **45** |
+
+Die 45 sind der Inhalt von
+[`korpus/v07_v08_moeglichkeiten.json`](korpus/v07_v08_moeglichkeiten.json). Der
+knappste ausgeschiedene Fall lag bei 9,9 Punkten, der knappste gehaltene bei
+15,6. **In beiden Rechnungen bleibt für V07 und V08 reichlich übrig.**
 
 #### 1.1: die untere Bandgrenze bei ganzem Erzählwerk
 
@@ -218,10 +226,22 @@ Artefakt kommt und nicht aus einem Bericht:
 | `bett_datei` | L == R | Korrelation L/R | Downmix-Verlust | Mono | je Kanal |
 |---|---|---|---|---|---|
 | `bett_pad_feuer.flac` (V01–V04) | nein | −0,396 | +5,198 dB | 12,00 dB | **6,80 dB** |
-| `bett_mono_feuer_leise.flac` (ab V05) | **bitgleich** | +1,000 | **0,000 dB** | 12,00 dB | **12,00 dB** |
+| `bett_mono_feuer_leise.flac` (ab V06) | **einkanalig** | +1,000 | **0,000 dB** | 12,00 dB | **12,00 dB** |
 
-Die Umstellung greift also. V01–V04 bleiben betroffen und sind nicht
-reparierbar — sie sind veröffentlicht.
+Die Umstellung greift also. **V01–V04 bleiben betroffen und sind nicht
+reparierbar — sie sind veröffentlicht.** V05 ist bereits mono gerendert, aber mit
+der später verworfenen Variante e; V06 als erstes mit dem entschiedenen Bett.
+
+> **Berichtigt 2026-09-02:** Hier stand „ab V05". `produktion/video-05/qa.json`
+> nennt zwar `bett_mono_feuer_leise.flac` — unter diesem Namen lag damals aber
+> die **„Variante e"** aus `klang_proben.py` (zweikanalig, L = R, Feuerschicht
+> 6 dB leiser mit Tiefpass), und genau die ist bei der Zusammenführung verworfen
+> worden. Derselbe Dateiname, ein anderes Bett: das ist der Grund, warum die
+> verworfene Fassung jetzt `verworfen_bett_mono_variante_e.flac` heißt. Das erste
+> Video mit dem entschiedenen Bett — dem linken Kanal des Stereo-Artefakts,
+> **einkanalig** — ist **V06**. Die Messwerte der Zeile gelten für beide
+> Mono-Fassungen; sie unterscheiden sich in der Feuerschicht, nicht im
+> Downmix-Verhalten.
 
 **Wenn eine Prüfung reißt:** anhalten und entscheiden, nicht umgehen. Prüfungen
 mit Ermessensspielraum sind **1.3** (ein ungeprüfter Anker ist erlaubt, kostet

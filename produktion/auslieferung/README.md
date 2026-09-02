@@ -55,7 +55,7 @@ derselben Datei nachvollziehbar.
   "auslieferungen": [
     {
       "video": "V5",
-      "titel": "You're Tired, I Know… Luke's Whole Story, Read Slowly Until Morning",
+      "titel": "Rest Your Eyes… The Whole Gospel of Luke, Read Slowly Until Morning Comes",
       "hochgeladen_am": "2026-08-25T14:02:11Z",
       "dateien": [
         {

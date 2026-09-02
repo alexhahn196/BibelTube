@@ -30,7 +30,11 @@
 **Gemessen:** 31.482 Wörter → **3,65 h** bei 143,7 WPM (`config.md`)
 
 > Lesereihenfolge kanonisch: Rut 1–4, dann 1 Samuel 1–31, dann Ester 1–10.
-> 45 Kapitel. Erzählanteil 89,03 % (Regel M8, Grenze 80 %).
+> 45 Kapitel. Erzählanteil **89,03 %** — seit dem 02.09.2026 eine **Meldung ohne
+> Grenze**: Gate 1.13 prüft in der Strukturfassung das dominante Buch, nicht den
+> Gesamtkorpus. 1 Samuel trägt 75,1 % des Korpus, hält mit **89,1 %** kapitelweise
+> das Erzählwerk-Kriterium, steht in voller Länge drin und liegt 57,9 Punkte vor
+> Ester — alle vier Bedingungen halten.
 >
 > **Nach dem Textbau (`schritt1_text.py V6`, 2026-08-30):** gesprochen werden
 > **31.906 Wörter** → **3,70 h**, **166.418 Zeichen TTS**. Die Versebene trifft

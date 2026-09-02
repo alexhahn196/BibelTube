@@ -5,7 +5,8 @@
  "zaehlmethode": "Verstexte mit Leerzeichen verbunden, dann str.split()",
  "hinweis_flagge": "Bei geteilten Kapiteln ist 'erzaehlend' nur ein Etikett; massgeblich ist 'erzaehlend_woerter' aus den gemessenen Versbereichen.",
  "hinweis_korpus": "Gezaehlt ist der Bibelkorpus aus plan.json. Eingangsgebet, Hook und CTA sind nicht enthalten - sie stehen in keiner der beiden Kategorien der Regel.",
- "gate_erzaehlanteil": 0.8,
+ "erzaehlwerk_schwelle": 0.8,
+ "hinweis_gate": "Der Erzaehlanteil des Gesamtkorpus gatet seit dem 2026-09-02 nicht. Die Schwelle gilt fuer das dominante Buch (Gate 1.13, Strukturfassung).",
  "videos": [
   {
    "video": "V1",
@@ -13,7 +14,7 @@
    "woerter_korpus": 29670,
    "erzaehlend_woerter": 0,
    "erzaehlanteil": 0.0,
-   "haelt_gate_m8": false,
+   "ueber_erzaehlwerk_schwelle": false,
    "je_buch": {
     "psalms": {
      "woerter": 25004,
@@ -41,7 +42,7 @@
    "woerter_korpus": 30260,
    "erzaehlend_woerter": 0,
    "erzaehlanteil": 0.0,
-   "haelt_gate_m8": false,
+   "ueber_erzaehlwerk_schwelle": false,
    "je_buch": {
     "psalms": {
      "woerter": 15727,
@@ -63,7 +64,7 @@
    "woerter_korpus": 30009,
    "erzaehlend_woerter": 11463,
    "erzaehlanteil": 0.382,
-   "haelt_gate_m8": false,
+   "ueber_erzaehlwerk_schwelle": false,
    "je_buch": {
     "john": {
      "woerter": 18692,
@@ -97,7 +98,7 @@
    "woerter_korpus": 31112,
    "erzaehlend_woerter": 14258,
    "erzaehlanteil": 0.4583,
-   "haelt_gate_m8": false,
+   "ueber_erzaehlwerk_schwelle": false,
    "je_buch": {
     "matthew": {
      "woerter": 22831,
@@ -131,7 +132,7 @@
    "woerter_korpus": 29880,
    "erzaehlend_woerter": 14217,
    "erzaehlanteil": 0.4758,
-   "haelt_gate_m8": false,
+   "ueber_erzaehlwerk_schwelle": false,
    "je_buch": {
     "luke": {
      "woerter": 24399,

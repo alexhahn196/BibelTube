@@ -27,7 +27,8 @@ Drei Befunde, bevor gemessen werden konnte:
 Zwei kleinere Korrekturen am Prüfer: der Sonderfall `isaiah's → isaiah` (er hing am
 gestrichenen V06-Titel) ist durch eine generische Genitiv-Regel ersetzt — auf allen
 damals 74 vorhandenen Titeln **0 Abweichungen** (bei der Zusammenführung am
-2026-09-02 über alle 147 Titel der vier Listen erneut nachgerechnet: ebenfalls 0), die Messung verschiebt sich also nicht.
+2026-09-02 über alle 80 Titel der vier Listen erneut nachgerechnet — 21 Gewinner,
+8 eigene, 45 Kopisten, 6 Kandidaten: ebenfalls 0), die Messung verschiebt sich also nicht.
 Und ein Titel wird nicht mehr mit sich selbst verglichen.
 
 > **Meldung:** Am Bestand gemessen liegen **V01, V07 und V08 bei exakt 50,0 %**
@@ -92,7 +93,7 @@ Rahmen, nicht Hauptsache.
 | | Titel | Anker (Beleg) | Eigenname (Deckung) | Zeichen | Name ab | Gewinner | eigener Katalog | Kopisten | Thumbnail |
 |---|---|---|---|---:|---:|---:|---:|---:|---|
 | **K1** | If You're Anxious, Let Saul and David Take the Night Shift | `If You're Anxious,` (**245K**, unbenutzt) | Saul and David (58,9 %) | 58 | 23 | 33,3 % | 33,3 % | 33,3 % | `SAUL AND DAVID` |
-| **K2** | Lord, I Feel Tired — Stay With Samuel Until Morning Comes | `Lord, I Feel Tired` (**184K**, unbenutzt) | Samuel (75,1 %) | 57 | 31 | 37,5 % | 12,5 % | 12,5 % | `SAMUEL TILL MORNING` |
+| **K2** | Lord, I Feel Tired — Stay With Samuel Until Morning Comes | `Lord, I Feel Tired` (**184K**, unbenutzt) | Samuel (75,1 %) | 57 | 31 | 37,5 % | **37,5 %** | 12,5 % | `SAMUEL TILL MORNING` |
 | **K3** | I Know You're Tired… First Samuel Runs All the Way to Morning | `I Know You're Tired…` (**233K**, aus V01) | First Samuel (75,1 %) | 61 | 21 | 37,5 % | 37,5 % | 37,5 % | `ALL OF FIRST SAMUEL` |
 | **K4** | No More Thinking Tonight… Follow Samuel, Saul and David Till Dawn | `No More Thinking Tonight…` (**166K**, aus V04) | Samuel, Saul and David (75,1 %) | 65 | 33 | 33,3 % | 33,3 % | 33,3 % | `SAMUEL SAUL DAVID` |
 | **K5** | Stop Thinking For A Moment, and Stay With Samuel Till Dawn | `Stop Thinking For A Moment,` (**96K**, aus V02) | Samuel (75,1 %) | 58 | 42 | 42,9 % | 42,9 % | 14,3 % | `STAY WITH SAMUEL` |
@@ -129,9 +130,14 @@ neben mehreren fast gleich beginnenden Titeln stehen kann. Und „night shift" i
 idiomatisch modern; ob das in einer Bibelnische trägt, ist ungeprüft.
 
 **K2 — Lord, I Feel Tired — Stay With Samuel Until Morning Comes**
-*Stark:* mit 12,5 % gegen den eigenen Katalog und 12,5 % gegen die Kopisten der
-mit Abstand freieste Titel im Feld — der Anker (184K) ist unbenutzt und wurde von
-niemandem abgeschrieben. Er ist außerdem der einzige Anker ohne „Tonight" und ohne
+*Stark:* mit **12,5 % gegen die Kopisten** der freieste Titel im Feld — der Anker
+(184K) ist unbenutzt und wurde von niemandem abgeschrieben.
+*Berichtigt 2026-09-02:* gegen den **eigenen Katalog** liegt K2 nicht bei 12,5 %,
+sondern bei **37,5 %** — er teilt `until · morning · comes` mit dem ausgelieferten
+V05-Titel „Rest Your Eyes… The Whole Gospel of Luke, Read Slowly Until Morning
+Comes". Die 12,5 % stammten aus dem V05-Titel **vor** dem Wechsel vom 26.08.; die
+Kandidatentabelle war danach nicht neu gefahren worden. Gegen den eigenen Katalog
+ist **K6** mit 12,5 % der freieste. Er ist außerdem der einzige Anker ohne „Tonight" und ohne
 Du-Ansprache, ein Gebetssatz in erster Person; das hebt ihn im Feed sichtbar ab.
 *Risiko:* „Samuel" allein ist die schwächste Zuordnung aller Schreibweisen — im
 Vorschlagsband kann es als Personen- oder Kanalname gelesen werden und signalisiert
@@ -193,10 +199,17 @@ Begründung in der Reihenfolge, in der die Daten belastbar sind:
 
 1. **Abstand ist das einzige belegte Titelkriterium.** Der eine dokumentierte
    Todesfall in der ganzen Formel ist Nähe: F kopierte und bekam 18 Aufrufe. K2
-   liegt gegen den eigenen Katalog und gegen die Kopisten bei je 12,5 % — kein
-   anderer Kandidat kommt in die Nähe. Der Anker ist unbenutzt und, anders als
-   „If You're Anxious," und „You Deserve Some Rest…", von C und F nicht
-   abgeschrieben worden.
+   liegt **gegen die Kopisten** bei 12,5 % — der niedrigste Wert im Feld, K5 folgt
+   mit 14,3 %. Der Anker ist unbenutzt und, anders als „If You're Anxious," und
+   „You Deserve Some Rest…", von C und F nicht abgeschrieben worden.
+
+   > **Berichtigt 2026-09-02.** Hier stand „gegen den eigenen Katalog und gegen
+   > die Kopisten bei je 12,5 % — kein anderer Kandidat kommt in die Nähe". Gegen
+   > den eigenen Katalog sind es **37,5 %** (geteilt `until · morning · comes` mit
+   > dem ausgelieferten V05-Titel), und dort ist **K6** mit 12,5 % der freieste.
+   > Die Empfehlung stützt sich damit auf einen von zwei Werten, nicht auf beide.
+   > **Entschieden wurde ohnehin K3** — die Korrektur ändert das Ergebnis nicht,
+   > wohl aber die Begründung, die hier stand.
 2. **184K ist stark genug.** Der Abstand zu den 245K von K1 ist bei n=1 je Anker
    kein belastbarer Unterschied; der Unterschied in der Ähnlichkeit ist es.
 3. **Kein Überverkauf.** „Samuel" deckt das dominante Buch mit 75,1 %. Ich habe
@@ -224,8 +237,10 @@ K4 (65 Zeichen mit drei Namen, mobil bricht genau die Namensreihe ab).
 ## Was hier nicht drinsteht
 
 Kein Eingangsgebet, kein Hook, kein Thumbnail-Motiv, kein TTS, kein Rendering.
-`eigene_titel.json` ist **nicht** geändert — dort steht bei V6 weiterhin der
-gestrichene Jesaja-Titel. Er wird ersetzt, sobald du entschieden hast; bis dahin
-wäre jeder Eintrag dort eine Entscheidung, die ich nicht treffe.
+~~`eigene_titel.json` ist **nicht** geändert — dort steht bei V6 weiterhin der
+gestrichene Jesaja-Titel.~~ **Erledigt am 2026-08-30:** entschieden wurde **K3**,
+`eigene_titel.json` und `plan.json` führen ihn seither
+(`titel_entschieden: 2026-08-30`), und `produktion/video-06/titel.txt` ist damit
+gerendert.
 Offen bleibt außerdem Gate 1.3 (Titelanker) — alle sechs Kandidaten nutzen einen
 der 13 belegten Anker, die Prüfung ist damit erfüllt, aber sie ist SOLL, nicht MUSS.

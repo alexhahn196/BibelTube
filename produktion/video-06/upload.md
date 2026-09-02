@@ -123,6 +123,16 @@ Sie stehen bereits in der Beschreibung oben.
 
 ## Messwerte dieses Renderlaufs
 
+> **Herkunft, nachgetragen am 2026-09-02.** Für V06 fehlt `qa.json` in diesem
+> Ordner: der Renderlauf lief in Einzelschritten und nicht über
+> `schritt7_paket.py`, das die Datei sonst schreibt. Die Werte unten stammen aus
+> den Konsolenausgaben der Schritte 5 und 6 und sind gegen
+> [`../korpus/v06_render.json`](../korpus/v06_render.json) nachgeprüft — diese
+> Messdatei ist eingecheckt und mit `produktion/render_messung.py` aus der
+> fertigen MP4 erzeugt (ffprobe). **Für V01–V05 gilt weiter `qa.json`;
+> nur V06 hat keine.** Wer den Lauf reproduziert, sollte `schritt7_paket.py`
+> fahren, damit die Datei entsteht.
+
 | Größe | Wert | Vorgabe |
 |---|---|---|
 | Laufzeit | 3:35:26 (3.59 h) | ≥3.0 h, Ziel 3.4–3.8 h |

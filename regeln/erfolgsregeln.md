@@ -153,8 +153,11 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
 - [ ] Es wird **in voller Länge** gelesen? (Teilung nur an einer Erzählnaht,
       und die gehört begründet.)
 - [ ] Es liegt **≥ 15 Prozentpunkte vor dem zweitgrößten Buch**?
-- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn die drei Bedingungen
-      oben halten. Harte Untergrenze 3,0 h in jedem Fall.
+- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn das dominante Buch selbst
+      Erzählwerk ist **und** in voller Länge gelesen wird (die beiden Haken oben;
+      der Mindestabstand spielt für das Band keine Rolle). Da 1.13 beides ohnehin
+      verlangt, gilt für jeden bestehenden Korpus 3,0–3,8 h. Harte Untergrenze
+      3,0 h in jedem Fall.
 - [ ] **Nebenstoff ist frei.** Was neben dem dominanten Buch steht, darf
       Spruchsammlung, Brief oder prophetische Rede sein — Rahmen, nie Hauptsache.
 
@@ -190,9 +193,10 @@ Geprüft mit `produktion/korpus_pruefung.py` und `produktion/erzaehlanteil.py`.
 > Dominanzschwelle allein sagt nur, dass ein Buch über der Hälfte liegt — nicht,
 > dass es die Hauptsache ist. Bei 50,1 gegen 45,0 verkauft der Eigenname im
 > Titel und auf dem Thumbnail ein Buch, das knapp die Hälfte trägt. Gemessen,
-> **bevor** die Schwelle festgeschrieben wurde: von 50 durchgerechneten Korpora
-> fallen dadurch **neun** weg, **41 bleiben**
-> ([`produktion/korpus/v07_v08_moeglichkeiten.json`](../produktion/korpus/v07_v08_moeglichkeiten.json)).
+> **bevor** die Schwelle festgeschrieben wurde: gegen die 50 Korpora der
+> Prozentfassung fallen **neun** weg (41 bleiben), gegen die 50 der
+> Strukturfassung **fünf** (45 bleiben — der Inhalt von
+> [`produktion/korpus/v07_v08_moeglichkeiten.json`](../produktion/korpus/v07_v08_moeglichkeiten.json)).
 
 - **Beleg (eigene Kanaldaten Gate 2, n=4 Videos, 2 Retentionskurven):**
   Endretention nach 3,5 Stunden — **V3 Johannes (Erzählung) 14,4 %** gegen

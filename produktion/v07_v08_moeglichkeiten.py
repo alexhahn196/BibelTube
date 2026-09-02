@@ -279,7 +279,9 @@ def main():
         print("%-46s %8s %6.1f%% %6.1f%% %6.1f  %-12s %4.2fh  %s"
               % (d["name"], "{:,}".format(d["woerter"]), d["erzaehlanteil"] * 100,
                  d["dominanz"] * 100, d["abstand"] * 100, d["dominantes_buch"], d["laufzeit_h"],
-                 "3,0-3,8" if d["vollwerk"]["erfuellt"] else "3,4-3,8"))
+                 ("%.1f-%.1f" % (ea.ZIEL_VON_H_VOLLWERK, ea.ZIEL_BIS_H)
+                  if d["vollwerk"]["erfuellt"]
+                  else "%.1f-%.1f" % (ea.ZIEL_VON_H, ea.ZIEL_BIS_H)).replace(".", ",")))
     print("\nPaare V07/V08 ohne gemeinsames Material: %d" % len(paare))
     print("geschrieben: %s" % AUS)
     return 0

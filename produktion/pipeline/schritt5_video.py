@@ -231,7 +231,13 @@ def main():
         "fps": int(cfg["fps"]), "aufloesung": f"{cfg['breite']}x{cfg['hoehe']}",
         "renderzeit_s": round(time.time() - t0, 1),
     }
+    # Zwei Bandgrenzen seit 2026-09-02: die tiefere gilt, wenn das dominante Buch
+    # Erzaehlwerk in voller Laenge ist. Das weiss dieses Skript nicht - es sieht
+    # nur die fertige Datei -, deshalb werden beide ausgewiesen. Entschieden hat
+    # den Fall korpus_pruefung.py am Reissbrett.
     b["im_zielband"] = float(cfg["laufzeit_ziel_von_h"]) <= b["dauer_h"] <= float(cfg["laufzeit_ziel_bis_h"])
+    b["im_zielband_vollwerk"] = (float(cfg["laufzeit_ziel_von_h_vollwerk"])
+                                 <= b["dauer_h"] <= float(cfg["laufzeit_ziel_bis_h"]))
     b["ueber_untergrenze"] = b["dauer_h"] >= float(cfg["laufzeit_min_h"])
     json.dump(b, open(arbeit(a.video, "qa_video.json"), "w"), ensure_ascii=False, indent=1)
 
@@ -239,7 +245,7 @@ def main():
     print(f"  Datei                 {os.path.basename(ziel)}  {b['groesse_mb']} MB")
     print(f"  Laufzeit              {b['dauer_hms']}  ({b['dauer_h']:.2f} h)")
     print(f"  Zielband {cfg['laufzeit_ziel_von_h']}–{cfg['laufzeit_ziel_bis_h']} h  "
-          f"→ {'im Band' if b['im_zielband'] else 'AUSSERHALB'} · "
+          f"→ {'im Band' if b['im_zielband'] else ('im tieferen Band ab ' + str(cfg['laufzeit_ziel_von_h_vollwerk']) + ' h' if b['im_zielband_vollwerk'] else 'AUSSERHALB')} · "
           f"Untergrenze {cfg['laufzeit_min_h']} h "
           f"{'eingehalten' if b['ueber_untergrenze'] else 'VERLETZT'}")
     print(f"  Bild                  {b['aufloesung']} @ {b['fps']} fps, "
@@ -260,9 +266,15 @@ def main():
               f"{cfg['laufzeit_min_h']} h")
     g.pruefen("", "Ton-Versatz", abs(b["sync_versatz_s"]) <= 0.5,
               f"{b['sync_versatz_s']} s zwischen Bild und Ton")
-    if not b["im_zielband"]:
+    if not b["im_zielband_vollwerk"]:
         print(f"  WARNUNG: ausserhalb des Zielbands "
-              f"{cfg['laufzeit_ziel_von_h']}–{cfg['laufzeit_ziel_bis_h']} h.")
+              f"{cfg['laufzeit_ziel_von_h']}–{cfg['laufzeit_ziel_bis_h']} h und auch "
+              f"ausserhalb des tieferen Bands ab "
+              f"{cfg['laufzeit_ziel_von_h_vollwerk']} h.")
+    elif not b["im_zielband"]:
+        print(f"  Hinweis: unter {cfg['laufzeit_ziel_von_h']} h, aber im tieferen "
+              f"Band ab {cfg['laufzeit_ziel_von_h_vollwerk']} h. Das ist nur in "
+              f"Ordnung, wenn Gate 1.13 haelt (korpus_pruefung.py am Reissbrett).")
     return gate_abschluss(g, "Schritt 5 (Video)")
 
 

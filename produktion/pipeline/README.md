@@ -99,7 +99,7 @@ Aufgelöst nach der Verbindlichkeitsliste in `produktion/videos-01-08.md`
 |---|---|---|
 | Laufzeitband | Formel §2: 3,4–3,8 h · erfolgsregeln M6: 3,2–4,0 h · produktions-spec: 2,5–3,5 h | **3,4–3,8 h** (Formel §2). Ergebnis 3,58 h liegt über der produktions-spec-Obergrenze 3,5 h. |
 | Sprechtempo | Formel §5b: 120–160 WPM · produktions-spec: 135–145 WPM | Beides erfüllt: gemessen **140,4 WPM**. |
-| Bett-Loop | musik-prompt: „mit übergeblendeter Naht" | Nicht nötig: die Naht der verwendeten Datei springt um 0,0016 — der größte Samplesprung *innerhalb* des Betts ist 0,0998, also 60-mal größer. |
+| Bett-Loop | musik-prompt: „mit übergeblendeter Naht" | Nicht nötig: die Naht der verwendeten Datei springt um **0,00064** — der größte Samplesprung *innerhalb* des Betts ist **0,0500**, also 78-mal größer. *(Nachgemessen 2026-09-02 an `bett_mono_feuer_leise.flac`. Die früher hier stehenden 0,0016 / 0,0998 sind an `bett_pad_feuer.flac` gemessen, dem Stereo-Artefakt, das die Pipeline nicht mehr liest.)* |
 
 ### Die 12-dB-Regel ist nicht gemessen
 
@@ -127,8 +127,10 @@ Hier hat die Pipeline entschieden, weil sie entscheiden musste:
   dass es zu Codec, Bitrate, Auflösung und Dateigröße **keine** Daten gibt.
   Gewählt: H.264, CRF 28, AAC 192 kbit/s. Für ein fast unbewegtes dunkles Bild
   reicht das; der Ton ist der einzige Teil, der Bitrate braucht.
-- **Chunk-Größe und Nahtqualität.** Kein Dokument kennt Chunks. 1800 Zeichen,
-  nur an Satzenden, Pegel zwischen den Chunks angeglichen.
+- **Chunk-Größe und Nahtqualität.** Kein Dokument kennt Chunks. **1900 Zeichen**
+  (`chunk_max_zeichen` in `config.md` — die einzige Quelle; `schritt2_tts.py`
+  und `satzlaengen.py` lesen sie von dort), nur an Satzenden, Pegel zwischen
+  den Chunks angeglichen.
 - **Zoom-Zyklus 300 s, Faktor 1,04.** „Langsam" ist belegt, eine Zahl nicht.
 - **Absolute Lautheit (LUFS).** Belegt ist nur der *Abstand*, nie ein Zielpegel.
 - **99 Kapitelmarken.** Belegt sind bei B 40–93 Marken; 99 liegt knapp darüber.

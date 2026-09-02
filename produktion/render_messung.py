@@ -45,14 +45,16 @@ def config_wpm():
         if "=" in zeile:
             k, v = zeile.split("=", 1)
             werte[k.strip()] = v.strip()
-    return float(werte["wpm_erwartet"]), float(werte["vorlauf_s"]), float(werte["nachlauf_s"])
+    return (float(werte["wpm_erwartet"]), float(werte["vorlauf_s"]),
+            float(werte["nachlauf_s"]), float(werte["laufzeit_ziel_von_h"]),
+            float(werte["laufzeit_ziel_von_h_vollwerk"]), float(werte["laufzeit_ziel_bis_h"]))
 
 
 def main():
     fehlt = [p for p in (MP4, MIX, STIMME, SKRIPT) if not os.path.exists(p)]
     if fehlt:
         raise SystemExit("fehlt: %s" % ", ".join(fehlt))
-    wpm_soll, vorlauf, nachlauf = config_wpm()
+    wpm_soll, vorlauf, nachlauf, ziel_von, ziel_von_vollwerk, ziel_bis = config_wpm()
     b = json.load(open(SKRIPT))["bericht"]
 
     mp4_gesamt = float(ffprobe(MP4, "format=duration"))
@@ -111,10 +113,16 @@ def main():
             "abweichung_wpm": round(wpm - wpm_soll, 1),
             "abweichung_pct": round((wpm / wpm_soll - 1) * 100, 1),
         },
+        # Bandgrenzen aus config.md, nicht als Literal. Die untere Grenze haengt
+        # daran, ob das dominante Buch Erzaehlwerk in voller Laenge ist - das
+        # weiss dieses Skript nicht, es misst nur die fertige Datei. Deshalb
+        # werden BEIDE Grenzen ausgewiesen und das engere Band als Urteil
+        # genommen; korpus_pruefung.py hat den Fall am Reissbrett entschieden.
         "zielband": {
-            "von_h": 3.4, "bis_h": 3.8,
+            "von_h": ziel_von, "von_h_vollwerk": ziel_von_vollwerk, "bis_h": ziel_bis,
             "laufzeit_h": round(mp4_audio / 3600, 3),
-            "im_band": 3.4 <= mp4_audio / 3600 <= 3.8,
+            "im_band": ziel_von <= mp4_audio / 3600 <= ziel_bis,
+            "im_band_vollwerk": ziel_von_vollwerk <= mp4_audio / 3600 <= ziel_bis,
         },
     }
     if os.path.exists(SRT):
@@ -135,7 +143,11 @@ def main():
     print("  GEMESSENES TEMPO      %.1f WPM" % d["wpm"]["gemessen"])
     print("  config.md erwartet    %.1f WPM  -> Abweichung %+.1f WPM (%+.1f %%)"
           % (wpm_soll, d["wpm"]["abweichung_wpm"], d["wpm"]["abweichung_pct"]))
-    print("  Zielband 3,4-3,8 h    %s" % ("im Band" if d["zielband"]["im_band"] else "AUSSERHALB"))
+    z = d["zielband"]
+    print("  Zielband %.1f-%.1f h    %s%s" % (
+        z["von_h"], z["bis_h"], "im Band" if z["im_band"] else "AUSSERHALB",
+        "" if z["im_band"] or not z["im_band_vollwerk"] else
+        " (im tieferen Band ab %.1f h - gilt nur, wenn Gate 1.13 haelt)" % z["von_h_vollwerk"]))
     return 0
 
 

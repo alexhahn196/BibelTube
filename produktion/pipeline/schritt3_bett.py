@@ -14,7 +14,9 @@ ein Gesamt-RMS die Stimme systematisch zu leise melden.
 **Kein Ducking.** Bei den Gewinnern ist keines hoerbar, und ein atmendes
 Bett zieht Aufmerksamkeit - das Gegenteil des Zwecks.
 
-Vorlauf: Formel §3 verlangt Sprachbeginn in Sekunde 0-3 (n=24). Das Bett
+Vorlauf: Formel §3 verlangt Sprachbeginn in Sekunde 0-3 (n=11,
+regeln/daten/skript_anatomie.json - die frueher zitierten n=24 aus der
+teardown-Matrix belegen die Regel nicht, siehe config.md bei vorlauf_s). Das Bett
 laeuft also nur kurz allein an, nicht die 4 s aus stimmtest/musik-prompt.md.
 
 Aufruf:

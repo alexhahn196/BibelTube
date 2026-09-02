@@ -115,14 +115,15 @@ Abbruch gehört **vor Schritt 5**, nicht vor Schritt 0.
    | **reserviert** | die `refs` der geplanten Videos aus `plan.json` — derzeit **V06–V08**. Nicht anfassen. |
    | **frei** | alles Übrige aus `produktion/korpus/kapitel.json` |
 
-   > **Grundgesamtheit ist `kapitel.json` (30 Bücher), nicht
-   > `wortzahlen.json`.** Letzteres kennt auf HEAD nur **20** Bücher — und die
-   > 10 fehlenden sind ausgerechnet die freien Erzählbücher: Rut, 1/2 Samuel,
-   > 1/2 Könige, Josua, Richter, Ester, Exodus, Jona. `wortzahlen.py` auf HEAD
-   > hat eine 20-Buch-Liste und kann sie nicht erzeugen; die Branch-Fassung hat
-   > 30, aber ein anderes Ausgabeformat. **Wer `wortzahlen.json` als Bestand
-   > liest, findet keinen einzigen freien Erzählstoff und meldet fälschlich
-   > „es gibt nichts".**
+   > **Grundgesamtheit ist `kapitel.json`, nicht `wortzahlen.json`.** Beide
+   > führen seit der Zusammenführung dieselben **30 Bücher**, aber
+   > `kapitel.json` ist kapitelgenau und `wortzahlen.json` buchweise
+   > aggregiert — für Blöcke und Teilungen brauchst du das erste.
+   >
+   > *(Hier stand bis zum 02.09.2026, `wortzahlen.json` kenne nur 20 Bücher und
+   > gerade die freien Erzählbücher nicht. Das galt für die Fassung im alten
+   > Hauptzweig; die vereinigte Datei führt alle 30, im Format
+   > `{"wpm":…, "buecher":{…}}`.)*
    >
    > Der Absatz „Nicht verplant und für Video 09+ frei" in `videos-01-08.md`
    > nennt 5 Blöcke — eine Momentaufnahme von 2026-08-23, kein Bestand.
@@ -132,9 +133,10 @@ Abbruch gehört **vor Schritt 5**, nicht vor Schritt 0.
 
    Jede fertige Variante am Ende mit `--gegen V7 --gegen V8` gegenprüfen.
 
-3. **WPM aus `produktion/config.md` auf HEAD lesen** (`wpm_erwartet`). Nie hart
-   eintragen, nie aus einem Bericht, nie aus `plan.json` — die dortigen
-   `stunden` sind auf HEAD mit einem älteren Tempo gerechnet.
+3. **WPM aus `produktion/config.md` lesen** (`wpm_erwartet`). Nie hart eintragen,
+   nie aus einem Bericht. `plan.json` führt seine `stunden` seit dem 30.08.2026
+   auf demselben Tempo (`_meta.wpm_quelle` verweist auf `config.md`) — nachrechnen
+   schadet trotzdem nicht, ableiten ist besser als übernehmen.
 
    > **Es gab zwei `config.md` mit zwei Tempi — 148,1 und 143,7.** Am
    > 02.09.2026 entschieden: **143,7**, wortgewichtet über vier gerenderte
@@ -212,11 +214,15 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
 ### Die Kriterien, in dieser Reihenfolge
 
 1. **Dominantes Buch ≥ 50 % der Wörter** *(bis 2026-09-02: 60 %)* — und dieses
-   Buch ist selbst durchlaufendes Erzählwerk, **in voller Länge gelesen**.
-   Beide Zahlen stehen in `config.md` (`gate_dominanz_min`,
-   `gate_erzaehlanteil_min`) und **nirgends sonst**; `korpus_pruefung.py` liest
-   sie von dort. „Selbst Erzählwerk" heißt: der größte Block ist kapitelweise
-   ≥ `gate_erzaehlanteil_min` erzählend (`groesster_ist_erzaehlung`). Ohne diese
+   Buch ist selbst durchlaufendes Erzählwerk, **in voller Länge gelesen**, und
+   liegt **≥ 15 Punkte vor dem zweitgrößten Buch** (`gate_abstand_min`, neu am
+   2026-09-02). Alle drei Zahlen stehen in `config.md` (`gate_dominanz_min`,
+   `gate_erzaehlanteil_min`, `gate_abstand_min`) und **nirgends sonst**;
+   `korpus_pruefung.py` und `erzaehlanteil.py` lesen sie von dort. „Selbst
+   Erzählwerk" heißt: das dominante **Buch** ist kapitelweise
+   ≥ `gate_erzaehlanteil_min` erzählend (`groesster_ist_erzaehlung`, gemessen
+   aus `korpus/erzaehlanteil.json` — **nicht** aus der buchweisen
+   Gattungstabelle, die dasselbe Skript als überholt ausdruckt). Ohne diese
    Schwelle ist Abbruchbedingung 3 nicht überprüfbar. Beispiel, an dem sie
    greift: Exodus allein hält Band (30.926 W) und Dominanz (100 %) und fällt
    genau hier durch.
@@ -361,7 +367,7 @@ Das arbeitet gegen den Zweck — jemanden beim Einschlafen zu begleiten.
 
 ### Das Werkzeug für diesen Schritt
 
-`produktion/korpus_pruefung.py` rechnet eine Variante komplett durch — auf HEAD,
+`produktion/korpus_pruefung.py` rechnet eine Variante komplett durch,
 ohne Branch:
 
 ```bash
@@ -423,31 +429,32 @@ ist Evangelium gegen Spruchsammlung, nicht 80 gegen 79.
 (seit 2026-09-02: 50 %) oder kein durchlaufendes Erzählwerk. Nicht der
 Prozentwert des Gesamtkorpus.
 
-### Die feine Messung holen, ohne etwas zu vereinigen
+### Den Erzählanteil eines beliebigen Blocks nachrechnen
 
-`produktion/korpus/erzaehlanteil.json` fehlt auf HEAD — `korpus_pruefung.py`
-meldet dann korrekt „NICHT GEMESSEN". So kommst du trotzdem an den Wert:
+`produktion/korpus/erzaehlanteil.json` liegt eingecheckt vor — 412 Kapitel,
+kapitelweise, mit Begründung je Kapitel. `korpus_pruefung.py` liest sie von
+selbst; für eine Zwischenrechnung an einem beliebigen Block:
 
 ```bash
-S=<scratchpad>
-git show origin/claude/bibeltube-v06-korpus-m8-rz2oce:produktion/korpus/erzaehlanteil.json \
-  > $S/erzaehlanteil.json
 python3 - <<'EOF'
 import json, importlib.util
 spec = importlib.util.spec_from_file_location('kp', 'produktion/korpus_pruefung.py')
 kp = importlib.util.module_from_spec(spec); spec.loader.exec_module(kp)
 kap  = json.load(open('produktion/korpus/kapitel.json'))
-fein = json.load(open('<scratchpad>/erzaehlanteil.json'))['kapitel']
-kapitel = [("ruth", i) for i in range(1, 5)]      # (buch, nummer) der Variante
+fein = kp.fein_lesen()
+kapitel = [("ruth", i) for i in range(1, 5)]       # (buch, nummer) der Variante
 print(kp.fein_anteil(sorted(kapitel), kap, fein))  # (Anteil, Abdeckung in %)
 EOF
 ```
 
-> **Nicht ins Repo kopieren.** Die Datei gehört zum Branch; ein zweiter Stand
-> auf HEAD wäre genau der doppelte Textstand, den das Repo sonst vermeidet.
-> Und: `fein_anteil()` gibt die **Abdeckung** mit zurück — liegt sie unter
-> 100 %, ist der Anteil über einer lückenhaften Grundlage gerechnet und gehört
-> so gemeldet.
+> **`fein_anteil()` gibt die Abdeckung mit zurück** — liegt sie unter 100 %, ist
+> der Anteil über einer lückenhaften Grundlage gerechnet und gehört so gemeldet.
+> Gezählt wird `erzaehlend_woerter`, nicht die Ja/Nein-Flagge `erzaehlend`: bei
+> geteilten Kapiteln ist die Flagge nur ein Etikett nach der Wortmehrheit.
+>
+> *(Bis zum 02.09.2026 stand hier eine Anleitung, die Datei per
+> `git show <branch>:…` in ein Scratchpad zu holen, weil sie im Hauptzweig
+> fehlte. Die Zweige sind zusammengeführt; die Datei liegt im Baum.)*
 
 ### Die feineren Quellen, wenn du sie brauchst
 
@@ -515,12 +522,12 @@ Je Variante ausrechnen:
 >   null erzählende Wörter**: Brief und apokalyptische Vision stehen wörtlich im
 >   Ausschluss der Regel, der Korpus liegt bei **38,9 %**.
 >   **V07 war nie ein Zangen-Fall** — es scheitert am Stoff, nicht an der Größe.
-> - **V08 (Genesis 1–42) hängt allein an „in voller Länge".** Laufzeit und
->   Dominanz (100 %) halten, der Erzählanteil hält mit **87,7 %** ebenfalls.
->   Auf dem V06-Zweig, wo 1.13 diese vierte Bedingung nicht kennt, **besteht V08
->   in seiner Planfassung alle drei Gates**. Ob es sie hier besteht, hängt also
->   nicht am Korpus, sondern daran, welche Fassung von 1.13 gilt — siehe
->   „Die Arbeit liegt auf DREI Ständen".
+> - **V08 (Genesis 1–42) hängt allein an „in voller Länge" — und fällt damit
+>   durch.** Laufzeit (3,46 h), Dominanz (100 %), Abstand (100 Punkte) und der
+>   Erzählanteil (**87,7 %**) halten alle; Genesis 1–42 ist nur nicht das ganze
+>   Buch. Seit der Entscheidung vom 02.09.2026 ist die Vollständigkeit Bedingung
+>   von 1.13, also **ist V08 in seiner Planfassung nicht baubar**.
+>   `korpus_pruefung.py --plan V8` meldet genau das.
 >
 > **Genesis passt geteilt hinein, und zwar gut:** Genesis 12–50 sind 29.421 W bei
 > **91,4 %** Erzählanteil und 100 % Dominanz — der einzige Ein-Buch-Korpus des
@@ -565,16 +572,17 @@ als **gestrichen, widerlegt**: B #4 und B #7 tragen denselben Anker, und **#7 wa
 der 166K-Durchbruch**. Die Abgrenzung läuft über die **zweite Titelhälfte**,
 nicht über den Anker.
 
-> **Welche Anker frei sind, rechne selbst aus — die Buchhaltung in §10 stimmt
-> nicht.** Dort steht „Acht sind im Achterplan vergeben: 5→V4 · 6→V2 · 8→V7 ·
-> 9→V6 · 10→V3 · 11→V5 · 12 und 13 bleiben" — das sind **sechs** Zuordnungen,
-> nicht acht, und V01 (#2) sowie V08 (#7) fehlen darin.
+> **Welche Anker frei sind, rechne selbst aus.** Verlässlich ist
+> `produktion/eigene_titel.json`: welcher der 13 Anker steht in welchem eigenen
+> Titel. Stand 02.09.2026 sind **sieben** vergeben — #2, #5, #6, #7, #8, #10,
+> #11, wobei **#2 doppelt liegt** (V01 und V06) — und **sechs frei**:
+> #1 `If You're Anxious,` 245K · #3 `You're Tired, I Know…` 201K ·
+> #4 `Lord, I Feel Tired` 184K · **#9 `Don't Go to Sleep Worried…` 32K** ·
+> #12 `You Deserve Some Rest…` 559 · #13 `God Knows You're Tired…` 140.
 >
-> Verlässlich ist `produktion/eigene_titel.json`: welcher der 13 Anker steht in
-> welchem eigenen Titel. Auf HEAD sind **8** vergeben (#2, #5, #6, #7, #8, #9,
-> #10, #11) und **5 frei**: #1 `If You're Anxious,` 245K · #3 `You're Tired,
-> I Know…` 201K · #4 `Lord, I Feel Tired` 184K · #12 `You Deserve Some Rest…`
-> 559 · #13 `God Knows You're Tired…` 140.
+> > **#9 ist seit dem V06-Titelwechsel wieder frei.** Er war für den
+> > gestrichenen Jesaja-Titel vorgesehen; V06 trägt jetzt #2. Wer die alte
+> > Buchhaltung „9→V6" fortschreibt, streicht einen freien Anker weg.
 >
 > **Und dann miss die freien Anker gegen die 45 Kopisten-Titel** — das ist ein
 > Rechenschritt, keine Einschätzung. Nachgemessen am 2026-08-31:
@@ -584,12 +592,13 @@ nicht über den Anker.
 > | #1 `If You're Anxious,` | 245K | „If You're Anxious, Sleep To These Psalms Tonight" | **100 %** |
 > | #3 `You're Tired, I Know…` | 201K | „You're tired, I know… Rest by the Fire with Jesus" | **100 %** |
 > | **#4 `Lord, I Feel Tired`** | **184K** | „If You Feel Empty… Sleep To These Psalms Tonight" | **33 %** |
+> | #9 `Don't Go to Sleep Worried…` | 32K | „Don't Forget To Sleep Tonight... Jesus Is With You" | 50 % |
 > | #12 `You Deserve Some Rest…` | 559 | „You deserve some rest, hear the Teachings of Jesus" | **100 %** |
 > | #13 `God Knows You're Tired…` | 140 | „You're tired, I know… Rest by the Fire with Jesus" | 75 % |
 >
-> **Der einzige freie Anker ohne Kopisten-Nachbarn ist #4.** Drei der übrigen
-> vier stehen den Kopisten **wörtlich** zur Verfügung — C und F haben genau
-> diese Auftakte abgeschrieben.
+> **Der einzige freie Anker ohne Kopisten-Nachbarn ist #4**, gefolgt von #9 mit
+> 50 %. Drei der übrigen stehen den Kopisten **wörtlich** zur Verfügung — C und F
+> haben genau diese Auftakte abgeschrieben.
 >
 > > **Hier stand vorher das Gegenteil:** „Wirklich unbelastet sind nur #12 und
 > > #13." Das war ungemessen und falsch — #12 ist der am stärksten belastete
@@ -632,7 +641,7 @@ des Kanals. Ein Titel, der zieht, müsste sich zuerst im CTR zeigen. Tut er nich
 
 Die drei Listen: `produktion/gewinner_titel.json` (**21**) ·
 `produktion/eigene_titel.json` (**8**, V1–V8) ·
-`produktion/kopisten_titel.json` (**45**: C 35, F 10 — seit 2026-08-31 auf HEAD).
+`produktion/kopisten_titel.json` (**45**: C 35, F 10).
 
 Kandidaten prüfst du mit **`titel_kandidaten.py`**, den Bestand mit
 `titel_pruefung.py` (der nimmt keine Argumente):
@@ -662,7 +671,9 @@ geteilten Wörter** aus, dazu zwei getrennte Zählwerke:
 > | geplante eigene Titel | gar nicht verglichen | zusätzlich gemessen und ausgewiesen |
 > | Gate 1.2, zweite Hälfte | Warnung | **Verstoß** |
 >
-> Vergleichsmenge damit **21 + 5 + 45 = 71** Titel, plus die geplanten separat.
+> Vergleichsmenge damit **21 + 6 + 45 = 72** Titel, plus die geplanten separat —
+> die eigenen veröffentlichten sind aus den vorhandenen `produktion/video-0N/`-
+> Ordnern abgeleitet und wachsen mit jedem gebauten Video (seit V06: sechs).
 > `titel_pruefung.py` prüft weiter den **Bestand** (Grenze 50 %) und nimmt keine
 > Argumente.
 
@@ -1360,10 +1371,10 @@ Dreizehn Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 | 2 | §3: Eingangsgebet **~400 Wörter** | acht Gebete, **153–195 Wörter** | **150–200 W** |
 | 3 | Gate 1.2: Ähnlichkeit **< 50 %** gegen die Gewinner | V06-Runde misst gegen **drei** Listen mit **45 %** für Kandidaten | **45 % gegen alle drei Listen** für Neues; 50 % bleibt für den Bestand |
 | 4 | Gate 1.14: Eigenname (Buch- oder Evangelienname) in **jedem** Titel | V02 („God's Wisdom") und V04 („Words of Jesus") tragen keinen | Gate 1.14 gilt laut `workflow-gates.md` **ab V05**. Für neue Videos: Pflicht. |
-| 5 | `plan.json` führt `stunden` je Video | auf HEAD mit **älterem WPM** gerechnet (V05: 3,56 h dort, 3,404 h gerendert) | **Laufzeit immer neu rechnen** mit `wpm_erwartet` aus `config.md` |
+| 5 | `plan.json` führt `stunden` je Video | wurden mit einem **älteren WPM** gerechnet (V05: 3,56 h dort, 3,404 h gerendert); seit 30.08.2026 auf 143,7 umgestellt, `_meta.wpm_quelle` nennt `config.md` | **Laufzeit trotzdem neu rechnen** statt übernehmen |
 | 6 | `korpus_pruefung.py`: `RAHMEN_W = 232` | an **einem** Video gemessen (V05); V01–V04 wiesen 354–561 aus (inkl. Kapitelansagen) | 232 als Planwert, tatsächliche Rahmenwortzahl nach Schritt 3 melden |
 | 7 | ~~Gate 1.1 und 1.11 „brechen die Pipeline hart ab"~~ | beide gaben **0** zurück und druckten nur eine Warnung | **erledigt 2026-08-31.** Schritte 1, 2, 3, 5, 6 geben bei Verstoß **1** zurück; `--force` übergeht das ausdrücklich |
-| 8 | ~~„V01, **V05**, V07 und V08 bei exakt 50,0 %"~~ | Prüflauf gibt für V05 **27,3 %** aus; die Tabelle stammte von vor dem V05-Titelwechsel | **erledigt 2026-08-31** in `videos-01-08.md` samt Ursache. Auf dem Branch steht der falsche Wert weiter |
+| 8 | ~~„V01, **V05**, V07 und V08 bei exakt 50,0 %"~~ | Prüflauf gibt für V05 **27,3 %** aus; die Tabelle stammte von vor dem V05-Titelwechsel | **erledigt 2026-08-31** in `videos-01-08.md` samt Ursache; `produktion/v06-titel.md` am 02.09.2026 nachgezogen. Der Wert steht nirgends mehr falsch. |
 | 9 | `videos-01-08.md`: „Nicht verplant und für Video 09+ frei" nennt **5 Blöcke** | frei sind **13** Blöcke; `wortzahlen.json` kennt 10 davon gar nicht | Bestand aus `kapitel.json` ausrechnen, nie aus `wortzahlen.json` oder aus dem Absatz |
 | 10 | Gate 1.2 nennt eine zweite Bedingung (Abstand zu Kopisten) | **kein Skript prüft sie** | von Hand lesen und melden |
 | 11 | §10 zählt „acht Anker im Achterplan vergeben" | es sind **sechs** genannte Zuordnungen, V01 und V08 fehlen darin | freie Anker aus `eigene_titel.json` neu ausrechnen |
