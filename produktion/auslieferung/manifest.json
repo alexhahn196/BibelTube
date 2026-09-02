@@ -198,6 +198,46 @@
           }
         }
       ]
+    },
+    {
+      "video": "V6",
+      "titel": "I Know You're Tired… First Samuel Runs All the Way to Morning",
+      "hochgeladen_am": "2026-09-02T21:41:38Z",
+      "dateien": [
+        {
+          "rolle": "video",
+          "name": "video-06.mp4",
+          "bytes": 2051125619,
+          "sha256": "c0c34ac2437d938734331a3426d7919c570ea251cbaf14b5755a0fbcb8b5105a",
+          "gofile": {
+            "fileId": "c7b7b54b-65fc-40e7-b3bc-0695ac743902",
+            "downloadPage": "https://gofile.io/d/xfOZwLoP",
+            "server": "store-eu-par-4"
+          }
+        },
+        {
+          "rolle": "ton",
+          "name": "video-06.flac",
+          "bytes": 550492321,
+          "sha256": "ce3acea081eb66f176ac939583665306eaaeec872a160646c13458119b639d28",
+          "gofile": {
+            "fileId": "f8d0e740-bf3f-40bf-b224-74e1fb0fb471",
+            "downloadPage": "https://gofile.io/d/2OQN7Aq6",
+            "server": "store-eu-par-4"
+          }
+        },
+        {
+          "rolle": "untertitel",
+          "name": "video-06.srt",
+          "bytes": 267728,
+          "sha256": "ff65297b54ff0f6ca495d9d706b348c376e4acd0a6204e5ea3f72699ff3b1c68",
+          "gofile": {
+            "fileId": "ac5d7c50-0912-4c51-9caa-425a7b714903",
+            "downloadPage": "https://gofile.io/d/3HZrcR6k",
+            "server": "store-eu-par-4"
+          }
+        }
+      ]
     }
   ]
 }

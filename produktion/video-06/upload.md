@@ -119,8 +119,8 @@ Sie stehen bereits in der Beschreibung oben.
 
 | Rolle | Datei | Größe | GoFile |
 |---|---|---:|---|
-| Video | `video-06.mp4` | 1.242,5 MB | https://gofile.io/d/ohoJWd5L |
-| Ton | `video-06.flac` | 525,0 MB | https://gofile.io/d/jYwo4q3D |
+| Video | `video-06.mp4` | 2.051,1 MB | https://gofile.io/d/xfOZwLoP |
+| Ton | `video-06.flac` | 525,0 MB | https://gofile.io/d/2OQN7Aq6 |
 | Untertitel | `video-06.srt` | 261 KB | geht beim Upload direkt als Spur mit |
 
 Prüfsummen und Bytezahlen in
@@ -148,7 +148,8 @@ Prüfsummen und Bytezahlen in
 | Größe | Wert | Vorgabe |
 |---|---|---|
 | Laufzeit | 3:35:26 (3.59 h) | ≥3.0 h, Ziel 3.4–3.8 h |
-| Dateigröße | 1242.5 MB | — |
+| Bildbewegung (Frameschritt) | 0.600 | ≥0.30, sonst Standbild |
+| Dateigröße | 2051.1 MB | — |
 | Bild | 1920x1080 @ 24 fps | 1920×1080, 24–30 fps (§5) |
 | Ton-Versatz | 0.0 s | 0 |
 | Tempo | 148.2 WPM | 120–160 WPM (§5b) |
@@ -167,3 +168,12 @@ Prüfsummen und Bytezahlen in
 `MILO SOOTHING VOICE` — Fish Audio `cb6381fb822345bd89c207fb49551d24`, Modell s2.1-pro-free, Tempo 0.88.
 Feste Kanalstimme, siehe `produktion/config.md`.
 
+
+## Neumontage 2026-09-02
+
+Die erste Auslieferung war praktisch ein **Standbild**: der Clipsatz vom
+31.08. (`flux_3_video`) trug keine Bewegung, gemessener Frameschritt **0,058**.
+Vier neue Clips mit `seedance1_5`, Bildspur neu kodiert, **Tonspur und
+Untertitel unverändert übernommen** — keine neue TTS, keine neue Mischung.
+Frameschritt jetzt **0,600**. Die alten GoFile-Links (`ohoJWd5L`, `jYwo4q3D`)
+zeigen auf die statische Fassung und sind überholt.
