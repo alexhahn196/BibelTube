@@ -38,24 +38,50 @@ Praktisch für diesen Skill:
 | `config.md` | **`produktion/config.md`** |
 | `produktion/videos-NN.md` | Auf HEAD stehen **alle** Textebenen in `produktion/videos-01-08.md` als Blöcke `# Video 0N`. Auf dem V06-Branch ist `vorlage.py` so geändert, dass es **Einzeldateien** `produktion/videos-<nn>.md` findet; dort existiert `videos-06.md`, und der V06-Block in `videos-01-08.md` ist entfernt. **Sieh nach, welche der beiden Welten gerade gilt**, bevor du schreibst. |
 
-### Die V06-Runde liegt auf zwei Ständen — lies nicht gegen den halben
+### Die Arbeit liegt auf DREI Ständen, und im Hauptzweig liegt nichts davon
 
-**Genau eine Datei ist im Hauptzweig, alles andere nicht.** Stand 2026-08-31:
+> **Korrigiert am 2026-09-02.** Hier stand: „Genau eine Datei ist im Hauptzweig"
+> — `produktion/kopisten_titel.json`. **Das ist falsch.** Nachgeprüft mit
+> `git fetch origin` und `git cat-file -e origin/main:<pfad>`: `origin/main`
+> steht auf **`5a750a4`** und trägt **keine einzige** Datei aus der V06-Runde,
+> `kopisten_titel.json` eingeschlossen. Die Datei existiert zweimal — auf diesem
+> Zweig und auf dem V06-Zweig —, beide Kopien **bitgleich**
+> (SHA-256 `f98dddc6…`, je 45 Titel). Die Vollinventur steht in
+> `produktion/v06-korpus.md`, Abschnitt „Wo diese Runde liegt".
 
-| | im Hauptzweig | nur auf dem Branch |
+**Alle drei Stände haben `origin/main` als gemeinsamen Vorfahren; keiner ist
+zurückgeflossen.** Stand 2026-09-02:
+
+| | `origin/main` (5a750a4) | dieser Zweig `historien-fund-messdatei-w4hjlc` | `bibeltube-v06-korpus-m8-rz2oce` |
+|---|---|---|---|
+| **Dieser Skill** | — | **`.claude/skills/bibeltube-video/SKILL.md`** | — |
+| **Korpus-Werkzeug** | — | `korpus_pruefung.py` · `titel_kandidaten.py` · `wissen_zusammenstellen.py` | `erzaehlanteil.py` · `eigene_videos_erzaehlanteil.py` · `wpm_messen.py` · `v07_v08_moeglichkeiten.py` · `render_messung.py` |
+| **Messdateien** | — | `regeln/daten/gate2_eigene_kanaldaten.json` · `pipeline/qa/pegel_wiedergabe.json` | `korpus/erzaehlanteil.json` (412 Kapitel) · `korpus/eigene_videos_erzaehlanteil.json` · `korpus/wpm_gemessen.json` · `korpus/kapitel_verse.json` · `korpus/v06_varianten.json` · `korpus/v07_v08_moeglichkeiten.json` · `korpus/v06_render.json` · `regeln/daten/gate2_2026-08-23.json` |
+| **V05-Paket** | — | `produktion/video-05/` · `motive/motiv-video-05*.png` · `motive/loops/ki-v05/` | — |
+| **V06-Paket** | — | — | `produktion/video-06/` · `videos-06.md` · `v06-korpus.md` · `v06-titel.md` · `motive/motiv-V6*.png` · `motive/loops/ki-v06/` |
+| **Pipeline** | — | `schritt1`…`schritt4`, `schritt6`, `schritt7`, `gemeinsam.py`, `thumbnail.py`, `render.py` | `pipeline/vorlage.py` (Einzeldateien) |
+| **Vergleichslisten** | — | `produktion/kopisten_titel.json` | `produktion/kopisten_titel.json` — **bitgleich** |
+
+**Fünfzehn Dateien fassen beide Zweige an, vierzehn davon verschieden.** Das ist
+die eigentliche Gefahr, nicht der halbe Stand: `config.md`, `workflow-gates.md`,
+`erfolgsregeln.md`, `bibeltube-wissen.md`, `formel/video-formel.md`,
+`videos-01-08.md`, `titel_pruefung.py`, `wortzahlen.py`, `korpus/kapitel.json`,
+`korpus/wortzahlen.json`, `eigene_titel.json`, `schritt5_video.py`,
+`klang/bett_mono_feuer_leise.flac` und `.gitignore` existieren **zweimal mit
+verschiedenem Inhalt**. Nur `kopisten_titel.json` ist bitgleich.
+
+**Drei dieser Unterschiede ändern Ergebnisse, nicht nur Text:**
+
+| | dieser Zweig | V06-Zweig |
 |---|---|---|
-| **Vergleichslisten** | `produktion/kopisten_titel.json` (45 Titel) | — |
-| **Erzählanteil** | — | `korpus/erzaehlanteil.json` · `korpus/eigene_videos_erzaehlanteil.json` · `erzaehlanteil.py` · `eigene_videos_erzaehlanteil.py` |
-| **Tempo** | — | `korpus/wpm_gemessen.json` · `wpm_messen.py` |
-| **V06-Runde** | — | `v06-korpus.md` · `v06-titel.md` · `v06_titel_kandidaten.json` · `korpus/v06_varianten.json` · `videos-06.md` |
-| **V06-Paket** | — | `produktion/video-06/` (Titel, Beschreibung, Tags, Thumbnail, SRT, `upload.md`) |
-| **Gate-2-Rohdaten** | — | `regeln/daten/gate2_2026-08-23.json` |
-| **Verse je Kapitel** | — | `korpus/kapitel_verse.json` |
+| `wpm_erwartet` | **148,1** (aus V05, `video-05/qa.json`) | **143,7** (wortgewichtet über vier Videos, `korpus/wpm_gemessen.json`) |
+| Gate 1.13 | Struktur: dominantes Buch, selbst Erzählwerk, in voller Länge. Der Erzählanteil wird **gemeldet, gatet nicht** | Erzählanteil **≥ 80 % gatet**; „volle Länge" entscheidet nur über das Band |
+| `bett_mono_feuer_leise.flac` | Variante e, aus `klang_proben.py --produktionsbett` | aus dem **linken Kanal** des Stereo-Artefakts (Downmix löscht 5,2 dB aus) |
 
-`kopisten_titel.json` wurde am 2026-08-31 **einzeln** herübergeholt, weil
-`titel_kandidaten.py` sonst gegen zwei statt 45 Titel gemessen hätte. Das war
-eine Datei, kein Merge — und es ist der Grund, warum der Stand jetzt **halb**
-ist. Wer eine Zahl aus der V06-Runde zitiert, sagt dazu, von welchem Stand.
+**Welche Fassung gilt, ist eine offene Entscheidung des Kanalinhabers, keine
+Messfrage.** Wer eine Zahl aus einer der beiden Runden zitiert, sagt dazu, von
+welchem Stand — und prüft vorher, ob die Datei auf dem Stand überhaupt liegt,
+den er gerade offen hat.
 
 ### Der unvereinigte V06-Branch — größer und gefährlicher, als er aussieht
 
@@ -65,7 +91,7 @@ Ablauf braucht und die auf `main`/HEAD **fehlen**:
 | Datei | Zweck |
 |---|---|
 | `produktion/erzaehlanteil.py` | versgenaue Erzählanteil-Einstufung |
-| `produktion/korpus/erzaehlanteil.json` | 250 Kapitel einzeln eingestuft, mit Begründung |
+| `produktion/korpus/erzaehlanteil.json` | **412** Kapitel einzeln eingestuft, mit Begründung (seit 2026-09-02, vorher 250) |
 | `produktion/korpus/eigene_videos_erzaehlanteil.json` | Erzählanteil V01–V05, versgenau |
 | `produktion/korpus/wpm_gemessen.json` | gemessenes Tempo je Video |
 | `produktion/wortzahlen.py` (30 Bücher statt 20) | siehe Schritt 0 |
@@ -242,13 +268,15 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
 
 ### Die Kriterien, in dieser Reihenfolge
 
-1. **Dominantes Buch ≥ 60 % der Wörter** — und dieses Buch ist selbst
-   durchlaufendes Erzählwerk, **in voller Länge gelesen**.
-   „Selbst Erzählwerk" ist in `korpus_pruefung.py:164` als Zahl hinterlegt:
-   **der größte Block muss kapitelweise ≥ 80 % erzählend sein**
-   (`groesster_ist_erzaehlung`). Ohne diese Schwelle ist Abbruchbedingung 3
-   nicht überprüfbar. Beispiel, an dem sie greift: Exodus allein hält Band
-   (30.926 W) und Dominanz (100 %) und fällt genau hier durch.
+1. **Dominantes Buch ≥ 50 % der Wörter** *(bis 2026-09-02: 60 %)* — und dieses
+   Buch ist selbst durchlaufendes Erzählwerk, **in voller Länge gelesen**.
+   Beide Zahlen stehen in `config.md` (`gate_dominanz_min`,
+   `gate_erzaehlanteil_min`) und **nirgends sonst**; `korpus_pruefung.py` liest
+   sie von dort. „Selbst Erzählwerk" heißt: der größte Block ist kapitelweise
+   ≥ `gate_erzaehlanteil_min` erzählend (`groesster_ist_erzaehlung`). Ohne diese
+   Schwelle ist Abbruchbedingung 3 nicht überprüfbar. Beispiel, an dem sie
+   greift: Exodus allein hält Band (30.926 W) und Dominanz (100 %) und fällt
+   genau hier durch.
 2. **Nebenstoff frei.** Was neben dem dominanten Buch steht, darf
    Spruchsammlung, Brief oder Prophetie sein — Rahmen, nicht Hauptsache.
 3. **Dominantes Buch zuerst, der Rest kanonisch dahinter** — nicht nach Länge
@@ -266,44 +294,92 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
    > Gen 42/43 liegt mitten in der Hungersnot-Sequenz; sauber ist das nicht.
    > Wenn du teilst: sag, an welchem Erzählschluss, und dass es dein Urteil ist.
 5. **Laufzeit im Band 3,4–3,8 h**, gerechnet mit dem WPM aus `config.md`.
+   **Ausnahme seit 2026-09-02: 3,0–3,8 h**, wenn das dominante Buch selbst
+   Erzählwerk ist **und** in voller Länge im Korpus steht — also genau dann,
+   wenn Kriterium 1 vollständig erfüllt ist (`groesster_ist_vollwerk`,
+   `laufzeit_ziel_von_h_vollwerk`). Ein beschnittenes Buch qualifiziert nicht;
+   sonst ließe sich jede Laufzeit durch Wegschneiden passend machen. Die harte
+   Untergrenze `laufzeit_min_h` = 3,0 h ist unangetastet.
 
-### Bekannter Fall: 1.13 und das Zielband klemmen sich gegenseitig ein
+### Gelöster Fall: 1.13 und das Zielband klemmten sich gegenseitig ein
 
-**Bevor du Bücher sortierst, sieh nach, ob das dominante Buch überhaupt in die
-Zange passt.** Die beiden Regeln sind je für sich vernünftig und schließen
-gemeinsam Bücher aus, gegen die strukturell nichts spricht:
+> **Am 2026-09-02 entschieden und umgesetzt.** Der Abschnitt bleibt stehen,
+> damit die Rechnung nachvollziehbar ist — der Zustand, den er beschreibt, ist
+> aber Vergangenheit.
+
+**Das war die Zange.** Zwei Regeln, je für sich vernünftig, schlossen gemeinsam
+Bücher aus, gegen die strukturell nichts sprach:
 
 - Zielband → Gesamtkorpus mindestens **29.722 W** (kleinste Bandgrenze über
   n = 30…80), höchstens **33.426 W**.
 - 1.13 → dominantes Buch mindestens **60 %** davon.
-- 1.13 → dominantes Buch **in voller Länge**, es kann also nicht beschnitten
-  werden, um zu passen.
+- 1.13 → dominantes Buch **in voller Länge**, also nicht beschneidbar, um zu passen.
 
-**Daraus folgt ein Fenster für das dominante Buch: 17.833 W bis 33.426 W.**
-Darunter kommt es nie auf 60 %, darüber sprengt es allein schon das Band.
+**Fenster für das dominante Buch: 17.833 W bis 33.426 W.** Darunter kam es nie
+auf 60 %, darüber sprengte es allein schon das Band. Markus (14.261 W) fiel
+darunter, ganz Genesis (35.827 W) darüber — **beide an der Größe, nicht an
+ihrer Struktur.**
 
-| | Wörter | |
-|---|---:|---|
-| Markus | 14.261 | **zu klein** — bei 60 % dürfte der Korpus höchstens 23.768 W haben, das Band beginnt bei 29.722 |
-| ganz Genesis | 35.827 | **zu groß** — `band_fuer(50)` endet bei 33.366 |
+**Was der Kanalinhaber geändert hat, beides an abgeleiteten Größen:**
 
-**Beide fallen an der Größe, nicht an ihrer Struktur.** Markus ist ein
-Evangelium, Genesis nennt M8 ausdrücklich als Erzählstoff. Genau das macht V07
-und V08 in ihrer Planfassung unbaubar — nicht ein Fehler im Korpus, sondern die
-Zange.
+| | vorher | jetzt | Begründung |
+|---|---|---|---|
+| Dominanz | ≥ 60 % | **≥ 50 %** | selbstgesetzt, durch nichts belegt. Der Eigenname trägt Titel und Thumbnail auch bei der Hälfte der Laufzeit. |
+| untere Bandgrenze | 3,4 h | **3,0 h**, nur bei ganzem Erzählwerk als dominantem Buch | 3,4–3,8 h ist der Median der **Fremd**-Treffer, keine eigene Messung. `laufzeit_min_h` = 3,0 h bleibt unangetastet. |
+| Erzählanteil | — | **unverändert** | der einzige eigene Befund. Wird nicht gelockert. |
 
-**Nur neun Bücher des ganzen Bestands können je dominantes Buch sein** (Größe
-**und** Erzählwerk): `1 samuel` 23.638 · `luke` 24.399 · `acts` 23.143 ·
-`1 kings` 23.067 · `matthew` 22.831 · `2 kings` 22.226 · `2 samuel` 19.447 ·
-`judges` 17.922 · `john` 18.692.
-Knapp daneben: `joshua` 17.835 (2 W über der Grenze, fällt aber am
-Erzählanteil), `exodus` 30.926 (Größe passt, Gesetzesteile drücken den
-Erzählanteil unter 80 %).
+**Neues Fenster für das dominante Buch: 13.084 W bis 33.426 W.** Markus liegt
+jetzt drin. Beide Zahlen stehen in `config.md`, keine mehr im Code.
 
-> **Nur dokumentiert, keine Schwelle geändert.** Weder die 60 %, noch das Band,
-> noch „in voller Länge" werden hier angefasst. Wer eine davon lockern will,
-> entscheidet das als Kanalinhaber — und wer es tut, sollte wissen, dass die
-> Zange und nicht die Struktur der Grund war.
+#### Was das Fenster NICHT beantwortet — und wo der nächste Lauf sonst hineinläuft
+
+**Größe und Gattung sind zwei Kriterien, das gemessene Erzählkriterium ist ein
+drittes.** Die alte Fassung dieses Abschnitts führte „nur neun Bücher können je
+dominantes Buch sein" — das ist eine Liste nach **Größe plus Gattung**, nicht die
+Auswahlmenge. Wer sie als Auswahlmenge liest, landet eine Stufe später in
+derselben Sackgasse. Gemessen (kapitelweise, `korpus/erzaehlanteil.json` auf dem
+V06-Zweig, 412 Kapitel):
+
+| Buch | Wörter | Erzählanteil | im Größenfenster | hält ≥ 80 % |
+|---|---:|---:|---|---|
+| **1 Samuel** | 23.638 | **89,1 %** | ja | **ja** — durch V06 verbraucht |
+| **Richter** | 17.922 | **86,1 %** | ja | **ja** |
+| **2 Samuel** | 19.447 | **81,8 %** | ja | **ja** |
+| Markus | 14.261 | 79,4 % | ja *(neu)* | **nein — 0,6 Punkte** |
+| 2 Könige | 22.226 | 73,3 % | ja | nein |
+| Apostelgeschichte | 23.143 | 73,0 % | ja | nein |
+| Josua | 17.835 | 61,6 % | ja | nein |
+| Johannes | 18.692 | 61,3 % | ja | nein — durch V03 verbraucht |
+| 1 Könige | 23.067 | 58,9 % | ja | nein |
+| Lukas | 24.399 | 58,3 % | ja | nein — durch V05 verbraucht |
+| Matthäus | 22.831 | 52,5 % | ja | nein — durch V04 verbraucht |
+| Exodus | 30.926 | 46,5 % | ja | nein |
+| ganz Genesis | 35.827 | **87,2 %** | **nein, zu groß** | ja, aber nur geteilt verwendbar |
+
+**Von zwölf Erzählbüchern im Größenfenster halten drei das Erzählkriterium**, und
+eines davon steckt in V06. Frei sind **Richter** und **2 Samuel** — mehr nicht.
+Alles andere braucht entweder eine Teilung an einer Erzählnaht oder muss als
+Nebenstoff hinter einem der beiden stehen.
+
+> **Zu Richter: Kapitel 19 steht darin** — die Vergewaltigung und Zerstückelung
+> der Nebenfrau, gefolgt vom Vernichtungskrieg gegen Benjamin (20–21). Das ist
+> die härteste Erzählung des ganzen Bestands, und sie liegt ausgerechnet in einem
+> der beiden freien Bücher. **Einschätzung, keine Messung** — es gibt keine
+> Messdatei zur Nachttauglichkeit. Aber wer Richter als dominantes Buch in voller
+> Länge nimmt, nimmt Kapitel 19 mit; „in voller Länge" lässt kein Auslassen zu.
+
+> **Markus fällt jetzt am Erzählanteil, nicht mehr an der Größe.** 79,4 % gegen
+> 80 %. Das ist gemessen, nicht geschätzt: die Gleichnisrede Mk 4,1–34 und die
+> Endzeitrede Mk 13 tragen zusammen genug Wörter, um das Buch unter die Schwelle
+> zu drücken. Als **Nebenstoff** hinter einem stärkeren Erzählbuch ist Markus
+> weiterhin brauchbar — nur nicht als Titelgeber.
+
+**Was mit den neuen Schwellen tatsächlich baubar ist, ist durchgerechnet** und
+muss nicht geschätzt werden: `produktion/korpus/v07_v08_moeglichkeiten.json` auf
+dem V06-Zweig führt **50 Korpora**, die alle drei Gates halten, mit Tabelle in
+`produktion/v06-korpus.md`. Erzeugt von `produktion/v07_v08_moeglichkeiten.py`.
+**Das ist eine Messung und keine Auswahl** — die Liste enthält Kombinationen ohne
+inneren Zusammenhang, und 23 der 50 enthalten Richter 19.
 
 ### Nachttauglichkeit — als Einschätzung kennzeichnen
 
@@ -375,8 +451,9 @@ und V03 hält die 80 % in **keiner** der beiden Messungen (62,3 % / 38,2 %). Die
 80 können also nicht die Größe sein, an der V03 gewonnen hat. Der Unterschied
 ist Evangelium gegen Spruchsammlung, nicht 80 gegen 79.
 
-**Was abbricht, ist Kriterium 1** — dominantes Buch unter 60 % oder kein
-durchlaufendes Erzählwerk. Nicht der Prozentwert.
+**Was abbricht, ist Kriterium 1** — dominantes Buch unter `gate_dominanz_min`
+(seit 2026-09-02: 50 %) oder kein durchlaufendes Erzählwerk. Nicht der
+Prozentwert des Gesamtkorpus.
 
 ### Die feine Messung holen, ohne etwas zu vereinigen
 
@@ -408,7 +485,7 @@ EOF
 
 | Datei (V06-Branch) | Inhalt |
 |---|---|
-| `produktion/korpus/erzaehlanteil.json` | **250 Kapitel, 178 erzählend**, mit Begründung je Kapitel: `ruth` 4 · `1 samuel` 31 · `2 samuel` 24 · `1 kings` 22 · `2 kings` 25 · `joshua` 24 · `judges` 21 · `esther` 10 · `exodus` 40 · `genesis` 8 · `daniel` 9 · `jonah` 4 · `acts` 28 |
+| `produktion/korpus/erzaehlanteil.json` | **412 Kapitel, 265 mit erzählenden Wörtern**, mit Begründung je Kapitel: `isaiah` 66 · `genesis` 50 · `exodus` 40 · `1 samuel` 31 · `acts` 28 · `2 kings` 25 · `joshua` 24 · `2 samuel` 24 · `1 kings` 22 · `revelation` 22 · `judges` 21 · `mark` 16 · `romans` 16 · `esther` 10 · `daniel` 9 · `ruth` 4 · `jonah` 4. **Am 2026-09-02 von 250 auf 412 erweitert** (Genesis 1–42, Markus, Jesaja, Römer, Offenbarung); von den 250 alten hat sich keines geändert. |
 | `produktion/korpus/eigene_videos_erzaehlanteil.json` | die schon gelesenen Korpora je Video, mit `je_buch`-Aufschlüsselung |
 
 > **`produktion/erzaehlanteil.py` NICHT über `main()` laufen lassen.** Es hat
@@ -416,12 +493,16 @@ EOF
 > `korpus/erzaehlanteil.json` und `korpus/v06_varianten.json`. Eine CLI für
 > einen eigenen Korpus hat es nicht. Nutzbar ist nur `einstufung_rechnen()`,
 > importiert. Oder — einfacher — die eingecheckte `korpus/erzaehlanteil.json`
-> direkt lesen: ein eigener Lauf ist mit ihr deckungsgleich (250 Kapitel,
+> direkt lesen: ein eigener Lauf ist mit ihr deckungsgleich (412 Kapitel,
 > 0 Abweichungen).
 
 **Liegt ein Buch in keiner der beiden Dateien, ist sein feiner Erzählanteil nicht
-gemessen.** Markus, Römer und Offenbarung — der ganze V07-Plan — fehlen in
-beiden. Dann nur den groben Wert melden und ihn so nennen.
+gemessen.** Dann nur den groben Wert melden und ihn so nennen. *(Der Satz stand
+hier mit „Markus, Römer und Offenbarung — der ganze V07-Plan — fehlen in
+beiden". Das gilt seit 2026-09-02 nicht mehr: alle drei sind eingestuft, Markus
+kapitelweise mit zwei gemessenen Versteilungen, Römer und Offenbarung als
+Gattung. Ungemessen ist von den 30 Büchern in `kapitel.json` nur noch, was
+V01–V05 verbraucht haben und in `eigene_videos_erzaehlanteil.json` steht.)*
 
 ### Was die Variante kostet — ausrechnen, nicht beschreiben
 
@@ -444,9 +525,9 @@ Je Variante ausrechnen:
   nachprüfbar. Ein Lauf kam auf 9 (nur ganze Bücher) bzw. 48 (mit Teilblöcken).
 - **Welche dominanten Bücher bleiben danach überhaupt möglich?**
 
-> ### V07 und V08 sind unter den geltenden Gates nicht baubar — arithmetisch
+> ### V07 und V08 in ihrer Planfassung — nachgerechnet, alt und neu
 >
-> Nicht „knapp daneben", sondern ausgeschlossen. Nachgerechnet:
+> **Stand bis 2026-09-02** (Dominanz 60 %, Band ab 3,4 h):
 >
 > | | 1.1 Laufzeit | 1.13 | Ergebnis |
 > |---|---|---|---|
@@ -457,19 +538,32 @@ Je Variante ausrechnen:
 > | V08 wie geplant (29.835 W) | 3,400 h — reißt um 1 W | **Vollständigkeit reißt** (Gen 1–42 von 1–50) | DURCHGEFALLEN, **zwei** Gates |
 > | V08 + Jona | 3,544 h — OK | **Vollständigkeit reißt** | **DURCHGEFALLEN** |
 >
-> **Der Beweis, warum kein Zusatz hilft:** Markus hat 14.261 W. Bei Dominanz
-> ≥ 60 % darf der Gesamtkorpus höchstens **23.768 W** haben — die kleinste
-> Bandgrenze über n = 30…80 liegt bei **29.722 W**. Die beiden Bedingungen
-> schließen sich aus. Jedes Wort, das V07 ins Band hebt, drückt Markus tiefer
-> unter 60 %.
-> Ganzes Genesis hat **35.827 W**, `band_fuer(50)` endet bei **33.366** —
-> Genesis kann als dominantes Buch nie in voller Länge gelesen werden.
+> **Mit den Schwellen vom 2026-09-02 ändert sich das nur zum Teil:**
 >
-> **Daraus folgt für Schritt 1:** V07 und V08 müssen ohnehin neu gebaut werden
-> und ziehen dann aus demselben Rest, den V06 gerade anfasst. Das ist das
-> Argument, das in den Freigabepunkt gehört — nicht „Jona rettet eines von
-> beiden". Dieser Satz stand hier und war falsch: er hatte nur die Laufzeit
-> nachgerechnet und 1.13 nicht gefahren.
+> - **V07 bleibt durchgefallen, und zwar dreifach.** Markus liegt mit **49,0 %**
+>   auch unter der neuen Dominanzgrenze — und jedes Wort, das die Laufzeit ins
+>   Band hebt, drückt ihn weiter darunter. Markus selbst hält mit **79,4 %** das
+>   Erzählwerk-Kriterium nicht. Und **Römer und Offenbarung 1–11 tragen zusammen
+>   null erzählende Wörter**: Brief und apokalyptische Vision stehen wörtlich im
+>   Ausschluss der Regel, der Korpus liegt auf dem V06-Zweig bei **38,9 %**.
+>   **V07 war nie ein Zangen-Fall** — es scheitert am Stoff, nicht an der Größe.
+> - **V08 (Genesis 1–42) hängt allein an „in voller Länge".** Laufzeit und
+>   Dominanz (100 %) halten, der Erzählanteil hält mit **87,7 %** ebenfalls.
+>   Auf dem V06-Zweig, wo 1.13 diese vierte Bedingung nicht kennt, **besteht V08
+>   in seiner Planfassung alle drei Gates**. Ob es sie hier besteht, hängt also
+>   nicht am Korpus, sondern daran, welche Fassung von 1.13 gilt — siehe
+>   „Die Arbeit liegt auf DREI Ständen".
+>
+> **Genesis passt geteilt hinein, und zwar gut:** Genesis 12–50 sind 29.421 W bei
+> **91,4 %** Erzählanteil und 100 % Dominanz — der einzige Ein-Buch-Korpus des
+> ganzen Bestands, der alle Gates hält. Die Naht Gen 11/12 (Ende der
+> Urgeschichte) ist Urteil, keine Messung, aber die sauberste im Buch; Gen 42/43
+> aus der Planfassung ist es nicht, sie liegt mitten in der Hungersnot-Sequenz.
+>
+> **Daraus folgt für Schritt 1:** V07 muss neu gebaut werden, V08 nicht
+> zwingend. Beide ziehen aus demselben Rest, den V06 angefasst hat — deshalb
+> gehört die Doppelvergabeprüfung in den Freigabepunkt. Was baubar ist, steht
+> gemessen in `produktion/korpus/v07_v08_moeglichkeiten.json`.
 
 ### Ausgabe je Variante
 
@@ -1226,8 +1320,12 @@ stimmen, eine Prüfsumme nicht.
 **Anhalten und melden. Nicht selbst reparieren, nicht die Grenze aufweichen.**
 
 1. **`titel_pruefung.py` meldet einen Verstoß** (Rückgabewert ≠ 0).
-2. **Laufzeit außerhalb 3,4–3,8 h.**
-3. **Kein Korpus hält dominantes Buch ≥ 60 % und Zielband gleichzeitig.**
+2. **Laufzeit außerhalb des Zielbands** — 3,4–3,8 h, bei ganzem Erzählwerk als
+   dominantem Buch 3,0–3,8 h (`config.md`, `laufzeit_ziel_von_h[_vollwerk]`).
+3. **Kein Korpus hält dominantes Buch ≥ `gate_dominanz_min` und Zielband
+   gleichzeitig.** Seit 2026-09-02 sind das 50 % statt 60 %; die Zange ist damit
+   gelöst, aber nicht abgeschafft — sieh in `v07_v08_moeglichkeiten.json` nach,
+   bevor du meldest, es gehe nichts.
 4. **Grenzwerte des Thumbnails nicht erreichbar** — Versalhöhe, Kontrast oder
    160×90-Lesbarkeit lassen sich bei ≤ 4 Wörtern nicht halten.
 
@@ -1277,7 +1375,8 @@ Dreizehn Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 
 | # | Dokument sagt | Praxis zeigt | im Skill festgeschrieben |
 |---|---|---|---|
-| 1 | ~~Gate 1.13: Erzählanteil ≥ 80 %~~ — **am 2026-08-31 gefallen** | zwei eingecheckte Messungen widersprachen sich: V05 buchweise 81,7 % (bestand), kapitelweise 47,6 % (fiel durch). Der einzige Erfolg V03 fiel in beiden (62,3 / 38,2 %). | **erledigt.** 1.13 prüft jetzt die Struktur: dominantes Buch ≥ 60 % **und** selbst Erzählwerk **und** in voller Länge. Der Erzählanteil wird kapitelweise gemessen und gemeldet, gatet nicht. |
+| 1 | ~~Gate 1.13: Erzählanteil ≥ 80 %~~ — **auf diesem Zweig am 2026-08-31 gefallen, auf dem V06-Zweig nicht** | zwei eingecheckte Messungen widersprachen sich: V05 buchweise 81,7 % (bestand), kapitelweise 47,6 % (fiel durch). Der einzige Erfolg V03 fiel in beiden (62,3 / 38,2 %). | **offen, nicht erledigt.** Hier prüft 1.13 die Struktur: dominantes Buch ≥ `gate_dominanz_min` **und** selbst Erzählwerk **und** in voller Länge; der Erzählanteil wird gemeldet und gatet nicht. Auf `bibeltube-v06-korpus-m8-rz2oce` gatet er weiter mit 80 %, und „in voller Länge" entscheidet dort nur über die untere Bandgrenze. **Beide Fassungen sind eingecheckt. Welche gilt, entscheidet der Kanalinhaber.** |
+| 1b | Dominanz ≥ 60 % · Band ab 3,4 h | die beiden klemmten sich gegenseitig ein: Markus fiel unter das Fenster, ganz Genesis darüber — an der Größe, nicht an der Struktur | **erledigt 2026-09-02.** Dominanz **50 %**, untere Bandgrenze **3,0 h** bei ganzem Erzählwerk als dominantem Buch. Beide Zahlen in `config.md`, keine im Code. Der Erzählanteil ist **nicht** mitgelockert worden. |
 | 2 | §3: Eingangsgebet **~400 Wörter** | acht Gebete, **153–195 Wörter** | **150–200 W** |
 | 3 | Gate 1.2: Ähnlichkeit **< 50 %** gegen die Gewinner | V06-Runde misst gegen **drei** Listen mit **45 %** für Kandidaten | **45 % gegen alle drei Listen** für Neues; 50 % bleibt für den Bestand |
 | 4 | Gate 1.14: Eigenname (Buch- oder Evangelienname) in **jedem** Titel | V02 („God's Wisdom") und V04 („Words of Jesus") tragen keinen | Gate 1.14 gilt laut `workflow-gates.md` **ab V05**. Für neue Videos: Pflicht. |
@@ -1347,19 +1446,38 @@ ausgewiesen.
    | | Wert | Kriterium |
    |---|---:|---|
    | Laufzeit bei 148,1 WPM | **3,32 h** | Zielband 3,4–3,8 h → **reißt** |
-   | dominantes Buch Markus | **49,0 %** | ≥ 60 % → **reißt** |
-   | Römer / Offenbarung | 32,4 % / 18,6 % | Brief + Apokalyptik als halber Korpus |
+   | dominantes Buch Markus | **49,0 %** | damals ≥ 60 % → riss; seit 2026-09-02 ≥ 50 % → **immer noch knapp darunter** |
+   | Markus als Erzählwerk | **79,4 %** | ≥ 80 % → **reißt um 0,6 Punkte** (kapitelweise gemessen) |
+   | Römer / Offenbarung | 32,4 % / 18,6 % des Korpus | **null erzählende Wörter** — Brief und Apokalyptik stehen wörtlich im Ausschluss |
 
    Das ist kein Fehler im alten Plan, sondern die Folge des inzwischen
-   **gemessenen** Tempos und der M8-Regel. Schritt 1 muss für V07 also
-   **wirklich neu rechnen**, nicht fortschreiben.
+   **gemessenen** Tempos und der M8-Regel. Schritt 1 muss für V07
+   **wirklich neu rechnen**, nicht fortschreiben. **Die Schwellenänderung vom
+   2026-09-02 rettet V07 nicht** — der Korpus ist zur Hälfte Nicht-Erzählstoff,
+   und daran ändert weder Dominanz noch Band etwas.
 
-   **V08 reißt an ZWEI Gates.** 1.1 um genau ein Wort (29.835 gegen 29.836) —
-   **und** 1.13-Vollständigkeit, weil Genesis 1–42 nicht das ganze Buch ist.
-   Jona heilt nur 1.1; die Vollständigkeit bleibt gerissen, und ganzes Genesis
-   (35.827 W) passt nie ins Band (`band_fuer(50)` endet bei 33.366). Die
-   „ein Wort"-Erzählung, die hier vorher stand, verharmlost einen strukturellen
-   Fehler zu einem Rundungsproblem.
+   **V08 reißt hier weiter an zwei Gates, und die Schwellenänderung hilft ihm
+   nicht** — nachgerechnet mit `--plan V8`: 1.1 um **ein Wort** (29.835 gegen
+   29.836) und 1.13-Vollständigkeit, weil Genesis 1–42 nicht das ganze Buch ist.
+   **Das hängt zusammen, es sind nicht zwei unabhängige Fehler:** das tiefere
+   Band gilt nur, wenn das dominante Buch in voller Länge im Korpus steht — genau
+   die Bedingung, an der V08 scheitert. Wer die Vollständigkeit reißt, bekommt
+   das tiefere Band nie. Erzählanteil **87,7 %**, Dominanz **100 %** halten
+   dagegen. **Auf dem V06-Zweig, wo 1.13 die Vollständigkeit nicht verlangt,
+   besteht V08 in seiner Planfassung alle drei Gates.**
+
+   Ganzes Genesis (35.827 W) passt nie ins Band (`band_fuer(50)` endet bei
+   33.366). **Genesis 12–50** (29.421 W, 91,4 % erzählend, 100 % Dominanz) hält
+   Band, Erzählanteil und Dominanz — aber auf **diesem** Zweig reißt auch das die
+   Vollständigkeit, weil es eine Teilung ist.
+
+   **Daraus folgt die harte Konsequenz der Vollständigkeitsbedingung:** ein
+   geteiltes Buch kann hier nie dominantes Buch sein. Damit bleiben als
+   dominantes Buch nur **ganze** Erzählbücher im Größenfenster — und die sind,
+   gemessen, **Richter und 2 Samuel** (1 Samuel steckt in V06). Wer mehr Auswahl
+   will, muss die Vollständigkeitsbedingung fallen lassen. **Das ist eine
+   Entscheidung des Kanalinhabers, keine Rechnung** — und es ist genau der Punkt,
+   an dem sich die beiden Zweige unterscheiden.
 3. **V06 ist neu geschnitten** — Rut + 1 Samuel + Ester statt Jesaja. Auf HEAD
    ist das seit 2026-08-31 in `videos-01-08.md`, `bibeltube-wissen.md`,
    `config.md` und `motive/README.md` nachgezogen; Titel, Texte, Thumbnail und

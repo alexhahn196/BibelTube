@@ -223,9 +223,35 @@ video_pixelformat  = yuv420p
 audio_bitrate      = 192k
 
 # --- Laufzeit (Formel §2) ---
+# Harte Untergrenze. Unangetastet - kein Video darunter, egal was der Korpus ist.
 laufzeit_min_h     = 3.0
+# Zielband. 3,4-3,8 h ist der Median der Fremd-Treffer (Formel §2), also eine
+# Beobachtung an anderen Kanaelen, keine eigene Messung.
 laufzeit_ziel_von_h = 3.4
 laufzeit_ziel_bis_h = 3.8
+# 2026-09-02: die untere Bandgrenze faellt auf 3,0 h, WENN das dominante Buch
+# selbst Erzaehlwerk ist und in voller Laenge im Korpus steht. Grund: Gate 1.13
+# und das Band klemmten sich gegenseitig ein - ein ganzes Erzaehlbuch von
+# 14.000-18.000 W kam bei 3,4 h nie auf die geforderte Dominanz und fiel an der
+# Groesse aus, nicht an seiner Struktur. Sonst bleibt 3,4 h.
+laufzeit_ziel_von_h_vollwerk = 3.0
+
+# --- Schwellen Gate 1.13 / Regel M8 ---
+# DIES IST DIE EINZIGE STELLE, an der diese Schwellen stehen.
+# produktion/korpus_pruefung.py liest sie hier (und auf dem V06-Zweig
+# produktion/erzaehlanteil.py); produktion/workflow-gates.md und
+# regeln/erfolgsregeln.md verweisen hierher.
+#
+# gate_erzaehlanteil_min hat auf diesem Zweig eine ANDERE Rolle als auf dem
+# V06-Zweig: hier ist es die Schwelle der Ja/Nein-Frage "ist das dominante Buch
+# ueberhaupt Erzaehlwerk" (korpus_pruefung.py, groesster_ist_erzaehlung), dort
+# gatet derselbe Wert zusaetzlich den GESAMTEN Korpus. Welche Fassung von 1.13
+# gilt, ist offen - siehe .claude/skills/bibeltube-video/SKILL.md.
+gate_erzaehlanteil_min = 0.80
+# Dominanz: 2026-09-02 von 0,60 auf 0,50 gesenkt. Die 60 % waren selbstgesetzt
+# und durch nichts belegt - sie sollten sichern, dass ein Eigenname aus dem
+# dominanten Buch Titel und Thumbnail tragen kann. Das traegt er bei 50 % genauso.
+gate_dominanz_min      = 0.50
 
 # --- Qualitätsschwellen (Formel §3) ---
 # Kalibriert 2026-08-06 nach drei eigenen Videos (95,6 / 95,3 / 95,3 %): die

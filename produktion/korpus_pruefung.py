@@ -44,10 +44,29 @@ recht nicht:
     V03 gegen V02 gewonnen hat.
   - Was M8 belegt, ist die STRUKTUR: Evangelium gegen Spruchsammlung, nicht
     80 gegen 79. Genau die prueft 1.13 jetzt:
-        dominantes Buch >= 60 % der Woerter
+        dominantes Buch >= gate_dominanz_min der Woerter
         UND dieses Buch ist selbst durchlaufendes Erzaehlwerk
         UND es wird in voller Laenge gelesen
     Nebenstoff ist frei.
+
+=============================================================================
+SCHWELLEN GEAENDERT AM 2026-09-02 - UND WO SIE JETZT STEHEN
+=============================================================================
+Keine Schwelle steht mehr als Literal in dieser Datei. DOMINANZ_MIN,
+ERZAEHLWERK_MIN und beide Bandgrenzen kommen aus produktion/config.md.
+
+  Dominanz            60 % -> 50 %. Die 60 waren selbstgesetzt und durch nichts
+                      belegt. Sie sollen sichern, dass ein Eigenname aus dem
+                      dominanten Buch Titel und Thumbnail traegt - das tut er
+                      bei der Haelfte der Laufzeit genauso.
+  untere Bandgrenze   3,4 h -> 3,0 h, aber NUR wenn der groesste Block ein
+                      ganzes Buch ist und selbst Erzaehlwerk
+                      (groesster_ist_vollwerk). Sonst unveraendert 3,4 h.
+                      laufzeit_min_h (3,0 h) ist davon unberuehrt.
+
+Grund: die beiden Regeln klemmten sich gegenseitig ein. Ein ganzes Erzaehlbuch
+von 14.000-18.000 W kam bei 3,4 h Bandbeginn nie auf 60 % Dominanz und fiel an
+der GROESSE aus, nicht an seiner Struktur - Markus (14.261 W) ist der Fall.
 
 GATTUNGSTABELLE: Die Zuordnung Erzaehlung/Nicht-Erzaehlung steht unten im
 Klartext und folgt der Standardgliederung. Sie ist nach dem Obigen NICHT mehr
@@ -80,15 +99,22 @@ PLAN = os.path.join("produktion", "korpus", "plan.json")
 #: Erzaehlanteils (siehe Kopfkommentar). Liegt sie nicht vor, wird der Wert
 #: als NICHT GEMESSEN gemeldet - nicht durch den groben Wert ersetzt.
 FEIN = os.path.join("produktion", "korpus", "erzaehlanteil.json")
-DOMINANZ_MIN = 0.60
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "pipeline"))
 from gemeinsam import config as _config  # noqa: E402
 
 _CFG = _config()
-#: Aus config.md, damit die Zahl nur EINMAL im Repo steht. Herleitung und
+#: Aus config.md, damit jede Zahl nur EINMAL im Repo steht. Herleitung und
 #: Korpusabhaengigkeit stehen dort im Kommentar bei wpm_erwartet.
 WPM = float(_CFG["wpm_erwartet"])
 ZIEL_H = (float(_CFG["laufzeit_ziel_von_h"]), float(_CFG["laufzeit_ziel_bis_h"]))
+#: Untere Bandgrenze, wenn das dominante Buch selbst Erzaehlwerk ist UND in
+#: voller Laenge im Korpus steht (2026-09-02). Sonst gilt ZIEL_H[0].
+ZIEL_VON_H_VOLLWERK = float(_CFG["laufzeit_ziel_von_h_vollwerk"])
+#: 2026-09-02 von 0,60 gesenkt. Stand vorher hier als Literal.
+DOMINANZ_MIN = float(_CFG["gate_dominanz_min"])
+#: Schwelle der Frage "ist der groesste Block ueberhaupt Erzaehlwerk"
+#: (groesster_ist_erzaehlung). Stand vorher als 0.8 im Code.
+ERZAEHLWERK_MIN = float(_CFG["gate_erzaehlanteil_min"])
 #: Vor- und Nachlauf des Klangbetts liegen vor bzw. hinter der Sprache und
 #: verlaengern das fertige Video, ohne ein Wort zu kosten.
 _RAND_S = float(_CFG["vorlauf_s"]) + float(_CFG["nachlauf_s"])
@@ -106,11 +132,16 @@ def _video_h(korpus_w: int, kapitel_n: int) -> float:
     return gesamt / WPM / 60 + _RAND_S / 3600
 
 
-def band_fuer(kapitel_n: int) -> tuple[int, int]:
-    """Das Korpus-Wortfenster, das dieses Video ins Zielband bringt."""
+def band_fuer(kapitel_n: int, vollwerk: bool = False) -> tuple[int, int]:
+    """Das Korpus-Wortfenster, das dieses Video ins Zielband bringt.
+
+    vollwerk=True senkt die untere Grenze auf laufzeit_ziel_von_h_vollwerk.
+    Erlaubt ist das nur, wenn das dominante Buch selbst Erzaehlwerk ist UND in
+    voller Laenge im Korpus steht - beides misst bewerte() mit, siehe dort.
+    Die harte Untergrenze laufzeit_min_h ist davon unberuehrt."""
     def w(h: float) -> int:
         return round((h - _RAND_S / 3600) * 60 * WPM) - ANSAGE_W * kapitel_n - RAHMEN_W
-    return w(ZIEL_H[0]), w(ZIEL_H[1])
+    return w(ZIEL_VON_H_VOLLWERK if vollwerk else ZIEL_H[0]), w(ZIEL_H[1])
 
 DEUTSCH = {
     "apostelgeschichte": "acts", "markus": "mark", "matthaeus": "matthew",
@@ -220,6 +251,24 @@ def aufloesen(spec, kap):
     return buch, a, e
 
 
+def zusammenfassen(teile, kapitel):
+    """Baut das Ergebnis aus den Bloecken. EINE Stelle - der --plan-Weg und der
+    Bausteinweg liefen hier frueher durch zwei getrennte, fast gleiche Dicts;
+    der zweite kannte die Vollwerk-Frage dann nicht."""
+    w = sum(t["woerter"] for t in teile)
+    erz = sum(t["erzaehlung"] for t in teile)
+    groesster = max(teile, key=lambda t: t["woerter"]) if teile else None
+    erz_anteil_groesster = (groesster["erzaehlung"] / groesster["woerter"]) if groesster else 0.0
+    return {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
+            "erz_pct": 100 * erz / w if w else 0,
+            "stunden": _video_h(w, len(set(kapitel))),
+            "doppelt": len(kapitel) - len(set(kapitel)), "groesster": groesster,
+            "groesster_ist_erzaehlung": erz_anteil_groesster >= ERZAEHLWERK_MIN,
+            # Erzaehlwerk UND ungekuerzt - nur dann gilt das tiefere Band.
+            "groesster_ist_vollwerk": bool(groesster and groesster["ganzes_buch"]
+                                           and erz_anteil_groesster >= ERZAEHLWERK_MIN)}
+
+
 def bewerte(specs, kap):
     teile, kapitel = [], []
     for s in specs:
@@ -234,16 +283,7 @@ def bewerte(specs, kap):
                       "erzaehlung": sum(kap[f"{b} {i}"]["w"] for i in range(a, e + 1)
                                         if ERZAEHLUNG[b](i))})
         kapitel += [(b, i) for i in range(a, e + 1)]
-    w = sum(t["woerter"] for t in teile)
-    erz = sum(t["erzaehlung"] for t in teile)
-    doppelt = len(kapitel) - len(set(kapitel))
-    groesster = max(teile, key=lambda t: t["woerter"]) if teile else None
-    return {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
-            "erz_pct": 100 * erz / w if w else 0,
-            "stunden": _video_h(w, len(set(kapitel))),
-            "doppelt": doppelt, "groesster": groesster,
-            "groesster_ist_erzaehlung": bool(groesster and
-                                             groesster["erzaehlung"] / groesster["woerter"] >= 0.8)}
+    return zusammenfassen(teile, kapitel)
 
 
 def main():
@@ -276,12 +316,7 @@ def main():
             teile.append({"spec": spec, "buch": b, "von": ii[0], "bis": ii[-1],
                           "ganzes_buch": ii == list(range(1, voll + 1)),
                           "woerter": bw, "erzaehlung": be})
-        groesster = max(teile, key=lambda t: t["woerter"]) if teile else None
-        r = {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
-             "erz_pct": 100 * erz / w, "stunden": _video_h(w, len(kapitel)), "doppelt": 0,
-             "groesster": groesster,
-             "groesster_ist_erzaehlung": bool(groesster and
-                                              groesster["erzaehlung"] / groesster["woerter"] >= 0.8)}
+        r = zusammenfassen(teile, kapitel)
         print(f"Plan {a.plan}: {plan[a.plan]['name']}")
     else:
         if not a.bausteine:
@@ -320,7 +355,7 @@ def main():
 
     fehler = []
     print("\nPruefungen:")
-    BAND = band_fuer(len(r["kapitel"]))
+    BAND = band_fuer(len(r["kapitel"]), r["groesster_ist_vollwerk"])
     band = BAND[0] <= r["woerter"] <= BAND[1]
     print(f"  1.1  Korpuslaenge {BAND[0]:,}-{BAND[1]:,} W   "
           f"{'OK' if band else 'REISST — ' + ('zu kurz' if r['woerter'] < BAND[0] else 'zu lang')}")
