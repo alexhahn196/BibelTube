@@ -20,11 +20,26 @@ Der Rueckgabewert ist seit 2026-08-30 eine 1: Variante V06-C liegt mit 33.460 W
 ueber der oberen Bandgrenze. Das ist der erwartete Stand, kein Defekt - gewaehlt
 und gebaut ist Variante A.
 
-Zwei Schwellen sind am 2026-09-02 bewegt worden, beide an abgeleiteten Groessen:
-die Dominanz von 60 auf 50 % und die untere Bandgrenze von 3,4 auf 3,0 h fuer den
-Fall, dass das dominante Buch selbst Erzaehlwerk ist und in voller Laenge im
-Korpus steht (vollwerk_pruefen). Der Erzaehlanteil von 80 % ist NICHT bewegt -
-er ist der einzige eigene Befund.
+Gate 1.13 ist seit dem 2026-09-02 die STRUKTURFASSUNG (Entscheidung des
+Kanalinhabers bei der Zusammenfuehrung der beiden Zweige). Geprueft wird:
+
+    dominantes Buch >= gate_dominanz_min der Woerter
+    UND dieses Buch ist selbst Erzaehlwerk (>= gate_erzaehlanteil_min,
+        kapitelweise gemessen)
+    UND es steht in voller Laenge im Korpus
+    UND es liegt >= gate_abstand_min vor dem zweitgroessten Buch
+
+Der Erzaehlanteil des GESAMTEN Korpus wird weiter kapitelweise gemessen und in
+jedem Ergebnis GEMELDET - er gatet nicht mehr. Grund: die 80 % sind von keiner
+eigenen Messung beruehrt (V01-V05 liegen bei 0,0-47,6 %), und V03, das einzige
+Video des Kanals, das funktioniert hat, faellt in jeder Koernung durch. Belegt
+ist die Struktur, nicht der Prozentwert. Ausfuehrlich in
+produktion/workflow-gates.md.
+
+Ebenfalls am 2026-09-02: Dominanz von 60 auf 50 % gesenkt, untere Bandgrenze von
+3,4 auf 3,0 h fuer den Fall, dass das dominante Buch selbst Erzaehlwerk ist und
+in voller Laenge im Korpus steht (vollwerk_pruefen), und der Mindestabstand zum
+zweitgroessten Buch neu eingefuehrt.
 
 Wortzahlen kommen aus derselben Quelle und mit derselben Zaehlmethode wie
 produktion/wortzahlen.py (bible-api.com, translation=webbe, Verstexte mit
@@ -51,17 +66,17 @@ def _config():
             werte[k.strip()] = v.strip()
     gebraucht = ("wpm_erwartet", "laufzeit_ziel_von_h", "laufzeit_ziel_bis_h",
                  "laufzeit_ziel_von_h_vollwerk", "gate_erzaehlanteil_min",
-                 "gate_dominanz_min")
+                 "gate_dominanz_min", "gate_abstand_min")
     fehlt = [k for k in gebraucht if k not in werte]
     if fehlt:
         raise SystemExit("produktion/config.md: fehlende Werte %s" % fehlt)
     return tuple(float(werte[k]) for k in gebraucht)
 
 
-# Alle sechs Zahlen kommen aus produktion/config.md. Hier steht keine einzige
+# Alle sieben Zahlen kommen aus produktion/config.md. Hier steht keine einzige
 # Schwelle als Literal - wer eine aendern will, aendert sie dort.
 (WPM, ZIEL_VON_H, ZIEL_BIS_H, ZIEL_VON_H_VOLLWERK,
- GATE_ERZAEHLEND, GATE_DOMINANZ) = _config()
+ GATE_ERZAEHLEND, GATE_DOMINANZ, GATE_ABSTAND) = _config()
 
 
 def band(vollwerk=False):
@@ -1419,12 +1434,19 @@ def variante_rechnen(tabelle, kuerzel, v):
     }
     vw = vollwerk_pruefen(tabelle, dominant, teile)
     grenzen = band(vw["erfuellt"])
+    zweit = sorted(pro_buch.values(), reverse=True)
     ergebnis["vollwerk"] = vw
+    ergebnis["abstand"] = round((dom_w - (zweit[1] if len(zweit) > 1 else 0)) / woerter, 4)
     ergebnis["zielband_woerter"] = list(grenzen)
+    # Gate 1.13, Strukturfassung (entschieden 2026-09-02). Der Erzaehlanteil des
+    # Gesamtkorpus steht als "erzaehlanteil" im Ergebnis und wird gemeldet - er
+    # ist KEINE Pruefung mehr. Begruendung in produktion/workflow-gates.md.
     ergebnis["pruefungen"] = {
         "band": grenzen[0] <= woerter <= grenzen[1],
-        "erzaehlanteil": ergebnis["erzaehlanteil"] >= GATE_ERZAEHLEND,
         "dominanz": ergebnis["dominanz"] >= GATE_DOMINANZ,
+        "erzaehlwerk": vw["ist_erzaehlwerk"],
+        "volle_laenge": vw["volle_laenge"],
+        "abstand": ergebnis["abstand"] >= GATE_ABSTAND,
     }
     ergebnis["bestanden"] = all(ergebnis["pruefungen"].values())
     return ergebnis
@@ -1450,6 +1472,11 @@ def main():
                "zielband_woerter": list(BAND),
                "zielband_woerter_vollwerk": list(BAND_VOLLWERK),
                "gate_erzaehlanteil": GATE_ERZAEHLEND, "gate_dominanz": GATE_DOMINANZ,
+               "gate_abstand": GATE_ABSTAND,
+               "gate_fassung": ("Struktur - dominantes Buch >= gate_dominanz_min, selbst "
+                                "Erzaehlwerk, in voller Laenge, >= gate_abstand_min vor dem "
+                                "zweitgroessten Buch. Der Erzaehlanteil des Gesamtkorpus wird "
+                                "gemeldet und gatet nicht."),
                "schwellen_quelle": "produktion/config.md",
                "varianten": varianten},
               open(AUS_VARIANTEN, "w"), ensure_ascii=False, indent=1)
@@ -1464,17 +1491,22 @@ def main():
     print("%-6s %-12s %8s %9s %9s %-11s %s" % ("", "Bauart", "Woerter", "erzaehl.", "Laufzeit", "dominant", "Gates"))
     alle_ok = True
     for v in varianten:
-        marken = "".join(("+" if v["pruefungen"][p] else "-") for p in ("band", "erzaehlanteil", "dominanz"))
+        marken = "".join(("+" if v["pruefungen"][p] else "-")
+                         for p in ("band", "dominanz", "erzaehlwerk", "volle_laenge", "abstand"))
         print("%-6s %-12s %8s %8.2f%% %9s %-11s %s %s"
               % (v["kuerzel"], v["bauart"], "{:,}".format(v["woerter"]),
                  v["erzaehlanteil"] * 100, v["laufzeit"], v["dominantes_buch"],
                  marken, "BESTANDEN" if v["bestanden"] else "GERISSEN"))
         alle_ok = alle_ok and v["bestanden"]
-    print("\n(Gates in dieser Reihenfolge: Zielband | Erzaehlanteil >= %g %% | Dominanz >= %g %%)"
-          % (GATE_ERZAEHLEND * 100, GATE_DOMINANZ * 100))
+    print("\n(Gate 1.13, Strukturfassung - Marken in dieser Reihenfolge:")
+    print(" Zielband | Dominanz >= %g %% | dominantes Buch ist Erzaehlwerk (>= %g %%) |"
+          % (GATE_DOMINANZ * 100, GATE_ERZAEHLEND * 100))
+    print(" in voller Laenge gelesen | Abstand zum zweitgroessten Buch >= %g Punkte)"
+          % (GATE_ABSTAND * 100))
+    print("(Der Erzaehlanteil des Gesamtkorpus wird gemeldet, gatet aber NICHT.)")
     print("(Zielband %d-%d W; ist das dominante Buch Erzaehlwerk in voller Laenge: %d-%d W)"
           % (BAND[0], BAND[1], BAND_VOLLWERK[0], BAND_VOLLWERK[1]))
-    print("(Alle drei Schwellen stehen in produktion/config.md, nirgends sonst.)")
+    print("(Alle Schwellen stehen in produktion/config.md, nirgends sonst.)")
     for v in varianten:
         print("\n%s - %s" % (v["kuerzel"], v["name"]))
         for t in v["teile"]:

@@ -64,7 +64,14 @@ def stamm(w):
 def inhalt(titel):
     t = titel.lower().replace("’", "'")
     t = t.replace("you're", "you are").replace("don't", "do not")
-    t = re.sub(r"'s\b", "", t)          # god's -> god, samuel's -> samuel
+    # Genitiv-s allgemein abtrennen, damit "Luke's" und "Luke" derselbe
+    # Inhaltstraeger sind. Vorher standen hier die beiden Einzelfaelle
+    # "god's" und "isaiah's"; die Verallgemeinerung aendert an keinem der
+    # dokumentierten Werte etwas (nachgerechnet 2026-08-23 und erneut bei der
+    # Zusammenfuehrung 2026-09-02 ueber alle 147 Titel der vier Listen:
+    # 0 Abweichungen).
+    t = re.sub(r"(\w)'s\b", r"\1", t)
+    # Satzzeichen abraeumen, sonst bleibt "tired," ein eigener Inhaltstraeger.
     t = re.sub(r"[^a-z' ]", " ", t)
     woerter = [w.strip("'") for w in t.split()]
     return {stamm(w) for w in woerter if w and w not in STOPP and len(w) > 1}

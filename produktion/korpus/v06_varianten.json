@@ -10,6 +10,8 @@
  ],
  "gate_erzaehlanteil": 0.8,
  "gate_dominanz": 0.5,
+ "gate_abstand": 0.15,
+ "gate_fassung": "Struktur - dominantes Buch >= gate_dominanz_min, selbst Erzaehlwerk, in voller Laenge, >= gate_abstand_min vor dem zweitgroessten Buch. Der Erzaehlanteil des Gesamtkorpus wird gemeldet und gatet nicht.",
  "schwellen_quelle": "produktion/config.md",
  "varianten": [
   {
@@ -62,14 +64,17 @@
     "ist_erzaehlwerk": true,
     "erfuellt": true
    },
+   "abstand": 0.5791,
    "zielband_woerter": [
     25866,
     32764
    ],
    "pruefungen": {
     "band": true,
-    "erzaehlanteil": true,
-    "dominanz": true
+    "dominanz": true,
+    "erzaehlwerk": true,
+    "volle_laenge": true,
+    "abstand": true
    },
    "bestanden": true
   },
@@ -115,14 +120,17 @@
     "ist_erzaehlwerk": true,
     "erfuellt": true
    },
+   "abstand": 0.2181,
    "zielband_woerter": [
     25866,
     32764
    ],
    "pruefungen": {
     "band": true,
-    "erzaehlanteil": true,
-    "dominanz": true
+    "dominanz": true,
+    "erzaehlwerk": true,
+    "volle_laenge": true,
+    "abstand": true
    },
    "bestanden": true
   },
@@ -168,14 +176,17 @@
     "ist_erzaehlwerk": true,
     "erfuellt": true
    },
+   "abstand": 0.4129,
    "zielband_woerter": [
     25866,
     32764
    ],
    "pruefungen": {
     "band": false,
-    "erzaehlanteil": true,
-    "dominanz": true
+    "dominanz": true,
+    "erzaehlwerk": true,
+    "volle_laenge": true,
+    "abstand": true
    },
    "bestanden": false
   }

@@ -1,0 +1,22 @@
+{
+ "bett_datei": "produktion/klang/bett_mono_feuer_leise.flac",
+ "bett_dauer_s": 56.0,
+ "bett_samplerate": 44100,
+ "bett_kanaele": 2,
+ "bett_korrelation_LR": 1.0,
+ "bett_rms_roh_mono_dbfs": -32.0,
+ "bett_rms_roh_kanal_dbfs": -32.0,
+ "downmix_verlust_db": 0.0,
+ "gain_bett_db": 1.0,
+ "stimme_dbfs": -19.0,
+ "stimme_quelle": "config.md: pegel_stimme_dbfs (Sollwert)",
+ "bett_mono_dbfs": -31.0,
+ "bett_stereo_kanal_dbfs": -31.0,
+ "abstand_mono_db": 12.0,
+ "abstand_stereo_db": 12.0,
+ "soll_abstand_db": 12.0,
+ "toleranz_db": 1.0,
+ "mono_eingehalten": true,
+ "stereo_eingehalten": true,
+ "bestanden": true
+}

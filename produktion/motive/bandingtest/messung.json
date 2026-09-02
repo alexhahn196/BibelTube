@@ -1,0 +1,65 @@
+{
+ "erzeugt_am": "2026-08-23",
+ "quelle": {
+  "stufen": 48,
+  "groesste_flaeche_pct": 0.012
+ },
+ "crf_basis": 28,
+ "dunkelschwelle_luma": 48,
+ "varianten": {
+  "i    8 Bit CRF 28 (Ist)": {
+   "crf": 28,
+   "pixelformat": "yuv420p",
+   "zyklus_mb": 6.62,
+   "datei_3h30_gb": 0.55,
+   "stufen": 41,
+   "groesste_flaeche_pct": 1.114,
+   "faktor_gegen_quelle": 89.9
+  },
+  "ii   10 Bit CRF 28": {
+   "crf": 28,
+   "pixelformat": "yuv420p10le",
+   "zyklus_mb": 4.92,
+   "datei_3h30_gb": 0.48,
+   "stufen": 48,
+   "groesste_flaeche_pct": 0.185,
+   "faktor_gegen_quelle": 15.0
+  },
+  "iii  8 Bit CRF 28 + noise": {
+   "crf": 28,
+   "pixelformat": "yuv420p",
+   "zyklus_mb": 4.21,
+   "datei_3h30_gb": 0.45,
+   "stufen": 41,
+   "groesste_flaeche_pct": 1.345,
+   "faktor_gegen_quelle": 108.5
+  },
+  "iv   8 Bit CRF 28 tune=grain": {
+   "crf": 28,
+   "pixelformat": "yuv420p",
+   "zyklus_mb": 4.52,
+   "datei_3h30_gb": 0.47,
+   "stufen": 41,
+   "groesste_flaeche_pct": 1.397,
+   "faktor_gegen_quelle": 112.7
+  },
+  "v    8 Bit CRF 22": {
+   "crf": 22,
+   "pixelformat": "yuv420p",
+   "zyklus_mb": 17.3,
+   "datei_3h30_gb": 0.99,
+   "stufen": 41,
+   "groesste_flaeche_pct": 0.352,
+   "faktor_gegen_quelle": 28.4
+  },
+  "vi   8 Bit CRF 20": {
+   "crf": 20,
+   "pixelformat": "yuv420p",
+   "zyklus_mb": 24.59,
+   "datei_3h30_gb": 1.29,
+   "stufen": 41,
+   "groesste_flaeche_pct": 0.142,
+   "faktor_gegen_quelle": 11.5
+  }
+ }
+}

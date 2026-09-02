@@ -139,10 +139,16 @@ def korpus_rechnen(tabelle, bloecke):
         "zielband_woerter": list(grenzen),
         "zielband_h": [round(grenzen[0] / ea.WPM / 60, 2), round(grenzen[1] / ea.WPM / 60, 2)],
     }
+    rang = sorted(pro_buch.values(), reverse=True)
+    d["abstand"] = round((dom_w - (rang[1] if len(rang) > 1 else 0)) / woerter, 4)
+    # Gate 1.13, Strukturfassung. Der Erzaehlanteil steht als "erzaehlanteil" im
+    # Ergebnis und wird gemeldet - er ist keine Pruefung.
     d["pruefungen"] = {
         "band": grenzen[0] <= woerter <= grenzen[1],
-        "erzaehlanteil": d["erzaehlanteil"] >= ea.GATE_ERZAEHLEND,
         "dominanz": d["dominanz"] >= ea.GATE_DOMINANZ,
+        "erzaehlwerk": vw["ist_erzaehlwerk"],
+        "volle_laenge": vw["volle_laenge"],
+        "abstand": d["abstand"] >= ea.GATE_ABSTAND,
     }
     d["bestanden"] = all(d["pruefungen"].values())
     return d
@@ -230,8 +236,13 @@ def main():
         "schwellen": {
             "quelle": "produktion/config.md",
             "wpm": ea.WPM,
-            "erzaehlanteil_min": ea.GATE_ERZAEHLEND,
+            "gate_fassung": ("Struktur - dominantes Buch >= dominanz_min, selbst Erzaehlwerk "
+                             "(>= erzaehlwerk_min), in voller Laenge, >= abstand_min vor dem "
+                             "zweitgroessten Buch. Der Erzaehlanteil des Gesamtkorpus wird "
+                             "gemeldet und gatet nicht."),
+            "erzaehlwerk_min": ea.GATE_ERZAEHLEND,
             "dominanz_min": ea.GATE_DOMINANZ,
+            "abstand_min": ea.GATE_ABSTAND,
             "zielband_woerter": list(ea.BAND),
             "zielband_woerter_vollwerk": list(ea.BAND_VOLLWERK),
             "vollwerk_bedingung": ("dominantes Buch in voller Laenge im Korpus UND selbst "
@@ -243,28 +254,31 @@ def main():
         "paare_v07_v08": paare,
     }, open(AUS, "w"), ensure_ascii=False, indent=1)
 
-    print("Schwellen aus produktion/config.md: Erzaehlanteil >= %g %%, Dominanz >= %g %%"
-          % (ea.GATE_ERZAEHLEND * 100, ea.GATE_DOMINANZ * 100))
+    print("Gate 1.13, Strukturfassung. Schwellen aus produktion/config.md:")
+    print("  dominantes Buch >= %g %% | selbst Erzaehlwerk >= %g %% | in voller Laenge |"
+          % (ea.GATE_DOMINANZ * 100, ea.GATE_ERZAEHLEND * 100))
+    print("  Abstand zum zweitgroessten Buch >= %g Punkte" % (ea.GATE_ABSTAND * 100))
+    print("  Der Erzaehlanteil des Gesamtkorpus wird gemeldet und gatet NICHT.")
     print("Zielband %d-%d W (%.2f-%.2f h); dominantes Buch ganz und Erzaehlwerk: %d-%d W (%.2f-%.2f h)\n"
           % (ea.BAND[0], ea.BAND[1], ea.ZIEL_VON_H, ea.ZIEL_BIS_H,
              ea.BAND_VOLLWERK[0], ea.BAND_VOLLWERK[1], ea.ZIEL_VON_H_VOLLWERK, ea.ZIEL_BIS_H))
 
-    kopf = "%-46s %8s %7s %7s %-12s %5s" % ("Korpus", "Woerter", "Erzaehl", "Domin.", "dominant", "Lauf")
+    kopf = "%-46s %8s %7s %7s %7s %-12s %5s" % ("Korpus", "Woerter", "Erzaehl", "Domin.", "Abstand", "dominant", "Lauf")
     print("PLANFASSUNGEN AUS plan.json")
     print(kopf)
     for v, d in planfassungen.items():
-        print("%-46s %8s %6.1f%% %6.1f%% %-12s %4.2fh  %s"
+        print("%-46s %8s %6.1f%% %6.1f%% %6.1f  %-12s %4.2fh  %s"
               % (v + " " + d["name"], "{:,}".format(d["woerter"]), d["erzaehlanteil"] * 100,
-                 d["dominanz"] * 100, d["dominantes_buch"], d["laufzeit_h"],
+                 d["dominanz"] * 100, d["abstand"] * 100, d["dominantes_buch"], d["laufzeit_h"],
                  "BESTANDEN" if d["bestanden"] else "gerissen: " + ", ".join(
                      k for k, ok in d["pruefungen"].items() if not ok)))
 
     print("\nMOEGLICH (%d Korpora)" % len(treffer))
     print(kopf + "  Band")
     for d in treffer:
-        print("%-46s %8s %6.1f%% %6.1f%% %-12s %4.2fh  %s"
+        print("%-46s %8s %6.1f%% %6.1f%% %6.1f  %-12s %4.2fh  %s"
               % (d["name"], "{:,}".format(d["woerter"]), d["erzaehlanteil"] * 100,
-                 d["dominanz"] * 100, d["dominantes_buch"], d["laufzeit_h"],
+                 d["dominanz"] * 100, d["abstand"] * 100, d["dominantes_buch"], d["laufzeit_h"],
                  "3,0-3,8" if d["vollwerk"]["erfuellt"] else "3,4-3,8"))
     print("\nPaare V07/V08 ohne gemeinsames Material: %d" % len(paare))
     print("geschrieben: %s" % AUS)

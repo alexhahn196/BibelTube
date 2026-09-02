@@ -1,6 +1,6 @@
 # Erfolgsregeln: Warum 2 Kanäle gewinnen und 8 Klone verlieren
 
-> **Lebendes Dokument.** Stand: 2026-08-02.
+> **Lebendes Dokument.** Stand: 2026-08-23 (Fremddaten-Teil: 2026-08-02).
 > Datengrundlage: 10 Kanäle (2 Gewinner, 8 dokumentierte Verlierer), 150 Langform-Videos
 > + 141 Shorts aus den Kanal-Listings, 12 vollständige Transkripte, 90 Thumbnails,
 > 4 multimodale Video-Stichproben, About-Seiten aller 10 Kanäle, Voll-Metadaten
@@ -13,6 +13,15 @@
 > [`produktion/workflow-gates.md`](../produktion/workflow-gates.md), Gate 2 — CTR,
 > Absprungstelle und Traffic-Quellen. Kernregel dort: *eigene Daten schlagen Fremddaten.*
 > Gate 1 im selben Dokument hält die harten Prüfungen vor jedem Renderlauf fest.
+>
+> **2026-08-23 — Gate 2 ausgewertet. Ab hier stehen eigene Zahlen im Dokument.**
+> Kanal *The Nightly Word* (`UCai4rcN45WKqNvPdSJGADPg`), 25.07.–22.08.2026:
+> 4 Videos, 151 Aufrufe, 69,4 Wiedergabestunden, 2 Abonnenten, 5.535 Impressionen,
+> CTR 2,71 %. Rohwerte: `regeln/daten/gate2_eigene_kanaldaten.json`.
+> Alles, was aus diesen Zahlen folgt, trägt die Marke **„eigene Kanaldaten Gate 2"**
+> und ein Datum — Fremdbefunde bleiben ohne diese Marke, damit beide unterscheidbar
+> bleiben. Neu daraus: **M8** (die erste Regel dieses Dokuments überhaupt aus eigenen
+> Daten), die Kadenz-Entscheidung unter M1 und die Teilantwort auf offene Frage 3.
 
 **Die Kanäle:**
 | | Kanal | Start (1. Upload) | Langform | Shorts | Ø Views (Langform) | Status |
@@ -46,6 +55,18 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   n=10, sauberster Trenner im ganzen Datensatz: die Verteilungen überlappen nicht.
 - **Ehrliche Randnotiz:** A lädt seit 21.06. nichts mehr hoch, und A's letzte zwei Videos
   fielen auf ~12,6K (vorher 36K–245K). Auch der Musterkanal ist kein Perpetuum mobile.
+- **Entscheidung 2026-08-23 — Kadenz bleibt bei 5 Tagen** *(eigene Kanaldaten Gate 2)*.
+  Die Frage wurde gestellt, weil eine **Fremdkohorte klar dagegen spricht**: in 74
+  Wissenschafts-Schlafkanälen unter 2 Jahren war die Kadenz der stärkste Treiber —
+  Median **311 $/Monat** bei 0–1,5 Uploads/Woche gegen **1.770 $** bei 6+.
+  **Dagegen steht M1 selbst:** beide Gewinner liegen bei 1,3–1,4/Woche, alle 8 Verlierer
+  bei 2,0–13,5, und die Verteilungen überlappen nicht. Ein Dreitagesrhythmus wäre
+  2,33/Woche — mitten im Verliererband. Die Fremdkohorte misst außerdem **Monatsumsatz,
+  nicht Reichweite je Video** (mehr Videos ergeben mehr Umsatz auch ohne besseres Video)
+  und stammt aus einer anderen Nische.
+  **Entschieden: bei 5 Tagen (1,4/Woche) bleiben** — auch aus Versuchsdisziplin:
+  V05–V08 sollen den Korpuswechsel nach M8 als **einzige** geänderte Variable testen.
+  Die Kadenzfrage wird danach aufgemacht, nicht gleichzeitig.
 
 ### M2 — Null Shorts auf dem Kanal
 - [ ] Kein einziger Short geplant/hochgeladen?
@@ -117,54 +138,112 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   Beide Gewinner: Beschreibung deckungsgleich mit Inhalt (2/2 vs. 2/8 Verlierer mit Altlasten,
   Rest der Verlierer scheitert an anderem).
 
-### M8 — Textkorpus aus durchlaufendem Erzählstoff, ≥ 80 % der Wörter
-- [ ] Erzählanteil des Korpus ≥ 80 % der Wörter, gemessen mit `produktion/erzaehlanteil.py`?
-- [ ] Ein dominantes Buch trägt ≥ 50 % der Wörter?
-- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn das dominante Buch selbst
-      Erzählwerk ist und in voller Länge im Korpus steht (`vollwerk_pruefen()`).
-- **Erste eigene Daten des Projekts**, Gate 2 vom 23.08.2026 nach 4 Videos:
-  [`regeln/daten/gate2_2026-08-23.json`](daten/gate2_2026-08-23.json).
-  **V03** (Johannes + Hebräer + 1 Joh + Kolosser, 3,47 h) hält nach 3,5 h **14,4 %**
-  Endretention und trägt **80 % der gesamten Wiedergabezeit** des Kanals.
-  **V02** (Psalmen 90–150 + Sprüche, 3,62 h) hält **2,4 %**. Faktor 6.
-- **Was die Zahlen tragen — und was nicht.** Diese Regel steht auf **n=2 Videos
-  eines einzigen Kanals**, je eine Beobachtung pro Bedingung, bei 151 Aufrufen und
+### M8 — Der Textkorpus muss durchlaufender Erzählstoff sein
+
+> **Die erste Regel dieses Dokuments aus EIGENEN Kanaldaten** — 2026-08-23, Gate 2,
+> Quelle *eigene Kanaldaten Gate 2*. M1–M7 stammen aus 10 fremden Kanälen und kennen
+> weder Impressionen noch Retention. M8 ist aus beidem gebaut.
+
+**Das Kriterium, in Haken — Struktur, nicht Prozentsatz:**
+
+- [ ] Ein **dominantes Buch** trägt **≥ 50 % der Wörter**?
+- [ ] Dieses Buch ist selbst **durchlaufendes Erzählwerk** — hält also für sich
+      allein den gemessenen Erzählanteil (Evangelien, Apostelgeschichte,
+      Genesis- und Samuel-Erzählungen)?
+- [ ] Es wird **in voller Länge** gelesen? (Teilung nur an einer Erzählnaht,
+      und die gehört begründet.)
+- [ ] Es liegt **≥ 15 Prozentpunkte vor dem zweitgrößten Buch**?
+- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn die drei Bedingungen
+      oben halten. Harte Untergrenze 3,0 h in jedem Fall.
+- [ ] **Nebenstoff ist frei.** Was neben dem dominanten Buch steht, darf
+      Spruchsammlung, Brief oder prophetische Rede sein — Rahmen, nie Hauptsache.
+
+Geprüft mit `produktion/korpus_pruefung.py` und `produktion/erzaehlanteil.py`.
+
+> **Die Zahlen stehen nicht hier.** Alle Schwellen führt
+> [`produktion/config.md`](../produktion/config.md) (`gate_erzaehlanteil_min`,
+> `gate_dominanz_min`, `gate_abstand_min`, `laufzeit_ziel_von_h[_vollwerk]`,
+> `laufzeit_ziel_bis_h`). Diese Checkliste, `produktion/workflow-gates.md`
+> (Prüfung 1.13), der Skill und beide Prüfskripte lesen von dort — eine Quelle,
+> keine Kopien.
+
+> **Die frühere Schwelle „Erzählanteil ≥ 80 %" gatet seit dem 02.09.2026 nicht
+> mehr.** Sie war von keiner eigenen Messung berührt. Kapitelweise gemessen
+> ([`produktion/korpus/eigene_videos_erzaehlanteil.json`](../produktion/korpus/eigene_videos_erzaehlanteil.json))
+> liegen V01–V05 bei **0,0 · 0,0 · 38,2 · 45,8 · 47,6 %** — **kein einziges
+> produziertes Video erreicht 80 %**, auch V03 nicht, das einzige, das
+> funktioniert hat.
+>
+> Dazu kam, dass es die Zahl **zweimal** gab: buchweise gerechnet steht V05 bei
+> 81,7 %, kapitelweise bei 47,6 %. Dasselbe Gate gab je nach Körnung das
+> Gegenteil aus. Zwei Wahrheiten sind schlimmer als eine falsche — man kann
+> sich die passende aussuchen.
+>
+> Was der Beleg unten wirklich trägt, ist der Unterschied **Evangelium gegen
+> Spruchsammlung**, nicht 80 gegen 79. Genau den prüfen die Haken. Der
+> Erzählanteil wird weiter **gemessen und gemeldet** — kapitelweise, das ist die
+> gültige Messung —, aber er entscheidet nichts. In der Rolle „ist das dominante
+> Buch überhaupt Erzählwerk" ist derselbe Wert dagegen belastbar: dass 1 Samuel
+> Erzählung ist und Jesaja nicht, hängt nicht an der Körnung.
+
+> **Der Mindestabstand von 15 Punkten kam am 02.09.2026 dazu.** Die
+> Dominanzschwelle allein sagt nur, dass ein Buch über der Hälfte liegt — nicht,
+> dass es die Hauptsache ist. Bei 50,1 gegen 45,0 verkauft der Eigenname im
+> Titel und auf dem Thumbnail ein Buch, das knapp die Hälfte trägt. Gemessen,
+> **bevor** die Schwelle festgeschrieben wurde: von 50 durchgerechneten Korpora
+> fallen dadurch **neun** weg, **41 bleiben**
+> ([`produktion/korpus/v07_v08_moeglichkeiten.json`](../produktion/korpus/v07_v08_moeglichkeiten.json)).
+
+- **Beleg (eigene Kanaldaten Gate 2, n=4 Videos, 2 Retentionskurven):**
+  Endretention nach 3,5 Stunden — **V3 Johannes (Erzählung) 14,4 %** gegen
+  **V2 Psalmen 90–150 + Sprüche 2,4 %**. **Faktor 6.**
+
+  | | V3 Johannes (Erzählung) | V2 Psalmen + Sprüche |
+  |---|---|---|
+  | Endretention nach 3,5 h | **14,4 %** | 2,4 % |
+  | `relativeRetentionPerformance` Anfang | 0,33 | 0,29 |
+  | · Mitte | **0,46** | **0,04** |
+  | · Ende | 0,40 | 0,42 |
+  | Ø Sehdauer | **36,5 min** | 13,8 min |
+
+  YouTubes `relativeRetentionPerformance` misst gegen ähnlich lange Videos: V2 liegt
+  über weite Strecken **im untersten Zwanzigstel** aller vergleichbaren Videos, V3
+  durchgehend im Mittelfeld und in der Mitte am stärksten — genau dort, wo eine
+  Spruchsammlung auseinanderfällt und eine Erzählung trägt.
+  Ø Sehdauer aller vier: V3 36,5 min · V1 17,2 min · V4 14,6 min · V2 13,8 min.
+  **V3 allein trägt 55,4 der 69,4 Wiedergabestunden des Kanals — 80 %.**
+- **Warum das schwerer wiegt als eine View-Zahl:** Wiedergabezeit ist die Größe, nach
+  der YouTube ausliefert. V3 hat mit 1,82 % den zweitschlechtesten CTR des Kanals und
+  bekam trotzdem 3.130 der 5.535 Impressionen (Beleg unter Abschnitt 5, Frage 3).
+  Der Korpus wirkt nicht über den Klick, sondern über das, was nach dem Klick passiert.
+- **Nachtrag 2026-08-23 — M8 hat dabei die Titel-Erklärung überholt.** V3 war zunächst
+  als Beleg für den Eigennamen im Titel geführt. Dieselbe CTR-Zahl schlägt aber gegen
+  den Titel aus: ein Titel, der zieht, müsste sich **zuerst** im CTR zeigen, und V3's
+  CTR ist der zweitschlechteste des Kanals. Die Impressionen folgen damit sparsamer
+  erklärt der **Retention** als dem Titel — also M8. Ausgeführt in
+  [`formel/video-formel.md`](../formel/video-formel.md) §1, „die sparsamere Erklärung".
+  Der Eigenname bleibt Pflicht, aber als billige Konvention ohne belegten Mechanismus.
+- **Was die Zahlen NICHT tragen.** Diese Regel steht auf **n=2 Videos eines
+  einzigen Kanals**, je eine Beobachtung pro Bedingung, bei 151 Aufrufen und
   2 Abonnenten insgesamt. Es gibt **kein Vergleichsvideo bei gleicher Laufzeit und
   gleichem Korpus**; V03 ist mit 3,47 h zugleich das kürzeste der vier. V02 und V03
   unterscheiden sich außerdem in Titel, Thumbnail, Uploadzeitpunkt und Position in
   der Kanalhistorie. V03 bezieht überdurchschnittlich viel Verkehr aus
   vorgeschlagenen Videos — ob der Erzählstoff die Retention trägt oder umgekehrt
   die Retention die Verteilung und damit ein anderes Publikum, ist aus diesen
-  Daten **nicht trennbar**.
-- **Die Grenze 80 % ist nicht gemessen, sondern gesetzt.** Nachgerechnet
-  ([`produktion/korpus/eigene_videos_erzaehlanteil.json`](../produktion/korpus/eigene_videos_erzaehlanteil.json))
-  liegt V03 bei **38,2 %** Erzählanteil und V02 bei **0 %**. Belegt ist damit ein
-  Abstand zwischen *etwas* Erzählstoff und *keinem* — nicht die Schwelle 80 %.
-  **Kein eigenes Video liegt bisher über 47,6 %**, die Schwelle ist also von keiner
-  eigenen Messung berührt. Sie ist eine Planungsentscheidung mit Sicherheitsabstand,
-  keine Ableitung aus den Daten. Wer sie senkt, verliert keinen Beleg.
+  Daten **nicht trennbar**. Retentionskurven liegen nur für V2 und V3 vor:
+  **V4 ist Erzählstoff (Matthäus) und kommt trotzdem nur auf 14,6 min Ø Sehdauer**
+  — allerdings ist V4 das jüngste Video im Messfenster, der Alterseffekt ist nicht
+  abgetrennt. Die Regel steht damit auf **einem Paar**. V1 und V4 stützen sie nicht
+  unabhängig.
 - **Selbstanwendung:** Nach dieser Regel fallen **alle fünf** bisher geplanten
   Videos durch, V03 eingeschlossen — das Video, aus dem die Regel stammt.
   Das ist kein Argument gegen die Regel und keines für sie; es heißt, dass der
-  Kanal ab V06 etwas anderes tut als bisher, und dass die Regel bei V09 gegen
-  dann vorliegende eigene Retentionsdaten zu prüfen ist.
-- **Dominanz am 02.09.2026 von 60 auf 50 % gesenkt; Erzählanteil unverändert.**
-  Die 60 % waren selbstgesetzt und durch keine Messung gedeckt — sie sollen
-  sichern, dass ein Eigenname aus dem dominanten Buch Titel und Thumbnail
-  tragen kann, und das tut er bei der Hälfte der Laufzeit genauso. Zusammen mit
-  dem Zielband schlossen sie Bücher aus, gegen die strukturell nichts sprach:
-  bei 29.315 W Bandbeginn verlangten 60 % ein dominantes Buch von 17.589 W, und
-  daran fielen Markus (14.261 W) und ganz Genesis (35.827 W) — an der Größe, nicht
-  an der Bauart. **Die 80 % sind nicht angefasst worden.** Sie sind der einzige
-  Teil dieser Regel, der auf eigenen Daten steht; die Zange saß woanders.
-  Was mit den neuen Schwellen baubar wird, ist gemessen in
-  [`produktion/korpus/v07_v08_moeglichkeiten.json`](../produktion/korpus/v07_v08_moeglichkeiten.json).
-
-> **Die Zahlen stehen nicht hier.** Alle drei Schwellen führt
-> [`produktion/config.md`](../produktion/config.md) (`gate_erzaehlanteil_min`,
-> `gate_dominanz_min`, `laufzeit_ziel_von_h[_vollwerk]`, `laufzeit_ziel_bis_h`).
-> Diese Checkliste, `produktion/workflow-gates.md` (Prüfung 1.13) und beide
-> Prüfskripte lesen von dort — eine Quelle, keine Kopien.
+  Kanal ab V06 etwas anderes tut als bisher.
+- *Prüfkriterium:* V05–V08 laufen mit Erzählstoff als Hauptkorpus, bei sonst
+  unveränderten Parametern (Kadenz, Stimme, Bildwelt, Länge — siehe Entscheidung unter
+  M1). Liegt die Endretention dieser vier nicht deutlich über den 2,4 % von V2, war V3
+  ein Einzelfall und **M8 wird hier gestrichen, nicht verteidigt.**
 
 ---
 
@@ -262,6 +341,35 @@ ist ein Verlierer mit 156 Views.
 Maschinen-Output — dieselbe Wurzel wie C's MT-paraphrasierte Bibel (V4), kein Stimmmodell-Problem.
 Als Regel gehört es zu V4, nicht in eine eigene Stimm-Hypothese.
 
+> ### 2026-08-23 — V01 bis V04 verletzen die einzige harte Abmisch-Regel
+>
+> Dieselbe Stimm-Stichprobe vom 2026-08-03 hat **einen** Befund geliefert, der als
+> Abmisch-Regel taugt: *Stimme in 6/6 Fällen klar über dem Bett — Musik verschluckt sie
+> nie.* Das ist die einzige, die die Gewinnerdaten überhaupt hergeben; die Zahl 12 dB
+> ist daraus abgeleitet, nicht gemessen.
+>
+> **Die eigenen Videos halten sie nur in Mono ein.** Gemessen am 2026-08-23:
+>
+> | | Bett | Stimme | Abstand |
+> |---|---|---|---|
+> | Mono-Summe (Handy, TV — 80 % des Publikums) | −31,0 dBFS | −19,0 dBFS | **12,0 dB** ✓ |
+> | je Kanal (Kopfhörer, Tablet, Desktop) | −25,8 dBFS | −19,0 dBFS | **6,8 dB** ✗ |
+>
+> Ursache ist der Stereoaufbau des Klangbetts, nicht die Pegelwahl: `bett_pad_feuer.flac`
+> trug R als L um 240 Samples versetzt, verlor dadurch beim Mono-Downmix 5,2 dB — und die
+> Pipeline normierte auf genau diesen Downmix. Die Stimme wird identisch in beide Kanäle
+> addiert und verliert nichts. Ausgeführt in
+> [`formel/video-formel.md`](../formel/video-formel.md) §5b.
+>
+> **Warum es niemandem auffiel:** Gate 1, Prüfung 1.11 hat den Mono-Wert gemessen und
+> 12,0 dB gemeldet. Der Wert war richtig — er war nur nicht der einzige. Seit 2026-08-23
+> prüft 1.11 beide Fälle, und das alte Bett fällt damit durch.
+>
+> **Nicht reparierbar:** V01–V04 sind mit diesem Bett gerendert und veröffentlicht. Ab
+> V05 gilt das korrigierte Bett (`bett_mono_feuer_leise.flac`, echt mono). Ob der Fehler
+> etwas gekostet hat, ist aus diesen Daten nicht zu sehen — mit 6,8 dB steht die Stimme
+> immer noch über dem Bett, nur weniger deutlich als beabsichtigt.
+
 **H6 — Wenige CTAs (0–2) sind Teil des Gewinner-Musters.**
 Gewinner: 0–2 CTAs pro Video. Tote: C 4, D 7, H 3. Überlappt mit Genre-Problemen —
 nicht isolierbar. *Prüfkriterium: eigene Videos konstant ≤2 CTAs; nur ändern, wenn
@@ -285,6 +393,14 @@ Kommentarrate nach 20 Videos unter Benchmark liegt.*
 3. **Impressions/CTR:** Ohne YouTube-Analytics-Zugriff auf fremde Kanäle bleibt unbeweisbar,
    ob C an der Klickrate (Thumbnail/Titel im Feed) oder an der Retention (Stimme/Skript)
    stirbt. Die eigenen Kanaldaten werden diese Lücke ab Video 1 schließen.
+   > **Teilantwort 2026-08-23 (eigene Kanaldaten Gate 2).** Für *fremde* Kanäle bleibt die
+   > Frage offen — für den eigenen zeigt sie in Richtung Retention. V3 hat mit **1,82 %**
+   > den zweitschlechtesten CTR des Kanals und bekam trotzdem **3.130 von 5.535
+   > Impressionen**, 91 von 151 Aufrufen und 1 von 2 Abonnenten. Ausliefern nach
+   > Wiedergabezeit schlägt hier Klickrate. Der Kanal-CTR von 2,71 % ist bei 5.535
+   > Impressionen ohnehin keine belastbare Größe. Ausgeführt in
+   > [`formel/thumbnail-checkliste.md`](../formel/thumbnail-checkliste.md),
+   > Abschnitt „Was diese Analyse nicht beantwortet".
 4. **D's fehlende Videos:** Briefing nennt 49 Uploads, auffindbar sind 33 — vermutlich
    gelöscht. Ob D löscht, was floppt, ist nicht feststellbar.
 5. **Warum A ohne Anlauf traf und B 6 Videos brauchte:** A war mit Video #1 am 08.05.
@@ -298,7 +414,15 @@ Kommentarrate nach 20 Videos unter Benchmark liegt.*
    Uploads nicht.
 7. **Gewinner-Metadaten:** Vollerhebung liegt vor für 19 von 21 Videos (2 B-Videos fehlen,
    Datensammlung brach am Tool-Session-Limit ab; Ergebnisse in Abschnitt 3 eingearbeitet).
-8. **A's Pause:** A lädt seit 21.06. nicht mehr hoch, letzte zwei Videos fielen auf ~12,6K.
+8. **Wie viel der Fernseher trägt** — *2026-08-23 erstmals gemessen, aber n=1 Kanal und
+   n=4 Videos.* Beim eigenen Kanal liefert der Fernseher **12 % der Aufrufe und 30 % der
+   Wiedergabezeit** (70,4 min gegen 23,0 min am Handy). Ob das ein Merkmal der Nische ist
+   — 3,5-Stunden-Material läuft am TV eher durch als am Handy — oder eine Eigenheit dieser
+   vier Videos, ist aus einem Kanal nicht entscheidbar. Der Fremddatensatz kennt keine
+   Gerätedaten, also gibt es nichts zum Vergleichen.
+   *Prüfkriterium:* wenn V05–V08 denselben TV-Anteil zeigen, ist es ein Nischenmerkmal
+   und gehört in die Produktionsentscheidungen (Bildqualität auf großen Schirmen).
+9. **A's Pause:** A lädt seit 21.06. nicht mehr hoch, letzte zwei Videos fielen auf ~12,6K.
    Ob Sommerpause, Burnout oder Strategiewechsel — unbekannt. Beobachten: Wenn A zurückkommt
    und wieder trifft, spricht das für Katalog-Langzeitwirkung statt Upload-Momentum.
 
@@ -315,6 +439,13 @@ konservativ mit 2,5 h angesetzt, als H1 zu validieren.
 **Neu und nur hier:** Kadenz-Regel (M1), Shorts-Verbot (M2), Kopier-Verbot (V3),
 MT-Paraphrase-Verbot (V4), Durchhalte-Regel (V7).
 **Kein Widerspruch gefunden.**
+
+**Aus keinem der beiden Läufe, sondern aus eigenen Daten (2026-08-23):** die
+Korpus-Regel **M8**. Weder Lauf 1 noch Lauf 2 konnten sie finden — beide sehen nur
+Views, und M8 hängt an Retention und Wiedergabezeit. Ein Widerspruch zu Lauf 1
+entsteht nicht, aber eine Einschränkung: die dort belegten Anker-Werte für
+`Psalms` (0,26–1,38×, n=32) sind View-Werte etablierter Kanäle und sagen nichts
+darüber, wie lange jemand zuhört.
 
 ---
 

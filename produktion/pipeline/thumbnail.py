@@ -32,7 +32,24 @@ SCHRIFTEN = [
     "/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
 ]
+# ZWEI Groessen, die nicht dieselbe sind:
+#
+#   CAP_MIN_PCT   die PRUEFGRENZE aus formel/thumbnail-checkliste.md. Belegt an
+#                 der B-Serie (Spanne 9,9-12,1 %); darunter faellt ein Thumbnail
+#                 durch. Aendert sich nur, wenn die Checkliste sich aendert.
+#   CAP_ZIEL_PCT  die Groesse, in der wir tatsaechlich SETZEN. Der Median der
+#                 B-Serie liegt bei 11,9 % (n=13) - das ist das Vorbild, nicht
+#                 die Untergrenze.
+#
+# Bis 2026-08-25 gab es nur die Grenze, und gesetzt wurde direkt auf ihr:
+# ceil(1080 x 11,5 %) = 125 px = 11,57 %. Das sind 0,8 Pixel Reserve. Jede
+# spaetere Aenderung an Schrift, Aufloesung oder Rundung haette die Pruefung
+# gekippt, ohne dass jemand etwas falsch gemacht haette. Getrennt sind es
+# ceil(1080 x 11,9 %) = 129 px = 11,94 % und damit 4,8 Pixel Reserve.
+#
+# Gilt ab V05. V01-V04 sind mit 125 px veroeffentlicht und bleiben, wie sie sind.
 CAP_MIN_PCT = 11.5
+CAP_ZIEL_PCT = 11.9
 KONTRAST_MIN = 10.0
 MAX_WOERTER = 4
 
@@ -74,7 +91,7 @@ def bauen(bild, text, aus, oben_pct=8.5, rand_min=40):
         raise SystemExit(f"{woerter} Woerter — die Checkliste erlaubt hoechstens "
                          f"{MAX_WOERTER}.")
 
-    cap_ziel = int(np.ceil(H * CAP_MIN_PCT / 100))
+    cap_ziel = int(np.ceil(H * CAP_ZIEL_PCT / 100))
     d = ImageDraw.Draw(im)
     gewaehlt = None
     for p in SCHRIFTEN:

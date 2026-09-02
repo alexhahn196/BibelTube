@@ -35,7 +35,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import arbeit, config, pfad          # noqa: E402
+from gemeinsam import arbeit, config, pfad, Gates, gate_abschluss  # noqa: E402
 import vorlage                                       # noqa: E402
 
 CACHE = pfad("produktion", "korpus", "text")
@@ -220,6 +220,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
     ap.add_argument("--hook", choices=["a", "b"], default=None)
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     a = ap.parse_args()
     b, p = bauen(a.video, a.hook)
     cfg = config()
@@ -237,12 +239,35 @@ def main():
           f"bei {b['wpm_erwartet']} WPM")
 
     von, bis = cfg["laufzeit_ziel_von_h"], cfg["laufzeit_ziel_bis_h"]
+    # Seit 2026-09-02: liegt der Korpus zwischen laufzeit_ziel_von_h_vollwerk und
+    # laufzeit_ziel_von_h, entscheidet Gate 1.13, ob das in Ordnung ist - naemlich
+    # dann, wenn das dominante Buch selbst Erzaehlwerk in voller Laenge ist. Das
+    # weiss dieses Skript nicht, es sieht nur den fertigen Text. Deshalb wird der
+    # Fall benannt statt gewarnt; geprueft hat ihn korpus_pruefung.py am Reissbrett.
+    von_vollwerk = float(cfg.get("laufzeit_ziel_von_h_vollwerk", von))
+    minimum = float(cfg["laufzeit_min_h"])
     h = b["laufzeit_erwartet_h"]
     lage = ("im Zielband" if von <= h <= bis else
             "ÜBER dem Zielband" if h > bis else
+            "im tieferen Band — gilt nur, wenn Gate 1.13 haelt "
+            "(Erzaehlwerk in voller Laenge, korpus_pruefung.py)"
+            if h >= von_vollwerk else
             "unter dem Zielband, aber über der harten Untergrenze"
-            if h >= cfg["laufzeit_min_h"] else "UNTER der harten Untergrenze 3,0 h")
+            if h >= minimum else f"UNTER der harten Untergrenze {minimum} h")
     print(f"  Zielband {von}–{bis} h  →  {lage}")
+
+    # Gate 1.1. Die harte Untergrenze bricht ab: Formel Paragraph 2, kein
+    # Video unter 3 h je ueber 2.500 Views (n=6). Das Zielband bricht NICHT
+    # ab - es ist die Empfehlung aus dem Treffer-Median, keine Grenze, und
+    # V08 liegt mit einem einzigen Wort darunter. Es wird laut gemeldet.
+    g = Gates(a.force)
+    g.pruefen("1.1", "Korpuslaenge", h >= minimum,
+              f"erwartete Laufzeit {h:.3f} h unter der harten Untergrenze "
+              f"{minimum} h. Korpus verlaengern.")
+    if not von_vollwerk <= h <= bis:
+        print(f"  WARNUNG: ausserhalb des Zielbands {von}–{bis} h und auch "
+              f"ausserhalb des tieferen Bands ab {von_vollwerk} h. Das ist kein "
+              f"Abbruch, aber es gehoert entschieden, nicht uebersehen.")
     if b["versalien_normalisiert"]:
         print(f"  Versalien normalisiert: {b['versalien_normalisiert']}")
     if b["versalien_uebrig"]:
@@ -250,7 +275,7 @@ def main():
     if b["ziffern_im_text"]:
         print(f"  Ziffern im Text (TTS prüfen): {b['ziffern_im_text']}")
     print(f"  geschrieben: {p}")
-    return 0
+    return gate_abschluss(g, "Schritt 1 (Text)")
 
 
 if __name__ == "__main__":

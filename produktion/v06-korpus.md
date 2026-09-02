@@ -1,7 +1,9 @@
 # Video 06 — drei Korpusvarianten nach Regel M8
 
 > **Stand: 2026-08-30.** Der bisherige V06-Korpus (Jesaja 1–25 + 40–66 + Daniel 4–6)
-> ist gestrichen: 10,2 % Erzählanteil, reißt Gate 1.13 / Regel M8.
+> ist gestrichen: 10,2 % Erzählanteil laut Auftrag, reißt Gate 1.13 / Regel M8.
+> *(Nachgemessen sind es **7,3 %** — siehe „Zwei Abweichungen" weiter unten. An der
+> Streichung ändert das nichts.)*
 > Alle Wortzahlen sind **gemessen**, nicht geschätzt — gleiche Abrufquelle und
 > gleiche Zählmethode wie [`produktion/wortzahlen.py`](wortzahlen.py)
 > (bible-api.com, `translation=webbe`, Verstexte mit Leerzeichen verbunden, dann
@@ -285,7 +287,8 @@ Wirkung ungeprüft ist.
 7. **Jesaja fällt durch die Streichung zurück in den Vorrat** (35.557 W, der größte
    freie Block überhaupt). Unter M8 ist es als Hauptstoff unbrauchbar — prophetische
    Rede ist per Regel nicht erzählend. Ich habe Jesaja **nicht** kapitelweise
-   eingestuft; die 10,2 % aus deinem Auftrag sind hier nicht nachgerechnet.
+   eingestuft; die 10,2 % aus dem Auftrag waren hier zunächst nicht nachgerechnet.
+   **Nachgetragen 2026-09-02: gemessen sind es 7,3 %.**
 
 ---
 
@@ -343,165 +346,179 @@ geschehen.
 > Geprüft mit `git fetch origin`, `git cat-file -e origin/main:<pfad>` und
 > `git diff --name-status origin/main...HEAD`, nicht aus der Erinnerung.
 
+> ### Überholt am 02.09.2026 — die Zweige sind zusammengeführt
+>
+> Der Abschnitt oben beschreibt den Zustand vor der Zusammenführung. Seither gibt
+> es **einen** Stand: `claude/historien-fund-messdatei-w4hjlc` ist nach
+> `claude/bibeltube-v06-korpus-m8-rz2oce` vereinigt, mit dem Skill, der
+> vollständigen Pipeline, V05 und V06. Vier Kollisionen hat der Kanalinhaber
+> entschieden — Klangbett (linker Kanal), Gate 1.13 (Strukturfassung),
+> `wpm_erwartet` (143,7) und, daraus folgend, eine einzige Bandrechnung.
+> Die Liste der Dateien, bei denen zu wählen war, steht in der Commit-Nachricht
+> der Zusammenführung.
+
 ---
 
-## Was mit den Schwellen vom 02.09.2026 baubar wird — V07 und V08
+## Was mit den Entscheidungen vom 02.09.2026 baubar wird — V07 und V08
 
 **Das ist eine Messung, kein Vorschlag.** Hier steht keine Empfehlung, keine
-Reihenfolge und keine Bewertung der Nachttauglichkeit — nur, was die drei Gates
-durchlassen. Erzeugt von `produktion/v07_v08_moeglichkeiten.py`, vollständig in
+Reihenfolge und keine Bewertung der Nachttauglichkeit — nur, was Gate 1.13
+durchlässt. Erzeugt von `produktion/v07_v08_moeglichkeiten.py`, vollständig in
 [`korpus/v07_v08_moeglichkeiten.json`](korpus/v07_v08_moeglichkeiten.json).
 `plan.json` ist **nicht** angefasst: V07 und V08 stehen dort unverändert.
 
-**Die Schwellen** (alle aus `config.md`, nirgends sonst): Erzählanteil ≥ 80 %,
-dominantes Buch ≥ 50 %, Zielband 29.315–32.764 W
-(3,40–3,80 h) — beziehungsweise 25.866–32.764 W
-(3,00–3,80 h), wenn das dominante Buch selbst Erzählwerk ist und in voller Länge
-im Korpus steht. Freier Bestand ist alles, was V01–V06 nicht verbraucht haben.
+**Gate 1.13, Strukturfassung** (alle Schwellen aus `config.md`): dominantes Buch
+≥ 50 % · selbst Erzählwerk (≥ 80 %, kapitelweise) · in voller Länge im Korpus ·
+≥ 15 Punkte vor dem zweitgrößten Buch. **Der Erzählanteil des Gesamtkorpus wird
+gemessen und gemeldet, er gatet nicht.** Zielband 29.315–32.764 W (3,40–3,80 h),
+beziehungsweise 25.866–32.764 W (3,00–3,80 h), sobald das dominante Buch
+Erzählwerk in voller Länge ist — was 1.13 ohnehin verlangt, das tiefere Band
+gilt also für jeden Korpus, der überhaupt besteht.
 
 ### Zuerst: die Planfassungen aus plan.json
 
-| | Korpus | Wörter | Erzählanteil | Dominanz | Ergebnis |
-|---|---|---:|---:|---:|---|
-| **V07** | Markus + Römer + Offenbarung 1–11 | 29.123 | **38,9 %** | **49,0 %** | reißt alle drei |
-| **V08** | Genesis 1–42 | 29.835 | 87,7 % | 100,0 % | **hält alle drei** |
+| | Korpus | Wörter | Erzählanteil | Dominanz | Abstand | Ergebnis |
+|---|---|---:|---:|---:|---:|---|
+| **V07** | Markus + Römer + Offenbarung 1–11 | 29.123 | **38,9 %** | **49,0 %** | 16,6 | reißt Band, Dominanz und Erzählwerk |
+| **V08** | Genesis 1–42 | 29.835 | 87,7 % | 100,0 % | 100,0 | reißt NUR die Vollständigkeit |
 
-**V07 ist nicht an der Zange gescheitert, sondern am Erzählstoff.** Römer (9.431 W)
-und Offenbarung 1–11 (5.431 W) tragen zusammen **null** erzählende Wörter — Brief
-und apokalyptische Vision stehen wörtlich im Ausschluss der Regel. Damit liegt der
-Korpus bei 38,9 %, und daran ändert keine Lockerung
-von Dominanz oder Band etwas. Markus allein hält 79,4 % — **0,6 Punkte** unter der
-Schwelle, gemessen, nicht geschätzt.
+**V07 scheitert am Stoff, nicht an der Größe.** Römer (9.431 W) und Offenbarung
+1–11 (5.431 W) tragen zusammen **null** erzählende Wörter — Brief und
+apokalyptische Vision stehen wörtlich im Ausschluss der Regel. Markus hält mit
+**79,4 %** das Erzählwerk-Kriterium um 0,6 Punkte nicht und liegt mit 49,0 %
+auch unter der Dominanzschwelle; jedes Wort, das die Laufzeit ins Band hebt,
+drückt ihn weiter darunter. **V07 war nie ein Zangen-Fall.**
 
-**V08 hält alle drei Gates, so wie es im Plan steht.** Das widerspricht dem
-Vermerk im Skill, dort ist V08 als unbaubar geführt. Der Unterschied ist eine
-vierte Bedingung, die nur der Skill kennt: dort verlangt 1.13 das dominante Buch
-zusätzlich **in voller Länge**, und Genesis 1–42 ist beschnitten. Nach
-`workflow-gates.md` auf diesem Zweig gibt es diese Bedingung nicht — sie
-entscheidet hier nur über das tiefere Band. **Welche Fassung von 1.13 gilt, ist
-eine offene Entscheidung, keine Messfrage** (siehe unten).
+**V08 hält alles außer „in voller Länge".** Laufzeit 3,46 h, Dominanz 100 %,
+Abstand 100 Punkte, Erzählanteil 87,7 % — Genesis 1–42 ist nur nicht das ganze
+Buch. Das hängt mit dem Band zusammen: das tiefere Band gilt nur bei voller
+Länge, also bekommt ein Korpus, der die Vollständigkeit reißt, es nie.
 
-### Passt Genesis über eine Teilung an einer Erzählnaht hinein? Ja, dreifach
+### Passt Genesis über eine Teilung an einer Erzählnaht hinein?
 
-Ganz Genesis sind 35.827 W und sprengt jedes Band. Geteilt passt es, und zwar
-nicht nur knapp:
+**Nach Zahlen ja, nach der Strukturfassung nein.** Genesis 12–50 sind 29.421 W
+bei 91,4 % Erzählanteil und 100 % Dominanz — Band, Erzählanteil und Dominanz
+halten alle drei. Aber jede Teilung reißt „in voller Länge", und ganz Genesis
+(35.827 W) sprengt das Band.
 
 | Teilung | Wörter | Erzählanteil | Laufzeit | Naht |
 |---|---:|---:|---:|---|
-| **Genesis 12–50** | 29.421 | 91,4 % | 3,41 h | Ende der Urgeschichte — Gen 11 schließt mit Terachs Tod in Haran, Gen 12 setzt mit Abrams Ruf neu an |
-| **Genesis 1–36** (+ Beistoff) | 24.835 | 85,2 % | 2,88 h | vor der Josephsnovelle; Gen 36 ist Listenabschluss |
-| **Genesis 37–50** (+ Beistoff) | 10.992 | 91,7 % | 1,27 h | die Josephsnovelle am Stück |
+| Genesis 12–50 | 29.421 | 91,4 % | 3,41 h | Ende der Urgeschichte — Gen 11 schließt mit Terachs Tod in Haran, Gen 12 setzt mit Abrams Ruf neu an |
+| Genesis 1–36 | 24.835 | 85,2 % | 2,88 h | vor der Josephsnovelle; Gen 36 ist Listenabschluss |
+| Genesis 37–50 | 10.992 | 91,7 % | 1,27 h | die Josephsnovelle am Stück |
 | Genesis 1–42 *(Planfassung)* | 29.835 | 87,7 % | 3,46 h | liegt mitten in der Hungersnot-Sequenz |
 
-**Genesis 12–50 ist der einzige Korpus im ganzen Bestand, der allein aus einem
-Buch besteht und alle drei Gates hält** — ohne Beistoff, ohne beide Lockerungen,
-mit 100 % Dominanz. Er hätte auch unter den alten Schwellen gehalten.
+**Als dominantes Buch fällt Genesis damit ganz aus.** Als Nebenstoff steht es in
+vierzehn der 45 möglichen Korpora. Wer Genesis als Titelgeber will, muss die
+Vollständigkeitsbedingung lockern — das ist eine Entscheidung, keine Rechnung.
 
 > **Die Nähte sind Urteil, keine Messung.** Es gibt im Repo weder eine Nahtliste
 > noch ein Werkzeug dafür. Gen 11/12 und Gen 36/37 sind die beiden Stellen, an
 > denen das Buch selbst neu ansetzt; Gen 42/43 ist es nicht — dort sind die
-> Brüder einmal in Ägypten gewesen und müssen wieder hin. Jede dieser Zeilen ist
-> meine Einschätzung und gehört überstimmt, wenn Sie sie anders lesen.
+> Brüder einmal in Ägypten gewesen und müssen wieder hin.
 
-### Die 50 Korpora, die alle drei Gates halten
+### Die 45 Korpora, die Gate 1.13 halten
 
-**Zwanzig hätten auch die alten Schwellen gehalten.** Fünf davon (†) waren
-schon vor dieser Runde messbar; die übrigen fünfzehn nicht, weil Genesis 1–42
-und Markus bis heute nicht kapitelweise eingestuft waren.
+**Getragen werden sie von genau zwei Büchern:** Richter (20 Korpora) und
+2 Samuel (25). Mehr ganze Erzählbücher im Größenfenster gibt es nicht — 1 Samuel
+steckt in V06, Markus reißt das Erzählwerk-Kriterium um 0,6 Punkte, Genesis das
+Band. **283 der Kombinationen aus je zwei dieser Korpora sind materialfrei
+gegeneinander**, taugen also als Paar für V07 und V08.
 
-| Korpus | Wörter | Erzählanteil | Dominanz | dominantes Buch | Laufzeit | vorher messbar |
-|---|---:|---:|---:|---|---:|---|
-| Genesis 12–50 | 29.421 | 91,4 % | 100,0 % | Genesis | 3,41 h | nein |
-| Genesis 12–50 + Jona | 30.693 | 91,2 % | 95,9 % | Genesis | 3,56 h | nein |
-| Genesis 1–42 | 29.835 | 87,7 % | 100,0 % | Genesis | 3,46 h | nein |
-| Genesis 1–42 + Jona | 31.107 | 87,6 % | 95,9 % | Genesis | 3,61 h | nein |
-| Genesis 1–36 + Richter 17–21 + Jona | 30.585 | 87,4 % | 81,2 % | Genesis | 3,55 h | nein |
-| Genesis 12–36 + Richter 17–21 + 2 Könige 18–25 | 30.013 | 87,3 % | 61,4 % | Genesis | 3,48 h | nein |
-| Genesis 12–36 + 1 Könige 12–22 | 29.537 | 86,2 % | 62,4 % | Genesis | 3,43 h | nein |
-| Genesis 37–50 + 2 Samuel + Jona | 31.711 | 85,5 % | 61,3 % | 2 Samuel | 3,68 h | nein |
-| Genesis 37–50 + 2 Samuel | 30.439 | 85,4 % | 63,9 % | 2 Samuel | 3,53 h | nein |
-| Genesis 1–36 + Genesis 43–50 + Jona | 32.099 | 85,2 % | 96,0 % | Genesis | 3,72 h | nein |
-| Genesis 43–50 + Richter 17–21 + 2 Samuel | 29.917 | 85,2 % | 65,0 % | 2 Samuel | 3,47 h | † |
-| Genesis 1–36 + Genesis 43–50 | 30.827 | 85,1 % | 100,0 % | Genesis | 3,58 h | nein |
-| Genesis 12–36 + Genesis 43–50 + 2 Könige 18–25 | 31.527 | 85,0 % | 77,5 % | Genesis | 3,66 h | nein |
-| Josua 1–12 + 2 Samuel + Jona | 29.786 | 85,0 % | 65,3 % | 2 Samuel | 3,46 h | † |
-| Genesis 12–36 + Jona + Apostelgeschichte 1–12 | 29.523 | 84,1 % | 62,4 % | Genesis | 3,42 h | nein |
-| Genesis 1–36 + 2 Könige 18–25 | 31.941 | 81,7 % | 77,8 % | Genesis | 3,71 h | nein |
-| Genesis 1–11 + Richter 17–21 + 2 Samuel | 30.331 | 81,6 % | 64,1 % | 2 Samuel | 3,52 h | nein |
-| Richter 17–21 + 2 Samuel + 2 Könige 18–25 | 31.031 | 81,6 % | 62,7 % | 2 Samuel | 3,60 h | † |
-| 2 Samuel + 1 Könige 12–22 + Jona | 31.827 | 80,7 % | 61,1 % | 2 Samuel | 3,69 h | † |
-| 2 Samuel + 1 Könige 12–22 | 30.555 | 80,5 % | 63,6 % | 2 Samuel | 3,54 h | † |
+| Korpus | Wörter | Erzählanteil | Dominanz | Abstand | dominant | Laufzeit |
+|---|---:|---:|---:|---:|---|---:|
+| Genesis 37–50 + Richter | 28.914 | 88,3 % | 62,0 % | 24,0 | Richter | 3,35 h |
+| Genesis 37–50 + Richter + Jona | 30.186 | 88,2 % | 59,4 % | 23,0 | Richter | 3,50 h |
+| Josua 1–12 + Richter | 26.989 | 88,0 % | 66,4 % | 32,8 | Richter | 3,13 h |
+| Josua 1–12 + Richter + Jona | 28.261 | 87,9 % | 63,4 % | 31,3 | Richter | 3,28 h |
+| Genesis 37–50 + 2 Samuel + Jona | 31.711 | 85,5 % | 61,3 % | 26,7 | 2 Samuel | 3,68 h |
+| Genesis 37–50 + 2 Samuel | 30.439 | 85,4 % | 63,9 % | 27,8 | 2 Samuel | 3,53 h |
+| Genesis 43–50 + Richter 17–21 + 2 Samuel | 29.917 | 85,2 % | 65,0 % | 45,0 | 2 Samuel | 3,47 h |
+| Josua 1–12 + 2 Samuel + Jona | 29.786 | 85,0 % | 65,3 % | 34,8 | 2 Samuel | 3,46 h |
+| Josua 1–12 + 2 Samuel | 28.514 | 85,0 % | 68,2 % | 36,4 | 2 Samuel | 3,31 h |
+| Richter + 1 Könige 12–22 + Jona | 30.302 | 83,2 % | 59,1 % | 22,5 | Richter | 3,51 h |
+| Richter + 1 Könige 12–22 | 29.030 | 83,1 % | 61,7 % | 23,5 | Richter | 3,37 h |
+| Genesis 43–50 + 2 Samuel + Jona | 26.711 | 82,7 % | 72,8 % | 50,4 | 2 Samuel | 3,10 h |
+| Genesis 1–11 + Genesis 43–50 + Richter | 30.320 | 82,1 % | 59,1 % | 18,2 | Richter | 3,52 h |
+| Genesis 43–50 + Richter + 2 Könige 18–25 | 31.020 | 82,1 % | 57,8 % | 34,9 | Richter | 3,60 h |
+| Exodus 1–18 + 2 Samuel | 32.706 | 81,8 % | 59,5 % | 18,9 | 2 Samuel | 3,79 h |
+| Richter + 2 Könige 18–25 + Jona | 26.300 | 81,6 % | 68,1 % | 41,1 | Richter | 3,05 h |
+| Genesis 1–11 + Richter 17–21 + 2 Samuel | 30.331 | 81,6 % | 64,1 % | 43,0 | 2 Samuel | 3,52 h |
+| Richter 17–21 + 2 Samuel + 2 Könige 18–25 | 31.031 | 81,6 % | 62,7 % | 39,8 | 2 Samuel | 3,60 h |
+| Richter + Jona + Apostelgeschichte 1–12 | 29.016 | 80,9 % | 61,8 % | 27,9 | Richter | 3,37 h |
+| 2 Samuel + 1 Könige 12–22 + Jona | 31.827 | 80,7 % | 61,1 % | 26,2 | 2 Samuel | 3,69 h |
+| Richter + Apostelgeschichte 1–12 | 27.744 | 80,6 % | 64,6 % | 29,2 | Richter | 3,22 h |
+| 2 Samuel + 1 Könige 12–22 | 30.555 | 80,5 % | 63,6 % | 27,3 | 2 Samuel | 3,54 h |
+| Genesis 43–50 + 2 Samuel + 2 Könige 18–25 | 32.545 | 79,7 % | 59,8 % | 37,9 | 2 Samuel | 3,77 h |
+| Genesis 1–11 + Genesis 43–50 + 2 Samuel | 31.845 | 79,7 % | 61,1 % | 22,1 | 2 Samuel | 3,69 h |
+| 2 Samuel + 2 Könige 18–25 + Jona | 27.825 | 78,9 % | 69,9 % | 44,4 | 2 Samuel | 3,23 h |
+| Genesis 1–11 + 2 Samuel + Jona | 27.125 | 78,8 % | 71,7 % | 48,1 | 2 Samuel | 3,15 h |
+| Genesis 1–11 + Richter + 2 Könige 18–25 | 31.434 | 78,7 % | 57,0 % | 34,4 | Richter | 3,65 h |
+| 2 Samuel + 2 Könige 18–25 | 26.553 | 78,5 % | 73,2 % | 46,5 | 2 Samuel | 3,08 h |
+| 2 Samuel + Jona + Apostelgeschichte 1–12 | 30.541 | 78,4 % | 63,7 % | 31,5 | 2 Samuel | 3,54 h |
+| 2 Samuel + Apostelgeschichte 1–12 | 29.269 | 78,1 % | 66,4 % | 32,9 | 2 Samuel | 3,40 h |
+| Genesis 43–50 + Richter + Daniel 4–12 | 32.216 | 70,7 % | 55,6 % | 29,9 | Richter | 3,74 h |
+| Richter 17–21 + 2 Samuel + Daniel 4–12 | 32.227 | 70,3 % | 60,3 % | 34,6 | 2 Samuel | 3,74 h |
+| Richter + Jona + Daniel 4–12 | 27.496 | 68,3 % | 65,2 % | 35,0 | Richter | 3,19 h |
+| Genesis 1–11 + Richter + Daniel 4–12 | 32.630 | 67,6 % | 54,9 % | 29,5 | Richter | 3,79 h |
+| Richter + Daniel 4–12 | 26.224 | 67,5 % | 68,3 % | 36,7 | Richter | 3,04 h |
+| 2 Samuel + Jona + Daniel 4–12 | 29.021 | 66,4 % | 67,0 % | 38,4 | 2 Samuel | 3,37 h |
+| 2 Samuel + Daniel 4–12 | 27.749 | 65,5 % | 70,1 % | 40,2 | 2 Samuel | 3,22 h |
+| Richter + Jona + Römer | 28.625 | 57,8 % | 62,6 % | 29,7 | Richter | 3,32 h |
+| Richter + Römer | 27.353 | 56,4 % | 65,5 % | 31,0 | Richter | 3,17 h |
+| 2 Samuel + Jona + Römer | 30.150 | 56,4 % | 64,5 % | 33,2 | 2 Samuel | 3,50 h |
+| 2 Samuel + Römer | 28.878 | 55,1 % | 67,3 % | 34,7 | 2 Samuel | 3,35 h |
+| Richter + Jona + Offenbarung | 30.574 | 54,1 % | 58,6 % | 21,4 | Richter | 3,55 h |
+| 2 Samuel + Jona + Offenbarung | 32.099 | 53,0 % | 60,6 % | 25,1 | 2 Samuel | 3,72 h |
+| Richter + Offenbarung | 29.302 | 52,7 % | 61,2 % | 22,3 | Richter | 3,40 h |
+| 2 Samuel + Offenbarung | 30.827 | 51,6 % | 63,1 % | 26,2 | 2 Samuel | 3,58 h |
 
-**Dreißig sind erst durch die neuen Schwellen möglich.** Die letzte Spalte nennt,
-welche der beiden Lockerungen den Korpus trägt. **Keiner braucht beide.**
+### Vier Nebenwirkungen, die ich nicht nachgeschärft habe
 
-| Korpus | Wörter | Erzählanteil | Dominanz | dominantes Buch | Laufzeit | trägt |
-|---|---:|---:|---:|---|---:|---|
-| Genesis 12–36 + Josua 1–12 + Richter 17–21 | 31.974 | 92,5 % | 57,6 % | Genesis | 3,71 h | Dominanz 50 % |
-| Genesis 37–50 + Richter | 28.914 | 88,3 % | 62,0 % | Richter | 3,35 h | Band 3,0 h |
-| Genesis 37–50 + Richter + Jona | 30.186 | 88,2 % | 59,4 % | Richter | 3,50 h | Dominanz 50 % |
-| Josua 1–12 + Richter | 26.989 | 88,0 % | 66,4 % | Richter | 3,13 h | Band 3,0 h |
-| Josua 1–12 + Richter + Jona | 28.261 | 87,9 % | 63,4 % | Richter | 3,28 h | Band 3,0 h |
-| Genesis 12–36 + Exodus 1–18 | 31.688 | 87,2 % | 58,2 % | Genesis | 3,67 h | Dominanz 50 % |
-| Genesis 12–36 + Richter 1–16 | 31.873 | 87,1 % | 57,8 % | Genesis | 3,70 h | Dominanz 50 % |
-| Genesis 12–36 + 1 Könige 12–22 + Jona | 30.809 | 86,2 % | 59,8 % | Genesis | 3,57 h | Dominanz 50 % |
-| Genesis 12–36 + Richter 17–21 + Apostelgeschichte 1–12 | 32.729 | 86,2 % | 56,3 % | Genesis | 3,80 h | Dominanz 50 % |
-| Genesis 12–36 + Markus | 32.690 | 86,0 % | 56,4 % | Genesis | 3,79 h | Dominanz 50 % |
-| Josua 1–12 + 2 Samuel | 28.514 | 85,0 % | 68,2 % | 2 Samuel | 3,31 h | Band 3,0 h |
-| Exodus 1–18 + Richter + Jona | 32.453 | 84,3 % | 55,2 % | Richter | 3,76 h | Dominanz 50 % |
-| Genesis 12–36 + Apostelgeschichte 13–28 | 31.750 | 84,3 % | 58,0 % | Genesis | 3,68 h | Dominanz 50 % |
-| Exodus 1–18 + Richter | 31.181 | 84,2 % | 57,5 % | Richter | 3,62 h | Dominanz 50 % |
-| Richter + 1 Könige 12–22 + Jona | 30.302 | 83,2 % | 59,1 % | Richter | 3,51 h | Dominanz 50 % |
-| Richter + Markus | 32.183 | 83,2 % | 55,7 % | Richter | 3,73 h | Dominanz 50 % |
-| Richter + 1 Könige 12–22 | 29.030 | 83,1 % | 61,7 % | Richter | 3,37 h | Band 3,0 h |
-| Genesis 43–50 + 2 Samuel + Jona | 26.711 | 82,7 % | 72,8 % | 2 Samuel | 3,10 h | Band 3,0 h |
-| Genesis 1–11 + Genesis 37–50 + Exodus 1–18 | 30.657 | 82,4 % | 56,8 % | Genesis | 3,56 h | Dominanz 50 % |
-| Genesis 1–11 + Genesis 37–50 + Richter 1–16 | 30.842 | 82,4 % | 56,4 % | Genesis | 3,58 h | Dominanz 50 % |
-| Genesis 1–11 + Genesis 43–50 + Richter | 30.320 | 82,1 % | 59,1 % | Richter | 3,52 h | Dominanz 50 % |
-| Genesis 43–50 + Richter + 2 Könige 18–25 | 31.020 | 82,1 % | 57,8 % | Richter | 3,60 h | Dominanz 50 % |
-| Genesis 43–50 + Josua 1–12 + 2 Könige 1–17 | 30.179 | 82,1 % | 50,1 % | 2 Könige | 3,50 h | Dominanz 50 % |
-| Exodus 1–18 + 2 Samuel | 32.706 | 81,8 % | 59,5 % | 2 Samuel | 3,79 h | Dominanz 50 % |
-| Richter + 2 Könige 18–25 + Jona | 26.300 | 81,6 % | 68,1 % | Richter | 3,05 h | Band 3,0 h |
-| Richter + Jona + Apostelgeschichte 13–28 | 32.515 | 81,5 % | 55,1 % | Richter | 3,77 h | Dominanz 50 % |
-| Genesis 1–11 + Genesis 37–50 + Markus | 31.659 | 81,4 % | 54,9 % | Genesis | 3,67 h | Dominanz 50 % |
-| Richter + Apostelgeschichte 13–28 | 31.243 | 81,3 % | 57,4 % | Richter | 3,62 h | Dominanz 50 % |
-| Richter + Jona + Apostelgeschichte 1–12 | 29.016 | 80,9 % | 61,8 % | Richter | 3,37 h | Band 3,0 h |
-| Richter + Apostelgeschichte 1–12 | 27.744 | 80,6 % | 64,6 % | Richter | 3,22 h | Band 3,0 h |
+Gefragt war, Unsinn zu melden statt still zu reparieren. Keine Schwelle ist
+deswegen angefasst worden.
 
-### Drei Nebenwirkungen, die ich nicht nachgeschärft habe
+**1. Der Erzählanteil gatet nicht mehr — und das sieht man der Liste an.**
+**23 der 45 Korpora liegen unter 80 %**, der niedrigste bei **51,6 %**. Ganz
+unten stehen `2 Samuel + Offenbarung` (51,6 %), `Richter + Offenbarung` (52,7 %)
+und `2 Samuel + Römer` (55,1 %) — **Apokalyptik und Brief als halber Korpus.**
+Das ist genau das Material, an dem der V07-Plan gescheitert ist, solange der
+Erzählanteil noch gatete. Formal in Ordnung, inhaltlich das Gegenteil dessen,
+was M8 belegt. Wer eine Variante vorschlägt, nennt den gemeldeten Erzählanteil
+und sagt, was den Rest füllt.
 
-Gefragt war, Unsinn zu melden statt still zu reparieren. Diese drei sind mir
-aufgefallen; keine Schwelle ist deswegen angefasst worden.
+**2. Der Mindestabstand von 15 Punkten kostet neun Korpora — gemessen, bevor er
+festgeschrieben wurde.** Von den 50 Korpora, die vor dieser Runde unter der
+Prozentfassung möglich waren, fallen dadurch neun weg und 41 bleiben. Der
+knappste ausgeschiedene Fall lag bei **9,9 Punkten** (`Genesis 1–11 + Genesis
+37–50 + Markus`: Genesis 55,0 % gegen Markus 45,0 %), der knappste gehaltene bei
+15,6. **Für V07 und V08 blieb reichlich übrig; die Schwelle musste nicht
+aufgeweicht werden.**
 
-**1. Bei 50 % ist „dominant" manchmal nur noch ein Vorsprung von neun Punkten.**
-Der knappste Fall der Liste ist *Genesis 1–11 + Genesis 37–50 + Markus*:
-Genesis 54,9 %, Markus 45,1 % — 9,9 Punkte Abstand. Ein Titel mit dem Eigennamen
-„Genesis" verkauft dort ein Video, das zu fast der Hälfte ein Evangelium ist. Die
-Regel prüft die Dominanz, aber nicht den Abstand zum Zweitplatzierten. Wer das
-enger haben will, braucht eine zweite Zahl — nicht eine höhere.
+**3. Das tiefere Band ist jetzt das einzige Band.** „Erzählwerk in voller Länge"
+ist unter der Strukturfassung ohnehin Bedingung von 1.13 — jeder Korpus, der
+1.13 hält, bekommt damit automatisch 3,0–3,8 h. Die 3,4 h greifen nur noch bei
+Korpora, die schon durchgefallen sind. `laufzeit_ziel_von_h` bleibt trotzdem
+stehen: es ist die Bandgrenze der Formel und würde bei einer Rückkehr zur
+Prozentfassung wieder wirken.
 
-**2. Das tiefere Band hängt an einem Buch, das nur die Hälfte des Korpus stellt.**
-Die Begründung für 3,0 h ist, dass ein ganzes Erzählwerk nicht beschnitten werden
-soll. Bei *Richter + 2 Könige 18–25 + Jona* (3,05 h) trifft das auf 68 % des
-Korpus zu — die restlichen 32 % sind zwei Bruchstücke, für die dieses Argument
-nicht gilt. Formal korrekt, inhaltlich dünn.
-
-**3. Die Gates messen keine Zusammengehörigkeit und keine Nachttauglichkeit.**
-*Genesis 1–11 + Richter 17–21 + 2 Samuel* hält alle drei Prüfungen und ist eine
-Sammlung ohne inneren Zusammenhang: Schöpfung und Sintflut, der Anhang des
-Richterbuchs, David. **23 der 50 Korpora enthalten Richter 19** — die Vergewaltigung
-und Zerstückelung der Nebenfrau, die härteste Erzählung des ganzen Bestands. Das
-ist kein Fehler der neuen Schwellen; es war vorher genauso. Es heißt nur, dass
-diese Liste **nicht** als Auswahl gelesen werden darf.
+**4. Die Gates messen keine Zusammengehörigkeit und keine Nachttauglichkeit.**
+`Genesis 1–11 + Richter 17–21 + 2 Samuel` hält alles und ist eine Sammlung ohne
+inneren Zusammenhang: Schöpfung und Sintflut, der Anhang des Richterbuchs,
+David. **24 der 45 Korpora enthalten Richter 19** — die Vergewaltigung und
+Zerstückelung der Nebenfrau. Das ist kein Fehler der neuen Schwellen; es war
+vorher genauso, und es folgt daraus, dass Richter eines von nur zwei möglichen
+dominanten Büchern ist. „In voller Länge" lässt kein Auslassen zu.
 
 ### Was diese Runde über die Sackgasse ergibt
 
 Die Zange war real, aber sie war nicht der einzige Grund und nicht der erste.
 **Fünf Korpora hätten schon vor dieser Runde die alten Schwellen gehalten** — mit
-Material, das damals bereits eingestuft war (in der Tabelle oben mit † markiert,
-etwa *2 Samuel + 1 Könige 12–22*, 30.555 W, 80,5 %, Dominanz 63,6 %). Sie sind
-niemandem aufgefallen, weil nur ganze Bücher als dominantes Buch geprüft wurden
-und die Nebenstoffe nicht als Teilblöcke durchgerechnet.
+Material, das damals bereits eingestuft war, etwa *2 Samuel + 1 Könige 12–22*
+(30.555 W, 80,5 % Erzählanteil, Dominanz 63,6 %, Abstand 27,3 Punkte — es hält
+auch die heutigen Prüfungen). Sie sind niemandem aufgefallen, weil nur ganze
+Bücher als dominantes Buch geprüft wurden und die Nebenstoffe nicht als
+Teilblöcke durchgerechnet.
 
 Der zweite Grund war eine Lücke in der Messung, nicht in der Regel: Genesis war
 bis heute nur in den Kapiteln 43–50 eingestuft, Markus, Jesaja, Römer und
@@ -531,12 +548,26 @@ V06-Auftrag in mehreren Dokumenten; sie stammen aus einer Zeit, in der Jesaja
 noch gar nicht eingestuft war. **Das ändert an der Streichung nichts** — beide
 Werte reißen das Gate um mehr als 70 Punkte.
 
-**Das Zielband beginnt bei 29.315 W, nicht bei 29.722 W.** Die 29.722 stehen im
-Skill und in der Auftragsformulierung. 3,4 h × 60 × 143,7 WPM = 29.315. Die
-höhere Zahl kommt aus `korpus_pruefung.py` auf dem anderen Zweig, wo `band_fuer(n)`
-die Kapitelansagen aufschlägt und mit 148,1 WPM rechnet. Für die Zange ändert das
-die Größenordnung nicht: die Mindestgröße des dominanten Buchs war 17.589 W statt
-17.833 W, Markus fällt so wie so darunter.
+**Das Zielband beginnt bei 29.315 W, nicht bei 29.722 W.** 3,4 h × 60 × 143,7 WPM
+= 29.315. Die höhere Zahl kam aus `korpus_pruefung.py`, wo `band_fuer(n)` die
+Kapitelansagen und den Rahmen abzog und mit 148,1 WPM rechnete. **Beides ist am
+02.09.2026 vereinigt:** ein Sprechtempo (143,7) und eine Bandrechnung
+(`round(h × 60 × WPM)`, reine Korpuswörter). `band_fuer()` und
+`erzaehlanteil.band()` geben seither dasselbe zurück — vorher gab dieselbe
+Prüfung 1.1 zwei Fenster aus, und ein Korpus dazwischen bestand beim einen und
+riss beim anderen. Rahmen und Kapitelansagen sind damit aus dem *Gate* heraus,
+nicht aus der Rechnung: `_video_h()` druckt die erwartete Videolaufzeit weiter,
+und `schritt1_text.py` prüft die echte Laufzeit nach dem Textbau ein zweites Mal.
+
+Für die Zange ändert das die Größenordnung nicht: die Mindestgröße des dominanten
+Buchs war 17.589 W statt 17.833 W, Markus fällt so wie so darunter.
+
+**Ein dritter Widerspruch, bei der Zusammenführung gefunden und behoben:**
+`korpus_pruefung.py` las aus `erzaehlanteil.json` die Ja/Nein-Flagge
+`erzaehlend` statt der gemessenen `erzaehlend_woerter` und kam damit für V06 auf
+**94,0 %**, wo `erzaehlanteil.py` aus derselben Datei **89,0 %** ausweist. Die
+Datei sagt in ihrem eigenen Feld `hinweis_flagge`, dass bei geteilten Kapiteln
+nur die Wortzahl maßgeblich ist. Beide Werkzeuge melden jetzt 89,0 %.
 
 ---
 

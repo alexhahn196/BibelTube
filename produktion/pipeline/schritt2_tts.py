@@ -31,8 +31,8 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import (SR, arbeit, config, hms,  # noqa: E402
-                       pausen_aus_maske, rahmen_datei, sprach_maske_env,
+from gemeinsam import (SR, Gates, arbeit, config, gate_abschluss,  # noqa: E402
+                       hms, pausen_aus_maske, rahmen_datei, sprach_maske_env,
                        sprach_rms_db)
 
 SATZENDE = re.compile(r'(?<=[.!?”"’])\s+(?=[A-Z“"‘\'])')
@@ -331,6 +331,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
     ap.add_argument("--nur", choices=["chunks", "gen", "fuegen", "qa"], default=None)
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     a = ap.parse_args()
     cfg = config()
 
@@ -372,6 +374,24 @@ def main():
         print(f"  längste Pause         {b['laengste_pause_s']} s "
               f"(Grenze {cfg['laengste_pause_max_s']} s)")
         print(f"  Sprach-RMS            {b['sprach_rms_db']} dBFS, Peak {b['peak_dbfs']} dBFS")
+
+        # Formel Paragraph 3. Die drei Werte standen bisher mit ihrer Grenze
+        # daneben gedruckt und wurden nie geprueft - der teuerste Schritt der
+        # Pipeline war damit auch der einzige ohne Konsequenz.
+        g = Gates(a.force)
+        g.pruefen("", "Sprachanteil",
+                  b["sprachanteil_vergleichbar_pct"] >= float(cfg["sprachanteil_min_pct"]),
+                  f"{b['sprachanteil_vergleichbar_pct']} % unter "
+                  f"{cfg['sprachanteil_min_pct']} %")
+        g.pruefen("", "laengste Pause",
+                  b["laengste_pause_s"] <= float(cfg["laengste_pause_max_s"]),
+                  f"{b['laengste_pause_s']} s ueber {cfg['laengste_pause_max_s']} s")
+        # KEIN Peak-Gate an dieser Stelle. peak_max_dbfs = -1,0 ist das ZIEL
+        # NACH der Skalierung in Schritt 3, nicht eine Grenze fuer die rohe
+        # Stimmspur. V05 liegt hier bei 0,0 dBFS und in der fertigen Mischung
+        # bei -1,81 - ein Peak-Gate haette hier jeden korrekten Lauf
+        # abgebrochen. Geprueft wird der Peak dort, wo er gilt: Schritt 3.
+        return gate_abschluss(g, "Schritt 2 (TTS)")
     return 0
 
 

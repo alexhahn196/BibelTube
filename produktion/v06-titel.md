@@ -26,13 +26,20 @@ Drei Befunde, bevor gemessen werden konnte:
 
 Zwei kleinere Korrekturen am Prüfer: der Sonderfall `isaiah's → isaiah` (er hing am
 gestrichenen V06-Titel) ist durch eine generische Genitiv-Regel ersetzt — auf allen
-74 vorhandenen Titeln **0 Abweichungen**, die Messung verschiebt sich also nicht.
+damals 74 vorhandenen Titeln **0 Abweichungen** (bei der Zusammenführung am
+2026-09-02 über alle 147 Titel der vier Listen erneut nachgerechnet: ebenfalls 0), die Messung verschiebt sich also nicht.
 Und ein Titel wird nicht mehr mit sich selbst verglichen.
 
-> **Meldung:** Am Bestand gemessen liegen **V01, V05, V07 und V08 bei exakt 50,0 %**
+> **Meldung:** Am Bestand gemessen liegen **V01, V07 und V08 bei exakt 50,0 %**
 > und würden die 45-%-Grenze der Kandidaten reißen. Sie hielten die 50 %, unter der
 > sie freigegeben wurden. Ich habe nichts daran geändert — ein Neuschnitt des
 > Bestands ist ein eigener Auftrag. Der Prüfer weist sie als Warnung aus.
+>
+> > **Berichtigt 2026-09-02.** Hier stand **V05** mit in der Liste. Der Wert
+> > stammte aus einer Tabelle, die vor dem V05-Titelwechsel gerechnet und danach
+> > nicht neu gefahren wurde. Gemessen liegt V05 („Rest Your Eyes… The Whole
+> > Gospel of Luke, Read Slowly Until Morning Comes") bei **27,3 %** — dem
+> > niedrigsten Wert des ganzen Bestands.
 
 ---
 

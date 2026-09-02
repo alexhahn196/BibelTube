@@ -29,8 +29,8 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import (SR, arbeit, config, hms, pfad,  # noqa: E402
-                       rms_db, sprach_rms_db)
+from gemeinsam import (SR, Gates, arbeit, config, gate_abschluss,  # noqa: E402
+                       hms, pfad, rms_db, sprach_rms_db)
 
 BLOCK = 1 << 20
 
@@ -126,6 +126,14 @@ def pruefen(video, cfg, gs, gb):
     im Nachlauf wird gegen denselben Abschnitt der Quelle gehalten. Weicht
     er ab, stimmt etwas am Schreibweg nicht - das faengt Rechenfehler, die
     eine reine Sollwert-Rechnung nicht sehen wuerde.
+
+    ZWEI WIEDERGABEFAELLE, seit 2026-08-23. Das Bett wird an der Mono-Summe
+    (L+R)/2 normiert, die Stimme aber identisch in beide Kanaele addiert.
+    Ist das Bett zwischen den Kanaelen dekorreliert, verliert es beim
+    Mono-Downmix Pegel und die Stimme nicht - der gemessene Abstand haengt
+    dann davon ab, WORAN man misst. Beim alten Bett (R = L um 240 Samples
+    versetzt) waren das 12,0 dB in Mono und 6,8 dB je Kanal. Gemeldet wurde
+    nur der erste Wert. Seitdem werden beide gemessen und beide geprueft.
     """
     from gemeinsam import rahmen_datei, sprach_maske_env
 
@@ -136,6 +144,9 @@ def pruefen(video, cfg, gs, gb):
 
     bett = bett_laden(cfg)
     bett_db = rms_db(bett.mean(axis=1)) + 20 * np.log10(gb)
+    # je Kanal: das hoert ein Kopfhoerer, und es kann lauter sein als die
+    # Mono-Summe, wenn die Kanaele dekorreliert sind
+    bett_db_kanal = max(rms_db(bett[:, 0]), rms_db(bett[:, 1])) + 20 * np.log10(gb)
 
     # Stichprobe: Bett allein im Nachlauf gegen die Quelle an derselben Stelle
     nach, aus = float(cfg["nachlauf_s"]), float(cfg["ausblende_s"])
@@ -147,7 +158,7 @@ def pruefen(video, cfg, gs, gb):
         ist = f.read(int(plateau * SR), dtype="float32", always_2d=True).mean(axis=1)
     soll = _bett_block(bett, start, len(ist)).mean(axis=1) * gb
     abweichung = rms_db(ist) - rms_db(soll)
-    return stimme_db, bett_db, abweichung
+    return stimme_db, bett_db, bett_db_kanal, abweichung
 
 
 def main():
@@ -155,6 +166,8 @@ def main():
     ap.add_argument("video")
     ap.add_argument("--nur-messen", action="store_true",
                     help="vorhandene mix.wav nur nachmessen, nicht neu bauen")
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     a = ap.parse_args()
     cfg = config()
 
@@ -178,7 +191,7 @@ def main():
               f"→ Faktor {skal:.4f}")
         spitze2, _, _, _ = mischen(a.video, cfg, nur_messen=False, skalierung=skal)
         gs, gb = gs * skal, gb * skal
-    st_db, bett_db, stichprobe = pruefen(a.video, cfg, gs, gb)
+    st_db, bett_db, bett_db_kanal, stichprobe = pruefen(a.video, cfg, gs, gb)
 
     b = {
         "dauer_s": round(gesamt / SR, 1),
@@ -190,30 +203,64 @@ def main():
         "gain_bett_db": round(float(20 * np.log10(gb)), 2),
         "gemessen_stimme_dbfs": round(st_db, 2),
         "gemessen_bett_allein_dbfs": round(bett_db, 2),
+        "gemessen_bett_je_kanal_dbfs": round(bett_db_kanal, 2),
         "gemessener_abstand_db": round(st_db - bett_db, 2),
+        "gemessener_abstand_je_kanal_db": round(st_db - bett_db_kanal, 2),
+        "bett_dekorreliert_db": round(bett_db_kanal - bett_db, 2),
         "soll_abstand_db": float(cfg["abstand_soll_db"]),
         "peak_dbfs": round(float(20 * np.log10(spitze2)), 2),
         "stichprobe_schreibweg_db": round(float(stichprobe), 2),
         "ducking": bool(cfg.get("ducking", False)),
     }
+    # Beide Wiedergabefaelle muessen den Sollabstand erreichen. 0,1 dB
+    # Rechentoleranz, damit ein exakt getroffener Wert nicht an der
+    # Gleitkommadarstellung scheitert.
+    soll = b["soll_abstand_db"]
+    b["abstand_eingehalten_mono"] = bool(b["gemessener_abstand_db"] >= soll - 0.1)
+    b["abstand_eingehalten_je_kanal"] = bool(b["gemessener_abstand_je_kanal_db"] >= soll - 0.1)
     b["abstand_eingehalten"] = bool(
-        abs(b["gemessener_abstand_db"] - b["soll_abstand_db"]) <= 1.0)
+        b["abstand_eingehalten_mono"] and b["abstand_eingehalten_je_kanal"])
+    # Ein Bett, das viel zu leise sitzt, ist genauso falsch wie eines, das
+    # zu laut sitzt - nur nicht gefaehrlich. Deshalb getrennt gemeldet.
+    b["bett_auffaellig_leise"] = bool(
+        min(b["gemessener_abstand_db"], b["gemessener_abstand_je_kanal_db"]) > soll + 3.0)
     json.dump(b, open(arbeit(a.video, "qa_mix.json"), "w"), indent=1)
 
     print(f"\nMISCHUNG {a.video}")
     print(f"  Gesamtlaufzeit        {b['dauer_hms']}  ({b['dauer_h']:.2f} h)")
     print(f"  Stimme (alle Sprachrahmen) {b['gemessen_stimme_dbfs']} dBFS RMS")
-    print(f"  Bett (volle Schleife)      {b['gemessen_bett_allein_dbfs']} dBFS RMS")
-    print(f"  Abstand               {b['gemessener_abstand_db']} dB "
-          f"(Soll {b['soll_abstand_db']} dB) → "
+    print(f"  Bett Mono-Summe            {b['gemessen_bett_allein_dbfs']} dBFS RMS")
+    print(f"  Bett je Kanal              {b['gemessen_bett_je_kanal_dbfs']} dBFS RMS "
+          f"({b['bett_dekorreliert_db']:+.2f} dB gegen die Mono-Summe)")
+    print(f"  Abstand Mono-Summe    {b['gemessener_abstand_db']} dB → "
+          f"{'eingehalten' if b['abstand_eingehalten_mono'] else 'REISST'}")
+    print(f"  Abstand je Kanal      {b['gemessener_abstand_je_kanal_db']} dB → "
+          f"{'eingehalten' if b['abstand_eingehalten_je_kanal'] else 'REISST'}")
+    print(f"  Soll {b['soll_abstand_db']} dB in BEIDEN Faellen → "
           f"{'eingehalten' if b['abstand_eingehalten'] else 'ABWEICHUNG'}")
+    if b["bett_auffaellig_leise"]:
+        print("  HINWEIS: Bett liegt mehr als 3 dB unter dem Soll - vermutlich unhoerbar")
     print(f"  Peak                  {b['peak_dbfs']} dBFS "
           f"(Grenze {cfg['peak_max_dbfs']} → "
           f"{'eingehalten' if b['peak_dbfs'] <= float(cfg['peak_max_dbfs']) else 'ÜBERSCHRITTEN'})")
     print(f"  Stichprobe Schreibweg {b['stichprobe_schreibweg_db']:+.2f} dB "
           f"(Bett im Nachlauf gegen die Quelle — 0,00 = fehlerfrei geschrieben)")
     print(f"  Ducking               {'ja' if b['ducking'] else 'nein'}")
-    return 0
+
+    # Gate 1.11. Beide Wiedergabefaelle muessen halten, nicht nur die
+    # Mono-Summe: qa_mix.json mass bis 2026-08-23 nur den Downmix und meldete
+    # 12,0 dB, wo am Kopfhoerer 6,8 dB standen (V01-V04). Ein dekorreliertes
+    # Bett verliert im Downmix Pegel und sieht dadurch besser aus, als es ist.
+    g = Gates(a.force)
+    g.pruefen("1.11", "Pegelabstand (Mono-Summe)", b["abstand_eingehalten_mono"],
+              f"{b['gemessener_abstand_db']} dB statt {b['soll_abstand_db']} dB")
+    g.pruefen("1.11", "Pegelabstand (je Kanal)", b["abstand_eingehalten_je_kanal"],
+              f"{b['gemessener_abstand_je_kanal_db']} dB statt "
+              f"{b['soll_abstand_db']} dB — am Kopfhoerer hoerbar, "
+              f"in der Mono-Summe nicht")
+    g.pruefen("", "Peak", b["peak_dbfs"] <= float(cfg["peak_max_dbfs"]),
+              f"{b['peak_dbfs']} dBFS ueber der Grenze {cfg['peak_max_dbfs']} dBFS")
+    return gate_abschluss(g, "Schritt 3 (Klangbett)")
 
 
 if __name__ == "__main__":

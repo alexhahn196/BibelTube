@@ -46,8 +46,20 @@ def config(pfad=CONFIG):
             continue
         k, v = zeile.split("=", 1)
         cfg[k.strip()] = _wandeln(v.strip())
+    # Jeder Schluessel, dessen Fehlen das Ergebnis veraendert, MUSS hier stehen.
+    # Sonst greift still ein Vorgabewert aus cfg.get() im jeweiligen Skript, und
+    # der Lauf produziert etwas anderes als dokumentiert, ohne es zu melden.
+    # Erweitert 2026-08-23 nach dem Audit der stillen Rueckfaelle: Anlass war
+    # ki_clip_ordner_V5, das ohne Eintrag auf die Clips von V1 zurueckfiel.
     pflicht = ["stimme_id", "tts_modell", "prosody_speed", "pegel_stimme_dbfs",
-               "pegel_bett_dbfs", "bett_datei", "fps", "breite", "hoehe"]
+               "pegel_bett_dbfs", "bett_datei", "fps", "breite", "hoehe",
+               # Bild und Video
+               "videoquelle", "video_crf", "video_preset", "video_pixelformat",
+               "zoom_faktor",
+               # Mischung
+               "abstand_soll_db", "peak_max_dbfs", "vorlauf_s",
+               # Text und Qualitaetsschwellen
+               "chunk_max_zeichen", "laufzeit_min_h", "sprachanteil_min_pct"]
     fehlt = [k for k in pflicht if k not in cfg]
     if fehlt:
         raise SystemExit(f"{pfad}: fehlende Werte {fehlt}")
@@ -178,3 +190,63 @@ def dauer_s(datei):
 def hms(sekunden):
     s = int(round(sekunden))
     return f"{s // 3600}:{(s % 3600) // 60:02d}:{s % 60:02d}"
+
+
+# ----------------------------------------------------------------- Gates
+#
+# Bis 2026-08-31 haben die Pipeline-Schritte ihre Gate-Verstoesse GEDRUCKT
+# und trotzdem 0 zurueckgegeben. workflow-gates.md behauptete zu 1.1 und
+# 1.11 das Gegenteil ("beide brechen die Pipeline hart ab, wenn sie
+# reissen") - der Lauf ging danach durch den bezahlten TTS-Schritt und die
+# Montage weiter. Das war die teuerste Sorte Fehler: eine Pruefung, die
+# nichts prueft, kostet mehr als gar keine, weil sich niemand mehr hinsetzt
+# und selbst nachsieht.
+#
+# Seither sammelt jeder Schritt seine Gates hier ein und ruft am Ende
+# gate_abschluss(). Rueckgabewert 1 bei Verstoss, 0 sonst.
+#
+# --force uebergeht den Abbruch. Bewusst umstaendlich: der Schalter muss
+# ausdruecklich gesetzt werden, die Warnung steht trotzdem im Protokoll,
+# und der Verstoss steht so oder so in der Messdatei des Schritts.
+
+class Gates:
+    """Sammelt Gate-Ergebnisse eines Schritts.
+
+    pruefen() nimmt den ausgewerteten Wahrheitswert entgegen, nicht die
+    Bedingung als Text - die Auswertung gehoert dorthin, wo die Zahlen
+    liegen, und wird nicht ein zweites Mal formuliert.
+    """
+
+    def __init__(self, force=False):
+        self.force = bool(force)
+        self.verstoesse = []
+
+    def pruefen(self, nummer, name, ok, meldung):
+        """nummer: '1.1' oder '' fuer Pruefungen ohne Gate-Nummer."""
+        if not ok:
+            self.verstoesse.append((nummer, name, meldung))
+        return bool(ok)
+
+    def __bool__(self):
+        return not self.verstoesse
+
+
+def gate_abschluss(g, schritt):
+    """Druckt das Ergebnis und liefert den Rueckgabewert des Schritts."""
+    if not g.verstoesse:
+        return 0
+    print(f"\n{'=' * 66}")
+    print(f"GATE-VERSTOSS in {schritt} — {len(g.verstoesse)} Pruefung(en) gerissen")
+    print("=" * 66)
+    for nummer, name, meldung in g.verstoesse:
+        kopf = f"{nummer} {name}" if nummer else name
+        print(f"  {kopf}: {meldung}")
+    if g.force:
+        print("\n  --force gesetzt: der Lauf geht WEITER, obwohl die Pruefung reisst.")
+        print("  Der Verstoss steht in der Messdatei dieses Schritts und im Protokoll.")
+        print("  Wer so ausliefert, liefert wissentlich gegen die eigene Regel aus.")
+        return 0
+    print("\n  Die Pipeline haelt hier an. Ursache beheben — oder, wenn der")
+    print("  Verstoss bewusst in Kauf genommen wird, den Schritt mit --force")
+    print("  erneut aufrufen. Grenzen werden nicht aufgeweicht, um durchzukommen.")
+    return 1

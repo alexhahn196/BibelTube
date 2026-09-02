@@ -29,15 +29,32 @@ import numpy as np
 import soundfile as sf
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gemeinsam import SR, arbeit, config, dauer_s, ffprobe, hms, ordner  # noqa: E402
+from gemeinsam import (SR, Gates, arbeit, config, dauer_s,  # noqa: E402
+                       ffprobe, gate_abschluss, hms, ordner)
 
 NAME_BILD = "PLATZHALTER_standbild.png"
 
 
-def pixfmt(cfg):
-    """Farbraum der Videospur. Steht in produktion/config.md und nur dort;
-    yuv420p (8 Bit) ist die Vorgabe, weil sie auf allen Geraeten dekodiert."""
-    return str(cfg.get("video_pixelformat", "yuv420p"))
+def pixelformat(cfg):
+    """Pixelformat der Videospur.
+
+    Seit 2026-08-23 konfigurierbar, Vorgabe unveraendert yuv420p. Anlass ist
+    ein gemessener Banding-Befund: bei CRF 28 verliert der Nachthimmel in
+    8 Bit sieben der 48 Luma-Stufen im dunklen Bereich, und die groesste
+    einfarbige Flaeche waechst gegenueber dem Quellbild um Faktor 90. In
+    yuv420p10le bleiben alle 48 Stufen, der Faktor faellt auf 15 - und die
+    Datei wird KLEINER (4,92 statt 6,62 MB je 300-s-Zyklus), weil 10 Bit die
+    Praediktion verbessert. Messung: siehe produktion/motive/bandingtest/.
+
+    Die Umstellung ist nicht entschieden: yuv420p10le ist H.264 High 10, und
+    ob YouTubes Ingest das annimmt, ist ungeprueft.
+
+    (Auf dem V06-Zweig hiess diese Funktion pixfmt() und hatte yuv420p als
+    Vorgabewert. Bei der Zusammenfuehrung am 2026-09-02 hat diese Fassung
+    gewonnen: der Schluesselzugriff bricht laut ab, wenn config.md ihn nicht
+    fuehrt, statt still auf 8 Bit zurueckzufallen.)
+    """
+    return str(cfg["video_pixelformat"])
 
 
 def zyklus_bauen(bild, ziel, cfg):
@@ -49,14 +66,15 @@ def zyklus_bauen(bild, ziel, cfg):
         # Kosinus: z(0)=1, z(n)=1, Steigung an beiden Enden 0 -> nahtlos
         z = f"1+{A/2:.6f}*(1-cos(2*PI*on/{n}))"
         vf = (f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-              f":d=1:s={cfg['breite']}x{cfg['hoehe']}:fps={fps},format={pixfmt(cfg)}")
+              f":d=1:s={cfg['breite']}x{cfg['hoehe']}:fps={fps},"
+              f"format={pixelformat(cfg)}")
     else:
-        vf = f"scale={cfg['breite']}:{cfg['hoehe']},format={pixfmt(cfg)}"
+        vf = f"scale={cfg['breite']}:{cfg['hoehe']},format={pixelformat(cfg)}"
     cmd = ["ffmpeg", "-y", "-loglevel", "error",
            "-loop", "1", "-framerate", str(fps), "-t", str(T), "-i", bild,
-           "-vf", vf, "-c:v", "libx264", "-preset", str(cfg.get("video_preset", "medium")),
+           "-vf", vf, "-c:v", "libx264", "-preset", str(cfg["video_preset"]),
            "-crf", str(int(cfg["video_crf"])), "-g", str(fps * 10),
-           "-pix_fmt", pixfmt(cfg), "-an", ziel]
+           "-pix_fmt", pixelformat(cfg), "-an", ziel]
     subprocess.run(cmd, check=True)
     return T
 
@@ -109,6 +127,8 @@ def sync_pruefen(mp4, mix, bei_s=3600.0, fenster_s=8.0):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
+    ap.add_argument("--force", action="store_true",
+                    help="Gate-Verstoesse melden, aber nicht abbrechen")
     ap.add_argument("--neu-zyklus", action="store_true", dest="neu_zyklus",
                     help="Zoom-Zyklus neu kodieren statt wiederverwenden")
     a = ap.parse_args()
@@ -123,7 +143,7 @@ def main():
         raise SystemExit(f"Mischung fehlt: {mix} — erst Schritt 3 laufen lassen.")
 
     zyklus = arbeit(a.video, "zyklus.mp4")
-    if cfg.get("videoquelle", "standbild") == "ki_clips":
+    if cfg["videoquelle"] == "ki_clips":
         # Echte Bild-zu-Video-Clips als Zyklus, per Bitstrom-Kopie gefuegt.
         # Kein Zoom obendrauf: die Clips bewegen sich selbst (Formel §5
         # ist damit erfuellt), und ein Zoom wuerde den kompletten
@@ -133,8 +153,20 @@ def main():
         # Jedes Video hat eigene Clips: sie gehoeren zu seinem Standbild und
         # sind mit keinem anderen Motiv verwendbar. Ein Eintrag
         # ki_clip_ordner_V2 schlaegt deshalb den allgemeinen Wert.
+        # Der allgemeine Wert ki_clip_ordner ist KEIN brauchbarer Rueckfall:
+        # er zeigt auf die Clips von V1. Ein Video ohne eigenen Eintrag wuerde
+        # damit still mit fremdem Motiv rendern - 35 Minuten Rechenzeit fuer
+        # ein Ergebnis, das die Serienbindung (Formel §5, Gate 1.7) bricht,
+        # ohne dass irgendetwas warnt. Beim Anlegen von V05 ist genau das
+        # aufgefallen (2026-08-23). Deshalb: harter Abbruch statt Rueckfall.
         schluessel = f"ki_clip_ordner_{a.video}"
-        ordner_clips = cfg.get(schluessel, cfg["ki_clip_ordner"])
+        if schluessel not in cfg:
+            raise SystemExit(
+                f"videoquelle=ki_clips, aber {schluessel} fehlt in config.md.\n"
+                f"Ohne eigenen Eintrag wuerde {a.video} mit den Clips von "
+                f"{cfg['ki_clip_ordner']} rendern - also mit fremdem Motiv.\n"
+                f"Entweder {schluessel} eintragen oder videoquelle=standbild setzen.")
+        ordner_clips = cfg[schluessel]
         clips = sorted(_glob.glob(os.path.join(_pfad(ordner_clips),
                                                "clip-*.mp4")))
         if not clips:
@@ -150,9 +182,9 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat",
                         "-safe", "0", "-i", lst,
                         "-c:v", "libx264", "-preset",
-                        str(cfg.get("video_preset", "slow")),
+                        str(cfg["video_preset"]),
                         "-crf", str(int(cfg["video_crf"])),
-                        "-pix_fmt", pixfmt(cfg),
+                        "-pix_fmt", pixelformat(cfg),
                         "-x264-params", "keyint=240:min-keyint=240:scenecut=0",
                         "-an", zyklus], check=True)
         T = int(round(dauer_s(zyklus)))
@@ -189,7 +221,13 @@ def main():
         "groesse_mb": round(os.path.getsize(ziel) / 1e6, 1),
         "bitrate_gesamt_kbps": round(os.path.getsize(ziel) * 8 / d / 1000, 1),
         "zyklus_s": T, "zyklus_wiederholungen": wdh,
-        "zoom": bool(cfg.get("zoom", True)), "zoom_faktor": float(cfg["zoom_faktor"]),
+        # Nicht der config-Wert, sondern was tatsaechlich angewandt wurde: bei
+        # videoquelle = ki_clips entfaellt der Atem-Zoom (die Clips bewegen sich
+        # selbst). Frueher stand hier cfg["zoom"] - dann meldete die Messdatei
+        # "zoom": true fuer einen Lauf, der gar keinen Zoom hatte.
+        "videoquelle": cfg["videoquelle"],
+        "zoom": bool(cfg.get("zoom", True)) and cfg["videoquelle"] != "ki_clips",
+        "zoom_faktor": float(cfg["zoom_faktor"]),
         "fps": int(cfg["fps"]), "aufloesung": f"{cfg['breite']}x{cfg['hoehe']}",
         "renderzeit_s": round(time.time() - t0, 1),
     }
@@ -212,7 +250,20 @@ def main():
           f"Audio {b['audio_stream_s']} s, Differenz {b['differenz_streams_s']} s")
     print(f"  Ton-Versatz gemessen  {b['sync_versatz_s']} s")
     print(f"  Renderzeit            {b['renderzeit_s']} s")
-    return 0
+
+    # Gate 1.1 ein zweites Mal, jetzt an der fertigen Datei statt an der
+    # Schaetzung aus Schritt 1. Nur die harte Untergrenze bricht ab; das
+    # Zielband wird gemeldet, aber nicht erzwungen.
+    g = Gates(a.force)
+    g.pruefen("1.1", "Laufzeit der Datei", b["ueber_untergrenze"],
+              f"{b['dauer_h']:.3f} h unter der harten Untergrenze "
+              f"{cfg['laufzeit_min_h']} h")
+    g.pruefen("", "Ton-Versatz", abs(b["sync_versatz_s"]) <= 0.5,
+              f"{b['sync_versatz_s']} s zwischen Bild und Ton")
+    if not b["im_zielband"]:
+        print(f"  WARNUNG: ausserhalb des Zielbands "
+              f"{cfg['laufzeit_ziel_von_h']}–{cfg['laufzeit_ziel_bis_h']} h.")
+    return gate_abschluss(g, "Schritt 5 (Video)")
 
 
 if __name__ == "__main__":

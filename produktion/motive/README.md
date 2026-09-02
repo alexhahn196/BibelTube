@@ -74,6 +74,22 @@ Merge nirgends dokumentiert, und nichts im Repo verweist auf seinen Pfad.
   10 Fremdkanälen abgeleitete Vorgabe — auch das ein Grund, es an eigenen Zahlen
   zu entscheiden.
 
+**Nachtrag 2026-08-23 — Gate 2 ist gelaufen und entscheidet es NICHT.**
+*(eigene Kanaldaten Gate 2)*
+
+Die erwarteten Zahlen liegen vor, aber es sind die falschen für diese Frage. Gate 2
+liefert **Video**-Impressionen und Video-CTR; ein Banner wirkt auf die
+**Kanalseiten**-Conversion, und die steht in dieser Auswertung nicht. Was an
+Kanalseiten-Signal da ist, trägt nichts: **2 Abonnenten** im ganzen Zeitraum, und
+die 36 Aufrufe aus „Startseite/Abo-Feed" sind kein Kanalseitenbesuch (das API-Label
+`SUBSCRIBER` bedeutet Startseite und Abo-Feed, nicht Abonnenten-Aufrufe).
+
+**Also unverändert:** beide Entwürfe bleiben, für den Upload gilt weiter **Entwurf 1**.
+Neues Kriterium statt eines neuen Termins: Die Frage wird erst entscheidbar, wenn
+Kanalseitenaufrufe und Abo-Conversion in dreistelliger Größenordnung vorliegen. Bis
+dahin ist jede Entscheidung hier Geschmack, nicht Datenlage — und Geschmack rechtfertigt
+keinen Wechsel weg vom dokumentierten Stand.
+
 ## Textvariante — gemessene Werte
 
 Auf **V3** gelegt, nicht auf V1: Bei V1 steht der Mond in der Textzone, und die
@@ -108,18 +124,41 @@ in FreeSerif Bold @ 184 px, der schmalsten der drei installierten Serifen.
 | V02 | `QUIET YOUR MIND` | 15 | 1726 px | 97 px | |
 | V03 | `GOSPEL OF JOHN` | 14 | 1609 px | 155 px | |
 | V04 | `THINK NO MORE` | 13 | 1548 px | 186 px | gekürzt |
-| V05 | `YOU'RE TIRED` | 12 | 1328 px | 296 px | |
-| V06 | `ISAIAH TONIGHT` | 14 | 1565 px | 177 px | |
-| V07 | `NO MORE STRESS` | 14 | 1624 px | 148 px | gekürzt |
-| V08 | `IN THE BEGINNING` | 16 | 1750 px | 85 px | knapp |
+| V05 | **`GOSPEL OF LUKE`** | 14 | **1659 px** | 130 px | gebaut 2026-08-25, 129 px |
+| V06 | ~~`ISAIAH TONIGHT`~~ → **`FIRST SAMUEL`** | 12 | **1368 px** | 276 px | Korpus neu geschnitten; gebaut auf dem V06-Branch — **Versalhöhe 125 px**, nicht die 129 px, die seit V05 gelten |
+| V07 | ~~`NO MORE STRESS`~~ | 14 | 1677 px | 121 px | **hinfällig, Korpus wird neu geschnitten** |
+| V08 | `IN THE BEGINNING` | 16 | 1807 px | 56 px | knapp |
 
-**Alle acht liegen unter 1840 px — kein weiterer Textfall ist offen.**
+**Alle liegen unter 1840 px — kein Textfall ist offen.**
+
+> **Die Werte für V05–V08 sind seit 2026-08-25 bei 129 px Versalhöhe gerechnet**
+> (vorher 125). Grund: `thumbnail.py` trennt jetzt Prüfgrenze (11,5 %) und Zielwert
+> (11,9 %, B-Median) — siehe `formel/thumbnail-checkliste.md`. V01–V04 in der Tabelle
+> darüber stehen weiter bei 125 px, sie sind so veröffentlicht.
+
+> **Nachtrag 2026-08-23** *(eigene Kanaldaten Gate 2)*. Drei Zeilen sind
+> überholt:
+> - **V05** trägt jetzt `GOSPEL OF LUKE` — Entscheidung des Kanalinhabers, damit
+>   Titel und Thumbnail denselben Eigennamen führen. Mit **1607 px** liegt die
+>   Zeile 2 px unter `GOSPEL OF JOHN` (V03, 1609 px); die Serie bleibt in der
+>   Zeilenbreite deckungsgleich. Neu gemessen mit derselben Fontkette
+>   (FreeSerif Bold @ 184 px, Versalhöhe 125 px).
+> - **V06 und V07** hängen an Korpora, die M8 verletzen bzw. grenzwertig sind
+>   (`videos-01-08.md`). Ihre Thumbnail-Zeilen werden erst festgelegt, wenn die
+>   Korpusentscheidung gefallen ist.
+>
+> **Offen und bewusst nicht entschieden:** ob der Eigenname aus Formel §1 auch
+> im **Thumbnail** Pflicht ist oder nur im Titel. §1 regelt den Titel. V03 und
+> jetzt V05 führen ihn in beiden; V08 (`IN THE BEGINNING`) spielt auf Genesis an,
+> ohne das Buch zu nennen. Solange der Wirkmechanismus des Eigennamens ungeklärt
+> ist (§1, „die sparsamere Erklärung"), ist das keine dringende Frage — aber es
+> ist eine.
 
 Quellen: V01–V04 aus den Messdateien der gebauten Thumbnails
 (`produktion/video-0?/thumbnail*_messung.json`), nicht neu gemessen.
 V05–V08 mit der Methode aus `thumbnail.py` gerechnet (gleiche Fontkette,
 gleiche 125 px Versalhöhe) — bisher ohne Bild, weil diese Videos erst nach
-Gate 2 starten.
+Gate 2 starten. `GOSPEL OF LUKE` am 2026-08-23 auf demselben Weg nachgemessen.
 
 Zwei Zeilen mussten weichen, beide dokumentiert in `videos-01-08.md`:
 `NO MORE THINKING` (1896 px, 56 px zu breit) → `THINK NO MORE`, und
@@ -275,17 +314,47 @@ verwandeln (zusätzlich LCM-Zyklus 1200 s). Umschaltbar bleibt beides über
 
 **Gültigkeit:** Diese 4 Clips gehören zum aktuellen `motiv-V3.png`. Fällt die
 Handytest-Entscheidung auf eine andere Variante, braucht sie eigene Clips
-(erneut 144 Credits bei Seedance 1.5).
+(erneut 72 Credits bei Seedance 1.5 — die hier ursprünglich stehenden 144
+waren der Vorabpreis, nicht die Buchung; siehe den Kasten im V02-Abschnitt).
 
 ## KI-Clips Video 02 (`loops/ki-v02/`, 2026-08-06)
 
 Gleiches Verfahren wie oben, Quelle ist `motiv-video-02.png` als `start_image`
 **und** `end_image`.
 
-**Der Preis hat sich halbiert:** Seedance 1.5 Pro kostet jetzt **18 Credits je
-Clip** statt 36 — die vier Clips haben **72 Credits** gekostet, nicht die für
-V01 vermerkten 144 (belegt im Transaktionsprotokoll, 4 × −18 am 2026-08-06).
-Für die Planung der Videos 03–08 gilt der neue Wert.
+Die vier Clips haben **72 Credits** gekostet, 18 je Clip.
+
+> **Widerspruch aufgelöst am 2026-08-26 — beide 144er waren falsch.**
+> Am 2026-08-26 reichte das Transaktionsprotokoll wieder bis vor den Lauf
+> zurück. Abgerufen und ausgezählt:
+>
+> | Clipsatz | Buchung | Summe |
+> |---|---|---|
+> | V01 | 2026-08-04 18:59:53 / 19:00:05 / 19:00:18 / 19:00:29, je −18 | **72** |
+> | V02 | 2026-08-06 12:14:19, 4 × −18 | **72** |
+> | V03 | 2026-08-06 15:49:48, 4 × −18 | **72** |
+> | V04 | 2026-08-07 09:09:48, 4 × −18 | **72** |
+> | V05 | 2026-08-26 19:18:28–29, 4 × −18 | **72** |
+>
+> Damit fällt nicht nur der Widerspruch, sondern auch die Geschichte
+> drumherum. **Der Preis hat sich nie halbiert.** Seedance 1.5 Pro hat von
+> V01 an 18 Credits je Clip gekostet. Falsch waren beide 144er: die
+> Commit-Nachricht `072ef0c` und der Satz „(erneut 144 Credits bei
+> Seedance 1.5)" im V01-Abschnitt oben. Und falsch war auch der hier zuvor
+> stehende Satz, der Preis sei von 36 auf 18 gefallen — 36 wurde nie
+> abgerechnet.
+>
+> **Woher die 144 stammen, ist ebenfalls belegt.** Die Vorabpreisauskunft der
+> API (`get_cost`) meldet für Seedance 1.5 Pro, 1080p, 12 s **36 Credits je
+> Clip** — auch heute noch, unmittelbar bevor derselbe Aufruf mit 18 belastet
+> wurde (Guthaben 2397,9 → 2325,9 = −72 für vier Clips). Die Vorabauskunft ist
+> für dieses Konto also **doppelt so hoch wie die Rechnung**.
+>
+> **Regel daraus:** Der Vorabpreis ist eine Absicht, das Transaktions­protokoll
+> ist das Ergebnis. Für Kostenangaben in diesem Repo gilt ausschließlich das
+> Protokoll, und eine Kostenangabe ohne Buchungsdatum ist keine.
+> Für die Planung von V06–V08: **72 Credits je Vierer-Satz**, belegt an fünf
+> Sätzen. Der Vorabpreis (144) taugt als Obergrenze, nicht als Erwartung.
 
 Drei Prompt-Änderungen gegenüber V01, alle aus dem V01-Befund:
 
@@ -322,3 +391,94 @@ Hochgerechnet auf die 3,52 h Laufzeit: **≈ 2,0 GB Bildspur**, mit Ton ≈ 2,3 
 anderen Motiv. Die Pipeline liest den Ordner deshalb je Video aus
 `ki_clip_ordner_V2` in `config.md`; der allgemeine `ki_clip_ordner` bleibt
 für V01 stehen.
+
+## KI-Clips Video 05 (`loops/ki-v05/`, 2026-08-26)
+
+Gleiches Verfahren wie oben, Quelle ist `motiv-video-05.png` als `start_image`
+**und** `end_image`. Modell `seedance1_5`, 1080p, 12 s, 16:9,
+`generate_audio: false` — dieselben Parameter, mit denen V01–V04 erzeugt
+wurden. Nachgesehen in der Generierungshistorie bei Higgsfield, nicht aus dem
+Gedächtnis: dort stehen für alle vier früheren Sätze `width 1920`,
+`height 1080`, `resolution 1080p`, `duration 12`, `generate_audio false` und
+`start_image` = `end_image` = dieselbe `media_input`-ID.
+
+**Warum überhaupt.** V05 war am 2026-08-23 auf `videoquelle = standbild`
+gestellt worden mit der Begründung, KI-Clips wären „eine zusätzliche Variable
+ohne Beleg" und V05–V08 sollten den Korpuswechsel als einzige Änderung testen.
+Das war falsch herum gedacht: V01, V02, V03 und V04 liefen **alle** mit
+KI-Clips. Standbild war bei V05 also nicht die Konstante, sondern die zweite
+Änderung neben dem Korpus. Der Rücksprung auf `ki_clips` entfernt eine
+Variable, er fügt keine hinzu.
+
+### Kosten und Zeit — gemessen, nicht geschätzt
+
+| | Wert | Beleg |
+|---|---|---|
+| Credits | **72** (4 × 18) | Transaktionsprotokoll, vier Buchungen `Seedance 1.5 Pro −18` am 2026-08-26 19:18:28–29 |
+| Gegenprobe Guthaben | 2397,9 → 2325,9 = **−72,0** | `balance` vor und nach dem Lauf |
+| Vorabpreis derselben Anfrage | **144** (4 × 36) | `get_cost` unmittelbar vor dem Absenden |
+| Wanduhr: Absenden → alle vier fertig | **4 min 30 s** | 19:18:35 → 19:23:05, vier Jobs parallel |
+| davon: erster Clip fertig | 3 min 27 s | 19:22:02 |
+| Bildspur neu rendern (Schritt 5) | **5 min 38 s** | `renderzeit_s` 337,5 in `qa_video.json` |
+
+Die Vorabauskunft der API liegt für dieses Konto **um den Faktor 2 über der
+Rechnung**. Sie taugt als Obergrenze, nicht als Erwartung. Zur Auflösung des
+alten 72-gegen-144-Widerspruchs siehe den Kasten im V02-Abschnitt: alle fünf
+Clipsätze haben 72 gekostet, der Preis hat sich nie geändert.
+
+Zum Vergleich: eine neue Tonspur hätte TTS-Kosten verursacht. Die entfielen —
+`produktion/arbeit/video-05/mix.wav` lag noch, es wurde kein einziges Zeichen
+neu synthetisiert.
+
+### Loop-Tauglichkeit (`qa-ki-clips.json`)
+
+| Messung | Video 01 | Video 02 | **Video 05** |
+|---|---|---|---|
+| Auflösung / fps / Dauer | 1920×1080 · 24 fps · 12,04 s | identisch | **identisch** |
+| Kameradrift (Median Randzonen) | ≤ 0,05 px | ≤ 0,065 px | **≤ 0,063 px** |
+| erster vs. letzter Frame (mittl. \|Δ\|) | 2,78–2,91 | 2,43–2,49 | **3,03–3,15** |
+| Übergangsschritt Clip→Clip (16 Paare) | 2,83–3,14 | 2,43–2,70 | **3,03–3,22** (Median 3,11) |
+| normaler Frameschritt im Clip | 1,40–1,53 | 1,42–1,71 | **1,15–1,27** |
+| Naht / normaler Schritt | ≈ 2,0 | 1,75 | **2,65** |
+| Bitrate der Kette (CRF 28) | 1,31 Mbit/s | 1,27 Mbit/s | **1,41 Mbit/s** |
+
+Schlimmstes Paar `clip-4 → clip-1` mit 3,218 — das ist zugleich der
+Loop-Rücksprung. Der Faktor 2,65 liegt zwischen V02 (1,75) und V04
+(Frameschritt-Median 0,37–0,60 bei Nähten um 2,9, also Faktor ≈ 5,6); beide
+sind ausgeliefert worden. V05 ist damit nicht der beste und nicht der
+schlechteste Satz der Serie.
+
+### Sichtung — ein Befund, keine Beanstandung
+
+An Stichproben bei 0, 4, 8 und 11,9 s aller vier Clips: Stil erhalten, Figur
+bewegungslos, Mondsichel und Hügellinie stehen, keine verformten Objekte, kein
+Szenenschnitt, keine neuen Objekte. Der letzte Frame liegt wieder am
+Ausgangsbild.
+
+**Der Rauch ist wieder kräftiger als bestellt.** Der Prompt verlangt „very
+faint thin wisps of smoke barely visible"; in Clip 1 bei 4 s und Clip 2 bei
+8 s steht stattdessen eine helle Rauchfahne im oberen Bildviertel, bei Clip 1
+zieht sie kurz vor der Mondsichel vorbei. Clip 4 ist der ruhigste. Das ist
+derselbe Befund wie bei V01 („deutlich kräftiger als bestellt") und dort als
+Geschmacksfrage vermerkt worden — die Prompt-Verschärfung von V02 hat ihn bei
+diesem Motiv nicht verhindert. Ein neuer Satz kostet wieder 72 Credits und
+4,5 Minuten, ohne Zusage, dass er ruhiger ausfällt. Entscheidung des
+Kanalinhabers; ausgeliefert ist der vorliegende Satz.
+
+### Auswirkung auf die Datei
+
+| | Standbild + Atem-Zoom | **KI-Clips** |
+|---|---|---|
+| Videospur | 358,4 kbit/s | **1411,1 kbit/s** |
+| Tonspur (AAC) | 191,4 kbit/s | 191,4 kbit/s |
+| Gesamt | 556,0 kbit/s | **1608,3 kbit/s** |
+| Datei bei 3,404 h | 851,6 MB | **2463,6 MB** |
+
+Faktor 2,89 auf die Gesamtdatei, 3,94 auf die reine Bildspur. Beides
+8 Bit `yuv420p`, Profil High, CRF 28 — die Einstellungen sind identisch, der
+Unterschied ist ausschließlich Bildinhalt. Ton-Versatz gemessen 0,0 s,
+Streamlängen-Differenz 0,1 s.
+
+**Zuordnung:** Diese Clips gehören zu `motiv-video-05.png` und zu keinem
+anderen Motiv. Die Pipeline liest den Ordner je Video aus `ki_clip_ordner_V5`
+in `config.md`.
