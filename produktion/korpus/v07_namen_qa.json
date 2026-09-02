@@ -1,0 +1,1494 @@
+{
+ "video": "V7",
+ "zweck": "Aussprache-QA vor der TTS. Liste der Eigennamen, die der Kanal noch nie gesprochen hat - Grundlage fuer das Gegenhoeren nach dem Render (qa_namen.py).",
+ "quelle": "produktion/arbeit/video-07/skript.json gegen die Skripte von V01-V06",
+ "neu_gesamt": 348,
+ "aussprachekritisch": [
+  "Abialbon",
+  "Abiathar’s",
+  "Abimelech",
+  "Abishalom",
+  "Absalom’s",
+  "Adonijah",
+  "Ahijah’s",
+  "Ahithophel",
+  "Ammonitess",
+  "Anathothite",
+  "Arbathite",
+  "Ashurites",
+  "Azmaveth",
+  "Baal",
+  "Baale",
+  "Baal’s",
+  "Baasha’s",
+  "Barhumite",
+  "Barzillai",
+  "Basshebeth",
+  "Bathsheba",
+  "Beerothite",
+  "Beerothites",
+  "Berothai",
+  "Bethelite",
+  "Canaanites",
+  "Chenaanah",
+  "Chinneroth",
+  "Damascus",
+  "Daylight",
+  "Edomites",
+  "Egyptian’s",
+  "Eliphelet",
+  "Elishama",
+  "Encourage",
+  "Ethbaal",
+  "Gibbethon",
+  "Gibeonites",
+  "Gileadite",
+  "Gilonite",
+  "Gittites",
+  "Gittite’s",
+  "Hadadezer",
+  "Hararite",
+  "Harodite",
+  "Hazzurim",
+  "Hittite’s",
+  "Hushathite",
+  "Ishbibenob",
+  "Ishbosheth",
+  "Ishbosheth’s",
+  "Israel’s",
+  "Issachar",
+  "Jaare-Oregim",
+  "Jebusite",
+  "Jebusites",
+  "Jedidiah",
+  "Jehoiada",
+  "Jehoshaphat",
+  "Jeroboam",
+  "Jeroboam’s",
+  "Jerubbesheth",
+  "Jezebel’s",
+  "Jezreelite",
+  "Maacathite",
+  "Mahanaim",
+  "Mebunnai",
+  "Mephibosheth",
+  "Moabites",
+  "Mountain",
+  "Naphtali",
+  "Netophathite",
+  "Obed-Edom",
+  "Otherwise",
+  "Pelethites",
+  "Pirathonite",
+  "Proclaim",
+  "Rehoboam",
+  "Shaalbonite",
+  "Shechem",
+  "Shemaiah",
+  "Shephatiah",
+  "Shilonite",
+  "Shouldn’t",
+  "Sibbecai",
+  "Sidonians",
+  "Tabrimmon",
+  "Tahchemonite",
+  "Tishbite",
+  "Uzzah",
+  "Zarephath",
+  "Zedekiah"
+ ],
+ "neu": [
+  {
+   "name": "Absalom",
+   "vorkommen": 173
+  },
+  {
+   "name": "Jeroboam",
+   "vorkommen": 85
+  },
+  {
+   "name": "Ahab",
+   "vorkommen": 84
+  },
+  {
+   "name": "Elijah",
+   "vorkommen": 69
+  },
+  {
+   "name": "Syrians",
+   "vorkommen": 50
+  },
+  {
+   "name": "Asa",
+   "vorkommen": 48
+  },
+  {
+   "name": "Uriah",
+   "vorkommen": 43
+  },
+  {
+   "name": "Baasha",
+   "vorkommen": 39
+  },
+  {
+   "name": "Amnon",
+   "vorkommen": 38
+  },
+  {
+   "name": "Jehoshaphat",
+   "vorkommen": 38
+  },
+  {
+   "name": "Samaria",
+   "vorkommen": 38
+  },
+  {
+   "name": "Naboth",
+   "vorkommen": 37
+  },
+  {
+   "name": "Ahithophel",
+   "vorkommen": 35
+  },
+  {
+   "name": "Rehoboam",
+   "vorkommen": 35
+  },
+  {
+   "name": "Hadad",
+   "vorkommen": 34
+  },
+  {
+   "name": "Baal",
+   "vorkommen": 28
+  },
+  {
+   "name": "Jezebel",
+   "vorkommen": 27
+  },
+  {
+   "name": "Ben",
+   "vorkommen": 26
+  },
+  {
+   "name": "Mephibosheth",
+   "vorkommen": 26
+  },
+  {
+   "name": "Zadok",
+   "vorkommen": 25
+  },
+  {
+   "name": "Syria",
+   "vorkommen": 24
+  },
+  {
+   "name": "Omri",
+   "vorkommen": 22
+  },
+  {
+   "name": "Amasa",
+   "vorkommen": 21
+  },
+  {
+   "name": "Asahel",
+   "vorkommen": 21
+  },
+  {
+   "name": "Hadadezer",
+   "vorkommen": 21
+  },
+  {
+   "name": "Hushai",
+   "vorkommen": 21
+  },
+  {
+   "name": "Nathan",
+   "vorkommen": 21
+  },
+  {
+   "name": "Ishbosheth",
+   "vorkommen": 20
+  },
+  {
+   "name": "Tirzah",
+   "vorkommen": 20
+  },
+  {
+   "name": "Ziba",
+   "vorkommen": 20
+  },
+  {
+   "name": "Maacah",
+   "vorkommen": 18
+  },
+  {
+   "name": "Bichri",
+   "vorkommen": 16
+  },
+  {
+   "name": "Cushite",
+   "vorkommen": 16
+  },
+  {
+   "name": "Micaiah",
+   "vorkommen": 16
+  },
+  {
+   "name": "Nebat",
+   "vorkommen": 16
+  },
+  {
+   "name": "Sheba",
+   "vorkommen": 16
+  },
+  {
+   "name": "Solomon",
+   "vorkommen": 16
+  },
+  {
+   "name": "Obadiah",
+   "vorkommen": 14
+  },
+  {
+   "name": "Zimri",
+   "vorkommen": 14
+  },
+  {
+   "name": "Araunah",
+   "vorkommen": 13
+  },
+  {
+   "name": "Ittai",
+   "vorkommen": 13
+  },
+  {
+   "name": "Joab’s",
+   "vorkommen": 13
+  },
+  {
+   "name": "Barzillai",
+   "vorkommen": 12
+  },
+  {
+   "name": "Geshur",
+   "vorkommen": 12
+  },
+  {
+   "name": "Gibeon",
+   "vorkommen": 12
+  },
+  {
+   "name": "Gibeonites",
+   "vorkommen": 12
+  },
+  {
+   "name": "Jehu",
+   "vorkommen": 12
+  },
+  {
+   "name": "Jezreelite",
+   "vorkommen": 12
+  },
+  {
+   "name": "Mahanaim",
+   "vorkommen": 12
+  },
+  {
+   "name": "Absalom’s",
+   "vorkommen": 11
+  },
+  {
+   "name": "Abel",
+   "vorkommen": 10
+  },
+  {
+   "name": "Asherah",
+   "vorkommen": 10
+  },
+  {
+   "name": "Baanah",
+   "vorkommen": 10
+  },
+  {
+   "name": "Damascus",
+   "vorkommen": 10
+  },
+  {
+   "name": "Obed-Edom",
+   "vorkommen": 10
+  },
+  {
+   "name": "Rabbah",
+   "vorkommen": 10
+  },
+  {
+   "name": "Uzzah",
+   "vorkommen": 10
+  },
+  {
+   "name": "Aiah",
+   "vorkommen": 8
+  },
+  {
+   "name": "Archite",
+   "vorkommen": 8
+  },
+  {
+   "name": "Bahurim",
+   "vorkommen": 8
+  },
+  {
+   "name": "Beerothite",
+   "vorkommen": 8
+  },
+  {
+   "name": "Gibbethon",
+   "vorkommen": 8
+  },
+  {
+   "name": "Hanun",
+   "vorkommen": 8
+  },
+  {
+   "name": "Jehoiada",
+   "vorkommen": 8
+  },
+  {
+   "name": "Jeroboam’s",
+   "vorkommen": 8
+  },
+  {
+   "name": "Pelethites",
+   "vorkommen": 8
+  },
+  {
+   "name": "Rechab",
+   "vorkommen": 8
+  },
+  {
+   "name": "Rehob",
+   "vorkommen": 8
+  },
+  {
+   "name": "Abijam",
+   "vorkommen": 7
+  },
+  {
+   "name": "Elisha",
+   "vorkommen": 7
+  },
+  {
+   "name": "Jonadab",
+   "vorkommen": 7
+  },
+  {
+   "name": "Nadab",
+   "vorkommen": 7
+  },
+  {
+   "name": "Rizpah",
+   "vorkommen": 7
+  },
+  {
+   "name": "Abner’s",
+   "vorkommen": 6
+  },
+  {
+   "name": "Ammiel",
+   "vorkommen": 6
+  },
+  {
+   "name": "Amnon’s",
+   "vorkommen": 6
+  },
+  {
+   "name": "Benaiah",
+   "vorkommen": 6
+  },
+  {
+   "name": "Chimham",
+   "vorkommen": 6
+  },
+  {
+   "name": "GOD",
+   "vorkommen": 6
+  },
+  {
+   "name": "Gera",
+   "vorkommen": 6
+  },
+  {
+   "name": "Gittite",
+   "vorkommen": 6
+  },
+  {
+   "name": "Gittite’s",
+   "vorkommen": 6
+  },
+  {
+   "name": "Ira",
+   "vorkommen": 6
+  },
+  {
+   "name": "Machir",
+   "vorkommen": 6
+  },
+  {
+   "name": "Rephaim",
+   "vorkommen": 6
+  },
+  {
+   "name": "Rimmon",
+   "vorkommen": 6
+  },
+  {
+   "name": "River",
+   "vorkommen": 6
+  },
+  {
+   "name": "Shechem",
+   "vorkommen": 6
+  },
+  {
+   "name": "Tekoa",
+   "vorkommen": 6
+  },
+  {
+   "name": "Tibni",
+   "vorkommen": 6
+  },
+  {
+   "name": "Tishbite",
+   "vorkommen": 6
+  },
+  {
+   "name": "Toi",
+   "vorkommen": 6
+  },
+  {
+   "name": "Ahaziah",
+   "vorkommen": 5
+  },
+  {
+   "name": "Abishalom",
+   "vorkommen": 4
+  },
+  {
+   "name": "Adoram",
+   "vorkommen": 4
+  },
+  {
+   "name": "Ahilud",
+   "vorkommen": 4
+  },
+  {
+   "name": "Ahio",
+   "vorkommen": 4
+  },
+  {
+   "name": "Ahohite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Ammonitess",
+   "vorkommen": 4
+  },
+  {
+   "name": "Bathsheba",
+   "vorkommen": 4
+  },
+  {
+   "name": "Chenaanah",
+   "vorkommen": 4
+  },
+  {
+   "name": "Cherith",
+   "vorkommen": 4
+  },
+  {
+   "name": "Debar",
+   "vorkommen": 4
+  },
+  {
+   "name": "Deliver",
+   "vorkommen": 4
+  },
+  {
+   "name": "Elhanan",
+   "vorkommen": 4
+  },
+  {
+   "name": "Eliam",
+   "vorkommen": 4
+  },
+  {
+   "name": "Eliphelet",
+   "vorkommen": 4
+  },
+  {
+   "name": "Gileadite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Gilonite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Ginath",
+   "vorkommen": 4
+  },
+  {
+   "name": "Gob",
+   "vorkommen": 4
+  },
+  {
+   "name": "Good",
+   "vorkommen": 4
+  },
+  {
+   "name": "Hanani",
+   "vorkommen": 4
+  },
+  {
+   "name": "Hararite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Harodite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Hazael",
+   "vorkommen": 4
+  },
+  {
+   "name": "Helam",
+   "vorkommen": 4
+  },
+  {
+   "name": "Hittite’s",
+   "vorkommen": 4
+  },
+  {
+   "name": "Hushathite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Imlah",
+   "vorkommen": 4
+  },
+  {
+   "name": "Ithrite",
+   "vorkommen": 4
+  },
+  {
+   "name": "I’m",
+   "vorkommen": 4
+  },
+  {
+   "name": "Jebusite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Jebusites",
+   "vorkommen": 4
+  },
+  {
+   "name": "Jericho",
+   "vorkommen": 4
+  },
+  {
+   "name": "Kidron",
+   "vorkommen": 4
+  },
+  {
+   "name": "Naamah",
+   "vorkommen": 4
+  },
+  {
+   "name": "Netophathite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Perazim",
+   "vorkommen": 4
+  },
+  {
+   "name": "Rogelim",
+   "vorkommen": 4
+  },
+  {
+   "name": "Saddle",
+   "vorkommen": 4
+  },
+  {
+   "name": "Seize",
+   "vorkommen": 4
+  },
+  {
+   "name": "Shaphat",
+   "vorkommen": 4
+  },
+  {
+   "name": "Shemer",
+   "vorkommen": 4
+  },
+  {
+   "name": "Shilonite",
+   "vorkommen": 4
+  },
+  {
+   "name": "Shimeah",
+   "vorkommen": 4
+  },
+  {
+   "name": "Shobach",
+   "vorkommen": 4
+  },
+  {
+   "name": "Sidon",
+   "vorkommen": 4
+  },
+  {
+   "name": "Talmai",
+   "vorkommen": 4
+  },
+  {
+   "name": "Tob",
+   "vorkommen": 4
+  },
+  {
+   "name": "Tyre",
+   "vorkommen": 4
+  },
+  {
+   "name": "Uriah’s",
+   "vorkommen": 4
+  },
+  {
+   "name": "Which",
+   "vorkommen": 4
+  },
+  {
+   "name": "Zarephath",
+   "vorkommen": 4
+  },
+  {
+   "name": "Zedekiah",
+   "vorkommen": 3
+  },
+  {
+   "name": "Abialbon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Abiathar’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Abiezer",
+   "vorkommen": 2
+  },
+  {
+   "name": "Abimelech",
+   "vorkommen": 2
+  },
+  {
+   "name": "Abiram",
+   "vorkommen": 2
+  },
+  {
+   "name": "Abital",
+   "vorkommen": 2
+  },
+  {
+   "name": "Abraham",
+   "vorkommen": 2
+  },
+  {
+   "name": "Adino",
+   "vorkommen": 2
+  },
+  {
+   "name": "Adonijah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Adullam",
+   "vorkommen": 2
+  },
+  {
+   "name": "Again",
+   "vorkommen": 2
+  },
+  {
+   "name": "Agee",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ahab’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ahasbai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ahiam",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ahijah’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Alas",
+   "vorkommen": 2
+  },
+  {
+   "name": "Altar",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ammah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ammihur",
+   "vorkommen": 2
+  },
+  {
+   "name": "Amon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Anathothite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ararite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Arbathite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Arbite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ariel",
+   "vorkommen": 2
+  },
+  {
+   "name": "Armoni",
+   "vorkommen": 2
+  },
+  {
+   "name": "Arza",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ashurites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Azmaveth",
+   "vorkommen": 2
+  },
+  {
+   "name": "Azubah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Baale",
+   "vorkommen": 2
+  },
+  {
+   "name": "Baal’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Baasha’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Bani",
+   "vorkommen": 2
+  },
+  {
+   "name": "Barhumite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Basshebeth",
+   "vorkommen": 2
+  },
+  {
+   "name": "Beeroth",
+   "vorkommen": 2
+  },
+  {
+   "name": "Beerothites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Berites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Berothai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Betah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Bethelite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Beware",
+   "vorkommen": 2
+  },
+  {
+   "name": "Bithron",
+   "vorkommen": 2
+  },
+  {
+   "name": "Canaanites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Carry",
+   "vorkommen": 2
+  },
+  {
+   "name": "Chileab",
+   "vorkommen": 2
+  },
+  {
+   "name": "Chinneroth",
+   "vorkommen": 2
+  },
+  {
+   "name": "Cry",
+   "vorkommen": 2
+  },
+  {
+   "name": "Curse",
+   "vorkommen": 2
+  },
+  {
+   "name": "Deal",
+   "vorkommen": 2
+  },
+  {
+   "name": "Dodai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Dodo",
+   "vorkommen": 2
+  },
+  {
+   "name": "Edomites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Eglah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Egyptian’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Eliada",
+   "vorkommen": 2
+  },
+  {
+   "name": "Eliahba",
+   "vorkommen": 2
+  },
+  {
+   "name": "Elika",
+   "vorkommen": 2
+  },
+  {
+   "name": "Elishua",
+   "vorkommen": 2
+  },
+  {
+   "name": "Encourage",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ethbaal",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ezion",
+   "vorkommen": 2
+  },
+  {
+   "name": "Eznite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Gaash",
+   "vorkommen": 2
+  },
+  {
+   "name": "Gadite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Gareb",
+   "vorkommen": 2
+  },
+  {
+   "name": "Geber",
+   "vorkommen": 2
+  },
+  {
+   "name": "Gezer",
+   "vorkommen": 2
+  },
+  {
+   "name": "Giah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Giloh",
+   "vorkommen": 2
+  },
+  {
+   "name": "Gittaim",
+   "vorkommen": 2
+  },
+  {
+   "name": "Gittites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Guard",
+   "vorkommen": 2
+  },
+  {
+   "name": "Haggith",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hamath",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hazzurim",
+   "vorkommen": 2
+  },
+  {
+   "name": "Heleb",
+   "vorkommen": 2
+  },
+  {
+   "name": "Helez",
+   "vorkommen": 2
+  },
+  {
+   "name": "Helkath",
+   "vorkommen": 2
+  },
+  {
+   "name": "Help",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hezion",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hezro",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hiddai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hiel",
+   "vorkommen": 2
+  },
+  {
+   "name": "High",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hivites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Hodshi",
+   "vorkommen": 2
+  },
+  {
+   "name": "Horeb",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ibhar",
+   "vorkommen": 2
+  },
+  {
+   "name": "Igal",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ijon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ikkesh",
+   "vorkommen": 2
+  },
+  {
+   "name": "Isaac",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ishbibenob",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ishbosheth’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Israel’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Issachar",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ithra",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ithream",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jaan",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jaare-Oregim",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jairite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Japhia",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jashar",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jashen",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jazer",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jedidiah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jerubbesheth",
+   "vorkommen": 2
+  },
+  {
+   "name": "Jezebel’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Joash",
+   "vorkommen": 2
+  },
+  {
+   "name": "Joram",
+   "vorkommen": 2
+  },
+  {
+   "name": "Joseph",
+   "vorkommen": 2
+  },
+  {
+   "name": "Josheb",
+   "vorkommen": 2
+  },
+  {
+   "name": "Josiah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Kabzeel",
+   "vorkommen": 2
+  },
+  {
+   "name": "Kishon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Lay",
+   "vorkommen": 2
+  },
+  {
+   "name": "Levi",
+   "vorkommen": 2
+  },
+  {
+   "name": "Lodebar",
+   "vorkommen": 2
+  },
+  {
+   "name": "Maacathite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Maharai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Mark",
+   "vorkommen": 2
+  },
+  {
+   "name": "Mebunnai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Meholah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Men",
+   "vorkommen": 2
+  },
+  {
+   "name": "Merhak",
+   "vorkommen": 2
+  },
+  {
+   "name": "Mica",
+   "vorkommen": 2
+  },
+  {
+   "name": "Millo",
+   "vorkommen": 2
+  },
+  {
+   "name": "Moabites",
+   "vorkommen": 2
+  },
+  {
+   "name": "Most",
+   "vorkommen": 2
+  },
+  {
+   "name": "Mountain",
+   "vorkommen": 2
+  },
+  {
+   "name": "Nacon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Naharai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Name",
+   "vorkommen": 2
+  },
+  {
+   "name": "Naphtali",
+   "vorkommen": 2
+  },
+  {
+   "name": "Nepheg",
+   "vorkommen": 2
+  },
+  {
+   "name": "Nimshi",
+   "vorkommen": 2
+  },
+  {
+   "name": "Nun",
+   "vorkommen": 2
+  },
+  {
+   "name": "Olives",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ophir",
+   "vorkommen": 2
+  },
+  {
+   "name": "Paarai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Paltiel",
+   "vorkommen": 2
+  },
+  {
+   "name": "Paltite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Penuel",
+   "vorkommen": 2
+  },
+  {
+   "name": "Pirathonite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Plain",
+   "vorkommen": 2
+  },
+  {
+   "name": "Prepare",
+   "vorkommen": 2
+  },
+  {
+   "name": "Proclaim",
+   "vorkommen": 2
+  },
+  {
+   "name": "Quickly",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ribai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Rock",
+   "vorkommen": 2
+  },
+  {
+   "name": "Rogel",
+   "vorkommen": 2
+  },
+  {
+   "name": "Salt",
+   "vorkommen": 2
+  },
+  {
+   "name": "Saph",
+   "vorkommen": 2
+  },
+  {
+   "name": "Segub",
+   "vorkommen": 2
+  },
+  {
+   "name": "Seraiah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shaalbonite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shammua",
+   "vorkommen": 2
+  },
+  {
+   "name": "Sharar",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shemaiah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shephatiah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Sheva",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shilhi",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shishak",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shobab",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shobi",
+   "vorkommen": 2
+  },
+  {
+   "name": "Shouldn’t",
+   "vorkommen": 2
+  },
+  {
+   "name": "Sibbecai",
+   "vorkommen": 2
+  },
+  {
+   "name": "Sidonians",
+   "vorkommen": 2
+  },
+  {
+   "name": "Sirah",
+   "vorkommen": 2
+  },
+  {
+   "name": "Sons",
+   "vorkommen": 2
+  },
+  {
+   "name": "Strike",
+   "vorkommen": 2
+  },
+  {
+   "name": "Tabrimmon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Tahchemonite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Tahtim",
+   "vorkommen": 2
+  },
+  {
+   "name": "Tear",
+   "vorkommen": 2
+  },
+  {
+   "name": "Tekoite",
+   "vorkommen": 2
+  },
+  {
+   "name": "Thebez",
+   "vorkommen": 2
+  },
+  {
+   "name": "Valley",
+   "vorkommen": 2
+  },
+  {
+   "name": "Wasn’t",
+   "vorkommen": 2
+  },
+  {
+   "name": "Zadok’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Zalmon",
+   "vorkommen": 2
+  },
+  {
+   "name": "Zela",
+   "vorkommen": 2
+  },
+  {
+   "name": "Zelek",
+   "vorkommen": 2
+  },
+  {
+   "name": "Ziba’s",
+   "vorkommen": 2
+  },
+  {
+   "name": "Zion",
+   "vorkommen": 2
+  },
+  {
+   "name": "Daylight",
+   "vorkommen": 1
+  },
+  {
+   "name": "Elishama",
+   "vorkommen": 1
+  },
+  {
+   "name": "Feel",
+   "vorkommen": 1
+  },
+  {
+   "name": "Hiram",
+   "vorkommen": 1
+  },
+  {
+   "name": "Keeps",
+   "vorkommen": 1
+  },
+  {
+   "name": "Muster",
+   "vorkommen": 1
+  },
+  {
+   "name": "Otherwise",
+   "vorkommen": 1
+  },
+  {
+   "name": "Smoke",
+   "vorkommen": 1
+  },
+  {
+   "name": "Someone",
+   "vorkommen": 1
+  },
+  {
+   "name": "Ten",
+   "vorkommen": 1
+  },
+  {
+   "name": "Till",
+   "vorkommen": 1
+  },
+  {
+   "name": "Two",
+   "vorkommen": 1
+  },
+  {
+   "name": "Until",
+   "vorkommen": 1
+  },
+  {
+   "name": "Watch",
+   "vorkommen": 1
+  },
+  {
+   "name": "Whereas",
+   "vorkommen": 1
+  }
+ ]
+}
