@@ -299,7 +299,7 @@ Wirkung ungeprüft ist.
 dort. Wer eine Zahl aus dieser Runde zitiert, zitiert vom Branch
 `claude/bibeltube-v06-korpus-m8-rz2oce`.
 
-**Neu auf dem Branch, im Hauptzweig nicht vorhanden (34 Dateien):**
+**Damals neu auf dem Branch, im Hauptzweig nicht vorhanden (34 Dateien):**
 
 | | Dateien |
 |---|---|

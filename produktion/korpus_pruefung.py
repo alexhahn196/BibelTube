@@ -393,7 +393,7 @@ def main():
     print("\nErzaehlanteil (kapitelweise, die gueltige Messung):")
     if anteil is None:
         print(f"  NICHT GEMESSEN — {FEIN} fehlt oder kennt keines dieser Kapitel.")
-        print("  Die Datei liegt auf dem Branch claude/bibeltube-v06-korpus-m8-rz2oce.")
+        print("  Erzeugen mit: python3 produktion/erzaehlanteil.py")
         print("  Der Wert wird NICHT durch den buchweisen Gattungsanteil ersetzt.")
     else:
         print(f"  {anteil:.1f} %   (Grundlage: {abdeckung:.0f} % der Korpuswoerter "

@@ -125,7 +125,7 @@ in FreeSerif Bold @ 184 px, der schmalsten der drei installierten Serifen.
 | V03 | `GOSPEL OF JOHN` | 14 | 1609 px | 155 px | |
 | V04 | `THINK NO MORE` | 13 | 1548 px | 186 px | gekürzt |
 | V05 | **`GOSPEL OF LUKE`** | 14 | **1659 px** | 130 px | gebaut 2026-08-25, 129 px |
-| V06 | ~~`ISAIAH TONIGHT`~~ → **`FIRST SAMUEL`** | 12 | **1368 px** | 276 px | Korpus neu geschnitten; gebaut auf dem V06-Branch — **Versalhöhe 125 px**, nicht die 129 px, die seit V05 gelten |
+| V06 | ~~`ISAIAH TONIGHT`~~ → **`FIRST SAMUEL`** | 12 | **1368 px** | 276 px | Korpus neu geschnitten — **Versalhöhe 125 px**, nicht die 129 px, die seit V05 gelten |
 | V07 | ~~`NO MORE STRESS`~~ | 14 | 1677 px | 121 px | **hinfällig, Korpus wird neu geschnitten** |
 | V08 | `IN THE BEGINNING` | 16 | 1807 px | 56 px | knapp |
 

@@ -1216,10 +1216,9 @@ vollständig eigen sein.**
 > acht inhaltstragende Wörter). Die Tabelle wurde nicht neu gefahren. Der Satz
 > „vier Titel liegen exakt auf der Grenze" stimmte davor und war danach falsch.
 >
-> **Weitergetragen:** `produktion/v06-titel.md` (auf dem Branch
-> `claude/bibeltube-v06-korpus-m8-rz2oce`) zitiert die 50,0 % für V05 aus dieser
-> Tabelle weiter. Dort ist der Wert ebenfalls falsch; die Datei liegt außerhalb von
-> HEAD und wird mit dem Branch berichtigt.
+> **Weitergetragen:** `produktion/v06-titel.md` zitierte die 50,0 % für V05 aus
+> dieser Tabelle weiter. **Am 02.09.2026 dort berichtigt** — gemessen sind es
+> 27,3 %, der niedrigste Wert des Bestands.
 >
 > **Regel daraus:** Eine Tabelle mit gerechneten Werten gehört nach jeder Titeländerung
 > neu gefahren, nicht fortgeschrieben — `python3 produktion/titel_pruefung.py` dauert
