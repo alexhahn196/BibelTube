@@ -1,0 +1,86 @@
+{
+ "video": "V7",
+ "erzeugt": "2026-09-02T17:13:28",
+ "commit": "7ce4218f1276a906ccfddfdc3a1151b1d57d9632",
+ "arbeitsbaum_sauber": false,
+ "config_sha256": "7d5e2a39fb61b728",
+ "bett_datei": "produktion/klang/bett_mono_feuer_leise.flac",
+ "videoquelle": "ki_clips",
+ "stimme_id": "cb6381fb822345bd89c207fb49551d24",
+ "tts_modell": "s2.1-pro-free",
+ "prosody_speed": 0.88,
+ "schritt1_text": {
+  "titel": "Lord, I Feel Tired — Second Samuel Keeps Watch Until Daylight",
+  "hook_variante": "a",
+  "kapitel_anzahl": 35,
+  "woerter_gesamt": 30951,
+  "woerter_korpus": 30695,
+  "woerter_rahmen": 256,
+  "zeichen_tts": 159859,
+  "laufzeit_erwartet_h": 3.59,
+  "cta_anzahl": 2,
+  "versalien_uebrig": [],
+  "ziffern_im_text": []
+ },
+ "schritt2_tts": {
+  "dauer_h": 3.48,
+  "woerter": 30951,
+  "wpm": 148.2,
+  "zeichen_tts": 160980,
+  "chunks": 88,
+  "sprachanteil_pct": 67.8,
+  "sprachanteil_vergleichbar_pct": 95.7,
+  "laengste_pause_s": 1.54,
+  "sprach_rms_db": -17.11,
+  "peak_dbfs": 0.0,
+  "naht_sprung_max_db": 4.16,
+  "chunk_pegel_sprung_max_db": 0.01
+ },
+ "schritt3_bett": {
+  "gain_stimme_db": -1.89,
+  "gain_bett_db": 1.0,
+  "gemessen_stimme_dbfs": -19.0,
+  "gemessen_bett_allein_dbfs": -31.0,
+  "gemessen_bett_je_kanal_dbfs": -31.0,
+  "gemessener_abstand_db": 12.0,
+  "gemessener_abstand_je_kanal_db": 12.0,
+  "bett_dekorreliert_db": 0.0,
+  "soll_abstand_db": 12.0,
+  "abstand_eingehalten_mono": true,
+  "abstand_eingehalten_je_kanal": true,
+  "peak_dbfs": -1.34,
+  "stichprobe_schreibweg_db": -0.0,
+  "ducking": false
+ },
+ "schritt4_bild": {
+  "dunkelanteil_pct": 87.8,
+  "breite": 1920,
+  "hoehe": 1080
+ },
+ "schritt5_video": {
+  "dauer_hms": "3:28:55",
+  "dauer_h": 3.482,
+  "groesse_mb": 1854.3,
+  "bitrate_gesamt_kbps": 1183.5,
+  "aufloesung": "1920x1080",
+  "fps": 24,
+  "sync_versatz_s": 0.0,
+  "differenz_streams_s": 0.11,
+  "zyklus_s": 48,
+  "zoom": false,
+  "zoom_faktor": 1.04
+ },
+ "schritt6_srt": {
+  "kacheln": 2617,
+  "erste_kachel_s": 1.5,
+  "abdeckung_pct": 90.5,
+  "modell": "base.en",
+  "zuordnungsquote_median": 0.9709,
+  "ueberlappungen": 0
+ },
+ "qa_namen": {
+  "eigennamen_gesamt": 483,
+  "vorkommen_gesamt": 2414,
+  "beanstandet": []
+ }
+}

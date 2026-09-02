@@ -1,0 +1,15 @@
+{
+ "video": "V7",
+ "herkunft": "gemessen",
+ "dauer_s": 12534.75,
+ "dauer_quelle": "ffprobe auf produktion/video-07/video-07.mp4",
+ "woerter_gesprochen": 30951,
+ "woerter_quelle": "produktion/arbeit/video-07/skript.json",
+ "wpm_gemessen": 148.2,
+ "wpm_formel": "woerter_gesprochen / (dauer_s - vorlauf_s) * 60",
+ "vorlauf_s": 1.5,
+ "commit": "24f5e9030176945d94cbd8a9c12df30d761e36b2",
+ "config_sha256": "7d5e2a39fb61b728b9d44e396be2b5cfc0e45cfc05e8771a49f05abd1eb8fe1a",
+ "textsorte": "Erzaehlstoff",
+ "hinweis": "wpm_erwartet in config.md bleibt 143,7. Dieser Wert ist eine Messung an einem Video und ein Textsorten-Hinweis, kein neuer Kanalwert: Poesie 141,1 (V01/V02), Prosa 146,4 (V03/V04), Erzaehlstoff 148,2 (V06) und 148,2 (V07). Nicht in config.md eintragen - eine Tempoaenderung verschiebt das Wortband aller kuenftigen Videos."
+}
