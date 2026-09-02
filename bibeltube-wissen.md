@@ -175,8 +175,12 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
 - [ ] Dieses Buch ist selbst **durchlaufendes Erzählwerk** — hält also für sich
       allein den gemessenen Erzählanteil (Evangelien, Apostelgeschichte,
       Genesis- und Samuel-Erzählungen)?
-- [ ] Es wird **in voller Länge** gelesen? (Teilung nur an einer Erzählnaht,
-      und die gehört begründet.)
+- [ ] Es wird **in voller Länge** gelesen — **oder** an einer Erzählnaht geteilt,
+      die mit Begründung in
+      [`produktion/korpus/erzaehlnaehte.json`](produktion/korpus/erzaehlnaehte.json)
+      steht, **und** der gelesene Teil hält für sich die 80 %?
+      *(Gelockert am 02.09.2026. Eine Naht ohne Eintrag zählt nicht — damit
+      bleibt Wegschneiden zur Laufzeitanpassung ausgeschlossen.)*
 - [ ] Es liegt **≥ 15 Prozentpunkte vor dem zweitgrößten Buch**?
 - [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn das dominante Buch selbst
       Erzählwerk ist **und** in voller Länge gelesen wird (die beiden Haken oben;

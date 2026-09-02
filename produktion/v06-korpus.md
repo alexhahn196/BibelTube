@@ -127,8 +127,8 @@ Deshalb steht keine solche Variante hier. **V06-C ist der einzige Weg, das NT
 Ebenfalls ausgeschieden, weil sie die 60-%-Dominanz im Band gar nicht erreichen
 können: Josua (17.835 W) und Richter (17.922 W) — beide zu klein, um in einem
 30.000-W-Korpus auf 60 % zu kommen. *(Genau dieser Satz ist der Anlass der
-Schwellenänderung vom 02.09.: Richter trägt jetzt zwanzig der 45 möglichen Korpora,
-2 Samuel die übrigen 25. Siehe letzter Abschnitt.)* Und Exodus scheitert am Gate selbst: **46,5 %**
+Schwellenänderung vom 02.09.: Richter trägt jetzt zwanzig der 47 möglichen Korpora,
+2 Samuel 25 und Genesis 12–50 die übrigen zwei. Siehe letzter Abschnitt.)* Und Exodus scheitert am Gate selbst: **46,5 %**
 (Exodus 20–31 und 35–40 sind Gesetz, Kult- und Bauvorschrift), 1 Könige an **58,9 %**
 (Tempelbau Kap. 6–7, Weihgebet Kap. 8), Daniel 4–12 an **27,2 %** (Kap. 7–12 sind
 apokalyptische Vision).
@@ -415,10 +415,10 @@ Länge, also bekommt ein Korpus, der die Vollständigkeit reißt, es nie.
 
 ### Passt Genesis über eine Teilung an einer Erzählnaht hinein?
 
-**Nach Zahlen ja, nach der Strukturfassung nein.** Genesis 12–50 sind 29.421 W
-bei 91,4 % Erzählanteil und 100 % Dominanz — Band, Erzählanteil und Dominanz
-halten alle drei. Aber jede Teilung reißt „in voller Länge", und ganz Genesis
-(35.827 W) sprengt das Band.
+**Ja — seit dem 02.09.2026 auch nach der Regel.** Genesis 12–50 sind 29.421 W
+bei **91,4 %** Erzählanteil und 100 % Dominanz; die Naht nach Gen 11 steht mit
+Begründung in `korpus/erzaehlnaehte.json`, und der gelesene Teil hält die 80 %
+für sich. Ganz Genesis (35.827 W) sprengt weiterhin das Band.
 
 | Teilung | Wörter | Erzählanteil | Laufzeit | Naht |
 |---|---:|---:|---:|---|
@@ -427,25 +427,37 @@ halten alle drei. Aber jede Teilung reißt „in voller Länge", und ganz Genesi
 | Genesis 37–50 | 10.992 | 91,7 % | 1,27 h | die Josephsnovelle am Stück |
 | Genesis 1–42 *(Planfassung)* | 29.835 | 87,7 % | 3,46 h | liegt mitten in der Hungersnot-Sequenz |
 
-**Als dominantes Buch fällt Genesis damit ganz aus.** Als Nebenstoff steht es in
-fünfzehn der 45 möglichen Korpora. Wer Genesis als Titelgeber will, muss die
-Vollständigkeitsbedingung lockern — das ist eine Entscheidung, keine Rechnung.
+> **Überholt am 02.09.2026 — die Vollständigkeitsbedingung ist gelockert.**
+> Eine Teilung qualifiziert jetzt, wenn ihre offenen Kanten mit Begründung in
+> [`korpus/erzaehlnaehte.json`](korpus/erzaehlnaehte.json) stehen **und** der
+> gelesene Teil für sich die 80 % hält. **Genesis 12–50 erfüllt beides** und ist
+> damit der dritte mögliche Titelgeber. **Genesis 1–42 bleibt draußen** — die
+> Naht nach Gen 42 ist ausdrücklich als *keine* Naht eingetragen: dort ist
+> Simeon gerade als Geisel in Ägypten zurückgeblieben.
+
+**Als Nebenstoff steht Genesis in fünfzehn der 47 möglichen Korpora, als
+dominantes Buch in zwei.**
 
 > **Die Nähte sind Urteil, keine Messung.** Es gibt im Repo weder eine Nahtliste
 > noch ein Werkzeug dafür. Gen 11/12 und Gen 36/37 sind die beiden Stellen, an
 > denen das Buch selbst neu ansetzt; Gen 42/43 ist es nicht — dort sind die
 > Brüder einmal in Ägypten gewesen und müssen wieder hin.
 
-### Die 45 Korpora, die Gate 1.13 halten
+### Die 47 Korpora, die Gate 1.13 halten
 
-**Getragen werden sie von genau zwei Büchern:** Richter (20 Korpora) und
-2 Samuel (25). Mehr ganze Erzählbücher im Größenfenster gibt es nicht — 1 Samuel
-steckt in V06, Markus reißt das Erzählwerk-Kriterium um 0,6 Punkte, Genesis das
-Band. **283 der Kombinationen aus je zwei dieser Korpora sind materialfrei
-gegeneinander**, taugen also als Paar für V07 und V08.
+**Getragen werden sie von drei Büchern:** 2 Samuel (25 Korpora), Richter (20)
+und — seit der Naht-Lockerung vom 02.09.2026 — **Genesis 12–50** (2). Mehr
+qualifiziert nicht: 1 Samuel steckt in V06, Markus reißt das
+Erzählwerk-Kriterium um 0,6 Punkte, ganz Genesis sprengt das Band, und jede
+andere Teilung hat keinen Eintrag in
+[`korpus/erzaehlnaehte.json`](korpus/erzaehlnaehte.json).
+**336 Paare aus je zwei dieser Korpora sind materialfrei gegeneinander**, taugen
+also als Paar für V07 und V08.
 
 | Korpus | Wörter | Erzählanteil | Dominanz | Abstand | dominant | Laufzeit |
 |---|---:|---:|---:|---:|---|---:|
+| Genesis 12–50 | 29.421 | 91,4 % | 100,0 % | 100,0 | Genesis | 3,41 h |
+| Genesis 12–50 + Jona | 30.693 | 91,2 % | 95,9 % | 91,7 | Genesis | 3,56 h |
 | Genesis 37–50 + Richter | 28.914 | 88,3 % | 62,0 % | 24,0 | Richter | 3,35 h |
 | Genesis 37–50 + Richter + Jona | 30.186 | 88,2 % | 59,4 % | 23,0 | Richter | 3,50 h |
 | Josua 1–12 + Richter | 26.989 | 88,0 % | 66,4 % | 32,8 | Richter | 3,13 h |
@@ -498,13 +510,26 @@ Gefragt war, Unsinn zu melden statt still zu reparieren. Keine Schwelle ist
 deswegen angefasst worden.
 
 **1. Der Erzählanteil gatet nicht mehr — und das sieht man der Liste an.**
-**23 der 45 Korpora liegen unter 80 %**, der niedrigste bei **51,6 %**. Ganz
+**23 der 47 Korpora liegen unter 80 %**, der niedrigste bei **51,6 %**. Ganz
 unten stehen `2 Samuel + Offenbarung` (51,6 %), `Richter + Offenbarung` (52,7 %)
-und `2 Samuel + Römer` (55,1 %) — **Apokalyptik und Brief als halber Korpus.**
-Das ist genau das Material, an dem der V07-Plan gescheitert ist, solange der
-Erzählanteil noch gatete. Formal in Ordnung, inhaltlich das Gegenteil dessen,
-was M8 belegt. Wer eine Variante vorschlägt, nennt den gemeldeten Erzählanteil
-und sagt, was den Rest füllt.
+und `2 Samuel + Römer` (55,1 %) — vollständiges Erzählbuch plus nicht-erzählende
+Beigabe.
+
+*Korrigiert am 02.09.2026:* Hier stand, das sei „das Gegenteil dessen, was M8
+belegt". Das ist zu scharf. **Diese Bauform ist die von V03** — Johannes plus
+Hebräer, 1 Johannes und Kolosser —, dem einzigen Video des Kanals, das
+funktioniert hat, und V03 liegt kapitelweise bei **38,2 %**. `2 Samuel +
+Offenbarung` liegt mit 51,6 % **darüber**. Die brauchbare Linie ist deshalb
+nicht 80 %, sondern V03:
+
+| Erzählanteil | Einordnung |
+|---|---|
+| über **38,2 %** | die **belegte Bauform** — V03 hat mit weniger funktioniert |
+| unter **38,2 %** | **unbelegtes Neuland**; nichts spricht dagegen, aber nichts dafür |
+
+Wer eine Variante vorschlägt, nennt den gemeldeten Erzählanteil und sagt, was
+den Rest füllt — nicht weil der Wert eine Grenze wäre, sondern weil er die
+Größe ist, über die M8 überhaupt redet.
 
 **2. Der Mindestabstand von 15 Punkten kostet neun Korpora — gemessen, bevor er
 festgeschrieben wurde** — und zwar gegen zwei Bezugsmengen, weil die
@@ -520,8 +545,9 @@ Genesis 37–50 + Markus`: Genesis 55,0 % gegen Markus 45,0 %), der knappste
 gehaltene bei 15,6. **In beiden Rechnungen blieb für V07 und V08 reichlich
 übrig; die Schwelle musste nicht aufgeweicht werden.**
 
-**3. Das tiefere Band ist jetzt das einzige Band.** „Erzählwerk in voller Länge"
-ist unter der Strukturfassung ohnehin Bedingung von 1.13 — jeder Korpus, der
+**3. Das tiefere Band ist jetzt das einzige Band.** „Erzählwerk, ganz oder an
+einer eingetragenen Naht geteilt" ist unter der Strukturfassung ohnehin
+Bedingung von 1.13 — jeder Korpus, der
 1.13 hält, bekommt damit automatisch 3,0–3,8 h. Die 3,4 h greifen nur noch bei
 Korpora, die schon durchgefallen sind. `laufzeit_ziel_von_h` bleibt trotzdem
 stehen: es ist die Bandgrenze der Formel und würde bei einer Rückkehr zur
@@ -530,7 +556,7 @@ Prozentfassung wieder wirken.
 **4. Die Gates messen keine Zusammengehörigkeit und keine Nachttauglichkeit.**
 `Genesis 1–11 + Richter 17–21 + 2 Samuel` hält alles und ist eine Sammlung ohne
 inneren Zusammenhang: Schöpfung und Sintflut, der Anhang des Richterbuchs,
-David. **24 der 45 Korpora enthalten Richter 19** — die Vergewaltigung und
+David. **24 der 47 Korpora enthalten Richter 19** — die Vergewaltigung und
 Zerstückelung der Nebenfrau. Das ist kein Fehler der neuen Schwellen; es war
 vorher genauso, und es folgt daraus, dass Richter eines von nur zwei möglichen
 dominanten Büchern ist. „In voller Länge" lässt kein Auslassen zu.

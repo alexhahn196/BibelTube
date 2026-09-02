@@ -115,6 +115,18 @@ hier für die Nutzbarkeit gesetzt, nicht für die Reichweite.
 
 Sie stehen bereits in der Beschreibung oben.
 
+## Auslieferung
+
+| Rolle | Datei | Größe | GoFile |
+|---|---|---:|---|
+| Video | `video-06.mp4` | 1.242,5 MB | https://gofile.io/d/ohoJWd5L |
+| Ton | `video-06.flac` | 525,0 MB | https://gofile.io/d/jYwo4q3D |
+| Untertitel | `video-06.srt` | 261 KB | geht beim Upload direkt als Spur mit |
+
+Prüfsummen und Bytezahlen in
+[`../auslieferung/manifest.json`](../auslieferung/manifest.json).
+**MP4 und FLAC liegen nicht im Repo** (`.gitignore`).
+
 ## Dateien im Paket
 
 - `video-06.mp4` ✓

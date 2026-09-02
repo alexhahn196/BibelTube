@@ -58,6 +58,8 @@
    "rest_fuer_v07": "170.132 W. Apostelgeschichte bleibt vollstaendig frei - das einzige noch unverplante NT-Buch. Dazu 2 Samuel, beide Koenigsbuecher, Josua, Richter, Exodus, Jona, Daniel 4-12 und Genesis 43-50, alle ungeschnitten.",
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 31,
     "kapitel_des_buches": 31,
     "erzaehlanteil_des_buches": 0.8906,
@@ -73,7 +75,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true
@@ -114,6 +116,8 @@
    "rest_fuer_v07": "169.685 W, aber davon 1 Samuel 1-15 (11.156 W) als Torso: Eli, Samuels Berufung und Sauls Aufstieg ohne Fortsetzung, allein zu kurz fuer ein Video. Apostelgeschichte, beide Koenigsbuecher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4-12 und Genesis 43-50 bleiben frei.",
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -129,7 +133,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true
@@ -170,6 +174,8 @@
    "rest_fuer_v07": "168.154 W, davon Apostelgeschichte 13-28 (13.321 W) als Torso: die Paulusreisen ohne Anfang. 2 Samuel, beide Koenigsbuecher, Josua, Richter, Exodus, Rut, Ester, Jona, Daniel 4-12 und Genesis 43-50 bleiben ungeschnitten.",
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 31,
     "kapitel_des_buches": 31,
     "erzaehlanteil_des_buches": 0.8906,
@@ -185,7 +191,7 @@
     "band": false,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": false

@@ -214,9 +214,9 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
 ### Die Kriterien, in dieser Reihenfolge
 
 1. **Dominantes Buch ≥ 50 % der Wörter** *(bis 2026-09-02: 60 %)* — und dieses
-   Buch ist selbst durchlaufendes Erzählwerk, **in voller Länge gelesen**, und
-   liegt **≥ 15 Punkte vor dem zweitgrößten Buch** (`gate_abstand_min`, neu am
-   2026-09-02). Alle drei Zahlen stehen in `config.md` (`gate_dominanz_min`,
+   Buch ist selbst durchlaufendes Erzählwerk, **ganz gelesen oder an einer
+   eingetragenen Erzählnaht geteilt**, und liegt **≥ 15 Punkte vor dem
+   zweitgrößten Buch** (`gate_abstand_min`, neu am 2026-09-02). Alle drei Zahlen stehen in `config.md` (`gate_dominanz_min`,
    `gate_erzaehlanteil_min`, `gate_abstand_min`) und **nirgends sonst**;
    `korpus_pruefung.py` und `erzaehlanteil.py` lesen sie von dort. „Selbst
    Erzählwerk" heißt: das dominante **Buch** ist kapitelweise
@@ -236,12 +236,27 @@ V05:  29.880  +  3×36  +  232  =  30.220 Wörter
    > ist „dominantes Buch zuerst". Wo dominantes Buch und Kanon
    > auseinanderfallen, entscheidet die Dominanz; unter den Nebenbüchern
    > entscheidet der Kanon.
-4. **Ganze Bücher bevorzugen.** Teilung nur an einer **Erzählnaht**.
+4. **Ganze Bücher bevorzugen.** Teilung nur an einer **Erzählnaht** —
+   und die steht seit dem 02.09.2026 in einer Datei, nicht im Kopf:
+   `produktion/korpus/erzaehlnaehte.json`.
 
-   > **Es gibt dafür weder Liste noch Werkzeug — das ist Ermessen und gehört
-   > begründet.** Der Bestand nutzt Genesis 1–42 / 43–50 als Naht, aber
-   > Gen 42/43 liegt mitten in der Hungersnot-Sequenz; sauber ist das nicht.
-   > Wenn du teilst: sag, an welchem Erzählschluss, und dass es dein Urteil ist.
+   > **Für das dominante Buch ist die Datei bindend.** Eine Teilung qualifiziert
+   > nur, wenn jede offene Kante dort mit `ist_naht: true` **und einer
+   > Begründung** steht und der gelesene Teil für sich `gate_erzaehlanteil_min`
+   > hält. Eine Kante ohne Eintrag lässt das Buch durchfallen — das ist der
+   > Schutz gegen Wegschneiden zur Laufzeitanpassung, und er greift, bevor du
+   > rechnest.
+   >
+   > **Willst du an einer Stelle teilen, die nicht drinsteht, ist das eine
+   > Entscheidung des Kanalinhabers, keine deine.** Schlag sie im Freigabepunkt
+   > vor, mit Begründung und den gemessenen Anteilen beider Seiten — trag sie
+   > nicht selbst ein.
+   >
+   > Stand 02.09.2026: **Gen 11/12 ist eine Naht** (Urgeschichte endet,
+   > Abrahamzyklus beginnt), **Gen 42/43 ausdrücklich keine** (mitten in der
+   > Hungersnot-Sequenz, Simeon bleibt als Geisel). Für **Nebenstoff** ist die
+   > Datei nicht bindend — dort darfst du frei schneiden, sollst es aber
+   > begründen.
 5. **Laufzeit im Band 3,4–3,8 h**, gerechnet mit dem WPM aus `config.md`.
    **Ausnahme seit 2026-09-02: 3,0–3,8 h**, wenn das dominante Buch selbst
    Erzählwerk ist **und** in voller Länge im Korpus steht — also genau dann,
@@ -327,33 +342,42 @@ Nebenstoff hinter einem der beiden stehen.
 
 **Was mit den entschiedenen Schwellen tatsächlich baubar ist, ist durchgerechnet**
 und muss nicht geschätzt werden: `produktion/korpus/v07_v08_moeglichkeiten.json`
-führt **45 Korpora**, die alle Prüfungen von 1.13 halten, mit Tabelle in
+führt **47 Korpora**, die alle Prüfungen von 1.13 halten, mit Tabelle in
 `produktion/v06-korpus.md`. Erzeugt von `produktion/v07_v08_moeglichkeiten.py`.
 **Das ist eine Messung und keine Auswahl.**
 
-> ### ⚠️ Was die Strukturfassung durchlässt — lies das, bevor du eine Variante vorschlägst
+> ### Was die Strukturfassung durchlässt — nenn den Erzählanteil in jedem Vorschlag
 >
-> Die Strukturfassung prüft das **dominante Buch**. Über den Rest sagt sie
-> nichts, und der Erzählanteil des Gesamtkorpus gatet nicht mehr. Gemessen an
-> den 45 möglichen Korpora heißt das:
+> Die Strukturfassung prüft das **dominante Buch**. Über den Nebenstoff sagt sie
+> nichts, und der Erzählanteil des Gesamtkorpus gatet nicht mehr. Gemessen an den
+> 47 möglichen Korpora heißt das:
 >
-> - **23 der 45 liegen unter 80 % Erzählanteil**, der niedrigste bei **51,6 %**.
+> - **23 der 47 liegen unter 80 % Erzählanteil**, der niedrigste bei **51,6 %**.
 > - Ganz unten stehen `2 Samuel + Offenbarung` (51,6 %), `Richter + Offenbarung`
->   (52,7 %) und `2 Samuel + Römer` (55,1 %) — **Apokalyptik und Brief als halber
->   Korpus**. Genau dieses Material hat den V07-Plan zu Fall gebracht, als der
->   Erzählanteil noch gatete.
-> - **Nur zwei Bücher können überhaupt dominant sein: Richter und 2 Samuel.**
->   Ein geteiltes Buch scheitert an „in voller Länge", ganz Genesis am Band,
->   Markus am Erzählwerk-Kriterium. 1 Samuel steckt in V06.
-> - **24 der 45 enthalten Richter 19** — die härteste Erzählung des Bestands.
+>   (52,7 %) und `2 Samuel + Römer` (55,1 %) — vollständiges Erzählbuch plus
+>   nicht-erzählende Beigabe.
+> - Dominant sein können drei Bücher: **Richter** (20 Korpora), **2 Samuel**
+>   (25) und seit der Naht-Lockerung **Genesis 12–50** (2). Markus scheitert am
+>   Erzählwerk-Kriterium, ganz Genesis am Band, 1 Samuel steckt in V06.
+> - **24 der 47 enthalten Richter 19** — die härteste Erzählung des Bestands.
 >
-> **Das ist kein Fehler der Regel, sondern ihr Preis.** Die Strukturfassung ist
-> bewusst so entschieden (02.09.2026): belegt ist die Bauart, nicht der
-> Prozentsatz. Aber der gemeldete Erzählanteil ist damit **die wichtigste Zahl
-> im Prüflauf, die nichts abbricht** — nenn ihn in jedem Vorschlag, und wenn er
-> unter 80 % liegt, schreib dazu, was den Rest füllt. Ein Korpus, der 1.13 hält
-> und zur Hälfte aus Offenbarung besteht, ist formal in Ordnung und inhaltlich
-> das Gegenteil dessen, was M8 belegt.
+> **Das ist der Preis der Regel, nicht ihr Fehler — und der Preis ist kleiner,
+> als er aussieht.** „Vollständiges Erzählbuch plus nicht-erzählende Beigabe" ist
+> die Bauform von **V03**, dem einzigen Video des Kanals, das funktioniert hat:
+> Johannes plus Hebräer, 1 Johannes und Kolosser, kapitelweise **38,2 %**.
+> `2 Samuel + Offenbarung` liegt mit 51,6 % **darüber**.
+>
+> **Daraus die brauchbare Linie:**
+>
+> | Erzählanteil des Korpus | wie das einzuordnen ist |
+> |---|---|
+> | **über 38,2 %** | die **belegte Bauform** — V03 hat mit weniger funktioniert |
+> | **unter 38,2 %** | **unbelegtes Neuland**. Nichts spricht dagegen, aber nichts dafür; das gehört gesagt. |
+>
+> Nenn den gemeldeten Erzählanteil in **jedem** Vorschlag, und wenn er unter
+> 80 % liegt, schreib dazu, **was den Rest füllt**. Nicht, weil der Wert eine
+> Grenze wäre — er ist keine —, sondern weil er die Größe ist, über die M8
+> überhaupt redet.
 
 ### Nachttauglichkeit — als Einschätzung kennzeichnen
 
@@ -1366,7 +1390,7 @@ Dreizehn Stellen. Im Ablauf oben steht jeweils die **Praxis**.
 
 | # | Dokument sagt | Praxis zeigt | im Skill festgeschrieben |
 |---|---|---|---|
-| 1 | ~~Gate 1.13: Erzählanteil ≥ 80 % als Gate~~ — **gefallen** | zwei eingecheckte Messungen widersprachen sich: V05 buchweise 81,7 % (bestand), kapitelweise 47,6 % (fiel durch). Der einzige Erfolg V03 fiel in beiden (62,3 / 38,2 %). | **erledigt 2026-09-02**, vom Kanalinhaber entschieden. 1.13 prüft die Struktur: dominantes Buch ≥ `gate_dominanz_min` **und** selbst Erzählwerk **und** in voller Länge **und** ≥ `gate_abstand_min` vor dem zweiten. Der Erzählanteil wird gemeldet und gatet nicht. Preis der Entscheidung: 23 der 45 möglichen Korpora liegen unter 80 %, der niedrigste bei 51,6 % — siehe die Warnung in Schritt 1. |
+| 1 | ~~Gate 1.13: Erzählanteil ≥ 80 % als Gate~~ — **gefallen** | zwei eingecheckte Messungen widersprachen sich: V05 buchweise 81,7 % (bestand), kapitelweise 47,6 % (fiel durch). Der einzige Erfolg V03 fiel in beiden (62,3 / 38,2 %). | **erledigt 2026-09-02**, vom Kanalinhaber entschieden. 1.13 prüft die Struktur: dominantes Buch ≥ `gate_dominanz_min` **und** selbst Erzählwerk **und** ganz gelesen oder an einer eingetragenen Erzählnaht geteilt **und** ≥ `gate_abstand_min` vor dem zweiten. Der Erzählanteil wird gemeldet und gatet nicht. Preis der Entscheidung: 23 der 47 möglichen Korpora liegen unter 80 %, der niedrigste bei 51,6 % — das liegt über V03's 38,2 %, siehe Schritt 1. |
 | 1b | Dominanz ≥ 60 % · Band ab 3,4 h | die beiden klemmten sich gegenseitig ein: Markus fiel unter das Fenster, ganz Genesis darüber — an der Größe, nicht an der Struktur | **erledigt 2026-09-02.** Dominanz **50 %**, untere Bandgrenze **3,0 h** bei ganzem Erzählwerk als dominantem Buch. Beide Zahlen in `config.md`, keine im Code. Der Erzählanteil ist **nicht** mitgelockert worden. |
 | 2 | §3: Eingangsgebet **~400 Wörter** | acht Gebete, **153–195 Wörter** | **150–200 W** |
 | 3 | Gate 1.2: Ähnlichkeit **< 50 %** gegen die Gewinner | V06-Runde misst gegen **drei** Listen mit **45 %** für Kandidaten | **45 % gegen alle drei Listen** für Neues; 50 % bleibt für den Bestand |
@@ -1468,13 +1492,15 @@ ausgewiesen.
    Erzählanteil und Dominanz — reißt aber ebenfalls die Vollständigkeit, weil es
    eine Teilung ist.
 
-   **Daraus folgt die harte Konsequenz der Strukturfassung:** ein geteiltes Buch
-   kann nie dominantes Buch sein. Damit bleiben als dominantes Buch nur **ganze**
-   Erzählbücher im Größenfenster — gemessen sind das **Richter und 2 Samuel**
-   (1 Samuel steckt in V06, Markus reißt das Erzählwerk-Kriterium, Genesis das
-   Band). Alle 45 möglichen Korpora werden deshalb von einem dieser beiden
-   getragen. Wer mehr Auswahl will, muss die Vollständigkeitsbedingung
-   lockern — **das ist eine Entscheidung des Kanalinhabers, keine Rechnung.**
+   **Als dominantes Buch kommen drei in Frage**, gemessen: **Richter** (ganz,
+   86,1 %, trägt 20 der 47 möglichen Korpora), **2 Samuel** (ganz, 81,8 %, 25)
+   und seit der Naht-Lockerung vom 02.09.2026 **Genesis 12–50** (29.421 W,
+   91,4 %, Naht nach Gen 11 eingetragen, 2). Draußen bleiben: 1 Samuel (steckt
+   in V06), Markus (79,4 %, reißt das Erzählwerk-Kriterium um 0,6 Punkte), ganz
+   Genesis (35.827 W, sprengt das Band) und jede Teilung ohne Eintrag in
+   `korpus/erzaehlnaehte.json`. Wer an einer anderen Stelle teilen will, schlägt
+   die Naht im Freigabepunkt vor — **das ist eine Entscheidung des
+   Kanalinhabers, keine Rechnung.**
 3. ~~**V06 ist neu geschnitten und der Stand ist halb.**~~ **Erledigt am
    2026-09-02.** Rut + 1 Samuel + Ester statt Jesaja steht jetzt überall auf
    einem Stand: `plan.json`, `videos-01-08.md`, `videos-06.md`, `config.md`,

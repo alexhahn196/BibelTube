@@ -4,7 +4,7 @@
  "schwellen": {
   "quelle": "produktion/config.md",
   "wpm": 143.7,
-  "gate_fassung": "Struktur - dominantes Buch >= dominanz_min, selbst Erzaehlwerk (>= erzaehlwerk_min), in voller Laenge, >= abstand_min vor dem zweitgroessten Buch. Der Erzaehlanteil des Gesamtkorpus wird gemeldet und gatet nicht.",
+  "gate_fassung": "Struktur - dominantes Buch >= dominanz_min, selbst Erzaehlwerk (>= erzaehlwerk_min), ganz oder an einer eingetragenen Erzaehlnaht geteilt, >= abstand_min vor dem zweitgroessten Buch. Der Erzaehlanteil des Gesamtkorpus wird gemeldet und gatet nicht.",
   "erzaehlwerk_min": 0.8,
   "dominanz_min": 0.5,
   "abstand_min": 0.15,
@@ -16,7 +16,7 @@
    25866,
    32764
   ],
-  "vollwerk_bedingung": "dominantes Buch in voller Laenge im Korpus UND selbst >= erzaehlanteil_min, kapitelweise gemessen"
+  "vollwerk_bedingung": "dominantes Buch >= erzaehlwerk_min (kapitelweise) UND in voller Laenge im Korpus ODER an einer Naht aus produktion/korpus/erzaehlnaehte.json geteilt"
  },
  "freier_bestand": [
   "1 kings",
@@ -70,6 +70,8 @@
    "dominanz": 0.4897,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 16,
     "kapitel_des_buches": 16,
     "erzaehlanteil_des_buches": 0.7941,
@@ -89,7 +91,7 @@
     "band": false,
     "dominanz": false,
     "erzaehlwerk": false,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": false,
@@ -114,6 +116,10 @@
    "dominanz": 1.0,
    "vollwerk": {
     "volle_laenge": false,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [
+     "nach 42"
+    ],
     "kapitel_im_korpus": 42,
     "kapitel_des_buches": 50,
     "erzaehlanteil_des_buches": 0.8769,
@@ -133,7 +139,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": false,
+    "ganz_oder_naht": false,
     "abstand": true
    },
    "bestanden": false,
@@ -141,6 +147,217 @@
   }
  },
  "moeglich": [
+  {
+   "teile": [
+    {
+     "buch": "genesis",
+     "von": 12,
+     "bis": 50,
+     "kapitel": 39,
+     "woerter": 29421,
+     "erzaehlend_woerter": 26880
+    }
+   ],
+   "woerter": 29421,
+   "erzaehlend_woerter": 26880,
+   "erzaehlanteil": 0.9136,
+   "laufzeit_h": 3.412,
+   "dominantes_buch": "genesis",
+   "dominanz": 1.0,
+   "vollwerk": {
+    "volle_laenge": false,
+    "an_erzaehlnaht": true,
+    "fehlende_naehte": [],
+    "kapitel_im_korpus": 39,
+    "kapitel_des_buches": 50,
+    "erzaehlanteil_des_buches": 0.9136,
+    "ist_erzaehlwerk": true,
+    "erfuellt": true
+   },
+   "zielband_woerter": [
+    25866,
+    32764
+   ],
+   "zielband_h": [
+    3.0,
+    3.8
+   ],
+   "abstand": 1.0,
+   "pruefungen": {
+    "band": true,
+    "dominanz": true,
+    "erzaehlwerk": true,
+    "ganz_oder_naht": true,
+    "abstand": true
+   },
+   "bestanden": true,
+   "name": "genesis 12-50",
+   "bloecke": [
+    {
+     "buch": "genesis",
+     "von": 12,
+     "bis": 50,
+     "art": "Teilung",
+     "naht": "Gegenstueck zu Gen 1-11: die Vaetergeschichte am Stueck, von Abrams Ruf bis zu Josephs Tod. URTEIL, keine Messung."
+    }
+   ],
+   "refs": [
+    "genesis 12",
+    "genesis 13",
+    "genesis 14",
+    "genesis 15",
+    "genesis 16",
+    "genesis 17",
+    "genesis 18",
+    "genesis 19",
+    "genesis 20",
+    "genesis 21",
+    "genesis 22",
+    "genesis 23",
+    "genesis 24",
+    "genesis 25",
+    "genesis 26",
+    "genesis 27",
+    "genesis 28",
+    "genesis 29",
+    "genesis 30",
+    "genesis 31",
+    "genesis 32",
+    "genesis 33",
+    "genesis 34",
+    "genesis 35",
+    "genesis 36",
+    "genesis 37",
+    "genesis 38",
+    "genesis 39",
+    "genesis 40",
+    "genesis 41",
+    "genesis 42",
+    "genesis 43",
+    "genesis 44",
+    "genesis 45",
+    "genesis 46",
+    "genesis 47",
+    "genesis 48",
+    "genesis 49",
+    "genesis 50"
+   ]
+  },
+  {
+   "teile": [
+    {
+     "buch": "genesis",
+     "von": 12,
+     "bis": 50,
+     "kapitel": 39,
+     "woerter": 29421,
+     "erzaehlend_woerter": 26880
+    },
+    {
+     "buch": "jonah",
+     "von": 1,
+     "bis": 4,
+     "kapitel": 4,
+     "woerter": 1272,
+     "erzaehlend_woerter": 1099
+    }
+   ],
+   "woerter": 30693,
+   "erzaehlend_woerter": 27979,
+   "erzaehlanteil": 0.9116,
+   "laufzeit_h": 3.56,
+   "dominantes_buch": "genesis",
+   "dominanz": 0.9586,
+   "vollwerk": {
+    "volle_laenge": false,
+    "an_erzaehlnaht": true,
+    "fehlende_naehte": [],
+    "kapitel_im_korpus": 39,
+    "kapitel_des_buches": 50,
+    "erzaehlanteil_des_buches": 0.9136,
+    "ist_erzaehlwerk": true,
+    "erfuellt": true
+   },
+   "zielband_woerter": [
+    25866,
+    32764
+   ],
+   "zielband_h": [
+    3.0,
+    3.8
+   ],
+   "abstand": 0.9171,
+   "pruefungen": {
+    "band": true,
+    "dominanz": true,
+    "erzaehlwerk": true,
+    "ganz_oder_naht": true,
+    "abstand": true
+   },
+   "bestanden": true,
+   "name": "genesis 12-50 + jonah",
+   "bloecke": [
+    {
+     "buch": "genesis",
+     "von": 12,
+     "bis": 50,
+     "art": "Teilung",
+     "naht": "Gegenstueck zu Gen 1-11: die Vaetergeschichte am Stueck, von Abrams Ruf bis zu Josephs Tod. URTEIL, keine Messung."
+    },
+    {
+     "buch": "jonah",
+     "von": 1,
+     "bis": 4,
+     "art": "ganzes Buch",
+     "naht": null
+    }
+   ],
+   "refs": [
+    "genesis 12",
+    "genesis 13",
+    "genesis 14",
+    "genesis 15",
+    "genesis 16",
+    "genesis 17",
+    "genesis 18",
+    "genesis 19",
+    "genesis 20",
+    "genesis 21",
+    "genesis 22",
+    "genesis 23",
+    "genesis 24",
+    "genesis 25",
+    "genesis 26",
+    "genesis 27",
+    "genesis 28",
+    "genesis 29",
+    "genesis 30",
+    "genesis 31",
+    "genesis 32",
+    "genesis 33",
+    "genesis 34",
+    "genesis 35",
+    "genesis 36",
+    "genesis 37",
+    "genesis 38",
+    "genesis 39",
+    "genesis 40",
+    "genesis 41",
+    "genesis 42",
+    "genesis 43",
+    "genesis 44",
+    "genesis 45",
+    "genesis 46",
+    "genesis 47",
+    "genesis 48",
+    "genesis 49",
+    "genesis 50",
+    "jonah 1",
+    "jonah 2",
+    "jonah 3",
+    "jonah 4"
+   ]
+  },
   {
    "teile": [
     {
@@ -168,6 +385,8 @@
    "dominanz": 0.6198,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -187,7 +406,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -281,6 +500,8 @@
    "dominanz": 0.5937,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -300,7 +521,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -397,6 +618,8 @@
    "dominanz": 0.664,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -416,7 +639,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -508,6 +731,8 @@
    "dominanz": 0.6342,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -527,7 +752,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -630,6 +855,8 @@
    "dominanz": 0.6133,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -649,7 +876,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -749,6 +976,8 @@
    "dominanz": 0.6389,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -768,7 +997,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -865,6 +1094,8 @@
    "dominanz": 0.65,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -884,7 +1115,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -987,6 +1218,8 @@
    "dominanz": 0.6529,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -1006,7 +1239,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1104,6 +1337,8 @@
    "dominanz": 0.682,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -1123,7 +1358,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1218,6 +1453,8 @@
    "dominanz": 0.5914,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -1237,7 +1474,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1331,6 +1568,8 @@
    "dominanz": 0.6174,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -1350,7 +1589,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1441,6 +1680,8 @@
    "dominanz": 0.7281,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -1460,7 +1701,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1562,6 +1803,8 @@
    "dominanz": 0.5911,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -1581,7 +1824,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1687,6 +1930,8 @@
    "dominanz": 0.5778,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -1706,7 +1951,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1801,6 +2046,8 @@
    "dominanz": 0.5946,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -1820,7 +2067,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -1921,6 +2168,8 @@
    "dominanz": 0.6814,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -1940,7 +2189,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2039,6 +2288,8 @@
    "dominanz": 0.6412,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -2058,7 +2309,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2164,6 +2415,8 @@
    "dominanz": 0.6267,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -2183,7 +2436,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2286,6 +2539,8 @@
    "dominanz": 0.6177,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -2305,7 +2560,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2408,6 +2663,8 @@
    "dominanz": 0.611,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -2427,7 +2684,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2524,6 +2781,8 @@
    "dominanz": 0.646,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -2543,7 +2802,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2627,6 +2886,8 @@
    "dominanz": 0.6365,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -2646,7 +2907,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2740,6 +3001,8 @@
    "dominanz": 0.5975,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -2759,7 +3022,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2865,6 +3128,8 @@
    "dominanz": 0.6107,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -2884,7 +3149,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -2993,6 +3258,8 @@
    "dominanz": 0.6989,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -3012,7 +3279,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3114,6 +3381,8 @@
    "dominanz": 0.7169,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -3133,7 +3402,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3238,6 +3507,8 @@
    "dominanz": 0.5701,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -3257,7 +3528,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3355,6 +3626,8 @@
    "dominanz": 0.7324,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -3374,7 +3647,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3465,6 +3738,8 @@
    "dominanz": 0.6368,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -3484,7 +3759,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3582,6 +3857,8 @@
    "dominanz": 0.6644,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -3601,7 +3878,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3696,6 +3973,8 @@
    "dominanz": 0.5563,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -3715,7 +3994,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3819,6 +4098,8 @@
    "dominanz": 0.6034,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -3838,7 +4119,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -3942,6 +4223,8 @@
    "dominanz": 0.6518,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -3961,7 +4244,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4061,6 +4344,8 @@
    "dominanz": 0.5492,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -4080,7 +4365,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4179,6 +4464,8 @@
    "dominanz": 0.6834,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -4198,7 +4485,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4287,6 +4574,8 @@
    "dominanz": 0.6701,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -4306,7 +4595,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4401,6 +4690,8 @@
    "dominanz": 0.7008,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -4420,7 +4711,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4512,6 +4803,8 @@
    "dominanz": 0.6261,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -4531,7 +4824,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4630,6 +4923,8 @@
    "dominanz": 0.6552,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -4649,7 +4944,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4745,6 +5040,8 @@
    "dominanz": 0.645,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -4764,7 +5061,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4866,6 +5163,8 @@
    "dominanz": 0.6734,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -4885,7 +5184,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -4984,6 +5283,8 @@
    "dominanz": 0.5862,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -5003,7 +5304,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -5116,6 +5417,8 @@
    "dominanz": 0.6058,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -5135,7 +5438,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -5243,6 +5546,8 @@
    "dominanz": 0.6116,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 21,
     "kapitel_des_buches": 21,
     "erzaehlanteil_des_buches": 0.8615,
@@ -5262,7 +5567,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -5356,6 +5661,8 @@
    "dominanz": 0.6308,
    "vollwerk": {
     "volle_laenge": true,
+    "an_erzaehlnaht": false,
+    "fehlende_naehte": [],
     "kapitel_im_korpus": 24,
     "kapitel_des_buches": 24,
     "erzaehlanteil_des_buches": 0.8185,
@@ -5375,7 +5682,7 @@
     "band": true,
     "dominanz": true,
     "erzaehlwerk": true,
-    "volle_laenge": true,
+    "ganz_oder_naht": true,
     "abstand": true
    },
    "bestanden": true,
@@ -5447,6 +5754,854 @@
   }
  ],
  "paare_v07_v08": [
+  {
+   "v07": "genesis 12-50",
+   "v08": "joshua 1-12 + judges",
+   "woerter": [
+    29421,
+    26989
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8801
+   ],
+   "dominanz": [
+    1.0,
+    0.664
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "joshua 1-12 + judges + jonah",
+   "woerter": [
+    29421,
+    28261
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8794
+   ],
+   "dominanz": [
+    1.0,
+    0.6342
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "joshua 1-12 + 2 samuel + jonah",
+   "woerter": [
+    29421,
+    29786
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8504
+   ],
+   "dominanz": [
+    1.0,
+    0.6529
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "joshua 1-12 + 2 samuel",
+   "woerter": [
+    29421,
+    28514
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8498
+   ],
+   "dominanz": [
+    1.0,
+    0.682
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + 1 kings 12-22 + jonah",
+   "woerter": [
+    29421,
+    30302
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.832
+   ],
+   "dominanz": [
+    1.0,
+    0.5914
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + 1 kings 12-22",
+   "woerter": [
+    29421,
+    29030
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8306
+   ],
+   "dominanz": [
+    1.0,
+    0.6174
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "exodus 1-18 + 2 samuel",
+   "woerter": [
+    29421,
+    32706
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8175
+   ],
+   "dominanz": [
+    1.0,
+    0.5946
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + 2 kings 18-25 + jonah",
+   "woerter": [
+    29421,
+    26300
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8164
+   ],
+   "dominanz": [
+    1.0,
+    0.6814
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "genesis 1-11 + judges 17-21 + 2 samuel",
+   "woerter": [
+    29421,
+    30331
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8164
+   ],
+   "dominanz": [
+    1.0,
+    0.6412
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges 17-21 + 2 samuel + 2 kings 18-25",
+   "woerter": [
+    29421,
+    31031
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8162
+   ],
+   "dominanz": [
+    1.0,
+    0.6267
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + jonah + acts 1-12",
+   "woerter": [
+    29421,
+    29016
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8088
+   ],
+   "dominanz": [
+    1.0,
+    0.6177
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + 1 kings 12-22 + jonah",
+   "woerter": [
+    29421,
+    31827
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8071
+   ],
+   "dominanz": [
+    1.0,
+    0.611
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + acts 1-12",
+   "woerter": [
+    29421,
+    27744
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8063
+   ],
+   "dominanz": [
+    1.0,
+    0.646
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + 1 kings 12-22",
+   "woerter": [
+    29421,
+    30555
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.8047
+   ],
+   "dominanz": [
+    1.0,
+    0.6365
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + 2 kings 18-25 + jonah",
+   "woerter": [
+    29421,
+    27825
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.7888
+   ],
+   "dominanz": [
+    1.0,
+    0.6989
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "genesis 1-11 + 2 samuel + jonah",
+   "woerter": [
+    29421,
+    27125
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.7883
+   ],
+   "dominanz": [
+    1.0,
+    0.7169
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "genesis 1-11 + judges + 2 kings 18-25",
+   "woerter": [
+    29421,
+    31434
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.787
+   ],
+   "dominanz": [
+    1.0,
+    0.5701
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + 2 kings 18-25",
+   "woerter": [
+    29421,
+    26553
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.7852
+   ],
+   "dominanz": [
+    1.0,
+    0.7324
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + jonah + acts 1-12",
+   "woerter": [
+    29421,
+    30541
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.7841
+   ],
+   "dominanz": [
+    1.0,
+    0.6368
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + acts 1-12",
+   "woerter": [
+    29421,
+    29269
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.7806
+   ],
+   "dominanz": [
+    1.0,
+    0.6644
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges 17-21 + 2 samuel + daniel 4-12",
+   "woerter": [
+    29421,
+    32227
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.7028
+   ],
+   "dominanz": [
+    1.0,
+    0.6034
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + jonah + daniel 4-12",
+   "woerter": [
+    29421,
+    27496
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.6834
+   ],
+   "dominanz": [
+    1.0,
+    0.6518
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "genesis 1-11 + judges + daniel 4-12",
+   "woerter": [
+    29421,
+    32630
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.676
+   ],
+   "dominanz": [
+    1.0,
+    0.5492
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + daniel 4-12",
+   "woerter": [
+    29421,
+    26224
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.6747
+   ],
+   "dominanz": [
+    1.0,
+    0.6834
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + jonah + daniel 4-12",
+   "woerter": [
+    29421,
+    29021
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.664
+   ],
+   "dominanz": [
+    1.0,
+    0.6701
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + daniel 4-12",
+   "woerter": [
+    29421,
+    27749
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.6548
+   ],
+   "dominanz": [
+    1.0,
+    0.7008
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + jonah + romans",
+   "woerter": [
+    29421,
+    28625
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5777
+   ],
+   "dominanz": [
+    1.0,
+    0.6261
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + romans",
+   "woerter": [
+    29421,
+    27353
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5644
+   ],
+   "dominanz": [
+    1.0,
+    0.6552
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + jonah + romans",
+   "woerter": [
+    29421,
+    30150
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5644
+   ],
+   "dominanz": [
+    1.0,
+    0.645
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + romans",
+   "woerter": [
+    29421,
+    28878
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5512
+   ],
+   "dominanz": [
+    1.0,
+    0.6734
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + jonah + revelation",
+   "woerter": [
+    29421,
+    30574
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5409
+   ],
+   "dominanz": [
+    1.0,
+    0.5862
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + jonah + revelation",
+   "woerter": [
+    29421,
+    32099
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5301
+   ],
+   "dominanz": [
+    1.0,
+    0.6058
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "judges + revelation",
+   "woerter": [
+    29421,
+    29302
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5269
+   ],
+   "dominanz": [
+    1.0,
+    0.6116
+   ]
+  },
+  {
+   "v07": "genesis 12-50",
+   "v08": "2 samuel + revelation",
+   "woerter": [
+    29421,
+    30827
+   ],
+   "erzaehlanteil": [
+    0.9136,
+    0.5163
+   ],
+   "dominanz": [
+    1.0,
+    0.6308
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "joshua 1-12 + judges",
+   "woerter": [
+    30693,
+    26989
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8801
+   ],
+   "dominanz": [
+    0.9586,
+    0.664
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "joshua 1-12 + 2 samuel",
+   "woerter": [
+    30693,
+    28514
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8498
+   ],
+   "dominanz": [
+    0.9586,
+    0.682
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges + 1 kings 12-22",
+   "woerter": [
+    30693,
+    29030
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8306
+   ],
+   "dominanz": [
+    0.9586,
+    0.6174
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "exodus 1-18 + 2 samuel",
+   "woerter": [
+    30693,
+    32706
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8175
+   ],
+   "dominanz": [
+    0.9586,
+    0.5946
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "genesis 1-11 + judges 17-21 + 2 samuel",
+   "woerter": [
+    30693,
+    30331
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8164
+   ],
+   "dominanz": [
+    0.9586,
+    0.6412
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges 17-21 + 2 samuel + 2 kings 18-25",
+   "woerter": [
+    30693,
+    31031
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8162
+   ],
+   "dominanz": [
+    0.9586,
+    0.6267
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges + acts 1-12",
+   "woerter": [
+    30693,
+    27744
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8063
+   ],
+   "dominanz": [
+    0.9586,
+    0.646
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "2 samuel + 1 kings 12-22",
+   "woerter": [
+    30693,
+    30555
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.8047
+   ],
+   "dominanz": [
+    0.9586,
+    0.6365
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "genesis 1-11 + judges + 2 kings 18-25",
+   "woerter": [
+    30693,
+    31434
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.787
+   ],
+   "dominanz": [
+    0.9586,
+    0.5701
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "2 samuel + 2 kings 18-25",
+   "woerter": [
+    30693,
+    26553
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.7852
+   ],
+   "dominanz": [
+    0.9586,
+    0.7324
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "2 samuel + acts 1-12",
+   "woerter": [
+    30693,
+    29269
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.7806
+   ],
+   "dominanz": [
+    0.9586,
+    0.6644
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges 17-21 + 2 samuel + daniel 4-12",
+   "woerter": [
+    30693,
+    32227
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.7028
+   ],
+   "dominanz": [
+    0.9586,
+    0.6034
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "genesis 1-11 + judges + daniel 4-12",
+   "woerter": [
+    30693,
+    32630
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.676
+   ],
+   "dominanz": [
+    0.9586,
+    0.5492
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges + daniel 4-12",
+   "woerter": [
+    30693,
+    26224
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.6747
+   ],
+   "dominanz": [
+    0.9586,
+    0.6834
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "2 samuel + daniel 4-12",
+   "woerter": [
+    30693,
+    27749
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.6548
+   ],
+   "dominanz": [
+    0.9586,
+    0.7008
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges + romans",
+   "woerter": [
+    30693,
+    27353
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.5644
+   ],
+   "dominanz": [
+    0.9586,
+    0.6552
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "2 samuel + romans",
+   "woerter": [
+    30693,
+    28878
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.5512
+   ],
+   "dominanz": [
+    0.9586,
+    0.6734
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "judges + revelation",
+   "woerter": [
+    30693,
+    29302
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.5269
+   ],
+   "dominanz": [
+    0.9586,
+    0.6116
+   ]
+  },
+  {
+   "v07": "genesis 12-50 + jonah",
+   "v08": "2 samuel + revelation",
+   "woerter": [
+    30693,
+    30827
+   ],
+   "erzaehlanteil": [
+    0.9116,
+    0.5163
+   ],
+   "dominanz": [
+    0.9586,
+    0.6308
+   ]
+  },
   {
    "v07": "genesis 37-50 + judges",
    "v08": "joshua 1-12 + 2 samuel + jonah",

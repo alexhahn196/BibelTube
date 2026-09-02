@@ -40,7 +40,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) (v2.2) �
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
 | 1.11 | **Pegelabstand** | Stimme ≥ 12 dB über dem Bett, über Sprachabschnitte gemessen — **in der Mono-Summe UND je Kanal, beide Werte** | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet**. Zwei Werte statt einem seit 2026-08-23: `qa_mix.json` maß nur den Mono-Downmix und meldete 12,0 dB, wo am Kopfhörer 6,8 dB standen (V01–V04). | `schritt3_bett.py`, meldet `abstand_eingehalten_mono` und `abstand_eingehalten_je_kanal` — **bricht bei beiden ab** |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
-| 1.13 | **Korpusart** | **dominantes Buch ≥ 50 % der Wörter UND selbst durchlaufendes Erzählwerk UND in voller Länge gelesen UND ≥ 15 Punkte vor dem zweitgrößten Buch.** Nebenstoff frei. Der Erzählanteil des Gesamtkorpus wird gemessen und gemeldet, **gatet aber nicht** — Begründung unten. | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | Schwellen in [`produktion/config.md`](config.md) (`gate_*`); `produktion/korpus_pruefung.py` und `produktion/erzaehlanteil.py` |
+| 1.13 | **Korpusart** | **dominantes Buch ≥ 50 % der Wörter UND selbst durchlaufendes Erzählwerk UND ganz gelesen oder an einer eingetragenen Erzählnaht geteilt UND ≥ 15 Punkte vor dem zweitgrößten Buch.** Nebenstoff frei. Der Erzählanteil des Gesamtkorpus wird gemessen und gemeldet, **gatet aber nicht** — Begründung unten. | **M8** (eigene Kanaldaten Gate 2, 2026-08-23: Endretention V3 14,4 % gegen V2 2,4 %, Faktor 6) | Schwellen in [`produktion/config.md`](config.md) (`gate_*`); `produktion/korpus_pruefung.py` und `produktion/erzaehlanteil.py` |
 | 1.14 | **Eigenname im Titel** | Pflicht, in **jedem** Video (Buch- oder Evangelienname) | Formel §1. **Konvention, kein belegter Hebel** — der Wirkmechanismus ist ungeklärt, siehe §1 „die sparsamere Erklärung". Die Prüfung steht hier, weil sie nichts kostet und die Serie einheitlich hält. | von Hand gegen §1 |
 | 1.15 | **Titellänge** | unter **70 Zeichen**, und der Eigenname beginnt vor Zeichen **60** | **Gesetzte Grenze, nicht gemessen.** Belegt ist nur der Anlass: Gate 2 (2026-08-23) hat **68 % der Aufrufe am Handy** gemessen, TV und Handy zusammen 80 %. In der Vorschlagsleiste am Handy bricht der Titel bei rund 60 Zeichen ab — *wo genau*, ist nicht gemessen und hängt an Gerät und Schriftgröße. Steht der Eigenname jenseits der Kante, trägt er die kontextliche Zuordnung nicht mehr, auf der 1.14 beruht. SOLL, nicht MUSS. | `produktion/titel_kandidaten.py` meldet Länge und Position |
 
@@ -62,9 +62,20 @@ des Korpus, nicht nach seinem Prozentwert:
 1. **dominantes Buch ≥ `gate_dominanz_min`** (50 %)
 2. **und dieses Buch ist selbst Erzählwerk** — es hält für sich allein
    `gate_erzaehlanteil_min`, kapitelweise gemessen
-3. **und es steht in voller Länge im Korpus** — ein beschnittenes Buch
-   qualifiziert nicht; sonst ließe sich jede Laufzeit durch Wegschneiden
-   passend machen
+3. **und es steht in voller Länge im Korpus — oder ist an einer Erzählnaht
+   geteilt** *(gelockert am 02.09.2026)*. Eine Teilung zählt nur, wenn **beide**
+   Bedingungen gelten:
+   - jede offene Kante des gelesenen Bereichs liegt an einer Naht, die **mit
+     Begründung** in [`korpus/erzaehlnaehte.json`](korpus/erzaehlnaehte.json)
+     steht (Buchanfang und Buchende sind keine offenen Kanten), **und**
+   - der **gelesene Teil** hält für sich `gate_erzaehlanteil_min`.
+
+   Sonst gilt weiter: volles Buch. **Wegschneiden zur Laufzeitanpassung bleibt
+   damit ausgeschlossen** — eine Kante ohne Eintrag lässt das Buch durchfallen,
+   und eine Naht einzutragen heißt, sie zu begründen und zu unterschreiben,
+   statt eine Zahl passend zu machen. Verworfene Nahtstellen stehen mit
+   `ist_naht: false` in derselben Datei, damit sie nicht zweimal vorgeschlagen
+   werden.
 4. **und es liegt ≥ `gate_abstand_min` (15 Punkte) vor dem zweitgrößten Buch**
 
 **Warum der Erzählanteil nicht gatet.** Zwei eingecheckte Messungen derselben
@@ -92,6 +103,22 @@ Die 45 sind der Inhalt von
 [`korpus/v07_v08_moeglichkeiten.json`](korpus/v07_v08_moeglichkeiten.json). Der
 knappste ausgeschiedene Fall lag bei 9,9 Punkten, der knappste gehaltene bei
 15,6. **In beiden Rechnungen bleibt für V07 und V08 reichlich übrig.**
+
+#### Die erste Naht: Genesis 11/12
+
+`korpus/erzaehlnaehte.json` führt am 02.09.2026 zwei Einträge:
+
+| Buch | Naht nach | ist Naht | Begründung, kurz |
+|---|---|---|---|
+| Genesis | 11 | **ja** | Gen 11 schließt mit Terachs Tod in Haran, Gen 12,1 setzt mit dem Ruf an Abram neu an — anderer Bogen, andere Akteure. Beide Seiten sind für sich lesbar. |
+| Genesis | 42 | **nein** | Gen 42 endet mitten in der Hungersnot-Sequenz, Simeon bleibt als Geisel zurück. Das war die Teilung der V08-Planfassung; sie ist ausdrücklich verworfen. |
+
+**Was sich dadurch ändert:** **Genesis 12–50** (29.421 W, **91,4 %** erzählend)
+qualifiziert als dominantes Buch und ist damit der dritte mögliche Titelgeber
+neben Richter und 2 Samuel. **Genesis 1–42 bleibt draußen** — die Kante nach 42
+hat keinen Eintrag, und der Eintrag, der dort steht, sagt ausdrücklich Nein.
+Genesis 1–11 hat die Naht, hält aber mit 68,2 % das Erzählwerk-Kriterium nicht;
+als Nebenstoff ist es weiter brauchbar.
 
 #### 1.1: die untere Bandgrenze bei ganzem Erzählwerk
 

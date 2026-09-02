@@ -53,7 +53,10 @@ recht nicht:
             (>= gate_erzaehlanteil_min, KAPITELWEISE gemessen aus
              produktion/korpus/erzaehlanteil.json - nicht aus der
              Gattungstabelle weiter unten)
-        UND es wird in voller Laenge gelesen
+        UND es wird in voller Laenge gelesen ODER an einer Erzaehlnaht
+            geteilt, die mit Begruendung in erzaehlnaehte_datei steht, und der
+            gelesene Teil haelt fuer sich gate_erzaehlanteil_min
+            (gelockert 2026-09-02)
         UND es liegt >= gate_abstand_min vor dem zweitgroessten Buch
             (neu am 2026-09-02)
     Nebenstoff ist frei.
@@ -124,11 +127,24 @@ DOMINANZ_MIN = float(_CFG["gate_dominanz_min"])
 #: Schwelle der Frage "ist der groesste Block ueberhaupt Erzaehlwerk"
 #: (groesster_ist_erzaehlung). Stand vorher als 0.8 im Code.
 ERZAEHLWERK_MIN = float(_CFG["gate_erzaehlanteil_min"])
+#: Die Erzaehlnaht-Pruefung kommt aus produktion/erzaehlanteil.py - eine
+#: Implementierung, nicht zwei. Der Pfad der Nahtdatei steht in config.md.
+def _naht_werkzeug():
+    import importlib.util
+    pfad = os.path.join(os.path.dirname(os.path.abspath(__file__)), "erzaehlanteil.py")
+    spec = importlib.util.spec_from_file_location("_ea_naht", pfad)
+    modul = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modul)
+    return modul
+
+
 #: Mindestabstand des dominanten Buchs zum zweitgroessten, in Anteilspunkten.
 #: NEU 2026-09-02: die Dominanzschwelle allein laesst 50,1 gegen 45,0 durch,
 #: und dann verkauft der Eigenname im Titel ein Buch, das knapp die Haelfte
 #: traegt. Herleitung und Messung in config.md bei gate_abstand_min.
 ABSTAND_MIN = float(_CFG["gate_abstand_min"])
+#: Wo die Erzaehlnaehte stehen - der Pfad kommt aus config.md, nicht von hier.
+NAEHTE_DATEI = _CFG["erzaehlnaehte_datei"]
 #: Vor- und Nachlauf des Klangbetts liegen vor bzw. hinter der Sprache und
 #: verlaengern das fertige Video, ohne ein Wort zu kosten.
 _RAND_S = float(_CFG["vorlauf_s"]) + float(_CFG["nachlauf_s"])
@@ -365,6 +381,10 @@ def zusammenfassen(teile, kapitel, kap=None, fein=None):
 
     ist_erzaehlwerk = (None if erz_anteil_dominant is None
                        else erz_anteil_dominant >= ERZAEHLWERK_MIN)
+    naht_ok, fehlende_naehte = (True, [])
+    if dominant and not dominant["ganzes_buch"] and kap is not None:
+        naht_ok, fehlende_naehte = _naht_werkzeug().naht_gedeckt(
+            dominant["buch"], dominant["kapitel"], buchlaenge(kap, dominant["buch"]))
     return {"teile": teile, "kapitel": set(kapitel), "woerter": w, "erzaehlung": erz,
             "erz_pct": 100 * erz / w if w else 0,
             "stunden": _video_h(w, len(set(kapitel))),
@@ -374,8 +394,12 @@ def zusammenfassen(teile, kapitel, kap=None, fein=None):
             "zweiter": zweiter,
             "erz_anteil_dominant": erz_anteil_dominant,
             "groesster_ist_erzaehlung": ist_erzaehlwerk,
-            # Erzaehlwerk UND ungekuerzt - nur dann gilt das tiefere Band.
-            "groesster_ist_vollwerk": bool(dominant and dominant["ganzes_buch"]
+            "groesster_an_naht": naht_ok and dominant is not None and not dominant["ganzes_buch"],
+            "fehlende_naehte": fehlende_naehte,
+            # Erzaehlwerk UND (ungekuerzt ODER an einer eingetragenen Naht
+            # geteilt) - nur dann gilt das tiefere Band.
+            "groesster_ist_vollwerk": bool(dominant
+                                           and (dominant["ganzes_buch"] or naht_ok)
                                            and ist_erzaehlwerk)}
 
 
@@ -497,12 +521,20 @@ def main():
                 fehler.append("1.13-Erzaehlwerk")
         voll_n = buchlaenge(kap, g["buch"])
         gelesen = g["kapitel"]
-        print(f"  1.13 in voller Laenge gelesen         "
-              f"{'OK' if g['ganzes_buch'] else 'REISST'}"
-              + ("" if g["ganzes_buch"] else
-                 f"  (gelesen {kapitel_text(gelesen)} = {len(gelesen)} von {voll_n} Kapiteln; "
-                 f"eine Teilung braucht eine Erzaehlnaht und eine Begruendung)"))
-        if not g["ganzes_buch"]:
+        ganz_oder_naht = g["ganzes_buch"] or r["groesster_an_naht"]
+        if g["ganzes_buch"]:
+            zusatz = ""
+        elif r["groesster_an_naht"]:
+            zusatz = (f"  (an Erzaehlnaht geteilt: {kapitel_text(gelesen)} = "
+                      f"{len(gelesen)} von {voll_n} Kapiteln, Naht eingetragen in "
+                      f"{NAEHTE_DATEI})")
+        else:
+            zusatz = (f"  (gelesen {kapitel_text(gelesen)} = {len(gelesen)} von "
+                      f"{voll_n} Kapiteln; ohne Eintrag in {NAEHTE_DATEI}: "
+                      f"{', '.join(r['fehlende_naehte'])})")
+        print(f"  1.13 ganzes Buch oder Erzaehlnaht     "
+              f"{'OK' if ganz_oder_naht else 'REISST'}" + zusatz)
+        if not ganz_oder_naht:
             fehler.append("1.13-Vollstaendigkeit")
         # Mindestabstand zum zweitgroessten Buch (config.md, gate_abstand_min).
         # Dieselbe Buch-Aggregation wie oben - nicht noch einmal selbst gerechnet.

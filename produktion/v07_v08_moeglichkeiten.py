@@ -147,7 +147,8 @@ def korpus_rechnen(tabelle, bloecke):
         "band": grenzen[0] <= woerter <= grenzen[1],
         "dominanz": d["dominanz"] >= ea.GATE_DOMINANZ,
         "erzaehlwerk": vw["ist_erzaehlwerk"],
-        "volle_laenge": vw["volle_laenge"],
+        # volles Buch ODER Teilung an einer eingetragenen Erzaehlnaht
+        "ganz_oder_naht": vw["volle_laenge"] or vw["an_erzaehlnaht"],
         "abstand": d["abstand"] >= ea.GATE_ABSTAND,
     }
     d["bestanden"] = all(d["pruefungen"].values())
@@ -237,7 +238,8 @@ def main():
             "quelle": "produktion/config.md",
             "wpm": ea.WPM,
             "gate_fassung": ("Struktur - dominantes Buch >= dominanz_min, selbst Erzaehlwerk "
-                             "(>= erzaehlwerk_min), in voller Laenge, >= abstand_min vor dem "
+                             "(>= erzaehlwerk_min), ganz oder an einer eingetragenen Erzaehlnaht "
+                             "geteilt, >= abstand_min vor dem "
                              "zweitgroessten Buch. Der Erzaehlanteil des Gesamtkorpus wird "
                              "gemeldet und gatet nicht."),
             "erzaehlwerk_min": ea.GATE_ERZAEHLEND,
@@ -245,8 +247,9 @@ def main():
             "abstand_min": ea.GATE_ABSTAND,
             "zielband_woerter": list(ea.BAND),
             "zielband_woerter_vollwerk": list(ea.BAND_VOLLWERK),
-            "vollwerk_bedingung": ("dominantes Buch in voller Laenge im Korpus UND selbst "
-                                   ">= erzaehlanteil_min, kapitelweise gemessen"),
+            "vollwerk_bedingung": ("dominantes Buch >= erzaehlwerk_min (kapitelweise) UND "
+                                   "in voller Laenge im Korpus ODER an einer Naht aus "
+                                   "produktion/korpus/erzaehlnaehte.json geteilt"),
         },
         "freier_bestand": sorted({b[0] for b in bloecke}),
         "planfassungen": planfassungen,
@@ -255,11 +258,11 @@ def main():
     }, open(AUS, "w"), ensure_ascii=False, indent=1)
 
     print("Gate 1.13, Strukturfassung. Schwellen aus produktion/config.md:")
-    print("  dominantes Buch >= %g %% | selbst Erzaehlwerk >= %g %% | in voller Laenge |"
+    print("  dominantes Buch >= %g %% | selbst Erzaehlwerk >= %g %% | ganz oder an Naht |"
           % (ea.GATE_DOMINANZ * 100, ea.GATE_ERZAEHLEND * 100))
     print("  Abstand zum zweitgroessten Buch >= %g Punkte" % (ea.GATE_ABSTAND * 100))
     print("  Der Erzaehlanteil des Gesamtkorpus wird gemeldet und gatet NICHT.")
-    print("Zielband %d-%d W (%.2f-%.2f h); dominantes Buch ganz und Erzaehlwerk: %d-%d W (%.2f-%.2f h)\n"
+    print("Zielband %d-%d W (%.2f-%.2f h); qualifiziert das dominante Buch: %d-%d W (%.2f-%.2f h)\n"
           % (ea.BAND[0], ea.BAND[1], ea.ZIEL_VON_H, ea.ZIEL_BIS_H,
              ea.BAND_VOLLWERK[0], ea.BAND_VOLLWERK[1], ea.ZIEL_VON_H_VOLLWERK, ea.ZIEL_BIS_H))
 

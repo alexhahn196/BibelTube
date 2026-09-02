@@ -92,6 +92,20 @@ def main():
         pruef("%s: Dominanz, Erzaehlwerk, Vollstaendigkeit, Abstand" % video,
               werte == soll, "%s / %s" % (werte, soll))
 
+    print("\n Erzaehlnaehte - eine Quelle, und sie wirkt")
+    ea = _laden("erzaehlanteil", "erzaehlanteil.py")
+    tabelle, _ = ea.einstufung_rechnen()
+    faelle = [
+        ("genesis 12-50 qualifiziert (Naht nach 11)", "genesis", 12, 50, True),
+        ("genesis 1-42 qualifiziert NICHT (Naht nach 42 verworfen)", "genesis", 1, 42, False),
+        ("genesis 1-11 qualifiziert NICHT (Naht ja, aber 68,2 % erzaehlend)",
+         "genesis", 1, 11, False),
+        ("judges 1-16 qualifiziert NICHT (keine Naht eingetragen)", "judges", 1, 16, False),
+    ]
+    for name, buch, von, bis, soll in faelle:
+        vw = ea.vollwerk_pruefen(tabelle, buch, [{"buch": buch, "von": von, "bis": bis}])
+        pruef(name, vw["erfuellt"] == soll)
+
     print("\n Erzaehlanteil - eine Zahl aus einer Datei")
     kap = json.load(open(os.path.join(HIER, "korpus", "kapitel.json"), encoding="utf-8"))
     fein = kp.fein_lesen()

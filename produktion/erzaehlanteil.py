@@ -57,8 +57,8 @@ VERSE = "produktion/korpus/kapitel_verse.json"
 AUS_EINSTUFUNG = "produktion/korpus/erzaehlanteil.json"
 AUS_VARIANTEN = "produktion/korpus/v06_varianten.json"
 
-def _config():
-    """Sprechtempo und Zielband aus produktion/config.md - dort steht der einzige Wert."""
+def _config_werte():
+    """Alle ini-Werte aus produktion/config.md - dort steht jeder einzige."""
     text = open("produktion/config.md", encoding="utf-8").read()
     werte = {}
     for zeile in "\n".join(re.findall(r"```ini\n(.*?)```", text, re.S)).splitlines():
@@ -66,6 +66,19 @@ def _config():
         if "=" in zeile:
             k, v = zeile.split("=", 1)
             werte[k.strip()] = v.strip()
+    return werte
+
+
+def _config_wert(name):
+    werte = _config_werte()
+    if name not in werte:
+        raise SystemExit("produktion/config.md: %s fehlt" % name)
+    return werte[name]
+
+
+def _config():
+    """Sprechtempo, Zielband und die Gate-Schwellen."""
+    werte = _config_werte()
     gebraucht = ("wpm_erwartet", "laufzeit_ziel_von_h", "laufzeit_ziel_bis_h",
                  "laufzeit_ziel_von_h_vollwerk", "gate_erzaehlanteil_min",
                  "gate_dominanz_min", "gate_abstand_min")
@@ -1376,31 +1389,90 @@ def buchlaenge(buch):
                and ref[len(praefix):].isdigit())
 
 
+_NAEHTE = None
+
+
+def naehte_lesen():
+    """Die eingecheckten Erzaehlnaehte. EINE Quelle - produktion/config.md nennt
+    den Pfad, hier steht er nicht als Literal."""
+    global _NAEHTE
+    if _NAEHTE is None:
+        pfad = _config_wert("erzaehlnaehte_datei")
+        try:
+            roh = json.load(open(pfad, encoding="utf-8"))["naehte"]
+        except (OSError, KeyError, ValueError):
+            roh = []
+        _NAEHTE = {(n["buch"], int(n["nach_kapitel"])) for n in roh if n.get("ist_naht")}
+    return _NAEHTE
+
+
+def laeufe(kapitel):
+    """Zusammenhaengende Kapitelfolgen: [1,2,3,7,8] -> [(1,3),(7,8)]."""
+    if not kapitel:
+        return []
+    aus, start, vorher = [], kapitel[0], kapitel[0]
+    for k in kapitel[1:]:
+        if k != vorher + 1:
+            aus.append((start, vorher))
+            start = k
+        vorher = k
+    aus.append((start, vorher))
+    return aus
+
+
+def naht_gedeckt(buch, kapitel, buchlaenge_n):
+    """Liegt jede offene Kante des gelesenen Bereichs an einer eingetragenen Naht?
+
+    Buchanfang (vor Kapitel 1) und Buchende (nach dem letzten Kapitel) sind keine
+    offenen Kanten. Alles andere braucht einen Eintrag mit ist_naht=true in der
+    Nahtdatei. Gibt (ok, fehlende_kanten) zurueck."""
+    naehte = naehte_lesen()
+    fehlt = []
+    for von, bis in laeufe(kapitel):
+        if von > 1 and (buch, von - 1) not in naehte:
+            fehlt.append("vor %d" % von)
+        if bis < buchlaenge_n and (buch, bis) not in naehte:
+            fehlt.append("nach %d" % bis)
+    return (not fehlt), fehlt
+
+
 def vollwerk_pruefen(tabelle, buch, teile):
-    """Ist das dominante Buch ein Erzaehlwerk in voller Laenge? Zwei Bedingungen,
-    beide gemessen, keine Einschaetzung:
+    """Qualifiziert das dominante Buch als Erzaehlwerk? Alles gemessen oder
+    eingecheckt, nichts eingeschaetzt.
 
-      1. volle Laenge - alle Kapitel des Buches stehen im Korpus,
-      2. Erzaehlwerk  - das Buch selbst haelt gate_erzaehlanteil_min, kapitelweise
-                        gemessen wie der Korpus auch.
+      1. Erzaehlwerk  - der GELESENE Teil haelt gate_erzaehlanteil_min,
+                        kapitelweise gemessen wie der Korpus auch.
+      2. entweder volle Laenge - alle Kapitel des Buches stehen im Korpus,
+         oder    Naht        - jede offene Kante liegt an einer Erzaehlnaht, die
+                        mit Begruendung in der Nahtdatei steht.
 
-    Nur wenn beides zutrifft, gilt das tiefere Band (siehe band()). Ein
-    beschnittenes Buch qualifiziert nicht: sonst liesse sich jede Laufzeit durch
-    Wegschneiden von Kapiteln passend machen."""
+    Nur wenn 1 und 2 zutreffen, gilt das tiefere Band (siehe band()).
+
+    2026-09-02 gelockert: bis dahin war ausschliesslich die volle Laenge erlaubt.
+    Damit fiel jede Teilung durch, auch eine saubere - Genesis 12-50 (91,4 %
+    erzaehlend) genauso wie ein Schnitt am Wortzaehler entlang. Die Nahtdatei
+    trennt die beiden Faelle, ohne die Schutzwirkung aufzugeben: eine Kante ohne
+    Eintrag laesst das Buch weiter durchfallen, Wegschneiden zur
+    Laufzeitanpassung ist also weiter ausgeschlossen."""
     im_korpus = sorted({k for t in teile if t["buch"] == buch
                         for k in range(t["von"], t["bis"] + 1)})
-    ganz = im_korpus == list(range(1, buchlaenge(buch) + 1))
+    n_buch = buchlaenge(buch)
+    ganz = im_korpus == list(range(1, n_buch + 1))
+    gedeckt, fehlende_kanten = naht_gedeckt(buch, im_korpus, n_buch)
     refs = ["%s %d" % (buch, k) for k in im_korpus]
     w = sum(tabelle[r]["woerter"] for r in refs)
     e = sum(tabelle[r]["erzaehlend_woerter"] for r in refs)
     anteil = e / w if w else 0.0
+    ist_erz = anteil >= GATE_ERZAEHLEND
     return {
         "volle_laenge": ganz,
+        "an_erzaehlnaht": gedeckt and not ganz,
+        "fehlende_naehte": fehlende_kanten,
         "kapitel_im_korpus": len(im_korpus),
-        "kapitel_des_buches": buchlaenge(buch),
+        "kapitel_des_buches": n_buch,
         "erzaehlanteil_des_buches": round(anteil, 4),
-        "ist_erzaehlwerk": anteil >= GATE_ERZAEHLEND,
-        "erfuellt": ganz and anteil >= GATE_ERZAEHLEND,
+        "ist_erzaehlwerk": ist_erz,
+        "erfuellt": (ganz or gedeckt) and ist_erz,
     }
 
 
@@ -1447,7 +1519,8 @@ def variante_rechnen(tabelle, kuerzel, v):
         "band": grenzen[0] <= woerter <= grenzen[1],
         "dominanz": ergebnis["dominanz"] >= GATE_DOMINANZ,
         "erzaehlwerk": vw["ist_erzaehlwerk"],
-        "volle_laenge": vw["volle_laenge"],
+        # Volles Buch ODER Teilung an einer eingetragenen Erzaehlnaht.
+        "ganz_oder_naht": vw["volle_laenge"] or vw["an_erzaehlnaht"],
         "abstand": ergebnis["abstand"] >= GATE_ABSTAND,
     }
     ergebnis["bestanden"] = all(ergebnis["pruefungen"].values())
@@ -1494,7 +1567,7 @@ def main():
     alle_ok = True
     for v in varianten:
         marken = "".join(("+" if v["pruefungen"][p] else "-")
-                         for p in ("band", "dominanz", "erzaehlwerk", "volle_laenge", "abstand"))
+                         for p in ("band", "dominanz", "erzaehlwerk", "ganz_oder_naht", "abstand"))
         print("%-6s %-12s %8s %8.2f%% %9s %-11s %s %s"
               % (v["kuerzel"], v["bauart"], "{:,}".format(v["woerter"]),
                  v["erzaehlanteil"] * 100, v["laufzeit"], v["dominantes_buch"],
@@ -1503,10 +1576,10 @@ def main():
     print("\n(Gate 1.13, Strukturfassung - Marken in dieser Reihenfolge:")
     print(" Zielband | Dominanz >= %g %% | dominantes Buch ist Erzaehlwerk (>= %g %%) |"
           % (GATE_DOMINANZ * 100, GATE_ERZAEHLEND * 100))
-    print(" in voller Laenge gelesen | Abstand zum zweitgroessten Buch >= %g Punkte)"
-          % (GATE_ABSTAND * 100))
+    print(" in voller Laenge ODER an einer eingetragenen Erzaehlnaht geteilt |")
+    print(" Abstand zum zweitgroessten Buch >= %g Punkte)" % (GATE_ABSTAND * 100))
     print("(Der Erzaehlanteil des Gesamtkorpus wird gemeldet, gatet aber NICHT.)")
-    print("(Zielband %d-%d W; ist das dominante Buch Erzaehlwerk in voller Laenge: %d-%d W)"
+    print("(Zielband %d-%d W; qualifiziert das dominante Buch: %d-%d W)"
           % (BAND[0], BAND[1], BAND_VOLLWERK[0], BAND_VOLLWERK[1]))
     print("(Alle Schwellen stehen in produktion/config.md, nirgends sonst.)")
     for v in varianten:

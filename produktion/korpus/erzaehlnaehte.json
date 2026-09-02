@@ -1,0 +1,51 @@
+{
+ "was": "Erzaehlnaehte: Stellen, an denen ein Buch geteilt werden darf, ohne dass es als dominantes Erzaehlwerk ausfaellt. Entschieden vom Kanalinhaber, nicht gemessen.",
+ "stand": "2026-09-02",
+ "regel": "Gate 1.13 verlangt das dominante Buch grundsaetzlich in voller Laenge. Ein geteiltes Buch qualifiziert nur, wenn ZWEI Bedingungen zusammen gelten: (1) jede offene Kante des gelesenen Bereichs liegt an einer Naht, die hier mit ist_naht=true und einer Begruendung steht - Buchanfang und Buchende sind keine offenen Kanten; (2) der gelesene Teil haelt fuer sich gate_erzaehlanteil_min, kapitelweise gemessen. Fehlt eine Naht in dieser Datei, zaehlt sie nicht. Damit bleibt Wegschneiden zur Laufzeitanpassung ausgeschlossen: eine Kante ohne Eintrag laesst das Buch durchfallen.",
+ "feld_nach_kapitel": "Die Naht liegt NACH diesem Kapitel, also zwischen nach_kapitel und nach_kapitel+1.",
+ "hinweis": "Eintraege mit ist_naht=false sind ausdruecklich verworfene Nahtstellen. Sie stehen hier, damit niemand sie ein zweites Mal vorschlaegt.",
+ "naehte": [
+  {
+   "buch": "genesis",
+   "nach_kapitel": 11,
+   "ist_naht": true,
+   "name": "Ende der Urgeschichte",
+   "begruendung": "Gen 11 schliesst mit dem Aufbruch Terachs aus Ur und seinem Tod in Haran; Gen 12,1 setzt mit dem Ruf an Abram voellig neu an - anderer Erzaehlbogen, andere Akteure, anderer Zeithorizont. Es ist die Stelle, an der das Buch selbst neu anfaengt: bis dahin Menschheitsgeschichte in Generationen, danach eine Familiengeschichte in Szenen. Beide Seiten sind fuer sich lesbar, ohne dass eine Handlung abgeschnitten waere.",
+   "gemessen": {
+    "teil_davor": {
+     "kapitel": "1-11",
+     "woerter": 6406,
+     "erzaehlanteil": 0.6815
+    },
+    "teil_danach": {
+     "kapitel": "12-50",
+     "woerter": 29421,
+     "erzaehlanteil": 0.9136
+    }
+   },
+   "eingetragen": "2026-09-02",
+   "entschieden_von": "Kanalinhaber"
+  },
+  {
+   "buch": "genesis",
+   "nach_kapitel": 42,
+   "ist_naht": false,
+   "name": "Planfassung V08 - KEINE Naht",
+   "begruendung": "Gen 42 endet mitten in der Hungersnot-Sequenz: die Brueder sind einmal in Aegypten gewesen, Simeon bleibt als Geisel zurueck, und Jakob weigert sich gerade, Benjamin ziehen zu lassen. Gen 43 setzt genau diese Szene fort. Wer hier teilt, schneidet eine laufende Handlung durch und laesst den Hoerer mit einem gefangenen Simeon zurueck. Die Stelle stand als Teilung in der Planfassung von V08; sie ist am 2026-09-02 ausdruecklich verworfen worden.",
+   "gemessen": {
+    "teil_davor": {
+     "kapitel": "1-42",
+     "woerter": 29835,
+     "erzaehlanteil": 0.8769
+    },
+    "teil_danach": {
+     "kapitel": "43-50",
+     "woerter": 5992,
+     "erzaehlanteil": 0.8486
+    }
+   },
+   "eingetragen": "2026-09-02",
+   "entschieden_von": "Kanalinhaber"
+  }
+ ]
+}

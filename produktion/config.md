@@ -341,6 +341,21 @@ gate_dominanz_min      = 0.50
 # Fuer V07 und V08 bleibt in beiden Rechnungen reichlich uebrig; die Schwelle
 # musste nicht aufgeweicht werden.
 gate_abstand_min       = 0.15
+# Wo die Erzaehlnaehte stehen. Ein geteiltes Buch qualifiziert seit dem
+# 2026-09-02 als dominantes Erzaehlwerk, wenn ZWEI Bedingungen zusammen gelten:
+#   1. jede offene Kante des gelesenen Bereichs liegt an einer Naht, die in
+#      dieser Datei mit ist_naht=true UND einer Begruendung steht
+#      (Buchanfang und Buchende sind keine offenen Kanten),
+#   2. der gelesene Teil haelt fuer sich gate_erzaehlanteil_min.
+# Sonst gilt weiter: volles Buch.
+#
+# Die Datei ist die einzige Quelle fuer Naehte; erzaehlanteil.py und
+# korpus_pruefung.py lesen den Pfad hier. Eine Naht, die nicht drinsteht, zaehlt
+# nicht - damit bleibt Wegschneiden zur Laufzeitanpassung ausgeschlossen. Wer
+# eine Naht braucht, traegt sie mit Begruendung ein und entscheidet damit
+# sichtbar, statt eine Zahl passend zu machen. Verworfene Nahtstellen stehen mit
+# ist_naht=false ebenfalls drin, damit sie nicht zweimal vorgeschlagen werden.
+erzaehlnaehte_datei    = produktion/korpus/erzaehlnaehte.json
 
 # --- Qualitätsschwellen (Formel §3) ---
 # Kalibriert 2026-08-06 nach drei eigenen Videos (95,6 / 95,3 / 95,3 %): die
