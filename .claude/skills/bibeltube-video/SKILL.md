@@ -1251,6 +1251,52 @@ wiederverwendet.
 
 **SRT erzeugen** (Schritt 6) und im Paket behalten.
 
+### Nach dem Render: ist die Bildspur wirklich der Zyklus?
+
+**`videoquelle = ki_clips` im Protokoll heißt nicht, dass sich das Bild
+bewegt.** V06 lief mit vier Clips durch Schritt 5 und war im ausgelieferten
+MP4 trotzdem praktisch ein Standbild: die Clips selbst trugen fast keine
+Bewegung. Das fiel erst beim Ansehen des fertigen Videos auf, nach Upload und
+Manifest.
+
+**Deshalb Pflicht nach Schritt 5, an der fertigen MP4 gemessen:**
+
+```bash
+python3 - <<'EOF'
+import cv2, numpy as np
+cap = cv2.VideoCapture("produktion/video-0N/video-0N.mp4")
+cap.set(cv2.CAP_PROP_POS_MSEC, 100_000)          # irgendwo mitten im Video
+prev, d = None, []
+for _ in range(72):                              # 3 Sekunden
+    ok, f = cap.read()
+    if not ok: break
+    g = cv2.cvtColor(f, cv2.COLOR_BGR2GRAY).astype(np.float32)
+    if prev is not None: d.append(float(np.mean(np.abs(g - prev))))
+    prev = g
+print("Frameschritt Median %.3f" % np.median(np.array(d)))
+EOF
+```
+
+| gemessen | Urteil |
+|---|---|
+| **≥ 0,30** | bewegt sich sichtbar — in Ordnung |
+| 0,10 – 0,30 | grenzwertig, ansehen |
+| **< 0,10** | **Standbild mit Flackern — Clips neu erzeugen, nicht ausliefern** |
+
+Belege: **V07 0,518** (gut), **V06 0,058** (durchgefallen, musste neu montiert
+werden). Die Zahl steht in `korpus/v<NN>_render.json`.
+
+> **Der Fehler lag nicht in der Pipeline, sondern im Clipsatz.** V06 nutzte
+> `flux_3_video`, dessen Rohclips einen Frameschritt von 0,07–0,12 hatten. Wer
+> Clips bestellt, verlangt die Bewegung **ausdrücklich im Prompt** — Feuer,
+> Rauch, Funkenflug, Sternenfunkeln, Stoffbewegung —, sonst liefert das Modell
+> ein beruhigtes Standbild. „Kamera unbewegt" heißt nicht „Bild unbewegt".
+
+> **Und immer `resolution` und `generate_audio` setzen.** Bei `seedance1_5`
+> ist die Vorgabe **720p mit Tonspur**; ohne beide Parameter kommt genau das
+> zurück, ist bezahlt und unbrauchbar. Bei V07 einmal passiert.
+
+
 ---
 
 ## Schritt 6 — Messdatei und Auslieferung
