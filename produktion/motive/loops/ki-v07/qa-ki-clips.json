@@ -1,0 +1,270 @@
+{
+ "clips": [
+  {
+   "datei": "clip-1.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.84,
+   "erster_vs_letzter_mad": 2.605,
+   "erster_vs_letzter_max": 85,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.01,
+     -0.009
+    ],
+    "unten": [
+     0.021,
+     -0.012
+    ],
+    "links": [
+     -0.002,
+     0.001
+    ],
+    "rechts": [
+     -0.053,
+     -0.0
+    ]
+   },
+   "drift_median_px": [
+    -0.006,
+    -0.004
+   ],
+   "drift_unauffaellig": true,
+   "frameschritt_median": 0.645,
+   "frameschritt_max": 1.212
+  },
+  {
+   "datei": "clip-2.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.56,
+   "erster_vs_letzter_mad": 2.595,
+   "erster_vs_letzter_max": 78,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.002,
+     -0.027
+    ],
+    "unten": [
+     -0.02,
+     -0.013
+    ],
+    "links": [
+     -0.017,
+     0.008
+    ],
+    "rechts": [
+     -0.052,
+     -0.021
+    ]
+   },
+   "drift_median_px": [
+    -0.019,
+    -0.017
+   ],
+   "drift_unauffaellig": true,
+   "frameschritt_median": 0.647,
+   "frameschritt_max": 1.118
+  },
+  {
+   "datei": "clip-3.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.91,
+   "erster_vs_letzter_mad": 2.607,
+   "erster_vs_letzter_max": 127,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.021,
+     -0.003
+    ],
+    "unten": [
+     -0.003,
+     -0.017
+    ],
+    "links": [
+     0.004,
+     -0.027
+    ],
+    "rechts": [
+     -0.009,
+     -0.007
+    ]
+   },
+   "drift_median_px": [
+    -0.006,
+    -0.012
+   ],
+   "drift_unauffaellig": true,
+   "frameschritt_median": 0.92,
+   "frameschritt_max": 1.507
+  },
+  {
+   "datei": "clip-4.mp4",
+   "breite": 1920,
+   "hoehe": 1080,
+   "fps": 24.0,
+   "frames": 289,
+   "dauer_s": 12.042,
+   "groesse_mb": 16.57,
+   "erster_vs_letzter_mad": 2.624,
+   "erster_vs_letzter_max": 103,
+   "pixelidentisch": false,
+   "drift_zonen_px": {
+    "oben": [
+     -0.047,
+     -0.021
+    ],
+    "unten": [
+     -0.0,
+     -0.004
+    ],
+    "links": [
+     -0.004,
+     -0.001
+    ],
+    "rechts": [
+     -0.075,
+     0.023
+    ]
+   },
+   "drift_median_px": [
+    -0.026,
+    -0.003
+   ],
+   "drift_unauffaellig": true,
+   "frameschritt_median": 0.741,
+   "frameschritt_max": 1.44
+  }
+ ],
+ "uebergaenge": [
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.605
+  },
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.642
+  },
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.76
+  },
+  {
+   "von": "clip-1.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.607
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.62
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.595
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.733
+  },
+  {
+   "von": "clip-2.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.609
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.608
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.615
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.607
+  },
+  {
+   "von": "clip-3.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.62
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-1.mp4",
+   "mad": 2.689
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-2.mp4",
+   "mad": 2.694
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-3.mp4",
+   "mad": 2.863
+  },
+  {
+   "von": "clip-4.mp4",
+   "nach": "clip-4.mp4",
+   "mad": 2.624
+  }
+ ],
+ "uebergang_zu_frameschritt": 3.78,
+ "zyklus_gemessen": {
+  "datei": "produktion/arbeit/video-07/zyklus.mp4 (nicht eingecheckt, .gitignore)",
+  "frames": 1156,
+  "dauer_s": 48.167,
+  "aufloesung": "1920x1080",
+  "fps": 24,
+  "crf": 28,
+  "median_frameschritt": 0.518,
+  "maximum": 1.866,
+  "naht_faktoren": [
+   3.04,
+   2.76,
+   2.28
+  ],
+  "groesste_spruenge_frames": [
+   250,
+   500,
+   750,
+   1000
+  ],
+  "hinweis_groesste_spruenge": "Das sind die Frames vor den GOP-Grenzen (Keyframes 1,251,501,751,1001) - Kodierartefakte, keine Naehte. Derselbe Befund wie bei V05.",
+  "blende_geprueft": {
+   "verfahren": "xfade fade 0,5 s an den drei inneren Schnitten, offsets 11,54/23,08/34,62",
+   "median_frameschritt": 0.517,
+   "maximum": 1.995,
+   "naht_faktoren": [
+    3.34,
+    3.76,
+    2.54
+   ],
+   "dauer_s": 46.667,
+   "ergebnis": "VERWORFEN. Alle drei Naehte werden mit Blende schlechter, nicht besser, und der Zyklus verliert 1,5 s. Gemessen, nicht geschaetzt - der Skill verlangt messen statt blind blenden."
+  },
+  "entscheidung": "Zyklus ohne Blende. Die Rundnaht clip-4 -> clip-1 bleibt wie bei V01-V06 unbehandelt; dafuer gibt es im Repo kein Verfahren."
+ }
+}
