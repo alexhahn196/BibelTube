@@ -6,15 +6,25 @@ Erzeugt:
   produktion/korpus/erzaehlanteil.json   Einstufung je Kapitel
   produktion/korpus/v06_varianten.json   die drei Varianten mit allen Zahlen
 
-Rueckgabewert 0 bedeutet: alle drei Varianten bestehen Zielband, 80-%-Gate und
-die 60-%-Dominanz. Jeder andere Wert heisst, dass mindestens eine reisst.
+Rueckgabewert 0 bedeutet: alle drei Varianten bestehen Zielband, Erzaehlanteil
+und Dominanz. Jeder andere Wert heisst, dass mindestens eine reisst.
 
-Sprechtempo und Zielband kommen aus produktion/config.md (wpm_erwartet,
-laufzeit_ziel_von_h, laufzeit_ziel_bis_h) - dort steht der einzige Tempowert des
-Projekts, gemessen in produktion/korpus/wpm_gemessen.json. Bis 2026-08-30 stand
-hier fest 148,1 WPM aus der V06-Vorgabe; dieser Wert war unbelegt. Mit dem
-gemessenen Tempo verschiebt sich das Zielband nach unten, und Variante V06-C
-faellt darueber hinaus - das Skript meldet das und gibt 1 zurueck.
+Sprechtempo, Zielband und die beiden Gate-Schwellen kommen vollstaendig aus
+produktion/config.md (wpm_erwartet, laufzeit_ziel_von_h[_vollwerk],
+laufzeit_ziel_bis_h, gate_erzaehlanteil_min, gate_dominanz_min). In dieser Datei
+steht keine Schwelle als Literal. Das Sprechtempo ist in
+produktion/korpus/wpm_gemessen.json gemessen; bis 2026-08-30 stand hier fest
+148,1 WPM aus der V06-Vorgabe, ein unbelegter Wert.
+
+Der Rueckgabewert ist seit 2026-08-30 eine 1: Variante V06-C liegt mit 33.460 W
+ueber der oberen Bandgrenze. Das ist der erwartete Stand, kein Defekt - gewaehlt
+und gebaut ist Variante A.
+
+Zwei Schwellen sind am 2026-09-02 bewegt worden, beide an abgeleiteten Groessen:
+die Dominanz von 60 auf 50 % und die untere Bandgrenze von 3,4 auf 3,0 h fuer den
+Fall, dass das dominante Buch selbst Erzaehlwerk ist und in voller Laenge im
+Korpus steht (vollwerk_pruefen). Der Erzaehlanteil von 80 % ist NICHT bewegt -
+er ist der einzige eigene Befund.
 
 Wortzahlen kommen aus derselben Quelle und mit derselben Zaehlmethode wie
 produktion/wortzahlen.py (bible-api.com, translation=webbe, Verstexte mit
@@ -39,19 +49,30 @@ def _config():
         if "=" in zeile:
             k, v = zeile.split("=", 1)
             werte[k.strip()] = v.strip()
-    fehlt = [k for k in ("wpm_erwartet", "laufzeit_ziel_von_h", "laufzeit_ziel_bis_h")
-             if k not in werte]
+    gebraucht = ("wpm_erwartet", "laufzeit_ziel_von_h", "laufzeit_ziel_bis_h",
+                 "laufzeit_ziel_von_h_vollwerk", "gate_erzaehlanteil_min",
+                 "gate_dominanz_min")
+    fehlt = [k for k in gebraucht if k not in werte]
     if fehlt:
         raise SystemExit("produktion/config.md: fehlende Werte %s" % fehlt)
-    return (float(werte["wpm_erwartet"]),
-            float(werte["laufzeit_ziel_von_h"]),
-            float(werte["laufzeit_ziel_bis_h"]))
+    return tuple(float(werte[k]) for k in gebraucht)
 
 
-WPM, ZIEL_VON_H, ZIEL_BIS_H = _config()
-BAND = (round(ZIEL_VON_H * 60 * WPM), round(ZIEL_BIS_H * 60 * WPM))
-GATE_ERZAEHLEND = 0.80           # Regel M8
-GATE_DOMINANZ = 0.60             # ein dominantes Buch je Variante
+# Alle sechs Zahlen kommen aus produktion/config.md. Hier steht keine einzige
+# Schwelle als Literal - wer eine aendern will, aendert sie dort.
+(WPM, ZIEL_VON_H, ZIEL_BIS_H, ZIEL_VON_H_VOLLWERK,
+ GATE_ERZAEHLEND, GATE_DOMINANZ) = _config()
+
+
+def band(vollwerk=False):
+    """Zielband in Woertern. Ist das dominante Buch ein Erzaehlwerk in voller
+    Laenge, gilt die tiefere untere Grenze (laufzeit_ziel_von_h_vollwerk)."""
+    von = ZIEL_VON_H_VOLLWERK if vollwerk else ZIEL_VON_H
+    return (round(von * 60 * WPM), round(ZIEL_BIS_H * 60 * WPM))
+
+
+BAND = band()                    # Regelfall 3,4-3,8 h
+BAND_VOLLWERK = band(True)       # dominantes Buch ganz und Erzaehlwerk
 
 REGEL = (
     "Erzaehlend = fortlaufende Handlung mit Akteuren, Ortswechsel und Zeitverlauf. "
@@ -76,6 +97,13 @@ REGEL = (
 #                                der Teile == Kapitelwortzahl UND Summe der Verse
 #                                == Kapitelverszahl), wird sie verworfen und das
 #                                Kapitel konservativ als nicht erzaehlend gezaehlt.
+def _gleichfoermig(von, bis, erzaehlend, begruendung):
+    """Kapitelfolge mit einer einzigen Einstufung - fuer Buecher, die als Gattung
+    durchgehend sind (Brief, apokalyptische Vision, Prophetenrede). Kein
+    Ermessensspielraum je Kapitel: die Regel nennt diese Gattungen woertlich."""
+    return {n: (erzaehlend, None, begruendung) for n in range(von, bis + 1)}
+
+
 EINSTUFUNG = {
     "acts": {
         1: (True, (["1-23", "26"], ["24-25"]),
@@ -930,6 +958,132 @@ EINSTUFUNG = {
             "Zeitangaben von 1290 und 1335 Tagen -- eschatologische Rede."),
     },
     "genesis": {
+        1: (True, None,
+            "Sechs Schoepfungstage mit einem handelnden Akteur und Zeitverlauf. Bericht, nicht "
+            "Szene: die Einstufung stuetzt sich auf Handlung und Zeitverlauf, nicht auf "
+            "Ortswechsel, und faellt unter keinen Ausschluss der Regel."),
+        2: (True, None,
+            "Ruhetag, Bildung des Menschen, Pflanzung des Gartens, Benennung der Tiere und "
+            "Bildung der Frau - fortlaufende Handlung; die Stromnotiz V.10-14 bleibt Minderheit."),
+        3: (True, None,
+            "Schlange, Uebertretung, Verhoer und Vertreibung - durchgehende Szene; die "
+            "Fluchsprueche stehen als Rede innerhalb der laufenden Handlung."),
+        4: (True, (["1-16", "25-26"], ["17-24"]),
+            "Kain und Abel (V.1-16) und die Geburt Sets (V.25-26) sind Handlung; V.17-24 ist "
+            "Kains Geschlechterliste mit Lamechs Schwertlied - Naht an V.17 und V.25 sauber."),
+        5: (False, None,
+            "Toledot Adams: zehn Generationen als reine Geschlechterliste mit Lebensaltern; nur "
+            "die Henoch-Notiz V.24 ragt heraus und traegt keine Wortmehrheit."),
+        6: (True, (["1-13", "17-22"], ["14-16"]),
+            "Menschensoehne, Verderben der Erde, Noahs Auftrag und seine Ausfuehrung sind "
+            "Handlung; V.14-16 sind Bauvorschriften der Arche mit Massangaben."),
+        7: (True, None,
+            "Einzug in die Arche, Beginn der Flut und das Steigen des Wassers ueber 150 Tage - "
+            "Handlung mit ausdruecklichem Zeitverlauf."),
+        8: (True, None,
+            "Fallen des Wassers, Rabe und Taube, Verlassen der Arche und Altarbau - fortlaufende "
+            "Handlung mit Datumsangaben."),
+        9: (True, (["18-29"], ["1-17"]),
+            "V.1-17 ist Segens- und Bundesrede mit Blutverbot und Toetungsverbot, also "
+            "Gesetzestext; erzaehlend sind Noahs Weinberg, die Trunkenheitsszene, der "
+            "Kanaan-Spruch und die Sterbenotiz ab V.18."),
+        10: (False, None,
+            "Voelkertafel: Nachkommen Japhets, Hams und Sems als Geschlechter- und "
+            "Voelkerliste; die Nimrod-Notiz V.8-12 traegt keine Mehrheit."),
+        11: (True, (["1-9", "31-32"], ["10-30"]),
+            "Turmbau zu Babel (V.1-9) und Terachs Aufbruch nach Haran (V.31-32) sind Handlung; "
+            "V.10-30 ist die Sem-Genealogie bis Abram."),
+        12: (True, None,
+            "Ruf Abrams, Zug nach Kanaan, Altarbauten und der Aufenthalt in Aegypten mit der "
+            "Schwesterluege - Handlung mit mehrfachem Ortswechsel."),
+        13: (True, None,
+            "Rueckkehr aus Aegypten, Streit der Hirten, Trennung von Lot und Zug nach Mamre."),
+        14: (True, None,
+            "Vierkoenigskrieg, Lots Gefangennahme, Abrams Befreiungszug und die Begegnung mit "
+            "Melchisedek - Feldzug mit Ortswechsel und Zeitverlauf."),
+        15: (True, None,
+            "Naechtliche Szene: Abrams Einwand, der Blick auf die Sterne, das zerteilte Getier, "
+            "die Raubvoegel und der Feuerofen zwischen den Stuecken - Handlung mit Wechselrede."),
+        16: (True, None,
+            "Hagar und Sarai, Flucht zur Quelle, Begegnung mit dem Engel und Ismaels Geburt."),
+        17: (True, (["23-27"], ["1-22"]),
+            "V.1-22 ist Bundesrede mit der Beschneidungsvorschrift - Kultvorschrift, keine "
+            "Handlung; erzaehlend ist nur die Ausfuehrung an Ismael und dem Haus (V.23-27)."),
+        18: (True, None,
+            "Die drei Maenner bei Mamre, Saras Lachen und Abrahams Fuerbitte fuer Sodom - "
+            "Szene mit Bewirtung, Ortswechsel und Wechselrede."),
+        19: (True, None,
+            "Sodom: die Engel bei Lot, der Auflauf vor dem Haus, Flucht nach Zoar, Salzsaeule "
+            "und die Hoehlenszene mit Lots Toechtern - durchgehende Handlung."),
+        20: (True, None,
+            "Abimelech nimmt Sara, Traumwarnung, Rueckgabe und Suehnegabe - Szene mit Dialog."),
+        21: (True, None,
+            "Isaaks Geburt, Vertreibung Hagars und Ismaels, Rettung an der Quelle und der "
+            "Brunnenvertrag mit Abimelech in Beerscheba."),
+        22: (True, (["1-19"], ["20-24"]),
+            "Die Bindung Isaaks mit Aufbruch, Dreitagesweg, Altar, Widder und Rueckkehr ist "
+            "Handlung; V.20-24 ist die angehaengte Nachor-Genealogie."),
+        23: (True, None,
+            "Saras Tod in Hebron und der Kauf der Hoehle Machpela - Verhandlungsszene vor den "
+            "Hethitern mit Abschluss am Stadttor."),
+        24: (True, None,
+            "Brautwerbung fuer Isaak: Schwur, Reise nach Nahor, Zeichen am Brunnen, Verhandlung "
+            "im Haus Labans und Heimkehr mit Rebekka - laengste durchlaufende Reiseerzaehlung."),
+        25: (True, (["7-11", "19-34"], ["1-6", "12-18"]),
+            "Abrahams Tod und Begraebnis (V.7-11) sowie Geburt und Linsengericht der Zwillinge "
+            "(V.19-34) sind Handlung; V.1-6 (Keturas Soehne) und V.12-18 (Ismaels Geschlechter) "
+            "sind Listen."),
+        26: (True, None,
+            "Isaak in Gerar: Hungersnot, Schwesterluege, Streit um die Brunnen, Zug nach "
+            "Beerscheba und Vertrag mit Abimelech."),
+        27: (True, None,
+            "Der erschlichene Segen: Rebekkas Anstiftung, das Ziegenfell, Isaaks Taeuschung, "
+            "Esaus Schrei und Jakobs Flucht - Szene mit Wechselrede und Zeitdruck."),
+        28: (True, None,
+            "Jakobs Aufbruch nach Haran, der Traum von der Leiter in Bethel und das Geluebde am "
+            "aufgerichteten Stein."),
+        29: (True, None,
+            "Ankunft am Brunnen, Rahel und Lea, die vertauschte Hochzeitsnacht und die "
+            "vierzehn Dienstjahre - Handlung mit langem Zeitverlauf."),
+        30: (True, None,
+            "Der Kinderwettstreit von Lea und Rahel, die Alraunen und Jakobs Zuchtlist mit den "
+            "geschaelten Staeben."),
+        31: (True, None,
+            "Heimliche Flucht vor Laban, die gestohlenen Hausgoetter, Labans Verfolgung und "
+            "Durchsuchung und der Steinhaufen als Vertrag."),
+        32: (True, None,
+            "Boten an Esau, Teilung des Lagers, das Geschenk vor dem Zug und der Ringkampf am "
+            "Jabbok - Nachtszene mit Ortswechsel."),
+        33: (True, None,
+            "Begegnung mit Esau, Verbeugung der Familie, Annahme des Geschenks und Jakobs Zug "
+            "nach Sukkot und Sichem."),
+        34: (True, None,
+            "Dina und Sichem, die Beschneidungsforderung als Kriegslist und das Blutbad der "
+            "Soehne Jakobs - durchgehende Handlung."),
+        35: (True, None,
+            "Zug nach Bethel, Vergraben der fremden Goetter, Rahels Tod bei Bethlehem und "
+            "Isaaks Begraebnis; die Soehneliste V.23-26 bleibt Minderheit der Woerter."),
+        36: (False, None,
+            "Toledot Esaus: Frauen, Soehne, Fuersten und die Koenigsliste Edoms - reine "
+            "Geschlechter- und Regentenliste."),
+        37: (True, None,
+            "Josephs Traeume, der Rock, der Wurf in die Zisterne, der Verkauf an die Ismaeliter "
+            "und Jakobs Trauer - Handlung mit Ortswechsel."),
+        38: (True, None,
+            "Juda und Tamar: Er, Onan, das Versprechen an Schela, die Szene am Weg nach Timna "
+            "und das Urteil ueber die Schwangere."),
+        39: (True, None,
+            "Joseph bei Potifar, die Nachstellung der Herrin, das zurueckgelassene Kleid und "
+            "das Gefaengnis."),
+        40: (True, None,
+            "Muendschenk und Baecker im Gefaengnis: Traeume, Deutung und der Vollzug am dritten "
+            "Tag - Szene mit Zeitverlauf."),
+        41: (True, None,
+            "Pharaos Traeume, Josephs Deutung und Einsetzung, die sieben fetten und sieben "
+            "mageren Jahre - Handlung ueber vierzehn Jahre."),
+        42: (True, None,
+            "Erste Reise der Brueder nach Aegypten, Spionagevorwurf, Simeons Zuruecklassung und "
+            "die Rueckkehr mit dem Geld in den Saecken."),
         43: (True, None,
             "Zweite Reise der Brueder nach Aegypten mit Benjamin, Israels Einwilligung und das Mahl "
             "in Josephs Haus - durchgehende Handlung mit Ortswechsel."),
@@ -955,6 +1109,92 @@ EINSTUFUNG = {
             "Einbalsamierung und Trauerzug zur Hoehle Machpela, Versoehnung mit den Bruedern und "
             "Josephs Tod - durchgehende Handlung mit Ortswechsel."),
     },
+    # Markus, Roemer und Offenbarung stehen als Planfassung fuer V07 im Bestand;
+    # Jesaja war der gestrichene V06-Korpus. Alle vier sind hier eingestuft, damit
+    # produktion/v07_v08_moeglichkeiten.py gegen gemessene statt vermutete Werte
+    # rechnet.
+    "mark": {
+        1: (True, None,
+            "Taeufer, Taufe, Wueste, Berufung der ersten Juenger und der Tag in Kafarnaum bis "
+            "zum Aussaetzigen - dichte Handlungsfolge mit Ortswechseln."),
+        2: (True, None,
+            "Der Gelaehmte durchs Dach, Berufung des Levi, Mahl mit den Zoellnern, Fastenfrage "
+            "und Aehrenraufen - fuenf Szenen, die Streitworte stehen jeweils in der Handlung."),
+        3: (True, None,
+            "Heilung der verdorrten Hand am Sabbat, Andrang am See, Einsetzung der Zwoelf, "
+            "Beelzebul-Vorwurf und die Mutter mit den Bruedern vor dem Haus."),
+        4: (False, (["35-41"], ["1-34"]),
+            "V.1-34 ist der Gleichniszyklus vom Saemann bis zum Senfkorn - zusammenhaengende "
+            "Lehrrede ohne Handlungsfortschritt und klare Wortmehrheit; erzaehlend ist nur die "
+            "Sturmstillung V.35-41."),
+        5: (True, None,
+            "Der Besessene von Gerasa mit der Schweineherde, die blutfluessige Frau und die "
+            "Auferweckung der Tochter des Jairus - drei Szenen mit Ortswechsel."),
+        6: (True, None,
+            "Ablehnung in Nazaret, Aussendung der Zwoelf, Tod des Taeufers, Speisung der "
+            "Fuenftausend und der Gang auf dem See."),
+        7: (True, (["24-37"], ["1-23"]),
+            "V.1-23 ist das Streitgespraech um Reinheit samt anschliessender Belehrung im Haus - "
+            "zusammenhaengende Rede; erzaehlend sind die Syrophoenizierin und der Taubstumme "
+            "ab V.24."),
+        8: (True, None,
+            "Speisung der Viertausend, Zeichenforderung, der Blinde von Betsaida, das Bekenntnis "
+            "bei Caesarea Philippi und die erste Leidensankuendigung."),
+        9: (True, None,
+            "Verklaerung, der besessene Knabe, zweite Leidensankuendigung und der Rangstreit in "
+            "Kafarnaum; die Mahnworte V.38-50 bleiben Minderheit der Woerter."),
+        10: (True, None,
+            "Ehefrage, Kindersegnung, der reiche Mann, dritte Leidensankuendigung, die Bitte der "
+            "Zebedaeussoehne und Bartimaeus - Szenen mit wechselnden Gegenuebern und Wegstrecke."),
+        11: (True, None,
+            "Einzug in Jerusalem, verfluchter Feigenbaum, Tempelreinigung und die Frage nach der "
+            "Vollmacht - Handlung ueber drei Tage."),
+        12: (False, None,
+            "Winzergleichnis und die Reihe der Streitgespraeche (Steuer, Auferstehung, hoechstes "
+            "Gebot, Davidssohn) tragen die Wortmehrheit als zusammenhaengende Rede; nur das "
+            "Scherflein der Witwe V.41-44 ist Szene. Im Zweifel gegen den Erzaehlanteil."),
+        13: (False, None,
+            "Endzeitrede auf dem Oelberg - durchgehende apokalyptische Rede ohne "
+            "Handlungsfortschritt."),
+        14: (True, None,
+            "Salbung in Betanien, Verrat des Judas, Passamahl, Gethsemane, Gefangennahme, "
+            "Verhoer vor dem Hohen Rat und Petrus' Verleugnung."),
+        15: (True, None,
+            "Prozess vor Pilatus, Barabbas, Verspottung, Kreuzigung, Tod und Grablegung."),
+        16: (True, None,
+            "Die Frauen am leeren Grab, die Erscheinungen und die Himmelfahrt - Handlung mit "
+            "Ortswechsel."),
+    },
+    # Jesaja, Roemer und Offenbarung sind Gattung, nicht Grenzfall: Prophetenrede,
+    # Brief und apokalyptische Vision stehen woertlich im Ausschluss der Regel.
+    # Sie sind ganzkapitelweise eingestuft, ohne Teilung - Ausnahme ist der
+    # Hiskija-Einschub Jesaja 36-39.
+    "isaiah": dict(
+        list(_gleichfoermig(1, 35, False,
+            "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, "
+            "dazu die Visionsberichte; keine fortlaufende Handlung.").items())
+        + [(36, (True, None,
+            "Sanheribs Feldzug: der Rabschake vor der Mauer Jerusalems, Botenwechsel und die "
+            "Antwort der Gesandten - Szene mit Akteuren und Ort.")),
+           (37, (True, None,
+            "Hiskijas Gang zum Tempel, Jesajas Botenwort, der zweite Brief und der Abzug des "
+            "Heeres bis zu Sanheribs Ermordung - Handlung mit Zeitverlauf.")),
+           (38, (False, None,
+            "Krankheit und Genesung Hiskijas rahmen sein aufgeschriebenes Danklied (V.9-20), "
+            "das die Wortmehrheit traegt. Konservativ ganz nicht erzaehlend - die Naht liesse "
+            "sich ziehen, sie ist hier nicht gemessen.")),
+           (39, (True, None,
+            "Die Gesandtschaft aus Babel, Hiskijas Vorfuehrung des Schatzhauses und Jesajas "
+            "Ansage - kurze, geschlossene Szene."))]
+        + list(_gleichfoermig(40, 66, False,
+            "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und "
+            "Verheissung ohne Handlungstraeger.").items())
+    ),
+    "romans": _gleichfoermig(1, 16, False,
+        "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung."),
+    "revelation": _gleichfoermig(1, 22, False,
+        "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - "
+        "steht woertlich im Ausschluss der Regel."),
 }
 
 # Die drei Varianten. Struktur bewusst verschieden: Anthologie ganzer Buecher,
@@ -1111,6 +1351,42 @@ def spanne(tabelle, buch, von, bis):
             sum(tabelle[r]["erzaehlend_woerter"] for r in refs))
 
 
+def buchlaenge(buch):
+    """Kapitelzahl des Buches nach produktion/korpus/kapitel.json."""
+    kapitel = json.load(open(KAPITEL))
+    praefix = buch + " "
+    return sum(1 for ref in kapitel if ref.startswith(praefix)
+               and ref[len(praefix):].isdigit())
+
+
+def vollwerk_pruefen(tabelle, buch, teile):
+    """Ist das dominante Buch ein Erzaehlwerk in voller Laenge? Zwei Bedingungen,
+    beide gemessen, keine Einschaetzung:
+
+      1. volle Laenge - alle Kapitel des Buches stehen im Korpus,
+      2. Erzaehlwerk  - das Buch selbst haelt gate_erzaehlanteil_min, kapitelweise
+                        gemessen wie der Korpus auch.
+
+    Nur wenn beides zutrifft, gilt das tiefere Band (siehe band()). Ein
+    beschnittenes Buch qualifiziert nicht: sonst liesse sich jede Laufzeit durch
+    Wegschneiden von Kapiteln passend machen."""
+    im_korpus = sorted({k for t in teile if t["buch"] == buch
+                        for k in range(t["von"], t["bis"] + 1)})
+    ganz = im_korpus == list(range(1, buchlaenge(buch) + 1))
+    refs = ["%s %d" % (buch, k) for k in im_korpus]
+    w = sum(tabelle[r]["woerter"] for r in refs)
+    e = sum(tabelle[r]["erzaehlend_woerter"] for r in refs)
+    anteil = e / w if w else 0.0
+    return {
+        "volle_laenge": ganz,
+        "kapitel_im_korpus": len(im_korpus),
+        "kapitel_des_buches": buchlaenge(buch),
+        "erzaehlanteil_des_buches": round(anteil, 4),
+        "ist_erzaehlwerk": anteil >= GATE_ERZAEHLEND,
+        "erfuellt": ganz and anteil >= GATE_ERZAEHLEND,
+    }
+
+
 def variante_rechnen(tabelle, kuerzel, v):
     teile = []
     for buch, von, bis in v["korpus"]:
@@ -1141,10 +1417,14 @@ def variante_rechnen(tabelle, kuerzel, v):
         "risiko": v["risiko"],
         "rest_fuer_v07": v["rest_fuer_v07"],
     }
+    vw = vollwerk_pruefen(tabelle, dominant, teile)
+    grenzen = band(vw["erfuellt"])
+    ergebnis["vollwerk"] = vw
+    ergebnis["zielband_woerter"] = list(grenzen)
     ergebnis["pruefungen"] = {
-        "band": BAND[0] <= woerter <= BAND[1],
-        "erzaehlanteil_80": ergebnis["erzaehlanteil"] >= GATE_ERZAEHLEND,
-        "dominanz_60": ergebnis["dominanz"] >= GATE_DOMINANZ,
+        "band": grenzen[0] <= woerter <= grenzen[1],
+        "erzaehlanteil": ergebnis["erzaehlanteil"] >= GATE_ERZAEHLEND,
+        "dominanz": ergebnis["dominanz"] >= GATE_DOMINANZ,
     }
     ergebnis["bestanden"] = all(ergebnis["pruefungen"].values())
     return ergebnis
@@ -1166,8 +1446,11 @@ def main():
         print()
 
     varianten = [variante_rechnen(tabelle, k, v) for k, v in VARIANTEN.items()]
-    json.dump({"wpm": WPM, "zielband_woerter": list(BAND),
+    json.dump({"wpm": WPM,
+               "zielband_woerter": list(BAND),
+               "zielband_woerter_vollwerk": list(BAND_VOLLWERK),
                "gate_erzaehlanteil": GATE_ERZAEHLEND, "gate_dominanz": GATE_DOMINANZ,
+               "schwellen_quelle": "produktion/config.md",
                "varianten": varianten},
               open(AUS_VARIANTEN, "w"), ensure_ascii=False, indent=1)
 
@@ -1181,14 +1464,17 @@ def main():
     print("%-6s %-12s %8s %9s %9s %-11s %s" % ("", "Bauart", "Woerter", "erzaehl.", "Laufzeit", "dominant", "Gates"))
     alle_ok = True
     for v in varianten:
-        marken = "".join(("+" if v["pruefungen"][p] else "-") for p in ("band", "erzaehlanteil_80", "dominanz_60"))
+        marken = "".join(("+" if v["pruefungen"][p] else "-") for p in ("band", "erzaehlanteil", "dominanz"))
         print("%-6s %-12s %8s %8.2f%% %9s %-11s %s %s"
               % (v["kuerzel"], v["bauart"], "{:,}".format(v["woerter"]),
                  v["erzaehlanteil"] * 100, v["laufzeit"], v["dominantes_buch"],
                  marken, "BESTANDEN" if v["bestanden"] else "GERISSEN"))
         alle_ok = alle_ok and v["bestanden"]
-    print("\n(Gates in dieser Reihenfolge: Zielband %d-%d W | Erzaehlanteil >= %d %% | Dominanz >= %d %%)"
-          % (BAND[0], BAND[1], GATE_ERZAEHLEND * 100, GATE_DOMINANZ * 100))
+    print("\n(Gates in dieser Reihenfolge: Zielband | Erzaehlanteil >= %g %% | Dominanz >= %g %%)"
+          % (GATE_ERZAEHLEND * 100, GATE_DOMINANZ * 100))
+    print("(Zielband %d-%d W; ist das dominante Buch Erzaehlwerk in voller Laenge: %d-%d W)"
+          % (BAND[0], BAND[1], BAND_VOLLWERK[0], BAND_VOLLWERK[1]))
+    print("(Alle drei Schwellen stehen in produktion/config.md, nirgends sonst.)")
     for v in varianten:
         print("\n%s - %s" % (v["kuerzel"], v["name"]))
         for t in v["teile"]:

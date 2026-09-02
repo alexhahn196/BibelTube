@@ -24,7 +24,7 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) ·
 
 | # | Prüfung | Grenze | Woher | Womit |
 |---|---|---|---|---|
-| 1.1 | **Korpuslänge** | ≥ 3,0 h; Ziel 3,4–3,8 h | Formel §2: kein Video unter 3 h je über 2.500 Views (n=6), alle 10 Treffer ≥ 3,2 h | `schritt1_text.py` meldet die erwartete Laufzeit |
+| 1.1 | **Korpuslänge** | ≥ 3,0 h; Ziel 3,4–3,8 h — **3,0–3,8 h**, wenn das dominante Buch selbst Erzählwerk ist und in voller Länge im Korpus steht | Formel §2: kein Video unter 3 h je über 2.500 Views (n=6), alle 10 Treffer ≥ 3,2 h. Die Ausnahme ab 2026-09-02, siehe unter der Tabelle | Grenzen in [`produktion/config.md`](config.md) (`laufzeit_*`); `schritt1_text.py` meldet die erwartete Laufzeit |
 | 1.2 | **Titelähnlichkeit** | < 50 % gemeinsame inhaltstragende Wörter mit **jedem** Gewinnertitel | Formel §1: Kanal F kopierte wörtlich → 18 Views | `produktion/titel_pruefung.py` |
 | 1.3 | **Titelanker** | einer der 13 belegten Anker | Formel §10 („diese zuerst verwenden"); die 7 abgeleiteten sind ausdrücklich ungeprüft | von Hand gegen §10 |
 | 1.4 | **Thumbnail: Wörter** | höchstens 4 | Checkliste | `thumbnail.py` |
@@ -36,7 +36,48 @@ Bindende Quellen: [`formel/video-formel.md`](../formel/video-formel.md) ·
 | 1.10 | **CTA** | höchstens 2, beide in den ersten 60 s | Formel §3 (Gewinner 0–2, tote Kanäle 4–7) | `schritt1_text.py` zählt sie; Zeitpunkt aus der Rahmen-Wortzahl |
 | 1.11 | **Pegelabstand** | Stimme 12 dB über dem Bett, über Sprachabschnitte gemessen | Formel §5b: „Stimme in 6/6 Fällen klar über dem Bett" — **qualitativ belegt, die Zahl 12 ist abgeleitet** | `schritt3_bett.py` |
 | 1.12 | **Übersetzung** | WEBBE, kein „Yahweh" im Text | Formel §4 | `schritt1_text.py` bricht sonst ab |
-| 1.13 | **Erzählanteil** | ≥ 80 % der Wörter durchlaufender Erzählstoff; ein dominantes Buch ≥ 60 % | Regel M8 aus Gate 2 (23.08.2026): V03 14,4 % gegen V02 2,4 % Endretention — **n=2 Videos, ein Kanal; die Grenze 80 % ist gesetzt, nicht gemessen** | `produktion/erzaehlanteil.py`; Datenlage in [`regeln/daten/gate2_2026-08-23.json`](../regeln/daten/gate2_2026-08-23.json) |
+| 1.13 | **Erzählanteil** | ≥ 80 % der Wörter durchlaufender Erzählstoff; ein dominantes Buch ≥ 50 % | Regel M8 aus Gate 2 (23.08.2026): V03 14,4 % gegen V02 2,4 % Endretention — **n=2 Videos, ein Kanal; die Grenze 80 % ist gesetzt, nicht gemessen**. Dominanz von 60 auf 50 % am 2026-09-02, siehe unter der Tabelle | Schwellen in [`produktion/config.md`](config.md) (`gate_*`), gemessen von `produktion/erzaehlanteil.py`; Datenlage in [`regeln/daten/gate2_2026-08-23.json`](../regeln/daten/gate2_2026-08-23.json) |
+
+### Die Änderung vom 02.09.2026 — 1.1 und 1.13 klemmten sich gegenseitig ein
+
+**Alle Schwellen von 1.1 und 1.13 stehen ab jetzt ausschließlich in
+[`produktion/config.md`](config.md)** (`laufzeit_min_h`,
+`laufzeit_ziel_von_h`, `laufzeit_ziel_von_h_vollwerk`, `laufzeit_ziel_bis_h`,
+`gate_erzaehlanteil_min`, `gate_dominanz_min`). Diese Tabelle, `erfolgsregeln.md`
+und die beiden Prüfskripte lesen von dort. Wer eine Grenze ändern will, ändert
+sie an einer einzigen Stelle.
+
+**Das Problem.** Zielband und Dominanz sind zwei Regeln, die einzeln vernünftig
+sind und gemeinsam Bücher ausschließen, gegen die strukturell nichts spricht.
+Bei 143,7 WPM beginnt das Band 3,4–3,8 h bei **29.315 W**; ein dominantes Buch
+mit 60 % davon muss also mindestens **17.589 W** haben. Markus (14.261 W) fällt
+darunter, ganz Genesis (35.827 W) sprengt das Band allein. Beide fallen an der
+Größe, nicht an ihrer Bauart.
+
+**Was geändert wurde — beides an abgeleiteten Größen:**
+
+| | vorher | jetzt | warum das ging |
+|---|---|---|---|
+| Dominanz | ≥ 60 % | **≥ 50 %** | Die 60 % waren selbstgesetzt und durch keine Messung gedeckt. Sie sollen sichern, dass ein Eigenname aus dem dominanten Buch Titel und Thumbnail trägt — bei der Hälfte der Laufzeit tut er das genauso. |
+| Untere Bandgrenze | 3,4 h | **3,0 h**, nur wenn das dominante Buch selbst Erzählwerk ist **und** in voller Länge im Korpus steht | 3,4–3,8 h ist der Median der Fremd-Treffer (Formel §2) — eine Beobachtung an anderen Kanälen. Die harte Untergrenze **3,0 h** (`laufzeit_min_h`) ist davon unberührt und bleibt unangetastet. |
+
+**Was ausdrücklich nicht geändert wurde: die 80 % Erzählanteil.** Das ist der
+einzige Punkt von 1.13, der auf eigenen Daten steht (V03 gegen V02, Faktor 6 in
+der Endretention). Die Zange saß bei Größe und Dominanz, nicht beim Erzählstoff.
+
+**„Erzählwerk in voller Länge" ist gemessen, nicht eingeschätzt** — beide
+Bedingungen prüft `vollwerk_pruefen()` in `produktion/erzaehlanteil.py`:
+
+1. **volle Länge** — alle Kapitel des Buches stehen im Korpus. Ein beschnittenes
+   Buch qualifiziert nicht; sonst ließe sich jede Laufzeit durch Wegschneiden
+   passend machen.
+2. **Erzählwerk** — das Buch hält für sich allein `gate_erzaehlanteil_min`,
+   kapitelweise gemessen wie der Korpus auch.
+
+**Was das durchlässt, ist gemessen:**
+[`produktion/korpus/v07_v08_moeglichkeiten.json`](korpus/v07_v08_moeglichkeiten.json),
+Tabelle und die drei Nebenwirkungen in
+[`produktion/v06-korpus.md`](v06-korpus.md).
 
 **1.13 ist die einzige Prüfung aus eigenen Daten.** Alle anderen stammen aus dem
 Fremddatensatz. Sie ist zugleich die am dünnsten belegte: zwei Videos, ein Kanal,

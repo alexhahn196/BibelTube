@@ -119,7 +119,9 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
 
 ### M8 — Textkorpus aus durchlaufendem Erzählstoff, ≥ 80 % der Wörter
 - [ ] Erzählanteil des Korpus ≥ 80 % der Wörter, gemessen mit `produktion/erzaehlanteil.py`?
-- [ ] Ein dominantes Buch trägt ≥ 60 % der Wörter?
+- [ ] Ein dominantes Buch trägt ≥ 50 % der Wörter?
+- [ ] Laufzeit im Band? 3,4–3,8 h — **3,0–3,8 h**, wenn das dominante Buch selbst
+      Erzählwerk ist und in voller Länge im Korpus steht (`vollwerk_pruefen()`).
 - **Erste eigene Daten des Projekts**, Gate 2 vom 23.08.2026 nach 4 Videos:
   [`regeln/daten/gate2_2026-08-23.json`](daten/gate2_2026-08-23.json).
   **V03** (Johannes + Hebräer + 1 Joh + Kolosser, 3,47 h) hält nach 3,5 h **14,4 %**
@@ -146,6 +148,23 @@ Checkliste — jedes künftige Video/jede Kanalentscheidung wird dagegen geprüf
   Das ist kein Argument gegen die Regel und keines für sie; es heißt, dass der
   Kanal ab V06 etwas anderes tut als bisher, und dass die Regel bei V09 gegen
   dann vorliegende eigene Retentionsdaten zu prüfen ist.
+- **Dominanz am 02.09.2026 von 60 auf 50 % gesenkt; Erzählanteil unverändert.**
+  Die 60 % waren selbstgesetzt und durch keine Messung gedeckt — sie sollen
+  sichern, dass ein Eigenname aus dem dominanten Buch Titel und Thumbnail
+  tragen kann, und das tut er bei der Hälfte der Laufzeit genauso. Zusammen mit
+  dem Zielband schlossen sie Bücher aus, gegen die strukturell nichts sprach:
+  bei 29.315 W Bandbeginn verlangten 60 % ein dominantes Buch von 17.589 W, und
+  daran fielen Markus (14.261 W) und ganz Genesis (35.827 W) — an der Größe, nicht
+  an der Bauart. **Die 80 % sind nicht angefasst worden.** Sie sind der einzige
+  Teil dieser Regel, der auf eigenen Daten steht; die Zange saß woanders.
+  Was mit den neuen Schwellen baubar wird, ist gemessen in
+  [`produktion/korpus/v07_v08_moeglichkeiten.json`](../produktion/korpus/v07_v08_moeglichkeiten.json).
+
+> **Die Zahlen stehen nicht hier.** Alle drei Schwellen führt
+> [`produktion/config.md`](../produktion/config.md) (`gate_erzaehlanteil_min`,
+> `gate_dominanz_min`, `laufzeit_ziel_von_h[_vollwerk]`, `laufzeit_ziel_bis_h`).
+> Diese Checkliste, `produktion/workflow-gates.md` (Prüfung 1.13) und beide
+> Prüfskripte lesen von dort — eine Quelle, keine Kopien.
 
 ---
 

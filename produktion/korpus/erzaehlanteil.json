@@ -2934,6 +2934,445 @@
    "erzaehlend_woerter": 0,
    "erzaehlanteil": 0.0
   },
+  "genesis 1": {
+   "buch": "genesis",
+   "kapitel": 1,
+   "woerter": 734,
+   "erzaehlend": true,
+   "begruendung": "Sechs Schoepfungstage mit einem handelnden Akteur und Zeitverlauf. Bericht, nicht Szene: die Einstufung stuetzt sich auf Handlung und Zeitverlauf, nicht auf Ortswechsel, und faellt unter keinen Ausschluss der Regel.",
+   "erzaehlend_woerter": 734,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 2": {
+   "buch": "genesis",
+   "kapitel": 2,
+   "woerter": 617,
+   "erzaehlend": true,
+   "begruendung": "Ruhetag, Bildung des Menschen, Pflanzung des Gartens, Benennung der Tiere und Bildung der Frau - fortlaufende Handlung; die Stromnotiz V.10-14 bleibt Minderheit.",
+   "erzaehlend_woerter": 617,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 3": {
+   "buch": "genesis",
+   "kapitel": 3,
+   "woerter": 664,
+   "erzaehlend": true,
+   "begruendung": "Schlange, Uebertretung, Verhoer und Vertreibung - durchgehende Szene; die Fluchsprueche stehen als Rede innerhalb der laufenden Handlung.",
+   "erzaehlend_woerter": 664,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 4": {
+   "buch": "genesis",
+   "kapitel": 4,
+   "woerter": 586,
+   "erzaehlend": true,
+   "begruendung": "Kain und Abel (V.1-16) und die Geburt Sets (V.25-26) sind Handlung; V.17-24 ist Kains Geschlechterliste mit Lamechs Schwertlied - Naht an V.17 und V.25 sauber.",
+   "erzaehlend_woerter": 414,
+   "teilung": {
+    "erzaehlend": [
+     "1-16",
+     "25-26"
+    ],
+    "nicht_erzaehlend": [
+     "17-24"
+    ]
+   },
+   "erzaehlanteil": 0.7065
+  },
+  "genesis 5": {
+   "buch": "genesis",
+   "kapitel": 5,
+   "woerter": 551,
+   "erzaehlend": false,
+   "begruendung": "Toledot Adams: zehn Generationen als reine Geschlechterliste mit Lebensaltern; nur die Henoch-Notiz V.24 ragt heraus und traegt keine Wortmehrheit.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "genesis 6": {
+   "buch": "genesis",
+   "kapitel": 6,
+   "woerter": 530,
+   "erzaehlend": true,
+   "begruendung": "Menschensoehne, Verderben der Erde, Noahs Auftrag und seine Ausfuehrung sind Handlung; V.14-16 sind Bauvorschriften der Arche mit Massangaben.",
+   "erzaehlend_woerter": 444,
+   "teilung": {
+    "erzaehlend": [
+     "1-13",
+     "17-22"
+    ],
+    "nicht_erzaehlend": [
+     "14-16"
+    ]
+   },
+   "erzaehlanteil": 0.8377
+  },
+  "genesis 7": {
+   "buch": "genesis",
+   "kapitel": 7,
+   "woerter": 505,
+   "erzaehlend": true,
+   "begruendung": "Einzug in die Arche, Beginn der Flut und das Steigen des Wassers ueber 150 Tage - Handlung mit ausdruecklichem Zeitverlauf.",
+   "erzaehlend_woerter": 505,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 8": {
+   "buch": "genesis",
+   "kapitel": 8,
+   "woerter": 527,
+   "erzaehlend": true,
+   "begruendung": "Fallen des Wassers, Rabe und Taube, Verlassen der Arche und Altarbau - fortlaufende Handlung mit Datumsangaben.",
+   "erzaehlend_woerter": 527,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 9": {
+   "buch": "genesis",
+   "kapitel": 9,
+   "woerter": 613,
+   "erzaehlend": true,
+   "begruendung": "V.1-17 ist Segens- und Bundesrede mit Blutverbot und Toetungsverbot, also Gesetzestext; erzaehlend sind Noahs Weinberg, die Trunkenheitsszene, der Kanaan-Spruch und die Sterbenotiz ab V.18.",
+   "erzaehlend_woerter": 198,
+   "teilung": {
+    "erzaehlend": [
+     "18-29"
+    ],
+    "nicht_erzaehlend": [
+     "1-17"
+    ]
+   },
+   "erzaehlanteil": 0.323
+  },
+  "genesis 10": {
+   "buch": "genesis",
+   "kapitel": 10,
+   "woerter": 443,
+   "erzaehlend": false,
+   "begruendung": "Voelkertafel: Nachkommen Japhets, Hams und Sems als Geschlechter- und Voelkerliste; die Nimrod-Notiz V.8-12 traegt keine Mehrheit.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "genesis 11": {
+   "buch": "genesis",
+   "kapitel": 11,
+   "woerter": 636,
+   "erzaehlend": true,
+   "begruendung": "Turmbau zu Babel (V.1-9) und Terachs Aufbruch nach Haran (V.31-32) sind Handlung; V.10-30 ist die Sem-Genealogie bis Abram.",
+   "erzaehlend_woerter": 263,
+   "teilung": {
+    "erzaehlend": [
+     "1-9",
+     "31-32"
+    ],
+    "nicht_erzaehlend": [
+     "10-30"
+    ]
+   },
+   "erzaehlanteil": 0.4135
+  },
+  "genesis 12": {
+   "buch": "genesis",
+   "kapitel": 12,
+   "woerter": 487,
+   "erzaehlend": true,
+   "begruendung": "Ruf Abrams, Zug nach Kanaan, Altarbauten und der Aufenthalt in Aegypten mit der Schwesterluege - Handlung mit mehrfachem Ortswechsel.",
+   "erzaehlend_woerter": 487,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 13": {
+   "buch": "genesis",
+   "kapitel": 13,
+   "woerter": 424,
+   "erzaehlend": true,
+   "begruendung": "Rueckkehr aus Aegypten, Streit der Hirten, Trennung von Lot und Zug nach Mamre.",
+   "erzaehlend_woerter": 424,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 14": {
+   "buch": "genesis",
+   "kapitel": 14,
+   "woerter": 572,
+   "erzaehlend": true,
+   "begruendung": "Vierkoenigskrieg, Lots Gefangennahme, Abrams Befreiungszug und die Begegnung mit Melchisedek - Feldzug mit Ortswechsel und Zeitverlauf.",
+   "erzaehlend_woerter": 572,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 15": {
+   "buch": "genesis",
+   "kapitel": 15,
+   "woerter": 434,
+   "erzaehlend": true,
+   "begruendung": "Naechtliche Szene: Abrams Einwand, der Blick auf die Sterne, das zerteilte Getier, die Raubvoegel und der Feuerofen zwischen den Stuecken - Handlung mit Wechselrede.",
+   "erzaehlend_woerter": 434,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 16": {
+   "buch": "genesis",
+   "kapitel": 16,
+   "woerter": 388,
+   "erzaehlend": true,
+   "begruendung": "Hagar und Sarai, Flucht zur Quelle, Begegnung mit dem Engel und Ismaels Geburt.",
+   "erzaehlend_woerter": 388,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 17": {
+   "buch": "genesis",
+   "kapitel": 17,
+   "woerter": 653,
+   "erzaehlend": true,
+   "begruendung": "V.1-22 ist Bundesrede mit der Beschneidungsvorschrift - Kultvorschrift, keine Handlung; erzaehlend ist nur die Ausfuehrung an Ismael und dem Haus (V.23-27).",
+   "erzaehlend_woerter": 112,
+   "teilung": {
+    "erzaehlend": [
+     "23-27"
+    ],
+    "nicht_erzaehlend": [
+     "1-22"
+    ]
+   },
+   "erzaehlanteil": 0.1715
+  },
+  "genesis 18": {
+   "buch": "genesis",
+   "kapitel": 18,
+   "woerter": 813,
+   "erzaehlend": true,
+   "begruendung": "Die drei Maenner bei Mamre, Saras Lachen und Abrahams Fuerbitte fuer Sodom - Szene mit Bewirtung, Ortswechsel und Wechselrede.",
+   "erzaehlend_woerter": 813,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 19": {
+   "buch": "genesis",
+   "kapitel": 19,
+   "woerter": 1029,
+   "erzaehlend": true,
+   "begruendung": "Sodom: die Engel bei Lot, der Auflauf vor dem Haus, Flucht nach Zoar, Salzsaeule und die Hoehlenszene mit Lots Toechtern - durchgehende Handlung.",
+   "erzaehlend_woerter": 1029,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 20": {
+   "buch": "genesis",
+   "kapitel": 20,
+   "woerter": 478,
+   "erzaehlend": true,
+   "begruendung": "Abimelech nimmt Sara, Traumwarnung, Rueckgabe und Suehnegabe - Szene mit Dialog.",
+   "erzaehlend_woerter": 478,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 21": {
+   "buch": "genesis",
+   "kapitel": 21,
+   "woerter": 738,
+   "erzaehlend": true,
+   "begruendung": "Isaaks Geburt, Vertreibung Hagars und Ismaels, Rettung an der Quelle und der Brunnenvertrag mit Abimelech in Beerscheba.",
+   "erzaehlend_woerter": 738,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 22": {
+   "buch": "genesis",
+   "kapitel": 22,
+   "woerter": 565,
+   "erzaehlend": true,
+   "begruendung": "Die Bindung Isaaks mit Aufbruch, Dreitagesweg, Altar, Widder und Rueckkehr ist Handlung; V.20-24 ist die angehaengte Nachor-Genealogie.",
+   "erzaehlend_woerter": 504,
+   "teilung": {
+    "erzaehlend": [
+     "1-19"
+    ],
+    "nicht_erzaehlend": [
+     "20-24"
+    ]
+   },
+   "erzaehlanteil": 0.892
+  },
+  "genesis 23": {
+   "buch": "genesis",
+   "kapitel": 23,
+   "woerter": 512,
+   "erzaehlend": true,
+   "begruendung": "Saras Tod in Hebron und der Kauf der Hoehle Machpela - Verhandlungsszene vor den Hethitern mit Abschluss am Stadttor.",
+   "erzaehlend_woerter": 512,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 24": {
+   "buch": "genesis",
+   "kapitel": 24,
+   "woerter": 1682,
+   "erzaehlend": true,
+   "begruendung": "Brautwerbung fuer Isaak: Schwur, Reise nach Nahor, Zeichen am Brunnen, Verhandlung im Haus Labans und Heimkehr mit Rebekka - laengste durchlaufende Reiseerzaehlung.",
+   "erzaehlend_woerter": 1682,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 25": {
+   "buch": "genesis",
+   "kapitel": 25,
+   "woerter": 635,
+   "erzaehlend": true,
+   "begruendung": "Abrahams Tod und Begraebnis (V.7-11) sowie Geburt und Linsengericht der Zwillinge (V.19-34) sind Handlung; V.1-6 (Keturas Soehne) und V.12-18 (Ismaels Geschlechter) sind Listen.",
+   "erzaehlend_woerter": 416,
+   "teilung": {
+    "erzaehlend": [
+     "7-11",
+     "19-34"
+    ],
+    "nicht_erzaehlend": [
+     "1-6",
+     "12-18"
+    ]
+   },
+   "erzaehlanteil": 0.6551
+  },
+  "genesis 26": {
+   "buch": "genesis",
+   "kapitel": 26,
+   "woerter": 822,
+   "erzaehlend": true,
+   "begruendung": "Isaak in Gerar: Hungersnot, Schwesterluege, Streit um die Brunnen, Zug nach Beerscheba und Vertrag mit Abimelech.",
+   "erzaehlend_woerter": 822,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 27": {
+   "buch": "genesis",
+   "kapitel": 27,
+   "woerter": 1164,
+   "erzaehlend": true,
+   "begruendung": "Der erschlichene Segen: Rebekkas Anstiftung, das Ziegenfell, Isaaks Taeuschung, Esaus Schrei und Jakobs Flucht - Szene mit Wechselrede und Zeitdruck.",
+   "erzaehlend_woerter": 1164,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 28": {
+   "buch": "genesis",
+   "kapitel": 28,
+   "woerter": 591,
+   "erzaehlend": true,
+   "begruendung": "Jakobs Aufbruch nach Haran, der Traum von der Leiter in Bethel und das Geluebde am aufgerichteten Stein.",
+   "erzaehlend_woerter": 591,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 29": {
+   "buch": "genesis",
+   "kapitel": 29,
+   "woerter": 764,
+   "erzaehlend": true,
+   "begruendung": "Ankunft am Brunnen, Rahel und Lea, die vertauschte Hochzeitsnacht und die vierzehn Dienstjahre - Handlung mit langem Zeitverlauf.",
+   "erzaehlend_woerter": 764,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 30": {
+   "buch": "genesis",
+   "kapitel": 30,
+   "woerter": 934,
+   "erzaehlend": true,
+   "begruendung": "Der Kinderwettstreit von Lea und Rahel, die Alraunen und Jakobs Zuchtlist mit den geschaelten Staeben.",
+   "erzaehlend_woerter": 934,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 31": {
+   "buch": "genesis",
+   "kapitel": 31,
+   "woerter": 1323,
+   "erzaehlend": true,
+   "begruendung": "Heimliche Flucht vor Laban, die gestohlenen Hausgoetter, Labans Verfolgung und Durchsuchung und der Steinhaufen als Vertrag.",
+   "erzaehlend_woerter": 1323,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 32": {
+   "buch": "genesis",
+   "kapitel": 32,
+   "woerter": 769,
+   "erzaehlend": true,
+   "begruendung": "Boten an Esau, Teilung des Lagers, das Geschenk vor dem Zug und der Ringkampf am Jabbok - Nachtszene mit Ortswechsel.",
+   "erzaehlend_woerter": 769,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 33": {
+   "buch": "genesis",
+   "kapitel": 33,
+   "woerter": 477,
+   "erzaehlend": true,
+   "begruendung": "Begegnung mit Esau, Verbeugung der Familie, Annahme des Geschenks und Jakobs Zug nach Sukkot und Sichem.",
+   "erzaehlend_woerter": 477,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 34": {
+   "buch": "genesis",
+   "kapitel": 34,
+   "woerter": 751,
+   "erzaehlend": true,
+   "begruendung": "Dina und Sichem, die Beschneidungsforderung als Kriegslist und das Blutbad der Soehne Jakobs - durchgehende Handlung.",
+   "erzaehlend_woerter": 751,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 35": {
+   "buch": "genesis",
+   "kapitel": 35,
+   "woerter": 611,
+   "erzaehlend": true,
+   "begruendung": "Zug nach Bethel, Vergraben der fremden Goetter, Rahels Tod bei Bethlehem und Isaaks Begraebnis; die Soehneliste V.23-26 bleibt Minderheit der Woerter.",
+   "erzaehlend_woerter": 611,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 36": {
+   "buch": "genesis",
+   "kapitel": 36,
+   "woerter": 813,
+   "erzaehlend": false,
+   "begruendung": "Toledot Esaus: Frauen, Soehne, Fuersten und die Koenigsliste Edoms - reine Geschlechter- und Regentenliste.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "genesis 37": {
+   "buch": "genesis",
+   "kapitel": 37,
+   "woerter": 886,
+   "erzaehlend": true,
+   "begruendung": "Josephs Traeume, der Rock, der Wurf in die Zisterne, der Verkauf an die Ismaeliter und Jakobs Trauer - Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 886,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 38": {
+   "buch": "genesis",
+   "kapitel": 38,
+   "woerter": 728,
+   "erzaehlend": true,
+   "begruendung": "Juda und Tamar: Er, Onan, das Versprechen an Schela, die Szene am Weg nach Timna und das Urteil ueber die Schwangere.",
+   "erzaehlend_woerter": 728,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 39": {
+   "buch": "genesis",
+   "kapitel": 39,
+   "woerter": 587,
+   "erzaehlend": true,
+   "begruendung": "Joseph bei Potifar, die Nachstellung der Herrin, das zurueckgelassene Kleid und das Gefaengnis.",
+   "erzaehlend_woerter": 587,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 40": {
+   "buch": "genesis",
+   "kapitel": 40,
+   "woerter": 538,
+   "erzaehlend": true,
+   "begruendung": "Muendschenk und Baecker im Gefaengnis: Traeume, Deutung und der Vollzug am dritten Tag - Szene mit Zeitverlauf.",
+   "erzaehlend_woerter": 538,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 41": {
+   "buch": "genesis",
+   "kapitel": 41,
+   "woerter": 1325,
+   "erzaehlend": true,
+   "begruendung": "Pharaos Traeume, Josephs Deutung und Einsetzung, die sieben fetten und sieben mageren Jahre - Handlung ueber vierzehn Jahre.",
+   "erzaehlend_woerter": 1325,
+   "erzaehlanteil": 1.0
+  },
+  "genesis 42": {
+   "buch": "genesis",
+   "kapitel": 42,
+   "woerter": 936,
+   "erzaehlend": true,
+   "begruendung": "Erste Reise der Brueder nach Aegypten, Spionagevorwurf, Simeons Zuruecklassung und die Rueckkehr mit dem Geld in den Saecken.",
+   "erzaehlend_woerter": 936,
+   "erzaehlanteil": 1.0
+  },
   "genesis 43": {
    "buch": "genesis",
    "kapitel": 43,
@@ -3022,6 +3461,1102 @@
    "begruendung": "Einbalsamierung und Trauerzug zur Hoehle Machpela, Versoehnung mit den Bruedern und Josephs Tod - durchgehende Handlung mit Ortswechsel.",
    "erzaehlend_woerter": 641,
    "erzaehlanteil": 1.0
+  },
+  "mark 1": {
+   "buch": "mark",
+   "kapitel": 1,
+   "woerter": 872,
+   "erzaehlend": true,
+   "begruendung": "Taeufer, Taufe, Wueste, Berufung der ersten Juenger und der Tag in Kafarnaum bis zum Aussaetzigen - dichte Handlungsfolge mit Ortswechseln.",
+   "erzaehlend_woerter": 872,
+   "erzaehlanteil": 1.0
+  },
+  "mark 2": {
+   "buch": "mark",
+   "kapitel": 2,
+   "woerter": 658,
+   "erzaehlend": true,
+   "begruendung": "Der Gelaehmte durchs Dach, Berufung des Levi, Mahl mit den Zoellnern, Fastenfrage und Aehrenraufen - fuenf Szenen, die Streitworte stehen jeweils in der Handlung.",
+   "erzaehlend_woerter": 658,
+   "erzaehlanteil": 1.0
+  },
+  "mark 3": {
+   "buch": "mark",
+   "kapitel": 3,
+   "woerter": 614,
+   "erzaehlend": true,
+   "begruendung": "Heilung der verdorrten Hand am Sabbat, Andrang am See, Einsetzung der Zwoelf, Beelzebul-Vorwurf und die Mutter mit den Bruedern vor dem Haus.",
+   "erzaehlend_woerter": 614,
+   "erzaehlanteil": 1.0
+  },
+  "mark 4": {
+   "buch": "mark",
+   "kapitel": 4,
+   "woerter": 857,
+   "erzaehlend": false,
+   "begruendung": "V.1-34 ist der Gleichniszyklus vom Saemann bis zum Senfkorn - zusammenhaengende Lehrrede ohne Handlungsfortschritt und klare Wortmehrheit; erzaehlend ist nur die Sturmstillung V.35-41.",
+   "erzaehlend_woerter": 148,
+   "teilung": {
+    "erzaehlend": [
+     "35-41"
+    ],
+    "nicht_erzaehlend": [
+     "1-34"
+    ]
+   },
+   "erzaehlanteil": 0.1727
+  },
+  "mark 5": {
+   "buch": "mark",
+   "kapitel": 5,
+   "woerter": 900,
+   "erzaehlend": true,
+   "begruendung": "Der Besessene von Gerasa mit der Schweineherde, die blutfluessige Frau und die Auferweckung der Tochter des Jairus - drei Szenen mit Ortswechsel.",
+   "erzaehlend_woerter": 900,
+   "erzaehlanteil": 1.0
+  },
+  "mark 6": {
+   "buch": "mark",
+   "kapitel": 6,
+   "woerter": 1241,
+   "erzaehlend": true,
+   "begruendung": "Ablehnung in Nazaret, Aussendung der Zwoelf, Tod des Taeufers, Speisung der Fuenftausend und der Gang auf dem See.",
+   "erzaehlend_woerter": 1241,
+   "erzaehlanteil": 1.0
+  },
+  "mark 7": {
+   "buch": "mark",
+   "kapitel": 7,
+   "woerter": 769,
+   "erzaehlend": true,
+   "begruendung": "V.1-23 ist das Streitgespraech um Reinheit samt anschliessender Belehrung im Haus - zusammenhaengende Rede; erzaehlend sind die Syrophoenizierin und der Taubstumme ab V.24.",
+   "erzaehlend_woerter": 306,
+   "teilung": {
+    "erzaehlend": [
+     "24-37"
+    ],
+    "nicht_erzaehlend": [
+     "1-23"
+    ]
+   },
+   "erzaehlanteil": 0.3979
+  },
+  "mark 8": {
+   "buch": "mark",
+   "kapitel": 8,
+   "woerter": 784,
+   "erzaehlend": true,
+   "begruendung": "Speisung der Viertausend, Zeichenforderung, der Blinde von Betsaida, das Bekenntnis bei Caesarea Philippi und die erste Leidensankuendigung.",
+   "erzaehlend_woerter": 784,
+   "erzaehlanteil": 1.0
+  },
+  "mark 9": {
+   "buch": "mark",
+   "kapitel": 9,
+   "woerter": 1113,
+   "erzaehlend": true,
+   "begruendung": "Verklaerung, der besessene Knabe, zweite Leidensankuendigung und der Rangstreit in Kafarnaum; die Mahnworte V.38-50 bleiben Minderheit der Woerter.",
+   "erzaehlend_woerter": 1113,
+   "erzaehlanteil": 1.0
+  },
+  "mark 10": {
+   "buch": "mark",
+   "kapitel": 10,
+   "woerter": 1134,
+   "erzaehlend": true,
+   "begruendung": "Ehefrage, Kindersegnung, der reiche Mann, dritte Leidensankuendigung, die Bitte der Zebedaeussoehne und Bartimaeus - Szenen mit wechselnden Gegenuebern und Wegstrecke.",
+   "erzaehlend_woerter": 1134,
+   "erzaehlanteil": 1.0
+  },
+  "mark 11": {
+   "buch": "mark",
+   "kapitel": 11,
+   "woerter": 716,
+   "erzaehlend": true,
+   "begruendung": "Einzug in Jerusalem, verfluchter Feigenbaum, Tempelreinigung und die Frage nach der Vollmacht - Handlung ueber drei Tage.",
+   "erzaehlend_woerter": 716,
+   "erzaehlanteil": 1.0
+  },
+  "mark 12": {
+   "buch": "mark",
+   "kapitel": 12,
+   "woerter": 983,
+   "erzaehlend": false,
+   "begruendung": "Winzergleichnis und die Reihe der Streitgespraeche (Steuer, Auferstehung, hoechstes Gebot, Davidssohn) tragen die Wortmehrheit als zusammenhaengende Rede; nur das Scherflein der Witwe V.41-44 ist Szene. Im Zweifel gegen den Erzaehlanteil.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "mark 13": {
+   "buch": "mark",
+   "kapitel": 13,
+   "woerter": 782,
+   "erzaehlend": false,
+   "begruendung": "Endzeitrede auf dem Oelberg - durchgehende apokalyptische Rede ohne Handlungsfortschritt.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "mark 14": {
+   "buch": "mark",
+   "kapitel": 14,
+   "woerter": 1534,
+   "erzaehlend": true,
+   "begruendung": "Salbung in Betanien, Verrat des Judas, Passamahl, Gethsemane, Gefangennahme, Verhoer vor dem Hohen Rat und Petrus' Verleugnung.",
+   "erzaehlend_woerter": 1534,
+   "erzaehlanteil": 1.0
+  },
+  "mark 15": {
+   "buch": "mark",
+   "kapitel": 15,
+   "woerter": 865,
+   "erzaehlend": true,
+   "begruendung": "Prozess vor Pilatus, Barabbas, Verspottung, Kreuzigung, Tod und Grablegung.",
+   "erzaehlend_woerter": 865,
+   "erzaehlanteil": 1.0
+  },
+  "mark 16": {
+   "buch": "mark",
+   "kapitel": 16,
+   "woerter": 439,
+   "erzaehlend": true,
+   "begruendung": "Die Frauen am leeren Grab, die Erscheinungen und die Himmelfahrt - Handlung mit Ortswechsel.",
+   "erzaehlend_woerter": 439,
+   "erzaehlanteil": 1.0
+  },
+  "isaiah 1": {
+   "buch": "isaiah",
+   "kapitel": 1,
+   "woerter": 714,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 2": {
+   "buch": "isaiah",
+   "kapitel": 2,
+   "woerter": 542,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 3": {
+   "buch": "isaiah",
+   "kapitel": 3,
+   "woerter": 537,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 4": {
+   "buch": "isaiah",
+   "kapitel": 4,
+   "woerter": 195,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 5": {
+   "buch": "isaiah",
+   "kapitel": 5,
+   "woerter": 823,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 6": {
+   "buch": "isaiah",
+   "kapitel": 6,
+   "woerter": 335,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 7": {
+   "buch": "isaiah",
+   "kapitel": 7,
+   "woerter": 648,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 8": {
+   "buch": "isaiah",
+   "kapitel": 8,
+   "woerter": 537,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 9": {
+   "buch": "isaiah",
+   "kapitel": 9,
+   "woerter": 595,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 10": {
+   "buch": "isaiah",
+   "kapitel": 10,
+   "woerter": 893,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 11": {
+   "buch": "isaiah",
+   "kapitel": 11,
+   "woerter": 485,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 12": {
+   "buch": "isaiah",
+   "kapitel": 12,
+   "woerter": 135,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 13": {
+   "buch": "isaiah",
+   "kapitel": 13,
+   "woerter": 549,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 14": {
+   "buch": "isaiah",
+   "kapitel": 14,
+   "woerter": 821,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 15": {
+   "buch": "isaiah",
+   "kapitel": 15,
+   "woerter": 246,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 16": {
+   "buch": "isaiah",
+   "kapitel": 16,
+   "woerter": 399,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 17": {
+   "buch": "isaiah",
+   "kapitel": 17,
+   "woerter": 413,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 18": {
+   "buch": "isaiah",
+   "kapitel": 18,
+   "woerter": 253,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 19": {
+   "buch": "isaiah",
+   "kapitel": 19,
+   "woerter": 692,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 20": {
+   "buch": "isaiah",
+   "kapitel": 20,
+   "woerter": 169,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 21": {
+   "buch": "isaiah",
+   "kapitel": 21,
+   "woerter": 398,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 22": {
+   "buch": "isaiah",
+   "kapitel": 22,
+   "woerter": 638,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 23": {
+   "buch": "isaiah",
+   "kapitel": 23,
+   "woerter": 448,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 24": {
+   "buch": "isaiah",
+   "kapitel": 24,
+   "woerter": 563,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 25": {
+   "buch": "isaiah",
+   "kapitel": 25,
+   "woerter": 364,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 26": {
+   "buch": "isaiah",
+   "kapitel": 26,
+   "woerter": 520,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 27": {
+   "buch": "isaiah",
+   "kapitel": 27,
+   "woerter": 399,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 28": {
+   "buch": "isaiah",
+   "kapitel": 28,
+   "woerter": 764,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 29": {
+   "buch": "isaiah",
+   "kapitel": 29,
+   "woerter": 728,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 30": {
+   "buch": "isaiah",
+   "kapitel": 30,
+   "woerter": 1003,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 31": {
+   "buch": "isaiah",
+   "kapitel": 31,
+   "woerter": 306,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 32": {
+   "buch": "isaiah",
+   "kapitel": 32,
+   "woerter": 407,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 33": {
+   "buch": "isaiah",
+   "kapitel": 33,
+   "woerter": 561,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 34": {
+   "buch": "isaiah",
+   "kapitel": 34,
+   "woerter": 486,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 35": {
+   "buch": "isaiah",
+   "kapitel": 35,
+   "woerter": 266,
+   "erzaehlend": false,
+   "begruendung": "Prophetische Rede: Gerichts-, Droh- und Heilsworte ueber Juda und die Voelker, dazu die Visionsberichte; keine fortlaufende Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 36": {
+   "buch": "isaiah",
+   "kapitel": 36,
+   "woerter": 660,
+   "erzaehlend": true,
+   "begruendung": "Sanheribs Feldzug: der Rabschake vor der Mauer Jerusalems, Botenwechsel und die Antwort der Gesandten - Szene mit Akteuren und Ort.",
+   "erzaehlend_woerter": 660,
+   "erzaehlanteil": 1.0
+  },
+  "isaiah 37": {
+   "buch": "isaiah",
+   "kapitel": 37,
+   "woerter": 1065,
+   "erzaehlend": true,
+   "begruendung": "Hiskijas Gang zum Tempel, Jesajas Botenwort, der zweite Brief und der Abzug des Heeres bis zu Sanheribs Ermordung - Handlung mit Zeitverlauf.",
+   "erzaehlend_woerter": 1065,
+   "erzaehlanteil": 1.0
+  },
+  "isaiah 38": {
+   "buch": "isaiah",
+   "kapitel": 38,
+   "woerter": 565,
+   "erzaehlend": false,
+   "begruendung": "Krankheit und Genesung Hiskijas rahmen sein aufgeschriebenes Danklied (V.9-20), das die Wortmehrheit traegt. Konservativ ganz nicht erzaehlend - die Naht liesse sich ziehen, sie ist hier nicht gemessen.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 39": {
+   "buch": "isaiah",
+   "kapitel": 39,
+   "woerter": 254,
+   "erzaehlend": true,
+   "begruendung": "Die Gesandtschaft aus Babel, Hiskijas Vorfuehrung des Schatzhauses und Jesajas Ansage - kurze, geschlossene Szene.",
+   "erzaehlend_woerter": 254,
+   "erzaehlanteil": 1.0
+  },
+  "isaiah 40": {
+   "buch": "isaiah",
+   "kapitel": 40,
+   "woerter": 766,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 41": {
+   "buch": "isaiah",
+   "kapitel": 41,
+   "woerter": 778,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 42": {
+   "buch": "isaiah",
+   "kapitel": 42,
+   "woerter": 657,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 43": {
+   "buch": "isaiah",
+   "kapitel": 43,
+   "woerter": 703,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 44": {
+   "buch": "isaiah",
+   "kapitel": 44,
+   "woerter": 862,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 45": {
+   "buch": "isaiah",
+   "kapitel": 45,
+   "woerter": 780,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 46": {
+   "buch": "isaiah",
+   "kapitel": 46,
+   "woerter": 339,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 47": {
+   "buch": "isaiah",
+   "kapitel": 47,
+   "woerter": 451,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 48": {
+   "buch": "isaiah",
+   "kapitel": 48,
+   "woerter": 607,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 49": {
+   "buch": "isaiah",
+   "kapitel": 49,
+   "woerter": 834,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 50": {
+   "buch": "isaiah",
+   "kapitel": 50,
+   "woerter": 365,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 51": {
+   "buch": "isaiah",
+   "kapitel": 51,
+   "woerter": 741,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 52": {
+   "buch": "isaiah",
+   "kapitel": 52,
+   "woerter": 387,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 53": {
+   "buch": "isaiah",
+   "kapitel": 53,
+   "woerter": 375,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 54": {
+   "buch": "isaiah",
+   "kapitel": 54,
+   "woerter": 476,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 55": {
+   "buch": "isaiah",
+   "kapitel": 55,
+   "woerter": 386,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 56": {
+   "buch": "isaiah",
+   "kapitel": 56,
+   "woerter": 341,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 57": {
+   "buch": "isaiah",
+   "kapitel": 57,
+   "woerter": 555,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 58": {
+   "buch": "isaiah",
+   "kapitel": 58,
+   "woerter": 504,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 59": {
+   "buch": "isaiah",
+   "kapitel": 59,
+   "woerter": 576,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 60": {
+   "buch": "isaiah",
+   "kapitel": 60,
+   "woerter": 642,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 61": {
+   "buch": "isaiah",
+   "kapitel": 61,
+   "woerter": 365,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 62": {
+   "buch": "isaiah",
+   "kapitel": 62,
+   "woerter": 337,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 63": {
+   "buch": "isaiah",
+   "kapitel": 63,
+   "woerter": 531,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 64": {
+   "buch": "isaiah",
+   "kapitel": 64,
+   "woerter": 300,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 65": {
+   "buch": "isaiah",
+   "kapitel": 65,
+   "woerter": 731,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "isaiah 66": {
+   "buch": "isaiah",
+   "kapitel": 66,
+   "woerter": 792,
+   "erzaehlend": false,
+   "begruendung": "Trostbuch und Gottesknechtlieder: durchgehend prophetische Rede, Klage und Verheissung ohne Handlungstraeger.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 1": {
+   "buch": "romans",
+   "kapitel": 1,
+   "woerter": 712,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 2": {
+   "buch": "romans",
+   "kapitel": 2,
+   "woerter": 601,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 3": {
+   "buch": "romans",
+   "kapitel": 3,
+   "woerter": 577,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 4": {
+   "buch": "romans",
+   "kapitel": 4,
+   "woerter": 566,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 5": {
+   "buch": "romans",
+   "kapitel": 5,
+   "woerter": 468,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 6": {
+   "buch": "romans",
+   "kapitel": 6,
+   "woerter": 495,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 7": {
+   "buch": "romans",
+   "kapitel": 7,
+   "woerter": 603,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 8": {
+   "buch": "romans",
+   "kapitel": 8,
+   "woerter": 889,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 9": {
+   "buch": "romans",
+   "kapitel": 9,
+   "woerter": 705,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 10": {
+   "buch": "romans",
+   "kapitel": 10,
+   "woerter": 449,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 11": {
+   "buch": "romans",
+   "kapitel": 11,
+   "woerter": 807,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 12": {
+   "buch": "romans",
+   "kapitel": 12,
+   "woerter": 405,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 13": {
+   "buch": "romans",
+   "kapitel": 13,
+   "woerter": 359,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 14": {
+   "buch": "romans",
+   "kapitel": 14,
+   "woerter": 601,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 15": {
+   "buch": "romans",
+   "kapitel": 15,
+   "woerter": 752,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "romans 16": {
+   "buch": "romans",
+   "kapitel": 16,
+   "woerter": 442,
+   "erzaehlend": false,
+   "begruendung": "Brief des Paulus an die Roemer - Lehrschreiben mit Grussliste, ohne Handlung.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 1": {
+   "buch": "revelation",
+   "kapitel": 1,
+   "woerter": 541,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 2": {
+   "buch": "revelation",
+   "kapitel": 2,
+   "woerter": 780,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 3": {
+   "buch": "revelation",
+   "kapitel": 3,
+   "woerter": 645,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 4": {
+   "buch": "revelation",
+   "kapitel": 4,
+   "woerter": 328,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 5": {
+   "buch": "revelation",
+   "kapitel": 5,
+   "woerter": 403,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 6": {
+   "buch": "revelation",
+   "kapitel": 6,
+   "woerter": 497,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 7": {
+   "buch": "revelation",
+   "kapitel": 7,
+   "woerter": 457,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 8": {
+   "buch": "revelation",
+   "kapitel": 8,
+   "woerter": 366,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 9": {
+   "buch": "revelation",
+   "kapitel": 9,
+   "woerter": 538,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 10": {
+   "buch": "revelation",
+   "kapitel": 10,
+   "woerter": 325,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 11": {
+   "buch": "revelation",
+   "kapitel": 11,
+   "woerter": 551,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 12": {
+   "buch": "revelation",
+   "kapitel": 12,
+   "woerter": 484,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 13": {
+   "buch": "revelation",
+   "kapitel": 13,
+   "woerter": 529,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 14": {
+   "buch": "revelation",
+   "kapitel": 14,
+   "woerter": 628,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 15": {
+   "buch": "revelation",
+   "kapitel": 15,
+   "woerter": 228,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 16": {
+   "buch": "revelation",
+   "kapitel": 16,
+   "woerter": 536,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 17": {
+   "buch": "revelation",
+   "kapitel": 17,
+   "woerter": 521,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 18": {
+   "buch": "revelation",
+   "kapitel": 18,
+   "woerter": 711,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 19": {
+   "buch": "revelation",
+   "kapitel": 19,
+   "woerter": 614,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 20": {
+   "buch": "revelation",
+   "kapitel": 20,
+   "woerter": 464,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 21": {
+   "buch": "revelation",
+   "kapitel": 21,
+   "woerter": 686,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
+  },
+  "revelation 22": {
+   "buch": "revelation",
+   "kapitel": 22,
+   "woerter": 548,
+   "erzaehlend": false,
+   "begruendung": "Apokalyptische Vision: Sendschreiben, Siegel, Posaunen, Schalen und Schlussbilder - steht woertlich im Ausschluss der Regel.",
+   "erzaehlend_woerter": 0,
+   "erzaehlanteil": 0.0
   }
  }
 }

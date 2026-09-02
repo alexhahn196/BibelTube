@@ -974,7 +974,7 @@ Erzählanteil nach Regel M8 gemessen, wo eingestuft — `produktion/korpus/erzae
 
 | Buch | Kapitel | Wörter | Erzählanteil |
 |---|---|---:|---:|
-| Jesaja | 1–66 | 35.557 | nicht eingestuft (prophetische Rede) |
+| Jesaja | 1–66 | 35.557 | **5,6 %** |
 | Exodus | 1–40 | 30.926 | 46,5 % |
 | Apostelgeschichte | 1–28 | 23.143 | 73,0 % |
 | 1 Könige | 1–22 | 23.067 | 58,9 % |
@@ -984,13 +984,22 @@ Erzählanteil nach Regel M8 gemessen, wo eingestuft — `produktion/korpus/erzae
 | Josua | 1–24 | 17.835 | 61,6 % |
 | Daniel | 4–12 | 8.302 | 27,2 % |
 | Genesis | 43–50 | 5.992 | 84,9 % |
-| Offenbarung | 12–22 | 5.949 | nicht eingestuft (apokalyptische Vision) |
+| Offenbarung | 12–22 | 5.949 | **0,0 %** |
 | Jona | 1–4 | 1.272 | 86,4 % |
 
 Zusammen 211.638 W. Jesaja ist durch die V06-Neuplanung vollständig zurückgefallen,
 unter M8 als Hauptstoff aber unbrauchbar. Für ein M8-taugliches V09 tragen nur
 2 Samuel, Richter, Jona und Genesis 43–50 über 80 % — keines davon reicht allein
 für ein dominantes Buch im Zielband.
+
+> **Nachgetragen 2026-09-02.** Jesaja und Offenbarung standen hier als „nicht
+> eingestuft"; sie sind jetzt kapitelweise gemessen (Jesaja **5,6 %** — nur der
+> Hiskija-Einschub 36–39 trägt Handlung, Offenbarung **0,0 %**). Ebenfalls neu
+> gemessen: Genesis vollständig **87,2 %** und Markus **79,4 %** — beide stehen
+> nicht in dieser Tabelle, weil sie in den Planfassungen von V07 und V08 gebunden
+> sind. Werden diese beiden Videos neu gerechnet, ändert sich der freie Bestand:
+> [`produktion/produktion/korpus/v07_v08_moeglichkeiten.json`](produktion/korpus/v07_v08_moeglichkeiten.json),
+> Tabelle in [`v06-korpus.md`](produktion/v06-korpus.md).
 
 ---
 
