@@ -217,6 +217,7 @@ ki_clip_ordner_V3  = produktion/motive/loops/ki-v03
 ki_clip_ordner_V4  = produktion/motive/loops/ki-v04
 ki_clip_ordner_V5  = produktion/motive/loops/ki-v05
 ki_clip_ordner_V6  = produktion/motive/loops/ki-v06
+ki_clip_ordner_V7  = produktion/motive/loops/ki-v07
 
 # Kapitelmarken sind je Video entschieden, nicht global: ja bei 01/02/06/08,
 # nein bei 03/04/05/07 (Formel §7 fuehrt sie als optional - A's drei groesste

@@ -974,110 +974,136 @@ Support the channel: [Spendenlink]
 
 # Video 07
 
-**Titel:** `Fall Asleep Without Stress… God's Promises for a Quiet Heart`
-**Eigenname im Titel:** ⚠ **fehlt — seit 2026-08-23 Pflicht** (Formel §1).
-**Korpusart nach M8:** ⚠ **grenzwertig** — Markus trägt nur 49,0 %, dazu Römer 32,4 %
-(Brief) und Offenbarung 18,6 % (Apokalyptik). Braucht eine Entscheidung, bevor gebaut
-wird.
-**Anker:** „Fall Asleep Without Stress…" (belegt, B 35K)
-**Hook:** Variante **(a), kurze Begrüßung** *(geändert am 2026-08-23 — war (b);
-Hook-Test auf V09+ verschoben, siehe Upload-Plan)*
+**Titel:** `Lord, I Feel Tired — Second Samuel Keeps Watch Until Daylight`
+**Eigennamen-Test:** **JA** — „Second Samuel"
+**Anker:** „Lord, I Feel Tired" (belegt, A 184K — bisher unbenutzt, 33 % Kopisten-Nähe,
+der günstigste der dreizehn belegten Anker)
+**Hook-Test:** Variante **(a), kurze Begrüßung** *(V05–V08 laufen alle mit (a),
+entschieden am 2026-08-23)*
 
-**Textkorpus:** Markus + Römer + Offenbarung 1–11
-**Gemessen:** 29.123 Wörter → **3,38 h** (143,7 WPM aus `config.md`) → ca. 151.700 Zeichen TTS
+**Textkorpus:** 2 Samuel + 1 Könige 12–22
+**Gemessen:** 30.555 Wörter → **3,54 h** Korpus bei 143,7 WPM (`config.md`),
+erwartete Videolaufzeit 3,59 h
 
-### Eingangsgebet (153 Wörter)
+**Gate 1.13 (Strukturfassung):** dominantes Buch **2 Samuel, 63,6 %** der Wörter,
+selbst kapitelweise **81,8 %** erzählend, **in voller Länge** gelesen, **27,3 Punkte**
+vor 1 Könige 12–22. Erzählanteil des Gesamtkorpus **80,5 %** — gemessen und gemeldet,
+gatet nicht.
 
-> God, I've been braced all day, and my body hasn't been told the day is over.
+**Reihenfolge:** dominantes Buch zuerst, der Rest kanonisch dahinter. Hier fällt beides
+zusammen: 2 Samuel, dann 1 Könige 12–22.
+
+### Eingangsgebet (174 Wörter)
+
+> Lord, I got through today, and I am not proud of all of it.
 >
-> The pressure wasn't dramatic. It was just constant — one thing after another, none of
-> them large, all of them mine to handle. And now I'm lying still and everything in me
-> is still moving.
+> Some of what I did was right, and some of it I would take back if taking back were
+> a thing that happened. It isn't. So I am lying here with it, going over the same few
+> minutes, as though going over them again would move them.
 >
-> I don't need you to remove anything tonight. I need you to be steady while I stop
-> being steady for a few hours.
+> I am not asking you to undo anything tonight. I am asking you to hold the room steady
+> while I stop holding it.
 >
-> Your word says nothing separates us from your love — not trouble, not pressure, not
-> the parts of me that gave out today. I'd like to hear that said slowly, in full,
-> without having to hold onto it.
+> Let the long account of a king go past me slowly — his good years and his worst ones,
+> the grief he could not argue his way out of, all of it already finished and told
+> without hurry. I don't need to take a lesson from it. I need something that keeps
+> going while I stop.
 >
-> So take the tension out of my hands. Unclench whatever I'm still gripping.
+> Take the tightness out of my jaw and out of my hands. Let my breathing drop below
+> my thinking.
 >
-> Let my breathing drop into something slower than my thoughts.
+> And be gentle tonight with everyone else lying awake over the same few minutes.
 >
-> Keep watch over the night, and over everyone lying awake in it.
->
-> I'm going to stop now. Amen.
+> Amen.
 
 ### Hook
 
-**(a) mit kurzer Begrüßung** ← **für Video 07 verwenden** *(seit 2026-08-23)*
-> „Fall asleep without stress tonight. Nothing is asked of you here. The Gospel of
-> Mark, then Romans — read slowly, all the way through. Close your eyes."
+**(a) mit kurzer Begrüßung** ← **für Video 07 verwenden**
+> „Lord, I feel tired — and if you do too, you're in the right place. Nothing here needs
+> following; it's just going to keep going. The whole of Second Samuel, slowly: David,
+> Absalom, one long reign from beginning to end. Then the kings who came after him. Get
+> comfortable and let your eyes close."
 
-**(b) kalter Start** *(ausformuliert, für den Hook-Test ab V09 aufgehoben)*
-> „Mark, chapter one. The beginning of the Good News of Jesus Christ, the Son of God…"
+**(b) kalter Start** *(nicht für dieses Video geplant, aber ausformuliert)*
+> „Second Samuel, chapter one. After the death of Saul, when David had returned from the
+> slaughter of the Amalekites, David stayed two days in Ziklag…"
 
 ### CTA (2)
 
-1. „If today pressed on you, say so in the comments — you'll be prayed for."
-2. „Subscribe if you'd like these readings to keep coming."
+1. „If something from today is still turning over in you, leave it in the comments —
+   people here pray through them."
+2. „Subscribe if these readings help you sleep."
 
 ### Thumbnail
 
-**Motiv:** Grundmotiv, Feuer als hellster Punkt deutlich rechts, sitzende Figur
-in der linken Bildhälfte, dichter Sternenhimmel, kein Mond.
-**Text:** `NO MORE STRESS` (3 Wörter)
-
-> **2026-08-07 — Textzeile gekürzt, weil sie nicht ins Bild passt.**
-> `REST WITHOUT STRESS` braucht bei der vorgeschriebenen Versalhöhe von 125 px
-> **2163 px**; verfügbar sind bei 1920 px Bildbreite und 40 px Rand je Seite
-> nur **1840 px** — 323 px zu breit. Die Checkliste lässt hier nur einen Weg:
-> „Wörter kürzen — nicht die Schrift verkleinern."
->
-> `NO MORE STRESS` misst **1624 px** (Rand 148 px je Seite), bleibt bei 3
-> Wörtern und hält das Ankerwort des Titels („Fall Asleep Without **Stress**…",
-> B 35K). Gemessene Alternativen: `NO STRESS TONIGHT` mit 1923 px ist selbst
-> noch 83 px zu breit; `LET GO TONIGHT` würde mit 1606 px passen, verliert
-> aber das Ankerwort und fällt deshalb aus.
->
-> Das „NO MORE"-Echo zur Zeile von Video 04 (`THINK NO MORE`) ist **gewollt**:
-> Wiederholung innerhalb der eigenen Serie ist Merkmal, nicht Fehler — B trägt
-> „Sleep To These Psalms" in 6 von 13 Titeln.
->
-> Der **Titel bleibt unverändert**; gekürzt ist allein die Zeile im Bild.
+**Motiv:** Grundmotiv der Serie, Variation für Video 07 — eine flache Senke mit
+ausgetrocknetem Bachbett, links und rechts dunkle Hangflanken, die den Blick nach oben
+öffnen. Die sitzende bärtige Figur rechts der Mitte, im Profil nach links, Kopf gesenkt,
+Hände im Schoß, kein Blickkontakt; Gewand tief blaugrau, kein roter Mantel. Als
+**einzige** warme Lichtquelle ein kleines, ruhiges Lagerfeuer am Boden **links** der
+Figur — erstmals in der Serie links, nachdem V01–V03 und V06 es rechts und V05 unten
+Mitte-rechts hatten. **Kein Mond** (wie V01, V02, V06), das obere Drittel bleibt tiefblau
+und leer für den Text, mit dichten Sternen. Gemalter Stil, hoher Kontrast, dunkles
+Gesamtbild.
+**Text:** `SECOND SAMUEL` (2 Wörter)
 
 ### Beschreibung
 
 ```
-Fall Asleep Without Stress… God's Promises for a Quiet Heart
+Lord, I Feel Tired — Second Samuel Keeps Watch Until Daylight
 
-For the days that weren't dramatic, just relentless. The Gospel of Mark, the letter
-to the Romans, and the opening chapters of Revelation — read slowly, without
-interruption.
+For the nights when the day is over and you are still going over it. The whole of
+Second Samuel, then the kings who came after David — read slowly, without
+interruption, from start to finish.
 
-Nothing to follow. Let it play, close your eyes, and let your body catch up.
+Nothing to follow. Let it play, close your eyes, and rest.
 
 Focused on:
-• Tension that outlasts the day
-• Promises read slowly, in full
-• Nothing separating you from God's love
-• Sleep without bracing
+• Being tired of turning the same day over
+• David's whole reign, told as one long story
+• Letting go of what is already finished
+• Sleep that lasts through the night
 
 Read from the World English Bible (British Edition).
 
-Rest well tonight. Subscribing helps you find the next one.
+Rest tonight. Subscribing helps you find the next reading.
 
-#biblesleep #gospelofmark #romans #christiansleep #bibleversesforsleep
+Support the channel: [Spendenlink]
+
+#biblesleep #secondsamuel #christiansleep #bibleversesforsleep #oldtestament
 ```
 
-**Tags:** `gospel of mark`, `book of romans`, `bible for sleep`,
-`christian sleep meditation`, `stress relief scripture`, `scripture for sleep`,
-`new testament for sleep`, `bible reading for sleep`, `sleep with god's word`,
-`god's promises`, `bedtime bible`, `peaceful bible reading`,
-`world english bible`, `christian bedtime`, `rest in god`
+**Tags:** `second samuel`, `bible for sleep`, `christian sleep meditation`,
+`scripture for sleep`, `sleep with god's word`, `bible reading for sleep`,
+`bedtime bible`, `peaceful bible reading`, `world english bible`,
+`story of david`, `old testament for sleep`, `book of kings`,
+`king david bible story`, `bible sleep story`, `elijah bible reading`
+
+### Kapitelmarken
+
+**NEIN.** 35 Kapitel, aber ein durchlaufender Erzählstrang: 2 Samuel erzählt eine
+einzige Regierung von der Thronbesteigung bis zur Volkszählung, 1 Könige 12–22 hängt
+als Fortsetzung daran. Das ist genau der Fall, für den der Ablauf „nein" vorsieht —
+Marken wären 35 Zeilen ohne Sprungziel, weil niemand gezielt in die Mitte einer
+laufenden Handlung springt. `kapitelmarken_videos` in `config.md` führt V7 nicht;
+der Eintrag bleibt unverändert.
 
 ---
+
+## Was an diesem Block gemessen ist und was nicht
+
+| | Wert | Herkunft |
+|---|---|---|
+| Wortzahl Korpus | 30.555 | gemessen, `korpus/erzaehlanteil.json` |
+| Erzählanteil Korpus | 80,47 % | gemessen, kapitelweise |
+| Erzählanteil 2 Samuel | 81,85 % | gemessen, kapitelweise |
+| Dominanz 2 Samuel | 63,6 % | gerechnet |
+| Abstand zum zweiten Buch | 27,3 Punkte | gerechnet |
+| Laufzeit Korpus | 3,54 h | gerechnet aus 143,7 WPM (`config.md`) |
+| erwartete Videolaufzeit | 3,59 h | gerechnet, `korpus_pruefung._video_h()` |
+| Titelähnlichkeit | 33,3 % Gewinner / 22,2 % eigener Katalog / 11,1 % Kopisten | gemessen, `titel_kandidaten.py` |
+| Gebet | 174 Wörter | gezählt |
+| Wirkung von Gebet, Hook und Thumbnail | — | **ungeprüft**, kein Datenbeleg |
 
 # Video 08
 
