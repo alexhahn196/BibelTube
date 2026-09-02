@@ -329,6 +329,17 @@ dort, die `kopisten_titel.json` als „im Hauptzweig" führt, ist nach dieser
 Prüfung falsch und gehört korrigiert — das kann nur auf jenem Branch
 geschehen.
 
+> **Erledigt am 2026-09-02** (Commit `40d5600` auf
+> `historien-fund-messdatei-w4hjlc`, nach ausdrücklicher Freigabe): Die Tabelle
+> im Skill ist auf drei Spalten umgebaut — `origin/main`, jener Zweig, dieser
+> Zweig — und verweist für die Vollinventur hierher. Dabei kam heraus, dass
+> **beide Zweige fünfzehn Dateien anfassen und vierzehn davon verschieden
+> führen**; bitgleich ist nur `kopisten_titel.json`. Drei dieser Unterschiede
+> ändern Ergebnisse: `wpm_erwartet` 148,1 gegen 143,7 · zwei verschiedene
+> Fassungen von Gate 1.13 · zwei verschieden hergeleitete Mono-Klangbetten
+> unter demselben Dateinamen `bett_mono_feuer_leise.flac`. **Welche Fassung
+> gilt, ist eine offene Entscheidung, keine Messfrage.**
+
 > Geprüft mit `git fetch origin`, `git cat-file -e origin/main:<pfad>` und
 > `git diff --name-status origin/main...HEAD`, nicht aus der Erinnerung.
 
